@@ -1,0 +1,47 @@
+<%# app/views/catalog/show/_lib_album.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+  return unless (marc = doc.marc_display)
+
+  fields_only ||= false
+
+  # === Item title/author
+  title_opts = { dev_note: __FILE__ }
+
+  # === Item metadata
+  uniform_title =
+    facet_search_links(:uniform_title_facet, doc, title: nil)
+  series_title =
+    facet_search_links(:series_title_facet, marc.series_subfields, title: nil)
+
+  fields ||= UVA::View::FieldSet.new(
+    'Format'            => doc.export_format,
+    'Description'       => doc.get_description,
+    'Uniform Title'     => uniform_title,
+    'Edition'           => doc.get_edition_statement,
+    'Series'            => series_title,
+    'Publication'       => [doc.get_pub_statement,    class: 'publication'],
+    label_no_label(doc) => [ul_list(marc.label_no),   class: 'label_number'],
+    'Tracks'            => ul_list(doc.get_contents),
+    'Performers'        => [doc.get_performers,       always_show],
+    'Credits'           => doc.export_credits,
+    'Recording Info'    => ul_list(marc.recording_information),
+    'Notes'             => ul_list(doc.get_notes),
+    'Local Notes'       => marc.local_note,
+    'Cited in'          => marc.cited_in,
+    'Online Version'    => links_to(marc.electronic_version),
+    'Online Related'    => links_to(marc.electronic_related_resource),
+    'Date Indexed'      => show_date_indexed(doc),
+  )
+  fields_opts = { document: doc, fields: fields }
+
+  template_opts = title_opts.merge(fields_opts)
+
+  view_debug(__FILE__)
+-%>
+<%- if fields_only -%>
+  <%= render 'catalog/show/shared/fields', fields_opts %>
+<%- else -%>
+  <%= render 'catalog/show/template/basic', template_opts %>
+<%- end -%>

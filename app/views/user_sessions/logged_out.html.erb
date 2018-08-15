@@ -1,0 +1,23 @@
+<%# app/views/user_sessions/logged_out.html.erb -%>
+<%-
+  set_meta_tags(title: 'My Account - Signed Out')
+
+  opt = { rel: 'nofollow', role: 'button' }
+  netbadge_account = link_to('NetBadge account', URL::NETBADGE_INFO, opt)
+
+  opt[:class] = 'btn small'
+  netbadge_logout = link_to('turn in your NetBadge', URL::NETBADGE_LOGOUT, opt)
+
+  view_debug(__FILE__)
+-%>
+
+<div class="tool-heading">
+  <h1 class="heading">Signed Out</h1>
+</div>
+
+<div class="tool-content">
+  You have successfully ended your Virgo session.
+  <br/>
+  To prevent unauthorized access to your <%= netbadge_account %> you may click
+  here to <%= netbadge_logout %>.
+</div>

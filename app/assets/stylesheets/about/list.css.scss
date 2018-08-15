@@ -1,0 +1,35 @@
+// app/assets/stylesheets/about/list.css.scss
+
+// ============================================================================
+// List libraries (/about/list/library).
+// ============================================================================
+
+.about-topic-title {
+    margin-top:    1em;
+    font-size:     x-large;
+    font-weight:   bold;
+}
+
+.about-topic-description {
+    margin-top:    0.5em;
+    margin-bottom: 2em;
+    font-style:    italic;
+}
+
+.about-topic-table {
+
+    width: 100%;
+
+    .heading {
+        font-weight:   bold;
+        border-bottom: 1px solid black;
+    }
+    .data, .heading {
+        padding: 0.25em;
+    }
+
+    // Banding for alternating rows.
+    .library-list tbody tr:nth-child(2n) {
+        background: #f0f0f0;
+    }
+}

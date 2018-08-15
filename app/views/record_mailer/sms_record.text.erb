@@ -1,0 +1,21 @@
+<%# app/views/record_mailer/sms_record.text.erb -%>
+<%-
+  # Overrides Blacklight app/views/record_mailer/sms_record.text.erb
+
+  documents  ||= @documents || []
+  articles   ||= @articles  || []
+  host       ||= @host
+  leader     ||= '* '
+
+  all_items   = documents + articles
+  single_item = (all_items.size == 1)
+
+  # Since the leader is meant to visually highlight individual entries, avoid
+  # using it if there is only one entry.
+  options = {}
+  options[:host]   = host   if host.present?
+  options[:leader] = leader if leader.present? && !single_item
+
+  view_debug(__FILE__)
+-%>
+<%= sms_entries(all_items, options) %>

@@ -1,0 +1,13 @@
+<%# app/views/catalog/row/_default.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  fields_opts ||= {
+    document: doc,
+    dev_note: __FILE__,
+  }
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/row/shared/fields', fields_opts -%>

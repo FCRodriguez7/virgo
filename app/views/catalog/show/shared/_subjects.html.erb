@@ -1,0 +1,36 @@
+<%# app/views/catalog/show/shared/_subjects.html.erb -%>
+<%-
+  doc = document ||= @document
+  subjects ||= doc && doc.get_subjects
+  return if subjects.blank?
+
+  heading ||= 'Related Subject'
+  heading = heading.pluralize unless subjects.size == 1
+
+  # NOTE: Peer-reviewed limiter by default for article search.
+  link_opts = params.except(:action, :id, :index, :q).rdup
+  adjust_tlevel!(link_opts) if articles_lens?
+
+  view_debug(__FILE__)
+-%>
+
+<div class="box related-subjects">
+  <h2><%= heading %></h2>
+  <ul>
+    <%- subjects.each do |subject| -%>
+      <%- subject_parts = subject.split(/\s*--\s*/) -%>
+      <%- link_label = subject_parts.join(EM_DASH).html_safe -%>
+      <%- if articles_lens? -%>
+        <%- opts = add_facet('SubjectEDS', subject, link_opts) -%>
+      <%- else -%>
+        <%- subject_parts.map! { |v| v.include?(' ') ? %Q("#{v}") : v } -%>
+        <%- query = subject_parts.join(SPACE) -%>
+        <%- opts = link_opts.merge(q: query, search_field: 'subject') -%>
+      <%- end -%>
+      <%- link_path = portal_index_path(opts) -%>
+      <li>
+        <%= link_to(link_label, link_path) %>
+      </li>
+    <%- end -%>
+  </ul>
+</div>

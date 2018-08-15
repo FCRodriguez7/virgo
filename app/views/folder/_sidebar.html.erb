@@ -1,0 +1,46 @@
+<%# app/views/folder/_sidebar.html.erb -%>
+<%-
+  heading ||= 'Starred Items Menu'
+
+  # Add to hidden "skip navigation" menu.
+  skip_nav << link_to(heading, '#account-menu')
+
+  # If "position: sticky" is supported allow the sidebar to remain visible.
+  sidebar_items << :sticky_optional
+
+  folder_tools = {
+    cite:           ['Cite',                    citation_folders_path,       :aside],
+    email:          ['Email',                   email_folders_path,          :aside],
+    print:          ['Print',                   print_folders_path,          true],
+    refworks:       ['Export to RefWorks',      refworks_texts_folders_path, true],
+    endnote:        ['Export to EndNote',       endnote_folders_path],
+    zotero:         ['Export to Zotero',        ris_folders_path],
+    csv:            ['Export as CSV',           csv_folders_path],
+    course_reserve: ['Place on Course Reserve', reserves_email_path,         :aside],
+    clear:          ['Clear Starred Items',     clear_folders_path],
+  }
+
+  view_debug(__FILE__)
+-%>
+<%- sidebar_items << capture do -%>
+  <div class="sidebar-panel1 bookmarks_sub">
+    <div class="sidebar-inner">
+      <div class="account-menu tools" role="menu">
+        <%= sr_only(:h2, heading, id: 'account-menu-heading') %>
+        <ul id="account-menu" aria-labelledby="account-menu-heading">
+          <li class="account-home-nav" role="menuitem">
+            <%= link_to 'My Account', accounts_path %>
+          </li>
+          <li class="action-list">
+            <div id="action-list-title" class="sub-heading list-title">
+              Starred Items
+            </div>
+            <ul class="list-body folder-tools">
+              <%= menu_items(folder_tools) %>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<%- end -%>

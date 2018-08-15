@@ -1,0 +1,80 @@
+<%# app/views/catalog/index.html.erb -%>
+<%-
+  # Overrides Blacklight app/views/catalog/index.html.erb
+
+  set_search_meta_tags
+  set_cache_refresh
+
+  results_link_css = 'view-full view-full-catalog'
+
+  docs    = (@response && @response.docs)   || []
+  facets  = (@response && @response.facets) || []
+  total   = (@response && @response.total).to_i
+  results = docs.present? && total.nonzero?
+
+  view_debug(__FILE__)
+-%>
+
+<%= hidden_search_properties unless print_view? -%>
+
+<%# === Search results total or "No items found." === -%>
+<%- if combined_search_results? -%>
+  <div class="results-total">
+    <%= virgo_page_entries_info(@response, entry_name: 'item') %>
+    <%= see_all_results(results_link_css) if results.present? %>
+  </div>
+<%- end -%>
+
+<%# === "You searched for:" and pagination links === -%>
+<%- if show_constraints? -%>
+  <%= render 'catalog/constraints' %>
+  <%= render 'catalog/sort_and_per_page' %>
+<%- end -%>
+
+<%# === Main content / search results === -%>
+<%- if music_home_page? -%>
+
+  <%= sr_only(:h1, 'Browse Music') %>
+  <%= render 'catalog/featured_documents' %>
+
+<%- elsif video_home_page? -%>
+
+  <%= sr_only(:h1, 'Browse Videos') %>
+  <%= render 'catalog/video_genres' %>
+  <%= render 'catalog/featured_documents' %>
+
+<%- elsif home_page? -%>
+
+  <%= render 'catalog/search_help' %>
+
+<%- elsif results.present? -%>
+
+  <%- unless combined_search_results? || classic_lens? -%>
+    <div class="select-clear-all">
+      <a class="select-all" href="#"><%= sr_only('Add Star to') -%> All</a>
+    </div>
+  <%- end -%>
+  <%= render 'catalog/document_list' %>
+  <%= pagination_links(@response) unless combined_search_results? %>
+
+<%- end -%>
+
+<%- if combined_search_results? -%>
+
+  <%# === Bottom of column for combined results === -%>
+  <%- if results.present? -%>
+    <div class="split-footer">
+      <%= see_all_results(results_link_css, 'view-full-footer') %>
+    </div>
+  <%- end -%>
+
+<%- elsif !classic_lens? -%>
+
+  <%# === Facet links in sidebar for non-combined results === -%>
+  <%- if facets.present? -%>
+    <%- sidebar_items << capture do -%>
+      <%= render 'catalog/facets' %>
+    <%- end -%>
+  <%- end -%>
+
+<%- end -%>

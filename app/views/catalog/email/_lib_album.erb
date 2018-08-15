@@ -1,0 +1,31 @@
+<%# app/views/catalog/email/_lib_album.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+  return unless (marc = doc.marc_display)
+
+  # === Item metadata
+  fields ||= UVA::View::FieldSet.new(
+    :title            => doc.show_full_title,
+    :creator          => doc.show_heading_author,
+    'Format'          => doc.export_format,
+    :physical_desc    => doc.export_physical_description,
+    :tech_details     => doc.export_technical_details,
+    'Uniform Title'   => doc.export_uniform_title,
+    'Series'          => doc.export_series,
+    'Edition'         => doc.export_edition_statement,
+    'Publication'     => doc.export_pub_statement,
+    :label            => label_no_label(doc),
+    'Tracks'          => doc.export_contents,
+    'Performers'      => doc.export_performers,
+    'Credits'         => doc.export_credits,
+    'Recording Info'  => doc.export_recording_information,
+    'Notes'           => doc.export_notes,
+    'Local Notes'     => marc.local_note,
+    'Cited in'        => marc.cited_in,
+  )
+
+  view_debug(__FILE__)
+-%>
+<%= fields.render(:email, doc) %>
+<%= render 'catalog/email/shared/availability', document: doc -%>

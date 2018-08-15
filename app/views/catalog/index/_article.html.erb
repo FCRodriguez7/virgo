@@ -1,0 +1,80 @@
+<%# app/views/catalog/index/_article.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  counter ||= -1
+  offset  ||= 0
+  portal  ||= :articles
+
+  partial_opts = {
+    document: doc,
+    counter:  counter,
+    offset:   offset,
+    portal:   portal
+  }
+
+  # === Item title
+  title_opts = partial_opts.merge(dev_note: __FILE__)
+
+  # === Item thumbnail
+  thumbnail_opts = partial_opts
+
+  # === Item metadata
+  summary       = (doc.get_abstract.first unless combined_search_results?)
+  resource_url  = doc.get_url.first
+  resource_link = ''.html_safe
+  resource_link << external_link('Access Online', resource_url) if resource_url
+
+  item_number = 1 + counter + offset
+  url         = show_path(portal, doc.doc_id, params.slice(:view))
+
+  # Marker for article full-text.
+  if doc.full_text?
+    css_disabled ||= 'link-disabled'
+    authorized   ||= authorized? && !doc.login_needed?
+    lbl = 'Full&nbsp;Text'.html_safe
+    css = 'download-marker'
+    tip = "#{lbl} content available".html_safe
+    unless authorized
+      css << ' ' << css_disabled
+      tip << " - #{must_sign_in}".html_safe
+    end
+    opt = { 'data-counter' => item_number, class: css, title: tip }
+    resource_link << link_to(lbl, "#{url}#full-text", opt)
+  end
+
+  if summary.present?
+    max_length = CONTEXT[:index][:max_len] || 250
+    omission   = UVA::Util::HtmlMethods::TRUNCATE_OMISSION
+    summary    = html_truncate(summary, length: max_length, omission: omission)
+    if (tail = summary.rindex(omission))
+      opt = {
+        'data-counter' => item_number,
+        ARIA_LABEL     => 'Continue to item details page'
+      }
+      more = link_to('more', url, opt)
+      summary = summary[0, tail] << "... [#{more}]".html_safe
+    end
+  end
+
+  cn_link_opts = { dev_note: [__FILE__] }
+  call_numbers =
+    doc.call_numbers.map { |number|
+      single_call_number_display(doc, number, cn_link_opts)
+    }
+
+  fields ||= UVA::View::FieldSet.new(
+    'Author'       => [doc.get_authors, AUTHOR_OPT],
+    'Published in' => doc.is_part_of,
+    'Abstract'     => [summary, max_len: nil],
+    'Availability' => resource_link,
+    'Call Number'  => [call_numbers, CALL_NUMBER_OPT.merge(DEBUG_OPT)],
+  )
+  fields_opts = { document: doc, fields: fields }
+
+  template_opts = title_opts.merge(thumbnail_opts).merge(fields_opts)
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/index/template/basic', template_opts %>

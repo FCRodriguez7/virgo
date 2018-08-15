@@ -1,0 +1,34 @@
+<%# app/views/catalog/show/_kluge.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  fields_only ||= false
+
+  # === Item title/author
+  title_opts = { dev_note: __FILE__ }
+
+  # === Item metadata
+  fields ||= UVA::View::FieldSet.new(
+    'Format'                => doc.export_format,
+    'Description'           => :physical_description_display,
+    'Edition'               => doc.get_edition_statement,
+    'Published'             => doc.get_pub_statement,
+    'Language'              => doc.get_language,
+    vocabulary_term('ISBN') => doc.export_isbn,
+    'Series Statement'      => doc.get_series,
+    'Contents'              => ul_list(doc.values_for(:description_display)),
+    'Keywords'              => :keywords_display,
+    'Date Indexed'          => show_date_indexed(doc),
+  )
+  fields_opts = { document: doc, fields: fields }
+
+  template_opts = title_opts.merge(fields_opts)
+
+  view_debug(__FILE__)
+-%>
+<%- if fields_only -%>
+  <%= render 'catalog/show/shared/fields', fields_opts %>
+<%- else -%>
+  <%= render 'catalog/show/template/basic', template_opts %>
+<%- end -%>

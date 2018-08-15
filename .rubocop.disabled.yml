@@ -1,0 +1,8 @@
+# .rubocop.disabled.yml
+#
+# Rather than segregating enabled/disabled cops -- the normal selection for
+# both of those is maintained in ".rubocop.enabled.yml".
+#
+# Only use this file for temporary overrides to avoid modifying the preferred
+# values defined in that file.
+

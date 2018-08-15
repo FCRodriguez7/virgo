@@ -1,0 +1,55 @@
+// app/assets/stylesheets/account/index.css.scss
+
+// ============================================================================
+// Account controller (/account/index).
+// ============================================================================
+
+.account-index-page {
+
+    .account-container {
+        padding: 1em 15px;
+    }
+
+    .vcard {
+        margin-top: 0.67em;
+        font-size:  15px;
+        color:      #555555;
+
+        p {
+            margin:         0;
+            padding-bottom: 0.25em;
+        }
+    }
+
+    .user-status {
+
+        margin-top:  1em;
+        line-height: 20px;
+
+        .user-status-name {
+            padding:     3px 7px;
+            font-weight: bold;
+            color:       #533902;
+            background:  #fccc69;
+        }
+
+        a {
+            margin-left:   1em;
+            border-bottom: 1px dotted #0f3e83;
+        }
+    }
+
+    .account-tasks {
+
+        margin-top:  2em;
+        line-height: 1.67em;
+        font-size:   15px;
+
+        .sub-heading {
+            width:         40%;
+            margin-bottom: 0.67em;
+            color:         #604927;
+            border-bottom: 1px solid #dddddd;
+        }
+    }
+}

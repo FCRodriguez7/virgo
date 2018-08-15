@@ -1,0 +1,72 @@
+<%# app/views/account_requests/start_hold.html.erb -%>
+<%-
+  set_meta_tags(title: 'Requests - Start Hold')
+
+  doc = document ||= @document
+  call_numbers   ||= nil
+  libraries      ||= nil
+  library_list   ||= @library_list
+
+  submit_label ||= 'Place Request'
+  submit_opt   ||= { class: 'btn primary' }
+
+  cancel_label ||= 'Cancel'
+  cancel_opt   ||= { class: 'btn', target: '_top' }
+  cancel_path  ||= in_popup? ? colorbox_close : catalog_path(params[:id])
+
+  form_opt ||= {}
+
+  flash.now[:error] ||=
+    if !call_numbers && !doc
+      'No item specified'
+    elsif !call_numbers && !(availability = doc.availability)
+      'Could not access item information'
+    elsif (call_numbers ||= availability.holdable_call_numbers).blank?
+      'Item has no holdable copies'
+    elsif !libraries && library_list.blank?
+      'Could not access library list'
+    elsif (libraries ||= library_list.names_and_ids).blank?
+      'No deliverable libraries in library list'
+    end
+
+  view_debug(__FILE__)
+-%>
+
+<div class="page-heading request-heading">
+  <h1 class="heading" id="page-heading">
+    Request this Item
+  </h1>
+</div>
+
+<div class="content-area" role="dialog" aria-labelledby="page-heading">
+
+  <%- if flash.now[:error].blank? -%>
+    <div class="request-container">
+      <%= form_tag(create_hold_account_request_path, form_opt) do %>
+
+        <%= hidden_field_tag(:id, params[:id]) %>
+
+        <div class="request-call-select">
+          <%- if call_numbers.size == 1 -%>
+            <%= call_numbers.first %>
+          <%- else -%>
+            <%= label_tag  :call_number, 'Please select an item:' %>
+            <%= select_tag :call_number, options_for_select(call_numbers) -%>
+          <%- end -%>
+        </div>
+
+        <p class="request-delivery-select">
+          <%= label_tag  :library_id, 'Deliver to:' %>
+          <%= select_tag :library_id, options_for_select(libraries) -%>
+        </p>
+
+        <p class="request-submit">
+          <%= submit_tag(submit_label, submit_opt) %>
+          <%= action_link(cancel_label, cancel_path, cancel_opt) %>
+        </p>
+
+      <%- end -%>
+    </div>
+  <%- end -%>
+
+</div>

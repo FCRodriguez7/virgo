@@ -1,0 +1,24 @@
+<%# app/views/shelf_browse/help/lcc/_impl.html.erb -%>
+<%-
+  # Locals are defined in shelf_browse/shared/_help_content.html.erb where this
+  # file is included.
+
+  view_debug(__FILE__)
+-%>
+
+<div class="<%= help_topic_css(:help_lcc_impl) -%>">
+  <h2>About the Implementation</h2>
+  <p>
+    The data used to build the tree in this viewer was generated from Microsoft
+    Word documents provided by the Library of Congress web site using a
+    custom-built script to transform them into a usable form.
+  </p>
+  <p>
+    Because the format of the documents was intended for printing and not for
+    machine analysis (and also because there were certain inconsistencies in
+    the definition of the call number ranges), some modifications were made to
+    make the outline into a true hierarchy.
+    If you detect errors or inconsistencies, please send
+    <%= sb_link[:feedback] -%> to let us know.
+  </p>
+</div>

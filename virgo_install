@@ -1,0 +1,590 @@
+#! /bin/bash
+#
+# virgo_install: install latest version of the Virgo application from GitHub
+#
+# Original:  Ray Lubinsky
+# Modifications:
+# 1/21/2015  Sue Richeson
+#   - Commented out the permissions and group checking/setting since this was
+#   failing all the time and not necessary after initial setup of a machine.
+#   (May return to this sometime.)
+#   - Added code to the actual Github checkout to determine if the user
+#   specified a branch or a tag with the -b switch.  A branch is treated
+#   differently than a tag: a tag requires making a local branch and no git
+#   pull operation; a branch requires just a git pull operation.
+#
+#==============================================================================
+# INITIALIZATIONS
+#==============================================================================
+
+#
+# Properties - application
+#
+APP_NAME='Virgo'
+ROOT_DIR='/usr/local/projects'
+APP_BASENAME='search'
+
+#
+# Properties - permissions
+#
+APP_USR='virgo'
+APP_GRP='sse'
+APP_PERM='2775'
+
+#
+# Properties - commands
+#
+CMD_GIT_BRANCH='git branch'
+CMD_GIT_CHECKOUT='git checkout'
+CMD_GIT_FETCH_TAGS='git fetch --tags'
+CMD_GIT_STATUS='git status'
+CMD_GIT_STASH='git stash'
+CMD_GIT_PULL='git pull'
+CMD_GIT_GC='git gc --auto'
+CMD_GIT_REV_PARSE='git rev-parse --symbolic-full-name'
+CMD_BUNDLE_CHECK='bundle check'
+CMD_BUNDLE_INSTALL='bundle install --without=development test'
+CMD_RAKE_COMPILE_ASSETS='bundle exec rake assets:clean assets:precompile'
+CMD_RAKE_COMPILE_ASSETS_DIRTY='bundle exec rake assets:precompile'
+
+#
+# Constants
+#
+declare -r PROG_NAME=`basename "$0"`
+declare -r EMAIL_DST_ADDR='xxx@virginia.edu'
+declare -r RUN_MODE_ABORT='abort'
+declare -r RUN_MODE_LOG='log'
+declare -r RUN_MODE_STATUS=''
+declare -r HELP="
+-b|--branch/tag     Specify the git branch or tag to install [required].
+-n|--no-restart     Do not restart $APP_NAME as the last step.
+-p|--no-precompile  Do not precompile assets (dev only).
+-c|--no-clean       Do not clean assets if precompiling (dev only).
+-e|--no-email       Do not send a log email.
+-v|--verbose        Display more information.
+-q|--quiet          Display less information.
+-d|--dry-run        Show the commands that would run but do not run them.
+-s|--sudo           Run as user root.
+-s $APP_USR         Run as user $APP_USR.
+--rootdir path      Redefine project root directory ($ROOT_DIR).
+--appdir name       Redefine application subdirectory ($APP_BASENAME).
+--user name         Redefine application directory owner ($APP_USR).
+--group name        Redefine application directory group ($APP_GRP).
+--perm digits       Redefine application directory permissions ($APP_PERM).
+
+Typical usage on opacdev.lib:  ./virgo_install -b <branch name>
+  Ex:  ./virgo_install -b develop
+
+Typical usage on production machine:  ./virgo_install -b <tag name>
+  Ex:  ./virgo_install -b 3.26.16
+
+"
+declare -r NL='
+'
+
+#
+# Variables
+#
+DRYRUN='false'
+VERBOSE='false'
+QUIET='false'
+RESTART='true'
+PRECOMPILE='true'                     # Should be true for production.
+CLEAN_ASSETS='true'                   # Should be true for production.
+SEND_EMAIL=''                         # Set below based on RAILS_ENV.
+GIT_BRANCH=''                         # Must be specified through command line.
+ERRORS=''
+
+#==============================================================================
+# FUNCTION DEFINITIONS
+#==============================================================================
+
+#------------------------------------------------------------------------------
+# Show output if not in quiet mode.
+#
+function Display() { # [--] message...
+  case "$1" in
+    -*) shift ;; # Ignore leading dash(es) used for appearance.
+  esac
+  [ "$QUIET" ] || echo "$@"
+}
+
+#------------------------------------------------------------------------------
+# Show output if in verbose mode.
+#
+function Announce() { # [--] message...
+  case "$1" in
+    -*) shift ;; # Ignore leading dash(es) used for appearance.
+  esac
+  [ "$VERBOSE" ] && echo "*** $@"
+}
+
+#------------------------------------------------------------------------------
+# Add the arguments to the global list of error messages.
+#
+function Error() { # message...
+  ERRORS+="${NL}ERROR: $@"
+  return 1
+}
+
+#------------------------------------------------------------------------------
+# Exit with an error message and error status.
+#
+function Abort() { # message...
+
+  local ERR="FATAL: $@"
+
+  if [ "$DRYRUN" ] ; then
+    Error "$ERR"
+  else
+    echo "$ERR"
+    exit 1
+  fi
+}
+
+#------------------------------------------------------------------------------
+# Change a permission value to its associated umask.
+#
+# If the value is not present as an argument then it is taken from stdin.
+#
+function ToUmask() { # permission_value
+  echo "$1" | sed 's/^.*\(...\)$/\1/' | tr '01234567' '76543210'
+}
+
+#------------------------------------------------------------------------------
+# Run a command unless in a dry-run.
+#
+# Normally a failure will result in aborting the script, but if the argument
+# -l is supplied then execution will continue.  If -s is supplied
+# then return status will be used (no abort or logging on failure).
+#
+function Run() { # [-l|-s|-d|-q|-n|...] [--] command [arguments...]
+
+  local MODE="$RUN_MODE_ABORT"  # Abort on failure by default.
+  local NO_EXECUTE="$DRYRUN"    # No execution if in dryrun by default.
+  local ECHO_COMMAND='true'
+  local OUTPUT_NL='true'
+
+  # Process control flags in leading arguments to the function.
+  while [ $# -gt 0 ] ; do
+    case "$1" in
+      -l) # Track failure and return with status (no abort).
+        MODE="$RUN_MODE_LOG"
+        ;;
+      -s) # Return with failure status (no abort, no log).
+        MODE="$RUN_MODE_STATUS"
+        ;;
+      -d) # Execute even if in a dry run.
+        NO_EXECUTE=''
+        ;;
+      -q) # Do not echo the command to run.
+        ECHO_COMMAND=''
+        ;;
+      -n) # Do not output a newline after running the command.
+        OUTPUT_NL=''
+        ;;
+      --) # End of leading options
+        break
+        ;;
+      -*) # Unknown flag is a programming error.
+        Abort "Run: unknown flag '$1'"
+        ;;
+      *)  # End of leading options
+        break
+        ;;
+    esac
+    shift
+  done
+  [ $# -eq 0 ] && Abort 'No command argument to Run function'
+
+  # Execute the command specified in the arguments.
+  [ "$ECHO_COMMAND" ] && echo "\$ $@"
+  [ "$NO_EXECUTE" ] || eval "$@"
+  local -i STATUS=$?
+
+  # Return or abort as appropriate.
+  if [ $STATUS -ne 0 ] ; then
+    local ERR="execution failed: $@"
+    case "$MODE" in
+      $RUN_MODE_ABORT) Abort "$ERR" ;;
+      $RUN_MODE_LOG)   Error "$ERR" ;;
+    esac
+  fi
+  [ "$OUTPUT_NL" ] && echo ''
+  return $STATUS
+}
+
+#------------------------------------------------------------------------------
+# Create a symbolic link unless it already exists.
+#
+# If there was a problem, note the failure in the $ERRORS list.
+#
+function Link() { # target_name [link_name]
+
+  local TGT="$1" # target_name
+  local LNK="$2" # link_name
+
+  # Validate arguments.
+  [ -z "$TGT" ] && Abort 'Link: missing target_name'
+  [ -z "$LNK" ] && LNK="$PWD/"`basename "$TGT"`
+
+  # Test for existence of link.
+  local CURRENT_TGT=`ls -ld "$LNK" 2>/dev/null | awk '{ print $NF }'`
+  local ERR=''
+  if [ "$CURRENT_TGT" == "$TGT" ] ; then
+    return # $LNK is already a symbolic link to $TGT.
+  elif [ -h "$LNK" ] ; then
+    ERR="already linked to '$CURRENT_TGT'"
+  elif [ -d "$LNK" ] ; then
+    ERR='directory exists'
+  elif [ -e "$LNK" ] ; then
+    ERR='file exists'
+  fi
+
+  # Create link.
+  local LINK_COMMAND="ln -s '$TGT' '$LNK'"
+  if [ "$ERR" ] ; then
+    ERR+=": remove then run $LINK_COMMAND"
+  elif Run -n -s $LINK_COMMAND 2>/dev/null ; then
+    return # Link created successfully.
+  else
+    ERR="failed to run $LINK_COMMAND"
+  fi
+
+  # Return with failure status.
+  Error "$LNK: $ERR"
+}
+
+#------------------------------------------------------------------------------
+# Send an email.
+#
+# Message body is taken from stdin.
+#
+function Email() { # [subject] [to]
+
+  local SUBJECT="$1"
+  local DST_ADDR="$2"
+
+  # Validate arguments.
+  [ "$SUBJECT" ]  || SUBJECT="$PROG_NAME"
+  [ "$DST_ADDR" ] || DST_ADDR="$EMAIL_DST_ADDR"
+  local HOST_NAME=`echo $HOSTNAME | sed 's/\..*$//'`
+  local FROM_NAME="Deploy $HOST_NAME <$DST_ADDR>"
+
+  # Pre-process mail body from stdin to remove leading white space; if in a
+  # dry-run, just send the mail body to stdout.
+  if [ "$DRYRUN" ] ; then
+    echo "\$ mail -s \"$SUBJECT\" -r \"$FROM_NAME\" $DST_ADDR <<-EOF"
+    cat
+    echo "EOF$NL"
+  else
+    sed 's/^ *|//' | mail -s "$SUBJECT" -r "$FROM_NAME" "$DST_ADDR"
+  fi
+}
+
+#==============================================================================
+# MAIN PROCESSING
+#
+# Process command-line arguments.
+#==============================================================================
+
+declare -A ARGS
+declare -i i=0
+while [ $# -gt 0 ] ; do
+  # Get the current argument.
+  ARG="$1"
+  ARGS[$i]="$ARG"
+  i=`expr $i + 1`
+  shift
+
+  # Look ahead to the next argument; if it is not a flag then get it.
+  NEXT_ARG="$1"
+  case "$NEXT_ARG" in
+    -*) # Next argument is a flag.
+      NEXT_ARG=''
+      ;;
+    *) # Next argument is not a flag.
+      ARGS[$i]="$NEXT_ARG"
+      i=`expr $i + 1`
+      shift
+      ;;
+  esac
+
+  # Process the current flag argument.
+  case "$ARG" in
+    '') # Ignore blank arguments.
+      ;;
+    -h|--help) # Show help and exit.
+      exec echo "$HELP"
+      ;;
+    -b|--branch) # Specify the git branch to install.
+      GIT_BRANCH="$NEXT_ARG"
+      ;;
+    -n|--no-restart) # Do not restart the application.
+      RESTART='false'
+      ;;
+    -p|--no-precompile) # Do not precompile assets.
+      PRECOMPILE='false'
+      ;;
+    -c|--no-clean) # Do not start fresh when precompiling assets.
+      CLEAN_ASSETS='false'
+      ;;
+    -e|--no-email) # Do not send a log email.
+      SEND_EMAIL='false'
+      ;;
+    -v|--verbose) # Display more information.
+      VERBOSE='true'
+      ;;
+    -q|--quiet) # Display less information.
+      QUIET='true'
+      ;;
+    -d|--dry-run) # Show the commands that would run but do not run them.
+      DRYRUN='true'
+      ;;
+    -s|--sudo) # Run as root or other user.
+      if [ "$NEXT_ARG" ] ; then
+        SUDO_USER="$NEXT_ARG"
+      else
+        SUDO_USER='root'
+      fi
+      EFFECTIVE_USER=`id -un`
+      if [ "$EFFECTIVE_USER" != "$SUDO_USER" ] ; then
+        set -- ${ARGS[@]} "$@"
+        exec sudo -u "$SUDO_USER" -g "$APP_GRP" -- "$0" "$@"
+      fi
+      ;;
+    --rootdir) # Redefine project root directory.
+      ROOT_DIR="$NEXT_ARG"
+      ;;
+    --appdir) # Redefine application subdirectory.
+      APP_BASENAME="$NEXT_ARG"
+      ;;
+    --user) # Redefine application directory owner.
+      APP_USR="$NEXT_ARG"
+      ;;
+    --group) # Redefine application directory group.
+      APP_GRP="$NEXT_ARG"
+      ;;
+    --perm) # Redefine application directory permissions.
+      APP_PERM="$NEXT_ARG"
+      ;;
+    -*) # No other flag is expected.
+      Abort "Unknown flag '$ARG'; see '$PROG_NAME --help'"
+      ;;
+    *)  # No other arguments are expected.
+      Abort "Unexpected argument '$ARG'; see '$PROG_NAME --help'"
+      ;;
+  esac
+done
+
+# Validate settings.
+[ "$GIT_BRANCH"   ] || Abort 'Missing required flag -b to specify git branch'
+[ "$ROOT_DIR"     ] || Abort 'Missing argument to --rootdir'
+[ "$APP_BASENAME" ] || Abort 'Missing argument to --appdir'
+[ "$APP_USR"      ] || Abort 'Missing argument to --user'
+[ "$APP_GRP"      ] || Abort 'Missing argument to --group'
+[ "$APP_PERM"     ] || Abort 'Missing argument to --perm'
+
+# Finalize variable values.
+APP_DIR="$ROOT_DIR/$APP_BASENAME"
+
+if [ "$SEND_EMAIL" == 'false' ] ; then
+  SEND_EMAIL=''
+elif [ "$SEND_EMAIL" == '' ] ; then
+    [ "$RAILS_ENV" ] || RAILS_ENV=`$APP_DIR/script/rails_env 2>/dev/null`
+    case "$RAILS_ENV" in
+      search_*) SEND_EMAIL='true' ;;
+      *)        SEND_EMAIL='' ;;
+    esac
+fi
+
+[ "$RESTART"      == 'false' ] && RESTART=''
+[ "$PRECOMPILE"   == 'false' ] && PRECOMPILE=''
+[ "$CLEAN_ASSETS" == 'false' ] && CLEAN_ASSETS=''
+[ "$VERBOSE"      == 'false' ] && VERBOSE=''
+[ "$QUIET"        == 'false' ] && QUIET=''
+[ "$DRYRUN"       == 'false' ] && DRYRUN=''
+
+if [ "$VERBOSE" ] ; then
+  QUIET=''
+  CMD_GIT_STATUS+=' --verbose'
+fi
+
+#==============================================================================
+# Prepare for file creation by setting umask.
+#
+# Unfortunately, you can't force the setgid bit this way so that has to be
+# ensured later in the script after the "git pull" occurs.
+#==============================================================================
+
+APP_UMASK=`ToUmask "$APP_PERM"`
+Announce -- "Setting umask '$APP_UMASK'"
+umask $APP_UMASK
+[ "$VERBOSE" ] && Display ''
+
+#==============================================================================
+# Change to the root directory of the project.
+#==============================================================================
+
+Announce -- "Change to directory '$APP_DIR'"
+cd "$APP_DIR" || Abort "Could not change to directory '$APP_DIR'"
+[ "$VERBOSE" ] && Display ''
+
+#==============================================================================
+# Update from GitHub.
+#==============================================================================
+
+Announce -- 'Update git tags'
+Run $CMD_GIT_FETCH_TAGS
+
+Announce -- 'Stash locally-changed files'
+# If there is a problem with git branch, fail now before creating a stash:
+GIT_BRANCHES=`Run -q -d $CMD_GIT_BRANCH 2>/dev/null`
+Run $CMD_GIT_STASH
+
+# Send an email to the "error" email destination to serve as a marker.  Error
+# emails between this one and the system start email are more likely to be due
+# to the application files being in flux as opposed to true operational errors.
+if [ "$SEND_EMAIL" ] ; then
+  Announce -- "Deployment email to $EMAIL_DST_ADDR"
+  Email "INSTALLING $APP_NAME ON $HOSTNAME" <<-EOF
+    |INSTALLING $APP_NAME AT `date`
+    |  HOSTNAME   = $HOSTNAME
+    |  GIT_BRANCH = $GIT_BRANCH
+    |  COMMAND    = $PROG_NAME ${ARGS[@]}
+EOF
+fi
+
+Announce -- "Checkout the git branch '$GIT_BRANCH' if not already checked out"
+[ "$VERBOSE" ] && Display "Branches:$NL$GIT_BRANCHES"
+CURR_GIT_BRANCH=`echo "$GIT_BRANCHES" | sed -n '/^\*/s/\* *//p'`
+GIT_REFNAME=`Run -q -d $CMD_GIT_REV_PARSE $GIT_BRANCH 2>/dev/null`
+CURR_GIT_REF_HEAD=`echo "$GIT_REFNAME" | sed -n '/refs\/heads/p'`
+
+# Find out if we really have a branch or a tag. Refnames for git branches begin
+# with 'refs/heads' and for git tags begin with 'refs/tags'.  The variable will
+# contain the refname for a branch if it is a branch, or nothing if it is a
+# tag.
+if [ "$GIT_BRANCH" == "$CURR_GIT_BRANCH" ] ; then
+  Display "Current git branch '$GIT_BRANCH' is already checked out.$NL"
+else
+  Run $CMD_GIT_CHECKOUT "$GIT_BRANCH"
+  # SPR 4/9/2015  I never understood why a local branch had to be created
+  #               during deployment.  Now it is a problem if you try to run the
+  #               script using the same tag as previously.
+  # If the checkout was of a tag, create a local branch for the tag.
+  #if [ "$CURR_GIT_REF_HEAD" != "$GIT_REFNAME" ] ; then
+  #  Run $CMD_GIT_CHECKOUT -b "$GIT_BRANCH"
+  #fi
+fi
+
+Announce -- 'Show git status'
+[ -z "$QUIET" ] && Run -d $CMD_GIT_STATUS
+
+# If the checkout was of a branch, pull latest from remote for that branch.
+if [ "$CURR_GIT_REF_HEAD" == "$GIT_REFNAME" ] ; then
+  Announce -- 'Get additions/deletions/modifications from GitHub'
+  Run $CMD_GIT_PULL
+fi
+
+Announce -- 'Optimize local git repository'
+Run $CMD_GIT_GC
+
+#==============================================================================
+# Ensure that gems are up-to-date.
+#==============================================================================
+
+Announce -- 'Install new/updated gems if needed'
+Run -s -d $CMD_BUNDLE_CHECK || Run $CMD_BUNDLE_INSTALL
+
+#==============================================================================
+# Pre-compile assets
+#==============================================================================
+
+if [ "$PRECOMPILE" ] ; then
+  Announce -- 'Pre-compile assets'
+  if [ "$CLEAN_ASSETS" ] ; then
+    Run $CMD_RAKE_COMPILE_ASSETS
+  else
+    Run $CMD_RAKE_COMPILE_ASSETS_DIRTY
+  fi
+fi
+
+#==============================================================================
+# 1/21/2015 SPR  Skipping permissions and ownership checks as they all fail and
+#                are unnecessary.
+#==============================================================================
+# Ensure that files and directories have the right permissions, group ownership
+# and setgid bit.
+#==============================================================================
+
+# Display -- "Verifying permissions...$NL"
+
+# Announce -- 'Checking group ownership'
+# Run -l chgrp -cR "$APP_GRP" "$APP_DIR"
+
+# Announce -- 'Checking directory permissions'
+# Run -l chmod -cR 'ug=rwx,g+s,o=rx' "$APP_DIR"
+
+# Announce -- 'Checking script/* executables'
+# Run -l chmod -cR 'ug=rwx,g+s,o=rx' "$APP_DIR/script"
+
+# Announce -- 'Checking file permissions'
+# Run -l chmod -cR 'ug+rw,o+r' "$APP_DIR"
+
+#==============================================================================
+# Ensure that symbolic links are in place and valid.
+#==============================================================================
+
+Display -- 'Checking public/* symbolic links...'
+Link /lib_content27/Sitemaps/sitemap_index.xml "$APP_DIR/public/sitemap.xml"
+Link /lib_content27/Sitemaps                   "$APP_DIR/public/Sitemaps"
+Link /lib_content/Virgobeta/bookcovers      "$APP_DIR/public/images/bookcovers"
+Display ''
+
+Display -- 'Verifying presence of required NFS mounts...'
+ERR_LINES=`
+  mount -t nfs |
+  awk '
+    BEGIN {
+      imax = 0
+      local[imax]  = "/lib_content"
+      remote[imax] = "/lib_content0$"
+      imax++
+      local[imax]  = "/lib_content27"
+      remote[imax] = "/lib_content27$"
+    }
+    NF >= 6 {
+      for (i = 0; i <= imax; i++) {
+        if (($3 == local[i]) && ($1 ~ remote[i])) {
+          found[i] = 1
+        }
+      }
+    }
+    END {
+      for (i = 0; i <= imax; i++) {
+        if (!found[i]) {
+          print local[i] " is not NFS-mounted"
+        }
+      }
+    }
+  '
+`
+for ERR in "$ERR_LINES" ; do
+  [ -z "$ERR" ] && continue # Skip blank lines.
+  echo "  $ERR"
+  Error "$ERR"
+done
+Display ''
+
+#==============================================================================
+# Restart the application.
+#==============================================================================
+
+Announce -- 'End of script'
+if [ "$ERRORS" ] ; then
+  Display "Quitting with error(s):$ERRORS$NL"
+elif [ "$RESTART" ] ; then
+  Display "Restarting $APP_NAME..."
+  Run touch "$APP_DIR/tmp/restart.txt"
+fi

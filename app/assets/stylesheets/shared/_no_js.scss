@@ -1,0 +1,32 @@
+// app/assets/stylesheets/shared/_no_js.scss
+
+.no-js-notice {
+    display: none;
+}
+
+.no-js {
+    .no-js-notice {
+        display:     block;
+        padding:     10px;
+        text-align:  center;
+        font-size:   16px;
+        font-weight: 300;
+        color:       #4a4a4a;
+    }
+
+    .which-search {
+        display: none;
+    }
+
+    .elsewhere-heading {
+        font-size: 17px;
+    }
+
+    .article-results-container {
+        background: white;
+    }
+
+    .adv-search-facets ul ul {
+        display: block;
+    }
+}

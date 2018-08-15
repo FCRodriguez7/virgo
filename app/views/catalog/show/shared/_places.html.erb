@@ -1,0 +1,27 @@
+<%# app/views/catalog/show/shared/_places.html.erb -%>
+<%-
+  doc = document ||= @document
+  place_names ||= doc && doc.get_place_names
+  return if place_names.blank?
+
+  heading ||= 'Geographic Place'
+  heading = heading.pluralize unless place_names.size == 1
+
+  url_params = params_for_facet_values
+
+  view_debug(__FILE__)
+-%>
+
+<div class="box related-places">
+  <h2><%= heading %></h2>
+  <ul>
+    <%- place_names.each do |place| -%>
+      <%- link_label = place.html_safe -%>
+      <%- link_opt   = add_facet(:region_facet, place, url_params) -%>
+      <%- link_path  = portal_index_path(link_opt) -%>
+      <li>
+        <%= link_to link_label, link_path %>
+      </li>
+    <%- end -%>
+  </ul>
+</div>

@@ -1,0 +1,131 @@
+<%# app/views/catalog/_sort_and_per_page.html.erb -%>
+<%-
+  # Overrides Blacklight app/views/catalog/_sort_and_per_page.html.erb
+
+  response    ||= @response
+  browse_mode ||= params[:browse_mode]
+
+  total       = hit_count(response, browse_mode)
+  has_results = total.nonzero?
+  in_folder   = (params[:controller] == 'folder')
+
+  link =
+    if in_folder
+      folders_path
+    elsif browse_mode
+      classic_browse_path
+    else
+      portal_index_path
+    end
+  omit_keys = [:utf8, :page]
+
+  # === Library Menu
+  # The onchange event is handled in app/assets/javascripts/feature/classic.
+  # NOTE: This code doesn't send the proper URL query parameters for the facet
+  # value but that is fixed via AccessAnyConcern#cleanup_parameters.
+  library_menu =
+    if classic_lens?
+      all_libraries = UVA::Helper::Library::ALL_LIBRARIES
+      uva_libraries = UVA::Helper::Library::UVA_LIBRARIES
+      uva_online    = UVA::Helper::Library::UVA_ONLINE_ONLY
+      libraries  = []
+      libraries << ['All Sources',              all_libraries]
+      libraries << ['UVA Libraries On-Grounds', uva_libraries]
+      libraries << ['UVA Online Only',          uva_online]
+      libraries += solr_libraries.map { |name| [name] * 2 }
+      if libraries.present?
+        selected = params[:f_inclusive].presence
+        selected &&= selected[:library_facet].presence
+        selected &&=
+          (uva_libraries if selected[uva_libraries]) ||
+          (uva_online    if selected[uva_online]) ||
+          selected.keys.first
+        options  = options_for_select(libraries, selected)
+        menu_opt = { title: 'Limit results to items from this library only.' }
+        select_tag('f_inclusive[library_facet][]', options, menu_opt)
+      end
+    end
+  library_menu_omit_keys = omit_keys + [{ :f_inclusive => :library_facet }]
+
+  # === Sort-by Menu
+  sort_menu =
+    if has_results || classic_lens?
+      no_search = null_search? && advanced_search_values.blank?
+      selected = [get_current_sort_key]
+      selected << { disabled: relevancy_sort_key } if no_search
+      tooltip =
+        if no_search
+          'Sort by relevancy is available only when search terms are present.'
+        else
+          'Choose how results are ordered.'
+        end
+      menu_opt = {
+        title:    tooltip,
+        onchange: 'this.form.submit()'
+      }
+      options = options_for_select(sort_fields, selected)
+      select_tag(:sort_key, options, menu_opt)
+    end
+  sort_menu_omit_keys = omit_keys + [:sort, :sort_key]
+
+  # === Per-page Menu
+  per_page_menu =
+    if has_results || classic_lens?
+      page_sizes = articles_lens? ? response.per_page_choices : %w(20 50 100)
+      options    = options_for_select(page_sizes, get_current_per_page)
+      menu_opt = {
+        title:    'Number of results to display per page',
+        onchange: 'this.form.submit()'
+      }
+      select_tag(:per_page, options, menu_opt)
+    end
+  per_page_menu_omit_keys = omit_keys + [:per_page]
+
+  view_debug(__FILE__)
+-%>
+
+<div class="search-tools tools clearfix<%= ' browse' if browse_mode -%>">
+
+  <div class="library-form-container">
+    <%- if library_menu -%>
+      <%= form_tag(link, method: :get, class: 'library') do %>
+        <%= label_tag(:library) do %>
+          Library <%= library_menu %>
+        <%- end -%>
+        <%= search_as_hidden_fields(omit_keys: library_menu_omit_keys) %>
+        <noscript><%= submit_tag 'f_inclusive[library_facet][]' %></noscript>
+      <%- end -%>
+    <%- end -%>
+  </div>
+
+  <div class="sort-form-container">
+    <%- if sort_menu -%>
+      <%= form_tag(link, method: :get, class: 'sort') do %>
+        <%= label_tag(:sort_key) do %>
+          Sort by <%= sort_menu %>
+        <%- end -%>
+        <%= search_as_hidden_fields(omit_keys: sort_menu_omit_keys) %>
+        <noscript><%= submit_tag 'sort results' %></noscript>
+      <%- end -%>
+    <%- end -%>
+  </div>
+
+  <div class="per-page-container">
+    <%- if per_page_menu -%>
+      <%= form_tag(link, method: :get, class: 'per_page') do %>
+        <%= label_tag(:per_page) do %>
+          Show <%= per_page_menu %> per page
+        <%- end -%>
+        <%= search_as_hidden_fields(omit_keys: per_page_menu_omit_keys) %>
+        <noscript><%= submit_tag 'update' %></noscript>
+      <%- end -%>
+    <%- end -%>
+  </div>
+
+  <%- unless print_view? -%>
+    <%= render '/catalog/document_actions' unless in_folder %>
+    <%= print_view_link unless total.zero? %>
+    <%= rss_link unless total.zero? %>
+  <%- end -%>
+
+</div>

@@ -1,0 +1,2058 @@
+// app/assets/stylesheets/shared/styles.css.scss
+
+* {
+    margin:  0;
+    padding: 0;
+}
+
+html body {
+    margin:           0;
+    font:             13px/1.231 "Helvetica Neue", Arial, sans-serif;
+    background-color: white;
+}
+
+input[type="radio"]:focus {
+    outline-offset: 3px;
+}
+
+.virgo-banner > a {
+    float: left;
+}
+
+// "Limit results by" search results sidebar.
+.facet-selections {
+
+    color: #0a3685;
+
+    .facet-menu {
+
+        padding: 10px 0;
+
+        $border-expansion: 4px; // To increase click target area.
+
+        .facet-menu-heading {
+
+            height:      30px;
+            padding:     0 12px;
+            line-height: 30px;
+            font-weight: bold;
+
+            &.active { cursor: pointer; }
+        }
+
+        .facet-menu-list {
+
+            padding:     0 12px 2px;
+            line-height: 25px;
+            color:       black;
+
+            .facet-value {
+
+                display:     block;
+                line-height: 1.67em;
+                color:       #4d4d4d;
+
+                a {
+
+                    @include box-decoration(clone);
+
+                    margin-left:     -$border-expansion;
+                    margin-right:    -($border-expansion / 2);
+                    text-decoration: none;
+                    white-space:     pre-wrap;
+                    color:           #0a3685;
+                    border:          $border-expansion solid transparent;
+
+                    &:focus,
+                    &:hover {
+                        text-decoration:  none;
+                        color:            black;
+                        background-color: $virgo-link-hover;
+                    }
+
+                    &:focus,
+                    &:hover:focus {
+                        outline:        thin dotted black;
+                        outline-offset: -1px;
+                    }
+                }
+            }
+        }
+
+        .facet-menu-see-all {
+
+            @include user-select(none);
+
+            padding-top:  3px;
+            padding-left: 130px;
+        }
+
+        a.facet-list-link {
+
+            margin:      -$border-expansion;
+            white-space: pre-wrap;
+            color:       #2f3e6a;
+            border:      $border-expansion solid transparent;
+
+            &:focus,
+            &:hover:focus {
+                color:            black;
+                background-color: $virgo-link-hover;
+                outline:          thin dotted black;
+                outline-offset:   -1px;
+            }
+        }
+    }
+}
+
+.item-heading,
+.list-heading,
+.tool-heading,
+.request-heading,
+.adv-search-heading {
+    padding-top: 1.2em;
+    font-size:   19px;
+    color:       #333333;
+}
+
+.list-heading a {
+    text-decoration: underline;
+    color:           #f0f5ff;
+}
+
+.video-header,
+.recently-added-header {
+
+    width:        100%;
+    margin:       50px auto 0;
+    text-align:   center;
+    font-family:  "Helvetica Neue", Arial, sans-serif;
+    font-size:    16px;
+    font-weight:  bold;
+    color:        #464646;
+
+    .divider {
+        display: block;
+        height:  auto;
+        margin:  10px auto 0;
+    }
+}
+
+.recently-added-items {
+
+    height:       auto;
+    width:        100%;
+    margin-right: auto;
+    margin-left:  auto;
+    margin-top:   10px;
+
+/*
+    // NOTE: For Firefox the following settings work as intended, but webkit-
+    // based engines don't properly implement "space-evenly".
+    .recently-added-row {
+        display:         flex;
+        justify-content: space-evenly;
+        width:           100%;
+    }
+*/
+    .recently-added-row {
+        @include flex-box(row, space-around);
+        width:        90%;
+        margin-left:  auto;
+        margin-right: auto;
+    }
+}
+
+.special-collections-content {
+    padding-top:  1em;
+    margin-right: auto;
+    margin-left:  auto;
+    line-height:  18px;
+    font-family:  "Helvetica Neue", Arial, sans-serif;
+    font-size:    14px;
+}
+
+option {
+
+    padding-left: 4px;
+
+    &:first-of-type { margin-top:    1px; }
+    &:last-of-type  { margin-bottom: 2px; }
+
+    &:disabled {
+        cursor: not-allowed;
+        color:      #111111;
+        background: #eeeeee;
+    }
+}
+
+.result-nav.top {
+
+    margin-left: 15px;
+
+    a {
+        text-decoration: none;
+        color:           #0a3685;
+    }
+}
+
+.document {
+
+    position: relative;
+
+    &.clearfix { margin-bottom: 2em; }
+}
+
+.article-page .document {
+    b, strong { font-weight: normal; }
+}
+
+.preview-thumbnail {
+    width:     50px;
+    max-width: 110px;
+}
+.show-page .image-collection.preview-thumbnail {
+
+    float:          left;
+    width:          153px;
+    height:         125px;
+    margin-bottom:  15px;
+    padding:        10px;
+    line-height:    125px;
+    text-align:     center;
+    vertical-align: middle;
+    background:     #f2f2f2;
+    border-right:   1px solid #dddddd;
+
+    &.first { border-left: 1px solid #dddddd; }
+}
+
+.item-identifier-fields {
+
+    padding-top:    10px;
+    padding-bottom: 10px;
+
+    .title-field {
+        font-size:   25px;
+        font-family: "Cardo", "Times New Roman", Times, serif;
+        font-weight: 700;
+        color:       #604927;
+        text-shadow: 0 1px 3px #eeeeee;
+    }
+}
+
+.tools.box a {
+    color:           #0a3685;
+    text-decoration: none;
+}
+
+.terms-of-use-link {
+    padding-left:    1em;
+    font-size:       11px;
+    color:           #999999;
+}
+
+// Availability and Holdings
+// -----------------------------------------------------------
+
+.map-indicator,
+.availability-indicator,
+.holding-library-name,
+.location-text {
+    display: inline-block;
+}
+
+.map-indicator,
+.availability-indicator {
+
+    margin:         0 0.5em 0 0;
+    padding:        2.5px 4px 1.5px 4px;
+    vertical-align: middle;
+    text-align:     center;
+    text-transform: uppercase;
+    white-space:    nowrap;
+    font-size:      10px;
+    font-weight:    bold;
+    border-radius:  4px;
+    cursor:         default;
+
+    & {
+        color:        $avl-color;
+        background:   $avl-bg-color;
+        border:       1px solid $avl-border-color;
+    }
+
+    &.available {
+        color:        $available-color;
+        background:   $available-bg-color;
+        border-color: $available-border-color;
+    }
+
+    &.non-circ,
+    &.no-map {
+        color:        $non-circ-color;
+        background:   $non-circ-bg-color;
+        border-color: $non-circ-border-color;
+    }
+
+    &.active:hover {
+
+        border-style: outset;
+        outline:      none;
+        cursor:       pointer;
+
+        & {
+            color:            $avl-hover-color;
+            background-color: $avl-hover-bg-color;
+            border-color:     $avl-hover-border-color;
+        }
+
+        &.available {
+            color:            $available-hover-color;
+            background-color: $available-hover-bg-color;
+            border-color:     $available-hover-border-color;
+        }
+
+        &.non-circ {
+            color:            $non-circ-hover-color;
+            background-color: $non-circ-hover-bg-color;
+            border-color:     $non-circ-hover-border-color;
+        }
+    }
+}
+
+.availability-indicator {
+    &:focus { outline-offset: 3px; }
+}
+
+.holding-data {
+    .map-indicator,
+    .availability-indicator {
+        display: inline-block;
+        margin:  1px 0;
+    }
+}
+
+.shelving-map {
+
+    @include user-select(none);
+
+    display:        inline-block;
+    vertical-align: text-top;
+
+    .map-link {
+        margin-left:  0;
+        border-width: 4px 0;
+    }
+}
+
+.results .single-copy {
+
+    $avl-min: 11px;
+
+    display:     inline;
+    width:       $avl-min;
+    min-width:   $avl-min;
+    min-height:  $avl-min;
+    line-height: $avl-min;
+
+    .loader {
+        display:    inline-block;
+        height:     auto;
+        min-width:  $avl-min;
+        min-height: $avl-min;
+        margin:     0;
+    }
+}
+
+.results .multiple-copies {
+    color:  $virgo-link-color;
+    cursor: pointer;
+}
+
+.holding h3 {
+    clear:       both;
+    float:       left;
+    width:       140px;
+    padding-top: 0;
+    line-height: 150%;
+    font-size:   14px;
+    font-weight: bold;
+    color:       #333333;
+}
+
+.availability-loader {
+    margin-top:  10px;
+    margin-left: 330px;
+}
+
+.item-availability {
+    position:      relative;
+    border-bottom: 1px solid $holding-border-color;
+}
+
+.item-availability,
+.availability-popup {
+    .holding div.holding-group,
+    .online-holding {
+        @include flex-box(column);
+        width:       auto;
+        padding-top: 12px;
+    }
+}
+
+.item-availability .online-holding {
+
+    padding-top:    5px;
+    padding-bottom: 1em;
+
+    &:first-of-type {
+        margin-top: 0.5em;
+    }
+
+    &:last-of-type {
+        margin-bottom:  0.5em;
+        padding-bottom: 0;
+    }
+
+    $border-expansion:  4px; // To increase click target area.
+
+    a {
+        @include width-fit-content;
+
+        margin: -#{$border-expansion};
+        border: $border-expansion solid transparent;
+
+        &:focus { outline-offset: -1px; }
+    }
+
+    a + a {
+        margin-top: 0.25em;
+    }
+}
+
+.item-availability .google-preview,
+.item-availability .request-buttons,
+.item-availability .online-availability,
+.item-availability .physical-availability div.holding,
+.availability-popup div.holding {
+    width:        auto;
+    padding:      $holding-hspace-edge;
+    background:   #fef7e5;
+    border-left:  1px solid $holding-border-color;
+    border-right: 1px solid $holding-border-color;
+}
+
+.item-availability .google-preview,
+.item-availability .request-buttons,
+.item-availability .online-availability {
+    padding-left: 0;
+}
+
+.item-availability,
+.availability-popup {
+
+    .holding-group .home-location {
+        clear:           both;
+        width:           100%;
+        padding-bottom:  0.5em;
+        line-height:     16px;
+        text-transform:  uppercase;
+        text-decoration: underline;
+        font-size:       11px;
+        font-weight:     bold;
+        color:           #555555;
+    }
+
+    .holding-group .summary-text {
+        clear:         none;
+        width:         auto;
+        padding-right: 0.5em;
+    }
+
+    .holding-group .summary-note {
+        width:      auto;
+        font-style: italic;
+        color:      #444444;
+    }
+
+    .summary-group {
+
+        width:         auto;
+        padding-right: 5px;
+        line-height:   20px;
+
+        &.note-entry {
+            clear: both;
+            width: 525px;
+        }
+    }
+
+    .summary-group .summary-call-number {
+        width:       530px;
+        font-weight: bold;
+        color:       #444444;
+    }
+
+    .request-buttons {
+
+        @include flex-box(row, flex-end);
+        @include user-select(none);
+
+        width:      580px;
+        height:     auto;
+        padding:    0;
+        position:   absolute;
+        top:        0;
+        right:      0;
+        text-align: right;
+        background: transparent;
+        border:     none;
+
+        // Button-ize the Special Collections request link.
+        &.sc-request-link a {
+            display:        inline-block;
+            margin:         0.5em 0.5em 0.5em 0;
+            padding:        1px 4px;
+            text-align:     center;
+            background:     whitesmoke;
+            border-radius:  8px;
+        }
+    }
+}
+
+.holding.health_sciences .summary-note {
+    display: none !important;
+}
+
+.item-availability .physical-availability {
+    width:   700px;
+    padding: 0;
+}
+
+.availability-popup div.holding {
+
+    @include flex-box(column);
+
+    .holding-group {
+        padding-left: 140px; // same as width for .holding h3
+    }
+}
+
+.item-availability .google-preview      h3,
+.item-availability .online-availability h3 {
+    display:       block;
+    width:         15%;
+    @include min-width-fit-content(25%);
+    padding-top:   9px;
+    padding-left:  8px;
+    padding-right: 20px;
+}
+
+.google-preview {
+    a {
+        display: inline-block;
+    }
+    a.full-preview:after {
+        padding-left: 0.75em;
+        content:      "(full text)";
+    }
+}
+
+.recall {
+
+    font-weight: bold;
+
+    &.btn {
+
+        display:       block;
+        margin:        0.5em 0.5em 0.5em 0;
+        line-height:   80%;
+        color:         #442200 !important; // Same as .search-switch
+        border-radius: 6px;
+
+        &:focus { outline: thin dashed black; }
+    }
+}
+
+.holdings {
+
+    clear:         both;
+    width:         100%;
+    margin-bottom: 0;
+    border-left:   1px solid $holding-border-color;
+    border-right:  1px solid $holding-border-color;
+
+    tr {
+        &.even { background: #f2f2f2; }
+        &.odd  { background: #e5e5e5; }
+    }
+
+    th {
+        padding:        $holding-vspace-th 0;
+        font-weight:    bold;
+        color:          #142b4d;
+        background:     $holding-header-color;
+        border-bottom:  1px solid #d6ceb7;
+    }
+
+    td {
+        padding:        $holding-vspace-td 0;
+        color:          #061e42;
+        border:         none;
+    }
+
+    th, td {
+
+        padding-left:   $holding-hspace;
+
+        &:first-of-type { padding-left:  $holding-hspace-edge; }
+        &:last-of-type  { padding-right: $holding-hspace-edge; }
+    }
+
+    // Displayed in place of the holdings table when no data is available.
+    .no-info {
+        font-style: italic;
+        text-align: center;
+    }
+}
+
+.map-link {
+
+    $border-expansion: 4px; // To increase click target area.
+
+    display:            inline;
+    width:              21px;
+    margin:             -$border-expansion;
+    padding-bottom:     2px;
+    color:              transparent !important;
+    background:         image-url('map_icon.png') no-repeat scroll 6px 0
+                        transparent !important;
+    border:             $border-expansion solid transparent;
+    border-left-width:  0;
+    border-right-width: 0;
+
+    &:focus { outline-offset: -1px; }
+}
+
+@import "shared/datatables";
+
+.details {
+    .metadata dt { font-weight: bold; }
+    dd { margin-bottom: 4px; }
+}
+
+.availability a {
+
+    $border-expansion: 2px; // To increase click target area.
+
+    margin:          -$border-expansion;
+    border:          $border-expansion solid transparent;
+    text-decoration: none;
+}
+
+.sort-form-container,
+.library-form-container,
+.per-page-container {
+    font-weight: bold;
+    color:       #444444;
+}
+
+.select-clear-all {
+
+    @include user-select(none);
+
+    float:       left;
+    margin:      2px 14px;
+    position:    relative;
+    z-index:     30;
+    line-height: 13px;
+    color:       #cccccc;
+
+    a {
+        padding:       5px 4px 2px 20px;
+        font-weight:   bold;
+        border-radius: 4px 4px 0 0;
+        border-left:   1px solid #a4c6ef;
+        border-right:  1px solid #a4c6ef;
+        border-top:    1px solid #a4c6ef;
+        background:    $star-add-all-image no-repeat scroll 2px 50% #eef5fb;
+
+        &:hover { color: black; }
+    }
+}
+
+// Dropdown menus for "Starred Items" and "Item Actions".
+.action-list-container {
+
+    display:     inline-block;
+    width:       170px;
+    height:      22px;
+    margin:      0;
+    padding:     0;
+    position:    relative;
+    top:         0;
+    right:       0;
+    z-index:     40;
+    font-weight: bold;
+
+    .action-list {
+
+        height:     22px;
+        z-index:    30;
+        background: $star-lit-image no-repeat scroll 2% 75% transparent;
+        cursor:     default;
+
+        &:focus {
+            border-bottom:  2px solid transparent;
+            outline-offset: 4px;
+        }
+    }
+
+    // Always-visible menu button.
+    .list-title {
+
+        width: calc(100% - #{$sprite-padding-left} - #{$sprite-padding-right});
+
+        padding:       6px $sprite-padding-right 6px $sprite-padding-left;
+        position:      absolute;
+        top:           0;
+        right:         0;
+        z-index:       30;
+        line-height:   13px;
+        color:         #0f3e83;
+        border-bottom: 1px solid #b6bfce;
+        background:    $menu-down-icon no-repeat scroll 100% 50% transparent;
+        box-shadow:    0 0 3px 0 #b6bfce;
+    }
+
+    // Drop-down menu list.
+    .list-body {
+
+        width:         calc(100% - 1px);
+        position:      absolute;
+        top:           26px;
+        right:         0;
+        z-index:       20;
+        border-bottom: 1px solid #eedddd;
+        border-left:   1px solid #eedddd;
+        border-right:  1px solid #eedddd;
+        background:    #fffefc;
+        box-shadow:    0 2px 3px #aaaaaa;
+
+        .folder-controls {
+            border-bottom: 1px dotted #cccccc;
+        }
+
+        li {
+
+            padding: 4px 8px;
+            color:   #aaaaaa;
+
+            $border-color:     #fffefc;
+            $hover-border:     #e0d9ca;
+            $hover-background: #fffee2;
+
+            & {
+                border-top:    1px solid $border-color;
+                border-bottom: 1px solid $border-color;
+            }
+
+            &:hover {
+                border-top:    1px solid $hover-border;
+                border-bottom: 1px solid $hover-border;
+                background:    $hover-background;
+            }
+
+            // Make the entire span of the list item clickable.
+            a {
+                display: block;
+                width:   100%;
+
+                &:focus {
+                    background:     $hover-background;
+                    outline-offset: 3px;
+                }
+            }
+        }
+    }
+}
+
+.star-counter {
+    margin-left: 0.25em;
+}
+
+.starred-info,
+.starred-alert {
+
+    padding-top: 0.5em;
+    line-height: 1.5em;
+    text-align:  center;
+    font-size:   14px;
+    font-style:  italic;
+    color:       #555555;
+
+    b, strong { font-weight: bold; }
+}
+
+.starred-alert { color: #ed0000; }
+
+.item-availability a {
+    text-decoration: none;
+    color:           #0a3685;
+    cursor:          pointer;
+
+    *:hover {
+        color: initial;
+    }
+}
+
+.sort-form-container {
+    margin-left: 8px;
+}
+
+.results a {
+    color: $virgo-link-color;
+    &:visited { color: #660099; }
+}
+
+#body {
+    width:   100%;
+    height:  100%;
+    margin:  0;
+    padding: 0;
+}
+
+.return-to-search,
+.folder-tools,
+.return-to-item,
+.add-star {
+    padding: 0.5em 0;
+}
+
+.return-to-search,
+.prev-next-doc {
+    color: #ddd3c7;
+}
+
+.add-star {
+    float:         left;
+    padding-right: 4px;
+    width:         120px;
+}
+.add-star .star-container .add-star-form .submit-form {
+    display:      block;
+    margin-right: 20px;
+    padding-left: 22px;
+    background:   $star-unlit-image no-repeat scroll 3px 6px transparent;
+    &.remove-star { background-image: $star-lit-image; }
+}
+
+.results .document .tools .star-container .submit-form.saving-star {
+    background-image: $star-change-image;
+}
+
+.folder-notice {
+    padding:   10px;
+    font-size: 14px;
+    a { text-decoration: underline; }
+}
+
+.show-page .action-list-container {
+
+    margin:  0.75em 0 0.5em;
+    padding: 0 0 0.75em;
+
+    .action-list {
+
+        @include sprite(-208px);
+
+        &:focus { border-bottom: 5px solid transparent; }
+    }
+
+    .list-body {
+        li, a {
+            line-height: 16px;
+        }
+    }
+}
+
+.Z3988 { display: none; }
+
+.folder-index-page,
+.reserves-page {
+
+    .account-menu.tools .sub-heading {
+        margin:      0;
+        padding:     0 0.5em;
+        line-height: 3em;
+        text-align:  right;
+        font-size:   15px;
+        font-weight: bold;
+        background:  $star-lit-image no-repeat scroll 33% 49% #fffefa;
+    }
+
+    .account-menu ul ul {
+        margin:     0;
+        list-style: square outside none;
+    }
+
+    .tools ul ul li {
+
+        border: none;
+
+        a {
+            padding-top: 0.5em;
+            line-height: 2em;
+            font-size:   13px;
+        }
+    }
+
+    .return-to-search,
+    .starred-info,
+    .starred-alert {
+        @include user-select(none);
+    }
+
+    .return-to-search {
+
+        padding-left: 15px;
+
+        a.btn:focus { outline-offset: 3px; }
+    }
+}
+
+.folder-index-page {
+    .list-heading  { margin-bottom: 0.5em; }
+    .pagination h2 { display: none; }
+    .search-tools  { float: left; padding-top: 4px; }
+    .prev_page     { float: left; }
+    .next_page     { float: right; }
+    .results       { margin: 0.77em auto 1.54em; }
+    .remove-item   { padding-left: 15px; }
+}
+
+.reserves-page {
+
+    .return-to-search {
+        float: left;
+    }
+
+    .item-list select,
+    .item-list input {
+        height: auto;
+        width: 105px;
+    }
+}
+
+.change-all-reserves,
+.reserves-notice {
+    b, strong { font-weight: bold; }
+}
+
+.change-all-reserves {
+
+    padding:    0 1em 1em 1em;
+    text-align: right;
+
+    label { padding: 0 0.5em 0 2em; }
+}
+
+.reserves-notice {
+
+    margin:     0.5em 1em;
+    padding:    1em;
+    font-size:  14px;
+    color:      #223322;
+    background: #dff0d8;
+
+    p { margin-bottom: 1.5em; }
+}
+
+.starred-reserve-notes-heading small { display: block; }
+
+// Reserve email confirmation page - /reserves/send_email_record
+
+.reserves-page {
+
+    .notice {
+
+        margin: 0 2em;
+
+        p        { margin-bottom: 1em; }
+        .control { text-align:    center; }
+    }
+
+    .added-notes {
+
+        margin:        2em;
+        padding:       1em;
+        border-radius: 4px;                 // From .ui-corner-all
+        border:        1px solid #3d773d;   // From .ui-state-highlight.notice
+
+        > * { margin-bottom: 1em; }
+    }
+}
+
+.tool-content {
+
+    padding:     3em 2em;
+    line-height: 1.5em;
+
+    input,
+    select,
+    textarea {
+        margin-bottom: 1.5em;
+        padding:       3px;
+        font-size:     13px;
+    }
+
+    input[type='text'],
+    select {
+        width:     33%;
+        min-width: 200px;
+    }
+
+    select {
+        padding-left:  2px;
+        padding-right: 2px;
+    }
+
+    textarea {
+        width:     300px;
+        min-width: 50%;
+        height:    7em;
+        padding:   3px;
+        font-size: 13px;
+    }
+
+    label {
+        display:     block;
+        margin:      0;
+        padding:     15px 0 5px;
+        font-size:   15px;
+        font-weight: bold;
+        &.hidden { display: none; }
+    }
+
+    input[type='submit'] {
+        margin-top: 15px;
+    }
+
+    .search_history td {
+
+        padding: 0.67em 0;
+        border:  none;
+
+        &.actions a { padding: 0.5em 1em; background: #eeeeee; }
+        &.query     { width: 200px; }
+    }
+
+    &.feedback-response { text-align: center; }
+
+    &.spec-coll { padding-top: 1.25em; }
+
+    // Course reserve Submit and Cancel.
+    &.request-submit,
+    .request-submit {
+
+        @include flex-box(row);
+
+        input[type='submit'] {
+            margin: 0;
+        }
+
+        a {
+            margin-left:   2em;
+            margin-top:    auto;
+            margin-bottom: auto;
+        }
+    }
+    .request-submit {
+        margin-top: 2em;
+    }
+}
+
+.list-heading + h2 {
+    font-size: 16px;
+    padding:   1em 0;
+}
+
+.citation-page {
+
+    @include user-select(none);
+
+    .tool-content {
+
+        @include user-select(text);
+
+        padding-top: 0;
+    }
+
+    .citation-entry {
+        margin:        2em 0 0.5em;
+        font-size:     1.33em;
+        font-weight:   bold;
+        color:         #5b4418;
+        border-bottom: 1px solid #5b4418;
+    }
+
+    .citation-style {
+        margin:      0.67em 0 0.1em;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size:   100%;
+        font-weight: bold;
+        color:       #444444;
+    }
+
+    .citation-entry + .citation-style {
+        margin-top: 1em;
+    }
+
+    em {
+        font-style: italic;
+    }
+}
+
+.clearfix:after {
+    clear:       both;
+    display:     block;
+    width:       0;
+    height:      0;
+    line-height: 0;
+    font-size:   0;
+    visibility:  hidden;
+    content:     ' ';
+}
+.clearfix {
+    display: inline-block;
+    float: none !important;
+}
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+
+// From structure.css
+// ========================
+// Page Hierarchy
+// ========================
+
+.recently-added-header {
+    position:   relative;
+    z-index:    5;
+    overflow:   visible;
+    background: white;
+}
+
+.page-content {
+    padding-bottom: 30px;
+    position:       relative;
+    z-index:        20;
+    overflow:       visible;
+    border-left:    1px solid #eeeeee;
+}
+
+.sidebar-panel1,
+.sidebar-panel1 div { overflow:    visible; }
+.sidebar-panel1 h2  { font-weight: bold; }
+
+.sidebar-inner { position: relative; }
+
+// ============================================================================
+// Page Elements
+// ============================================================================
+
+// HEADER
+.recently-added-header p {
+    padding: 0;
+    margin:  0;
+    font:    italic normal normal 11px/14px helvetica, arial, sans-serif;
+    color:   #b0cff4;
+}
+
+// CONTENT
+.page-container hr,
+.sidebar-panel1 .box hr {
+    position: static;
+}
+.sidebar-panel1 h2,
+.sidebar-panel2 h2 {
+    margin-top: 0;
+    font-size:  1.23em;
+}
+
+// Blockquote in .page-container
+.page-container blockquote {
+    margin-left: 2.4em;
+    font-style:  italic;
+}
+
+// Ordered and unordered lists in .page-container with some spacing between
+// items.
+dt { font-weight: bold; }
+dd { margin-left: 1.15em; }
+
+q,
+blockquote {
+    quotes: none;
+    &:before,
+    &:after {
+        content: none;
+    }
+}
+
+// Focus is defined only on appropriate elements and sometimes with something
+// different than an outline.
+//:focus { outline: #DC8 2px dotted; }
+.skip:focus { outline: 0; }
+
+// remember to highlight inserts somehow!
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+
+// Tables
+
+caption, th, td {
+    text-align:  left;
+    font-weight: normal;
+}
+
+table, th, td {
+    vertical-align: middle;
+}
+
+// Tables still need 'cellspacing="0"' in the markup.
+table {
+
+    margin-bottom:   1.54em; // Give a bottom margin,just like <p> tags,etc.
+    border-spacing:  0;
+    border-collapse: collapse;
+
+    &.full  { width:        100%;  }
+    &.fixed { table-layout: fixed; }
+}
+
+// Hide any <hr /> elements not in the main and sub content areas.
+hr {
+    position: absolute;
+    left:     -3000px;
+}
+.page-container,
+.page-sidebar {
+    hr {
+        margin:        0 0 0.5em 0;
+        padding:       0 0 0.5em 0;
+        position:      static;
+        color:         white;
+        background:    transparent;
+        border:        0;
+        border-bottom: 1px #eeeeee solid;
+    }
+}
+
+// Links
+a,
+.menu a,
+p a,
+ul a,
+ol a,
+dl a,
+blockquote a,
+table a {
+    text-decoration: none;
+}
+
+// Make sure it looks like a quote/citation.
+blockquote { font-style: italic; }
+
+// Make acronyms and abbreviations a bit distinct.
+acronym, abbr {
+    letter-spacing: 0.07em;
+    border-bottom:  0.1em dashed #cc0000;
+    cursor:         help;
+}
+acronym {
+    text-transform: uppercase;
+}
+
+// Keep the 20px vertical rhythm with bottom margins.
+p, ul, ol, dl, blockquote { margin-bottom: 1.54em; }
+
+// ============================================================================
+// Special Collections request queue
+// ============================================================================
+
+@import "feature/sc-requests";
+
+.portal-status {
+
+    float:       right;
+    margin-left: 0.5em;
+    overflow:    hidden;
+
+    .special-collections {
+        float:        left;
+        margin-right: 1em;
+        line-height:  110%;
+        font-family:  Times, "Times New Roman", Georgia, serif;
+        font-size:    18px;
+        font-variant: small-caps;
+        color:        white;
+    }
+
+    .exit-special-collections {
+
+        float:       left;
+        font-family: Arial, sans-serif;
+        font-size:   13px;
+        color:       #69b1d7;
+
+        a {
+
+            text-decoration: underline;
+            color:           #69b1d7;
+
+            &:focus { outline-offset: 0; }
+        }
+    }
+}
+
+// Should match related values in app/assets/javascripts/shared/definitions.
+.popup-content {
+    height: 460px;
+    width:  606px;
+}
+
+.page-content .page-heading .heading {
+    font-weight: 300;
+}
+
+.virgo-container {
+    .page-heading.request-heading { margin-left: -12px; width: 695px; }
+    #requests_container           { overflow:    auto;  width: 600px; }
+}
+
+@import "shared/request";
+
+.ui-icon-closethick {
+    display: none;
+}
+
+.facet-sort {
+    padding:    1em;
+    text-align: right;
+    font-size:  12px;
+}
+
+// ============================================================================
+// Video lens
+// ============================================================================
+
+.video-genres {
+    width:  600px;
+    margin: 10px auto;
+}
+
+.genre-list {
+
+    width:    100%;
+    margin:   2em 0 1em;
+    padding:  0;
+    overflow: hidden;
+
+    .genre {
+
+        float:         left;
+        margin:        0.5em 10px;
+        font-size:     17px;
+        border-radius: 7px;
+        border:        1px solid #dde5f6;
+        background:    #e4ecfd linear-gradient(white, #e4ecfd);
+        text-shadow:   0 1px 0 white;
+        box-shadow:    0 0 5px #e4ecfd;
+
+        &:focus, &:hover { background: #f3faff; }
+
+        a {
+            display:    block;
+            width:      160px;
+            padding:    0.67em 9px;
+            text-align: center;
+
+            &:focus          { outline-offset: 5px; }
+            &:focus, &:hover { color: black; }
+        }
+    }
+}
+
+// Video lens index row.
+.results .document.video-doc {
+
+    display:       block;
+    clear:         both;
+    width:         727px;
+    margin-bottom: 0.25em;
+    position:      relative;
+    z-index:       10;
+    background:    #eeeeee;
+
+    // ========================================================================
+    // Variations
+    // ========================================================================
+
+    // Header row.
+    &.video-head-row {
+        color:         #5a5d5f;
+        background:    #eef5fb;
+        border-top:    1px solid #a4c6ef;
+        border-bottom: 1px solid #a4c6ef;
+        overflow:      hidden;
+    }
+
+    // Alternating light and dark rows.
+    &.odd {
+        background: white;
+    }
+
+    // ========================================================================
+    // Components
+    // ========================================================================
+
+    > div {
+        display: block;
+        float:   left;
+        padding: 9px 9px 7px 0;
+        vertical-align: middle;
+    }
+
+    // ==== Item number column
+    .list-item-number {
+        width:        20px;
+        line-height:  1.231em;
+        margin-right: 0;
+        padding:      9px 2px 7px 6px;
+    }
+
+    // ==== Star/unstar column
+    .tools {
+
+        width:        16px;
+        padding-left: 0;
+
+        .star-container {
+            position: relative;
+            top:      -1px;
+            left:     3px;
+        }
+    }
+
+    // ==== "Title" column
+    .title {
+        width: 214px;
+        a { display: inline-block; }
+    }
+
+    // ==== "Format" column
+    .format {
+
+        width:   90px;
+        padding: 7px 9px 4px 0;
+
+        &.video-head {
+            padding: 9px 9px 7px 0;
+        }
+
+        .format-value {
+
+            float:         left;
+            max-width:     80px;
+            margin:        0 6px 2px 0;
+            padding:       2px 4px 1px 4px;
+            color:         white;
+            background:    #7f7a72;
+            border:        1px solid transparent;
+            border-radius: 4px;
+            box-shadow:    0 0 3px #aaaaaa;
+
+            &.dvd    { background: #4466aa; }
+            &.vhs    { background: #66aaaa; }
+            &.book   { background: #998855; }
+            &.online { background: #aa6644; }
+        }
+    }
+
+    // ==== "Year" column
+    .year {
+        width: 36px;
+    }
+
+    // ==== "Location & Availability" column
+    .availability {
+
+        width:         210px;
+        padding-right: 4px;
+
+        .single-copy {
+
+            line-height: 16px;
+
+            .availability-indicator {
+
+                @include width-fit-content;
+
+                display:        inline-block;
+                padding-top:    1px;
+                padding-bottom: 1px;
+                line-height:    14px;
+
+                &:focus { outline-offset: 1.5px; }
+            }
+        }
+    }
+
+    // ==== "Call #" column
+    .call-number-field {
+        width: 80px;
+    }
+
+    // ==== Initially-hidden "More Info" popup
+    .more-info {
+
+        display:  none;
+        position: absolute;
+        top:      0;
+        left:     0;
+        z-index:  8000;
+        width:    300px;
+        padding:  12px;
+        background:    #f2f4fa;
+        border:        1px solid #4488bb;
+        border-radius: 6px;
+        box-shadow:    0 2px 5px rgba(80, 80, 80, 0.5);
+
+        h2 {
+            margin-bottom:  1em;
+            padding-bottom: 0.67em;
+            border-bottom:  1px dotted #cfd2e0;
+        }
+
+        .cover-summary {
+            width:       100%;
+            line-height: 1.2em;
+            font-size:   12px;
+        }
+        .cover-summary img:not(.ajax-loader) {
+            float:     left;
+            max-width: 100px;
+            margin:    0.33em 0.67em 0.33em 0;
+        }
+        .cover-summary.cover-only img:not(.ajax-loader) {
+            float:     none;
+            margin:    0.33em auto;
+        }
+
+        dl {
+
+            clear:       both;
+            margin:      10px auto;
+            padding-top: 10px;
+            width:       100%;
+
+            dt {
+                width:       90px !important;
+                margin:      0 10px 5px 0 !important;
+                font-weight: bold;
+                color:       #444444;
+            }
+
+            dd {
+                width:  190px !important;
+                margin: 0 0 5px 95px !important;
+            }
+        }
+    }
+}
+
+.linked-title { padding-left: 0.5em; }
+.linked-title + .main-title { float: left; }
+
+// ============================================================================
+// My Account
+// ============================================================================
+
+.account-container {
+
+    padding: 1em 0;
+
+    &.results { width: 100%; }
+
+    .sub-heading {
+
+        margin-top:     0.33em;
+        margin-bottom:  1em;
+        padding-bottom: 0.33em;
+        font-size:      18px;
+        color:          #444444;
+
+        a { text-decoration: underline; }
+
+    }
+
+    .patron-login {
+
+        width:      400px;
+        margin:     0 auto;
+        text-align: right;
+
+        label {
+            clear:       both;
+            float:       left;
+            display:     block;
+            width:       100px;
+            padding:     4px 8px 5px;
+            text-align:  left;
+            font-size:   14px;
+            font-weight: bold;
+        }
+
+        input {
+            float:   left;
+            width:   250px;
+            padding: 4px 4px 5px;
+        }
+
+        .login-helper {
+            float:         left;
+            padding-left:  7px;
+            margin-top:    -15px;
+            margin-bottom: 15px;
+            font-style:    italic;
+            color:         #909090;
+        }
+
+        .login-submit {
+
+            clear:      both;
+            text-align: center;
+
+            .btn {
+                clear: both;
+                float: none;
+                width: auto;
+            }
+        }
+    }
+
+    .item-list {
+
+        width: 100%;
+
+        a {
+            display: inline-block;
+        }
+
+        thead {
+            font-size:     12px;
+            color:         #54545d;
+            background:    #f2f8ff;
+            border-top:    1px solid #99ccdd;
+            border-bottom: 1px solid #99ccdd;
+        }
+
+        .dataTables_wrapper { border-top: none; }
+
+        th, td {
+            padding:        0.67em 5px;
+            vertical-align: top;
+            border:         none;
+        }
+
+        th {
+            box-shadow: inset 1px 0 0 #cae4ff, inset 2px 0 0 white;
+
+            &:focus { outline-offset: -4px; }
+
+            &.sorting        { @include sorting-std-icon(100%,    0.30em); }
+            &.sorting_asc    { @include sorting-asc-icon(100.75%, 0.05em); }
+            &.sorting_desc   { @include sorting-dsc-icon(100%,    0.45em); }
+            &.hidden-heading { box-shadow: none; }
+        }
+
+        tr {
+            &.odd  { background: #f1f1f1; }
+            &.even { background: white; }
+        }
+
+        td {
+            // Required column widths.
+            &.item-number  { width: 24px;  }
+            &.title        { width: 28%;   }
+            &.date         { width: 85px;  }
+            &.availability { width: 18%;   }
+            &.course-name  { width: 140px; }
+
+            // Other adjustments.
+            &.item-number  {
+                text-align: right;
+                font-style: italic;
+                color:      #707070;
+            }
+        }
+
+        .remove-star,
+        .saving-star {
+            display:    block;
+            width:      16px;
+            height:     16px;
+            color:      transparent; // Hide label text
+            background: no-repeat scroll 0 0 transparent;
+            overflow:   hidden;
+        }
+
+        .remove-star { background-image: $star-lit-image; }
+        .saving-star { background-image: $star-change-image; }
+    }
+}
+
+.account-menu {
+
+    @include user-select(none);
+
+    ul {
+        margin:     40px 10px 10px 21px;
+        padding:    0;
+        border-top: 1px dotted #dad5ca;
+    }
+
+    li {
+        margin:        0;
+        padding-left:  0;
+        border-bottom: 1px dotted #dad5ca;
+    }
+
+    li a {
+
+        display:     block;
+        padding:     0 0.5em;
+        line-height: 3em;
+        text-align:  right;
+        font-size:   15px;
+        transition:  background 200ms ease-in-out;
+
+        &:focus {
+            outline-offset: 0;
+        }
+
+        &:focus,
+        &:active {
+            transition: none;
+        }
+
+        &:focus,
+        &:hover {
+            color:            #222222;
+            background-color: #fffefa;
+        }
+
+        &.link-disabled { color: black !important; }
+    }
+
+    ul ul {
+        margin: 0;
+        border: none;
+    }
+
+    ul ul li {
+        margin:  0;
+        padding: 0;
+        border:  none;
+    }
+
+    ul ul li a {
+        padding:     0 1em 0.5em 0;
+        line-height: 1.5em;
+        font-size:   12px;
+        border:      none;
+    }
+}
+
+.account-total {
+    font-weight: bold;
+}
+
+.account-notice-container {
+    font-weight: bold;
+}
+
+.account-notice {
+    display:      block;
+    padding-left: 1em;
+}
+
+.account-tasks {
+
+    $border-expansion: 4px; // To increase click target area.
+
+    li {
+        margin-bottom: 0.5em;
+        margin-left:   0.25em;
+        list-style:    square inside none;
+        color:         #707070;
+
+        a {
+            padding-left:  0.33em;
+            border-top:    $border-expansion solid transparent;
+            border-bottom: $border-expansion solid transparent;
+            border-right:  $border-expansion solid transparent;
+
+            &:focus { outline-offset:   0; }
+            &:hover { background-color: #e8f2ff; }
+        }
+    }
+}
+
+.account-item-status-heading.hidden-heading,
+.starred-reserve-library-heading.hidden-heading,
+.item-status {
+    display: none;
+}
+
+.recalled          { color: #ccaa33; }
+.overdue           { color: #cc3333; }
+.request-available { color: #229955; }
+.request-pending   { color: #707070; }
+
+.no-items,
+.no-items-extended-message {
+    text-align:  center;
+    font-size:   18px;
+    font-style:  italic;
+    font-weight: 300;
+    color:       #707070;
+}
+.no-items                  { line-height: 120px; }
+.no-items-extended-message { margin:      15px auto 30px; }
+
+.current-page {
+    .no-items,
+    .no-items-extended-message {
+        width: 700px;
+    }
+    .no-items {
+        padding:     2em 0;
+        line-height: 2em;
+    }
+}
+
+.result-line .current-page {
+    .no-items a,
+    .no-items-extended-message a {
+        float: none;
+    }
+}
+
+.checkouts-page .checkouts-nav,
+.holds-page     .holds-nav,
+.reserves-page  .reserves-nav,
+.notices-page   .notices-nav,
+.starred-page   .starred-nav {
+    background: #fffefa;
+    a { cursor: default; }
+}
+.starred-nav a {
+    background: $star-lit-image no-repeat 20% 49%;
+}
+.notices-nav a {
+    background: $notice-icon no-repeat 46% 49%;
+}
+
+.whats-this {
+    display: none;
+}
+
+.barred-notice {
+    padding:     1.2em;
+    line-height: 1.33em;
+    font-size:   14px;
+}
+
+h2.sign-in-heading,
+h2.error-heading {
+    margin:      2em auto;
+    text-align:  center;
+    font-family: "garamond-premier-pro-display", Garamond, Georgia, serif;
+    font-size:   21px;
+    font-weight: 600;
+}
+h2.error-heading {
+    width: 400px;
+}
+
+.sign-in-select {
+    display:    block;
+    margin:     1.2em auto;
+    text-align: center;
+    font-size:  16px;
+}
+
+.refworks-export {
+
+    width:  60%;
+    margin: 0 auto;
+
+    input {
+        display:    block;
+        margin:     0 auto;
+        text-align: center;
+    }
+    h2 {
+        margin:     2em auto;
+        text-align: center;
+        font-size:  16px;
+    }
+}
+
+// ============================================================================
+// Kaltura Videos
+// ============================================================================
+
+.streaming-gallery-heading {
+    margin:      1.5em 0.5em 0.75em;
+    font-size:   18px;
+    font-weight: bold;
+}
+
+.streaming-gallery {
+    margin:   1em;
+    overflow: hidden;
+}
+
+.streaming-thumbnail {
+
+    @include width-fit-content;
+
+    max-height:    200px;
+    padding:       0.75em 0.67em;
+    text-align:    center;
+    border-radius: 3px;
+    border:        2px solid lightgrey;
+    background:    #f5f5f5;
+
+    img {
+        display: block;
+        margin:  0.25em;
+        border:  1px solid #dddddd;
+    }
+
+    .image-caption {
+        margin:        0.5em auto;
+        font-size:     12px;
+        font-weight:   bolder;
+    }
+
+    a {
+        margin-left:  auto;
+        margin-right: auto;
+
+        &:visited {
+            color: #660099;
+        }
+
+        &:focus img {
+            outline:        thin dashed black;
+            outline-offset: 4px;
+        }
+    }
+}
+
+.show-page .streaming-thumbnail-container {
+
+    @include flex-box(row);
+
+    margin:          2.5em 0;
+    padding:         0;
+    flex-wrap:       wrap;
+    justify-content: space-around;
+    border:          none;
+
+    .streaming-thumbnail {
+
+        @include flex-box(column);
+
+        max-height:      none;
+        margin:          0 0 1.25em;
+        justify-content: flex-end;
+
+        // This prevents alt text on broken images from forcing the thumbnail
+        // to be much wider than neighboring thumbnails.
+        img {
+            @include width-min-content;
+        }
+
+    }
+}
+
+.player-frame {
+    float:  left;
+    margin: 1em;
+    width:  480px;
+    height: 360px;
+}
+
+.anchor-frame {
+    float:  left;
+    margin: 1em;
+}
+
+.tei-frame {
+    float:  left;
+    margin: 1em;
+}
+
+// ============================================================================
+// Per-item availability notes.
+// ============================================================================
+
+.disbound-help-link {
+    display:  inline;
+    position: relative;
+    padding:  5px;
+    cursor:   pointer;
+}
+
+// Initially-hidden popup informational text.
+.disbound-help-container {
+    display:       none;
+    width:         275px;
+    padding:       1em;
+    position:      absolute;
+    z-index:       99;
+    overflow-x:    auto;
+    overflow-y:    hidden;
+    border-radius: 8px;
+    border:        2px solid #896733;
+    background:    whitesmoke;
+}
+
+// Push to the right in virtual shelf browse to avoid scrolling.
+.shelf-browse.display .disbound-help-container {
+    top:     -25px;
+    left:    90%;
+}
+
+// No room below or to the right in a single-line availability table popup.
+.availability-popup .disbound-help-container {
+    padding: 3px;
+    top:     -30px;
+    right:   20px;
+}
+
+.copyright-popup {
+
+    display: inline-block;
+
+    img { margin-right: 0.75em; }
+}

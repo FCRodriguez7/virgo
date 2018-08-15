@@ -1,0 +1,115 @@
+#! /bin/bash
+#
+# run_rubocop: validate the project with Rubocop.
+#
+# The actual execution of Rubocop has to be done outside of the project
+# directory because Rubocop can't handle the RVM Ruby version listed in
+# .ruby-version and if there's a .ruby-version in the working directory then
+# it won't accept the configured specification of TargetRubyVersion.
+
+# =============================================================================
+# Constants
+# =============================================================================
+
+[ "$RAILS_ROOT" ] || RAILS_ROOT='/home/rwl/Work/virgo'
+[ "$RAILS_ENV"  ] || RAILS_ENV='dev'
+RUN_DIR='doc'
+CONFIG_FILE='.rubocop.yml'
+OUT_FILE='rubocop.out'
+FORMAT='html'
+
+# List "cops" that will be ignored, one per line with the variable entry.
+# (Lines that begin with "#" will be ignored.)
+declare -A EXCEPT
+EXCEPT['prod']='Rails/ActionFilter' # Only for Rails 4 or later
+EXCEPT['test']="${EXCEPT['prod']}"
+EXCEPT['dev']="${EXCEPT['prod']}"
+
+# =============================================================================
+# Function definitions
+# =============================================================================
+
+function Abort() # [message]
+{
+	local MESSAGE="$1"
+	[ "$MESSAGE" ] && echo "ERROR: $1" 1>&2
+	exit 1
+}
+
+# =============================================================================
+# Variables
+# =============================================================================
+
+TARGET_DIR="$RAILS_ROOT"
+RUN_DIR="$TARGET_DIR/$RUN_DIR"
+CONFIG_FILE="$TARGET_DIR/$CONFIG_FILE"
+OUT_FILE="$RUN_DIR/$OUT_FILE"
+case "$FORMAT" in
+  html) OUT_FILE+=".$FORMAT" ;;
+esac
+ARGS=''
+
+# Change directory if necessary.
+[ "$PWD" == "$RUN_DIR" ] || cd "$RUN_DIR" || Abort
+
+# Normalize RAILS_ENV
+case "$RAILS_ENV" in
+	*prod*) RAILS_ENV='prod' ;;
+	*test*) RAILS_ENV='test' ;;
+	*)      RAILS_ENV='dev' ;;
+esac
+
+# =============================================================================
+# Build Rubocop arguments and process command line arguments.
+# =============================================================================
+
+# File (patterns) to be skipped.
+EXCEPT="${EXCEPT[$RAILS_ENV]}"
+# First clean up the variable contents by removing "commented-out" lines and
+# leading/trailing white space.
+if [ "$EXCEPT" ] ; then
+	EXCEPT=`
+		echo "$EXCEPT" |
+		sed -e '/^[ \t]*#/d' -e '/[ \t]*#.*$/d' -e '/^[ \t]*$/d'
+	`
+fi
+# Combine any remaining lines within the variable content into a
+# comma-separated list after the "--except" argument flag.
+if [ "$EXCEPT" ] ; then
+	declare -i I=0
+	for E in $EXCEPT ; do
+		if [ $I -eq 0 ] ; then
+			ARGS+=" --except $E"
+		else
+			ARGS+=",$E"
+		fi
+		I+=1
+	done
+fi
+
+# Use override values from command line if present; all other command line
+# arguments go to the Rubocop command line.
+while [ "$#" -gt 0  ] ; do
+	case "$1" in
+		-c|--config) CONFIG_FILE="$2"; shift ;;
+		-f|--format) FORMAT="$2"; shift ;;
+		-o|--out)    OUT_FILE="$2"; shift ;;
+		*)           ARGS+="$1" ;;
+	esac
+	shift
+done
+
+# Validate settings and finalize Rubocop arguments.
+[ "$OUT_FILE"       ] || Abort 'No output file specified'
+[ "$CONFIG_FILE"    ] || Abort 'No configuration file specified'
+[ -r "$CONFIG_FILE" ] || Abort "$CONFIG_FILE: could not read config file"
+[ "$FORMAT"         ] && ARGS+=" --format $FORMAT"
+
+# =============================================================================
+# Run Rubocop.
+# =============================================================================
+
+# NOTE: The position of the options seems to be important:
+# --config should be the first option
+# --out should be the last option
+rubocop --config "$CONFIG_FILE" $ARGS --out "$OUT_FILE" "$TARGET_DIR"

@@ -1,0 +1,33 @@
+<%# app/views/maps/new.html.erb -%>
+<%-
+  set_meta_tags(title: 'Maps - New Map')
+
+  view_debug(__FILE__)
+-%>
+
+<div class="list-heading">
+  <h1 class="heading">Create a New Map</h1>
+</div>
+
+<div class="tool-content">
+
+  <%- if @map.errors.present? -%>
+    <ul>
+      <%- @map.errors.full_messages.each do |msg| -%>
+        <li><%= msg %></li>
+      <%- end -%>
+    </ul>
+  <%- end -%>
+
+  <%= form_for(@map) do |f| %>
+    <fieldset class="maps-form maps-container">
+      <%= sr_only(:legend, 'Specify the map to add:') %>
+      <%= render partial: 'form', object: f %>
+      <div class="row">
+        <%= f.submit 'Create', class: 'button btn primary' %>
+        <%= link_to  'Cancel', maps_path, class: 'btn' %>
+      </div>
+    </fieldset>
+  <%- end -%>
+
+</div>

@@ -1,0 +1,19 @@
+<%# app/views/catalog/show/shared/_see_more.html.erb -%>
+<%-
+  # Open/close item show page extended details.
+  # @see app/assets/javascripts/feature/see-more.js
+
+  doc = document ||= @document
+  return unless doc
+
+  full_view ||= session[:full_view]
+  css_class ||= CatalogHelper::CSS_SHOW_DETAILS
+  css_class += ' open' if full_view
+
+  view_debug(__FILE__)
+-%>
+<div class="<%= css_class -%>">
+  <%= see_more_control %>
+  <%= see_less_control %>
+  <%= always_show_full_record(full_view) %>
+</div>

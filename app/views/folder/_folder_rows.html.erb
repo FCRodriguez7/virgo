@@ -1,0 +1,10 @@
+<%# app/views/folder/_folder_rows.html.erb -%>
+<%-
+  documents ||= @documents || []
+
+  view_debug(__FILE__)
+-%>
+
+<%- documents.compact.each do |doc| -%>
+  <%= render_document_row(doc) %>
+<%- end -%>

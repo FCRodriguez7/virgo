@@ -1,0 +1,21 @@
+<%# app/views/catalog/show/shared/_availability_table.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc
+  request_popup ||= true
+
+  template_opts = { document: doc }
+
+  view_debug(__FILE__)
+-%>
+
+<%= render 'catalog/summary_holdings', template_opts %>
+<%= leo_and_recall_links(doc, request_popup: request_popup) %>
+<%= sc_request_link(doc, class: 'request-buttons') %>
+<%= render 'catalog/holdings', template_opts %>
+<%= pda_purchase(doc, request_popup: request_popup) %>
+<%= about_pda(doc) %>
+<%= access_restriction_text(doc) %>
+<%= about_kluge_ruhe(doc) %>
+<%= sc_request_link(doc) %>
+<%= status_note(doc) %>

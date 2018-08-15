@@ -1,0 +1,17 @@
+<%# app/views/catalog/row/_dl_text.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  resource_link = (xtf_link(doc) unless doc.doc_sub_type == :finding_aid)
+
+  fields_opts ||= {
+    document:    doc,
+    formats:     'Text Resource',
+    access_link: resource_link,
+    dev_note:    __FILE__,
+  }
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/row/shared/fields', fields_opts -%>

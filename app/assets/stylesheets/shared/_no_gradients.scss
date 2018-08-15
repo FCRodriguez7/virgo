@@ -1,0 +1,33 @@
+// app/assets/stylesheets/shared/_no_gradients.scss
+
+.no-cssgradients {
+
+    @mixin gradient-bg($type, $bg-color) {
+        $asset-file: image-url("#{$type}-gradient-ie.jpg");
+        background: $asset-file repeat-x scroll 0 0 $bg-color;
+    }
+
+    .app-banner-container {
+        @include gradient-bg("header", #c0d1eb);
+    }
+
+    .virgo-home-page .search-form-container {
+        @include gradient-bg("search", #e8d9c2);
+        border: 1px solid #b99763;
+    }
+
+    .search-submit {
+        @include gradient-bg("button", #ccc9c4);
+        border: 1px solid #8c8984;
+    }
+
+    .adv-search-button {
+        @include gradient-bg("button", #ccc9c4);
+        border: 1px solid #aca9a4;
+    }
+
+    .page-footer {
+        @include gradient-bg("footer", #012251);
+    }
+
+}

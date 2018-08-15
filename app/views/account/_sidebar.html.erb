@@ -1,0 +1,25 @@
+<%# app/views/account/_sidebar.html.erb -%>
+<%-
+  user    ||= @account
+  heading ||= 'Library Account Menu'
+
+  # Add to hidden "skip navigation" menu.
+  skip_nav << link_to(heading, '#account-menu')
+
+  # If "position: sticky" is supported allow the sidebar to remain visible.
+  sidebar_items << :sticky_optional
+
+  view_debug(__FILE__)
+-%>
+<%- sidebar_items << capture do -%>
+  <div class="sidebar-panel1">
+    <div class="sidebar-inner">
+      <div class="account-menu tools" role="menu">
+        <%= sr_only(:h2, heading, id: 'account-menu-heading') %>
+        <ul id="account-menu" aria-labelledby="account-menu-heading">
+          <%= sidebar_links(user) %>
+        </ul>
+      </div>
+    </div>
+  </div>
+<%- end -%>

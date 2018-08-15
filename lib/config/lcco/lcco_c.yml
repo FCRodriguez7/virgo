@@ -1,0 +1,438 @@
+# lib/config/lcco_c.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from the Word document of the same base name.
+
+class:    C
+name:     'AUXILIARY SCIENCES OF HISTORY'
+sections:
+  - subclass:  C
+    name:     'Auxiliary Sciences of History (General)'
+    sections:
+      - name:    'Auxiliary Sciences of History (General)'
+        range:   C1-51
+        start:   C1
+        end:     C51
+  - subclass:  CB
+    name:     'History of Civilization'
+    sections:
+      - name:    'History of Civilization'
+        range:   CB3-482
+        start:   CB3
+        end:     CB482
+        sections:
+          - name:    'Terrestrial evidence of interplanetary voyages'
+            range:   CB156
+            start:   CB156
+            end:     CB156
+          - name:    'Forecasts of future progress'
+            range:   CB158-161
+            start:   CB158
+            end:     CB161
+          - name:    'Civilization and race'
+            range:   CB195-281
+            start:   CB195
+            end:     CB281
+          - name:    'By period'
+            range:   CB305-430
+            start:   CB305
+            end:     CB430
+          - name:    'Relation to special topics'
+            range:   CB440-482
+            start:   CB440
+            end:     CB482
+            sections:
+              - name:    'Geography and civilization'
+                range:   CB450
+                start:   CB450
+                end:     CB450
+              - name:    'Technology'
+                range:   CB478
+                start:   CB478
+                end:     CB478
+              - name:    'War and civilization'
+                range:   CB481
+                start:   CB481
+                end:     CB481
+              - name:    'Water and civilization'
+                range:   CB482
+                start:   CB482
+                end:     CB482
+  - subclass:  CC
+    name:     'Archaeology'
+    sections:
+      - name:    'Archaeology'
+        range:   CC1-960
+        start:   CC1
+        end:     CC960
+        sections:
+          - name:    'Philosophy.  Theory'
+            range:   CC72-81
+            start:   CC72
+            end:     CC81
+            sections:
+              - name:    'Methodology'
+                range:   CC73-81
+                start:   CC73
+                end:     CC81
+          - name:    'Study and teaching.  Research'
+            range:   CC83-97
+            start:   CC83
+            end:     CC97
+          - name:    'Preservation, restoration, and conservation of antiquities. Antiquities and state'
+            range:   CC135-137
+            start:   CC135
+            end:     CC137
+          - name:    'Forgeries of antiquities'
+            range:   CC140
+            start:   CC140
+            end:     CC140
+          - name:    'Bells.  Campanology.  Cowbells'
+            range:   CC200-260
+            start:   CC200
+            end:     CC260
+          - name:    'Crosses'
+            range:   CC300-350
+            start:   CC300
+            end:     CC350
+          - name:    'Boundary stones'
+            range:   CC600-605
+            start:   CC600
+            end:     CC605
+          - name:    'Stone heaps, cairns, etc., of unknown purpose'
+            range:   CC700-705
+            start:   CC700
+            end:     CC705
+          - name:    'Hill figures'
+            range:   CC710
+            start:   CC710
+            end:     CC710
+          - name:    'Lanterns of the dead'
+            range:   CC960
+            start:   CC960
+            end:     CC960
+  - subclass:  CD
+    name:     'Diplomatics.  Archives.  Seals'
+    sections:
+      - name:    'Diplomatics.  Archives.  Seals'
+        range:   CD1-6471
+        start:   CD1
+        end:     CD6471
+        sections:
+          - name:    'Diplomatics'
+            range:   CD1-511
+            start:   CD1
+            end:     CD511
+            sections:
+              - name:    'Practice of special chancelleries'
+                range:   CD70-79
+                start:   CD70
+                end:     CD79
+              - name:    'Formularies'
+                range:   CD80-81
+                start:   CD80
+                end:     CD81
+              - name:    'Forgeries of documents'
+                range:   CD87
+                start:   CD87
+                end:     CD87
+              - name:    'Collection of documents, facsimiles, etc., for study'
+                range:   CD91-392
+                start:   CD91
+                end:     CD392
+              - name:    'Study and teaching'
+                range:   CD501-511
+                start:   CD501
+                end:     CD511
+          - name:    'Archives'
+            range:   CD921-4280
+            start:   CD921
+            end:     CD4280
+            sections:
+              - name:    'History and statistics'
+                range:   CD995-4280
+                start:   CD995
+                end:     CD4280
+                sections:
+                  - name:    'Biography of archivists'
+                    range:   CD997
+                    start:   CD997
+                    end:     CD997
+                  - name:    'By region or country'
+                    range:   CD1000-4280
+                    start:   CD1000
+                    end:     CD4280
+          - name:    'Seals'
+            range:   CD5001-6471
+            start:   CD5001
+            end:     CD6471
+            sections:
+              - name:    'Iconography'
+                range:   CD5191
+                start:   CD5191
+                end:     CD5191
+              - name:    'Ancient'
+                range:   CD5201-5391
+                start:   CD5201
+                end:     CD5391
+              - name:    'Medieval'
+                range:   CD5501-5557
+                start:   CD5501
+                end:     CD5557
+              - name:    'Renaissance'
+                range:   CD5561
+                start:   CD5561
+                end:     CD5561
+              - name:    'Modern'
+                range:   CD5575-6471
+                start:   CD5575
+                end:     CD6471
+  - subclass:  CE
+    name:     'Technical Chronology.  Calendar'
+    sections:
+      - name:    'Technical Chronology.  Calendar'
+        range:   CE1-97
+        start:   CE1
+        end:     CE97
+        sections:
+          - name:    'Ancient'
+            range:   CE21-46
+            start:   CE21
+            end:     CE46
+          - name:    'Medieval and modern'
+            range:   CE51-85
+            start:   CE51
+            end:     CE85
+          - name:    'Perpetual calendars.  Century calendars, etc.'
+            range:   CE91-92
+            start:   CE91
+            end:     CE92
+  - subclass:  CJ
+    name:     'Numismatics'
+    sections:
+      - name:    'Numismatics'
+        range:   CJ1-6661
+        start:   CJ1
+        end:     CJ6661
+        sections:
+          - name:    'Coins'
+            range:   CJ1-4625
+            start:   CJ1
+            end:     CJ4625
+            sections:
+              - name:    'Finds of coins'
+                range:   CJ153
+                start:   CJ153
+                end:     CJ153
+              - name:    'Symbols, devices, etc.'
+                range:   CJ161
+                start:   CJ161
+                end:     CJ161
+              - name:    'Ancient'
+                range:   CJ201-1397
+                start:   CJ201
+                end:     CJ1397
+              - name:    'Medieval and modern'
+                range:   CJ1509-4625
+                start:   CJ1509
+                end:     CJ4625
+          - name:    'Tokens'
+            range:   CJ4801-5450
+            start:   CJ4801
+            end:     CJ5450
+            sections:
+              - name:    'By period'
+                range:   CJ4861-4889
+                start:   CJ4861
+                end:     CJ4889
+              - name:    'By region or country'
+                range:   CJ4901-5336
+                start:   CJ4901
+                end:     CJ5336
+              - name:    'Special uses of tokens'
+                range:   CJ5350-5450
+                start:   CJ5350
+                end:     CJ5450
+          - name:    'Medals and medallions'
+            range:   CJ5501-6661
+            start:   CJ5501
+            end:     CJ6661
+            sections:
+              - name:    'Ancient'
+                range:   CJ5581-5690
+                start:   CJ5581
+                end:     CJ5690
+              - name:    'Medieval and modern'
+                range:   CJ5723-5793
+                start:   CJ5723
+                end:     CJ5793
+              - name:    'By region or country'
+                range:   CJ5795-6661
+                start:   CJ5795
+                end:     CJ6661
+  - subclass:  CN
+    name:     'Inscriptions.  Epigraphy'
+    sections:
+      - name:    'Inscriptions.  Epigraphy'
+        range:   CN1-1355
+        start:   CN1
+        end:     CN1355
+        sections:
+          - name:    'Ancient inscriptions'
+            range:   CN120-740
+            start:   CN120
+            end:     CN740
+          - name:    'Early Christian inscriptions'
+            range:   CN750-753
+            start:   CN750
+            end:     CN753
+          - name:    'Medieval inscriptions (General)'
+            range:   CN755
+            start:   CN755
+            end:     CN755
+          - name:    'Modern inscriptions (General)'
+            range:   CN760
+            start:   CN760
+            end:     CN760
+          - name:    'By language'
+            range:   CN805-865
+            start:   CN805
+            end:     CN865
+          - name:    'By region or country'
+            range:   CN870-1355
+            start:   CN870
+            end:     CN1355
+  - subclass:  CR
+    name:     'Heraldry'
+    sections:
+      - name:    'Heraldry'
+        range:   CR1-6305
+        start:   CR1
+        end:     CR6305
+        sections:
+          - name:    'Crests, monograms, devices, badges, mottoes, etc.'
+            range:   CR51-79
+            start:   CR51
+            end:     CR79
+          - name:    'Shields and supporters'
+            range:   CR91-93
+            start:   CR91
+            end:     CR93
+          - name:    'Flags, banners, and standards'
+            range:   CR101-115
+            start:   CR101
+            end:     CR115
+          - name:    'Public and official heraldry'
+            range:   CR191-1020
+            start:   CR191
+            end:     CR1020
+          - name:    'Ecclesiastical and sacred heraldry'
+            range:   CR1101-1131
+            start:   CR1101
+            end:     CR1131
+          - name:    'Family heraldry'
+            range:   CR1179-3395
+            start:   CR1179
+            end:     CR3395
+          - name:    'Titles of honor, rank, precedence, etc.'
+            range:   CR3499-4420
+            start:   CR3499
+            end:     CR4420
+          - name:    'Royalty.  Insignia.  Regalia, crown and coronets, etc.'
+            range:   CR4480-4485
+            start:   CR4480
+            end:     CR4485
+          - name:    'Chivalry and knighthood (Orders, decorations, etc.)'
+            range:   CR4501-6305
+            start:   CR4501
+            end:     CR6305
+            sections:
+              - name:    'Ceremonials, pageants, tournaments, etc.'
+                range:   CR4547-4553
+                start:   CR4547
+                end:     CR4553
+              - name:    'Duels and dueling'
+                range:   CR4571-4595
+                start:   CR4571
+                end:     CR4595
+              - name:    'Orders, etc.'
+                range:   CR4651-6305
+                start:   CR4651
+                end:     CR6305
+  - subclass:  CS
+    name:     'Genealogy'
+    sections:
+      - name:    'Genealogy'
+        range:   CS1-3090
+        start:   CS1
+        end:     CS3090
+        sections:
+          - name:    'Genealogical lists, etc., covering more than one country or continent'
+            range:   CS23-35
+            start:   CS23
+            end:     CS35
+          - name:    'Family history covering more than one country'
+            range:   CS38-39
+            start:   CS38
+            end:     CS39
+          - name:    'By region or country'
+            range:   CS42-2209
+            start:   CS42
+            end:     CS2209
+          - name:    'Personal and family names'
+            range:   CS2300-3090
+            start:   CS2300
+            end:     CS3090
+  - subclass:  CT
+    name:     'Biography'
+    sections:
+      - name:    'Biography'
+        range:   CT21-9999
+        start:   CT21
+        end:     CT9999
+        sections:
+          - name:    'Biography as an art or literary form'
+            range:   CT21-22
+            start:   CT21
+            end:     CT22
+          - name:    'History of biographical literature.  Lives of biographers'
+            range:   CT31-83
+            start:   CT31
+            end:     CT83
+          - name:    'General collective biography'
+            range:   CT93-206
+            start:   CT93
+            end:     CT206
+            sections:
+              - name:    'Portraits'
+                range:   CT206
+                start:   CT206
+                end:     CT206
+          - name:    'National biography'
+            range:   CT210-3150
+            start:   CT210
+            end:     CT3150
+          - name:    'Biography.  By subject'
+            range:   CT3200-9999
+            start:   CT3200
+            end:     CT9999
+            sections:
+              - name:    'Biography of women (Collective)'
+                range:   CT3200-3830
+                start:   CT3200
+                end:     CT3830
+              - name:    'Academicians.  Scholars. Savants'
+                range:   CT3990
+                start:   CT3990
+                end:     CT3990
+              - name:    'Other miscellaneous groups'
+                note:    'Including adventurers, eccentrics, misers, etc.'
+                range:   CT9960-9998
+                start:   CT9960
+                end:     CT9998
+              - name:    'Blank books for personal records, diaries, etc.'
+                range:   CT9999
+                start:   CT9999
+                end:     CT9999

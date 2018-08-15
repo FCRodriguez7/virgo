@@ -1,0 +1,114 @@
+<%# app/views/layouts/home.html.erb -%>
+<%-
+  # This layout is only for the home page (#root_path).
+  page_css = %w(virgo-home home-page virgo-home-page)
+  page_css << 'print-view' if print_view?
+  page_css = page_css.join(SPACE)
+
+  # Initial stylesheets and scripts for all routes using this layout.
+  javascripts = [] <<  'home.js'
+  stylesheets = [] << ('application.css' unless print_view?)
+
+  # Print styling comes after all other html_head entries.
+  print_media = [] << 'print' << ('screen' if print_view?)
+  print_media = print_media.compact.join(LIST_SEPARATOR)
+  html_head << stylesheet_link_tag('print.css', media: print_media)
+
+  # Add to the start of the hidden "skip navigation" menu.
+  skip_nav.unshift(link_to('Main Content', '#content'))
+
+  # Fixed width for main content.
+  content_css = 'page-content grid_21 push_3'
+
+  # Portal buttons.
+  portal_button_opt = {}
+  portal_button_opt[:except] = :classic if UVA::Classic.feature_hidden?
+
+  # Sidebar links.
+  vcard = vcard_links
+  chat_now =
+    ask_a_librarian('Chat now', title: 'Questions? Ask a Librarian', style: '')
+
+  view_debug(__FILE__)
+-%>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+
+  <%# === Meta tags === -%>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <%= show_meta_tags %>
+  <%= csrf_meta_tags %>
+
+  <%# === Include CSS, JavaScript and items added by the action page === -%>
+  <%= show_html_head(stylesheets, javascripts) -%>
+
+</head>
+
+<body class="<%= page_css -%>">
+
+  <%= show_cache_refresh unless print_view? %>
+
+  <div class="virgo-container">
+
+    <%# === Top banner === -%>
+    <%= render 'layouts/header' %>
+
+    <div class="page-container container_24">
+
+      <article class="<%= content_css -%>" id="content" role="main">
+
+        <%# === Search term input === -%>
+        <%= render 'catalog/search_box' %>
+
+        <%# === Flash messages (if any are active) === -%>
+        <%= render '/flash_msg', css_class: 'grid_16 push_1 flash-message' %>
+
+        <%# === Home page content === -%>
+        <div class="grid_15 push_1 info-content">
+
+          <%# === Browse catalog, articles, etc. === -%>
+          <%= show_portal_buttons(portal_button_opt) %>
+
+          <%# === NOTE: rendering of action page inserted here === -%>
+          <%= yield %>
+
+        </div>
+
+      </article>
+
+      <%# === Sidebar items === -%>
+      <aside class="contact-info grid_20 push_4" role="complementary">
+        <header class="contact-header">
+          <h2>Have Questions?</h2>
+        </header>
+        <div class="vcard">
+          <address class="url fn org">
+            <%= vcard[:org] %>
+          </address>
+          <address class="contact phone tel">
+            Phone:&nbsp;<%= vcard[:tel] %>
+          </address>
+          <address class="contact email">
+            Email:&nbsp;<%= vcard[:email] %>
+          </address>
+          <address class="contact chat">
+            <%= chat_now %>
+          </address>
+        </div>
+      </aside>
+
+    </div>
+
+    <%# === Page bottom === -%>
+    <%= render 'layouts/footer', layout: __FILE__ %>
+
+  </div>
+
+  <%= render 'layouts/skip_nav' %>
+  <%= render 'layouts/analytics' %>
+  <%= render 'layouts/copyright' %>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<%# app/views/shelf_browse/help/_background.html.erb -%>
+<%-
+  # Locals are defined in shelf_browse/shared/_help_content.html.erb where this
+  # file is included.
+
+  view_debug(__FILE__)
+-%>
+
+<div class="<%= help_topic_css(:help_background) -%>">
+  <h2>Background Info</h2>
+  <p>
+    Regardless of their physical locations, the shelving of items is usually
+    done by arranging them by <em>call number</em>, which is an encoding of
+    where an item fits into the <%= sb_link[:lcc] -%> (LCC) system.
+  </p>
+  <p>
+    In the stacks, aisles of shelves are labeled with a <em>range</em> of call
+    numbers on that aisle, which indicates the call number of the first item
+    (beginning at the top of the left-most shelf) through the call number of
+    the last item (ending on the bottom of the right-most shelf).
+  </p>
+  <p>
+    Although some UVA libraries&mdash;due to their specialties&mdash;may be the
+    only places to find items within a particular call number range, many
+    ranges can be found in two or more libraries.
+    This can present a problem when browsing the shelves in person because it's
+    difficult to know whether another library might have related items in the
+    same range of call numbers.
+  </p>
+</div>

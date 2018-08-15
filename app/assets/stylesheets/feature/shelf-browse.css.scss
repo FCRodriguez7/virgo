@@ -1,0 +1,1730 @@
+// app/assets/stylesheets/feature/shelf-browse.css.scss
+
+@import "feature/shelf-browse/debug";
+@include -trace-module("feature/shelf-browse.css.scss");
+
+@import "jquery-resizable";
+
+@import "feature/shelf-browse/values";
+@import "feature/shelf-browse/mixins";
+@import "feature/shelf-browse/overlay";
+@import "feature/shelf-browse/links";
+
+// ============================================================================
+// SHELF BROWSE DISPLAY
+//
+// Styling is appropriate for either a popup (via colorbox) or a standalone
+// web page.  For a popup context, include class "popup" after "display" (see
+// .shelf-browse.display.popup below).
+// ============================================================================
+
+.shelf-browse.display {
+
+    @include flex-box(column);
+
+    height:     100%;
+    overflow:   hidden;
+    background: $sb-background-color;
+    border:     2px solid $sb-border-color;
+
+    // ========================================================================
+    // SHELF BROWSE DISPLAY - COMPONENT: HEADER AREA
+    // ========================================================================
+
+    .header-area {
+
+        padding: $sb-padding;
+
+        // ====================================================================
+        // Components
+        // ====================================================================
+
+        // A button to drop down a panel displaying general help information.
+        // (defined below).
+        .help-button {}
+
+        // The open/close button for the LCC tree browser.
+        .lcc-button {
+
+            @include button;
+            @include sb-title-font;
+
+            vertical-align: top;
+            position:       relative;
+            z-index:        $z-sb-lcc-panel;
+            cursor:         $sb-link-cursor;
+
+            &:focus { outline-offset: 3px; }
+        }
+
+        // The centered title for the dialog box.
+        //
+        // This is placed at the highest z-order so that title-text can be
+        // clicked for debugging information and help-button can be clicked to
+        // get a help dropdown -- regardless of any overlays that might be in
+        // place.
+        //
+        // @see attachHandlers() in app/assets/javascripts/feature/shelf-browse
+        //
+        .title-text {
+
+            @include center-xy(50%, 0, absolute);
+            @include sb-title-font;
+
+            display:     inline-block;
+            margin-top:  0.35em;
+            color:       $sb-main-title-color;
+            font-weight: bolder;
+            z-index:     $z-sb-topmost;
+        }
+
+        // Origin display/button.
+        //
+        // By default (on page 0) this is just a label displaying the call
+        // number of the original item.
+        //
+        .origin {
+
+            @include sb-title-call-number(0.75);
+            @include sb-title-font;
+
+            float: right;
+
+            &:focus { outline-offset: 3px; }
+
+            // ================================================================
+            // Variations
+            // ================================================================
+
+            // Before or after page 0 (indicated by added "target" class):
+            //
+            // Displayed as a control to return to the origin.  Hovering over
+            // it causes it to be highlighted as an action-able item and the
+            // call number of the origin is highlighted as a link to page 0.
+            //
+            &.target {
+
+                @include button;
+
+                &:focus {
+                    outline-offset: 3px;
+                }
+
+                &:hover {
+                    span.target {
+                        color: $sb-link-color;
+                    }
+                }
+            }
+        }
+
+        // A button to close the popup as an alternative to the "Close" link
+        // at the lower right corner of the colorbox.
+        .close-button {
+
+            @include close-button;
+
+            height: 1.75em;
+            width:  1.75em;
+            margin: 0.1em 0.7em 0.1em 1em;
+            float:  right;
+        }
+    }
+
+    // ========================================================================
+    // SHELF BROWSE DISPLAY - COMPONENT: CALL NUMBER RANGES AREA
+    // ========================================================================
+
+    .current-range-area {
+
+        display:     block;
+        height:      28px;
+        padding:     0 $sb-padding ($sb-padding / 2);
+        color:       $sb-header-color;
+        font-size:   18px;
+        font-weight: 300;
+
+        // ====================================================================
+        // Component: Current call number range.
+        // ====================================================================
+
+        // The range of call numbers is centered in the current-range-area.
+        .range {
+
+            @include center;
+
+            display: inline-block;
+
+            // ================================================================
+            // Components
+            // ================================================================
+
+            .start,
+            .end {
+
+                @include sb-title-call-number(0.375);
+
+                font-style: normal;
+                border:     none;
+            }
+        }
+
+        // ====================================================================
+        // Component: Current page number.
+        // ====================================================================
+
+        // Number of pages before or after the origin (displayed when the
+        // virtual shelf is not on page 0).
+        .page-display {
+
+            display:       block;
+            margin-top:    2px;
+            padding:       0 0.25em;
+            position:      absolute;
+            color:         whitesmoke;
+            background:    darkgray;
+
+            &:before {
+                clear: both;
+            }
+
+            // ================================================================
+            // Variations.
+            // ================================================================
+
+            // Class "ahead" is added when the current page is beyond the
+            // origin (at higher call numbers) -- the page number appears on
+            // the right hand side (aligned with .origin).
+            &.ahead {
+                right:        0.7em;
+                margin-right: 0.5em;
+            }
+
+            // Class "behind" is added when the current page is before the
+            // origin (at lower call numbers) -- the page number appears on the
+            // left hand side (aligned with .lcc-button).
+            &.behind {
+                left:         0.7em;
+                margin-left:  0.5em;
+            }
+        }
+
+        // ====================================================================
+        // Component: Dynamic overlay and progress bar.
+        // ====================================================================
+
+        // Initially, the progress bar overlay blanks out the range area as
+        // soon as a page transition begins (for page-forward, page-reverse and
+        // others).
+        //
+        // After a short delay, an animated progress bar kicks in to indicate
+        // that the requested change hasn't happened yet (probably because the
+        // return from Solr is taking longer than expected).
+        //
+        // If the Solr request completes in a short amount of time, the
+        // animation delay will prevent any part of the bar from showing.
+        // The delay was determined heuristically, but the total duration is
+        // based on the current $.ajaxSetup timeout.
+        //
+        .progress-overlay {
+
+            display:    block;
+            width:      100%;
+            height:     100%;
+            background: inherit;
+            opacity:    1;
+
+            // ================================================================
+            // Progress bar
+            // ================================================================
+
+            .progress-bar {
+
+                display:        inline-block;
+                width:          0;
+                padding:        2px 0;
+                margin:         0;
+                overflow:       hidden;
+                white-space:    nowrap;
+                vertical-align: middle;
+                color:          whitesmoke;
+                background:     green;
+                visibility:     hidden;
+
+                // ============================================================
+                // Animation.
+                // ============================================================
+
+                @include animate(
+                    range-progress,
+                    $sb-progress-delay,
+                    $sb-progress-duration,
+                    $sb-progress-fill
+                );
+
+                // ============================================================
+                // Variations.
+                // ============================================================
+
+                /// Define the shape of a progress bar leading edge.
+                ///
+                /// @param {String} $direction
+                /// @param {Number} $radius
+                ///
+                @mixin progress-bar-leading-edge($direction, $radius) {
+                    padding-#{$direction}:              $radius;
+                    text-align:                         $direction;
+                    border-top-#{$direction}-radius:    $radius;
+                    border-bottom-#{$direction}-radius: $radius;
+                }
+
+                // Bar grows from right to left when paging forward.
+                &.right {
+                    float: right;
+                    @include progress-bar-leading-edge(left, 6px);
+                }
+
+                // Bar grows from left to right when paging backward.
+                &.left {
+                    float: left;
+                    @include progress-bar-leading-edge(right, 6px);
+                }
+            }
+        }
+    }
+
+    // ========================================================================
+    // SHELF BROWSE DISPLAY - COMPONENT: SCROLLER CONTAINER
+    // ========================================================================
+
+    // This wrapper class only exists to support making the .item-info area a
+    // resizable panel.  Even if that option is not currently configured,
+    // leaving the class in place keeps it as an option.
+    .scroller-container {
+
+        // Conditionally include splitter definitions.
+        @if $sb-page-scroller-splitter {
+            @extend .resizable-vertical;
+        }
+
+        // ====================================================================
+        // Components
+        // ====================================================================
+
+        // Panel containing the display of the current set of items.
+        // (defined below).
+        .page-scroller {}
+
+        // Separator between the panels.  If not being used as a splitter, it
+        // has zero width so that it does not respond to hover and click.
+        .page-scroller-separator {
+            @if $sb-page-scroller-splitter {
+                @extend .horizontal-splitter;
+            }
+            @else {
+                height: 0;
+            }
+        }
+
+        // Panel containing information about the display item(s).
+        // (defined below).
+        .item-info {}
+    }
+
+    // Panel containing the display of the current set of items.
+    .page-scroller {
+
+        @include flex-box(row, space-around);
+        @if $sb-page-scroller-splitter { @extend .resizable-top; }
+
+        padding:      1.1em 2px;
+        background:   $sb-scroller-background;
+        border:       1px solid rgba($sb-border-color, 0.625);
+        border-left:  none;
+        border-right: none;
+
+        // ====================================================================
+        // Contents of current item page
+        // ====================================================================
+
+        .item-page {
+
+            @include flex-box(column);
+
+            width:   auto;
+            margin:  auto 0;
+
+            // ================================================================
+            // Container for a variable number of item tiles.
+            // ================================================================
+
+            .tile-container {
+
+                @include flex-box(row, space-between);
+
+                width:  auto;
+                margin: auto 0;
+
+                // ============================================================
+                // Animation.
+                // ============================================================
+
+                // This is not engaged by default in production; it's here for
+                // testing and future development.
+                //
+                // Test with:
+                // .../shelf_browse?start=xxx&show_tile_scroller=true
+                //
+                // @see showTileScroller()
+                // in app/assets/javascripts/feature/shelf-browse
+                //
+                position: relative;
+                left:     0;
+                transition-property:        left;
+                transition-duration:        $sb-progress-duration;
+                transition-delay:           $sb-progress-delay;
+                transition-timing-function: ease-in-out;
+
+                &.scroll-left  { left: -110%; }
+                &.scroll-right { left: 110%;  }
+
+                // ============================================================
+                // Components: One or more item tiles.
+                // ============================================================
+
+                // An item tile encapsulates all of the information for a
+                // catalog item, both the visible representation to be
+                // displayed in the tile container and the invisible metadata
+                .item-tile {
+
+                    @include flex-box(column, space-between);
+                    @include user-select(none);
+
+                    margin:   auto 6px;
+                    position: relative;
+                    cursor:   default;
+
+                    // ========================================================
+                    // Components
+                    // ========================================================
+
+                    // Representation of a catalog item.
+                    //
+                    .item {
+
+                        $contrast-color: rgba($sb-item-label-border, 0.5);
+
+                        @include flex-box(column, space-between);
+
+                        height:     165px;
+                        width:      100px;
+                        margin:     10px auto 0;
+                        padding:    2px;
+                        text-align: center;
+                        color:      $sb-item-label-color;
+
+                        // Allow $sb-item-color to appear dominant but darken
+                        // the top and bottom areas where the title and call
+                        // number text will need higher contrast.
+                        background-blend-mode: screen;
+                        background-color:      $contrast-color;
+                        background-image:
+                            radial-gradient(at left,
+                                $sb-item-color 60%,
+                                transparent    100%
+                            ),
+                            radial-gradient(at right,
+                                $sb-item-color 60%,
+                                transparent    100%
+                            );
+                        box-shadow:
+                            inset 0  50px 40px -20px $contrast-color,
+                            inset 0 -30px 40px -20px $contrast-color;
+                        border: 2px solid $contrast-color;
+                        border-image: linear-gradient(
+                            $contrast-color 0%,
+                            $sb-item-color  30%,
+                            $sb-item-color  80%,
+                            $contrast-color 100%
+                        ) 1;
+
+                        // ====================================================
+                        // Components
+                        // ====================================================
+
+                        // Main title of the entry.
+                        //
+                        // Because hyphenation doesn't necessary yield better
+                        // results (and because Chrome doesn't implement the
+                        // "hyphens" attribute), just give extra horizontal
+                        // room to display the title.  Extra padding is needed
+                        // at the bottom to keep descending lowercase letters
+                        // like "g" from being cut off at the bottom.
+                        //
+                        .title {
+                            margin-left:    -3px;
+                            margin-right:   -3px;
+                            padding-bottom: 1px;
+                            line-height:    100%;
+                            font-size:      105%;
+                        }
+
+                        // Container for the cover image.
+                        //
+                        // Shadow is placed on the image rather than the
+                        // container for greater control.
+                        //
+                        .cover-container {
+
+                            @include center-xy(50%, 55%, absolute);
+
+                            display:    block;
+                            width:      60%;
+                            max-width:  100%;
+                            max-height: 100%;
+                            overflow:   hidden;
+
+                            // The cover image is constrained by the
+                            // .cover-container.
+                            img {
+                                width:      100%;
+                                max-width:  100%;
+                                max-height: 100%;
+                                margin:     0 auto;
+                                box-shadow: 0 0 10px -4px white;
+                            }
+
+                            // Before the cover image arrives, this keeps the
+                            // AJAX loader image from being warped.
+                            .ajax-loader {
+                                width:      16px;
+                                height:     16px;
+                                box-shadow: none;
+                            }
+                        }
+
+                        // Call number matching the shelfkey.
+                        //
+                        // Because occasionally the last dot of &ctdot; will
+                        // get truncated, allow just a little extra room on the
+                        // right.
+                        //
+                        .call-number {
+                            margin-right: -1px;
+                        }
+
+                        // Outline text in the contrast color and ensure that
+                        // the text will display above the cover image if they
+                        // overlap.
+                        .title,
+                        .call-number {
+
+                            @include text-outline(1px, 1px, 9px, $contrast-color);
+
+                            z-index:    $z-sb-item;
+                            overflow:   hidden;
+                        }
+
+                        // ====================================================
+                        // Variations
+                        // @see UVA::Helper::ShelfBrowse#item_element
+                        // @see UVA::Helper::ShelfBrowse::STATUS_MARKER
+                        // ====================================================
+
+                        &.empty          {} // TBD
+
+                        &.pda            { @include item-border(dashed, $sb-pda-color); }
+                        &.unavailable    { @include item-border(dashed, $sb-unavailable-color); }
+
+                        &.non-english    {} // TBD
+                        &.equipment      {} // TBD
+                        &.audio          {} // TBD
+                        &.video          {} // TBD
+                        &.book           {} // TBD
+
+                        &.non-circ       { @include item-border(solid,  $sb-non-circ-color); }
+                        &.reserve        { @include item-border(solid,  $sb-reserve-color); }
+                        &.site           {} // TBD
+
+                        &.shadowed       { @include item-border(solid,  $sb-shadowed-color); }
+                        &.undiscoverable { @include item-border(solid,  $sb-error-color); }
+                        &.error          { @include item-border(solid,  $sb-error-color); }
+                        &.debug          { @include item-border(solid,  $sb-debug-color); }
+                    }
+
+                    // Markers indicating item status.
+                    .item-status-tray {
+
+                        @include flex-box(row, center);
+
+                        width:  100%;
+                        height: 14px;
+                        margin: 6px auto -8px;
+                        cursor: $sb-action-cursor;
+
+                        // ====================================================
+                        // Components: Zero or more single-character markers.
+                        // ====================================================
+
+                        // Defined below.
+                        .item-status-marker {}
+                    }
+
+                    // In this context, the metadata associated with the item
+                    // is always hidden. (See .item-details .item-metadata
+                    // below for the context where metadata is visible.)
+                    .item-metadata {
+                        display: none;
+                    }
+
+                    // ========================================================
+                    // Variations
+                    // ========================================================
+
+                    // The "selected" item (whose call number is shown in
+                    // the .origin display).
+                    &.focus,
+                    &:focus {
+                        .item { outline: 5px double $sb-highlight-color; }
+                    }
+
+                    // Highlight the item when the tile is moused over.
+                    &:hover {
+                        .item { outline: 5px solid $sb-highlight-color; }
+                    }
+
+                    // Show a splash of color under the selected item.
+                    &.focus,
+                    &:focus,
+                    &:hover {
+                        .item-status-tray {
+
+                            background-image:
+                                radial-gradient(
+                                    rgba($sb-item-color, 0.4) 10%,
+                                    transparent               80%
+                                );
+
+                            // Highlight any markers in the status tray.
+                            .item-status-marker {
+                                background: $sb-highlight-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // ====================================================================
+        // Left and right sets of page controls.
+        // ====================================================================
+
+        .page-controls {
+
+            @include flex-box(column);
+
+            margin:          0;
+            justify-content: center;
+
+            // ================================================================
+            // Controls.
+            // ================================================================
+
+            // Scroll the next (higher) set of call numbers.
+            .page-forward { text-align: right; }
+
+            // Scroll the previous (lower) set of call numbers.
+            .page-reverse { text-align: left; }
+
+            // Common styling for page controls.
+            .page-forward,
+            .page-reverse {
+
+                display:   block;
+                margin:    0;
+                padding:   0;
+                font-size: 200%;
+                color:     $sb-item-color;
+                cursor:    default;
+
+                &:focus {
+                    outline:        thin solid $sb-highlight-color;
+                    outline-offset: 0;
+                }
+
+                // Highlight on hover to indicate the control is actionable.
+                &:hover {
+                    color:          $sb-highlight-color;
+                }
+            }
+        }
+    }
+
+    // Panel containing information about the display item(s).
+    .item-info {
+
+        @include flex-box(row);
+        @if $sb-item-info-splitter     { @extend .resizable-horizontal; }
+        @if $sb-page-scroller-splitter { @extend .resizable-bottom; }
+
+        min-height: 200px;
+        max-height: 40vh;
+
+        // ====================================================================
+        // SCSS mixins
+        // ====================================================================
+
+        /// Common properties of the panels.
+        ///
+        @mixin info-section {
+            display:    block;
+            padding:    $sb-padding;
+            margin:     $sb-padding;
+            color:      $sb-info-color;
+            background: $sb-info-background;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        // ====================================================================
+        // Components: Information panels.
+        // ====================================================================
+
+        // Heuristically determined width for .item-ranges which makes the
+        // splitter appear midway between equal-sized .item-ranges and
+        // .item-details panels.
+        $sb-item-ranges-midway: 48.4%;
+
+        // Initial split favors a larger .item-details panel.
+        $sb-item-ranges-initial: 36%;
+
+        // Panel containing the .range-frame control.
+        .item-ranges {
+
+            @include info-section;
+
+            @if $sb-item-info-splitter {
+                @extend .resizable-left;
+                margin-right: 0;      // Make room for splitter to the right.
+            }
+            @else {
+                margin-right: ($sb-padding / 2);
+            }
+            @if $sb-page-scroller-splitter {
+                margin-top:   0;      // Make room for splitter above.
+            }
+
+            width:     $sb-item-ranges-initial;
+            font-size: 110%;
+
+            // The control generated to display the hierarchy of ranges covered
+            // by the items visible in the current virtual shelf window.
+            .range-frame {
+
+                @include flex-box(column);
+
+                background: inherit;
+
+                // ============================================================
+                // Entries
+                // ============================================================
+
+                .lcc-class,
+                .lcc-subclass,
+                .lcc-range {
+
+                    @include lcc-range;
+
+                    margin-top:     1px;
+                    margin-bottom:  4px;
+                    padding-bottom: 1px;
+                    overflow:       hidden;
+                    background:     inherit;
+
+                    // ========================================================
+                    // Components
+                    // ========================================================
+
+                    // First of a pair of LCCO values.
+                    > .start {
+                        > .class {}    // Defined by @mixin lcc-range
+                        > .subclass {} // Defined by @mixin lcc-range
+                        > .range {}    // Defined by @mixin lcc-range
+                    }
+
+                    // Element inserted between .start and .end (when a second
+                    // pair of LCCO values is provided).
+                    > .connector {
+                        display:    block;
+                        margin:     0 0.5em;
+                        text-align: center;
+                        font-style: italic;
+                        &:before { content: "-"; }
+                        &:after  { content: "-"; }
+                    }
+
+                    // Second of a pair of LCCO values (if provided).
+                    > .end {
+                        > .class {}    // Defined by @mixin lcc-range
+                        > .subclass {} // Defined by @mixin lcc-range
+                        > .range {}    // Defined by @mixin lcc-range
+                    }
+                }
+
+                // The top-level component is handled slightly differently.
+                // Because the LCC class names can be very long, these are
+                // truncated.  (Mouse hover brings up a tooltip with the full
+                // name.)
+                .lcc-class {
+                    padding-left: 1px;
+                    white-space:  nowrap;
+                }
+
+                // Notes are present in the tooltip text but not accentuated
+                // after the range name.
+                .note {
+                    display: none;
+                }
+            }
+        }
+
+        // Separator between the panels.  If not being used as a splitter, it
+        // has zero width so that it does not respond to hover and click.
+        .item-info-separator {
+            @if $sb-item-info-splitter {
+                @extend .vertical-splitter;
+                width: ($sb-padding*1.5);
+            }
+            @else {
+                width: 0;
+            }
+        }
+
+        // Panel containing details of the current item.  See below for styling
+        // of this class that is specific to the purpose of displaying item
+        // metadata.
+        .item-details {
+
+            @include info-section;
+
+            @if $sb-item-info-splitter {
+                @extend .resizable-right;
+                margin-left: 0;       // Make room for splitter to the right.
+            }
+            @else {
+                margin-left: ($sb-padding / 2);
+            }
+            @if $sb-page-scroller-splitter {
+                margin-top:  0;       // Make room for splitter above.
+            }
+
+            // This redefines show page styles within the .item-metadata
+            // element that is moved into .item-details from the .item-tile of
+            // the focus item.
+            .item-metadata {
+
+                position: relative;
+                z-index:  $z-sb-item-metadata;
+
+                // ============================================================
+                // Variations.
+                // ============================================================
+
+                // Hidden by default.
+                & {
+                    display: none;
+                }
+
+                // Made visible with the inclusion of class ".visible".
+                &.visible {
+                    display: block;
+                }
+
+                // ============================================================
+                // Content styling.
+                // ============================================================
+
+                // Override show page styling for the title and statement of
+                // responsibility fields.
+                .title-area {
+
+                    @include flex-box(row, space-between);
+
+                    padding: 0;
+
+                    // Override ".item-identifier-fields" (style.css.scss).
+                    .item-identifier-fields {
+
+                        padding-top: 0;
+
+                        // Override ".item-identifier-fields .title-field"
+                        // (style.css.scss).
+                        .title-field {
+
+                            font-size: 24px;
+
+                            // No show page styling defined for this part.
+                            .documentSubtitle {} // TBD
+                        }
+
+                        // Override ".show-page .resp-stmt-field"
+                        // (components.css.scss).
+                        .resp-stmt-field {} // TBD
+                    }
+
+                    // Full record link buttons.
+                    .full-record-button-panel {
+                        margin: 0 1em;
+                    }
+
+                    // Full record button.
+                    a.full-record-button:focus {
+                        outline: thin dashed black;
+                    }
+                }
+
+                // Override show page styling for ".show-page .item-fields",
+                // ".item-fields dl", ".item-fields dt", ".item-fields dd"
+                // (components.css.scss).
+                .item-fields {
+
+                    @include item-metadata-format;
+
+                    dd:last-of-type { margin-bottom: 1.25em; }
+
+                    .show-details { display: none; }
+
+                    .copyright-field {
+                        @include hyphens(none);
+                        word-break: keep-all;
+                    }
+                }
+
+                // Override show page styling for ".item-availability"
+                // (styles.css.scss and components.css.scss).
+                .item-availability {
+
+                    width:  auto;
+                    margin: 1em 0;
+
+                    h2, h3 { width: auto; }
+
+                    .online-availability {
+                        width: auto;
+                    }
+
+                    .physical-availability {
+
+                        width: auto;
+
+                        .holding                { width: 100%; }
+                        .holding .holding-group { width: 80%; }
+                        .dataTables_filter      { width: 100%; }
+                        .holdings               { width: 100%; }
+
+                        .policy-explanation {
+                            @include width-available(auto);
+                            margin-right: 1px;
+                        }
+
+                        // Restore cursor on request links (because "href"
+                        // were turned into "data-path" attributes).
+                        .initiate-request,
+                        .initiate-sc-request {
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                // Don't display shelf browse buttons if they happen to appear
+                // in the metadata.
+                .browse-button {
+                    display: none;
+                }
+            }
+
+            // Options for controlling how metadata appears in the panel.
+            .scroll-options {
+
+                @include flex-box(row);
+                @include user-select(none);
+
+                width:      100%;
+                padding:    0.5em;
+                border-top: 1px dotted gray;
+
+                // ============================================================
+                // Components
+                // ============================================================
+
+                .radio-label,
+                .radio-option {
+                    margin:         0 0.5em 0.75em;
+                    vertical-align: baseline;
+                }
+
+                .radio-label {
+                    font-style: italic;
+                }
+
+                .radio-option {
+
+                    &:last-of-type {
+                        margin-right:   0;
+                    }
+
+                    input {
+                        margin-right:   0.25em;
+                        vertical-align: text-top;
+                    }
+                }
+            }
+        }
+    }
+
+    // ========================================================================
+    // SHELF BROWSE DISPLAY - COMPONENT: LCC browser
+    // ========================================================================
+
+    // Initially hidden, this is the area which contains the LCC tree.
+    //
+    // Because the display can be very wide in some cases, the scrollbar is
+    // placed on the left and made initially visible (otherwise it kicks the
+    // whole tree to the right when it appears).
+    //
+    // NOTE: The position of the button tray in Firefox is correct.  Under
+    // Chrome, its too far to the left -- the way "position:sticky" is
+    // implemented, there doesn't seem to be any way to get it to move farther
+    // to the right.  Under Microsoft IE and Edge, since "position:sticky" is
+    // not implemented, the button tray scrolls with the rest of the panel.
+    //
+    .lcc-tree-display {
+
+        @include dropdown($z-sb-lcc-panel, 2, $sb-padding);
+
+        top:           3em;
+        bottom:        0.5em;
+        left:          1.5em;
+        width:         55%;
+        min-width:     700px;
+        max-width:     55%;
+        padding-right: 22px;
+        border:        4px solid $sb-border-color;
+        border-top-right-radius:    16px;
+        border-bottom-right-radius: 16px;
+        overflow-y:    scroll;
+        direction:     rtl;
+
+        // Restore normal behavior for the tree control itself.
+        > * {
+            direction: ltr;
+        }
+
+        // ====================================================================
+        // Components
+        // ====================================================================
+
+        // Container for the jstree.
+        .lcc-tree {
+
+            background: inherit;
+
+            // ============================================================
+            // Tree nodes
+            // ============================================================
+
+            .lcc-root,
+            .lcc-class,
+            .lcc-subclass,
+            .lcc-range {
+
+                @include lcc-range;
+
+                margin-bottom: -1px;
+
+                // Deviation from the definition in @mixin lcc-range.
+                .range {
+                    min-width:    8.5em;
+                    padding-left: 5px;
+                    text-align:   left;
+                }
+
+                // The label text.
+                span {
+                    margin-left: 0.5em;
+                    font-size:   110%;
+                    cursor:      initial;
+
+                    // Accentuate an entry that includes a note in the tooltip
+                    // by appending span with this class that encloses a star
+                    // ('*') or similar footnote-style character.
+                    .note {
+                        margin-left:    0.25em;
+                        line-height:    inherit;
+                        font-size:      larger;
+                        font-weight:    bold;
+                        vertical-align: sub;
+                        background:     transparent;
+                    }
+                }
+            }
+
+            // The text for the top-level root node is slightly different.
+            .lcc-root {
+                span {
+                    margin-left: 0.1em;
+                    font-weight: bolder;
+                }
+            }
+
+            // ============================================================
+            // Adjustments for the jstree control.
+            // ============================================================
+
+            // Each jstree level is a <ul> containing one or more <li>
+            // elements.
+            .jstree {
+
+                @include jstree-adjustments;
+
+                // Add some spacing between jstree nodes.
+                li {
+
+                    line-height: 22px;
+
+                    // ====================================================
+                    // Components.
+                    // ====================================================
+
+                    // Icon to open/close a branch.
+                    > .jstree-icon {}
+
+                    // The label for a jstree node includes the range name
+                    // preceded by the call number range button.
+                    > a {
+
+                        @include inline-flex-box(row);
+
+                        // ================================================
+                        // Components.
+                        // ================================================
+
+                        // Hide the jstree icon so that the range button
+                        // appears where the icon would have.
+                        //
+                        // It seems like giving "themes: { icons: false }"
+                        // in the jstree settings *should* have kept this
+                        // icon from appearing but that doesn't seem to be
+                        // the case.
+                        //
+                        > .jstree-icon {
+                            display: none;
+                        }
+
+                        // Wrapper for the button and label.
+                        > div {
+                            > div[data-path] {} // Call number ranges.
+                            > span {}           // Range name.
+                        }
+                    }
+
+                    // Child nodes (if any)
+                    > ul {}
+
+                    // ====================================================
+                    // Variations.
+                    // ====================================================
+
+                    // Use the "no dots" version of the icons for the root
+                    // level entry.  Highlight its background when hovered.
+                    &.lcc-root-node {
+                        > .jstree-icon {
+
+                            vertical-align: middle;
+                            border-radius:  9px;
+                            border:         2px solid transparent;
+
+                            :focus {
+                                outline-offset: 0;
+                            }
+
+                            :hover,
+                            :focus {
+                                border-color: $sb-highlight-color;
+                            }
+                        }
+                        &.jstree-open > .jstree-icon {
+                            background-position: -18px 0;
+                        }
+                        &.jstree-closed > .jstree-icon {
+                            background-position: 0 0;
+                        }
+                        > a {
+                            vertical-align: text-top;
+                        }
+                    }
+                }
+
+                // Prevent jstree entries from shifting when hovered over.
+                a.jstree-hovered {
+                    padding:    1px 2px;
+                    background: #bef9f4;
+                }
+                a.jstree-clicked {
+                    padding:    0 2px;
+                }
+
+                // Make it easy to select ranges/label to copy without
+                // including spaces from icon elements.
+                .jstree-icon {
+                    @include user-select(none);
+                }
+            }
+        }
+    }
+
+    // ========================================================================
+    // SHELF BROWSE DISPLAY - COMPONENT: Help panel
+    // ========================================================================
+
+    // A button for invoking help.
+    .help-button {
+
+        @include sb-title-font;
+
+        display:  inline-block;
+        color:    $sb-help-button-color;
+        cursor:   $sb-action-cursor;
+        position: relative;
+        z-index:  $z-sb-topmost;
+
+        // ====================================================================
+        // Variations
+        // ====================================================================
+
+        &:hover   { color:   $sb-highlight-color; } // Highlighted when hovered
+        &.visible { display: inline-block; }        // Added when visible
+        &.hidden  { display: none; }                // Added when hidden
+
+        // Main help.
+        &.main-help {
+
+            margin: -0.1em 0.5em 0 0.6em;
+
+            // Adjust contained text.
+            > * {
+                padding-top: 0.15em;
+                font-size:   1.10em;
+            }
+        }
+
+        // LCC browser help.
+        &.lcc-help {
+
+            margin-top: -1px;
+
+            // Adjust contained text.
+            > * {
+                vertical-align: top;
+                font-size:      105%;
+            }
+        }
+    }
+
+    // Drop-down help information panel (initially hidden).
+    //
+    // @see .help-button
+    // @see .help-overlay
+    // @see app/views/shelf_browse/horizontal/_display.html.erb
+    //
+    .help-container {
+
+        @include dropdown($z-sb-help-panel, 1, 0, $sb-padding);
+
+        $vertical-border:   3.2em;
+        $horizontal-border: 1.7em;
+        $padding:           1em;
+        $text-padding:      2px;
+
+        top:           $vertical-border;
+        left:          $horizontal-border;
+        height:        80%;
+        width:         60%;
+        min-height:    500px;
+        min-width:     700px;
+        padding:       $padding;
+        border-radius: $sb-border-radius;
+        border:        2px solid $sb-border-color;
+        overflow-x:    auto;
+        overflow-y:    hidden;
+
+        // ====================================================================
+        // Components
+        // ====================================================================
+
+        // @see app/views/shelf_browse/shared/_help_content.html.erb
+        .help-content {
+
+            display:    block;
+            height:     calc(100% - (#{$vertical-border}/2));
+            width:      calc(100% - #{$horizontal-border} - #{$sb-border-radius});
+            columns:    3;
+            column-gap: $padding;
+            position:   absolute;
+
+            // ================================================================
+            // Components
+            // ================================================================
+
+            $header-space:    0.25em;
+            $paragraph-space: 2 * $header-space;
+
+            .topic {
+
+                display:       none;
+                width:         100%;
+                height:        auto;
+                margin-bottom: 0.75em;
+                padding:       $text-padding;
+                background:    white;
+
+                // ============================================================
+                // Variations
+                // ============================================================
+
+                // The final topic doesn't need any extra room on the end.
+                &:last-of-type {
+                    margin-right:  0;
+                    margin-bottom: 0;
+                }
+
+                // By default a topic is not displayed unless it has the
+                // "visible" class.
+                &.visible {
+                    display: inline-block;
+                    break-inside: avoid;
+                }
+
+                // If a class is explicitly "hidden" then it is eligible for
+                // coming visible at some point.
+                &.hidden {
+                    display: none;
+                }
+            }
+
+            // ================================================================
+            // Content styles - Headings
+            // ================================================================
+
+            h1, h2, h3, h4 { margin-bottom: $header-space; }
+
+            h1 { font-size: 14pt; font-weight: bold; }
+            h2 { font-size: 13pt; font-weight: bold; }
+            h3 { font-size: 12pt; font-weight: bold; }
+            h4 { font-size: 11pt; font-weight: bold; }
+
+            // Avoid interior <h1> elements because they can confuse programs
+            // like web crawlers and HTML validations.
+            h1 {
+                background: $sb-error-color;
+                &:after {
+                    content:         " [AVOID <h1> ELEMENTS]";
+                    color:           white;
+                    font-weight:     bold;
+                    text-decoration: blink;
+                }
+            }
+
+            // ================================================================
+            // Content styles - Lists
+            // ================================================================
+
+            dl, ul, ol {
+                display: inline-block;
+                width:   100%;
+            }
+
+            dl {
+                dt, dd {
+                    display: inline-block;
+                    float:   left;
+                }
+
+                dt {
+                    clear:         left;
+                    margin-bottom: 0.2em;
+                }
+
+                dd {
+                    max-width:     90%;
+                    margin-left:   0.25em;
+                }
+
+                // If used, contains a <dt>/<dd> pair.
+                .entry {
+
+                    @include flex-box(row);
+                    width: 100%;
+
+                    dt, dd { float: none; }
+                    dt     { clear: none; }
+
+                    .item-status-marker { height: auto; }
+                }
+            }
+
+            ul {
+                li { list-style-type: disc; }
+            }
+
+            ol {
+                li { list-style-type: decimal; }
+            }
+
+            li {
+                margin-bottom: $header-space;
+                margin-left:   1em;
+            }
+
+            // ================================================================
+            // Content styles - Tables
+            // ================================================================
+
+            table {
+
+                // ============================================================
+                // General
+                // ============================================================
+
+                th, td { padding: $text-padding; }
+
+                th { font-size: 11pt; font-weight: bold; }
+                td { font-size: 10pt; font-weight: normal; }
+
+                // ============================================================
+                // Variations
+                // ============================================================
+
+                thead {
+                    tr {
+                        th, td { font-size: 11pt; }
+                    }
+                }
+
+                tbody {
+
+                    outline: 2px solid gray;
+
+                    tr {
+                        outline: 1px solid gray;
+                        th { font-style: italic; }
+                        td {} // TBD
+                    }
+                }
+            }
+
+            // ================================================================
+            // Content styles - jstree
+            // ================================================================
+
+            .jstree-open-icon,
+            .jstree-closed-icon {
+                display:    inline-block;
+                width:      1.25em;
+                background: transparent image-url("themes/default/d.png");
+            }
+
+            .jstree-open-icon   { background-position: -19px 0; }
+            .jstree-closed-icon { background-position: -1px  0; }
+
+            .jstree-root-icon {
+                @extend .jstree-open-icon;
+                border-radius:  9px;
+                border:         2px solid $sb-highlight-color;
+            }
+
+            // ================================================================
+            // Content styles - Other
+            // ================================================================
+
+            p {
+                font-size:     10pt;
+                font-weight:   normal;
+                margin-bottom: $paragraph-space;
+            }
+
+            a {
+                text-decoration: underline;
+            }
+
+            .keycap {
+                margin: 1px 0;
+                &:first-of-type { margin-top:    2px; }
+                &:last-of-type  { margin-bottom: 2px; }
+            }
+
+            .inline-button {
+                display:        inline-block;
+                vertical-align: text-top;
+            }
+
+            .range-button {
+                @include range-button-range;
+                text-indent: initial;
+            }
+        }
+
+        // Attempt to accomodate Microsoft Edge / Microsoft IE.
+        .button-tray {
+            position: absolute;
+            position: sticky;
+        }
+
+        // Floating hint that the user should scroll to see more.
+        .more-scroll {
+
+            display:     block;
+            padding:     2px 1px 2px 4px;
+            position:    absolute;
+            font-style:  italic;
+            font-weight: bold;
+            background:  white;
+            cursor:      default;
+
+            // Floating hint that there is more to the right;
+            // displayed if scrollLeft == 0.
+            &.right {
+                right:  8px;
+                bottom: 8px;
+            }
+
+            // Floating hint that there is more below;
+            // displayed if scrollTop == 0.
+            &.down {
+                // TBD
+            }
+
+            // Hints not displayed unless scrollTop or scrollLeft is zero.
+            &.hidden {
+                display: none;
+            }
+        }
+    }
+
+    // ========================================================================
+    // SHELF BROWSE DISPLAY - COMPONENT: Request dialog panel
+    // ========================================================================
+
+    // Drop-down request dialog panel (initially hidden).
+    //
+    .dialog-container {
+
+        @include dropdown($z-sb-dialog-panel, 1, 0, $sb-padding);
+
+        $padding: 1em;
+
+        height:        50%;
+        width:         50%;
+        min-height:    450px; // For hold/recall request dialog.
+        padding:       $padding;
+        border-radius: $sb-border-radius;
+        border:        2px solid $sb-border-color;
+
+        @include center-xy(50%, 50%, absolute);
+
+        // ====================================================================
+        // Components
+        // ====================================================================
+
+        .dialog-contents {
+
+            height:     100%;
+            width:      100%;
+            background: white;
+
+            &.loading {
+                background: $ajax-loader no-repeat scroll 50% 50% white;
+            }
+
+            // Copied content (hold/recall request.)
+            .dialog-wrapper {
+
+                height:     100%;
+                width:      100%;
+                border:     1px solid $sb-border-color;
+                background: white;
+
+                // Special collections requests
+                .list-heading {
+                    width:        auto;
+                    max-height:   4.5em;
+                    margin:       0;
+                    padding-left: 25px;
+
+                    * {
+                        max-height: 3.5em;
+                        overflow:   hidden;
+                    }
+                }
+
+                .request-container {
+                    p {
+                        margin-top: 0.5em;
+                    }
+
+                    #library_id {
+                        padding: 1px;
+                    }
+                }
+
+                .tool-content.spec-coll {
+                    padding: 0.5em 2em;
+                }
+
+                .return-to-item {
+                    display: none;
+                }
+
+                .special-collections-content {
+
+                    @include flex-box(column);
+
+                    height:       100%;
+                    width:        auto;
+                    padding-top:  0.5em;
+                }
+
+                .holdings-checklist {
+                    height:     35%;
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                    border:     1px solid $sb-border-color;
+                }
+
+                .tool-content input,
+                .tool-content textarea,
+                .tool-content select {
+                    margin: 0.5em;
+                }
+
+                // Flash messages
+                .ui-state-highlight, .ui-state-error {
+                    margin: 2em;
+                }
+
+                // Text generated by the dialog itself.
+                .dialog-inserted-text {
+                    font-weight: bold;
+                }
+
+                // "Done" button generated by the dialog itself.
+                .dialog-inserted-done {
+                    margin: 1em 0 0 0;
+                    @include center-xy(50%, 0, relative);
+                }
+            }
+        }
+    }
+
+    // ========================================================================
+    // SHELF BROWSE DISPLAY - COMPONENT: Overlays
+    // ========================================================================
+
+    // Dims everything behind the LCC hierarchy panel.
+    .lcc-overlay {
+        @include overlay($z-sb-lcc-overlay);
+    }
+
+    // Dims everything behind the help panel.
+    .help-overlay {
+        @include overlay($z-sb-help-overlay);
+    }
+
+    // Dims everything behind the request dialog panel.
+    .dialog-overlay {
+        @include overlay($z-sb-dialog-overlay);
+    }
+
+    // ========================================================================
+    // SHELF BROWSE DISPLAY - Other elements
+    // ========================================================================
+
+    // Representation of a particular status value for an item.
+    .item-status-marker {
+
+        display:       block;
+        width:         0.75em;
+        height:        100%;
+        line-height:   105%;
+        margin:        auto 2px;
+        padding:       1px 3px 0;
+        text-align:    center;
+        color:         $sb-scroller-background;
+        background:    $sb-item-color;
+        cursor:        default;
+
+        // Markers indicating a site-specific item are circular.
+        &.site {
+            border-radius: 50%;
+        }
+
+        // Highlight on hover.
+        &:hover {
+            background: $sb-highlight-color;
+        }
+    }
+
+    // For an inline element that appears like a keyboard key.
+    // @see UVA::Helper::ShelfBrowse#keycap
+    .keycap {
+
+        display:        inline-block;
+        line-height:    75%;
+        padding:        3px 4px;
+        font-family:    monospace;
+        font-style:     normal;
+        word-break:     keep-all;
+        vertical-align: text-top;
+        border-radius:  4px;
+        border:         2px solid;
+
+        $fg-color: slategray;
+        $bg-color: white;
+
+        // Colors.
+        & {
+            color:            $fg-color;
+            border-color:     $fg-color;
+            box-shadow:       inset 0 -0.5px 1px 0px $fg-color;
+            background-color: $bg-color;
+        }
+
+        // Inverse colors.
+        &:hover {
+            color:            $bg-color;
+            border-color:     $bg-color;
+            box-shadow:       inset 0 -0.5px 1px 0px $bg-color;
+            background-color: $fg-color;
+        }
+    }
+
+    // ========================================================================
+    // SHELF BROWSE DISPLAY - Miscellaneous styling
+    // ========================================================================
+
+    .empty      {} // TBD
+    .error      { @include item-border(solid, $sb-error-color); }
+    .error-text { color: $sb-error-color; }
+    .debug      { @include item-border(solid, $sb-debug-color); }
+    .debug-text { color: $sb-debug-color; }
+}
+
+// ============================================================================
+// SHELF BROWSE DISPLAY - Variations
+// ============================================================================
+
+@import "feature/shelf-browse/display_popup";
+@import "feature/shelf-browse/display_page";
+@import "feature/shelf-browse/display_small";
+
+@include -dump-modules;

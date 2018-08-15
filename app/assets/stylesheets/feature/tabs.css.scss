@@ -1,0 +1,29 @@
+// app/assets/stylesheets/feature/tabs.css.scss
+
+@import "jquery-ui";
+
+#tabs {
+    display:       block;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+#tabs li {
+
+    display:       block;
+    position:      relative;
+    border-top:    1px solid white;
+    border-bottom: 1px solid #c4d6df;
+    border-right:  1px solid #d3d6dd;
+
+    a {
+        display:         block;
+        max-width:       100px;
+        padding:         12px 8px 12px 48px;
+        overflow:        hidden;
+        white-space:     nowrap;
+        text-decoration: none;
+        text-overflow:   ellipsis;
+        font-weight:     bold;
+        background:      #eef5fb;
+    }
+}

@@ -1,0 +1,44 @@
+<%# app/views/layouts/page_turner.html.erb -%>
+<%-
+  # This layout is for the "page turner" image viewer.
+  page_css = %w(page-turner)
+  page_css << 'print-view' if print_view?
+  page_css = page_css.join(SPACE)
+
+  # Initial stylesheets and scripts for all routes using this layout.
+  javascripts  = %w(//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js)
+  javascripts += %w(page_turner.js)
+  stylesheets  = %w(page_turner.css)
+
+  # Print styling comes after all other html_head entries.
+  print_media = [] << 'print' << ('screen' if print_view?)
+  print_media = print_media.compact.join(LIST_SEPARATOR)
+  html_head << stylesheet_link_tag('print.css', media: print_media)
+
+  view_debug(__FILE__)
+-%>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+
+  <%# === Meta tags === -%>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <%= show_meta_tags %>
+  <%= csrf_meta_tags %>
+
+  <%# === Include CSS, JavaScript and items added by the action page === -%>
+  <%= show_html_head(stylesheets, javascripts) -%>
+
+</head>
+<body class="<%= page_css -%>">
+
+  <div id="container">
+    <%= yield %><%# === NOTE: rendering of action page inserted here === -%>
+  </div>
+
+  <%= render 'layouts/analytics' %>
+  <%= render 'layouts/copyright' %>
+
+</body>
+</html>

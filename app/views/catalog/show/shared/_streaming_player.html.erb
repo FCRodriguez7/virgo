@@ -1,0 +1,79 @@
+<%# app/views/catalog/show/shared/_streaming_player.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc && doc.has_feature?('has_embedded_avalon_media')
+  return if print_view?
+
+  parts =
+    doc.values_for(:part_pid_display).zip(
+      doc.values_for(:part_label_display),
+      doc.values_for(:part_duration_display),
+      doc.values_for(:display_aspect_ratio_display)
+    )
+  return unless parts.present?
+
+  html_head << '//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js'
+  html_head << 'feature/tabs.js'
+
+  # Add to hidden "skip navigation" menu.
+  view_id = u("view-#{doc.id}")
+  skip_nav << link_to('Content Viewer', ('#'+ view_id))
+
+  avalon_url ||= doc.values_for(:avalon_url_display).first
+  width      ||= 600
+
+  avalon_url.sub!(/^http:/, 'https:') if request.protocol.include?('https')
+
+  iframe_opts = {
+    width:                  width,
+    frameborder:            0,
+    webkitallowfullscreen:  true,
+    mozallowfullscreen:     true,
+    allowfullscreen:        true
+  }
+
+  view_debug(__FILE__)
+-%>
+
+<h2 class="streaming-gallery-heading" id="<%= view_id -%>">
+  <%= online_access_label(doc).titlecase %>
+</h2>
+
+<%- if parts.size == 1 -%>
+
+  <%- pid, _label, _duration, aspect = parts.first -%>
+  <%- url    = "#{avalon_url}/master_files/#{pid}/embed" -%>
+  <%- height = aspect ? (width.to_f / aspect.to_f).to_i : 50 -%>
+  <%- opts   = iframe_opts.merge(src: url, height: height) -%>
+  <%= content_tag(:iframe, opts) do %>
+    Embedded content requires browser iframe support.
+  <%- end -%>
+
+<%- else -%>
+
+  <div id="tabs">
+    <ul>
+      <%- parts.each do |part| -%>
+        <%- pid, label, _duration, _aspect = part -%>
+        <%- tab_id   = pid.delete('^0-9') -%>
+        <%- tab_href = "#tabs-#{tab_id}" -%>
+        <li><%= link_to(label, tab_href, title: label) %></li>
+      <%- end -%>
+    </ul>
+    <%- parts.each do |pid, label, _duration, aspect| -%>
+      <%- tab_id = pid.delete('^0-9') -%>
+      <div id="tabs-<%= tab_id -%>">
+        <%- if label.present? -%>
+          <h3><%= label %></h3>
+        <%- end -%>
+        <%- url    = "#{avalon_url}/master_files/#{pid}/embed" -%>
+        <%- height = aspect ? (width.to_f / aspect.to_f).to_i : 50 -%>
+        <%- opts   = iframe_opts.merge(src: url, height: height) -%>
+        <%= content_tag(:iframe, opts) do %>
+          Embedded content requires browser iframe support.
+        <%- end -%>
+      </div>
+    <%- end -%>
+  </div>
+
+<%- end -%>

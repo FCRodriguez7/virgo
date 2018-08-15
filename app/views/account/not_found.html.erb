@@ -1,0 +1,19 @@
+<%# app/views/account/not_found.html.erb -%>
+<%-
+  set_meta_tags(title: 'My Account - No Account Found')
+
+  view_debug(__FILE__)
+-%>
+
+<div class="list-heading">
+  <h1 class="heading">No Account Found</h1>
+</div>
+
+<div class="account-container">
+  <div class="ui-state-highlight notice">
+    No account information found.
+    Please
+    <%= ask_a_librarian('contact a librarian', class: 'btn small') %>
+    for assistance.
+  </div>
+</div>

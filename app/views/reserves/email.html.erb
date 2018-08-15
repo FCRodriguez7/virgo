@@ -1,0 +1,157 @@
+<%# app/views/reserves/email.html.erb -%>
+<%-
+  set_meta_tags(title: 'Course Reserves - Request')
+
+  documents           ||= @documents || []
+  req                 ||= @reserve_request
+  req_errors          ||= (req && req.custom_errors) || []
+  req_is_instructor   ||= req && req.is_instructor
+  req_instructor_cid  ||= req && req.instructor_cid
+  req_instructor_name ||= req && req.instructor_name
+  req_requester_name  ||= req && req.name
+  req_requester_email ||= req && req.email
+  req_course_id       ||= req && req.course_id
+  req_semester        ||= req && req.semester
+  req_items           ||= (req && @reserve_request.reserve_items) || []
+  req_library         ||=
+    req_items.map { |i| i.library && i.library.code }.compact.uniq.first
+  example_style       ||= 'font-weight:normal;'
+  originator          ||= 'reserves_email'
+  max_per_page        ||= true
+
+  flash.now[:error] = req_errors if req_errors.present?
+  no_items = documents.blank?
+
+  form_opt = { id: 'cres_email', method: :post }
+
+  label_for = {
+    instructor_cid:       'Instructor Computing ID',
+    instructor_name:      'Instructor Name',
+    name:                 'Your Name',
+    email:                'Your E-mail Address',
+    course_id:            ['Course ID', 'MDST 3840'],
+    semester:             'Semester',
+    reserve_library_all:  'Reserve Library'
+  }.map { |input_id, value|
+    label, example = value
+    if example.present?
+      label << ' '
+      label << content_tag(:span, "(e.g. #{example})", style: example_style)
+      label = label.html_safe
+    end
+    [input_id, label]
+  }.to_h
+
+  menu = {
+    semester:                [semester_list,        req_semester],
+    reserve_library_all:     [reserve_library_list, req_library]
+  }.map { |input_id, value|
+    choices, selected = value
+    [input_id, options_for_select(choices, selected: selected)]
+  }.to_h
+
+  cancel_opt = {
+    class: 'btn small',
+    label: 'Cancel',
+    title: 'Close without submitting.'
+  }
+
+  num  = sr_only('Number')
+  star = sr_only('Remove Star')
+  resv = sr_only('Reserve Library')
+
+  view_debug(__FILE__)
+-%>
+
+<div class="list-heading">
+  <h1 class="heading">Place on Course Reserve</h1>
+</div>
+
+<%= render 'catalog/sidebar_close' %>
+<%= render '/flash_msg' %>
+
+<div class="account-container results">
+
+  <%- if no_items -%>
+
+    <h2 class="sub-heading no-items">No Starred Catalog Items</h2>
+
+  <%- else -%>
+
+    <%= form_tag(reserves_send_email_record_path, form_opt) do %>
+
+      <div class="tool-content">
+        <label for="is_instructor">
+          <%= check_box_tag :is_instructor, req_is_instructor %>
+          Is this request on behalf of an instructor?
+        </label>
+
+        <div id="instructor-info" class="hidden">
+          <%= label_tag      :instructor_cid,  label_for[:instructor_cid] %>
+          <%= text_field_tag :instructor_cid,  req_instructor_cid %>
+
+          <%= label_tag      :instructor_name, label_for[:instructor_name] %>
+          <%= text_field_tag :instructor_name, req_instructor_name %>
+        </div>
+
+        <%= label_tag      :name,      label_for[:name] %>
+        <%= text_field_tag :name,      req_requester_name %>
+
+        <%= label_tag      :email,     label_for[:email] %>
+        <%= text_field_tag :email,     req_requester_email %>
+
+        <%= label_tag      :course_id, label_for[:course_id] %>
+        <%= text_field_tag :course_id, req_course_id %>
+
+        <%= label_tag      :semester,  label_for[:semester] %>
+        <%= select_tag     :semester,  menu[:semester] %>
+
+        <%= label_tag  :reserve_library_all, label_for[:reserve_library_all] %>
+        <%= select_tag :reserve_library_all, menu[:reserve_library_all] %>
+
+        <h2 class="sub-heading">Items to be placed on reserve</h2>
+        <p><em>Please allow 14 days to process requests.</em></p>
+        <p>
+          <em>Please note:</em> Online content cannot be placed on reserve
+          through Virgo.
+          If you need to request a purchase or have a personal copy to place on
+          reserve, please click 'Submit' and follow the links on the next page.
+        </p>
+      </div>
+
+      <p class="change-all-reserves">
+        <strong>Change all:</strong> <%= all_reserve_loan_list %>
+      </p>
+
+      <table class="item-list starred-items">
+        <thead>
+          <tr>
+            <th class="starred-number-heading hidden-heading"><%= num %></th>
+            <th class="starred-star-heading hidden-heading"><%= star %></th>
+            <th class="starred-title-heading">Title</th>
+            <th class="starred-author-heading">Creator</th>
+            <th class="starred-format-heading">Format</th>
+            <th class="starred-reserve-library-heading hidden-heading"><%= resv %></th>
+            <th class="starred-reserve-period-heading">Loan Period</th>
+            <th class="starred-reserve-notes-heading">
+              Notes <small>(Volume, issue, etc.)</small>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render 'folder/folder_rows', documents: documents %>
+        </tbody>
+      </table>
+
+      <div class="tool-content request-submit">
+        <%= hidden_field_tag(:style, originator) %>
+        <%= hidden_field_tag(:show_max_per_page, max_per_page) %>
+        <%= submit_tag('Submit', class: 'btn large') %>
+        <%= window_close_link(in_popup?, cancel_opt) %>
+      </div>
+
+    <%- end -%>
+
+  <%- end -%>
+
+</div>

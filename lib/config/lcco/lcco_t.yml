@@ -1,0 +1,1012 @@
+# lib/config/lcco_t.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from the Word document of the same base name.
+
+class:    T
+name:     'TECHNOLOGY'
+sections:
+  - subclass:  T
+    name:     'Technology (General)'
+    sections:
+      - name:    'Technology (General)'
+        range:   T1-995
+        start:   T1
+        end:     T995
+        sections:
+          - name:    'Communication of technical information'
+            range:   T10.5-11.9
+            start:   T10.5
+            end:     T11.9
+          - name:    'Industrial directories'
+            range:   T11.95-12.5
+            start:   T11.95
+            end:     T12.5
+          - name:    'Industrial safety.  Industrial accident prevention'
+            range:   T55-55.3
+            start:   T55
+            end:     T55.3
+          - name:    'Industrial engineering.  Management engineering'
+            range:   T55.4-60.8
+            start:   T55.4
+            end:     T60.8
+            sections:
+              - name:    'Applied mathematics.  Quantitative methods'
+                range:   T57-57.97
+                start:   T57
+                end:     T57.97
+                sections:
+                  - name:    'Operations research.  Systems analysis'
+                    range:   T57.6-57.97
+                    start:   T57.6
+                    end:     T57.97
+              - name:    'Managerial control systems'
+                range:   T58.4
+                start:   T58.4
+                end:     T58.4
+              - name:    'Information technology'
+                range:   T58.5-58.64
+                start:   T58.5
+                end:     T58.64
+                sections:
+                  - name:    'Management information systems'
+                    range:   T58.6-58.62
+                    start:   T58.6
+                    end:     T58.62
+              - name:    'Production capacity.  Manufacturing capacity'
+                range:   T58.7-58.8
+                start:   T58.7
+                end:     T58.8
+              - name:    'Standardization'
+                range:   T59-59.2
+                start:   T59
+                end:     T59.2
+              - name:    'Automation'
+                range:   T59.5
+                start:   T59.5
+                end:     T59.5
+              - name:    'Human engineering in industry.  Man-machine systems'
+                range:   T59.7-59.77
+                start:   T59.7
+                end:     T59.77
+              - name:    'Work measurement.  Methods engineering'
+                range:   T60-60.8
+                start:   T60
+                end:     T60.8
+          - name:    'Technical education.  Technical schools'
+            range:   T61-173
+            start:   T61
+            end:     T173
+          - name:    'Technological change'
+            range:   T173.2-174.5
+            start:   T173.2
+            end:     T174.5
+          - name:    'Industrial research.  Research and development'
+            range:   T175-178
+            start:   T175
+            end:     T178
+          - name:    'Patents.  Trademarks'
+            range:   T201-342
+            start:   T201
+            end:     T342
+          - name:    'Mechanical drawing.  Engineering graphics'
+            range:   T351-385
+            start:   T351
+            end:     T385
+          - name:    'Exhibitions.  Trade shows.  World''s fairs'
+            range:   T391-995
+            start:   T391
+            end:     T995
+  - subclass:  TA
+    name:     'Engineering (General).  Civil engineering (General)'
+    sections:
+      - name:    'Engineering (General).  Civil engineering (General)'
+        range:   TA1-2040
+        start:   TA1
+        end:     TA2040
+        sections:
+          - name:    'Bioengineering'
+            range:   TA164
+            start:   TA164
+            end:     TA164
+          - name:    'Engineering instruments, meters, etc.  Industrial instrumentation'
+            range:   TA165
+            start:   TA165
+            end:     TA165
+          - name:    'Human engineering'
+            range:   TA166-167
+            start:   TA166
+            end:     TA167
+          - name:    'Systems engineering'
+            range:   TA168
+            start:   TA168
+            end:     TA168
+          - name:    'Environmental engineering'
+            range:   TA170-171
+            start:   TA170
+            end:     TA171
+          - name:    'Engineering design'
+            range:   TA174
+            start:   TA174
+            end:     TA174
+          - name:    'Engineering economy'
+            range:   TA177.4-185
+            start:   TA177.4
+            end:     TA185
+          - name:    'Management of engineering works'
+            range:   TA190-194
+            start:   TA190
+            end:     TA194
+          - name:    'Engineering meteorology'
+            range:   TA197-198
+            start:   TA197
+            end:     TA198
+          - name:    'Engineering machinery, tools, and implements'
+            range:   TA213-215
+            start:   TA213
+            end:     TA215
+          - name:    'Engineering mathematics.  Engineering analysis'
+            range:   TA329-348
+            start:   TA329
+            end:     TA348
+          - name:    'Mechanics of engineering.  Applied mechanics'
+            range:   TA349-359
+            start:   TA349
+            end:     TA359
+          - name:    'Acoustics in engineering.  Acoustical engineering'
+            range:   TA365-367
+            start:   TA365
+            end:     TA367
+          - name:    'Materials of engineering and construction.  Mechanics of materials'
+            range:   TA401-492
+            start:   TA401
+            end:     TA492
+          - name:    'Disasters and engineering'
+            range:   TA495
+            start:   TA495
+            end:     TA495
+          - name:    'Surveying'
+            range:   TA501-625
+            start:   TA501
+            end:     TA625
+          - name:    'Structural engineering (General)'
+            range:   TA630-695
+            start:   TA630
+            end:     TA695
+          - name:    'Engineering geology.  Rock mechanics.  Soil mechanics. Underground construction'
+            range:   TA703-712
+            start:   TA703
+            end:     TA712
+          - name:    'Earthwork.  Foundations'
+            range:   TA715-787
+            start:   TA715
+            end:     TA787
+          - name:    'Tunneling.  Tunnels'
+            range:   TA800-820
+            start:   TA800
+            end:     TA820
+          - name:    'Transportation engineering'
+            range:   TA1001-1280
+            start:   TA1001
+            end:     TA1280
+          - name:    'Applied optics.  Photonics'
+            range:   TA1501-1820
+            start:   TA1501
+            end:     TA1820
+          - name:    'Plasma engineering.  Applied plasma dynamics'
+            range:   TA2001-2040
+            start:   TA2001
+            end:     TA2040
+  - subclass:  TC
+    name:     'Hydraulic engineering.  Ocean engineering'
+    sections:
+      - name:    'Hydraulic engineering'
+        range:   TC1-978
+        start:   TC1
+        end:     TC978
+        sections:
+          - name:    'Technical hydraulics'
+            range:   TC160-181
+            start:   TC160
+            end:     TC181
+          - name:    'General preliminary operations.  Dredging.  Submarine building'
+            range:   TC183-201
+            start:   TC183
+            end:     TC201
+          - name:    'Harbors and coast protective works.  Coastal engineering. Lighthouses'
+            range:   TC203-380
+            start:   TC203
+            end:     TC380
+          - name:    'River, lake, and water-supply engineering (General)'
+            range:   TC401-506
+            start:   TC401
+            end:     TC506
+          - name:    'River protective works.  Regulation.  Flood control'
+            range:   TC530-537
+            start:   TC530
+            end:     TC537
+          - name:    'Dams.  Barrages'
+            range:   TC540-558
+            start:   TC540
+            end:     TC558
+          - name:    'Canals and inland navigation.  Waterways'
+            range:   TC601-791
+            start:   TC601
+            end:     TC791
+          - name:    'Irrigation engineering.  Reclamation of wasteland.  Drainage'
+            range:   TC801-978
+            start:   TC801
+            end:     TC978
+      - name:    'Ocean engineering'
+        range:   TC1501-1800
+        start:   TC1501
+        end:     TC1800
+  - subclass:  TD
+    name:     'Environmental technology.  Sanitary engineering'
+    sections:
+      - name:    'Environmental technology.  Sanitary engineering'
+        range:   TD1-1066
+        start:   TD1
+        end:     TD1066
+        sections:
+          - name:    'Municipal engineering'
+            range:   TD159-168
+            start:   TD159
+            end:     TD168
+          - name:    'Environmental protection'
+            range:   TD169-171.8
+            start:   TD169
+            end:     TD171.8
+          - name:    'Environmental pollution'
+            range:   TD172-193.5
+            start:   TD172
+            end:     TD193.5
+          - name:    'Environmental effects of industries and plants'
+            range:   TD194-195
+            start:   TD194
+            end:     TD195
+          - name:    'Water supply for domestic and industrial purposes'
+            range:   TD201-500
+            start:   TD201
+            end:     TD500
+            sections:
+              - name:    'Water pollution'
+                range:   TD419-428
+                start:   TD419
+                end:     TD428
+              - name:    'Water purification.  Water treatment and conditioning.  Saline water conversion'
+                range:   TD429.5-480.7
+                start:   TD429.5
+                end:     TD480.7
+              - name:    'Water distribution systems'
+                range:   TD481-493
+                start:   TD481
+                end:     TD493
+          - name:    'Sewage collection and disposal systems.  Sewerage'
+            range:   TD511-780
+            start:   TD511
+            end:     TD780
+          - name:    'Municipal refuse.  Solid wastes'
+            range:   TD783-812.5
+            start:   TD783
+            end:     TD812.5
+          - name:    'Street cleaning.  Litter and its removal'
+            range:   TD813-870
+            start:   TD813
+            end:     TD870
+          - name:    'Special types of environment'
+            note:    'Including soil pollution, air pollution, noise pollution'
+            range:   TD878-894
+            start:   TD878
+            end:     TD894
+          - name:    'Industrial and factory sanitation'
+            range:   TD895-899
+            start:   TD895
+            end:     TD899
+            sections:
+              - name:    'Industrial and factory wastes'
+                range:   TD896-899
+                start:   TD896
+                end:     TD899
+          - name:    'Rural and farm sanitary engineering'
+            range:   TD920-934
+            start:   TD920
+            end:     TD934
+          - name:    'Low temperature sanitary engineering'
+            range:   TD940-949
+            start:   TD940
+            end:     TD949
+          - name:    'Hazardous substances and their disposal'
+            range:   TD1020-1066
+            start:   TD1020
+            end:     TD1066
+  - subclass:  TE
+    name:     'Highway engineering.  Roads and pavements'
+    sections:
+      - name:    'Highway engineering.  Roads and pavements'
+        range:   TE1-450
+        start:   TE1
+        end:     TE450
+        sections:
+          - name:    'Highway design.  Interchanges and intersections'
+            range:   TE175-176.5
+            start:   TE175
+            end:     TE176.5
+          - name:    'Roadside development.  Landscaping'
+            range:   TE177-178.8
+            start:   TE177
+            end:     TE178.8
+          - name:    'Materials for roadmaking'
+            range:   TE200-205
+            start:   TE200
+            end:     TE205
+          - name:    'Location engineering'
+            range:   TE206-209.5
+            start:   TE206
+            end:     TE209.5
+          - name:    'Construction details'
+            note:    'Including foundations, maintenance, equipment'
+            range:   TE210-228.3
+            start:   TE210
+            end:     TE228.3
+          - name:    'Pavements and paved roads'
+            range:   TE250-278.8
+            start:   TE250
+            end:     TE278.8
+          - name:    'Streets'
+            range:   TE279
+            start:   TE279
+            end:     TE279
+          - name:    'Pedestrian facilities'
+            range:   TE279.5-298
+            start:   TE279.5
+            end:     TE298
+            sections:
+              - name:    'Sidewalks.  Footpaths.  Flagging'
+                range:   TE280-295
+                start:   TE280
+                end:     TE295
+              - name:    'Curbs.  Curbstones'
+                range:   TE298
+                start:   TE298
+                end:     TE298
+  - subclass:  TF
+    name:     'Railroad engineering and operation'
+    sections:
+      - name:    'Railroad engineering and operation'
+        range:   TF1-1620
+        start:   TF1
+        end:     TF1620
+        sections:
+          - name:    'Railway construction'
+            range:   TF200-320
+            start:   TF200
+            end:     TF320
+          - name:    'Railway equipment and supplies'
+            range:   TF340-499
+            start:   TF340
+            end:     TF499
+          - name:    'Railway operation and management'
+            range:   TF501-668
+            start:   TF501
+            end:     TF668
+          - name:    'Local and light railways'
+            range:   TF670-851
+            start:   TF670
+            end:     TF851
+            sections:
+              - name:    'Elevated railways and subways'
+                range:   TF840-851
+                start:   TF840
+                end:     TF851
+          - name:    'Electric railways'
+            range:   TF855-1127
+            start:   TF855
+            end:     TF1127
+          - name:    'High speed ground transporation'
+            range:   TF1300-1620
+            start:   TF1300
+            end:     TF1620
+  - subclass:  TG
+    name:     'Bridge engineering'
+    sections:
+      - name:    'Bridge engineering'
+        range:   TG1-470
+        start:   TG1
+        end:     TG470
+  - subclass:  TH
+    name:     'Building construction'
+    sections:
+      - name:    'Building construction'
+        range:   TH1-9745
+        start:   TH1
+        end:     TH9745
+        sections:
+          - name:    'Architectural engineering.  Structural engineering of buildings'
+            range:   TH845-895
+            start:   TH845
+            end:     TH895
+          - name:    'Construction equipment in building'
+            range:   TH900-915
+            start:   TH900
+            end:     TH915
+          - name:    'Systems of building construction'
+            note:    'Including fireproof construction, concrete construction'
+            range:   TH1000-1725
+            start:   TH1000
+            end:     TH1725
+          - name:    'Details in building design and construction'
+            note:    'Including walls, roofs'
+            range:   TH2025-3000
+            start:   TH2025
+            end:     TH3000
+          - name:    'Maintenance and repair'
+            range:   TH3301-3411
+            start:   TH3301
+            end:     TH3411
+          - name:    'Buildings: Construction with reference to use'
+            note:    'Including public buildings, dwellings'
+            range:   TH4021-4977
+            start:   TH4021
+            end:     TH4977
+          - name:    'Construction by phase of the work (Building trades)'
+            range:   TH5011-5701
+            start:   TH5011
+            end:     TH5701
+          - name:    'Environmental engineering of buildings.  Sanitary engineering of buildings'
+            range:   TH6014-6081
+            start:   TH6014
+            end:     TH6081
+          - name:    'Plumbing and pipefitting'
+            range:   TH6101-6887
+            start:   TH6101
+            end:     TH6887
+          - name:    'Heating and ventilation.  Air conditioning'
+            range:   TH7005-7699
+            start:   TH7005
+            end:     TH7699
+          - name:    'Illumination.  Lighting'
+            range:   TH7700-7975
+            start:   TH7700
+            end:     TH7975
+          - name:    'Decoration and decorative furnishings'
+            range:   TH8001-8581
+            start:   TH8001
+            end:     TH8581
+          - name:    'Protection of buildings'
+            note:    'Including protection from dampness, fire, burglary'
+            range:   TH9025-9745
+            start:   TH9025
+            end:     TH9745
+  - subclass:  TJ
+    name:     'Mechanical engineering and machinery'
+    sections:
+      - name:    'Mechanical engineering and machinery'
+        range:   TJ1-1570
+        start:   TJ1
+        end:     TJ1570
+        sections:
+          - name:    'Power resources'
+            range:   TJ163.13-163.25
+            start:   TJ163.13
+            end:     TJ163.25
+          - name:    'Energy conservation'
+            range:   TJ163.26-163.5
+            start:   TJ163.26
+            end:     TJ163.5
+          - name:    'Mechanics applied to machinery.  Dynamics'
+            range:   TJ170-179
+            start:   TJ170
+            end:     TJ179
+          - name:    'Mechanical movements'
+            range:   TJ181-210
+            start:   TJ181
+            end:     TJ210
+          - name:    'Mechanical devices and figures.  Automata.  Ingenious mechanisms. Robots (General)'
+            range:   TJ210.2-211.47
+            start:   TJ210.2
+            end:     TJ211.47
+          - name:    'Control engineering systems.  Automatic machinery (General)'
+            range:   TJ212-225
+            start:   TJ212
+            end:     TJ225
+          - name:    'Machine design and drawing'
+            range:   TJ227-240
+            start:   TJ227
+            end:     TJ240
+          - name:    'Machine construction (General)'
+            range:   TJ241-254.7
+            start:   TJ241
+            end:     TJ254.7
+          - name:    'Heat engines'
+            range:   TJ255-265
+            start:   TJ255
+            end:     TJ265
+          - name:    'Turbines.  Turbomachines (General)'
+            range:   TJ266-267.5
+            start:   TJ266
+            end:     TJ267.5
+          - name:    'Steam engineering'
+            range:   TJ268-740
+            start:   TJ268
+            end:     TJ740
+            sections:
+              - name:    'Locomotives'
+                range:   TJ603-695
+                start:   TJ603
+                end:     TJ695
+          - name:    'Miscellaneous motors and engines'
+            note:    'Including gas, gasoline, diesel engines'
+            range:   TJ751-805
+            start:   TJ751
+            end:     TJ805
+          - name:    'Renewable energy sources'
+            range:   TJ807-830
+            start:   TJ807
+            end:     TJ830
+          - name:    'Hydraulic machinery'
+            range:   TJ836-927
+            start:   TJ836
+            end:     TJ927
+          - name:    'Vacuum technology'
+            range:   TJ940-940.5
+            start:   TJ940
+            end:     TJ940.5
+          - name:    'Pneumatic machinery'
+            range:   TJ950-1030
+            start:   TJ950
+            end:     TJ1030
+          - name:    'Machinery exclusive of prime movers'
+            range:   TJ1040-1119
+            start:   TJ1040
+            end:     TJ1119
+          - name:    'Machine shops and machine shop practice'
+            range:   TJ1125-1345
+            start:   TJ1125
+            end:     TJ1345
+          - name:    'Hoisting and conveying machinery'
+            range:   TJ1350-1418
+            start:   TJ1350
+            end:     TJ1418
+          - name:    'Lifting and pressing machinery'
+            range:   TJ1425-1475
+            start:   TJ1425
+            end:     TJ1475
+          - name:    'Agricultural machinery.  Farm machinery'
+            range:   TJ1480-1496
+            start:   TJ1480
+            end:     TJ1496
+          - name:    'Sewing machines'
+            range:   TJ1501-1519
+            start:   TJ1501
+            end:     TJ1519
+  - subclass:  TK
+    name:     'Electrical engineering.  Electronics.  Nuclear engineering'
+    sections:
+      - name:    'Electrical engineering.  Electronics.  Nuclear engineering'
+        range:   TK1-9971
+        start:   TK1
+        end:     TK9971
+        sections:
+          - name:    'Electric meters'
+            range:   TK301-399
+            start:   TK301
+            end:     TK399
+          - name:    'Electric apparatus and materials.  Electric circuits.  Electric networks'
+            range:   TK452-454.4
+            start:   TK452
+            end:     TK454.4
+          - name:    'Production of electric energy or power.  Powerplants.  Central stations'
+            range:   TK1001-1841
+            start:   TK1001
+            end:     TK1841
+          - name:    'Dynamoelectric machinery and auxiliaries'
+            note:    'Including generators, motors, transformers'
+            range:   TK2000-2891
+            start:   TK2000
+            end:     TK2891
+          - name:    'Production of electricity by direct energy conversion'
+            range:   TK2896-2985
+            start:   TK2896
+            end:     TK2985
+          - name:    'Distribution or transmission of electric power'
+            range:   TK3001-3521
+            start:   TK3001
+            end:     TK3521
+          - name:    'Applications of electric power'
+            range:   TK4001-4102
+            start:   TK4001
+            end:     TK4102
+          - name:    'Electric lighting'
+            range:   TK4125-4399
+            start:   TK4125
+            end:     TK4399
+          - name:    'Electric heating'
+            range:   TK4601-4661
+            start:   TK4601
+            end:     TK4661
+          - name:    'Telecommunication'
+            note:    'Including telegraphy, telephone, radio, radar, television'
+            range:   TK5101-6720
+            start:   TK5101
+            end:     TK6720
+          - name:    'Electronics'
+            range:   TK7800-8360
+            start:   TK7800
+            end:     TK8360
+            sections:
+              - name:    'Computer engineering.  Computer hardware'
+                range:   TK7885-7895
+                start:   TK7885
+                end:     TK7895
+              - name:    'Photoelectronic devices (General)'
+                range:   TK8300-8360
+                start:   TK8300
+                end:     TK8360
+          - name:    'Nuclear engineering.  Atomic power'
+            range:   TK9001-9401
+            start:   TK9001
+            end:     TK9401
+          - name:    'Electricity for amateurs.  Amateur constructors'' manuals'
+            range:   TK9900-9971
+            start:   TK9900
+            end:     TK9971
+  - subclass:  TL
+    name:     'Motor vehicles.  Aeronautics.  Astronautics'
+    sections:
+      - name:    'Motor vehicles.  Aeronautics.  Astronautics'
+        range:   TL1-4050
+        start:   TL1
+        end:     TL4050
+        sections:
+          - name:    'Motor vehicles.  Cycles'
+            range:   TL1-484
+            start:   TL1
+            end:     TL484
+          - name:    'Aeronautics.  Aeronautical engineering'
+            range:   TL500-777
+            start:   TL500
+            end:     TL777
+          - name:    'Rocket propulsion.  Rockets'
+            range:   TL780-785.8
+            start:   TL780
+            end:     TL785.8
+          - name:    'Astronautics.  Space travel'
+            range:   TL787-4050
+            start:   TL787
+            end:     TL4050
+  - subclass:  TN
+    name:     'Mining engineering.  Metallurgy'
+    sections:
+      - name:    'Mining engineering.  Metallurgy'
+        range:   TN1-997
+        start:   TN1
+        end:     TN997
+        sections:
+          - name:    'Mineral deposits.  Metallic ore deposits.  Prospecting'
+            range:   TN263-271
+            start:   TN263
+            end:     TN271
+          - name:    'Practical mining operations.  Safety measures'
+            range:   TN275-325
+            start:   TN275
+            end:     TN325
+          - name:    'Mine transportation, haulage and hoisting.  Mining machinery'
+            range:   TN331-347
+            start:   TN331
+            end:     TN347
+          - name:    'Ore deposits and mining of particular metals'
+            range:   TN400-580
+            start:   TN400
+            end:     TN580
+          - name:    'Metallurgy'
+            range:   TN600-799
+            start:   TN600
+            end:     TN799
+          - name:    'Nonmetallic minerals'
+            range:   TN799.5-948
+            start:   TN799.5
+            end:     TN948
+          - name:    'Building and ornamental stones'
+            range:   TN950-997
+            start:   TN950
+            end:     TN997
+  - subclass:  TP
+    name:     'Chemical technology'
+    sections:
+      - name:    'Chemical technology'
+        range:   TP1-1185
+        start:   TP1
+        end:     TP1185
+        sections:
+          - name:    'Chemical engineering'
+            range:   TP155-156
+            start:   TP155
+            end:     TP156
+          - name:    'Chemicals: Manufacture, use, etc.'
+            range:   TP200-248
+            start:   TP200
+            end:     TP248
+          - name:    'Biotechnology'
+            range:   TP248.13-248.65
+            start:   TP248.13
+            end:     TP248.65
+          - name:    'Industrial electrochemistry'
+            range:   TP250-261
+            start:   TP250
+            end:     TP261
+          - name:    'Explosives and pyrotechnics'
+            range:   TP267.5-301
+            start:   TP267.5
+            end:     TP301
+          - name:    'Fuel'
+            range:   TP315-360
+            start:   TP315
+            end:     TP360
+          - name:    'Food processing and manufacture'
+            range:   TP368-456
+            start:   TP368
+            end:     TP456
+          - name:    'Low temperature engineering.  Cryogenic engineering.  Refrigeration'
+            range:   TP480-498
+            start:   TP480
+            end:     TP498
+          - name:    'Fermentation industries.  Beverages.  Alcohol'
+            range:   TP500-660
+            start:   TP500
+            end:     TP660
+          - name:    'Oils, fats, and waxes'
+            range:   TP670-699
+            start:   TP670
+            end:     TP699
+            sections:
+              - name:    'Petroleum refining.  Petroleum products'
+                range:   TP690-692.5
+                start:   TP690
+                end:     TP692.5
+          - name:    'Illuminating industries (Nonelectric)'
+            range:   TP700-746
+            start:   TP700
+            end:     TP746
+          - name:    'Gas industry'
+            range:   TP751-762
+            start:   TP751
+            end:     TP762
+          - name:    'Clay industries.  Ceramics.  Glass'
+            range:   TP785-869
+            start:   TP785
+            end:     TP869
+          - name:    'Cement industries'
+            range:   TP875-888
+            start:   TP875
+            end:     TP888
+          - name:    'Textile bleaching, dyeing, printing, etc.'
+            range:   TP890-933
+            start:   TP890
+            end:     TP933
+          - name:    'Paints, pigments, varnishes, etc.'
+            range:   TP934-945
+            start:   TP934
+            end:     TP945
+          - name:    'Polymers and polymer manufacture'
+            range:   TP1080-1185
+            start:   TP1080
+            end:     TP1185
+  - subclass:  TR
+    name:     'Photography'
+    sections:
+      - name:    'Photography'
+        range:   TR1-1050
+        start:   TR1
+        end:     TR1050
+        sections:
+          - name:    'Cameras'
+            range:   TR250-265
+            start:   TR250
+            end:     TR265
+          - name:    'Photographic processing.  Darkroom technique'
+            range:   TR287-500
+            start:   TR287
+            end:     TR500
+          - name:    'Transparencies.  Diapositives'
+            range:   TR504-508
+            start:   TR504
+            end:     TR508
+          - name:    'Color photography'
+            range:   TR510-545
+            start:   TR510
+            end:     TR545
+          - name:    'Studio and laboratory'
+            range:   TR550-581
+            start:   TR550
+            end:     TR581
+          - name:    'Lighting'
+            range:   TR590-620
+            start:   TR590
+            end:     TR620
+          - name:    'Applied photography'
+            note:    'Including artistic, commercial, medical photography, photocopying processes'
+            range:   TR624-835
+            start:   TR624
+            end:     TR835
+          - name:    'Cinematography.  Motion pictures'
+            range:   TR845-899
+            start:   TR845
+            end:     TR899
+          - name:    'Photomechanical processes'
+            range:   TR925-1050
+            start:   TR925
+            end:     TR1050
+  - subclass:  TS
+    name:     'Manufactures'
+    sections:
+      - name:    'Manufactures'
+        range:   TS1-2301
+        start:   TS1
+        end:     TS2301
+        sections:
+          - name:    'Production management.  Operations management'
+            range:   TS155-194
+            start:   TS155
+            end:     TS194
+          - name:    'Packaging'
+            range:   TS195-198.8
+            start:   TS195
+            end:     TS198.8
+          - name:    'Metal manufactures.  Metalworking'
+            range:   TS200-770
+            start:   TS200
+            end:     TS770
+          - name:    'Stonework'
+            range:   TS780-788
+            start:   TS780
+            end:     TS788
+          - name:    'Wood technology.  Lumber'
+            range:   TS800-937
+            start:   TS800
+            end:     TS937
+            sections:
+              - name:    'Wood products.  Furniture'
+                range:   TS840-915
+                start:   TS840
+                end:     TS915
+              - name:    'Chemical processing of wood'
+                range:   TS920-937
+                start:   TS920
+                end:     TS937
+          - name:    'Leather industries.  Tanning'
+            range:   TS940-1047
+            start:   TS940
+            end:     TS1047
+          - name:    'Furs'
+            range:   TS1060-1070
+            start:   TS1060
+            end:     TS1070
+          - name:    'Paper manufacture and trade'
+            range:   TS1080-1268
+            start:   TS1080
+            end:     TS1268
+          - name:    'Textile industries'
+            range:   TS1300-1865
+            start:   TS1300
+            end:     TS1865
+          - name:    'Rubber industry'
+            range:   TS1870-1935
+            start:   TS1870
+            end:     TS1935
+          - name:    'Animal products'
+            range:   TS1950-1982
+            start:   TS1950
+            end:     TS1982
+          - name:    'Cereals and grain.  Milling industry'
+            range:   TS2120-2159
+            start:   TS2120
+            end:     TS2159
+          - name:    'Tobacco industry'
+            range:   TS2220-2283
+            start:   TS2220
+            end:     TS2283
+          - name:    'Animal feeds and feed mills.  Pet food industry'
+            range:   TS2284-2288
+            start:   TS2284
+            end:     TS2288
+  - subclass:  TT
+    name:     'Handicrafts.  Arts and crafts'
+    sections:
+      - name:    'Handicrafts.  Arts and crafts'
+        range:   TT1-999
+        start:   TT1
+        end:     TT999
+        sections:
+          - name:    'Manual training.  School shops'
+            range:   TT161-170.7
+            start:   TT161
+            end:     TT170.7
+          - name:    'Articles for children'
+            range:   TT174-176
+            start:   TT174
+            end:     TT176
+          - name:    'Woodworking.  Furniture making.  Upholstering'
+            range:   TT180-200
+            start:   TT180
+            end:     TT200
+          - name:    'Lathework.  Turning'
+            range:   TT201-203
+            start:   TT201
+            end:     TT203
+          - name:    'Metalworking'
+            range:   TT205-267
+            start:   TT205
+            end:     TT267
+          - name:    'Painting.  Wood finishing'
+            range:   TT300-382.8
+            start:   TT300
+            end:     TT382.8
+          - name:    'Soft home furnishings'
+            range:   TT387-410
+            start:   TT387
+            end:     TT410
+          - name:    'Clothing manufacture.  Dressmaking.  Tailoring'
+            range:   TT490-695
+            start:   TT490
+            end:     TT695
+          - name:    'Home arts.  Homecrafts'
+            note:    'Including sewing, embroidery, decorative crafts'
+            range:   TT697-927
+            start:   TT697
+            end:     TT927
+          - name:    'Hairdressing.  Beauty culture.  Barbers'' work'
+            range:   TT950-979
+            start:   TT950
+            end:     TT979
+          - name:    'Laundry work'
+            range:   TT980-999
+            start:   TT980
+            end:     TT999
+  - subclass:  TX
+    name:     'Home economics'
+    sections:
+      - name:    'Home economics'
+        range:   TX1-1110
+        start:   TX1
+        end:     TX1110
+        sections:
+          - name:    'The house'
+            note:    'Including arrangement, care, servants'
+            range:   TX301-339
+            start:   TX301
+            end:     TX339
+          - name:    'Nutrition.  Foods and food supply'
+            range:   TX341-641
+            start:   TX341
+            end:     TX641
+          - name:    'Cooking'
+            range:   TX642-840
+            start:   TX642
+            end:     TX840
+          - name:    'Dining-room service'
+            range:   TX851-885
+            start:   TX851
+            end:     TX885
+          - name:    'Hospitality industry.  Hotels, clubs, restaurants, etc.  Food service'
+            range:   TX901-946.5
+            start:   TX901
+            end:     TX946.5
+          - name:    'Taverns, barrooms, saloons'
+            range:   TX950-953
+            start:   TX950
+            end:     TX953
+          - name:    'Building operation and housekeeping'
+            range:   TX955-985
+            start:   TX955
+            end:     TX985
+          - name:    'Mobile home living'
+            range:   TX1100-1105
+            start:   TX1100
+            end:     TX1105
+          - name:    'Recreational vehicle living'
+            range:   TX1110
+            start:   TX1110
+            end:     TX1110

@@ -1,0 +1,149 @@
+#! /bin/bash
+#
+# make_doc: make RDoc and YARD documentation
+
+# =============================================================================
+# Constants
+# =============================================================================
+
+[ "$RAILS_ROOT" ] || RAILS_ROOT='/home/rwl/Work/virgo'
+cd "$RAILS_ROOT" || exit 1
+DOC_DIR='doc'
+LOG_DIR='tmp'
+NL='
+'
+
+# =============================================================================
+# Variables
+# =============================================================================
+
+#VERBOSE=''
+VERBOSE='--verbose'
+DEBUG=''
+#DEBUG='--debug'
+DEF_OPTIONS="$DEBUG $VERBOSE"
+
+#TARGET_FILES='README.textile config.ru Gemfile Rakefile'
+TARGET_FILES=''
+TARGET_DIRS='app config db lib spec test'
+DEF_TARGETS="$TARGET_FILES $TARGET_DIRS"
+SKIP_FILES='**/*.txt **/*.yml **/*.xml **/*.opts **/*.sh'
+SKIP_DIRS='**/assets'
+
+RDOC_OPTIONS='
+--all
+--show-hash
+--main=README.textile
+'
+
+YARD_OPTIONS='
+--protected
+--private
+--default-return void
+--hide-void-return
+'
+
+# =============================================================================
+# Function definitions - Make RDoc documentation
+# =============================================================================
+
+# Make RDoc documentation.
+#
+function make_rdoc() # args
+{
+	local NAME=rdoc
+	local CMD="$NAME"
+	local DIR="$DOC_DIR/$NAME"
+	local LOG="$LOG_DIR/$NAME.out"
+	local OPTIONS="$DEF_OPTIONS $RDOC_OPTIONS"
+	local TARGETS=''
+
+	while [ $# -gt 0 ] ; do
+		case "$1" in
+			-o=*|--op=*|--output=*) DIR=`expr "$1" : '.*=\(.*\)$'` ;;
+			-*) OPTIONS+=" $1" ;;
+			*)  TARGETS+=" $1" ;;
+		esac
+		shift
+	done
+	for F in $SKIP_FILES $SKIP_DIRS ; do
+		OPTIONS+=" --exclude=$F"
+	done
+	OPTIONS+=" --output=$DIR"
+	OPTIONS=`echo "$OPTIONS" | tr '\n' ' '`
+	[ "$TARGETS" ] || TARGETS="$DEF_TARGETS"
+	TARGETS=`echo "$TARGETS" | tr '\n' ' '`
+
+	echo -n "Making $NAME for $TARGETS... "
+	echo "$CMD $OPTIONS $TARGETS$NL" > $LOG 2>&1
+	$CMD $OPTIONS $TARGETS >> $LOG 2>&1
+	if [ $? -eq 0 ] ; then
+		echo 'OK'
+	else
+		echo "SEE ERRORS IN $LOG"
+	fi
+}
+
+# Make YARD documentation.
+#
+function make_yard() # args
+{
+	local NAME=yard
+	local CMD="$NAME doc"
+	local DIR="$DOC_DIR/$NAME"
+	local LOG="$LOG_DIR/$NAME.out"
+	local OPTIONS="$DEF_OPTIONS $YARD_OPTIONS"
+	local TARGETS=''
+
+	while [ $# -gt 0 ] ; do
+		case "$1" in
+			--output*)
+				DIR=`expr "$2" : '.*=\(.*\)$'`; shift ;;
+			-b|--db|-c|--use-cache|--yardopts|--exclude|--api|--hide-api|--embed-mixin|--default-return|--query|--title|-r|--readme|--main|--files|--asset|--markup*|-M|--charset|-t|--template*|-p|-f|--format|--locale|--po-dir|--*tag|-e|--load|--plugin)
+				OPTIONS+=" $1 $2"; shift ;;
+			-*) OPTIONS+=" $1" ;;
+			*)  TARGETS+=" $1" ;;
+		esac
+		shift
+	done
+	for F in $SKIP_FILES $SKIP_DIRS ; do
+		OPTIONS+=" --exclude $F"
+	done
+	OPTIONS+=" --output-dir $DIR"
+	OPTIONS=`echo "$OPTIONS" | tr '\n' ' '`
+	[ "$TARGETS" ] || TARGETS="$DEF_TARGETS"
+	TARGETS=`echo "$TARGETS" | tr '\n' ' '`
+
+	echo -n "Making $NAME for $TARGETS..."
+	echo "$CMD $OPTIONS $TARGETS$NL" > $LOG 2>&1
+	$CMD $OPTIONS $TARGETS >> $LOG 2>&1
+	if [ $? -eq 0 ] ; then
+		echo 'OK'
+	else
+		echo "SEE ERRORS IN $LOG"
+	fi
+}
+
+# =============================================================================
+# Parse arguments and make documentation
+# =============================================================================
+
+MAKE_RDOC=''
+MAKE_YARD=''
+
+while [ $# -gt 0 ] ; do
+	case "$1" in
+		-*rdoc) MAKE_RDOC=true ;; # Specify RDoc only
+		-*yard)	MAKE_YARD=true ;; # Specify YARD only
+		*)      break ;;          # Start of arg(s) to pass to program(s).
+	esac
+	shift
+done
+
+if [ ! "$MAKE_RDOC$MAKE_YARD" ] ; then
+	MAKE_RDOC=true
+	MAKE_YARD=true
+fi
+
+[ "$MAKE_RDOC" ] && make_rdoc "$@"
+[ "$MAKE_YARD" ] && make_yard "$@"

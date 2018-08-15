@@ -1,0 +1,31 @@
+<%# app/views/catalog/index/template/_libra.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc
+
+  counter ||= -1
+  offset  ||= 0
+  partial_opts = { document: doc, counter: counter, offset: offset }
+
+  # === Item title
+  dev_note ||= __FILE__
+  title_opts = partial_opts.merge(dev_note: dev_note)
+
+  # === Item thumbnail
+  thumbnail_opts = partial_opts
+
+  # === Item metadata
+  fields ||= UVA::View::FieldSet.new(
+    'Author'        => [doc.get_authors, AUTHOR_OPT],
+    'Advisor'       => doc.get_advisors,
+    'Format'        => doc.export_format,
+    'Published'     => doc.export_pub_statement,
+    'Access Online' => [link_to_online_access(doc), ONLINE_OPT],
+  )
+  fields_opts = { document: doc, fields: fields }
+
+  template_opts = title_opts.merge(thumbnail_opts).merge(fields_opts)
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/index/template/basic', template_opts %>

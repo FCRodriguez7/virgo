@@ -1,0 +1,9 @@
+<%# app/views/catalog/show/shared/_thumbnail.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc
+
+  view_debug(__FILE__)
+-%>
+
+<%= show_page_thumbnail(doc) %>

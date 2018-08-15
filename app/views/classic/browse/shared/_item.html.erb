@@ -1,0 +1,84 @@
+<%# app/views/classic/browse/shared/_item.html.erb -%>
+<%-
+  # Show a single browse entry.
+
+  item ||= nil
+  return unless item.is_a?(RSolr::Ext::Response::Facets::FacetItem)
+
+  css              ||= 'document clearfix browse'
+  browse_mode      ||= params[:browse_mode]
+  number           ||= nil
+  facet_class      ||= 'browse-entry'
+  link_path        ||= '#'
+  show_hits        ||= true
+  show_single_hits ||= false
+  max_length       ||= UVA::Classic.max_entry_length
+
+  mode             = browse_mode.to_s.to_sym
+  show_hits        = true_value?(show_hits)
+  show_single_hits = true_value?(show_single_hits)
+
+  number &&= "#{number}.".html_safe
+  number &&= content_tag(:span, number, class: 'list-item-number')
+
+  # TODO: The reason that :journal has to be titleized is that the
+  # journal_title_facet has been transformed to lowercase and punctuation
+  # has been removed.  This is a problem for using the value to create
+  # subsequent search links because, for example, `King's College` is turned
+  # into `king s college`, which fails when used within `&journal="..."`.
+  value = item.value
+  if mode == :journal
+    value = titleize(value)
+      .sub(/ S$/, %q('s))
+      .gsub(/ S /, %q('s ))
+  end
+
+  id = CGI.escape_html(value)
+
+  # NOTE: For journal titles, at least, very long values don't seem to result
+  # in successful searches if they're quoted; so for these just create the
+  # search term without the quotes.
+  # NOTE: For authors, the hit count displayed on browse results can be very
+  # different than the search results using "author=xxx" so do a facet search
+  # instead.
+  path = link_path
+  unless path == '#'
+    search_value = CGI.escape(value)
+    path += (path.include?('?') ? '&' : '?') unless path.end_with?('?', '&')
+    case mode
+      when :author, :subject, :series
+        path << %Q(f[#{browse_mode_facet(mode)}]=#{search_value})
+      when :journal
+        # TODO: Solr change is required -- journal_title_facet needs to show in search results
+        search_value = DQUOTE + search_value + DQUOTE unless value.length > 100
+        path << %Q(#{mode}=#{search_value})
+      else # :title, :call_number
+        search_value = DQUOTE + search_value + DQUOTE unless value.length > 100
+        path << %Q(#{mode}=#{search_value})
+    end
+  end
+
+  label = value
+  more  = ('[more]' if max_length && (value.length > max_length))
+  label = html_truncate(value, length: max_length, omission: '...') if more
+
+  hits   = (item.hits if show_hits)
+  hits &&= nil unless show_single_hits || (hits > 1)
+  hits &&= "(#{hits})".html_safe
+  hits &&= content_tag(:div, hits, class: 'hits')
+
+  view_debug(__FILE__)
+-%>
+<div class="<%= css -%>" data-id="<%= id -%>">
+  <div class="details">
+    <dl class="metadata hd">
+      <dt class="hidden"><%= browse_mode_label(mode) %></dt>
+      <%= number %>
+      <dd class="<%= facet_class -%>">
+        <h2>
+          <%= link_to(label, path) -%><%= more -%><%= hits %>
+        </h2>
+      </dd>
+    </dl>
+  </div>
+</div>

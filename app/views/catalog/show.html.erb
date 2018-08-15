@@ -1,0 +1,83 @@
+<%# app/views/catalog/show.html.erb -%>
+<%-
+  # Overrides Blacklight app/views/catalog/show.html.erb
+
+  # Hints for RubyMine (skipped during execution).
+  include UVA::BlacklightOverride unless ONLY_FOR_DOCUMENTATION
+
+  doc = document ||= @document
+  inset_view     ||= classic_lens? && inset_view?
+  in_collection  ||= doc && doc.has_collection_nav?
+
+  set_meta_tags(doc)
+  set_cache_refresh
+
+  in_result_set = [current_portal_key, :all].include?(search_context)
+  prev_next_opt = { prev_item: @previous_document, next_item: @next_document }
+
+  back_link = start_over = nil
+  unless inset_view
+    if in_aside?
+      back_link  = close_side_window
+    else
+      back_link  = link_back_to_search if in_result_set
+      start_over = start_over_link
+    end
+  end
+
+  template_opt = { document: doc }
+
+  view_debug(__FILE__)
+-%>
+
+<%= print_view_link unless print_view? || !doc %>
+
+<%- unless inset_view -%>
+
+  <%= hidden_search_properties unless print_view? -%>
+
+  <div class="result-nav top" role="navigation">
+
+    <div class="return-to-search">
+      <%= back_link %>
+      <%= start_over %>
+    </div>
+
+    <%= render 'catalog/show_tools', template_opt if doc %>
+
+    <div class="prev-next">
+      <%= render 'catalog/previous_next_doc', prev_next_opt if in_result_set %>
+    </div>
+
+  </div>
+
+<%- end -%>
+
+<%= hidden_item_properties unless print_view? %>
+<%# === NOTE: format-specific details of the item inserted here === -%>
+<%= render_document_partial(doc, :show, template_opt) %>
+
+<%- unless inset_view -%>
+
+  <div class="clearfix"><!-- ye olde clearfixe --></div>
+  <div class="result-nav bottom" role="navigation">
+
+    <%- if in_collection -%>
+      <div class="prev-next-collection">
+        <span>(current collection)</span>
+        <%= render 'catalog/previous_next_in_context' %>
+      </div>
+      <br/>
+    <%- end -%>
+
+    <%- if in_result_set -%>
+      <div class="prev-next-doc">
+        <%- prev_next_opt[:leader] = '(search results)' if in_collection -%>
+        <%= render 'catalog/previous_next_doc', prev_next_opt %>
+      </div>
+      <br/>
+    <%- end -%>
+
+  </div>
+
+<%- end -%>

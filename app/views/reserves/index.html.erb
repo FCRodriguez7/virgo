@@ -1,0 +1,25 @@
+<%# app/views/reserves/index.html.erb -%>
+<%-
+  set_meta_tags(title: 'Course Reserves')
+
+  view_debug(__FILE__)
+-%>
+
+<%= form_tag(reserves_path, method: :get) do %>
+  <%= label_tag(:computing_id, 'Instructor computing id:') %>
+  <%= text_field_tag(:computing_id) %>
+<%- end -%>
+
+<%- if @reserves.present? -%>
+  <%- computing_id = @reserves.computing_id -%>
+  Courses for <%= @reserves.display_name %>
+  <ul>
+    <% @reserves.courses.each do |course| %>
+      <li>
+        <%- link_label = "#{course.code}: #{course.name}" -%>
+        <%- link_path  = reserves_course_path(computing_id, course.key) -%>
+        <%= link_to link_label, link_path %>
+      </li>
+    <%- end -%>
+  </ul>
+<%- end -%>

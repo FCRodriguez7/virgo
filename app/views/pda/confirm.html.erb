@@ -1,0 +1,46 @@
+<%# app/views/pda/confirm.html.erb -%>
+<%-
+  set_meta_tags(title: 'PDA - Confirm Request')
+
+  available_to_order ||= about_pda_link
+
+  submit_label ||= 'Continue'
+  submit_opt   ||= { class: 'btn primary' }
+
+  cancel_label ||= 'Cancel'
+  cancel_path  ||= in_popup? ? colorbox_close : catalog_path(params[:id])
+  cancel_opt   ||= { class: 'btn', target: '_top' }
+
+  form_opt ||= { id: params[:id], target: '_top' }
+
+  view_debug(__FILE__)
+-%>
+
+<div class="page-heading request-heading">
+  <h1 class="heading" id="page-heading">
+    Confirm Request
+  </h1>
+</div>
+
+<div class="content-area" role="dialog" aria-labelledby="page-heading">
+
+  <div class="request-container">
+    <%= form_tag(purchase_pda_path, form_opt) do %>
+      <p>
+        By selecting “<%= submit_label -%>”,
+        the Library will order and place a hold on this item for you.
+        It will arrive in about <strong>10 business days</strong>.
+      </p>
+      <p>Select “<%= cancel_label -%>” to cancel your request.</p>
+      <p>
+        You may also <%= ask_a_librarian -%> for other options to obtain this
+        item or learn more about our <%= available_to_order -%> items.
+      </p>
+      <p class="request-submit">
+        <%= submit_tag(submit_label, submit_opt) %>
+        <%= action_link(cancel_label, cancel_path, cancel_opt) %>
+      </p>
+    <%- end -%>
+  </div>
+
+</div>

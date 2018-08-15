@@ -1,0 +1,25 @@
+<%# app/views/advanced/index.html.erb -%>
+<%-
+  # NOTE: The enclosing <form> element is in layouts/application.html.erb
+
+  title = "#{portal_search_label} Advanced Search"
+
+  set_meta_tags(title: title)
+
+  css_class = articles_lens? ? 'article-adv-search' : 'catalog-adv-search'
+
+  view_debug(__FILE__)
+-%>
+
+<div class="<%= css_class -%>">
+  <div class="adv-search-heading">
+    <h1 class="heading"><%= title %></h1>
+  </div>
+  <div class="adv-search-form">
+    <%= render '/flash_msg' %>
+    <%= render 'advanced/advanced_search_form' %>
+  </div>
+  <div class="adv-search-help">
+    <%= render 'advanced/advanced_search_help' %>
+  </div>
+</div>

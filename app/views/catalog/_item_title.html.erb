@@ -1,0 +1,30 @@
+<%# app/views/catalog/_item_title.html.erb -%>
+<%-
+  doc = document ||= @document
+  counter        ||= search_session[:counter].to_i
+  total          ||= search_session[:total].to_i
+
+  ordinal_count =
+    if counter > 0
+      number = format_num(counter)
+      number << ' of ' << format_num(total) if total.present?
+      "(Item #{number})".html_safe
+    end
+  ordinal_count &&= content_tag(:span, ordinal_count, class: 'n-of-m')
+
+  print_header =
+    if doc && print_view?
+      id  = doc.doc_id
+      url = canonical_url(doc, request.host)
+      content_tag(:div, class: 'print-header') {
+        "Virgo item #{id} - #{url}".html_safe
+      }
+    end
+
+  view_debug(__FILE__)
+-%>
+
+<div class="item-heading">
+  <div class="heading">Item Details<%= ordinal_count -%></div>
+  <%= print_header %>
+</div>

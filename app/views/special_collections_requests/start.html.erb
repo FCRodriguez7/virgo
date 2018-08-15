@@ -1,0 +1,26 @@
+<%# app/views/special_collections_requests/start.html.erb -%>
+<%-
+  set_meta_tags(title: 'Special Collections - Login')
+
+  req        ||= @sc_request
+  request_id ||= req && req[:document_id]
+
+  netbadge_login =
+    login_path(id: request_id, redirect: 'special_collections_user')
+  patron_login =
+    non_uva_special_collections_request_path(id: request_id)
+
+  view_debug(__FILE__)
+-%>
+
+<div class="tool-heading">
+  <h1 class="heading">Special Collections Requests</h1>
+</div>
+
+<div class="tool-content spec-coll">
+
+  <%= link_to 'UVA login', netbadge_login %>
+  |
+  <%= link_to 'Non-UVA login', patron_login %>
+
+</div>

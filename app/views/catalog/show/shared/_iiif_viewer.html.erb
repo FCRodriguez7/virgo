@@ -1,0 +1,47 @@
+<%# app/views/catalog/show/shared/_iiif_viewer.html.erb -%>
+<%-
+  # Controlled by app/assets/javascripts/feature/iiif_viewer.
+
+  doc = document ||= @document
+  return unless doc && doc.is_iiif? && !print_view?
+
+  blocked, label, description = access_restricted(doc)
+  allowed = !blocked
+  view_id = allowed && u("view-#{doc.id}")
+
+  # Add to hidden "skip navigation" menu.
+  skip_nav << link_to('Content Viewer', ('#'+ view_id)) if allowed
+
+  view_debug(__FILE__)
+-%>
+
+<%- if allowed -%>
+
+  <h2 id="<%= view_id -%>" class="streaming-gallery-heading">
+    View Online
+  </h2>
+
+  <%- if doc.get_iiif_array.present? -%>
+
+    <%= iiif_data(doc) %>
+    <div id="uv_wrapper"><p>Loading image viewer...</p></div>
+    <%= iiif_thumbnail_gallery(doc, anchor: view_id) %>
+    <script type="text/javascript" id="embedUV" src="/uv-2.0.2/lib/embed.js">
+    </script>
+
+  <%- else -%>
+
+    <div id="uv_error">
+      <p>Invalid data from image server.</p>
+    </div>
+
+  <%- end -%>
+
+<%- elsif label.present? && description.present? -%>
+
+  <div class="policy-explanation">
+    <h4><%= label -%>:</h4>
+    <%= description %>
+  </div>
+
+<%- end -%>

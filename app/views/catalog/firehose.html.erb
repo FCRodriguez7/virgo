@@ -1,0 +1,11 @@
+<%# app/views/catalog/firehose.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc
+
+  view_debug(__FILE__)
+-%>
+
+Doc ID <%= doc.object_id %>
+<br/>
+<%= doc.availability.to_xml %>

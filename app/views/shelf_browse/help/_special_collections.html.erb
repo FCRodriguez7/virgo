@@ -1,0 +1,39 @@
+<%# app/views/shelf_browse/help/_special_collections.html.erb -%>
+<%-
+  # Locals are defined in shelf_browse/shared/_help_content.html.erb where this
+  # file is included.
+
+  # NOTE: This text assumes that virtual shelf browse from the Special
+  # Collections lens is only accessible from a NetBadge session.
+
+  view_debug(__FILE__)
+-%>
+
+<div class="<%= help_topic_css(:help_special_collections) -%>">
+  <h2>NOTE for the Special Collections Reading Room</h2>
+  <p>
+    The Virgo workstations here are set up for the purpose of finding and
+    requesting items housed in the Special Collections library.
+  </p>
+  <p>
+    Virtual shelf browse, for the sake of keeping these workstations to their
+    intended purpose, has been modified to operate differently in this
+    location:
+  </p>
+  <ul>
+    <li><strong>NetBadge login is required</strong>
+      (to avoid potential confusion for visiting non-UVA patrons).
+    </li>
+    <li><strong>Items <u>with</u> Special Collections holdings</strong>
+      appear the same as they do from search results in the Reading Room,
+      including the "Request this Item" link.
+    </li>
+    <li><strong>Items <u>without</u> Special Collections holdings</strong>
+      appear as they would when using Virgo outside the Reading Room, but
+      <em>without</em> the usual request links.
+      These are turned off for these items because the Special Collections
+      librarians are only set up to assist you with Special Collections
+      requests.
+    </li>
+  </ul>
+</div>

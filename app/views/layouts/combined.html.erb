@@ -1,0 +1,144 @@
+<%# app/views/layouts/combined.html.erb -%>
+<%-
+  # This layout is only used for the combined results page.
+  page_css = %w(combined-page index-page combined-index-page)
+  page_css << 'print-view' if print_view?
+  page_css = page_css.join(SPACE)
+
+  # Initial stylesheets and scripts for all routes using this layout.
+  javascripts = [] <<  'combined.js'
+  stylesheets = [] << ('application.css' unless print_view?)
+
+  # Print styling comes after all other html_head entries.
+  print_media = [] << 'print' << ('screen' if print_view?)
+  print_media = print_media.compact.join(LIST_SEPARATOR)
+  html_head << stylesheet_link_tag('print.css', media: print_media)
+
+  # Add to the start of the hidden "skip navigation" menu.
+  skip_nav.unshift(link_to('Main Content', '#content'))
+
+  # Combined results page always shows the search box.
+  show_search_box = true
+
+  # Fixed width for main content.
+  content_css = 'page-content grid_24 alpha omega'
+
+  # Links for content section.
+  search_online_articles =
+    link_to('search online articles', articles_path(q: params[:q]))
+
+  # Combined results page always shows the "search elsewhere" links.
+  show_elsewhere = true
+
+  view_debug(__FILE__)
+-%>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+
+  <%# === Meta tags === -%>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <%= show_meta_tags %>
+  <%= csrf_meta_tags %>
+
+  <%# === Include CSS, JavaScript and items added by the action page === -%>
+  <%= show_html_head(stylesheets, javascripts) -%>
+
+</head>
+
+<body class="<%= page_css -%>">
+
+  <%= show_cache_refresh unless print_view? %>
+
+  <div class="virgo-container">
+
+    <%# === Top banner === -%>
+    <%= render 'layouts/header' %>
+
+    <div class="page-container container_24 combined-results">
+
+      <%# === Search term input === -%>
+      <%- if show_search_box -%>
+        <div class="results-search-container container_24 alpha omega">
+          <%= render 'catalog/search_box' %>
+        </div>
+      <%- end -%>
+
+      <article class="<%= content_css -%>" id="content" role="main">
+
+        <%# === Flash messages (if any are active) === -%>
+        <%= render '/flash_msg' %>
+
+        <header class="grid_24 alpha omega combined-results-header">
+
+          <%= print_view_controls if print_view? %>
+          <%= render 'catalog/constraints' %>
+          <%= render 'catalog/document_actions' %>
+          <%= print_view_link unless print_view? %>
+
+        </header>
+
+        <%# === Catalog results column === -%>
+        <section class="catalog-search-results grid_12 alpha omega">
+
+          <header class="split-header">
+            <h1 class="split-title">Catalog results</h1>
+            <p class="split-header-description">
+              Find books, print journals, maps, videos, digitized materials,
+              and more from the Library's collection.
+              <br/><br/><br/>
+            </p>
+          </header>
+
+          <%# === NOTE: rendering of action page inserted here === -%>
+          <%= yield %>
+
+        </section>
+
+        <%# === Article results column === -%>
+        <section class="article-search-results grid_12 alpha omega">
+
+          <header class="split-header">
+            <h1 class="split-title">Article results</h1>
+            <p class="split-header-description">
+              Find articles from a selection of the Library's subscription
+              online journals.
+              Most articles have full-text available.
+              Citations for print-only articles are excluded.
+              Initial results are limited to peer-reviewed.
+              To find more articles, search within our
+              <%= specialized_databases %>.
+            </p>
+          </header>
+
+          <%# === NOTE: asynchronous article results appear here === -%>
+          <%# @see app/assets/javascripts/feature/articles -%>
+          <div class="article-results-container">
+            <%= hidden_search_properties(portal: :articles) -%>
+            <p class="no-js-notice">
+              Catalog + Article search requires a browser with JavaScript
+              enabled. You may still <%= search_online_articles %>.
+            </p>
+          </div>
+
+        </section>
+
+      </article>
+
+      <%# === Other search links === -%>
+      <%= render 'catalog/search_elsewhere' if show_elsewhere %>
+
+    </div>
+
+    <%# === Page bottom === -%>
+    <%= render 'layouts/footer', layout: __FILE__ %>
+
+  </div>
+
+  <%= render 'layouts/skip_nav' %>
+  <%= render 'layouts/analytics' %>
+  <%= render 'layouts/copyright' %>
+
+</body>
+</html>

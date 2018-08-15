@@ -1,0 +1,34 @@
+<%# app/views/catalog/email/_lib_coins.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  # === Item metadata
+  obverse_url = doc.values_for(:thumb_obv_display)
+  reverse_url = doc.values_for(:thumb_rev_display)
+  image_urls  = (obverse_url + reverse_url).reject(&:blank?)
+
+  denomination = doc.values_for(:denomination_display)
+  material     = doc.values_for(:material_display)
+
+  fields ||= UVA::View::FieldSet.new(
+    :title          => doc.show_full_title,
+    :accession      => doc.export_accession_number,
+    'Image URL'     => image_urls,
+    'Title'         => doc.export_title,
+    'Mint'          => :mint_display,
+    'Denomination'  => capitalize(denomination).join(ITEM_SEPARATOR),
+    'Material'      => capitalize(material).join(ITEM_SEPARATOR),
+    'Format'        => doc.export_format,
+    'Location'      => :location_display,
+    'Accession'     => doc.export_accession_number,
+    'Region'        => doc.export_place_names,
+    'Collection'    => doc.export_collection,
+    'Subjects'      => doc.export_subjects,
+    'Full View'     => doc.export_url,
+    copyright_label => permission_uri(doc),
+  )
+
+  view_debug(__FILE__)
+-%>
+<%= fields.render(:email, doc) %>

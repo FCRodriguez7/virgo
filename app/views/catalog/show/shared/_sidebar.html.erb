@@ -1,0 +1,22 @@
+<%# app/views/catalog/show/shared/_sidebar.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc
+
+  # If "position: sticky" is supported allow the sidebar to remain visible.
+  sidebar_items << :sticky_optional
+
+  view_debug(__FILE__)
+-%>
+
+<%- sidebar_items << capture do -%>
+  <div>
+    <div class="sidebar-inner">
+      <%= render 'catalog/show/shared/thumbnail',      document: doc %>
+      <%= render 'catalog/show/shared/collection_nav', document: doc %>
+      <%= render 'catalog/show/shared/related_names',  document: doc %>
+      <%= render 'catalog/show/shared/subjects',       document: doc %>
+      <%= render 'catalog/show/shared/places',         document: doc %>
+    </div>
+  </div>
+<%- end -%>

@@ -1,0 +1,14 @@
+<%# app/views/catalog/index/_lib_technical_report.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  counter ||= -1
+  offset  ||= 0
+  partial_opts = { document: doc, counter: counter, offset: offset }
+
+  template_opts = partial_opts.merge(dev_note: __FILE__)
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/index/template/libra', template_opts %>

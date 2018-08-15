@@ -1,0 +1,48 @@
+// app/assets/stylesheets/feature/bookplate.css.scss
+
+// ============================================================================
+// Bookplate badges
+// ============================================================================
+
+// The bookplate section may display as many bookplates as an item has
+// associated with it.  An individual bookplate will display only if bookplate
+// data could be acquired for the associated fund code.
+//
+// @see app/assets/javascripts/feature/bookplate.js
+//
+// Examples:
+// - With two bookplates:  catalog/u6943016
+// - With five bookplates: catalog/u2525293
+//
+.bookplate-section {
+
+    $bp-expansion:  0.75em; // To increase click target area.
+    $bp-horizontal: (2 * $bp-expansion);
+    $bp-vertical:   ($bp-expansion / 2);
+
+    display:         flex;
+    justify-content: space-around;
+
+    .bookplate {
+
+        display:          none;
+        margin:           (2 * $bp-expansion) 0.25em;
+        padding:          $bp-vertical 0;
+        text-align:       center;
+        border-radius:    ($bp-expansion / 2);
+        border:           2px solid gray;
+        background-color: #fcfcfc;
+
+        a {
+            display:            inline-block;
+            vertical-align:     bottom;
+            font-variant:       small-caps;
+            border:             $bp-expansion solid transparent;
+            border-right-width: $bp-horizontal;
+            border-left-width:  $bp-horizontal;
+
+            &:focus { outline-offset:  -0.5em; }
+            &:hover { text-decoration: underline; }
+        }
+    }
+}

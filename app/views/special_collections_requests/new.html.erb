@@ -1,0 +1,59 @@
+<%# app/views/special_collections_requests/new.html.erb -%>
+<%-
+  set_meta_tags(title: 'Special Collections - Request')
+
+  req          ||= @sc_request
+  errors       ||= (req && req.errors) || []
+  doc_title    ||= req && req.document_title
+
+  return_label ||= '&larr; Return to item record'.html_safe
+  return_path  ||= catalog_path(params[:id])
+  return_opt   ||= { target: '_top' }
+
+  submit_label ||= 'Request'
+  submit_opt   ||= { class: 'button btn primary' }
+
+  cancel_label ||= 'Cancel'
+  cancel_path  ||= in_popup? ? colorbox_close : return_path
+  cancel_opt   ||= { class: 'btn', target: '_top' }
+
+  form_opt ||= {
+    url:    special_collections_requests_path,
+    method: :post,
+    class:  'special-collections-content'
+  }
+
+  view_debug(__FILE__)
+-%>
+
+<div class="list-heading">
+  <h1 class="heading">Request for <%= doc_title %></h1>
+</div>
+
+<div class="tool-content spec-coll">
+
+  <%- if errors.present? -%>
+    <ul>
+      <%- errors.full_messages.each do |msg| -%>
+        <li><%= msg %></li>
+      <%- end -%>
+    </ul>
+  <%- end -%>
+
+  <%- unless in_popup? || no_redirects? -%>
+    <div class="return-to-item">
+      <%= action_link(return_label, return_path, return_opt) %>
+    </div>
+  <%- end -%>
+
+  <%= form_for(req, form_opt) do |f| %>
+    <fieldset>
+      <%= sr_only(:legend, 'Specify the items to request:') %>
+      <%= render partial: 'user_form', object: f %>
+      <%= f.submit submit_label, submit_opt %>
+      &nbsp;or&nbsp;
+      <%= action_link(cancel_label, cancel_path, cancel_opt) %>
+    </fieldset>
+  <%- end -%>
+
+</div>

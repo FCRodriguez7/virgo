@@ -1,0 +1,136 @@
+<%# app/views/catalog/show/_data_driven.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  css_class     ||= 'item-content document'
+  has_hierarchy ||= doc.has_feature?('has_hierarchy')
+  ead_fragment  ||= doc.has_feature?('display_ead_fragment')
+  dl_metadata   ||= doc.has_feature?('dl_metadata')
+  dev_note      ||= __FILE__
+
+  fields = fields_opts = title_opts = breadcrumbs = template_opts = nil
+
+  if ead_fragment
+
+    # === Breadcrumbs
+    breadcrumbs = render_breadcrumbs(doc, :show).presence
+    has_hierarchy = true if breadcrumbs
+
+  elsif !dl_metadata
+
+    # === Item title/author
+    title ||= doc.show_full_title
+    title_opts = { title: title, dev_note: dev_note }
+
+    # === Item metadata - Default fields
+    collection = facet_search_links(:digital_collection_facet, doc, title: nil)
+    related_resources =
+      link_to('View online', doc.get_online_url_display, target: '_blank')
+
+    fields ||= UVA::View::FieldSet.new(
+      'Format'             => doc.export_format,
+      'Type'               => doc.export_work_type,
+      'Date'               => doc.export_pub_date,
+      'Duration'           => :duration_display,
+      'Summary'            => doc.get_abstract,
+      'Creator'            => :cre_display,
+      'Actor'              => :act_display,
+      'Arranger'           => :arr_display,
+      'Author'             => :aut_display,
+      'Composer'           => :cmp_display,
+      'Conductor'          => :cnd_display,
+      'Cinematographer'    => :cng_display,
+      'Contributor'        => :ctb_display,
+      'Director'           => :drt_display,
+      'Distributor'        => :dst_display,
+      'Editor'             => :edt_display,
+      'Host'               => :hst_display,
+      'Instrumentalist'    => :itr_display,
+      'Interviewee'        => :ive_display,
+      'Moderator'          => :mod_display,
+      'Musical Director'   => :msd_display,
+      'Musician'           => :mus_display,
+      'Narrator'           => :nrt_display,
+      'Panelist'           => :pan_display,
+      'Presenter'          => :pre_display,
+      'Producer'           => :pro_display,
+      'Production Company' => :prn_display,
+      'Screenwriter'       => :aus_display,
+      'Singer'             => :sng_display,
+      'Speaker'            => :spk_display,
+      'Publisher'          => :publisher_display,
+      'Time Period'        => :temporal_subject_display,
+      'Language'           => doc.get_language,
+      'Contents'           => :toc_display,
+      'Notes'              => :note_display,
+      'Collection'         => collection,
+      'Location'           => :location_display,
+      'Related Resources'  => related_resources,
+      'Related Items'      => :related_item_display,
+      'Terms of Use'       => :terms_of_use_display,
+      copyright_field      => copyright_and_permissions(doc),
+      'Extent'             => :extent_display,
+      'Date Indexed'       => show_date_indexed(doc)
+    )
+
+    # Process formatted fields.
+    formatted_fields = %w(Summary Contents Notes Terms\ of\ Use)
+    fields.each { |key, value|
+      next unless formatted_fields.include?(key)
+      fields[key] = doc.values_for(value).map { |v| simple_format(v) }
+    }
+    fields_opts = { document: doc, fields: fields }
+
+    template_opts = title_opts.merge(fields_opts)
+
+  end
+
+  if has_hierarchy
+    html_head << 'feature/ead.js'
+    sidebar_items << :sticky_sidebar
+  end
+
+  view_debug(__FILE__)
+-%>
+
+<%= template_comment(doc, dev_note) %>
+<div class="<%= css_class -%>" id="doc-<%= doc.doc_id -%>">
+
+  <%- if ead_fragment -%>
+
+    <%= breadcrumbs %>
+
+    <%# === Item content === -%>
+    <div class="ead-heading-container">
+      <div class="transformed-ead">
+        <%= doc.ead %>
+      </div>
+    </div>
+
+  <%- else -%>
+
+    <%# === Item title === -%>
+    <%= render 'catalog/show/shared/title', title_opts %>
+
+    <%# === Item metadata === -%>
+    <%- if !dl_metadata -%>
+      <%= render 'catalog/show/shared/fields', fields_opts %>
+    <%- elsif doc.has_marc? -%>
+      <%= render 'catalog/show/shared/marc_details', template_opts %>
+    <%- else -%>
+      <%= render 'catalog/show/shared/dl_details',   template_opts %>
+    <%- end -%>
+
+  <%- end -%>
+
+  <%# === Item access === -%>
+  <%= render 'catalog/show/shared/streaming_player',      template_opts %>
+  <%= render 'catalog/show/shared/iiif_viewer',           template_opts %>
+  <%= render 'catalog/show/shared/hierarchy_descendants', template_opts %>
+  <%= render 'catalog/show/shared/view_online',           template_opts %>
+  <%= render 'catalog/show/shared/availability_box',      template_opts %>
+
+</div>
+
+<%= render 'catalog/show/shared/sidebar', template_opts %>

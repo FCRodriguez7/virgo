@@ -1,0 +1,102 @@
+<%# app/views/account/notices.html.erb -%>
+<%-
+  set_meta_tags(title: 'My Account - Notices')
+
+  user           ||= @user_checkouts
+  checkouts      ||= user && user.sorted_checkouts
+  checkout_count ||= user && user.checkout_count
+  overdue_count  ||= user && user.overdue_count
+  recalled_count ||= user && user.recalled_count
+  notices_count  ||= overdue_count.to_i + recalled_count.to_i
+
+  notices  = checkouts && checkouts.select { |co| co.overdue? || co.recalled? }
+  no_items = notices.blank?
+
+  renew_all =
+    if checkout_count && checkout_count.nonzero?
+      link_spacer +
+      link_to('Renew All Items', renew_all_path, class: 'renew-all-link')
+    end
+
+  num = sr_only('Number')
+
+  view_debug(__FILE__)
+-%>
+
+<div class="list-heading">
+  <h1 class="heading">My Account</h1>
+  <%= print_view_link unless print_view? || no_items %>
+</div>
+
+<div class="account-container">
+
+  <%- if no_items -%>
+
+    <h2 class="sub-heading no-items">
+      No Current Notices
+      <%= renew_all %>
+    </h2>
+
+  <%- else -%>
+
+    <h2 class="sub-heading">
+      Notices: <span class="account-total"><%= notices_count -%></span>
+      <%= renew_all %>
+    </h2>
+
+    <table class="item-list notices">
+      <thead>
+        <tr>
+          <th class="account-number-heading hidden-heading"><%= num %></th>
+          <th class="account-title-heading">Title</th>
+          <th class="account-author-heading">Creator</th>
+          <th class="account-due-heading">Due Date</th>
+          <th class="account-library-heading">Library</th>
+          <th class="account-call-heading">Call #</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%- number = 1 -%>
+        <%- notices.each do |notice| -%>
+          <%-
+            due_date = notice.date_due_f
+            item     = notice.catalog_item
+            title    = item.title
+            author   = item.authors
+            overdue  = ('overdue'  if notice.overdue?)
+            recalled = ('recalled' if notice.recalled?)
+            alerts   = [overdue, recalled].compact
+            unless item.holdings.all?(&:shadowed?)
+              url    = item.document && catalog_path(item.document.doc_id)
+              title  = link_to(title, url) if url
+            end
+          -%>
+          <%- item.holdings.each do |holding| -%>
+            <%- holding.copies.each do |copy| -%>
+              <tr class="item <%= cycle('even', 'odd') -%>">
+                <td class="item-number"><%= number -%>.</td>
+                <td class="title"><%= title %></td>
+                <td class="author"><%= author %></td>
+                <td class="date account-notice-container">
+                  <%= due_date %>
+                  <%- alerts.each do |alert| -%>
+                    <span class="account-notice <%= alert -%>">
+                      <%= alert %>
+                    </span>
+                  <%- end -%>
+                </td>
+                <td class="location"><%= holding.library.name %></td>
+                <td class="call-number"><%= holding.call_number %></td>
+              </tr>
+              <%- number += 1 -%>
+            <%- end -%>
+          <%- end -%>
+        <%- end -%>
+      </tbody>
+    </table>
+
+  <%- end -%>
+
+</div>
+
+<%= render 'account/sidebar', user: user %>

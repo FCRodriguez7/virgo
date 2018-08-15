@@ -1,0 +1,99 @@
+<%# app/views/catalog/_search_help.html.erb -%>
+<%-
+  digital_collections_path =
+    catalog_index_path(
+      search_field: 'advanced',
+      :'f_inclusive[source_facet][Digital Library]' => '1',
+      :'f_inclusive[source_facet][UVA Library Digital Repository]' => '1'
+    )
+  special_collections_path =
+    catalog_index_path(
+      :'f[library_facet][]' => 'Special Collections'
+    )
+  visual_history_path =
+    catalog_index_path(
+      :'f[digital_collection_facet][]' =>
+        'University of Virginia Visual History Collection'
+    )
+  collection_entries = {
+    'UVA Visual History'           => visual_history_path,
+    'Daily Progress'               => '/daily_progress',
+    'WSLS-TV News'                 => '/wsls',
+    'Manuscripts & Rare Materials' => special_collections_path,
+    'All Digital Collections'      => digital_collections_path,
+  }.map { |label, path|
+    content_tag(:li, link_to(label, path)) if path.present?
+  }.compact.join.html_safe
+
+  opts  = { alt: '', ARIA_HIDDEN => true }
+  image = image_tag('catalog/rotunda_uva_lib_2154300.jpg', opts)
+
+  opts  = { style: 'text-decoration:underline' }
+  advanced_search = link_to('Advanced Search', catalog_advanced_path, opts)
+
+  view_debug(__FILE__)
+-%>
+
+<div class="search-help help-section">
+
+  <header class="entry-header">
+    <h2 class="sub-heading">What's Included?</h2>
+  </header>
+
+  <div class="entry-content">
+    <p class="split-content">
+      Virgo contains both the <strong>catalog</strong> &mdash; with materials
+      like books, print journals, DVDs, maps, and digitized materials &mdash;
+      and <strong>online articles</strong> from our rich array of subscription
+      journals.
+      The sub-collections at right have custom searches for media- and
+      discipline-specific materials.
+      <br/>
+      <br/>
+      Virgo article search results do not reflect all Library holdings, and
+      citations for print-only articles are not included.
+      To find more article results, search within our
+      <%= specialized_databases %>.
+    </p>
+    <h2 class="sub-heading split-heading">Collections</h2>
+    <ul class="split-list">
+      <%= collection_entries %>
+    </ul>
+  </div>
+
+  <header class="entry-header">
+    <h2 class="sub-heading">Getting Started</h2>
+  </header>
+
+  <div class="entry-content">
+    <p>
+      <%= image %>
+      Type some keywords, an author's name, or even a full title in the search
+      box above, optionally limit your search to just the catalog or online
+      articles, then click &ldquo;Search&rdquo;.
+      <br/>
+      <br/>
+      Within search results, you can filter by author, publication period, and
+      more, or use &ldquo;Refine search&rdquo; to change or broaden your search
+      criteria through <%= advanced_search -%>.
+    </p>
+  </div>
+
+  <header class="entry-header">
+    <h2 class="sub-heading">Next Steps</h2>
+  </header>
+
+  <div class="entry-content">
+    <p class="split-content">
+      The Library offers more than just search &mdash; subject and departmental
+      guides will point you toward the best databases and online resources in
+      your area, while our comprehensive database list and journal finder tools
+      can help you find specific articles, datasets, or other resources.
+    </p>
+    <h2 class="sub-heading split-heading">Resources</h2>
+    <ul class="split-list">
+      <%= other_resources_links %>
+    </ul>
+  </div>
+
+</div>

@@ -1,0 +1,32 @@
+<%# app/views/catalog/index/_dl_image.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  counter ||= -1
+  offset  ||= 0
+  partial_opts = { document: doc, counter: counter, offset: offset }
+
+  # === Item title
+  title_opts = partial_opts.merge(dev_note: __FILE__)
+
+  # === Item thumbnail
+  thumbnail_opts = partial_opts.merge(thumbnail_css: 'image-collection')
+
+  # === Item metadata
+  resource_ids = doc.values_for(:media_resource_id_display)
+  content_link = pluralize(resource_ids.size, 'Digital image')
+
+  fields ||= UVA::View::FieldSet.new(
+    'Creator'      => [doc.get_authors, AUTHOR_OPT],
+    'Series'       => doc.get_series,
+    'Date Created' => [doc.get_pub_date, DATE_OPT],
+    'Contents'     => content_link,
+  )
+  fields_opts = { document: doc, fields: fields }
+
+  template_opts = title_opts.merge(thumbnail_opts).merge(fields_opts)
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/index/template/basic', template_opts %>

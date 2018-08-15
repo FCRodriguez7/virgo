@@ -1,0 +1,29 @@
+<%# app/views/shelf_browse/horizontal/_page_scroller.html.erb -%>
+<%-
+  items ||= @document_list || []
+  focus ||= nil
+
+  focus_index = focus_item_index(items, focus)
+
+  view_debug(__FILE__)
+-%>
+
+<div class="page-scroller">
+  <div class="page-controls" role="navigation">
+    <%= page_reverse_button(1) %>
+    <%= page_reverse_button(10) %>
+  </div>
+  <div class="item-page">
+    <div class="tile-container">
+      <%- items.each_with_index do |item, index| -%>
+        <%- has_focus = (index == focus_index) -%>
+        <%- opt = { item: item, focus_id: index, focus: has_focus } -%>
+        <%= render 'shelf_browse/shared/item_tile', opt %>
+      <%- end -%>
+    </div>
+  </div>
+  <div class="page-controls" role="navigation">
+    <%= page_forward_button(1) %>
+    <%= page_forward_button(10) %>
+  </div>
+</div>

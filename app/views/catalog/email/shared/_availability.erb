@@ -1,0 +1,38 @@
+<%# app/views/catalog/email/shared/_availability.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc
+
+  # Course reserve uses this template but doesn't include UVA::Helper::Pda.
+  pda_item = respond_to?(:'is_pda?') && is_pda?(doc)
+
+  availability = !pda_item && doc.availability
+  holdings     = availability && availability.holdings
+
+  view_debug(__FILE__)
+-%>
+<%- if pda_item -%>
+Library: <%= doc.values_for(:library_facet).join(LIST_SEPARATOR) %>
+<%- elsif availability -%>
+<%-   availability.summary_libraries.each do |library| -%>
+<%=     library.name %>
+<%-     library.summary_locations.each do |location| -%>
+<%=       location.name %>
+<%-       location.summaries.each do |summary| -%>
+<%=         summary.text %>, <%= summary.note %>
+<%-       end -%>
+<%-     end -%>
+<%-   end -%>
+<%-   if holdings.present? -%>
+<%-     holdings.each do |holding| -%>
+<%-       holding.copies.each do |copy| -%>
+Library:         <%= holding.library.name %>
+Location:        <%= location_text(holding, copy) %>
+<%-         unless is_sas(holding) -%>
+Availability:    <%= availability_label(holding, copy) %>
+<%-         end -%>
+Call Number:     <%= holding.call_number %>
+<%-       end -%>
+<%-     end -%>
+<%-   end -%>
+<%- end -%>

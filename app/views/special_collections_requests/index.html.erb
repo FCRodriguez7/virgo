@@ -1,0 +1,111 @@
+<%# app/views/special_collections_requests/edit.html.erb -%>
+<%-
+  set_meta_tags(title: 'Special Collections')
+  sidebar_items << :no_sidebar
+
+  # @see app/assets/javascripts/shared/session
+  html_head << %q(<meta http-equiv="refresh" content="60" />)
+
+  time_fmt ||= '%m/%d/%Y %I:%M%p'
+
+  date_opt = {
+    start_year: 2010,
+    end_year:   Date.today.year,
+    order:      [:month, :day, :year]
+  }
+
+  queue_opt =
+    options_for_select(%w(Hide Show Only), params['instructional_queue'])
+
+  view_debug(__FILE__)
+-%>
+
+<div class="list-heading special-collections">
+  <h1 class="heading">Special Collections Requests</h1>
+</div>
+
+<div class="tool-content spec-coll">
+
+  <div class="sc-search-form">
+    <%= form_tag(special_collections_requests_path, method: :get) do %>
+      <div class='field'>
+        <%= label_tag :doc_id, 'Virgo ID' %>
+        <br/>
+        <%= text_field_tag :doc_id, params['doc_id'] %>
+      </div>
+      <div class='field'>
+        <%= label_tag nil, 'Start Date' %>
+        <br/>
+        <%= select_date(@start_date, date_opt.merge(prefix: 'start')) %>
+      </div>
+      <div class='field'>
+        <%= label_tag :user_id, 'User ID' %>
+        <br/>
+        <%= text_field_tag :user_id, params['user_id'] %>
+      </div>
+      <div class='field'>
+        <%= label_tag nil, 'End Date' %>
+        <br/>
+        <%= select_date(@end_date, date_opt.merge(prefix: 'end')) %>
+      </div>
+      <div class='field'>
+        <%= label_tag :instructional_queue, 'Instructional Queue' %>
+        <br/>
+        <%= select_tag :instructional_queue, queue_opt %>
+      </div>
+      <div class='field'>
+        <%= submit_tag 'Search', class: 'btn' %>
+      </div>
+    <%- end -%>
+  </div>
+
+  <hr/>
+  <div class="sc-requests-legend">
+    <span class="processed-label">Processed</span>
+    <span class="unprocessed-label">Unprocessed</span>
+    <span class="internal-label">Internal</span>
+    <span class="instructional-label">Instructional</span>
+  </div>
+
+  <%= will_paginate @sc_requests, class: 'pagination' %>
+
+  <table class="sc-requests">
+    <tr>
+      <th>Request ID</th>
+      <th>User ID</th>
+      <th>Name</th>
+      <th>Item</th>
+      <th>Requested</th>
+      <th>Processed</th>
+      <th>View Request</th>
+    </tr>
+    <%- @sc_requests.each do |req| -%>
+      <%-
+        next unless req
+        entry_css =
+          if req.processed_at
+            'processed'
+          elsif req.is_instructional
+            'instructional'
+          elsif req.internal
+            'internal'
+          else
+            'unprocessed'
+          end
+        req_path = edit_special_collections_request_path(req.id)
+      -%>
+      <tr class="<%= entry_css -%>">
+        <td><%= h(req.id) %></td>
+        <td><%= h(req.user_id) %></td>
+        <td><%= h(req.name) %></td>
+        <td><%= h(req.document_title) %><br/><%= h(req.document_author) %></td>
+        <td><%= req.created_at.strftime(time_fmt) %></td>
+        <td><%= req.processed_at.strftime(time_fmt) rescue '---' %></td>
+        <td><%= link_to 'View', req_path %></td>
+      </tr>
+    <%- end -%>
+  </table>
+
+  <%= will_paginate @sc_requests, class: 'pagination' %>
+
+</div>

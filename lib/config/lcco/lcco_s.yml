@@ -1,0 +1,911 @@
+# lib/config/lcco_s.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from the Word document of the same base name.
+
+class:    S
+name:     'AGRICULTURE'
+sections:
+  - subclass:  S
+    name:     'Agriculture (General)'
+    sections:
+      - name:    'Agriculture (General)'
+        range:   S1-(972)
+        start:   S1
+        end:     S972
+        sections:
+          - name:    'Documents and other collections'
+            range:   S21-400.5
+            start:   S21
+            end:     S400.5
+          - name:    'Agricultural missions, voyages, etc.'
+            range:   S403
+            start:   S403
+            end:     S403
+          - name:    'History'
+            range:   S419-482
+            start:   S419
+            end:     S482
+          - name:    'Agricultural education'
+            range:   S530-559
+            start:   S530
+            end:     S559
+            sections:
+              - name:    'Research.  Experimentation'
+                range:   S539.5-542.3
+                start:   S539.5
+                end:     S542.3
+              - name:    'Agricultural extension work'
+                range:   S544-545.53
+                start:   S544
+                end:     S545.53
+              - name:    'Historic farms'
+                range:   S548-548.6
+                start:   S548
+                end:     S548.6
+              - name:    'Exhibitions.  Fairs'
+                range:   S550-559
+                start:   S550
+                end:     S559
+          - name:    'Farm economics.  Farm management.  Agricultural mathematics'
+            note:    'Including production standards, record keeping, farmwork rates, marketing'
+            range:   S560-571.5
+            start:   S560
+            end:     S571.5
+          - name:    'Agricultural chemistry.  Agricultural chemicals'
+            range:   S583-587.73
+            start:   S583
+            end:     S587.73
+          - name:    'Agricultural physics'
+            note:    'Including radioisotopes in agriculture'
+            range:   S588.4-589.6
+            start:   S588.4
+            end:     S589.6
+          - name:    'Agricultural ecology (General)'
+            range:   S589.7
+            start:   S589.7
+            end:     S589.7
+          - name:    'Agriculture and the environment'
+            range:   S589.75-589.76
+            start:   S589.75
+            end:     S589.76
+          - name:    'Plant growing media.  Potting soils'
+            range:   S589.8-589.87
+            start:   S589.8
+            end:     S589.87
+          - name:    'Soils.  Soil science'
+            note:    'Including soil surveys, soil chemistry, soil structure, soil-plant relationships'
+            range:   S590-599.9
+            start:   S590
+            end:     S599.9
+          - name:    'Agricultural meteorology.  Crops and climate'
+            range:   S600-600.7
+            start:   S600
+            end:     S600.7
+          - name:    'Methods and systems of culture.  Cropping systems'
+            note:    'Including fallowing, rotation of crops, plowing'
+            range:   S602.5-604.37
+            start:   S602.5
+            end:     S604.37
+          - name:    'Agricultural conservation'
+            range:   S604.5-604.64
+            start:   S604.5
+            end:     S604.64
+          - name:    'Melioration: Improvement, reclamation, fertilization, irrigation, etc., of lands'
+            range:   S604.8-621.5
+            start:   S604.8
+            end:     S621.5
+            sections:
+              - name:    'Organic farming.  Organiculture'
+                range:   S605.5
+                start:   S605.5
+                end:     S605.5
+              - name:    'Special classes of lands and reclamation methods'
+                note:    'Including woodlands, burning of lands, deserts, saline environments, moors'
+                range:   S606-621.5
+                start:   S606
+                end:     S621.5
+          - name:    'Soil conservation and protection'
+            range:   S622-627
+            start:   S622
+            end:     S627
+          - name:    'Fertilizers and improvement of the soil'
+            range:   S631-667
+            start:   S631
+            end:     S667
+          - name:    'Farm machinery and farm engineering'
+            range:   S671-760.5
+            start:   S671
+            end:     S760.5
+          - name:    'Agricultural structures.  Farm buildings'
+            range:   S770-790.3
+            start:   S770
+            end:     S790.3
+          - name:    'Conservation of natural resources'
+            note:    'Including land conservation'
+            range:   S900-(972)
+            start:   S900
+            end:     S972
+  - subclass:  SB
+    name:     'Plant culture'
+    sections:
+      - name:    'Plant culture'
+        range:   SB1-1110
+        start:   SB1
+        end:     SB1110
+        sections:
+          - name:    'Horticultural voyages, etc.'
+            range:   SB39
+            start:   SB39
+            end:     SB39
+          - name:    'History'
+            range:   SB71-87
+            start:   SB71
+            end:     SB87
+          - name:    'Economic botany'
+            range:   SB107-109
+            start:   SB107
+            end:     SB109
+          - name:    'Methods for special areas'
+            note:    'Including cold regions, dry farming, tropical agriculture'
+            range:   SB109.7-111
+            start:   SB109.7
+            end:     SB111
+          - name:    'Irrigation farming'
+            range:   SB112
+            start:   SB112
+            end:     SB112
+          - name:    'Seeds.  Seed technology'
+            range:   SB113.2-118.46
+            start:   SB113.2
+            end:     SB118.46
+          - name:    'Nurseries.  Nursery industry'
+            range:   SB118.48-118.75
+            start:   SB118.48
+            end:     SB118.75
+          - name:    'Propagation'
+            note:    'Including breeding, selection, grafting, air layering'
+            range:   SB119-124
+            start:   SB119
+            end:     SB124
+          - name:    'Training and pruning'
+            range:   SB125
+            start:   SB125
+            end:     SB125
+          - name:    'Artificial light gardening'
+            range:   SB126
+            start:   SB126
+            end:     SB126
+          - name:    'Hydroponics.  Soilless agriculture'
+            range:   SB126.5-126.57
+            start:   SB126.5
+            end:     SB126.57
+          - name:    'Forcing'
+            range:   SB127
+            start:   SB127
+            end:     SB127
+          - name:    'Growth regulators'
+            range:   SB128
+            start:   SB128
+            end:     SB128
+          - name:    'Harvesting, curing, storage'
+            range:   SB129-130
+            start:   SB129
+            end:     SB130
+          - name:    'Tree crops'
+            range:   SB169-172.5
+            start:   SB169
+            end:     SB172.5
+          - name:    'Food crops'
+            range:   SB175-177
+            start:   SB175
+            end:     SB177
+          - name:    'Field crops'
+            note:    'Including cereals, forage crops, grasses, legumes, root crops, sugar plants, textile plants, alkaloidal plants, medicinal plants'
+            range:   SB183-317
+            start:   SB183
+            end:     SB317
+          - name:    'Horticulture.  Horticultural crops'
+            range:   SB317.5-319.864
+            start:   SB317.5
+            end:     SB319.864
+          - name:    'Vegetables'
+            range:   SB320-353.5
+            start:   SB320
+            end:     SB353.5
+          - name:    'Fruit and fruit culture'
+            range:   SB354-402
+            start:   SB354
+            end:     SB402
+            sections:
+              - name:    'Berries and small fruits'
+                range:   SB381-386
+                start:   SB381
+                end:     SB386
+              - name:    'Grape culture.  Viticulture'
+                range:   SB387-399
+                start:   SB387
+                end:     SB399
+              - name:    'Nuts'
+                range:   SB401
+                start:   SB401
+                end:     SB401
+          - name:    'Flowers and flower culture.  Ornamental plants'
+            range:   SB403-450.87
+            start:   SB403
+            end:     SB450.87
+            sections:
+              - name:    'Plant propagation'
+                range:   SB406.7-406.83
+                start:   SB406.7
+                end:     SB406.83
+              - name:    'Culture of individual plants'
+                range:   SB409-413
+                start:   SB409
+                end:     SB413
+              - name:    'Forcing'
+                range:   SB414
+                start:   SB414
+                end:     SB414
+              - name:    'Greenhouses and greenhouse culture'
+                range:   SB414.6-417
+                start:   SB414.6
+                end:     SB417
+              - name:    'Container gardening'
+                range:   SB418-418.4
+                start:   SB418
+                end:     SB418.4
+              - name:    'Indoor gardening and houseplants'
+                range:   SB419-419.3
+                start:   SB419
+                end:     SB419.3
+              - name:    'Roof gardening.  Balcony gardening'
+                range:   SB419.5
+                start:   SB419.5
+                end:     SB419.5
+              - name:    'Classes of plants'
+                note:    'Including annuals, climbers, ferns, lawns, perennials, shrubs'
+                range:   SB421-439.8
+                start:   SB421
+                end:     SB439.8
+              - name:    'Flower shows.  Exhibitions'
+                range:   SB441-441.75
+                start:   SB441
+                end:     SB441.75
+              - name:    'Care and preparation of cut flowers and ornamental plants for market'
+                range:   SB442.5
+                start:   SB442.5
+                end:     SB442.5
+              - name:    'Marketing.  Cut flower industry.  Florists'
+                range:   SB442.8-443.4
+                start:   SB442.8
+                end:     SB443.4
+              - name:    'Horticultural service industry'
+                range:   SB446-446.6
+                start:   SB446
+                end:     SB446.6
+              - name:    'Preservation and reproduction of flowers, fruits, etc.'
+                range:   SB447
+                start:   SB447
+                end:     SB447
+              - name:    'Bonkei.  Tray landscapes'
+                range:   SB447.5
+                start:   SB447.5
+                end:     SB447.5
+              - name:    'Flower arrangement and decoration'
+                range:   SB449-450.87
+                start:   SB449
+                end:     SB450.87
+          - name:    'Gardens and gardening'
+            range:   SB450.9-467.8
+            start:   SB450.9
+            end:     SB467.8
+          - name:    'Landscape gardening.  Landscape architecture'
+            range:   SB469-(476.4)
+            start:   SB469
+            end:     SB476.4
+          - name:    'Parks and public reservations'
+            note:    'Including theory, management, history'
+            range:   SB481-486
+            start:   SB481
+            end:     SB486
+          - name:    'Pests and diseases'
+            range:   SB599-990.5
+            start:   SB599
+            end:     SB990.5
+            sections:
+              - name:    'Individual or types of plants or trees'
+                range:   SB608
+                start:   SB608
+                end:     SB608
+              - name:    'Weeds, parasitic plants, etc.'
+                range:   SB610-615
+                start:   SB610
+                end:     SB615
+              - name:    'Poisonous plants'
+                range:   SB617-618
+                start:   SB617
+                end:     SB618
+              - name:    'Plant pathology'
+                range:   SB621-795
+                start:   SB621
+                end:     SB795
+              - name:    'Economic entomology'
+                range:   SB818-945
+                start:   SB818
+                end:     SB945
+              - name:    'Pest control and treatment of diseases.  Plant protection'
+                range:   SB950-990.5
+                start:   SB950
+                end:     SB990.5
+                sections:
+                  - name:    'Pesticides'
+                    range:   SB950.9-970.4
+                    start:   SB950.9
+                    end:     SB970.4
+                  - name:    'Soil disinfection'
+                    range:   SB973-973.5
+                    start:   SB973
+                    end:     SB973.5
+                  - name:    'Organic plant protection.  Biological control'
+                    range:   SB974-978
+                    start:   SB974
+                    end:     SB978
+                  - name:    'Inspection.  Quarantine'
+                    range:   SB979.5-985
+                    start:   SB979.5
+                    end:     SB985
+          - name:    'Economic zoology applied to crops.  Agricultural zoology'
+            note:    'Including animals injurious and beneficial to plants'
+            range:   SB992-998
+            start:   SB992
+            end:     SB998
+  - subclass:  SD
+    name:     'Forestry'
+    sections:
+      - name:    'Forestry'
+        range:   SD1-669.5
+        start:   SD1
+        end:     SD669.5
+        sections:
+          - name:    'Documents'
+            range:   SD11-115
+            start:   SD11
+            end:     SD115
+          - name:    'Voyages, etc.'
+            range:   SD119
+            start:   SD119
+            end:     SD119
+          - name:    'History of forestry.  Forest conditions'
+            range:   SD131-247.5
+            start:   SD131
+            end:     SD247.5
+          - name:    'Forestry education'
+            range:   SD250-363.3
+            start:   SD250
+            end:     SD363.3
+          - name:    'Forestry machinery and engineering'
+            range:   SD388
+            start:   SD388
+            end:     SD388
+          - name:    'Tools and implements'
+            range:   SD388.5
+            start:   SD388.5
+            end:     SD388.5
+          - name:    'Forest roads'
+            range:   SD389
+            start:   SD389
+            end:     SD389
+          - name:    'Forest soils'
+            range:   SD390-390.43
+            start:   SD390
+            end:     SD390.43
+          - name:    'Forest meteorology.  Forest microclimatology'
+            range:   SD390.5-390.7
+            start:   SD390.5
+            end:     SD390.7
+          - name:    'Sylviculture'
+            range:   SD391-410.9
+            start:   SD391
+            end:     SD410.9
+          - name:    'Conservation and protection'
+            note:    'Including forest influences, damage by elements, fires, forest reserves'
+            range:   SD411-428
+            start:   SD411
+            end:     SD428
+          - name:    'Exploitation and utilization'
+            note:    'Including timber trees, fuelwood, logging, transportation, valuation'
+            range:   SD430-(559)
+            start:   SD430
+            end:     SD559
+          - name:    'Administration.  Policy'
+            range:   SD561-669.5
+            start:   SD561
+            end:     SD669.5
+  - subclass:  SF
+    name:     'Animal culture'
+    sections:
+      - name:    'Animal culture'
+        range:   SF1-1100
+        start:   SF1
+        end:     SF1100
+        sections:
+          - name:    'History'
+            range:   SF41-55
+            start:   SF41
+            end:     SF55
+          - name:    'Economic zoology'
+            range:   SF84-84.64
+            start:   SF84
+            end:     SF84.64
+          - name:    'Rangelands.  Range management.  Grazing'
+            range:   SF84.82-85.6
+            start:   SF84.82
+            end:     SF85.6
+          - name:    'Acclimatization'
+            range:   SF87
+            start:   SF87
+            end:     SF87
+          - name:    'Transportation'
+            range:   SF89
+            start:   SF89
+            end:     SF89
+          - name:    'Housing and environmental control'
+            range:   SF91
+            start:   SF91
+            end:     SF91
+          - name:    'Equipment and supplies'
+            range:   SF92
+            start:   SF92
+            end:     SF92
+          - name:    'Feeds and feeding.  Animal nutrition'
+            range:   SF94.5-99
+            start:   SF94.5
+            end:     SF99
+          - name:    'Brands and branding, and other means of identifying'
+            range:   SF101-103.5
+            start:   SF101
+            end:     SF103.5
+          - name:    'Breeding and breeds'
+            range:   SF105-109
+            start:   SF105
+            end:     SF109
+          - name:    'Cost, yield, and profit.  Accounting'
+            range:   SF111-113
+            start:   SF111
+            end:     SF113
+          - name:    'Exhibitions'
+            range:   SF114-121
+            start:   SF114
+            end:     SF121
+          - name:    'Working animals'
+            range:   SF170-180
+            start:   SF170
+            end:     SF180
+          - name:    'Cattle'
+            range:   SF191-275
+            start:   SF191
+            end:     SF275
+            sections:
+              - name:    'Dairying'
+                range:   SF221-250
+                start:   SF221
+                end:     SF250
+              - name:    'Dairy processing.  Dairy products'
+                range:   SF250.5-275
+                start:   SF250.5
+                end:     SF275
+          - name:    'Horses'
+            range:   SF277-360.4
+            start:   SF277
+            end:     SF360.4
+            sections:
+              - name:    'Horse sports.  Horse shows'
+                range:   SF294.2-297
+                start:   SF294.2
+                end:     SF297
+              - name:    'Driving'
+                range:   SF304.5-307
+                start:   SF304.5
+                end:     SF307
+              - name:    'Horsemanship.  Riding'
+                range:   SF308.5-310.5
+                start:   SF308.5
+                end:     SF310.5
+              - name:    'Draft horses'
+                range:   SF311-312
+                start:   SF311
+                end:     SF312
+              - name:    'Ponies'
+                range:   SF315-315.5
+                start:   SF315
+                end:     SF315.5
+              - name:    'Racing'
+                range:   SF321-359.7
+                start:   SF321
+                end:     SF359.7
+              - name:    'Feral horses.  Wild horses'
+                range:   SF360-360.4
+                start:   SF360
+                end:     SF360.4
+          - name:    'Donkeys'
+            range:   SF361-361.73
+            start:   SF361
+            end:     SF361.73
+          - name:    'Mules'
+            range:   SF362
+            start:   SF362
+            end:     SF362
+          - name:    'Sheep.  Wool'
+            range:   SF371-379
+            start:   SF371
+            end:     SF379
+          - name:    'Goats'
+            range:   SF380-388
+            start:   SF380
+            end:     SF388
+          - name:    'Swine'
+            range:   SF391-397.83
+            start:   SF391
+            end:     SF397.83
+          - name:    'Fur-bearing animals'
+            range:   SF402-405
+            start:   SF402
+            end:     SF405
+          - name:    'Laboratory animals'
+            range:   SF405.5-407
+            start:   SF405.5
+            end:     SF407
+          - name:    'Zoo animals'
+            range:   SF408-408.6
+            start:   SF408
+            end:     SF408.6
+          - name:    'Small animal culture'
+            range:   SF409
+            start:   SF409
+            end:     SF409
+          - name:    'Pets'
+            range:   SF411-459
+            start:   SF411
+            end:     SF459
+            sections:
+              - name:    'Dogs.  Dog racing'
+                range:   SF421-440.2
+                start:   SF421
+                end:     SF440.2
+              - name:    'Cats'
+                range:   SF441-450
+                start:   SF441
+                end:     SF450
+              - name:    'Rabbits and hares'
+                range:   SF451-455
+                start:   SF451
+                end:     SF455
+              - name:    'Fishes.  Aquariums'
+                range:   SF456-458.83
+                start:   SF456
+                end:     SF458.83
+              - name:    'Other animals'
+                range:   SF459
+                start:   SF459
+                end:     SF459
+          - name:    'Birds.  Cage birds'
+            range:   SF461-473
+            start:   SF461
+            end:     SF473
+          - name:    'Poultry.  Eggs'
+            range:   SF481-507
+            start:   SF481
+            end:     SF507
+          - name:    'Game birds'
+            range:   SF508-(510.6)
+            start:   SF508
+            end:     SF510.6
+          - name:    'Ostrich'
+            range:   SF511-511.5
+            start:   SF511
+            end:     SF511.5
+          - name:    'Ornamental birds'
+            range:   SF512-513
+            start:   SF512
+            end:     SF513
+          - name:    'Reptiles'
+            range:   SF515-515.5
+            start:   SF515
+            end:     SF515.5
+          - name:    'Insect rearing'
+            range:   SF518
+            start:   SF518
+            end:     SF518
+          - name:    'Bee culture'
+            range:   SF521-539.8
+            start:   SF521
+            end:     SF539.8
+          - name:    'Sericulture.  Silk culture'
+            range:   SF541-560
+            start:   SF541
+            end:     SF560
+          - name:    'Lac-insects'
+            range:   SF561
+            start:   SF561
+            end:     SF561
+          - name:    'Veterinary medicine'
+            range:   SF600-1100
+            start:   SF600
+            end:     SF1100
+            sections:
+              - name:    'Special preclinical sciences'
+                note:    'Including veterinary genetics, ethology, anatomy, physiology, embryology, pathology'
+                range:   SF756.5-769.5
+                start:   SF756.5
+                end:     SF769.5
+              - name:    'Veterinary microbiology, bacteriology, virology, mycology'
+                range:   SF780.2-780.7
+                start:   SF780.2
+                end:     SF780.7
+              - name:    'Veterinary epidemiology.  Epizootiology'
+                range:   SF780.9
+                start:   SF780.9
+                end:     SF780.9
+              - name:    'Communicable diseases of animals (General)'
+                range:   SF781-809
+                start:   SF781
+                end:     SF809
+              - name:    'Veterinary parasitology'
+                range:   SF810
+                start:   SF810
+                end:     SF810
+              - name:    'Predatory animals and their control'
+                range:   SF810.5-810.7
+                start:   SF810.5
+                end:     SF810.7
+              - name:    'Veterinary medicine of special organs, regions, and systems'
+                range:   SF811-909
+                start:   SF811
+                end:     SF909
+              - name:    'Other diseases and conditions'
+                range:   SF910
+                start:   SF910
+                end:     SF910
+              - name:    'Veterinary orthopedics'
+                range:   SF910.5
+                start:   SF910.5
+                end:     SF910.5
+              - name:    'Veterinary surgery'
+                range:   SF911-914.4
+                start:   SF911
+                end:     SF914.4
+                sections:
+                  - name:    'Veterinary traumatology.  Veterinary emergencies'
+                    range:   SF914.3-914.4
+                    start:   SF914.3
+                    end:     SF914.4
+              - name:    'Veterinary acupuncture'
+                range:   SF914.5
+                start:   SF914.5
+                end:     SF914.5
+              - name:    'Veterinary pharmacology'
+                range:   SF915-919.5
+                start:   SF915
+                end:     SF919.5
+              - name:    'Veterinary physical medicine'
+                range:   SF925
+                start:   SF925
+                end:     SF925
+              - name:    'Diseases of special classes of animals'
+                range:   SF951-997.5
+                start:   SF951
+                end:     SF997.5
+  - subclass:  SH
+    name:     'Aquaculture.  Fisheries.  Angling'
+    sections:
+      - name:    'Aquaculture.  Fisheries.  Angling'
+        range:   SH1-691
+        start:   SH1
+        end:     SH691
+        sections:
+          - name:    'Aquaculture'
+            range:   SH20.3-191
+            start:   SH20.3
+            end:     SH191
+            sections:
+              - name:    'By region or country'
+                range:   SH33-134.6
+                start:   SH33
+                end:     SH134.6
+              - name:    'Mariculture'
+                range:   SH138
+                start:   SH138
+                end:     SH138
+              - name:    'Fish culture'
+                range:   SH151-179
+                start:   SH151
+                end:     SH179
+                sections:
+                  - name:    'Diseases and adverse factors'
+                    range:   SH171-179
+                    start:   SH171
+                    end:     SH179
+              - name:    'Frogs, leeches, etc.'
+                range:   SH185-191
+                start:   SH185
+                end:     SH191
+          - name:    'Fisheries'
+            range:   SH201-399
+            start:   SH201
+            end:     SH399
+            sections:
+              - name:    'By oceans and seas'
+                range:   SH213-216.55
+                start:   SH213
+                end:     SH216.55
+              - name:    'By region or country'
+                range:   SH219-321
+                start:   SH219
+                end:     SH321
+              - name:    'Fishery resources.  Fishery conservation'
+                range:   SH327.5-327.7
+                start:   SH327.5
+                end:     SH327.7
+              - name:    'Fishery management.  Fishery policy'
+                range:   SH328-329
+                start:   SH328
+                end:     SH329
+              - name:    'Economic aspects.  Finance'
+                range:   SH334
+                start:   SH334
+                end:     SH334
+              - name:    'Fishery technology'
+                range:   SH334.5-334.7
+                start:   SH334.5
+                end:     SH334.7
+              - name:    'Fishery processing'
+                range:   SH334.9-336.5
+                start:   SH334.9
+                end:     SH336.5
+              - name:    'Packing, transportation, and storage'
+                range:   SH337
+                start:   SH337
+                end:     SH337
+              - name:    'Fishing port facilities'
+                range:   SH337.5
+                start:   SH337.5
+                end:     SH337.5
+              - name:    'Fishery oceanography.  Fishery meteorology'
+                range:   SH343.2-343.3
+                start:   SH343.2
+                end:     SH343.3
+              - name:    'Fishery research vessels'
+                range:   SH343.4
+                start:   SH343.4
+                end:     SH343.4
+              - name:    'Exploratory fishing'
+                range:   SH343.5
+                start:   SH343.5
+                end:     SH343.5
+              - name:    'Navigation'
+                range:   SH343.8
+                start:   SH343.8
+                end:     SH343.8
+              - name:    'Safety measures'
+                range:   SH343.9
+                start:   SH343.9
+                end:     SH343.9
+              - name:    'Methods and gear.  Catching of fish'
+                range:   SH344-344.8
+                start:   SH344
+                end:     SH344.8
+              - name:    'Fishery for individual species'
+                range:   SH346-351
+                start:   SH346
+                end:     SH351
+              - name:    'Seal fisheries.  Fur sealing'
+                range:   SH360-363
+                start:   SH360
+                end:     SH363
+              - name:    'Sea otter'
+                range:   SH364
+                start:   SH364
+                end:     SH364
+              - name:    'Shellfish fisheries.  Shellfish culture'
+                range:   SH365-380.92
+                start:   SH365
+                end:     SH380.92
+              - name:    'Whaling'
+                range:   SH381-385
+                start:   SH381
+                end:     SH385
+              - name:    'Porpoises.  Dolphins'
+                range:   SH387
+                start:   SH387
+                end:     SH387
+              - name:    'Algae culture'
+                range:   SH388.7-391.5
+                start:   SH388.7
+                end:     SH391.5
+              - name:    'Seagrasses'
+                range:   SH393
+                start:   SH393
+                end:     SH393
+              - name:    'Sponge fisheries'
+                range:   SH396
+                start:   SH396
+                end:     SH396
+          - name:    'Seafood gathering'
+            range:   SH400-400.8
+            start:   SH400
+            end:     SH400.8
+          - name:    'Angling'
+            note:    'Including tackle, casting, methods of angling, angling for special kinds of fish'
+            range:   SH401-691
+            start:   SH401
+            end:     SH691
+  - subclass:  SK
+    name:     'Hunting sports'
+    sections:
+      - name:    'Hunting sports'
+        range:   SK1-664
+        start:   SK1
+        end:     SK664
+        sections:
+          - name:    'Shooting'
+            range:   SK37-39.5
+            start:   SK37
+            end:     SK39.5
+          - name:    'By country'
+            range:   SK40-268
+            start:   SK40
+            end:     SK268
+          - name:    'Special methods and types of hunting'
+            note:    'Including bolos, game calling, tracking, trapping, dressing'
+            range:   SK281-293
+            start:   SK281
+            end:     SK293
+            sections:
+              - name:    'Fox hunting'
+                range:   SK284-287
+                start:   SK284
+                end:     SK287
+              - name:    'Coursing'
+                range:   SK291-292
+                start:   SK291
+                end:     SK292
+              - name:    'Ferreting'
+                range:   SK293
+                start:   SK293
+                end:     SK293
+          - name:    'Big game'
+            range:   SK295-305
+            start:   SK295
+            end:     SK305
+          - name:    'Bird hunting.  Fowling'
+            range:   SK311-335
+            start:   SK311
+            end:     SK335
+          - name:    'Varmint hunting (General)'
+            range:   SK336
+            start:   SK336
+            end:     SK336
+          - name:    'Predator hunting'
+            range:   SK337
+            start:   SK337
+            end:     SK337
+          - name:    'Other game'
+            range:   SK341
+            start:   SK341
+            end:     SK341
+          - name:    'Wildlife management.  Game protection'
+            note:    'Including annual reports of game commissioners'
+            range:   SK351-579
+            start:   SK351
+            end:     SK579
+          - name:    'Wild animal trade'
+            range:   SK590-593
+            start:   SK590
+            end:     SK593
+          - name:    'Wildlife-related recreation'
+            range:   SK650-664
+            start:   SK650
+            end:     SK664

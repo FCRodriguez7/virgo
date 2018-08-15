@@ -1,0 +1,10 @@
+<%# app/views/catalog/brief_availability.html.erb -%>
+<%-
+  doc = document ||= @document
+
+  template_opts = { document: doc }
+
+  view_debug(__FILE__)
+-%>
+
+<%= render 'catalog/show/shared/availability_row', template_opts %>

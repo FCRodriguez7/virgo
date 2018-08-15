@@ -1,0 +1,79 @@
+// app/assets/stylesheets/feature/collection-nav.css.scss
+
+// ============================================================================
+// Collection Nav
+// ============================================================================
+
+.item-information-header {
+    margin-bottom: 0.35em;
+    font-weight:   bold;
+    font-size:     1.23em;
+}
+
+.collection-information {
+    margin:    0.5em;
+    font-size: 8pt;
+}
+
+.collection-actions-container {
+
+    padding-bottom: 1em;
+    text-align:     left;
+
+    input {
+        width:     90%;
+        margin:    0 0.5em;
+        padding:   6px 0 6px 8px;
+        font-size: 11px;
+    }
+
+    .btn {
+        margin-top: 0.25em;
+    }
+}
+
+// The tree scroller javascript wraps lines based on the size.  Unfortunately
+// it seems to fail to account for the horizontal scroll bar.  If we put a
+// little padding on the right and hide the overflow, it won't force the the
+// viewer to scroll in both directions.
+.tree-scroller {
+
+    max-height: 350px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border:     3px solid lightgray;
+
+    &:focus {
+        outline:        2px dotted black;
+        outline-offset: -3px;
+    }
+
+    .jstree {
+
+        padding-right: 1.2em;
+
+        @include jstree-adjustments;
+
+        li > ins {
+            vertical-align:top;
+        }
+
+        li.jstree-leaf {
+            border-bottom: 3px solid transparent;
+        }
+
+        .selected {
+            font-weight: bold;
+        }
+
+        a {
+            height:      auto;
+            padding:     0 2px 0 1px;
+            white-space: normal !important;
+        }
+
+        a ins.item    { background-position: -56px -37px; }
+        a ins.archive { background-position: -74px -37px; }
+
+    }
+}

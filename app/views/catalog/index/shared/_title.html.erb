@@ -1,0 +1,103 @@
+<%# app/views/catalog/index/shared/_title.html.erb -%>
+<%-
+  # Hints for RubyMine (skipped during execution).
+  include UVA::Helper::Links unless ONLY_FOR_DOCUMENTATION
+
+  doc = document ||= @document
+  return unless doc
+
+  counter      ||= -1
+  offset       ||= 0
+  browse_mode  ||= params[:browse_mode]
+  portal       ||= nil
+  dev_note     ||= __FILE__
+  linked_title ||= doc.values_for(:linked_title_display)
+  full_title   ||=
+    if print_view? || browse_mode
+      doc.show_full_title(except: :medium)
+    elsif video_lens? || music_lens?
+      doc.show_basic_title
+    else
+      doc.show_full_title
+    end
+
+  item_number = 1 + counter + offset
+
+  # TODO: Need to show the one that matches params[:call_number]
+  call_number =
+    if browse_mode == 'call_number'
+      doc.call_numbers.first || '-'
+    end
+
+  linked_title = Array(linked_title).join(ITEM_SEPARATOR).html_safe
+  full_title   = Array(full_title).join(ITEM_SEPARATOR).html_safe
+
+  def_link_opts = {}
+  def_link_opts[:portal] = portal if portal
+  if classic_lens?
+    max_length   = UVA::Classic.max_entry_length
+    truncate_opt = { length: max_length, omission: '...' }
+  else
+    truncate_opt = max_length = nil
+    def_link_opts[:counter] = item_number
+  end
+  link_opts ||= {}
+  link_opts = def_link_opts.merge(link_opts)
+
+  dev_note &&= show_dev_note(*dev_note, doc)
+
+  view_debug(__FILE__)
+-%>
+
+<%- if video_lens? && !print_view? -%>
+
+  <div class="list-item-number"><%= item_number %>.</div>
+  <div class="tools">
+    <%= render 'catalog/folder_control', document: doc %>
+  </div>
+  <div class="title see-more-info">
+    <%- if linked_title.blank? -%>
+      <%= link_to_document(doc, link_opts.merge(label: full_title)) %>
+    <%- else -%>
+      <span class="linked-title">
+        <%= link_to_document(doc, link_opts.merge(label: linked_title)) %>
+      </span>
+      <span class="main-title">
+        <%= link_to_document(doc, link_opts.merge(label: full_title)) %>
+      </span>
+    <%- end -%>
+    <%= dev_note %>
+  </div>
+
+<%- else -%>
+
+  <dl class="metadata hd">
+    <span class="list-item-number"><%= item_number %>.</span>
+    <%- if call_number -%>
+      <dt class="call-number"><%= call_number %></dt>
+    <%- else -%>
+      <dt class="hide">Title</dt>
+    <%- end -%>
+    <%- [linked_title, full_title].each do |title| -%>
+      <%- next if title.blank? -%>
+      <%- more  = ('[more]' if max_length && (title.length > max_length)) -%>
+      <%- title = html_truncate(title, truncate_opt) if more -%>
+      <dd class="title-field">
+        <h2>
+          <%= link_to_document(doc, link_opts.merge(label: title)) %>
+          <%= more %>
+        </h2>
+      </dd>
+    <%- end -%>
+    <%# === Star/unstar === -%>
+    <%- unless video_lens? || print_view? || browse_mode -%>
+      <dt>
+        <div class="tools">
+          <%= render 'catalog/folder_control', document: doc %>
+        </div>
+      </dt>
+    <%- end -%>
+    <%= dev_note %>
+  </dl>
+
+<%- end -%>

@@ -1,0 +1,37 @@
+<%# app/views/shelf_browse/help/lcc/_about.html.erb -%>
+<%-
+  # Locals are defined in shelf_browse/shared/_help_content.html.erb where this
+  # file is included.
+
+  view_debug(__FILE__)
+-%>
+
+<div class="<%= help_topic_css(:help_lcc_about) -%>">
+  <h2>About the Classifications</h2>
+  <p>
+    Similar to the "Dewey Decimal System", the Library of Congress
+    Classification system provides a framework for arranging books into
+    categories, which have sub-categories, which are further subdivided into
+    topics (covering a specific range of call numbers) and sub-topics,
+    sub-sub-topics, etc.
+  </p>
+  <p>
+    The top-level items are the LCC <em>classes</em>;
+    entries under these all have call numbers that begin with the class letter.
+  </p>
+  <p>
+    The next level are the <em>sub-classes</em>;
+    entries under these all have call numbers that begin with the two (or
+    sometimes three) subclass letters.
+  </p>
+  <p>
+    Each sub-class may contain one or more <em>topics</em>;
+    some topics are further subdivided into sub-topics, sub-sub-topics and so
+    on.
+  </p>
+  <h3>References</h3>
+  <ul>
+    <li><%= sb_link[:lcc] -%> home</li>
+    <li><%= sb_link[:lcc_pdf] -%></li>
+  </ul>
+</div>

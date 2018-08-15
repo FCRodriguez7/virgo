@@ -1,0 +1,30 @@
+<%# app/views/classic/home.html.erb -%>
+<%-
+  # "Virgo Classic" lens main page
+
+  set_search_meta_tags
+  set_cache_refresh
+
+  view_debug(__FILE__)
+-%>
+
+<h1 class="heading">Virgo Classic home page</h1>
+
+<p>
+  Welcome...
+</p>
+
+<div class="browse-searches">
+  <h2>Browse</h2>
+  <p>
+    Browse-by searching a la Virgo Classic.
+  </p>
+  <%- UVA::Classic.browse_modes.each do |browse_mode| -%>
+    <%= render 'classic/shared/browse_form', browse_mode: browse_mode %>
+  <%- end -%>
+</div>
+
+<div class="standard-searches">
+  <h2>Standard Virgo Searches</h2>
+  <%= show_portal_buttons(except: :classic) %>
+</div>

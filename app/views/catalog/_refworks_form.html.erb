@@ -1,0 +1,23 @@
+<%# app/views/catalog/_refworks_form.html.erb -%>
+<%-
+  # Overrides Blacklight app/views/catalog/_refworks_form.html.erb
+
+  # Hints for RubyMine (skipped during execution).
+  include UVA::Helper::Export unless ONLY_FOR_DOCUMENTATION
+
+  documents ||= @documents || []
+  articles  ||= @articles  || []
+  documents += articles
+  return if documents.blank?
+
+  post_url ||= refworks_catalog_export_url
+  data     ||= render_refworks_texts(documents)
+
+  view_debug(__FILE__)
+-%>
+
+<%= form_tag(post_url, name: 'refworks', target: 'RefWorksMain') do %>
+  <%= hidden_field_tag('ImportData', data) if data %>
+  <%= submit_tag('Export to RefWorks', class: 'hide') %>
+  <%= link_to_function('Export to RefWorks', 'document.refworks.submit();') %>
+<%- end -%>

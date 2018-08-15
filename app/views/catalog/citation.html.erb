@@ -1,0 +1,65 @@
+<%# app/views/catalog/citation.html.erb -%>
+<%-
+  # Overrides Blacklight app/views/catalog/citation.html.erb
+
+  documents ||= @documents || []
+  articles  ||= @articles  || []
+
+  all_items = documents + articles
+
+  set_meta_tags(all_items, title: 'Citation')
+
+  # The order of the entries here defines the order of display.
+  citation_type = {
+    MLA:     :mla_citation,
+    APA:     :apa_citation,
+    Chicago: :chicago_citation,
+  }
+
+  # A mapping of the citation type to the HTML fragment used to display the
+  # name of the citation style.
+  citation_name = citation_type.map { |k, _| [k, vocabulary_term(k)] }.to_h
+
+  # Document types where the catalog URL should be displayed as part of the
+  # citation.
+  cite_url = [
+    :dl_book,
+    :dl_image,
+    :dl_jp2k,
+    :dl_text,
+    :dl_video,
+    :dl_wsls_video,
+    :kluge,
+    :lib_technical_report
+  ]
+
+  view_debug(__FILE__)
+-%>
+
+<div class="tool-heading">
+  <h1 class="heading">Bibliographic Citations</h1>
+  <%= print_view_link unless print_view? %>
+</div>
+
+<%= render 'catalog/sidebar_close' %>
+
+<div class="tool-content">
+
+  <%- all_items.each do |doc| -%>
+    <%- item_url = (canonical_url(doc) if cite_url.include?(doc.doc_type)) -%>
+    <%- dissertation_note = doc.get_dissertation_note -%>
+
+    <h2 class="citation-entry"><%= doc.main_title %></h2>
+
+    <%- citation_type.each_pair do |type, citation_method| -%>
+      <h3 class="citation-style"><%= citation_name[type] %></h3>
+      <%= doc.send(citation_method, item_url, context: :show).html_safe %>
+      <%- dissertation_note.each do |v| -%>
+        <%= v.html_safe %>
+      <%- end -%>
+      <br/><br/>
+    <%- end -%>
+
+  <%- end -%>
+
+</div>

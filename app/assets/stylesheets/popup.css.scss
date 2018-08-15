@@ -1,0 +1,143 @@
+// app/assets/stylesheets/popup.css.scss
+//
+// Styles for the popup layout.
+
+@import "shared/layout_initial";
+@import "shared/no_print_view";
+@import "shared/alerts";
+
+body {
+    margin:  0;
+    padding: 0;
+}
+
+.popup-content {
+
+    line-height: 1.8em;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size:   14px;
+
+    a {
+        color:           #0043a1;
+        text-decoration: none;
+    }
+
+    .ui-corner-all.error {
+
+        text-shadow: none;
+
+        a {
+            color:           black;
+            text-decoration: underline;
+        }
+    }
+}
+
+.page-heading {
+
+    height:       30px;
+    margin-top:   3px;
+    padding-left: 0;
+    line-height:  40px;
+    text-align:   center;
+    font-size:    16px;
+    font-weight:  bold;
+    color:        #444444;
+
+    .heading {
+        font-size:   16px;
+        font-weight: bold;
+        color:       #444444;
+    }
+}
+
+.facet-sort {
+
+    margin:     1em;
+    text-align: center;
+    font-size:  12px;
+
+    .current-sort,
+    .sort-change {
+        font-weight: bold;
+        border:      6px solid transparent;
+    }
+
+    // The current sorting option.
+    .current-sort {
+        color: #626262;
+    }
+
+    // Link to change sorting option.
+    .sort-change {
+        &:focus { outline-offset: -1px; }
+    }
+}
+
+.content-area {
+
+    clear:        both;
+    width:        570px;
+    height:       350px;
+    margin-top:   0.5em;
+    margin-left:  auto;
+    margin-right: auto;
+    overflow-y:   auto;
+    border:       none;
+
+    .two-column {
+
+        padding-right: 1em;
+        column-count:  2;
+
+        ul {
+            margin:          0;
+            list-style-type: none;
+        }
+
+        li {
+            display:       block;
+            width:         100%;
+            margin-bottom: 0.5em;
+            padding-top:   0.5em;
+            line-height:   125%;
+        }
+
+        $border-expansion:  0.25em; // To increase click target area.
+        $border-horizontal: (1.5 * $border-expansion);
+        $border-vertical:   $border-expansion;
+        $hits-gap:          0.15em; // Between facet value and hit count.
+
+        a {
+            @include box-decoration(clone);
+
+            margin:             -$border-expansion;
+            margin-left:        -$border-horizontal;
+            margin-right:       calc(-#{$border-horizontal} + #{$hits-gap});
+            line-height:        1.375;
+            white-space:        pre-wrap;
+            border:             $border-expansion solid transparent;
+            border-left-width:  $border-horizontal;
+            border-right-width: $border-horizontal;
+
+            &:focus { outline-offset: -($border-expansion / 2); }
+        }
+    }
+}
+
+.barred-notice {
+    margin-left: 20px;
+    font-size:   14px;
+}
+
+// ============================================================================
+// REQUEST POPUP
+// ============================================================================
+
+@import "shared/request";
+
+// ============================================================================
+// Definitions that must come last.
+// ============================================================================
+
+@import "shared/layout_final";

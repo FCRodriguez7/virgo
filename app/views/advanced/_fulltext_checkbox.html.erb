@@ -1,0 +1,31 @@
+<%# app/views/advanced/_fulltext_checkbox.html.erb -%>
+<%-
+  # Check box for per-item "Full text" option.
+
+  base_field     ||= nil
+  checkbox_field ||= fulltext_field(base_field)
+  return if checkbox_field.nil?
+  value          ||= fulltext_param(checkbox_field)
+  selected_value ||= fulltext_selected_value
+
+  checked  = (value == selected_value)
+  field_id = "#{checkbox_field}_cb".to_sym # E.g. "keyword_full_cb"
+
+  view_debug(__FILE__)
+-%>
+
+<%= check_box_tag(checkbox_field, selected_value, checked, id: field_id) %>
+<%= label_tag(field_id, 'Full text', class: 'tooltip') do %>
+  Full text
+  <span>
+    <strong>
+      Select “Full text” to search for keywords within documents.
+    </strong>
+    <br/>
+    • Selecting “Full text” allows you to search across items in the Virgo
+    catalog to find your keywords within the text of certain works available
+    online.
+    (Example: Studies in Bibliography).
+  </span>
+  <div class="fa fa-question-circle" aria-hidden="true"></div>
+<%- end -%>

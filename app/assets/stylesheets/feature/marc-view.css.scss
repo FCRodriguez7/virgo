@@ -1,0 +1,42 @@
+// app/assets/stylesheets/feature/marc-view.css.scss
+
+// ============================================================================
+// Librarian view
+// ============================================================================
+
+$marc-border-color: #cccccc;
+
+.marc-view-container {
+    display: none;
+}
+
+.marc-view {
+
+    padding: 5px;
+    border:  1px solid $marc-border-color;
+
+    .field {
+
+        clear:         both;
+        border-bottom: 1px solid $marc-border-color;
+
+        .tag {
+            a {
+                margin: -3px;
+                border: 3px solid transparent;
+
+                &:focus {
+
+                    background-color: ghostwhite;
+                    outline-offset:   -1px;
+
+                    * { text-decoration: none; }
+                }
+            }
+        }
+
+        .tag-ind     { float: left; }
+        .ind1, .ind2 { display: inline; padding: 0 5px; }
+        .subfields   { padding-left: 5em; }
+    }
+}

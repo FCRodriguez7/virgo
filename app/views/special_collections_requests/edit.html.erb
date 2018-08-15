@@ -1,0 +1,67 @@
+<%# app/views/special_collections_requests/edit.html.erb -%>
+<%-
+  set_meta_tags(title: 'Special Collections - Edit')
+
+  req            ||= @sc_request
+  errors         ||= (req && req.errors) || []
+  doc            ||= req && req.document
+  doc_title      ||= req && req.document_title
+  marc           ||= doc && doc.marc_display
+  location_notes ||= (marc && marc.location_notes) || sc_json_location(doc)
+
+  return_label ||= '&larr; Return to request list'.html_safe
+  return_path  ||= special_collections_requests_path(session[:sc_search])
+  return_opt   ||= { target: '_top' }
+
+  submit_label ||= 'Generate PDF'
+  submit_opt   ||= { class: 'button' }
+
+  cancel_label ||= 'Return to request list'
+  cancel_path  ||= return_path
+  cancel_opt   ||= return_opt
+
+  form_opt ||= { class: 'special-collections-content' }
+
+  view_debug(__FILE__)
+-%>
+
+<div class="list-heading">
+  <h1 class="heading">Request for <%= doc_title %></h1>
+</div>
+
+<div class="tool-content spec-coll">
+
+  <%- if errors.present? -%>
+    <ul>
+      <%- errors.full_messages.each do |msg| -%>
+        <li><%= msg %></li>
+      <%- end -%>
+    </ul>
+  <%- end -%>
+
+  <%- unless in_popup? || no_redirects? -%>
+    <div class="return-to-item">
+      <%= action_link(return_label, return_path, return_opt) %>
+    </div>
+  <%- end -%>
+
+  <%= form_for(req, form_opt) do |f| %>
+    <fieldset>
+      <%= sr_only(:legend, 'Specify the items to request:') %>
+      <%= render partial: 'user_form', object: f %>
+      <p>
+        <%= label(:special_collections_request, :staff_note, 'Staff Notes') %>
+        <%= f.text_area(:staff_note) %>
+      </p>
+      <%= f.submit submit_label, submit_opt %>
+      or
+      <%= action_link(cancel_label, cancel_path, cancel_opt) %>
+    </fieldset>
+    <ul>
+      <%- location_notes.each do |loc| -%>
+        <li><%= loc %></li>
+      <%- end -%>
+    </ul>
+  <%- end -%>
+
+</div>

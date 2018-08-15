@@ -1,0 +1,27 @@
+<%# app/views/layouts/_sidebar.html.erb -%>
+<%-
+  no_sidebar ||= sidebar_items.include?(:no_sidebar)
+  return if no_sidebar
+
+  css_class ||= 'page-sidebar'
+  css_class = Array(css_class)
+
+  if sidebar_items.include?(:sticky_sidebar)
+    css_class << 'sticky'
+  elsif sidebar_items.include?(:sticky_optional)
+    css_class << 'sticky optional'
+  end
+
+  width ||= 6
+  width = "grid_#{width}" unless width.is_a?(String)
+  css_class << width
+  css_class << 'alpha omega'
+
+  css_class = css_class.join(' ').squish
+
+  view_debug(__FILE__)
+-%>
+
+<aside class="<%= css_class -%>" role="complementary">
+  <%= sidebar_items.reject { |v| v.is_a?(Symbol) }.join(NEWLINE).html_safe %>
+</aside>

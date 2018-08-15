@@ -1,0 +1,1450 @@
+// app/assets/stylesheets/shared/virgo.css.scss
+
+@import "shared/dev";
+
+// TABLE OF CONTENTS
+//  - Reset
+//  - Grid
+//  - Globals
+//  - Main
+//  - Navigation & Banner
+//  - Home
+//  - Search Bar
+//  - Combined Results
+//  - Facets
+//  - Single Results
+//  - Item & Tool Display
+//  - Advanced Search
+//  - Hierarchical Display
+//  - Tooltips
+//  - Footer
+//  - Alerts
+
+html {
+
+    overflow: auto;
+
+    // @see app/views/layouts/wide.html.erb
+    &.wide {
+        overflow: hidden;
+    }
+
+    // Allow Colorbox popups to be scrolled without having the underlying
+    // window respond to mouse wheel events when the popup is scrolled past the
+    // bottom or the top.
+    //
+    // In order to avoid the window jumping a little when the scroll bar goes
+    // away, the width of the scroll bar is subtracted.  (Using a fixed value
+    // here is a little dicey, but this appears to be the usual value on all
+    // desktop browsers.)
+    //
+    // @see app/assets/javascripts/shared/colorbox
+    //
+    &.no-scroll {
+        overflow: hidden;
+        width:    calc(100% - 17px); // Subtract scroll bar width.
+        height:   100%;
+    }
+}
+
+// RESET
+// http://html5boilerplate.com/
+// -----------------------------------------------------------
+
+@import "shared/reset";
+
+// GRID
+// http://960.gs/
+// -----------------------------------------------------------
+
+@import "shared/grid";
+
+// ============================================================================
+// Local definitions
+// ============================================================================
+
+@import "shared/accessibility"; // Re-establish definition of a:focus.
+@import "shared/styles";
+@import "shared/components";
+
+img.ajax-loader {
+
+    border:  none;
+    outline: none;
+
+    &.failure {
+        border-radius: 50%;
+        border:        1px solid red;
+    }
+}
+
+// ============================================================================
+// MAIN
+// ============================================================================
+
+html body {
+    background:  #012251;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.virgo-container {
+    background: image-url('content_texture2.png') repeat scroll 0 0 #f9f8f7;
+}
+
+.page-container {
+    background:   white;
+    border-left:  1px solid #dacdca;
+    border-right: 1px solid #dacdca;
+    width:        958px;
+}
+
+// Hide typekit text until loaded.
+.wf-loading .virgo-logo-link,
+.wf-loading .info-content .entry-content {
+    visibility: hidden;
+}
+
+// ============================================================================
+// NAVIGATION & BANNER
+// ============================================================================
+
+$sn-margin: 0.75em;
+
+// Make the "skip navigation" menu visible when one of its links gets focus.
+.skip-nav {
+
+    @include user-select(none);
+
+    display:          block;
+    margin:           0;
+    padding:          0.25em;
+    position:         absolute;
+    top:              $sn-margin;
+    left:             $sn-margin;
+    background-color: white;
+    border:           1px solid black;
+    box-shadow:       0 0 0 1px white;
+
+    &         { z-index: -1 }
+    &.visible { z-index: 1000; }
+
+    h2 {
+        margin-bottom:           0.2em;
+        font-style:              italic;
+        text-decoration:         solid underline;
+        text-underline-position: under;
+    }
+
+    .skip-nav-links {
+
+        padding-top: 0.1em;
+
+        a, a:visited { color:           black; }
+        a:hover      { text-decoration: underline; }
+
+        li {
+            margin:  0.1em;
+            padding: 0.1em 0.1em 0;
+        }
+    }
+}
+
+.virgo-banner {
+
+    @include user-select(none);
+
+    border-bottom: 1px solid #52637d;
+    box-shadow:    0 1px 5px rgba(128, 128, 128, 0.8);
+}
+
+.lib-banner-container {
+
+    height:      18px;
+    padding:     8px 0;
+    line-height: 150%;
+    background:  #051f39;
+
+    .uva-lib-logo {
+
+        width: auto;
+
+        a {
+            padding: 1px; // Room for focus outline
+
+            &:focus { outline-color: white; }
+        }
+    }
+}
+
+.app-banner-container {
+    height:     60px;
+    background: #c0d1eb linear-gradient(#d8eaff, #c0d1eb);
+}
+
+.virgo-logo-heading {
+    display:     block;
+    font-size:   2em;
+    font-weight: bold;
+}
+
+.virgo-logo-link {
+
+    float:           left;
+    display:         block;
+    line-height:     60px;
+    letter-spacing:  -1px;
+    text-decoration: none;
+    font-family:     "trajan-pro", "Trajan Pro", "Trajan", Georgia, serif;
+    font-size:       37px;
+    font-weight:     normal;
+    color:           #001133;
+    text-shadow:     0px -1px 0px #f2f6fc;
+
+    &:focus {
+        margin:           0 -12px;
+        padding:          0 12px;
+        text-shadow:      none;
+        background-color: transparent;
+        box-shadow:       inset  10px  10px 3px 1px rgba(0, 0, 0, 0.025),
+                          inset -10px -10px 3px 1px rgba(0, 0, 0, 0.025);
+        outline:          3px dotted white;
+        outline-offset:   -6px;
+    }
+
+    &:hover {
+        text-shadow: none;
+    }
+}
+
+.virgo-logo h1 { margin: 0; }
+
+.search-scope {
+    float:          left;
+    display:        block;
+    margin:         21px 15px 0;
+    vertical-align: middle;
+    font-size:      20px;
+    color:          #224f72;
+    text-shadow:    0px -1px 0px #f2f6fc;
+    cursor:         default;
+}
+
+.util-links {
+
+    $horizontal-padding: 16px;
+    $border-left-color:  #cfe0f2;
+    $border-right-color: #b2c3dd;
+    $highlight-color:    #e8f2ff;
+
+    border-left:  1px solid $border-left-color;
+    border-right: 1px solid $border-right-color;
+
+    li {
+
+        margin:       0;
+        font-size:    16px;
+        font-weight:  300;
+        line-height:  60px;
+        transition:   background 200ms ease-in-out;
+        text-shadow:  0px -1px 0px #f5f7fc;
+        border-left:  1px solid $border-right-color;
+        border-right: 1px solid $border-left-color;
+
+        &.last {
+            border-right: 1px solid $border-left-color;
+        }
+
+        &:hover {
+            background-color: $highlight-color;
+        }
+    }
+
+    li a {
+
+        display:         block;
+        padding:         0 $horizontal-padding;
+        text-decoration: none;
+        color:           #001133;
+
+        &:focus  {
+            background-color: inherit;
+            text-shadow:      none;
+            outline:          3px dotted white;
+            outline-offset:   -6px;
+        }
+    }
+}
+
+.account-links {
+
+    padding-top: 2px;
+
+    li {
+        margin-left:  6px;
+        padding-left: 6px;
+        line-height:  15px;
+        font-size:    14px;
+        font-weight:  300;
+        color:        #eeeeee;
+        border-left:  1px solid #445577;
+        border-right: 1px solid transparent;
+
+        &.first {
+            padding-left: 24px;
+            border-left:  none;
+            background:   $sprite-image no-repeat scroll 0 -422px transparent;
+        }
+    }
+
+    li a {
+
+        line-height:     14px;
+        text-decoration: none;
+        color:           white;
+        border-bottom:   1px dotted #8899aa;
+
+        &:focus {
+            outline-color:       white;
+            border-bottom-color: transparent;
+        }
+    }
+
+    li.notice-badge a {
+        padding-left: 16px;
+        background:   $notice-icon no-repeat scroll 1px 3px transparent;
+    }
+}
+
+.util-links,
+.util-nav,
+.account-links,
+.account-nav {
+    float: right;
+}
+
+.util-links    li,
+.account-links li {
+    float: left;
+}
+
+// ============================================================================
+// HOME PAGE
+// ============================================================================
+
+.virgo-home-page {
+
+    .page-container {
+        background:   transparent;
+        border-left:  none;
+        border-right: none;
+    }
+
+    .page-content {
+        padding:      28px 0 0;
+    }
+
+    .search-form-container {
+        margin:       10px 0 0 0;
+        padding:      14px 5px;
+        background:   #e8d9c2 linear-gradient(#e8d9c2, #dac29d);
+        border:       1px solid #896733;
+        box-shadow:   0 1px 5px rgba(128, 128, 128, 0.5);
+    }
+
+    #SI { background: #fefbf8; }
+
+    .flash-message > * {
+        margin-top:    1.5em;
+        margin-bottom: 0.75em;
+        text-align:    center;
+    }
+}
+
+.contact-info {
+
+    padding:     10px 0 50px 30px;
+    overflow:    auto;
+    font-family: "myriad-pro", "Helvetica Neue", Arial, sans-serif;
+
+    address {
+        float:       left;
+        display:     block;
+        height:      24px;
+        padding:     0 2.5em 2px 37px;
+        line-height: 24px;
+        overflow:    hidden;
+        font-size:   16px;
+        font-style:  normal;
+    }
+
+    h2 {
+        margin-bottom: 0.67em;
+        font-family:   "garamond-premier-pro-caption", Garamond, Georgia,
+                       serif;
+        font-size:     23px;
+        color:         #333333;
+    }
+
+    // Make room for focus outline.
+    .vcard > * {
+        margin-top: -2px;
+        padding-top: 2px;
+    }
+
+    .phone {
+        background: $phone-icon no-repeat scroll 0 50% transparent;
+    }
+
+    .email {
+        background: $email-icon no-repeat scroll 0 50% transparent;
+    }
+
+    .chat {
+        background: $chat-icon no-repeat scroll 0 50% transparent;
+    }
+
+    .org.url {
+        display: none;
+    }
+}
+
+.info-content {
+
+    clear:         both;
+    margin:        25px 0;
+    padding:       15px 25px 25px;
+    position:      relative;
+    background:    #f8f3ea;
+    border:        1px solid #c4b18d;
+    border-radius: 8px;
+    box-shadow:           0    2px 4px rgba(144, 144, 128, 0.5),
+                   inset  1px  1px 0   white,
+                   inset -1px -1px 0   white,
+                   inset  0    0   9px rgba(144, 144, 128, 0.3);
+
+    .entry-header,
+    .entry-content {
+        padding-left: 0.25em;
+        overflow:     hidden;
+    }
+
+    .entry-header {
+
+        clear:          both;
+        margin-bottom:  0.67em;
+        padding-bottom: 0;
+
+        h1, .sub-heading {
+            margin:         0;
+            line-height:    1.1em;
+            font-family:    "garamond-premier-pro-caption", Garamond, Georgia,
+                            "Times New Roman", Times, serif;
+            font-size:      25px;
+            font-weight:    700;
+            color:          #604927;
+            text-shadow:    0 1px 0 white;
+        }
+    }
+
+    .entry-content {
+
+        margin-bottom: 1em;
+        font:          15px/1.33 "myriad-pro", "Helvetica Neue", Arial,
+                       Helvetica, sans-serif;
+        color:         #444444;
+
+        p {
+            margin: 0;
+        }
+
+        p.split-content {
+            float: left;
+            width: 425px;
+        }
+
+        ul {
+            padding-left: 25px;
+            line-height:  1.67em;
+        }
+
+        ul.split-list {
+
+            float:         left;
+            width:         127px;
+            margin-bottom: 0;
+            margin-left:   16px;
+            margin-top:    0;
+            padding-left:  16px;
+            line-height:   1.2em;
+            list-style:    none;
+            border-left:   1px dotted #b7a16d;
+
+            li {
+                padding-bottom: 0.5em;
+
+                $border-expansion:  2px; // To increase click target area.
+                $border-horizontal: (3 * $border-expansion);
+                $border-vertical:   $border-expansion;
+
+                a {
+                    @include box-decoration(clone);
+
+                    margin:      -#{$border-vertical} -#{$border-horizontal};
+                    white-space: pre-wrap;
+                    border:             $border-expansion solid transparent;
+                    border-left-width:  $border-horizontal;
+                    border-right-width: $border-horizontal;
+
+                    &:focus,
+                    &:hover {
+                        background-color: #e8f2ff;
+                        outline-offset:   -3px;
+                    }
+                }
+            }
+        }
+
+        ul.split-list li {
+            padding-bottom: 0.5em;
+        }
+
+        .split-heading {
+            float:          left;
+            width:          127px;
+            margin-bottom:  0;
+            margin-left:    16px;
+            margin-top:     0;
+            padding-bottom: 0.5em;
+            padding-left:   16px;
+            font-family:    "garamond-premier-pro-caption", Garamond, Georgia,
+                            "Times New Roman", Times, serif;
+            font-size:      18px;
+            font-variant:   small-caps;
+            font-weight:    700;
+            list-style:     none;
+            color:          #635a4f;
+            text-shadow:    0 1px 0 white;
+            border-left:    1px dotted #b7a16d;
+        }
+
+        img {
+            float:         right;
+            height:        120px;
+            width:         120px;
+            margin:        0.5em 0.5em 0.5em 32px;
+            padding:       8px;
+            background:    white;
+            border:        1px solid #c4b18d;
+            border-radius: 8px;
+            box-shadow:    0 1px 3px #888888;
+        }
+    }
+}
+.wf-active .info-content .entry-content {
+    font-size: 16px;
+}
+
+// ============================================================================
+// SEARCH BAR
+// ============================================================================
+
+.search-form-container { margin-top: 24px; }
+
+#SI {
+
+    width:       475px;
+    height:      30px;
+    margin-left: 15px;
+    padding:     4px 8px;
+    font-size:   16px;
+    background:  white;
+    border:      1px solid #79673f;
+    box-shadow:        0 1px 3px rgba(44, 11, 0, 0.3),
+                 inset 0 0   7px rgba(88, 88, 88, 0.4);
+    -webkit-appearance: textfield;
+
+    &:focus {
+        outline:        thin dashed black;
+        outline-offset: 4px;
+    }
+}
+
+.search-submit {
+
+    width:          90px;
+    height:         40px;
+    margin-left:    10px;
+    line-height:    34px;
+    vertical-align: middle;
+    font-size:      16px;
+    font-weight:    bold;
+    color:          #332211;
+    border:         1px solid #79673f;
+    text-shadow:    0 1px 0 white;
+    transition:     background 200ms ease-in-out;
+
+    &        { @extend %button-link; }
+    &:focus  { @extend %button-focus; }
+    &:hover  { @extend %button-hover; }
+    &:active { @extend %button-active; }
+}
+
+#SI,
+.search-submit,
+.search-form-container,
+.adv-search-button {
+    border-radius:   8px;
+    background-clip: padding-box;
+}
+
+.search-toggle {
+
+    @include user-select(none);
+
+    margin-top:  8px;
+    margin-left: 26px;
+    padding:     2px;
+    line-height: 18px;
+    font-size:   15px;
+
+    a, b, strong { font-weight:  bold; }
+    a            { cursor:       pointer; }
+    p, ul, li    { display:      inline; }
+    p, label     { margin-right: 20px; }
+    label        { margin-left:  2px; }
+    label input  { margin-right: 6px; }
+    fieldset     { display:      inline-block; }
+
+    a.which-search { outline-offset: 4px; }
+}
+
+.search-toggle.search-switch {
+
+    display:         flex;
+    width:           112%;
+    margin:          12px 1px 0;
+    padding:         0;
+    bottom:          -13px;
+    left:            -52px;
+    background:      rgba(140, 72, 11, 0.3);
+    border-top:      1px solid #a18972;
+    justify-content: space-between;
+
+    .switch-view {
+
+        display:     inline-flex;
+        height:      100%;
+        margin:      auto 0 auto 14px;
+        line-height: 1.75;
+
+        $border-expansion: 2px; // To increase click target area.
+
+        .search-switch-label {
+            margin:      auto 1em auto 0;
+            font-family: Georgia, "Times New Roman", Times, serif;
+            font-style:  italic;
+            font-weight: 300;
+            color:       #523b0a;
+        }
+
+        .divider {
+            margin:      0 0.5em;
+            font-weight: 100;
+            color:       #96836e;
+        }
+
+        a {
+            margin:      auto 0;
+            color:       #442200;
+            transition:  color 200ms ease-in-out;
+            text-shadow: 0 -1px 0 #eee9dc;
+            border:      $border-expansion solid transparent;
+            border-top-width:    0;
+            border-bottom-width: 0;
+
+            &:focus {
+                outline:        thin dashed black;
+                outline-offset: 1px;
+            }
+
+            &:focus,
+            &:hover {
+                text-shadow:    none;
+            }
+        }
+    }
+
+    .start-over-link {
+
+        $start-over-text: #f8f4ea;
+
+        display:         inline-block;
+        margin-right:    2px;
+        padding:         0 11px 1px 36px;
+        line-height:     37px;
+        text-decoration: none;
+        font-size:       14px;
+        font-weight:     bold;
+        transition:      color 200ms ease-in-out;
+        color:           $start-over-text;
+        border-top:      1px solid transparent;
+        border-right:    1px solid transparent;
+        border-left:     1px solid #e7cfa2;
+        background:      $sprite-image no-repeat scroll 10px -272px #6c5250;
+        text-shadow:     0 -1px 0 black;
+        box-shadow:      inset 0 0 3px #442200;
+
+        &:link,
+        &:visited {
+            color: $start-over-text;
+        }
+
+        &:focus {
+            outline :       thin dashed white;
+            outline-offset: -6px;
+        }
+
+        &:focus,
+        &:hover {
+            color:      white;
+            box-shadow: inset 0 0 8px 4px #8c7270,
+                        inset 0 0 6px 2px #b5a2a0;
+        }
+    }
+}
+
+a.catalog-article-search { @include sprite(1px);    }
+a.catalog-search         { @include sprite(-208px); }
+a.article-search         { @include sprite(-68px);  }
+a.music-search           { @include sprite(-140px); }
+a.video-search           { @include sprite(-490px); }
+a.start-over             { @include sprite(-280px); }
+
+.which-search-help {
+    display:       none;
+    width:         450px;
+    margin-top:    1em;
+    padding:       1em;
+    color:         #55534e;
+    background:    #fffefa;
+    border-bottom: 1px solid #e5e2e0;
+    border-top:    1px solid #e5e2e0;
+    box-shadow:    inset 0 0 6px rgba(99, 95, 92, 0.2);
+}
+
+// ============================================================================
+// COMBINED RESULTS
+// ============================================================================
+
+.combined-results {
+
+    .page-content {
+        width:       958px;
+        border-left: none;
+    }
+
+    .flash-message {
+
+        width:        90%;
+        margin-left:  auto;
+        margin-right: auto;
+
+        > * {
+            margin-top:    1.5em;
+            margin-bottom: 0;
+        }
+    }
+
+    // ========================================================================
+    // Header
+    // ========================================================================
+
+    .combined-results-header {
+
+        padding-left:  10px;
+        margin-bottom: 1.33em;
+    }
+
+    .applied-params {
+
+        .tagline { padding: 8px 4px 8px 2px; }
+
+        .start-over-link { right: 2px; } // TODO: should move...
+
+        .refine-search-link {
+            top:    2px;
+            bottom: unset;
+            right:  10px;
+        }
+    }
+
+    .action-list-container {
+        top:   0;
+        right: -72%;
+    }
+
+    .print-view-button {
+        top:   0;
+        right: -75%;
+    }
+
+    // ========================================================================
+    // Columns
+    // ========================================================================
+
+    .catalog-search-results,
+    .article-search-results {
+        width:   448px;
+        padding: 0 15px;
+    }
+
+    .article-results-container {
+        min-height: 200px;
+        background: $ajax-loader no-repeat scroll 50% 30px white;
+    }
+
+    .results-total {
+
+        width:      auto;
+        margin:     10px 0;
+        padding:    8px;
+        position:   relative;
+        background: #f5f5f5;
+
+        strong {
+            font-weight: bold;
+        }
+
+        .view-full {
+
+            float:       right;
+            height:      32px;
+            padding:     0 8px;
+            position:    absolute;
+            top:         0;
+            right:       0;
+            line-height: 32px;
+            font-weight: bold;
+            background:  #e9e9e9;
+            border-left: 1px dotted #cccccc;
+
+            &:focus { outline-offset: -4px; }
+        }
+    }
+
+    .results {
+
+        width: 100%;
+
+        .hd                { width:   auto; }
+        .preview-thumbnail { display: none; }
+        .metadata          { width:   auto; }
+    }
+
+    dd.title-field a { width: auto; padding: 7px 10px; }
+
+    .split-header {
+        padding: 0 0 10px 0;
+    }
+
+    .split-title {
+        margin-bottom: 0.25em;
+        font-family:   "garamond-premier-pro-caption", Garamond, Georgia,
+                       "Times New Roman", Times, serif;
+        font-size:     25px;
+        font-weight:   700;
+        color:         #604927;
+    }
+
+    .split-header-description {
+        color: #444444;
+    }
+
+    .split-footer a.view-full {
+
+        display:    block;
+        width:      100%;
+        padding:    12px 0;
+        font-size:  16px;
+        text-align: center;
+        background: #f0f0f0;
+
+        &:focus { outline-offset: -6px; }
+        &:hover { background: #f5f5f5; }
+    }
+}
+
+// ============================================================================
+// FACETS
+// ============================================================================
+
+.page-sidebar {
+    min-height:   100px;
+    margin-right: -1px;
+    background:   white;
+    border-right: 1px solid #eeeeee;
+}
+
+// "Limit results by:"
+.facet-selections-header {
+
+    width:              216px;
+    margin:             20px -4px 10px -9px;
+    padding:            8px 12px;
+    position:           relative;
+    z-index:            40;
+    font-family:        "myriad-pro", "Helvetica Neue", Arial, sans-serif;
+    font-size:          16px;
+    font-weight:        normal;
+    text-decoration:    none;
+    color:              #effaff;
+    background:         image-url('ribbon-texture.png') repeat scroll 0 0
+                        #75889c;
+    border-radius:      2px 3px 3px 0;
+    border:             1px solid #416291;
+    border-right-color: #85a6d7;
+    border-left-color:  #6182b1;
+    text-shadow:        0 -1px 0 #113355;
+    box-shadow:               -1px 1px 3px rgba(33, 44, 55, 0.3),
+                        inset  1px 0   0   #7297c2,
+                        inset -1px 0   0   #aabfdb,
+                        inset  0   1px 0   #aabfdb,
+                        inset  0  -1px 0   #aabfdb,
+                        inset  0   0   6px rgba(33, 44, 55, 0.1);
+
+    .ribbon-corner {
+        height:     8px;
+        width:      8px;
+        position:   absolute;
+        bottom:     -9px;
+        left:       0;
+        background: image-url('ribbon-corner.png') no-repeat scroll 0 0
+                    transparent;
+    }
+}
+
+// ============================================================================
+// SINGLE RESULTS
+// ============================================================================
+
+.results-search-container {
+    width:         858px;
+    margin:        0;
+    padding:       14px 50px;
+    background:    #f7f3ea;
+    border-bottom: 1px solid #c4b18d;
+    box-shadow:           0    2px 4px rgba(144, 144, 128, 0.3),
+                   inset  1px  1px 0   white,
+                   inset -1px -1px 0   white,
+                   inset  0    0   9px rgba(144, 144, 128, 0.3);
+
+    &.grid_24 { width: 100%; }
+}
+
+$se-border-expansion:  0.5em; // To increase click target area.
+$se-border-horizontal: $se-border-expansion / 2;
+$se-border-vertical:   $se-border-expansion;
+
+.search-elsewhere {
+
+    @include user-select(none);
+
+    display:         flex;
+    justify-content: space-around;
+    width:           958px;
+    margin:          0;
+    padding:         20px 0;
+    background:      rgba(196, 177, 141, 0.47);
+    border-top:      1px solid #c4b18d;
+    border-bottom:   1px solid #c4b18d;
+    box-shadow:             0    2px 4px rgba(144, 144, 128, 0.3),
+                     inset  1px  1px 0   white,
+                     inset -1px -1px 0   white,
+                     inset  0    0   9px rgba(144, 144, 128, 0.3);
+}
+
+.elsewhere-heading {
+    padding-left: $se-border-expansion;
+    font-size:    18px;
+    font-family:  "Garamond-Premier-Pro-Caption", Garamond, Georgia,
+                  "Times New Roman", Times, serif;
+    color:        #604927;
+    text-shadow:  0 1px 0 white;
+}
+
+.elsewhere-links li {
+
+    display:     inline-block;
+    margin:      auto 0;
+    line-height: 20px;
+
+    a {
+        font-size:       14px;
+        text-decoration: underline;
+        border:          $se-border-expansion solid transparent;
+
+        &:focus          { outline-offset:   -($se-border-expansion / 4); }
+        &:focus, &:hover { background-color: $virgo-link-hover; }
+    }
+}
+
+$ae-border-expansion:  $se-border-expansion;
+$ae-border-horizontal: $se-border-horizontal;
+$ae-border-vertical:   $se-border-horizontal;
+
+.advanced-elsewhere {
+
+    margin: 3em 0;
+
+    .elsewhere-heading {
+        display:    block;
+        margin-top: 2em;
+    }
+
+    .elsewhere-links {
+
+        padding-left: $ae-border-expansion;
+
+        li {
+
+            display: block;
+            margin:  #{3 * $ae-border-vertical} -#{$ae-border-horizontal};
+
+            a {
+                padding-top: $ae-border-vertical;
+                border:      $ae-border-expansion solid transparent;
+            }
+        }
+    }
+}
+
+// ============================================================================
+// ITEM & TOOL DISPLAY
+// ============================================================================
+
+.show-page,
+.account-page,
+.folder-page,
+.reserves-page,
+.user_sessions-page,
+.advanced-page,
+.sms-page,
+.email-page,
+.citation-page,
+.account_requests-page,
+.feedback-page,
+.maps-page,
+.maps_users-page,
+.map_guides-page {
+
+    .page-sidebar {
+        background: transparent;
+    }
+
+    .page-container {
+        border-left: none;
+        background:  transparent;
+    }
+
+    .page-content {
+        min-height:    380px;
+        width:         702px;
+        padding-left:  12px;
+        padding-right: 12px;
+        border-left:   1px solid #dacdca;
+        background:    white;
+    }
+}
+
+.item-heading,
+.list-heading,
+.tool-heading,
+.adv-search-heading,
+.show-page .result-nav.top {
+
+    @include user-select(none);
+
+    display: block;
+    width:   695px;
+    margin:  0 0 0 -12px;
+    padding: 5px 15px;
+}
+
+.show-page .result-nav.top {
+    height:         42px;
+    padding-bottom: 6px;
+    background:     #f7f3ea;
+    border-bottom:  1px solid #c4b18d;
+    border-left:    1px solid white;
+    border-right:   1px solid white;
+    box-shadow:           0  2px 6px rgba(144, 144, 128, 0.3),
+                    inset 0 -1px 0   white,
+                    inset 0 -1px 9px rgba(144, 144, 128, 0.3);
+}
+
+.item-heading,
+.list-heading,
+.tool-heading,
+.request-heading,
+.adv-search-heading {
+    padding:       7px 15px;
+    background:    #e9d7bf;
+    border-bottom: 1px solid #c4b18d;
+    border-left:   1px solid white;
+    border-right:  1px solid white;
+    box-shadow:    inset 0  1px 0   white,
+                   inset 0 -1px 0   white,
+                   inset 0  1px 9px rgba(144, 144, 128, 0.4);
+}
+
+%title-heading {
+    display:     inline-block;
+    font-size:   19px;
+    font-weight: 300;
+    color:       #483922;
+    text-shadow: 0 1px 0 white;
+}
+
+.item-heading .heading {
+    @extend %title-heading;
+    width: 640px;
+}
+
+.list-heading,
+.tool-heading,
+.request-heading,
+.adv-search-heading {
+    .heading {
+        @extend %title-heading;
+        font-size: 20px;
+        padding:   7px 0;
+    }
+}
+
+.tool-heading {
+
+    .heading {
+        display: inline-block;
+    }
+
+    .print-view-button {
+        top:   3px;
+        right: -65%;
+    }
+}
+
+.n-of-m {
+    margin-left: 0.5em;
+}
+
+// ============================================================================
+// ADVANCED SEARCH
+// ============================================================================
+
+@import "feature/advanced-search";
+
+// ============================================================================
+// HIERARCHICAL DISPLAY
+// ============================================================================
+
+@import "feature/collection-nav";
+@import "feature/ead";
+
+// ============================================================================
+// TOOLTIPS
+// ============================================================================
+
+@import "feature/tooltip";
+
+// ============================================================================
+// FOOTER
+// ============================================================================
+
+.page-footer {
+
+    clear:      both;
+    height:     146px;
+    width:      100%;
+    padding:    2em 0 0.5em 0;
+    color:      #d2e5f7;
+    border-top: 2px solid #001133;
+    box-shadow: 0 -3px 3px rgba(128, 128, 128, 0.4);
+    background: #012251
+        linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+
+    .skip-nav {
+
+        position: relative;
+        top:      0;
+        left:     auto;
+        float:    left;
+        margin:   0 0 0 $sn-margin;
+
+        .skip-nav-links {
+
+            padding-top: 0;
+
+            a:focus { outline: none; }
+        }
+    }
+
+    .footer-content {
+
+        p      { margin: 0; }
+        .col   { float: right; width: 600px; text-align: right; }
+        .first { float: left;  width: 360px; text-align: left; }
+
+        a, a:visited {
+
+            line-height:     1.5em;
+            text-decoration: none;
+            color:           #ddeeff;
+            border-bottom:   1px dotted #839dbf;
+
+            &:focus {
+                text-decoration:     none;
+                border-bottom-color: transparent;
+                outline-color:       white;
+                outline-offset:      1px;
+            }
+
+            &:hover {
+                text-decoration:     none;
+                border-bottom-style: solid;
+                border-bottom-color: white;
+                background:          none;
+            }
+        }
+
+        .external-links {
+            text-align: right;
+        }
+
+        .federal-lib-logo,
+        .federal-lib-text {
+            padding-top: 1.5em;
+        }
+
+        .federal-lib-text {
+            margin-left:  10px;
+            margin-right: -10px;
+        }
+
+        .version-number {
+            display:     inline-block;
+            white-space: nowrap;
+        }
+    }
+}
+
+// ============================================================================
+// ALERTS
+// ============================================================================
+
+@import "shared/alerts";
+
+.account-links li a.ask-highlight {
+    color: #f59a2c;
+}
+
+.result-line .current-page .flash-message .dialog {
+    width: 650px;
+}
+
+.link-disabled {
+
+    color:  gray !important;
+    cursor: not-allowed !important;
+
+    &:active {
+        pointer-events: none !important;
+    }
+}
+
+// ============================================================================
+// Home page
+//
+// CLASSES
+// portal-button-container      Home page "browse" button container.
+// portal-button                Home page "browse" buttons.
+// advanced-search-container    Container for "advanced search" buttons.
+// advanced-search-link         Search form "advanced search" buttons.
+// ============================================================================
+
+// Container for "Catalog", "Articles", "Music", and "Video" buttons.
+// (Derived from .info-content; similar to .search-form-container as well.)
+.portal-button-container {
+    @include flex-box(row, space-around);
+    margin:     10px 0 30px 0;
+    background: transparent;
+}
+
+// Container for "Catalog Advanced Search" and "Article Advanced Search"
+// buttons to the right of the search box.  (This class replaces
+// .virgo-home-page #advanced_search, and applies to both the home page and to
+// search results pages.)
+.advanced-search-container {
+    @include flex-box(column, space-around);
+    width:       auto !important;
+    height:      60px;
+    margin-top:  14px;
+    margin-left: 15px;
+}
+
+// Common styling for non-search buttons that appear on the home page ("browse"
+// buttons and "advanced search" buttons).  (Derived from .search-submit)
+a.advanced-search-link,
+a.portal-button,
+a.download-marker,
+a.download-button,
+a.full-record-button {
+
+    display:         block;
+    width:           auto;
+    color:           #442200 !important;  // Same as .search-switch
+    border:          1px solid #52637d;   // Same as .virgo-banner
+    border-radius:   6px;
+    white-space:     nowrap;
+    text-align:      center;
+    text-decoration: none;
+    transition:      background 200ms ease-in-out;
+
+    &        { @extend %button-link; }
+    &:focus  { @extend %button-focus; }
+    &:hover  { @extend %button-hover; }
+    &:active { @extend %button-active; }
+}
+
+// Buttons for "Catalog", "Articles", "Music" and "Video".
+a.portal-button {
+    width:       20%;
+    padding:     4px 8px;
+    font-size:   14px;
+    font-weight: bold;
+}
+
+// Buttons for "Catalog Advanced Search" and "Article Advanced Search".
+a.advanced-search-link {
+
+    padding:     2px 4px;
+    font-size:   12px;
+    font-weight: bolder;
+
+    &:focus { outline-offset: 4px; }
+}
+
+// ============================================================================
+// For clickable links to vocabulary terms.
+// ============================================================================
+
+.vocabulary-term {
+    color:                    black;
+    text-decoration:          underline dotted blue;
+    text-decoration-skip-ink: none;
+    text-decoration-skip:     none;
+    cursor:                   help;
+}
+
+a:hover .vocabulary-term {
+    text-decoration-style:    solid;
+}
+
+// ============================================================================
+// Scrollable availability listing.
+//
+// Used for search result items with the "View Locations and Availability" link
+// allowing the colorbox that appears to be no taller than the vertical space
+// provided by the browser window.
+// ============================================================================
+
+.availability-scroller {
+    height:     auto;
+    width:      auto;
+    max-height: 84vh;
+    overflow-x: auto;
+    overflow-y: auto !important;
+}
+
+// ============================================================================
+// Holdings annotation for Kluge-Ruhe and "workflow".
+// ============================================================================
+
+.holdings.policy-explanation {
+    width: auto;
+}
+
+// ============================================================================
+// Availability entry for online source.
+// ============================================================================
+
+.item-availability .online-source {
+
+    display: inline-block;
+
+    > * {
+        display: inline-block;
+    }
+    > .logo   {
+        width:        25px;
+        margin-right: 0.5em;
+    }
+    > .source {
+        text-decoration: dotted underline;
+        vertical-align:  middle;
+    }
+}
+
+// ============================================================================
+// Flash message display adjustments.
+// ============================================================================
+
+.index-page    .ui-corner-all,
+.reserves-page .ui-corner-all,
+.error-page    .ui-corner-all {
+    margin-left:   1em;
+}
+
+.reserves-page .ui-corner-all {
+    margin-right:  1em;
+}
+
+.error-page    .ui-corner-all {
+    margin-top:    3.5em;
+    margin-bottom: 50%;
+}
+
+// ============================================================================
+// Static pages
+// ============================================================================
+
+@import "shared/static";
+
+// ============================================================================
+// Print view icon adjustments.
+// ============================================================================
+
+// Video lens (/video/index) and Music lens (/music/index)
+// - Display print view icon to the right of the featured items heading.
+.video-header,
+.recently-added-header {
+
+    .print-view-button {
+        top:   -38px;
+        right: -47%;
+    }
+
+    .rss-button {
+        top:   -45px;
+        right: -47.5%;
+    }
+}
+
+.show-page,
+.account-page {
+
+    .print-view-button {
+        position: absolute;
+        top:      15px;
+        right:    15px;
+    }
+}

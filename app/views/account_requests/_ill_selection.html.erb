@@ -1,0 +1,44 @@
+<%# app/views/account_requests/_ill_selection.html.erb -%>
+<%-
+  set_meta_tags(title: 'Requests - ILLiad Selection')
+
+  submit_label ||= 'Select'
+  submit_opt   ||= { class: 'btn primary', role: 'button' }
+
+  view_debug(__FILE__)
+-%>
+
+<div class="page-heading request-heading">
+  <h1 class="heading" id="page-heading">
+    Select Your Preferred ILLiad Library System
+  </h1>
+</div>
+
+<div class="content-area" role="listbox" aria-labelledby="page-heading">
+  <div class="request-container">
+    Please choose from the list below and press "Go" to select the ILLiad
+    request system that is appropriate for you.
+    <br/>
+    <br/>
+    <%= form_tag(referrer) do -%>
+      <%- UVA::Illiad::CONFIGURATION.each_pair do |selection, entry| -%>
+        <%- next unless UVA::Illiad::active?(entry) -%>
+        <%- checked = UVA::Illiad::default?(entry) -%>
+        <%= radio_button_tag('illiad_selection', selection, checked) %>
+        <%= entry[:label] %>
+        <br/>
+      <%- end -%>
+      <%= hidden_field_tag(:id, item) if item %>
+      <br/>
+      <%= submit_tag(submit_label, submit_opt) %>
+      &nbsp;&nbsp;<%= window_close_link(in_popup?) %>
+    <%- end -%>
+    <br/>
+    <div class="warning">
+      NOTE: LEO delivery and Interlibrary Loan requests are handled by library
+      systems external to Virgo.
+      These systems currently require a separate username and password which
+      must be provided initially and after a period of inactivity.
+    </div>
+  </div>
+</div>

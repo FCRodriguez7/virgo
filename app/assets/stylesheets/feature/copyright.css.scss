@@ -1,0 +1,45 @@
+// app/assets/stylesheets/feature/copyright.css.scss
+
+// ============================================================================
+// Copyright & Permissions info and popup
+// ============================================================================
+
+.cc-info-link {
+
+    display: inline;
+    padding: 5px;
+    cursor:  pointer;
+
+    &:focus { outline-offset: -2px; }
+}
+
+// Initially hidden.
+.cc-info-container {
+    display:       block;
+    z-index:       210;
+    width:         350px;
+    max-width:     50%;
+    padding:       0.75em;
+    font-weight:   normal;
+    overflow-x:    auto;
+    overflow-y:    hidden;
+    border-radius: 8px;
+    border:        2px solid #896733;
+    background:    whitesmoke;
+    box-shadow:    0 0 3px 1px white;
+}
+
+.cc-info-close {
+    float:            right;
+    display:          block;
+    height:           1.75em;
+    width:            1.75em;
+    margin:           0.1em;
+    margin-left:      1em;
+    background-image: image-url('close_button.png');
+    background-size:  100% 100%;
+}
+
+.underline {
+    text-decoration: underline;
+}

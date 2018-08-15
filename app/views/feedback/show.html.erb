@@ -1,0 +1,58 @@
+<%# app/views/feedback/show.html.erb -%>
+<%-
+  # Overrides Blacklight app/views/feedback/show.html.erb
+
+  set_meta_tags(title: 'Feedback')
+
+  name    ||= params[:name]
+  email   ||= params[:email]
+  message ||= params[:message]
+  errors  ||= @errors
+
+  label_for = {
+    name:      'Your Name',
+    email:     'Your Email',
+    message:   'Your Message',
+    recaptcha: 'User Validation'
+  }
+
+  flash.now[:error] = errors if errors.present?
+
+  view_debug(__FILE__)
+-%>
+
+<div class="tool-heading">
+  <h1 class="heading">Send Us Feedback</h1>
+</div>
+
+<%= render 'catalog/sidebar_close' %>
+<%= render '/flash_msg' %>
+
+<div class="tool-content">
+  <%= form_tag do %>
+    <fieldset>
+
+      <%= sr_only(:legend, 'Enter your message:') %>
+
+      <%= label_tag      :name,    label_for[:name] %>
+      <%= text_field_tag :name,    h(name) %>
+
+      <%= label_tag      :email,   label_for[:email] %>
+      <%= text_field_tag :email,   h(email) %>
+
+      <%= label_tag      :message, label_for[:message] %>
+      <%= text_area_tag  :message, h(message) %>
+
+      <%= label_tag(label_for[:recaptcha]) %>
+      <%= recaptcha_widget %>
+
+      <%= hidden_field_tag('referer', h(request.referer)) %>
+
+      <div class="request-submit">
+        <%= submit_tag('Send', class: 'btn large') %>
+        <%= window_close_link(in_popup?, label: 'Cancel', class: 'btn') %>
+      </div>
+
+    </fieldset>
+  <%- end -%>
+</div>

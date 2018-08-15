@@ -1,0 +1,117 @@
+<%# app/views/layouts/_dev_table.html.erb -%>
+<%-
+  items      ||= %w(params session)
+  max_length ||= 256
+
+  columns =
+    items.map { |item|
+      item = item.to_sym
+      item_value = send(item) rescue instance_variable_get(item) rescue nil
+      item_leader = "<< #{item_value.class} / #{item_value.object_id} >>"
+      item_leader = content_tag(:span, item_leader, class: 'dev-special')
+      if item_value.is_a?(Hash)
+        # Display the hash item's key/value pairs.
+        indent = trailer = ''
+        leader = "#{item_leader}<br/>"
+        hash_entries = item_value.sort_by { |key, _| key.to_s }.to_h
+        if hash_entries.empty?
+          '{}'
+        else
+          hash_entries.map { |key, value|
+            key   = content_tag(:span, h(key), class: 'dev-hash-key')
+            value = value.inspect.strip.truncate(max_length)
+            opts  =
+              case value
+                when 'nil'      then { class: 'dev-alert' }
+                when /^[^"\[{]/ then { class: 'dev-special' }
+              end
+            value = h(value)
+            value = content_tag(:span, value, opts) if opts
+            "#{indent}#{key} => #{value}"
+          }.join(',<br/>').prepend(leader).concat(trailer)
+        end
+      elsif item_value.is_a?(Array)
+        leader = "#{item_leader} (#{item_value.length} elements)<br/>"
+        i = -1
+        item_value.map { |element_value|
+          index = content_tag(:span, "[#{i += 1}]", class: 'dev-hash-key')
+          value = element_value.inspect.strip.truncate(max_length)
+          opts  =
+            case value
+              when 'nil'      then { class: 'dev-alert' }
+              when /^[^"\[{]/ then { class: 'dev-special' }
+            end
+          value = h(value)
+          value = content_tag(:span, value, opts) if opts
+          "#{index}&nbsp;#{value}"
+        }.unshift(leader).join('<br/>')
+      elsif item_value
+        # Display the item's instance variables.
+        member_values =
+          item_value.instance_values.sort_by { |var, _|
+            sort_key = var.to_s
+            (sort_key == 'env') ? "zzz#{sort_key}" : sort_key
+          }.to_h
+        indent  = '&nbsp;&nbsp;'
+        leader  = '{<br/>'
+        trailer = '<br/>}'
+        member_values.map { |var, var_value|
+          member = ''
+          member << content_tag(:span, "@#{var}", class: 'dev-hash-key')
+          member << ' = '
+          member <<
+            if var_value.is_a?(Hash)
+              hash_entries = var_value.sort_by { |key, _| key.to_s }.to_h
+              if hash_entries.empty?
+                '{}'
+              else
+                hash_entries.map { |key, value|
+                  key   = content_tag(:span, h(key), class: 'dev-hash-key')
+                  value = value.inspect.strip.truncate(max_length)
+                  opts  =
+                    case value
+                      when 'nil'      then { class: 'dev-alert' }
+                      when /^[^"\[{]/ then { class: 'dev-special' }
+                    end
+                  value = h(value)
+                  value = content_tag(:span, value, opts) if opts
+                  "#{indent}#{key} => #{value}"
+                }.join(',<br/>').prepend(leader).concat(trailer)
+              end
+            else
+              value = var_value.inspect.strip.truncate(max_length)
+              opts  =
+                case value
+                  when 'nil'      then { class: 'dev-alert' }
+                  when /^[^"\[{]/ then { class: 'dev-special' }
+                end
+              value = h(value)
+              value = content_tag(:span, value, opts) if opts
+              value
+            end
+        }.unshift(item_leader).join('<br/>')
+      else
+        content_tag(:span, 'Not present', class: 'dev-alert')
+      end.gsub(/([{(\[])([})\]])/, '\1&hairsp;\2').html_safe
+    }
+-%>
+
+<div style="display:block; align-content:center;">
+  <table class="dev-table">
+    <thead>
+      <tr>
+        <%- items.each do |item| -%>
+          <th class="dev-th"><%= h(item) %></th>
+        <%- end -%>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <%- columns.each do |column| -%>
+          <td class="dev-td"><%= column %></td>
+        <%- end -%>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br/>

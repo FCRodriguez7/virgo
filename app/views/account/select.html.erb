@@ -1,0 +1,36 @@
+<%# app/views/account/select.html.erb -%>
+<%-
+  set_meta_tags(title: 'My Account - Sign In')
+
+  netbadge_login ||= '/login'
+  patron_login   ||= '/patron_login'
+  link_opts      ||= { class: 'sign-in-select', rel: 'nofollow' }
+  redirect       ||= params[:redirect]
+
+  unless redirect.blank?
+    redirect = "?redirect=#{redirect}"
+    netbadge_login << redirect
+    patron_login   << redirect
+  end
+
+  login_methods = {
+    'UVA Users (NetBadge)'       => netbadge_login,
+    'Non-UVA Users (Library ID)' => patron_login
+  }.reject { |_, v| v.blank? }
+
+  view_debug(__FILE__)
+-%>
+
+<div class="list-heading">
+  <h1 class="heading">My Account</h1>
+</div>
+
+<div class="account-container">
+
+  <h2 class="sign-in-heading">Please sign in to view your account.</h2>
+
+  <%- login_methods.each_pair do |label, url| -%>
+    <%= link_to label.html_safe, url, link_opts %>
+  <%- end -%>
+
+</div>

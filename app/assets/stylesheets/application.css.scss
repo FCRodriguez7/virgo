@@ -1,0 +1,29 @@
+// app/assets/stylesheets/application.css.scss
+
+// Items that should come first so that their styles can be overridden.
+@import "shared/layout_initial";
+@import "shared/no_print_view";
+@import "shared/uva-colorbox";
+@import "shared/jstree";
+
+// Core application styles.
+@import "shared/virgo";
+
+// Feature styles.
+@import "feature/articles";
+@import "feature/bookplate";
+@import "feature/shelf-browse";
+@import "feature/classic";
+@import "feature/copyright";
+@import "feature/iiif-viewer";
+@import "feature/tabs";
+
+// Page styles.
+@import "about/*";
+@import "account/*";
+@import "folder/*";
+@import "maps/*";
+
+// Items that should come last.
+@import "shared/yui";
+@import "shared/layout_final";

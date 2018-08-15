@@ -1,0 +1,602 @@
+# lib/config/lcco_q.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from the Word document of the same base name.
+
+class:    Q
+name:     'SCIENCE'
+sections:
+  - subclass:  Q
+    name:     'Science (General)'
+    sections:
+      - name:    'Science (General)'
+        range:   Q1-390
+        start:   Q1
+        end:     Q390
+        sections:
+          - name:    'General'
+            range:   Q1-295
+            start:   Q1
+            end:     Q295
+          - name:    'Cybernetics'
+            range:   Q300-390
+            start:   Q300
+            end:     Q390
+            sections:
+              - name:    'Information theory'
+                range:   Q350-390
+                start:   Q350
+                end:     Q390
+  - subclass:  QA
+    name:     'Mathematics'
+    sections:
+      - name:    'Mathematics'
+        range:   QA1-939
+        start:   QA1
+        end:     QA939
+        sections:
+          - name:    'General'
+            range:   QA1-43
+            start:   QA1
+            end:     QA43
+          - name:    'Tables'
+            range:   QA47-59
+            start:   QA47
+            end:     QA59
+          - name:    'Instruments and machines'
+            range:   QA71-90
+            start:   QA71
+            end:     QA90
+            sections:
+              - name:    'Calculating machines'
+                range:   QA75-76.95
+                start:   QA75
+                end:     QA76.95
+                sections:
+                  - name:    'Electronic computers.  Computer science'
+                    range:   QA75.5-76.95
+                    start:   QA75.5
+                    end:     QA76.95
+                    sections:
+                      - name:    'Computer software'
+                        range:   QA76.75-76.765
+                        start:   QA76.75
+                        end:     QA76.765
+          - name:    'Elementary mathematics.  Arithmetic'
+            range:   QA101-(145)
+            start:   QA101
+            end:     QA145
+          - name:    'Algebra'
+            range:   QA150-272.5
+            start:   QA150
+            end:     QA272.5
+          - name:    'Probabilities.  Mathematical statistics'
+            range:   QA273-280
+            start:   QA273
+            end:     QA280
+          - name:    'Analysis'
+            range:   QA299.6-433
+            start:   QA299.6
+            end:     QA433
+          - name:    'Geometry.  Trigonometry.  Topology'
+            range:   QA440-699
+            start:   QA440
+            end:     QA699
+          - name:    'Analytic mechanics'
+            range:   QA801-939
+            start:   QA801
+            end:     QA939
+  - subclass:  QB
+    name:     'Astronomy'
+    sections:
+      - name:    'Astronomy'
+        range:   QB1-991
+        start:   QB1
+        end:     QB991
+        sections:
+          - name:    'General'
+            range:   QB1-139
+            start:   QB1
+            end:     QB139
+          - name:    'Practical and spherical astronomy'
+            range:   QB140-237
+            start:   QB140
+            end:     QB237
+          - name:    'Geodesy'
+            range:   QB275-343
+            start:   QB275
+            end:     QB343
+          - name:    'Theoretical astronomy and celestial mechanics'
+            range:   QB349-421
+            start:   QB349
+            end:     QB421
+          - name:    'Astrogeology'
+            range:   QB455-456
+            start:   QB455
+            end:     QB456
+          - name:    'Astrophysics'
+            range:   QB460-466
+            start:   QB460
+            end:     QB466
+          - name:    'Non-optical methods of astronomy'
+            range:   QB468-480
+            start:   QB468
+            end:     QB480
+          - name:    'Descriptive astronomy'
+            range:   QB495-903
+            start:   QB495
+            end:     QB903
+            sections:
+              - name:    'Solar system'
+                range:   QB500.5-785
+                start:   QB500.5
+                end:     QB785
+              - name:    'Stars'
+                range:   QB799-903
+                start:   QB799
+                end:     QB903
+          - name:    'Cosmogony.  Cosmology'
+            range:   QB980-991
+            start:   QB980
+            end:     QB991
+  - subclass:  QC
+    name:     'Physics'
+    sections:
+      - name:    'Physics'
+        range:   QC1-999
+        start:   QC1
+        end:     QC999
+        sections:
+          - name:    'General'
+            range:   QC1-75
+            start:   QC1
+            end:     QC75
+          - name:    'Weights and measures'
+            range:   QC81-114
+            start:   QC81
+            end:     QC114
+          - name:    'Descriptive and experimental mechanics'
+            range:   QC120-168.85
+            start:   QC120
+            end:     QC168.85
+          - name:    'Atomic physics.  Constitution and properties of matter'
+            note:    'Including molecular physics, relativity, quantum theory, and solid state physics'
+            range:   QC170-197
+            start:   QC170
+            end:     QC197
+          - name:    'Acoustics.  Sound'
+            range:   QC221-246
+            start:   QC221
+            end:     QC246
+          - name:    'Heat'
+            range:   QC251-338.5
+            start:   QC251
+            end:     QC338.5
+            sections:
+              - name:    'Thermodynamics'
+                range:   QC310.15-319
+                start:   QC310.15
+                end:     QC319
+          - name:    'Optics.  Light'
+            range:   QC350-467
+            start:   QC350
+            end:     QC467
+            sections:
+              - name:    'Spectroscopy'
+                range:   QC450-467
+                start:   QC450
+                end:     QC467
+          - name:    'Radiation physics (General)'
+            range:   QC474-496.9
+            start:   QC474
+            end:     QC496.9
+          - name:    'Electricity and magnetism'
+            range:   QC501-766
+            start:   QC501
+            end:     QC766
+            sections:
+              - name:    'Electricity'
+                range:   QC501-(721)
+                start:   QC501
+                end:     QC721
+                sections:
+                  - name:    'Electromagnetic theory'
+                    range:   QC669-675.8
+                    start:   QC669
+                    end:     QC675.8
+                  - name:    'Radio waves (Theory)'
+                    range:   QC676-678.6
+                    start:   QC676
+                    end:     QC678.6
+                  - name:    'Electric discharge'
+                    range:   QC701-715.4
+                    start:   QC701
+                    end:     QC715.4
+                  - name:    'Plasma physics.  Ionized gases'
+                    range:   QC717.6-718.8
+                    start:   QC717.6
+                    end:     QC718.8
+              - name:    'Magnetism'
+                range:   QC750-766
+                start:   QC750
+                end:     QC766
+          - name:    'Nuclear and particle physics.  Atomic energy.  Radioactivity'
+            range:   QC770-798
+            start:   QC770
+            end:     QC798
+            sections:
+              - name:    'Elementary particle physics'
+                range:   QC793-793.5
+                start:   QC793
+                end:     QC793.5
+              - name:    'Radioactivity and radioactive substances'
+                range:   QC794.95-798
+                start:   QC794.95
+                end:     QC798
+          - name:    'Geophysics.  Cosmic physics'
+            range:   QC801-809
+            start:   QC801
+            end:     QC809
+          - name:    'Geomagnetism'
+            range:   QC811-849
+            start:   QC811
+            end:     QC849
+          - name:    'Meteorology.  Climatology'
+            note:    'Including the earth''s atmosphere'
+            range:   QC851-999
+            start:   QC851
+            end:     QC999
+            sections:
+              - name:    'Meteorological optics'
+                range:   QC974.5-976
+                start:   QC974.5
+                end:     QC976
+              - name:    'Climatology and weather'
+                range:   QC980-999
+                start:   QC980
+                end:     QC999
+                sections:
+                  - name:    'Weather forecasting'
+                    range:   QC994.95-999
+                    start:   QC994.95
+                    end:     QC999
+  - subclass:  QD
+    name:     'Chemistry'
+    sections:
+      - name:    'Chemistry'
+        range:   QD1-999
+        start:   QD1
+        end:     QD999
+        sections:
+          - name:    'General'
+            note:    'Including alchemy'
+            range:   QD1-65
+            start:   QD1
+            end:     QD65
+          - name:    'Analytical chemistry'
+            range:   QD71-142
+            start:   QD71
+            end:     QD142
+          - name:    'Inorganic chemistry'
+            range:   QD146-197
+            start:   QD146
+            end:     QD197
+          - name:    'Organic chemistry'
+            range:   QD241-441
+            start:   QD241
+            end:     QD441
+            sections:
+              - name:    'Biochemistry'
+                range:   QD415-436
+                start:   QD415
+                end:     QD436
+          - name:    'Physical and theoretical chemistry'
+            range:   QD450-801
+            start:   QD450
+            end:     QD801
+            sections:
+              - name:    'Radiation chemistry'
+                range:   QD625-655
+                start:   QD625
+                end:     QD655
+              - name:    'Photochemistry'
+                range:   QD701-731
+                start:   QD701
+                end:     QD731
+          - name:    'Crystallography'
+            range:   QD901-999
+            start:   QD901
+            end:     QD999
+  - subclass:  QE
+    name:     'Geology'
+    sections:
+      - name:    'Geology'
+        range:   QE1-996.5
+        start:   QE1
+        end:     QE996.5
+        sections:
+          - name:    'General'
+            note:    'Including geographical divisions'
+            range:   QE1-350.62
+            start:   QE1
+            end:     QE350.62
+          - name:    'Mineralogy'
+            range:   QE351-399.2
+            start:   QE351
+            end:     QE399.2
+          - name:    'Petrology'
+            range:   QE420-499
+            start:   QE420
+            end:     QE499
+          - name:    'Dynamic and structural geology'
+            range:   QE500-639.5
+            start:   QE500
+            end:     QE639.5
+            sections:
+              - name:    'Volcanoes and earthquakes'
+                range:   QE521-545
+                start:   QE521
+                end:     QE545
+              - name:    'Structural geology'
+                range:   QE601-613.5
+                start:   QE601
+                end:     QE613.5
+          - name:    'Stratigraphy'
+            range:   QE640-699
+            start:   QE640
+            end:     QE699
+          - name:    'Paleontology'
+            range:   QE701-760
+            start:   QE701
+            end:     QE760
+          - name:    'Paleozoology'
+            range:   QE760.8-899.2
+            start:   QE760.8
+            end:     QE899.2
+          - name:    'Paleobotany'
+            range:   QE901-996.5
+            start:   QE901
+            end:     QE996.5
+  - subclass:  QH
+    name:     'Natural history.  Biology'
+    sections:
+      - name:    'Natural history (General)'
+        range:   QH1-278.5
+        start:   QH1
+        end:     QH278.5
+        sections:
+          - name:    'General'
+            note:    'Including nature conservation, geographical distribution'
+            range:   QH1-(199.5)
+            start:   QH1
+            end:     QH199.5
+          - name:    'Microscopy'
+            range:   QH201-278.5
+            start:   QH201
+            end:     QH278.5
+      - name:    'Biology (General)'
+        range:   QH301-705.5
+        start:   QH301
+        end:     QH705.5
+        sections:
+          - name:    'Evolution'
+            range:   QH359-425
+            start:   QH359
+            end:     QH425
+          - name:    'Genetics'
+            range:   QH426-470
+            start:   QH426
+            end:     QH470
+          - name:    'Reproduction'
+            range:   QH471-489
+            start:   QH471
+            end:     QH489
+          - name:    'Life'
+            range:   QH501-531
+            start:   QH501
+            end:     QH531
+          - name:    'Ecology'
+            range:   QH540-549.5
+            start:   QH540
+            end:     QH549.5
+          - name:    'Cytology'
+            range:   QH573-671
+            start:   QH573
+            end:     QH671
+          - name:    'Economic biology'
+            range:   QH705-705.5
+            start:   QH705
+            end:     QH705.5
+  - subclass:  QK
+    name:     'Botany'
+    sections:
+      - name:    'Botany'
+        range:   QK1-989
+        start:   QK1
+        end:     QK989
+        sections:
+          - name:    'General'
+            note:    'Including geographical distribution'
+            range:   QK1-474.5
+            start:   QK1
+            end:     QK474.5
+          - name:    'Spermatophyta.  Phanerogams'
+            range:   QK474.8-495
+            start:   QK474.8
+            end:     QK495
+            sections:
+              - name:    'Gymnosperms'
+                range:   QK494-494.5
+                start:   QK494
+                end:     QK494.5
+              - name:    'Angiosperms'
+                range:   QK495
+                start:   QK495
+                end:     QK495
+          - name:    'Cryptogams'
+            range:   QK504-(638)
+            start:   QK504
+            end:     QK638
+          - name:    'Plant anatomy'
+            range:   QK640-(707)
+            start:   QK640
+            end:     QK707
+          - name:    'Plant physiology'
+            range:   QK710-899
+            start:   QK710
+            end:     QK899
+          - name:    'Plant ecology'
+            range:   QK900-989
+            start:   QK900
+            end:     QK989
+  - subclass:  QL
+    name:     'Zoology'
+    sections:
+      - name:    'Zoology'
+        range:   QL1-991
+        start:   QL1
+        end:     QL991
+        sections:
+          - name:    'General'
+            note:    'Including geographical distribution'
+            range:   QL1-355
+            start:   QL1
+            end:     QL355
+          - name:    'Invertebrates'
+            range:   QL360-599.82
+            start:   QL360
+            end:     QL599.82
+            sections:
+              - name:    'Insects'
+                range:   QL461-599.82
+                start:   QL461
+                end:     QL599.82
+          - name:    'Chordates.  Vertebrates'
+            range:   QL605-739.8
+            start:   QL605
+            end:     QL739.8
+            sections:
+              - name:    'Fishes'
+                range:   QL614-639.8
+                start:   QL614
+                end:     QL639.8
+              - name:    'Reptiles and amphibians'
+                range:   QL640-669.3
+                start:   QL640
+                end:     QL669.3
+              - name:    'Birds'
+                range:   QL671-699
+                start:   QL671
+                end:     QL699
+              - name:    'Mammals'
+                range:   QL700-739.8
+                start:   QL700
+                end:     QL739.8
+          - name:    'Animal behavior'
+            range:   QL750-795
+            start:   QL750
+            end:     QL795
+            sections:
+              - name:    'Stories and anecdotes'
+                range:   QL791-795
+                start:   QL791
+                end:     QL795
+          - name:    'Morphology'
+            range:   QL799-799.5
+            start:   QL799
+            end:     QL799.5
+          - name:    'Anatomy'
+            range:   QL801-950.9
+            start:   QL801
+            end:     QL950.9
+          - name:    'Embryology'
+            range:   QL951-991
+            start:   QL951
+            end:     QL991
+  - subclass:  QM
+    name:     'Human anatomy'
+    sections:
+      - name:    'Human anatomy'
+        range:   QM1-695
+        start:   QM1
+        end:     QM695
+        sections:
+          - name:    'General'
+            range:   QM1-511
+            start:   QM1
+            end:     QM511
+          - name:    'Regional anatomy'
+            range:   QM531-549
+            start:   QM531
+            end:     QM549
+          - name:    'Human and comparative histology'
+            range:   QM550-577.8
+            start:   QM550
+            end:     QM577.8
+          - name:    'Human embryology'
+            range:   QM601-695
+            start:   QM601
+            end:     QM695
+  - subclass:  QP
+    name:     'Physiology'
+    sections:
+      - name:    'Physiology'
+        range:   QP1-(981)
+        start:   QP1
+        end:     QP981
+        sections:
+          - name:    'General'
+            note:    'Including influence of the environment'
+            range:   QP1-345
+            start:   QP1
+            end:     QP345
+          - name:    'Neurophysiology and neuropsychology'
+            range:   QP351-495
+            start:   QP351
+            end:     QP495
+          - name:    'Animal biochemistry'
+            range:   QP501-801
+            start:   QP501
+            end:     QP801
+          - name:    'Experimental pharmacology'
+            range:   QP(901)-(981)
+            start:   QP901
+            end:     QP981
+  - subclass:  QR
+    name:     'Microbiology'
+    sections:
+      - name:    'Microbiology'
+        range:   QR1-502
+        start:   QR1
+        end:     QR502
+        sections:
+          - name:    'General'
+            range:   QR1-74.5
+            start:   QR1
+            end:     QR74.5
+          - name:    'Bacteria'
+            range:   QR75-99.5
+            start:   QR75
+            end:     QR99.5
+          - name:    'Cyanobacteria'
+            range:   QR99.6-99.8
+            start:   QR99.6
+            end:     QR99.8
+          - name:    'Microbial ecology'
+            range:   QR100-130
+            start:   QR100
+            end:     QR130
+          - name:    'Microorganisms in the animal body'
+            range:   QR171
+            start:   QR171
+            end:     QR171
+          - name:    'Immunology'
+            range:   QR180-189.5
+            start:   QR180
+            end:     QR189.5
+          - name:    'Virology'
+            range:   QR355-502
+            start:   QR355
+            end:     QR502

@@ -1,0 +1,330 @@
+// app/assets/stylesheets/shared/_mixins.scss
+
+// ============================================================================
+// Generic
+// ============================================================================
+
+/// Set width to the available width.
+///
+/// @param {String} $fall-back        The value that will be used for MS Edge
+///                                     and Internet Explorer (since they don't
+///                                     support any "fit-content" variant).
+///
+/// NOTE: RubyMine marks "-webkit-fill-available" as invalid, but in fact it's
+/// *required* by Chrome.
+///
+@mixin width-available($fall-back: 50%) {
+    width: $fall-back;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    width: available;
+}
+
+/// Set width to fit the content.
+///
+/// @param {String} $fall-back        The value that will be used for MS Edge
+///                                     and Internet Explorer (since they don't
+///                                     support any "fit-content" variant).
+///
+/// NOTE: RubyMine marks "-webkit-fit-content" as invalid, but in fact it's
+/// *required* by Safari and some Android browsers.
+///
+@mixin width-fit-content($fall-back: auto) {
+    width: $fall-back;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+/// Set width to fit the content so that it takes the least vertical space.
+///
+/// @param {String} $fall-back        The value that will be used for MS Edge
+///                                     and Internet Explorer (since they don't
+///                                     support any "fit-content" variant).
+///
+/// NOTE: RubyMine marks "-webkit-max-content" as invalid, but in fact it's
+/// *required* by Safari and some Android browsers.
+///
+@mixin width-max-content($fall-back: 50%) {
+    width: $fall-back;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+}
+
+/// Set width to fit the content so that it takes the least horizontal space.
+///
+/// @param {String} $fall-back        The value that will be used for MS Edge
+///                                     and Internet Explorer (since they don't
+///                                     support any "fit-content" variant).
+///
+/// NOTE: RubyMine marks "-webkit-min-content" as invalid, but in fact it's
+/// *required* by Safari and some Android browsers.
+///
+@mixin width-min-content($fall-back: auto) {
+    width: $fall-back;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+}
+
+/// Set min-width to fit the content.
+///
+/// @param {String} $fall-back        The value that will be used for MS Edge
+///                                     and Internet Explorer (since they don't
+///                                     support any "fit-content" variant).
+///
+/// NOTE: RubyMine marks "-webkit-fit-content" as invalid, but in fact it's
+/// *required* by Safari and some Android browsers.
+///
+@mixin min-width-fit-content($fall-back: 50%) {
+    min-width: $fall-back;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+}
+
+/// Change how an element's fragments should be rendered when broken across
+/// multiple lines/columns/pages.  The choice impacts the appearance of:
+/// background, border, border-image, box-shadow, clip-path, margin, padding.
+///
+/// At this time, Microsoft Edge accepts the '-webkit' form but does not
+/// actually use it.
+///
+/// @param {String} $value            If *clone* then the settings will be
+///                                     reproduced on each fragment as if it
+///                                     was a standalone element.
+///
+/// @see https://developer.mozilla.org/en-US/docs/Web/CSS/box-decoration-break
+///
+@mixin box-decoration($value) {
+    -webkit-box-decoration-break: $value; // MS Edge accepts but does not use.
+    box-decoration-break:         $value;
+}
+
+// ============================================================================
+// Box model
+// ============================================================================
+
+/// Make an element a horizontal or vertical flex container.
+///
+/// @param {String} $direction        Either *row* or *column*.
+/// @param {String} $justify          If provided, used with justify-content.
+/// @param {String} $flex             Either *flex* or *inline-flex*
+///                                     (default: *flex*)
+///
+@mixin flex-box($direction: row, $justify: false, $flex: flex) {
+    display:        $flex;
+    flex-direction: $direction;
+    @if $justify {
+        justify-content: $justify;
+    }
+}
+
+/// Make an element a horizontal or vertical inline flex container.
+///
+/// @param {String} $direction        Either *row* or *column*.
+/// @param {String} $justify          If provided, used with justify-content.
+///
+@mixin inline-flex-box($direction, $justify: false) {
+    @include flex-box($direction, $justify, inline-flex);
+}
+
+// ============================================================================
+// Input
+// ============================================================================
+
+/// Prevent text from being selectable (when double-clicking for example).
+///
+/// @param {String} $value            Use "none" to turn off selection.
+///
+/// NOTE: The Compass mixin doesn't appear to work for Microsoft IE.
+///
+@mixin user-select($value) {
+    -webkit-user-select: $value;
+    -moz-user-select:    $value;
+    -ms-user-select:     $value;
+    user-select:         $value;
+}
+
+// ============================================================================
+// Button styling and placeholder classes
+// ============================================================================
+
+$button-top:             #fffcfa;
+$button-bottom:          #aaa7a2;
+
+$button-focus-color:     #d6d6d6;
+$button-focus-highlight: #dd9955;
+
+$button-hover-top:       $button-top;
+$button-hover-bottom:    #cccac5;
+
+$button-active-top:      $button-top;
+$button-active-bottom:   #8495b9;
+
+/// Button appearance on keyboard focus.
+///
+/// @param {Color} $background-color
+///
+@mixin button-focus($background-color: false) {
+    @if ($background-color) { background-color: $background-color; }
+    outline-offset: 3px;
+}
+
+/// Button appearance on hover.
+///
+/// @param {Color} $bottom            Final color
+/// @param {Color} $top               Starting color
+///
+@mixin button-hover($bottom: $button-hover-bottom, $top: $button-hover-top) {
+    background: linear-gradient($top, $bottom);
+}
+
+// Placeholder class for buttons in the normal state.
+%button-link {
+
+    @include user-select(none);
+
+    background: linear-gradient($button-top, $button-bottom);
+    box-shadow: 0 1px 3px rgba(44, 11, 0, 0.3);
+}
+
+// Placeholder class for buttons with keyboard focus.
+%button-focus {
+    @include button-hover;
+    @include button-focus;
+}
+
+// Placeholder class for buttons when hovered-over.
+%button-hover {
+    @include button-hover;
+}
+
+// Placeholder class for buttons that have been activated.
+%button-active {
+    box-shadow: inset 0 0   3px 1px $button-active-bottom,
+                      0 1px 7px 3px $button-focus-highlight;
+}
+
+// ============================================================================
+// Animation
+// ============================================================================
+
+/// Browser agnostic animations.
+///
+/// @param {String} $name             Keyframe name
+/// @param {Number} $delay            Time before starting animation.
+/// @param {Number} $duration         Animation time span.
+/// @param {String} $fill-mode        Default: none.
+/// @param {*}      $repeat           Repetitions (e.g infinite); default: 1.
+///
+@mixin animate(
+    $name,
+    $delay:     0s,
+    $duration:  1s,
+    $fill-mode: none,
+    $repeat:    1
+) {
+
+    // Bar transitions from empty to full monotonically.
+    -webkit-animation-name:            $name;
+    animation-name:                    $name;
+
+    // If transitioning happens quickly enough, the bar doesn't show at all.
+    -webkit-animation-delay:           $delay;
+    animation-delay:                   $delay;
+
+    // Based on default AJAX timeout set up in shared/session.js.
+    -webkit-animation-duration:        $duration;
+    animation-duration:                $duration;
+
+    // If time runs out keep the progress bar fully extended.
+    -webkit-animation-fill-mode:       $fill-mode;
+    animation-fill-mode:               $fill-mode;
+
+    // Number of times to run the animation.
+    -webkit-animation-iteration-count: $repeat;
+    animation-iteration-count:         $repeat;
+
+    @content;
+}
+
+/// Pause the animation on an element.
+///
+@mixin pause-animation {
+    -webkit-animation-play-state: paused;
+    animation-play-state:         paused;
+}
+
+/// Animation keyframe definitions.
+///
+/// @param {String} $name             Keyframe name
+///
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} { @content; }
+    @keyframes         #{$name} { @content; }
+}
+
+// ============================================================================
+// Animation - Keyframes
+// ============================================================================
+
+$ani-pulse-in:    0.9;
+$ani-pulse-out:   1.1;
+
+// Make an element (e.g. button) throb by shrinking and growing it.
+@include keyframes(kf-throb) {
+    from {
+        -webkit-animation-timing-function: linear;
+        animation-timing-function:         linear;
+    }
+    25%  { transform: scale($ani-pulse-in); }
+    50%  { transform: scale(1); }
+    75%  { transform: scale($ani-pulse-out); }
+    100% { transform: scale(1); }
+}
+
+// Make an element (e.g. button) pulse by briefly shrinking it.
+@include keyframes(kf-pulse-in) {
+    from {
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function:         ease-in;
+    }
+    50%  { transform: scale($ani-pulse-in); }
+    100% { transform: scale(1); }
+}
+
+// Make an element (e.g. button) pulse by briefly growing it.
+@include keyframes(kf-pulse-out) {
+    from {
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function:         ease-in-out;
+    }
+    50%  { transform: scale($ani-pulse-out); }
+    100% { transform: scale(1); }
+}
+
+// Highlight an element by making it glow.
+@include keyframes(kf-glow) {
+    from {
+        -webkit-animation-timing-function: linear;
+        animation-timing-function:         linear;
+    }
+    50%  { box-shadow: 0 0 15px 1px blue; }
+    100% { box-shadow: none; }
+}
+
+// ============================================================================
+// Sprite images
+// ============================================================================
+
+/// Decorate the current element with a background image from $sprite-image.
+///
+/// @param {Number} $y-pos            Y-offset into image.
+/// @param {Number} $x-pos            X-offset into image.
+///
+@mixin sprite($y-pos: 0, $x-pos: 0) {
+    background: $sprite-image no-repeat scroll $x-pos $y-pos transparent;
+    padding:    0 $sprite-padding-right 0 $sprite-padding-left;
+}

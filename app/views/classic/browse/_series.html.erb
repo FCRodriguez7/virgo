@@ -1,0 +1,6 @@
+<%# app/views/classic/browse/_series.html.erb -%>
+<%-
+  browse_mode = File.basename(__FILE__, '.html.erb').sub(/^_/, '').to_sym
+  view_debug(__FILE__)
+-%>
+<%= render 'classic/browse/template/basic', browse_mode: browse_mode %>

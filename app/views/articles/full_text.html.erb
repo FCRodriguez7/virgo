@@ -1,0 +1,13 @@
+<%# app/views/articles/full_text.html.erb -%>
+<%-
+  doc = document ||= @document
+  return if doc.blank?
+
+  set_meta_tags(doc, title: "Full text for #{doc.title}")
+
+  template_opts = { document: doc, full_page: true }
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/sidebar_close' %>
+<%= render 'catalog/show/shared/full_text_viewer', template_opts %>

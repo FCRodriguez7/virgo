@@ -1,0 +1,35 @@
+<%# app/views/catalog/row/_dl_image.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  resource_ids  ||= doc.values_for(:media_resource_id_display)
+  resource_link ||=
+    if resource_ids.present?
+      id       ||= doc.doc_id
+      index    ||= 0
+      css_hide ||= 'hide'
+      alt_text ||= "Preview image for #{id}"
+      resource_ids.map { |resource_id|
+        full_url    = doc.dl_image_full_src(resource_id)
+        preview_url = doc.dl_image_preview_src(resource_id)
+        image       = image_tag(preview_url, class: :photo, alt: alt_text)
+        link_opts = {
+          :'data-group' => id,
+          title:           get_image_title(doc, index),
+          class:           css_hide,
+        }
+        index += 1
+        link_to(image, full_url, link_opts)
+      }.join.html_safe
+    end
+
+  fields_opts ||= {
+    document:    doc,
+    access_link: resource_link,
+    dev_note:    __FILE__,
+  }
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/row/shared/fields', fields_opts -%>

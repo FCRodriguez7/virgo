@@ -1,0 +1,14 @@
+<%# app/views/catalog/image_load.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc
+
+  src   ||= doc.image_path
+  css   ||= 'photo'
+  title ||= doc.export_title
+  alt   ||= "Cover image for #{title}"
+
+  view_debug(__FILE__)
+-%>
+
+<%= image_tag(src, class: css, title: title, alt: alt) %>

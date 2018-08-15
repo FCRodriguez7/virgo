@@ -1,0 +1,21 @@
+<%# app/views/catalog/row/template/_libra.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc
+
+  resource_link ||=
+    begin
+      access = online_access_label(doc)
+      link_to_online_access(doc, label: access, separator: ITEM_SEPARATOR)
+    end
+  dev_note ||= __FILE__
+
+  fields_opts ||= {
+    document:    doc,
+    access_link: resource_link,
+    dev_note:    dev_note,
+  }
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/row/shared/fields', fields_opts -%>

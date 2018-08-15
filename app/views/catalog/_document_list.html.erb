@@ -1,0 +1,57 @@
+<%# app/views/catalog/_document_list.html.erb -%>
+<%-
+  # Overrides Blacklight app/views/catalog/_document_list.html.erb
+
+  # Hints for RubyMine (skipped during execution).
+  include UVA::BlacklightOverride unless ONLY_FOR_DOCUMENTATION
+
+  documents ||= @document_list || []
+  start     ||= (@response && @response.start).to_i
+
+  css_class = classic_lens? ? 'classic-results' : 'results'
+
+  # Skip-navigation entries for the top and bottom of the search results list.
+  if documents.present?
+    single = ('single' if documents.size == 1)
+    pairs = {}
+    pairs[:first] = documents.first
+    pairs[:last]  = documents.last unless single
+    pairs.each_pair { |position, doc|
+      label = "#{position.capitalize} result"
+      path  = "#doc-#{doc.id}"
+      note  = "Skip to the #{single || position} result on this page"
+      skip_nav << link_to(label, path, ARIA_LABEL => note)
+      content_for(:skip_nav, link_to(label, path, ARIA_LABEL => note))
+    }
+  end
+
+  template_opt = {}
+
+  num  = sr_only('Number')
+  star = sr_only('Remove Star')
+
+  view_debug(__FILE__)
+-%>
+
+<div class="<%= css_class -%>">
+
+  <%= sr_only(:h1, 'Search Results:') %>
+
+  <%- if video_lens? && !print_view? -%>
+    <div class="document video-doc video-head-row">
+      <div class="video-head list-item-number"><%= num -%></div>
+      <div class="video-head tools"><%= star -%></div>
+      <div class="video-head title">Title</div>
+      <div class="video-head format">Format</div>
+      <div class="video-head year">Year</div>
+      <div class="video-head availability">Location &amp; Availability</div>
+      <div class="video-head call-number-field">Call #</div>
+    </div>
+  <%- end -%>
+
+  <%- documents.each_with_index do |doc, counter| -%>
+    <%- n = start + counter -%>
+    <%= render_document_partial doc, :index, template_opt.merge(counter: n) %>
+  <%- end -%>
+
+</div>

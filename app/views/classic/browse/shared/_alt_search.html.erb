@@ -1,0 +1,67 @@
+<%# app/views/classic/browse/shared/_alt_search.html.erb -%>
+<%-
+  # Display a list of alternate searches which eliminate one of the terms.
+
+  browse_mode ||= params[:browse_mode]
+  browse_mode = browse_mode.to_s.to_sym
+
+  terms ||= params[browse_mode]
+  return unless terms.present?
+
+  # Get filtering by library.
+  url_params    = search_session.presence || params
+  library_facet = url_params[:f_inclusive].presence
+  library_facet &&= library_facet[:library_facet].presence
+
+  # Make an unquoted form of the search terms (if applicable).
+  unquoted_terms = Array(terms).join(' ').tr!('"', '')
+
+  # Make combinations missing one of the search terms.
+  tterms = tokenize_terms(terms, browse_mode, downcase: false)
+  combo_size = tterms.size - 1
+  alt_searches = (combo_size > 0) ? tterms.combination(combo_size) : []
+
+  # If not filtering by library and no alternative searches are available then
+  # there's no advice that can be given.
+  alternatives = unquoted_terms.present? || alt_searches.present?
+  return unless library_facet || alternatives
+
+  header = ['To see search results']
+  header << 'try changing library selection' if library_facet
+  header << 'or'                             if library_facet && alternatives
+  header << 'try a broader search:'          if alternatives
+  header = header.join(' ')
+  header << '.' unless header.end_with?(*%w( . , ; : - ))
+
+  browse_label = browse_mode_label(browse_mode)
+
+  path_opt = {}
+  add_advanced_facet!(:library_facet, library_facet, path_opt) if library_facet
+
+  view_debug(__FILE__)
+-%>
+
+<div class="alt-search">
+
+  <div class="browse-search-header"><%= header %></div>
+
+  <%- if unquoted_terms.present? -%>
+    <%- label = %Q(#{browse_label}: #{unquoted_terms}) -%>
+    <%- opt   = path_opt.merge(browse_mode => unquoted_terms) -%>
+    <%- link  = classic_browse_path(opt) -%>
+    <div class="browse-search">
+      <%= link_to(label, link) -%> <span>(without quotation marks)</span>
+    </div>
+  <%- end -%>
+
+  <%- alt_searches.each do |terms| -%>
+    <%- terms = untokenize_terms(terms) -%>
+    <%- label = %Q(#{browse_label}: #{alt_terms}) -%>
+    <%- opt   = path_opt.merge(browse_mode => terms) -%>
+    <%- link  = classic_browse_path(opt) -%>
+    <div class="browse-search">
+      <%= link_to(label, link) %>
+    </div>
+  <%- end -%>
+
+</div>

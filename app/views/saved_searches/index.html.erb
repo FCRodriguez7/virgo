@@ -1,0 +1,44 @@
+<%# app/views/saved_searches/index.html.erb -%>
+<%-
+  # Overrides Blacklight app/views/saved_searches/index.html.erb
+
+  set_meta_tags(title: 'Saved Searches')
+
+  view_debug(__FILE__)
+-%>
+
+<div class="tool-heading">
+  <h1 class="heading">Saved Searches</h1>
+</div>
+
+<div class="tool-content">
+
+  <%- if current_user.blank? -%>
+
+    <h2>Please log in to see your saved searches.</h2>
+
+  <%- elsif @searches.blank? -%>
+
+    <h2>You have no saved searches</h2>
+
+  <%- else -%>
+
+    <p>
+      <%- confirmation = 'Clear your saved searches?' -%>
+      <%- link_path = clear_saved_searches_path -%>
+      <%- link_opts = { method: :delete, confirm: confirmation } -%>
+      <%= link_to 'Clear Saved Searches', link_path, link_opts %>
+    </p>
+
+    <h2>Your saved searches</h2>
+    <%- @searches.each do |search| -%>
+      <h5><%= link_to_previous_search(search.query_params) %></h5>
+      <%- confirmation = 'Delete item?' -%>
+      <%- link_path = saved_search_path(search) -%>
+      <%- link_opts = { method: :delete, confirm: confirmation } -%>
+      [<%= link_to 'delete', link_path, link_opts %>]
+    <%- end -%>
+
+  <%- end -%>
+
+</div>

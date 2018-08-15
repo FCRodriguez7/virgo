@@ -1,0 +1,75 @@
+<%# app/views/catalog/show/shared/_availability_row.html.erb -%>
+<%-
+  doc = document ||= @document
+
+  availability      = doc          && doc.availability
+  holdings          = availability && availability.holdings
+  holding           = holdings     && holdings.first
+  copy              = holding      && holding.copies.first
+
+  show_availability = copy.present?
+  copy_label = at_library = library = location = map = nil
+  availability_opt  = {}
+
+  if show_availability
+    av_table  = availability.available_by_library
+    libraries = av_table.reject { |_, count| count.zero? }.keys
+    if classic_lens? && (libraries.size > 1)
+      copy_count   = availability.available_copies
+      copy_label   = pluralize(copy_count, 'copy')
+      last_library = libraries.pop
+      at_library   =
+        if libraries.present?
+          'at ' + libraries.join(', ') + ' and ' + last_library
+        elsif last_library.present?
+          'at ' + last_library
+        else
+          'online'
+        end
+    else
+      library   = holding.library.presence
+      library &&= library.name
+      location  = location_text(holding, copy)
+      map       = link_to_map(holding, copy, false)
+      availability_opt[:disabled] = true if print_view?
+    end
+
+  elsif is_pda?(doc)
+    # A PDA item which is not yet in the catalog.
+    show_availability = true
+    library  = 'Cataloging'
+    location = pda_label
+    availability_opt[:title]    = 'This item is not ready.'
+    availability_opt[:av_label] = 'Unavailable to Order'
+    availability_opt[:disabled] = true
+
+  elsif availability.lost.present?
+    # A catalog entry with only missing or lost copies.
+    show_availability = true
+    library, location = availability.lost.first
+    location &&= content_tag(:em, h(location.capitalize))
+
+  end
+
+  location = h(location).presence
+  location &&= ("(#{location})".html_safe unless location == library)
+
+  view_debug(__FILE__)
+-%>
+
+<%- if !show_availability -%>
+
+  No information available at this time.
+
+<%- elsif classic_lens? -%>
+
+  <%= copy_label -%> <%= at_library %>
+
+<%- else -%>
+
+  <%= availability_button(holding, copy, availability_opt) %>
+  <span class="holding-library-name"><%= library %></span>
+  <span class="location-text"><%= location %></span>
+  <span class="shelving-map"><%= map %></span>
+
+<%- end -%>

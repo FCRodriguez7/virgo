@@ -1,0 +1,379 @@
+# lib/config/lcco_v.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from the Word document of the same base name.
+
+class:    V
+name:     'NAVAL SCIENCE'
+sections:
+  - subclass:  V
+    name:     'Naval science (General)'
+    sections:
+      - name:    'Naval science (General)'
+        range:   V1-995
+        start:   V1
+        end:     V995
+        sections:
+          - name:    'History and antiquities of naval science'
+            range:   V25-55
+            start:   V25
+            end:     V55
+          - name:    'Navy clubs'
+            range:   V66-69
+            start:   V66
+            end:     V69
+          - name:    'Strategy'
+            range:   V160-165
+            start:   V160
+            end:     V165
+          - name:    'Tactics'
+            range:   V167-178
+            start:   V167
+            end:     V178
+          - name:    'Coast defense'
+            range:   V200
+            start:   V200
+            end:     V200
+          - name:    'Submarine warfare'
+            range:   V210-214.5
+            start:   V210
+            end:     V214.5
+          - name:    'Naval research'
+            range:   V390-395
+            start:   V390
+            end:     V395
+          - name:    'Military oceanography'
+            range:   V396-396.5
+            start:   V396
+            end:     V396.5
+          - name:    'Automation in the naval sciences'
+            range:   V399
+            start:   V399
+            end:     V399
+          - name:    'Naval education'
+            range:   V400-695
+            start:   V400
+            end:     V695
+          - name:    'Naval life, manners and customs, antiquities, etc.'
+            range:   V720-743
+            start:   V720
+            end:     V743
+          - name:    'War vessels: Construction, armament, etc.'
+            range:   V750-995
+            start:   V750
+            end:     V995
+  - subclass:  VA
+    name:     'Navies: Organization, distribution, naval situation'
+    sections:
+      - name:    'Navies: Organization, distribution, naval situation'
+        range:   VA10-750
+        start:   VA10
+        end:     VA750
+        sections:
+          - name:    'United States'
+            range:   VA49-395
+            start:   VA49
+            end:     VA395
+          - name:    'Other regions or countries'
+            range:   VA400-750
+            start:   VA400
+            end:     VA750
+  - subclass:  VB
+    name:     'Naval administration'
+    sections:
+      - name:    'Naval administration'
+        range:   VB15-(955)
+        start:   VB15
+        end:     VB955
+        sections:
+          - name:    'By region or country'
+            range:   VB21-124
+            start:   VB21
+            end:     VB124
+          - name:    'Civil department'
+            range:   VB170-187
+            start:   VB170
+            end:     VB187
+          - name:    'Enlisted personnel'
+            range:   VB260-275
+            start:   VB260
+            end:     VB275
+          - name:    'Warrant officers'
+            range:   VB307-309
+            start:   VB307
+            end:     VB309
+          - name:    'Officers'
+            range:   VB310-315
+            start:   VB310
+            end:     VB315
+          - name:    'Minorities, women, etc. in navies'
+            range:   VB320-325
+            start:   VB320
+            end:     VB325
+  - subclass:  VC
+    name:     'Naval maintenance'
+    sections:
+      - name:    'Naval maintenance'
+        range:   VC10-580
+        start:   VC10
+        end:     VC580
+        sections:
+          - name:    'Organization of service'
+            range:   VC20-258
+            start:   VC20
+            end:     VC258
+          - name:    'Supplies and stores'
+            range:   VC260-268
+            start:   VC260
+            end:     VC268
+          - name:    'Equipment of vessels, supplies, allowances, etc.'
+            range:   VC270-279
+            start:   VC270
+            end:     VC279
+          - name:    'Clothing and equipment'
+            range:   VC280-345
+            start:   VC280
+            end:     VC345
+          - name:    'Subsistence.  Provisioning'
+            range:   VC350-410
+            start:   VC350
+            end:     VC410
+          - name:    'Navy yards and stations.  Shore facilities'
+            range:   VC412-425
+            start:   VC412
+            end:     VC425
+  - subclass:  VD
+    name:     'Naval seamen'
+    sections:
+      - name:    'Naval seamen'
+        range:   VD7-430
+        start:   VD7
+        end:     VD430
+        sections:
+          - name:    'By region or country'
+            range:   VD21-124
+            start:   VD21
+            end:     VD124
+          - name:    'Drill regulations'
+            range:   VD160-302
+            start:   VD160
+            end:     VD302
+          - name:    'Shooting'
+            range:   VD330-335
+            start:   VD330
+            end:     VD335
+          - name:    'Small arms'
+            range:   VD360-390
+            start:   VD360
+            end:     VD390
+          - name:    'Small boat service'
+            range:   VD400-405
+            start:   VD400
+            end:     VD405
+  - subclass:  VE
+    name:     'Marines'
+    sections:
+      - name:    'Marines'
+        range:   VE7-500
+        start:   VE7
+        end:     VE500
+        sections:
+          - name:    'By region or country'
+            range:   VE23-124
+            start:   VE23
+            end:     VE124
+          - name:    'Drill regulations'
+            range:   VE160-302
+            start:   VE160
+            end:     VE302
+          - name:    'Shooting'
+            range:   VE330-335
+            start:   VE330
+            end:     VE335
+          - name:    'Small arms'
+            range:   VE360-390
+            start:   VE360
+            end:     VE390
+          - name:    'Barracks, quarters, etc.'
+            range:   VE420-425
+            start:   VE420
+            end:     VE425
+          - name:    'Training camps'
+            range:   VE430-435
+            start:   VE430
+            end:     VE435
+  - subclass:  VF
+    name:     'Naval ordnance'
+    sections:
+      - name:    'Naval ordnance'
+        range:   VF1-580
+        start:   VF1
+        end:     VF580
+        sections:
+          - name:    'By region or country'
+            range:   VF21-124
+            start:   VF21
+            end:     VF124
+          - name:    'Ordnance instructions and drill books'
+            range:   VF160-302
+            start:   VF160
+            end:     VF302
+          - name:    'Target practice'
+            range:   VF310-315
+            start:   VF310
+            end:     VF315
+          - name:    'Naval weapons systems'
+            range:   VF346-348
+            start:   VF346
+            end:     VF348
+          - name:    'Ordnance and arms (General)'
+            range:   VF350-375
+            start:   VF350
+            end:     VF375
+          - name:    'Ordnance material (Ordnance proper)'
+            range:   VF390-510
+            start:   VF390
+            end:     VF510
+  - subclass:  VG
+    name:     'Minor services of navies'
+    sections:
+      - name:    'Minor services of navies'
+        range:   VG20-2029
+        start:   VG20
+        end:     VG2029
+        sections:
+          - name:    'Chaplains'
+            range:   VG20-25
+            start:   VG20
+            end:     VG25
+          - name:    'Coast guard and coast signal service'
+            range:   VG50-55
+            start:   VG50
+            end:     VG55
+          - name:    'Naval communication by telegraphy, telephone, etc.'
+            range:   VG70-85
+            start:   VG70
+            end:     VG85
+          - name:    'Naval aviation'
+            range:   VG90-95
+            start:   VG90
+            end:     VG95
+          - name:    'Medical service'
+            range:   VG100-475
+            start:   VG100
+            end:     VG475
+          - name:    'Public relations.  Press.  War  correspondents'
+            range:   VG500-505
+            start:   VG500
+            end:     VG505
+          - name:    'Social work.  Social welfare services'
+            range:   VG2000-2005
+            start:   VG2000
+            end:     VG2005
+          - name:    'Recreation and information service'
+            range:   VG2020-2029
+            start:   VG2020
+            end:     VG2029
+  - subclass:  VK
+    name:     'Navigation.  Merchant marine'
+    sections:
+      - name:    'Navigation.  Merchant marine'
+        range:   VK1-1661
+        start:   VK1
+        end:     VK1661
+        sections:
+          - name:    'History, conditions, etc.'
+            range:   VK15-124
+            start:   VK15
+            end:     VK124
+          - name:    'Harbors.  Ports'
+            range:   VK321-369.8
+            start:   VK321
+            end:     VK369.8
+          - name:    'Signaling'
+            range:   VK381-397
+            start:   VK381
+            end:     VK397
+          - name:    'Study and teaching'
+            range:   VK401-529
+            start:   VK401
+            end:     VK529
+          - name:    'Science of navigation'
+            range:   VK549-572
+            start:   VK549
+            end:     VK572
+          - name:    'Nautical instruments'
+            range:   VK573-587
+            start:   VK573
+            end:     VK587
+          - name:    'Marine hydrography.  Hydrographic surveying'
+            range:   VK588-597
+            start:   VK588
+            end:     VK597
+          - name:    'Tide and current tables'
+            range:   VK600-794
+            start:   VK600
+            end:     VK794
+          - name:    'Sailing directions.  Pilot guides'
+            range:   VK798-997
+            start:   VK798
+            end:     VK997
+          - name:    'Lighthouse service'
+            range:   VK1000-1249
+            start:   VK1000
+            end:     VK1249
+          - name:    'Shipwrecks and fires'
+            range:   VK1250-1299
+            start:   VK1250
+            end:     VK1299
+          - name:    'Icebreaking operations'
+            range:   VK1299.5-1299.6
+            start:   VK1299.5
+            end:     VK1299.6
+          - name:    'Saving of life and property'
+            range:   VK1300-1491
+            start:   VK1300
+            end:     VK1491
+          - name:    'Pilots and pilotage'
+            range:   VK1500-1661
+            start:   VK1500
+            end:     VK1661
+  - subclass:  VM
+    name:     'Naval architecture.  Shipbuilding.  Marine engineering'
+    sections:
+      - name:    'Naval architecture.  Shipbuilding.  Marine engineering'
+        range:   VM1-989
+        start:   VM1
+        end:     VM989
+        sections:
+          - name:    'History'
+            range:   VM15-124
+            start:   VM15
+            end:     VM124
+          - name:    'Study and teaching'
+            range:   VM165-276
+            start:   VM165
+            end:     VM276
+          - name:    'Contracts and specifications'
+            range:   VM295-296
+            start:   VM295
+            end:     VM296
+          - name:    'Shipbuilding industry.  Shipyards'
+            range:   VM298.5-301
+            start:   VM298.5
+            end:     VM301
+          - name:    'Special types of vessels'
+            range:   VM311-466
+            start:   VM311
+            end:     VM466
+          - name:    'Marine engineering'
+            range:   VM595-989
+            start:   VM595
+            end:     VM989
+            sections:
+              - name:    'Diving'
+                range:   VM975-989
+                start:   VM975
+                end:     VM989

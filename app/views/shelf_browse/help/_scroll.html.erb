@@ -1,0 +1,29 @@
+<%# app/views/shelf_browse/help/_scroll.html.erb -%>
+<%-
+  # Locals are defined in shelf_browse/shared/_help_content.html.erb where this
+  # file is included.
+
+  view_debug(__FILE__)
+-%>
+
+<div class="<%= help_topic_css(:help_scroll) -%>">
+  <h2>Item Details Panel</h2>
+  <p>
+    The lower right panel displays catalog details about the focus item.
+    This contains the same information that you would see on the usual Virgo
+    item details page, including request buttons if applicable.
+  </p>
+  <h3>Advanced option</h3>
+  <p>
+    Though you may never need it, controls at the bottom of the panel allow
+    you to choose how details are displayed as you select new items:
+  </p>
+  <ul>
+    <li><u>Start at top</u>.
+      Always show titles first (this is the default selection).
+    </li>
+    <li><u>Start at bottom</u>.
+      Always show availability info first.
+    </li>
+  </ul>
+</div>

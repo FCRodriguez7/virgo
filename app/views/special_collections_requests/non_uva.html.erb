@@ -1,0 +1,62 @@
+<%# app/views/special_collections_requests/non_uva.html.erb -%>
+<%-
+  set_meta_tags(title: 'Special Collections - Non-UVA Request')
+
+  req          ||= @sc_request
+  request_id   ||= req && req[:document_id]
+  errors       ||= (req && req.errors) || []
+
+  return_label ||= '&larr; Return to item record'.html_safe
+  return_path  ||= catalog_path(params[:id])
+  return_opt   ||= { target: '_top' }
+
+  submit_label ||= 'Request'
+  submit_opt   ||= { class: 'button btn primary' }
+
+  cancel_label ||= 'Cancel'
+  cancel_path  ||= in_popup? ? colorbox_close : return_path
+  cancel_opt   ||= { class: 'btn', target: '_top' }
+
+  form_opt ||= {
+    method: :get,
+    class: 'special-collections-content'
+  }
+
+  view_debug(__FILE__)
+-%>
+
+<div class="tool-heading">
+  <h1 class="heading">Special Collections Request</h1>
+</div>
+
+<div class="tool-content spec-coll">
+
+  <%- if errors.present? -%>
+    <ul>
+      <%- errors.full_messages.each do |msg| -%>
+        <li><%= msg %></li>
+      <%- end -%>
+    </ul>
+  <%- end -%>
+
+  <%- unless in_popup? || no_redirects? -%>
+    <div class="return-to-item">
+      <%= action_link(return_label, return_path, return_opt) %>
+    </div>
+  <%- end -%>
+
+  <%= form_tag(new_special_collections_request_path, form_opt) do %>
+    <fieldset>
+      <%= sr_only(:legend, 'Identification:') %>
+      <%= hidden_field_tag(:id, request_id) %>
+      <p>
+        <%= label_tag      :user_id, 'Enter your Library ID' %>
+        <%= text_field_tag :user_id %>
+      </p>
+      <%= submit_tag(submit_label, submit_opt) %>
+      &nbsp;or&nbsp;
+      <%= action_link(cancel_label, cancel_path, cancel_opt) %>
+    </fieldset>
+  <%- end -%>
+
+</div>

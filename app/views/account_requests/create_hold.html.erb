@@ -1,0 +1,40 @@
+<%# app/views/account_requests/create_hold.html.erb -%>
+<%-
+  set_meta_tags(title: 'Requests - Hold Created')
+
+  doc = document ||= @document
+  title          ||= doc ? doc.show_full_title : 'ERROR'
+
+  return_label ||= '&larr; Return to item record'.html_safe
+  return_path  ||= in_popup? ? colorbox_close : catalog_path(params[:id])
+  return_opt   ||= { class: 'btn', target: '_top' }
+
+  view_debug(__FILE__)
+-%>
+
+<div class="page-heading request-heading">
+  <h1 class="heading" id="page-heading">
+    Request Complete
+  </h1>
+</div>
+
+<div class="content-area" role="dialog" aria-labelledby="page-heading">
+
+  <div class="request-container">
+    <p>The following item has been requested:</p>
+    <p class="request-title"><%= title %></p>
+    <p>
+      Your request will be processed by library staff by the next business day.
+    </p>
+    <p>
+      Questions?
+      Please <%= ask_a_librarian('contact a librarian', target: '_top') %>.
+    </p>
+    <%- unless no_redirects? -%>
+      <div class="return-to-item">
+        <%= action_link(return_label, return_path, return_opt) %>
+      </div>
+    <%- end -%>
+  </div>
+
+</div>

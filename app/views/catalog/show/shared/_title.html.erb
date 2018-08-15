@@ -1,0 +1,73 @@
+<%# app/views/catalog/show/shared/_title.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc
+
+  css_class    ||= 'title-area'
+  type         ||= doc.doc_type
+  linked_title ||= doc.values_for(:linked_title_display)
+  title        ||= doc.show_full_title
+  linked_resp  ||= doc.values_for(:linked_responsibility_statement_display)
+  author       ||= doc.show_heading_author
+  breadcrumbs  ||= render_breadcrumbs(doc, :show)
+  coins        ||= true
+  inset_view   ||= classic_lens? && (inset_view? || print_view?)
+  shelf_browse ||= nil
+  dev_note     ||= nil
+
+  html_opt = { class: css_class }
+  if inset_view
+    html_opt.merge!(
+      dialog_button_opts(
+        class: "#{html_opt[:class]} item-toggle",
+        title: ClassicHelper::CLASSIC_CLOSE_BUTTON_TOOLTIP
+      )
+    )
+  end
+
+  # Title and statement of responsibility.
+  breadcrumbs = nil if breadcrumbs.blank?
+  titles  = [*linked_title, *title].clean_uniq(nil)
+  authors = [*linked_resp, *author].clean_uniq(nil)
+  dev_note &&= show_dev_note(*dev_note, doc)
+
+  # Article full-text and/or download links.
+  is_article = (type == :article)
+  full_text  = is_article && doc.full_text?
+  download   = is_article && doc.download_formats.present?
+
+  view_debug(__FILE__)
+-%>
+<%= embed_coins(doc) if coins %>
+<%= content_tag(:div, html_opt) do %>
+
+  <%# === Title and statement of responsibility === -%>
+  <div class="item-identifier-fields">
+    <%= breadcrumbs %>
+    <%- titles.each do |t| -%>
+      <h1 class="title-field"><%= t.html_safe %></h1>
+    <%- end -%>
+    <div class="resp-stmt-field">
+      <%- authors.each do |a| -%>
+        <div><%= a.html_safe %></div>
+      <%- end -%>
+    </div>
+    <%= dev_note %>
+  </div>
+
+  <%# === Article full-text and/or download links === -%>
+  <%- if full_text || download -%>
+    <div class="download-button-panel">
+      <%= full_text_buttons(doc) if full_text %>
+      <%= download_buttons(doc)  if download %>
+    </div>
+  <%- end -%>
+
+  <%# === Full-record links when viewed within virtual shelf browse === -%>
+  <%- if shelf_browse -%>
+    <div class="full-record-button-panel">
+      <%= full_record_buttons(doc) %>
+    </div>
+  <%- end -%>
+
+<%- end -%>

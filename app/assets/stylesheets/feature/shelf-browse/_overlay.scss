@@ -1,0 +1,117 @@
+// app/assets/stylesheets/feature/shelf-browse/_overlay.scss
+
+@include -trace-module("feature/shelf-browse/_overlay.scss");
+
+// ============================================================================
+// Overlays
+// ============================================================================
+
+/// Properties for an overlay over which a dropdown can be displayed.
+///
+/// All elements with a lower z-index will be visible but won't be accessible.
+/// The dropdown element must be at a higher z-index (as well as any control
+/// that might be required to dismiss the dropdown).
+///
+/// @param {Number} $z-index          Default: $z-sb-dropdown-overlay
+///
+@mixin overlay($z-index: $z-sb-dropdown-overlay) {
+    display:    block;
+    position:   absolute;
+    top:        0;
+    bottom:     0;
+    left:       0;
+    right:      0;
+    z-index:    $z-index;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/// Dropdown panels start out undisplayed.
+///
+/// @param {Number} $z-index          Must be greater than the z-index of the
+///                                     associated overlay; default:
+///                                     $z-sb-dropdown-menu.
+///
+/// @param {Number} $button-count     The number of buttons in the button tray.
+/// @param {Number} $tray-top         Extra room at top for button tray.
+/// @param {Number} $tray-left        Extra room at left for button tray.
+///
+@mixin dropdown(
+    $z-index:      $z-sb-dropdown-menu,
+    $button-count: 1,
+    $tray-top:     0,
+    $tray-left:    0
+) {
+
+    display:    none;
+    position:   absolute;
+    z-index:    $z-index;
+    background: $sb-dropdown-background;
+
+    // ========================================================================
+    // Components
+    // ========================================================================
+
+    // Controls for the dropdown in the upper-right corner.
+    //
+    // All dropdowns have a close button but not all have a help button.  For
+    // consistency, even if the dropdown has only one control button, it will
+    // still be contained in a button tray.
+    //
+    // @see pinElement() in feature/shelf-browse.js
+    //
+    .button-tray {
+
+        $background-color:   white;
+        $button-spacing:     0.25em;
+        $total-button-width: (#{$button-count} * #{$sb-dropdown-button-size});
+
+        @include flex-box(row);
+
+        height:        $sb-dropdown-button-size;
+        padding:       2px;
+        position:      sticky;
+        top:           $tray-top;
+        left:          calc(100% - #{$total-button-width} - #{$tray-left});
+        float:         right;
+        z-index:       ($z-index + 1);
+        border-radius: $sb-dropdown-button-size;
+
+        // These values here for Microsoft IE -- it doesn't understand
+        // "@supports".
+        background: transparent;
+        > * { background-color: $background-color; }
+
+        // Shrink the tray to fit the enclosed button(s) and fill the
+        // background to keep scrolling text hidden behind the tray.
+        // This is not implemented for Microsoft IE or Edge so just let the
+        // underlying text show through between the individual controls.
+        @supports (width:fit-content)
+               or (width:-moz-fit-content)
+               or (width:-webkit-fit-content) {
+            @include width-fit-content;
+            border:     1px solid transparent; // For minor Firefox glitchiness
+            background: $background-color;
+            > * { background-color: transparent; }
+        }
+
+        // ====================================================================
+        // Variations
+        // ====================================================================
+
+        // Create a gap between the button(s) in the tray.
+        > *           { margin:       0 $button-spacing 0 0; }
+        > :last-child { margin-right: 0; }
+
+        // ====================================================================
+        // Components
+        // ====================================================================
+
+        // Defined elsewhere.
+        .help-button {}
+
+        // Button for closing the dropdown panel.
+        .close-button {
+            @include close-button;
+        }
+    }
+}

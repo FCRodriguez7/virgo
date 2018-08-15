@@ -1,0 +1,47 @@
+<%# app/views/shelf_browse/help/_overview.html.erb -%>
+<%-
+  # Locals are defined in shelf_browse/shared/_help_content.html.erb where this
+  # file is included.
+
+  view_debug(__FILE__)
+-%>
+
+<div class="<%= help_topic_css(:help_overview) -%>">
+  <h2>Overview</h2>
+  <p>
+    This viewer extends the experience of discovering items that are shelved
+    near each other through a "virtual shelf" that references items from all of
+    our libraries.
+  </p>
+  <ul>
+    <li>Click
+      <%= sb_button[:fwd] -%> to see the next set of items.
+    </li>
+    <li>Click
+      <%= sb_button[:fwd10x] -%> to go further into higher call numbers.
+    </li>
+    <li>Click
+      <%= sb_button[:rev] -%> to see the previous set of items.
+    </li>
+    <li>Click
+      <%= sb_button[:rev10x] -%> to go further into lower call numbers.
+    </li>
+    <li>Click
+      under an item tile to make that item the <strong>focus</strong>, locking
+      the display of its details in the lower-right panel.
+    </li>
+    <li>Hover
+      your mouse over an <strong>item tile</strong> to see its details
+      temporarily; the details of the focus item re-appear when the mouse
+      leaves that tile.
+    </li>
+    <li>Or
+      use Home, End and arrow keys to change the focus item.
+    </li>
+    <li>Click
+      the cover image in the middle of the tile to go to the details
+      page for that item.
+      (NOTE: Exits the virtual shelf.)
+    </li>
+  </ul>
+</div>

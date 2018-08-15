@@ -1,0 +1,476 @@
+# lib/config/lcco_z.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from the Word document of the same base name.
+
+class:    Z
+name:     'BIBLIOGRAPHY.  LIBRARY SCIENCE.  INFORMATION RESOURCES (GENERAL)'
+sections:
+  - subclass:  Z
+    name:     'Books.  Writing.  Paleography.  Book industries and trade.  Libraries.  Bibliography'
+    sections:
+      - name:    'Books (General).  Writing.  Paleography'
+        range:   Z4-115.5
+        start:   Z4
+        end:     Z115.5
+        sections:
+          - name:    'History of books and bookmaking'
+            range:   Z4-8
+            start:   Z4
+            end:     Z8
+          - name:    'Writing'
+            range:   Z40-104.5
+            start:   Z40
+            end:     Z104.5
+            sections:
+              - name:    'Autographs.  Signatures'
+                range:   Z41-42.5
+                start:   Z41
+                end:     Z42.5
+              - name:    'Calligraphy.  Penmanship'
+                range:   Z43-45
+                start:   Z43
+                end:     Z45
+              - name:    'Duplicating processes.  Copying services'
+                note:    'Including mimeographing, multilithing'
+                range:   Z48
+                start:   Z48
+                end:     Z48
+              - name:    'Typewriters.  Typewriting.  Keyboards.  Keyboarding'
+                range:   Z49-51.5
+                start:   Z49
+                end:     Z51.5
+              - name:    'Word processing'
+                range:   Z52-52.5
+                start:   Z52
+                end:     Z52.5
+              - name:    'Shorthand.  Stenography.  Phonography'
+                range:   Z53-102
+                start:   Z53
+                end:     Z102
+              - name:    'Cryptography.  Ciphers.  Invisible writing'
+                range:   Z102.5-104.5
+                start:   Z102.5
+                end:     Z104.5
+          - name:    'Manuscripts.  Paleography'
+            range:   Z105-115.5
+            start:   Z105
+            end:     Z115.5
+      - name:    'Book industries and trade'
+        range:   Z116-659
+        start:   Z116
+        end:     Z659
+        sections:
+          - name:    'Treatises on the modern printed book'
+            range:   Z116.A2
+            start:   Z116.A2
+            end:     Z116.A2
+          - name:    'Book design'
+            range:   Z116.A3
+            start:   Z116.A3
+            end:     Z116.A3
+          - name:    'Printing'
+            range:   Z116.A5-265.5
+            start:   Z116.A5
+            end:     Z265.5
+            sections:
+              - name:    'History'
+                range:   Z124-228
+                start:   Z124
+                end:     Z228
+              - name:    'Printers and printing establishments'
+                range:   Z231-234
+                start:   Z231
+                end:     Z234
+                sections:
+                  - name:    'Medallic history of printing.  Tokens'
+                    range:   Z234
+                    start:   Z234
+                    end:     Z234
+              - name:    'Printer''s marks, mottoes, etc.'
+                range:   Z235-236
+                start:   Z235
+                end:     Z236
+              - name:    'Paper.  Watermarks, etc.'
+                range:   Z237
+                start:   Z237
+                end:     Z237
+              - name:    'Incunabula.  Block books'
+                note:    'Including broadsides, playing cards'
+                range:   Z240-241.5
+                start:   Z240
+                end:     Z241.5
+              - name:    'Practical printing'
+                note:    'Including printing as a business, layout, paper and ink, machinery, type and type founding, electrotyping, desktop publishing, typesetting, presswork'
+                range:   Z242.9-264.5
+                start:   Z242.9
+                end:     Z264.5
+              - name:    'Representation or reproduction of books, documents, etc., by photography, microphotography, or other means'
+                range:   Z265-265.5
+                start:   Z265
+                end:     Z265.5
+          - name:    'Bookbinding.  Book decoration'
+            range:   Z266-276
+            start:   Z266
+            end:     Z276
+          - name:    'Bookselling and publishing'
+            range:   Z278-549
+            start:   Z278
+            end:     Z549
+          - name:    'Copyright'
+            range:   Z551-656
+            start:   Z551
+            end:     Z656
+          - name:    'Freedom of the press.  Censorship'
+            range:   Z657-659
+            start:   Z657
+            end:     Z659
+      - name:    'Libraries'
+        range:   Z662-1000.5
+        start:   Z662
+        end:     Z1000.5
+        sections:
+          - name:    'Collections'
+            range:   Z662-664
+            start:   Z662
+            end:     Z664
+          - name:    'Library science.  Information science'
+            range:   Z665-(718.85)
+            start:   Z665
+            end:     Z718.85
+            sections:
+              - name:    'Library education.  Research'
+                range:   Z668-669.7
+                start:   Z668
+                end:     Z669.7
+              - name:    'Library cooperation and coordination'
+                range:   Z672-Z672.13
+                start:   Z672
+                end:     Z672.13
+              - name:    'Library information networks'
+                range:   Z674.7-674.83
+                start:   Z674.7
+                end:     Z674.83
+              - name:    'Classes of libraries'
+                range:   Z675
+                start:   Z675
+                end:     Z675
+              - name:    'Library administration and organization.  Constitution'
+                range:   Z678-678.88
+                start:   Z678
+                end:     Z678.88
+              - name:    'Library service agencies'
+                range:   Z678.89-678.892
+                start:   Z678.89
+                end:     Z678.892
+              - name:    'Automation'
+                range:   Z678.9-678.93
+                start:   Z678.9
+                end:     Z678.93
+              - name:    'Library buildings.  Library architecture'
+                note:    'Including planning, space utilization, security, safety, lighting, etc.'
+                range:   Z679-680
+                start:   Z679
+                end:     Z680
+              - name:    'Library communication systems'
+                range:   Z680.3-680.6
+                start:   Z680.3
+                end:     Z680.6
+              - name:    'Reproduction of library materials.  Storage media of library materials'
+                range:   Z681-681.3
+                start:   Z681
+                end:     Z681.3
+              - name:    'Trustees.  Library boards, committees, etc.'
+                range:   Z681.5-681.7
+                start:   Z681.5
+                end:     Z681.7
+              - name:    'Personnel'
+                range:   Z682-682.4
+                start:   Z682
+                end:     Z682.4
+              - name:    'Finance.  Insurance'
+                range:   Z683-683.5
+                start:   Z683
+                end:     Z683.5
+              - name:    'Supplies.  Shelving.  Bookstacks'
+                range:   Z684-685
+                start:   Z684
+                end:     Z685
+              - name:    'Branches.  Delivery stations.  Bookmobiles'
+                range:   Z686
+                start:   Z686
+                end:     Z686
+              - name:    'The collections.  The books'
+                range:   Z687-718.85
+                start:   Z687
+                end:     Z718.85
+                sections:
+                  - name:    'Special collections'
+                    range:   Z688
+                    start:   Z688
+                    end:     Z688
+                  - name:    'Processing'
+                    range:   Z688.5-688.6
+                    start:   Z688.5
+                    end:     Z688.6
+                  - name:    'Acquisition (selection, purchase, gifts, duplicates)'
+                    range:   Z689-689.8
+                    start:   Z689
+                    end:     Z689.8
+                  - name:    'Exchanges'
+                    range:   Z690
+                    start:   Z690
+                    end:     Z690
+                  - name:    'Special classes of materials'
+                    note:    'Including manuscripts, maps, microforms, serials'
+                    range:   Z691-692
+                    start:   Z691
+                    end:     Z692
+                  - name:    'Cataloging'
+                    range:   Z693-695.83
+                    start:   Z693
+                    end:     Z695.83
+                  - name:    'Library handwriting'
+                    range:   Z695.85
+                    start:   Z695.85
+                    end:     Z695.85
+                  - name:    'Printing of catalogs'
+                    range:   Z695.87
+                    start:   Z695.87
+                    end:     Z695.87
+                  - name:    'Indexing.  Abstracting'
+                    range:   Z695.9-695.94
+                    start:   Z695.9
+                    end:     Z695.94
+                  - name:    'Alphabetizing.  Filing'
+                    range:   Z695.95
+                    start:   Z695.95
+                    end:     Z695.95
+                  - name:    'Recataloging.  Reclassification'
+                    range:   Z695.98
+                    start:   Z695.98
+                    end:     Z695.98
+                  - name:    'Classification and notation'
+                    range:   Z696-697
+                    start:   Z696
+                    end:     Z697
+                  - name:    'Shelflisting.  Author notation'
+                    range:   Z698
+                    start:   Z698
+                    end:     Z698
+                  - name:    'Machine methods of information and retrieval. Mechanized bibliographic control'
+                    range:   Z699-699.5
+                    start:   Z699
+                    end:     Z699.5
+                  - name:    'Physical processing.  Shelf preparation'
+                    range:   Z699.7
+                    start:   Z699.7
+                    end:     Z699.7
+                  - name:    'Bookbinding'
+                    range:   Z700
+                    start:   Z700
+                    end:     Z700
+                  - name:    'Physical parameters, preservation, conservation and restoration of books and other library materials'
+                    range:   Z700.9-701.5
+                    start:   Z700.9
+                    end:     Z701.5
+                  - name:    'Thefts and losses of books and other library materials'
+                    range:   Z702
+                    start:   Z702
+                    end:     Z702
+                  - name:    'Stack management. Disposition of books on shelves, etc.'
+                    range:   Z703.5
+                    start:   Z703.5
+                    end:     Z703.5
+                  - name:    'Discarding.  Weeding'
+                    range:   Z703.6
+                    start:   Z703.6
+                    end:     Z703.6
+                  - name:    'Public services.  Reference services'
+                    range:   Z711-711.95
+                    start:   Z711
+                    end:     Z711.95
+                  - name:    'Circulation.  Loans.  Charging systems'
+                    range:   Z712-714
+                    start:   Z712
+                    end:     Z714
+                  - name:    'Library extension.  Library commissions.  Traveling libraries'
+                    range:   Z716-716.15
+                    start:   Z716
+                    end:     Z716.15
+                  - name:    'Libraries in relation to special topics'
+                    note:    'Including libraries and community, libraries and television, children''s libraries, libraries and students'
+                    range:   Z716.2-718.85
+                    start:   Z716.2
+                    end:     Z718.85
+          - name:    'Libraries (General)'
+            range:   Z719-723
+            start:   Z719
+            end:     Z723
+          - name:    'Library reports.  History.  Statistics'
+            range:   Z729-875
+            start:   Z729
+            end:     Z875
+          - name:    'Library catalogs and bulletins'
+            range:   Z881-977
+            start:   Z881
+            end:     Z977
+          - name:    'Book collecting'
+            note:    'Including bibliophilism, bookplates'
+            range:   Z987-996.3
+            start:   Z987
+            end:     Z996.3
+          - name:    'Private libraries'
+            range:   Z997-997.2
+            start:   Z997
+            end:     Z997.2
+          - name:    'Booksellers'' catalogs'
+            range:   Z999-1000.5
+            start:   Z999
+            end:     Z1000.5
+      - name:    'General bibliography'
+        range:   Z1001-1121
+        start:   Z1001
+        end:     Z1121
+        sections:
+          - name:    'Introduction to bibliography. Theory, philosophy, psychology. Bibliography. Documentation'
+            range:   Z1001
+            start:   Z1001
+            end:     Z1001
+          - name:    'Choice of books.  Books and reading.  Book reviews'
+            range:   Z1003-1003.5
+            start:   Z1003
+            end:     Z1003.5
+          - name:    'Biography of bibliographers'
+            range:   Z1003.8-1004
+            start:   Z1003.8
+            end:     Z1004
+          - name:    'General bibliographies'
+            range:   Z1011-1017
+            start:   Z1011
+            end:     Z1017
+          - name:    'Special classes of books'
+            note:    'Including prohibited books, rare books, paperbacks, reprints'
+            range:   Z1019-1033
+            start:   Z1019
+            end:     Z1033
+          - name:    'Best books'
+            range:   Z1035-1035.9
+            start:   Z1035
+            end:     Z1035.9
+          - name:    'Booksellers'' general catalogs of modern books'
+            range:   Z1036
+            start:   Z1036
+            end:     Z1036
+          - name:    'Books for special classes of persons, institutions, etc.'
+            range:   Z1037-1039
+            start:   Z1037
+            end:     Z1039
+          - name:    'Anonyms and pseudonyms'
+            range:   Z1041-1107
+            start:   Z1041
+            end:     Z1107
+      - name:    'National bibliography'
+        range:   Z1201-4980
+        start:   Z1201
+        end:     Z4980
+        sections:
+          - name:    'America'
+            range:   Z1201-1946
+            start:   Z1201
+            end:     Z1946
+            sections:
+              - name:    'United States'
+                range:   Z1215-1363
+                start:   Z1215
+                end:     Z1363
+              - name:    'Canada.  British North America'
+                range:   Z1365-1401
+                start:   Z1365
+                end:     Z1401
+              - name:    'Mexico.  Central America.  West Indies.  South America'
+                range:   Z1411-1939
+                start:   Z1411
+                end:     Z1939
+          - name:    'Eastern Hemisphere'
+            range:   Z1975
+            start:   Z1975
+            end:     Z1975
+          - name:    'Europe'
+            range:   Z2000-2959
+            start:   Z2000
+            end:     Z2959
+          - name:    'Asia'
+            range:   Z3001-3496
+            start:   Z3001
+            end:     Z3496
+          - name:    'Africa'
+            range:   Z3501-3975
+            start:   Z3501
+            end:     Z3975
+          - name:    'Australia.  Oceania'
+            range:   Z4001-4980
+            start:   Z4001
+            end:     Z4980
+      - name:    'Subject bibliography'
+        note:    'Subjects arranged in alphabetical sequence'
+        range:   Z5051-7999
+        start:   Z5051
+        end:     Z7999
+      - name:    'Personal bibliography'
+        note:    'Names of individuals arranged in alphabetical sequence'
+        range:   Z8001-8999
+        start:   Z8001
+        end:     Z8999
+  - subclass:  ZA
+    name:     'Information resources (General)'
+    sections:
+      - name:    'Information resources (General)'
+        range:   ZA3038-5190
+        start:   ZA3038
+        end:     ZA5190
+        sections:
+          - name:    'Information services. Information centers'
+            range:   ZA3150-3159
+            start:   ZA3150
+            end:     ZA3159
+          - name:    'Information superhighway'
+            range:   ZA3201-3250
+            start:   ZA3201
+            end:     ZA3250
+          - name:    'Information in specific formats or media'
+            range:   ZA4050-4775
+            start:   ZA4050
+            end:     ZA4775
+            sections:
+              - name:    'Electronic information resources'
+                range:   ZA4050-4480
+                start:   ZA4050
+                end:     ZA4480
+                sections:
+                  - name:    'Computer network resources'
+                    range:   ZA4150-4380
+                    start:   ZA4150
+                    end:     ZA4380
+                  - name:    'Databases'
+                    range:   ZA4450-4460
+                    start:   ZA4450
+                    end:     ZA4460
+              - name:    'Motion pictures. Video recordings'
+                range:   ZA4550-4575
+                start:   ZA4550
+                end:     ZA4575
+              - name:    'Pictures. Photographs'
+                range:   ZA4650-4675
+                start:   ZA4650
+                end:     ZA4675
+              - name:    'Sound recordings'
+                range:   ZA4750-4775
+                start:   ZA4750
+                end:     ZA4775
+          - name:    'Government information'
+            range:   ZA5049-5190
+            start:   ZA5049
+            end:     ZA5190

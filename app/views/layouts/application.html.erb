@@ -1,0 +1,125 @@
+<%# app/views/layouts/application.html.erb -%>
+<%-
+  # This layout is used for most pages.
+  c = h(params[:controller])
+  a = h(params[:action])
+  page_css = %W(
+    #{c}-page
+    #{a}-page
+    #{c}-#{a}-page
+  )
+  page_css << 'print-view'   if print_view?
+  page_css << 'classic-view' if classic_lens? && ((a != 'show') || inset_view?)
+  page_css = page_css.join(SPACE)
+
+  # Initial stylesheets and scripts for all routes using this layout.
+  javascripts = [] <<  'application.js'
+  stylesheets = [] << ('application.css' unless print_view?)
+
+  # Print styling comes after all other html_head entries.
+  print_media = [] << 'print' << ('screen' if print_view?)
+  print_media = print_media.compact.join(LIST_SEPARATOR)
+  html_head << stylesheet_link_tag('print.css', media: print_media)
+
+  # Add to the start of the hidden "skip navigation" menu.
+  skip_nav.unshift(link_to('Main Content', '#content'))
+
+  # Lines added conditionally to insert the main element into a form.
+  advanced_form_start, advanced_form_end =
+    if [c, a].include?('advanced')
+      action = portal_index_path
+      [%Q(<form action="#{action}" class="advanced" method="get">), '</form>']
+        .map(&:html_safe)
+    end
+
+  # Specific pages which display the search box.
+  sb_controllers  = portal_controllers
+  sb_pages        = %w(index home)
+  show_search_box = sb_controllers.include?(c) && sb_pages.include?(a)
+
+  # Conditional width for main content.
+  no_sidebar    = sidebar_items.include?(:no_sidebar)
+  no_sidebar  ||= page_css.end_with?('wide')
+  full_width    = 24
+  sidebar_width = no_sidebar ? 0 : 6
+  content_width = full_width - sidebar_width
+  content_width = "grid_#{content_width}"
+  content_css   = "page-content #{content_width} alpha omega"
+
+  # Specific pages which display the "search elsewhere" links.
+  se_controllers  = %w(catalog articles)
+  se_pages        = %w(index)
+  show_elsewhere  = se_controllers.include?(c) && se_pages.include?(a)
+
+  view_debug(__FILE__)
+-%>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+
+  <%# === Meta tags === -%>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <%= show_meta_tags %>
+  <%= csrf_meta_tags %>
+
+  <%# === Include CSS, JavaScript and items added by the action page === -%>
+  <%= show_html_head(stylesheets, javascripts) -%>
+
+</head>
+
+<body class="<%= page_css -%>">
+
+  <%= show_cache_refresh unless print_view? %>
+
+  <div class="virgo-container">
+
+    <%# === Top banner === -%>
+    <%= render 'layouts/header' %>
+    <%= advanced_form_start %>
+
+    <div class="page-container container_24">
+
+      <%# === Search term input === -%>
+      <%- if show_search_box -%>
+        <div class="results-search-container container_24 alpha omega">
+          <%= render 'catalog/search_box' %>
+        </div>
+      <%- end -%>
+
+      <%# === Sidebar items added by the action page === -%>
+      <%= render 'layouts/sidebar', width: sidebar_width unless no_sidebar %>
+
+      <article class="<%= content_css -%>" id="content" role="main">
+
+        <%# === Controls visible for on-screen print view === -%>
+        <%= print_view_controls if print_view? %>
+
+        <%# === Item title (for item details show page) === -%>
+        <%= render 'catalog/item_title' if document_page? %>
+
+        <%# === Flash messages (if any are active) === -%>
+        <%= render '/flash_msg' %>
+
+        <%# === NOTE: rendering of action page inserted here === -%>
+        <%= yield %>
+
+      </article>
+
+      <%# === Other search links === -%>
+      <%= render 'catalog/search_elsewhere' if show_elsewhere %>
+
+    </div>
+
+    <%# === Page bottom === -%>
+    <%= advanced_form_end %>
+    <%= render 'layouts/footer', layout: __FILE__ %>
+
+  </div>
+
+  <%= render 'layouts/skip_nav' %>
+  <%= render 'layouts/analytics' %>
+  <%= render 'layouts/copyright' %>
+
+</body>
+</html>

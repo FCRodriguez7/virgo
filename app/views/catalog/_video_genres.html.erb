@@ -1,0 +1,32 @@
+<%# app/views/catalog/_video_genres.html.erb -%>
+<%-
+  return if print_view?
+
+  selector      ||= nil
+  section_title ||= 'Browse by Genre'
+
+  url_params = params_for_facet_values
+
+  # Add to hidden "skip navigation" menu.
+  skip_nav << link_to(section_title, '#video-genres')
+
+  view_debug(__FILE__)
+-%>
+
+<h2 class="video-header" id="video-genres">
+  <%= section_title %>
+  <%= content_divider %>
+</h2>
+
+<div class="video-genres">
+  <ul class="genre-list">
+    <%- video_genres(selector).each do |genre| -%>
+      <%- link_label = h(genre.gsub(%r{/}, ' & ')) -%>
+      <%- link_opt   = add_facet(:video_genre_facet, genre, url_params) -%>
+      <%- link_path  = portal_index_path(link_opt) -%>
+      <li class="genre">
+        <%= link_to(link_label, link_path) %>
+      </li>
+    <%- end -%>
+  </ul>
+</div>

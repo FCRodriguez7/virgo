@@ -1,0 +1,122 @@
+// app/assets/stylesheets/feature/shelf-browse/_values.scss
+
+@include -trace-module("feature/shelf-browse/_values.scss");
+
+// ============================================================================
+// COLOR SCHEMES
+// ============================================================================
+
+$sb-background-color:    #e8d9c2;
+$sb-border-color:        #896733;
+$sb-border-radius:       8px;
+$sb-padding:             6px;
+
+$sb-highlight-color:     orange;
+$sb-pda-color:           blue;
+$sb-reserve-color:       navy;
+$sb-non-circ-color:      lightblue;
+$sb-unavailable-color:   lightgoldenrodyellow;
+$sb-shadowed-color:      deeppink;
+$sb-error-color:         red;
+
+$sb-main-title-color:    black;
+$sb-header-color:        #483922;
+$sb-help-button-color:   blue;
+$sb-scroller-background: #f8f3ea;
+$sb-item-color:          #049cdb;
+$sb-item-label-color:    #ffea00;
+$sb-item-label-border:   #0000db;
+$sb-item-border-width:   2px;
+$sb-info-color:          black;
+$sb-info-background:     snow;
+
+$sb-debug-color:         fuchsia;
+$sb-debug-background:    lightgreen;
+
+// For shelf browse range-frame call number ranges.
+
+$sb-class-background:      lightblue;
+$sb-subclass-background:   $sb-class-background;
+$sb-range-background:      $sb-class-background;
+$sb-class-border-color:    blue;
+$sb-subclass-border-color: $sb-class-border-color;
+$sb-range-border-color:    $sb-class-border-color;
+$sb-class-color:           darkslateblue;
+$sb-subclass-color:        darkgreen;
+$sb-range-color:           darkblue;
+
+// For shelf browse display links.
+
+$sb-link-cursor:           pointer;
+$sb-link-color:            blue;
+$sb-action-cursor:         $sb-link-cursor;
+$sb-action-color:          $sb-link-color;
+$sb-button-border-color:   blue;
+
+// For shelf browse call number links.
+
+$sb-browse-cursor:         $sb-link-cursor;
+$sb-browse-color:          green;
+$sb-browse-background:     lightgreen;
+$sb-browse-border:         none;
+
+// For drop-down elements (LCC tree and help panel).
+
+$sb-dropdown-background:   whitesmoke;
+$sb-dropdown-button-size:  1.5em;
+
+// ============================================================================
+// PROGRESS BAR
+// ============================================================================
+
+// @see $.ajaxSetup in app/assets/javascripts/shared/session.
+$sb-request-timeout: 20s;
+
+// To reflect the adjustment of $.ajaxSetup for non-deployed environments:
+$sb-deployed-server: true !default;
+@if non_deployed_server() and ($sb-deployed-server == true) {
+    $sb-request-timeout: (3 * $sb-request-timeout);
+    $sb-deployed-server: false;
+    @debug("$sb-request-timeout = #{$sb-request-timeout}");
+}
+
+$sb-progress-delay:    0.9s;          // Determined heuristically.
+$sb-progress-duration: $sb-request-timeout;
+$sb-progress-fill:     forwards;
+
+// ============================================================================
+// Z-ORDER LEVELS
+// ============================================================================
+
+$z-sb-item:             10;
+$z-sb-item-metadata:    20;
+$z-sb-lcc-overlay:      100;
+$z-sb-lcc-panel:        110;
+$z-sb-help-overlay:     200;
+$z-sb-help-panel:       210;
+$z-sb-dialog-overlay:   300;
+$z-sb-dialog-panel:     310;
+$z-sb-dropdown-overlay: 500;
+$z-sb-dropdown-menu:    510;
+$z-sb-topmost:          998;
+$z-sb-colorbox-overlay: 999;
+
+// ============================================================================
+// VARIATIONS
+// ============================================================================
+
+/// Allow manual resize between the heights of .page-scroller and .item-info
+/// areas.  If *true*, the separator between the panels acts as a splitter that
+/// can be dragged to resize the panels.
+///
+/// @type Bool
+///
+$sb-page-scroller-splitter: false;
+
+/// Allow manual resize between the widths of .item-range and .item-details
+/// areas.  If *true*, the separator between the panels acts as a splitter that
+/// can be dragged to resize the panels.
+///
+/// @type Bool
+///
+$sb-item-info-splitter:     true;

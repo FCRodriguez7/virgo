@@ -1,0 +1,63 @@
+<%# app/views/catalog/show/shared/_dl_details.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc
+
+  # === Item metadata
+  collection =
+    facet_search_links(:digital_collection_facet, doc, title: nil)
+
+  location =
+    doc.values_for(:location_display).presence ||
+    doc.values_for(:location_facet).presence
+
+  download_link =
+    if doc.has?(:content_model_facet, 'jp2k')
+      blocked, _access_label, _access_description = access_restricted(doc)
+      unless blocked
+        id   ||= doc.doc_id
+        repo ||= doc.fedora_url
+        terms_link = "[#{terms_of_use_link}]".html_safe
+        item_label = 'Full-size Image'
+        item_url =
+          "#{repo}/objects/#{id}/methods/djatoka:StaticSDef/getStaticImage"
+        item_link = out_link(item_label, item_url)
+        item_link + content_tag(:span, terms_link, class: 'terms-of-use-link')
+      end
+    end
+
+  metadata_editor =
+    if Virgo.development?
+      editable ||= (doc.values_for(:iseditable_facet).first == 'true')
+      edit_url ||= editable && doc.values_for(:editorlocation_display).first
+      out_link('Edit Metadata', edit_url) if edit_url
+    end
+
+  fields ||= UVA::View::FieldSet.new(
+    'Format'                 => doc.export_format,
+    'Type'                   => doc.export_work_type,
+    'Alternate Title'        => :alternate_title_display,
+    'Summary'                => doc.get_abstract,
+    'Series'                 => doc.get_series,
+    'Date Created'           => doc.export_pub_date,
+    'Composition Era'        => :composition_era_facet,
+    'Description'            => doc.get_description,
+    'Collection'             => collection,
+    'Category'               => :category_display,
+    'Group'                  => :group_display,
+    'Signature'              => :signature_display,
+    'Notes'                  => :note_display,
+    'Location'               => location,
+    'Retrieval ID'           => doc.get_media_retrieval_id,
+    'Call Number'            => :call_number_display,
+    'Download'               => download_link,
+    'Local Rights Statement' => :local_rights_statement_display,
+    copyright_field          => copyright_and_permissions(doc),
+    'Metadata Editor'        => metadata_editor,
+    'Date Indexed'           => show_date_indexed(doc)
+  )
+  fields_opts = { document: doc, fields: fields }
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/show/shared/fields', fields_opts %>

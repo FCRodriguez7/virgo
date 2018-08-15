@@ -1,0 +1,39 @@
+<%# app/views/shelf_browse/horizontal/_item_info.html.erb -%>
+<%-
+  items ||= @document_list
+
+  # NOTE [1] - The .item-metadata instance will be replaced immediately by
+  # the first focus item.
+  # @see showFocusDetails() in app/assets/javascripts/feature/shelf-browse
+
+  # Item details scrolling options.
+  scroll_name  = 'scroll-options'
+  scroll_label = 'When showing details:'
+  scroll_selections = [
+    # value   # label            # section
+    [:top,    'Start at top',    'titles'],
+    [:bottom, 'Start at bottom', 'availability']
+  ].map { |entry|
+    value, label, section = entry
+    tooltip = "Always show #{section} first when focusing on a new item."
+    description = [label, tooltip]
+    [value, description]
+  }.to_h
+
+  view_debug(__FILE__)
+-%>
+
+<div class="item-info">
+
+  <div class="item-ranges">
+    <%= range_frame(items) %>
+  </div>
+
+  <div class="item-info-separator"></div>
+
+  <div class="item-details">
+    <div class="item-metadata"><!-- <%# NOTE [1] -%> --></div>
+    <%= radio_buttons(scroll_name, scroll_label, scroll_selections) %>
+  </div>
+
+</div>

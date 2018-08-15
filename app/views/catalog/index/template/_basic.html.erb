@@ -1,0 +1,78 @@
+<%# app/views/catalog/index/template/_basic.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc
+
+  css_class   ||= 'document clearfix'
+  counter     ||= -1
+  offset      ||= 0
+  browse_mode ||= params[:browse_mode]
+  portal      ||= nil
+  dev_note    ||= nil
+
+  partial_opts = {
+    document:    doc,
+    counter:     counter,
+    offset:      offset,
+    portal:      portal,
+    browse_mode: browse_mode,
+  }
+
+  id = "doc-#{doc.doc_id}"
+  if classic_lens? || (doc.doc_type == :hsl_tutorial)
+    even = (counter + 1).even?
+    css_class += ' ' + (even ? 'even' : 'odd')
+  end
+  css_class += ' browse' if browse_mode
+
+  # === Item title
+  title_opts = partial_opts.merge(dev_note: dev_note)
+
+  # === Item thumbnail
+  thumbnail_opts = partial_opts
+
+  # === Item metadata
+  fields            ||= nil
+  breadcrumbs       ||= render_breadcrumbs(doc, :index).presence
+  show_availability ||= false
+
+  # Validate usage of this template.
+  raise('Caller must supply fields') unless fields
+
+  view_debug(__FILE__)
+-%>
+
+<%= template_comment(doc, dev_note) %>
+<div class="<%= css_class -%>" id="<%= id -%>" data-id="<%= id -%>">
+
+  <div class="details">
+
+    <%# === Item title/author === -%>
+    <%= render 'catalog/index/shared/title', title_opts %>
+
+    <%- unless browse_mode -%>
+
+      <%# === Item thumbnail === -%>
+      <%= render 'catalog/index/shared/thumbnail', thumbnail_opts %>
+
+      <%# === Item metadata === -%>
+      <dl class="metadata">
+        <%= fields.render(:index, doc) %>
+        <%- if show_availability -%>
+          <%= render 'catalog/availability_inline', document: doc %>
+        <%- end -%>
+      </dl>
+
+      <%# === Breadcrumbs === -%>
+      <%= breadcrumbs %>
+
+    <%- end -%>
+
+  </div>
+
+</div>
+
+<%# === Item details (see feature/classic.js) === -%>
+<%- if classic_lens? -%>
+  <div class="item-display" data-id="<%= id -%>"></div>
+<%- end -%>

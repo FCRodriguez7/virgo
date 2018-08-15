@@ -1,0 +1,8 @@
+// app/assets/stylesheets/shared/_no_print_view.scss
+//
+// Definitions which should come directly after @import shared/layout_initial
+// for any layout which is *not* the print view layout.
+
+.print-only {
+    @extend .sr-only;
+}

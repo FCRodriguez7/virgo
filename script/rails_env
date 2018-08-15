@@ -1,0 +1,6 @@
+#! /usr/bin/env ruby
+
+# Show the current or configured RAILS_ENV on stdout.
+$stderr.reopen('/dev/null')
+require File.expand_path('../../config/boot', __FILE__)
+puts(ENV['RAILS_ENV'] || 'development')

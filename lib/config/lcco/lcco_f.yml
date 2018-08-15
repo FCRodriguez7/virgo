@@ -1,0 +1,664 @@
+# lib/config/lcco_f.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from second part of the Word document lcco_ef.doc.
+
+class:    F
+name:     'HISTORY OF THE AMERICAS -- US history.  Canada.  Latin America.  Spanish America'
+sections:
+  - subclass:  F
+    lcco:      false
+    sections:
+      - name:    'United States local history'
+        range:   F1-975
+        start:   F1
+        end:     F975
+        sections:
+          - name:    'New England'
+            range:   F1-(105)
+            start:   F1
+            end:     F105
+            sections:
+              - name:    'Maine'
+                range:   F16-30
+                start:   F16
+                end:     F30
+              - name:    'New Hampshire'
+                range:   F31-45
+                start:   F31
+                end:     F45
+              - name:    'Vermont'
+                range:   F46-60
+                start:   F46
+                end:     F60
+              - name:    'Massachusetts'
+                range:   F61-75
+                start:   F61
+                end:     F75
+              - name:    'Rhode Island'
+                range:   F76-90
+                start:   F76
+                end:     F90
+              - name:    'Connecticut'
+                range:   F91-105
+                start:   F91
+                end:     F105
+          - name:    'Atlantic coast.  Middle Atlantic States'
+            range:   F106-(205)
+            start:   F106
+            end:     F205
+            sections:
+              - name:    'New York'
+                range:   F116-130
+                start:   F116
+                end:     F130
+              - name:    'New Jersey'
+                range:   F131-145
+                start:   F131
+                end:     F145
+              - name:    'Pennsylvania'
+                range:   F146-160
+                start:   F146
+                end:     F160
+              - name:    'Delaware'
+                range:   F161-175
+                start:   F161
+                end:     F175
+              - name:    'Maryland'
+                range:   F176-190
+                start:   F176
+                end:     F190
+              - name:    'District of Columbia.  Washington'
+                range:   F191-205
+                start:   F191
+                end:     F205
+          - name:    'The South.  South Atlantic States'
+            range:   F206-(295)
+            start:   F206
+            end:     F295
+            sections:
+              - name:    'Virginia'
+                range:   F221-235
+                start:   F221
+                end:     F235
+              - name:    'West Virginia'
+                range:   F236-250
+                start:   F236
+                end:     F250
+              - name:    'North Carolina'
+                range:   F251-265
+                start:   F251
+                end:     F265
+              - name:    'South Carolina'
+                range:   F266-280
+                start:   F266
+                end:     F280
+              - name:    'Georgia'
+                range:   F281-295
+                start:   F281
+                end:     F295
+          - name:    'Gulf States.  West Florida'
+            range:   F296-(395)
+            start:   F296
+            end:     F395
+            sections:
+              - name:    'Florida'
+                range:   F306-320
+                start:   F306
+                end:     F320
+              - name:    'Alabama'
+                range:   F321-335
+                start:   F321
+                end:     F335
+              - name:    'Mississippi'
+                range:   F336-350
+                start:   F336
+                end:     F350
+              - name:    'Mississippi River and Valley.  Middle West'
+                range:   F350.5-355
+                start:   F350.5
+                end:     F355
+              - name:    'Louisiana'
+                range:   F366-380
+                start:   F366
+                end:     F380
+              - name:    'Texas'
+                range:   F381-395
+                start:   F381
+                end:     F395
+          - name:    'Old Southwest.  Lower Mississippi Valley'
+            range:   F396-(475)
+            start:   F396
+            end:     F475
+            sections:
+              - name:    'Arkansas'
+                range:   F406-420
+                start:   F406
+                end:     F420
+              - name:    'Tennessee'
+                range:   F431-445
+                start:   F431
+                end:     F445
+              - name:    'Kentucky'
+                range:   F446-460
+                start:   F446
+                end:     F460
+              - name:    'Missouri'
+                range:   F461-475
+                start:   F461
+                end:     F475
+          - name:    'Old Northwest.  Northwest Territory'
+            range:   F476-(590)
+            start:   F476
+            end:     F590
+            sections:
+              - name:    'Ohio'
+                range:   F486-500
+                start:   F486
+                end:     F500
+              - name:    'Ohio River and Valley'
+                range:   F516-520
+                start:   F516
+                end:     F520
+              - name:    'Indiana'
+                range:   F521-535
+                start:   F521
+                end:     F535
+              - name:    'Illinois'
+                range:   F536-550
+                start:   F536
+                end:     F550
+              - name:    'The Lake region.  Great Lakes'
+                range:   F550.5-553.2
+                start:   F550.5
+                end:     F553.2
+              - name:    'Michigan'
+                range:   F561-575
+                start:   F561
+                end:     F575
+              - name:    'Wisconsin'
+                range:   F576-590
+                start:   F576
+                end:     F590
+          - name:    'The West.  Trans-Mississippi Region.  Great Plains'
+            range:   F590.3-(705)
+            start:   F590.3
+            end:     F705
+            sections:
+              - name:    'The Northwest'
+                range:   F597
+                start:   F597
+                end:     F597
+              - name:    'Missouri River and Valley'
+                range:   F598
+                start:   F598
+                end:     F598
+              - name:    'Minnesota'
+                range:   F601-615
+                start:   F601
+                end:     F615
+              - name:    'Iowa'
+                range:   F616-630
+                start:   F616
+                end:     F630
+              - name:    'North Dakota'
+                range:   F631-645
+                start:   F631
+                end:     F645
+              - name:    'South Dakota'
+                range:   F646-660
+                start:   F646
+                end:     F660
+              - name:    'Nebraska'
+                range:   F661-675
+                start:   F661
+                end:     F675
+              - name:    'Kansas'
+                range:   F676-690
+                start:   F676
+                end:     F690
+              - name:    'Oklahoma'
+                range:   F691-705
+                start:   F691
+                end:     F705
+          - name:    'Rocky Mountains.  Yellowstone National Park'
+            range:   F721-(785)
+            start:   F721
+            end:     F785
+            sections:
+              - name:    'Montana'
+                range:   F726-740
+                start:   F726
+                end:     F740
+              - name:    'Idaho'
+                range:   F741-755
+                start:   F741
+                end:     F755
+              - name:    'Wyoming'
+                range:   F756-770
+                start:   F756
+                end:     F770
+              - name:    'Colorado'
+                range:   F771-785
+                start:   F771
+                end:     F785
+          - name:    'New Southwest.  Colorado River, Canyon, and Valley'
+            range:   F786-(850)
+            start:   F786
+            end:     F850
+            sections:
+              - name:    'New Mexico'
+                range:   F791-805
+                start:   F791
+                end:     F805
+              - name:    'Arizona'
+                range:   F806-820
+                start:   F806
+                end:     F820
+              - name:    'Utah'
+                range:   F821-835
+                start:   F821
+                end:     F835
+              - name:    'Nevada'
+                range:   F836-850
+                start:   F836
+                end:     F850
+          - name:    'Pacific States'
+            range:   F850.5-(951)
+            start:   F850.5
+            end:     F951
+            sections:
+              - name:    'Cascade Range'
+                range:   F851.7
+                start:   F851.7
+                end:     F851.7
+              - name:    'Pacific Northwest.  Columbia River and Valley.  Northwest boundary since 1846'
+                range:   F852-854
+                start:   F852
+                end:     F854
+              - name:    'California'
+                range:   F856-870
+                start:   F856
+                end:     F870
+              - name:    'Oregon'
+                range:   F871-885
+                start:   F871
+                end:     F885
+              - name:    'Washington'
+                range:   F886-900
+                start:   F886
+                end:     F900
+              - name:    'Alaska'
+                range:   F901-951
+                start:   F901
+                end:     F951
+                sections:
+                  - name:    'Bering Sea and Aleutian Islands'
+                    range:   F951
+                    start:   F951
+                    end:     F951
+          - name:    'The territories of the United States (General)'
+            range:   F965
+            start:   F965
+            end:     F965
+          - name:    'Insular possessions of the United States (General)'
+            range:   F970
+            start:   F970
+            end:     F970
+          - name:    'Central American, West Indian, and other countries protected by and having close political affiliations with the United States (General)'
+            range:   F975
+            start:   F975
+            end:     F975
+      - name:    'British America'
+        range:   F1001-1145.2
+        start:   F1001
+        end:     F1145.2
+        sections:
+          - name:    'Canada'
+            range:   F1001-1145.2
+            start:   F1001
+            end:     F1145.2
+            sections:
+              - name:    'General'
+                range:   F1001-1035
+                start:   F1001
+                end:     F1035
+              - name:    'Maritime provinces.  Atlantic coast of Canada'
+                range:   F1035.8-(1049.7)
+                start:   F1035.8
+                end:     F1049.7
+                sections:
+                  - name:    'Nova Scotia.  Acadia'
+                    range:   F1036-1040
+                    start:   F1036
+                    end:     F1040
+                  - name:    'New Brunswick'
+                    range:   F1041-1045
+                    start:   F1041
+                    end:     F1045
+                  - name:    'Prince Edward Island'
+                    range:   F1046-1049.7
+                    start:   F1046
+                    end:     F1049.7
+              - name:    'St. Lawrence Gulf, River and Valley (General)'
+                range:   F1050-(1059.7)
+                start:   F1050
+                end:     F1059.7
+                sections:
+                  - name:    'Quebec'
+                    range:   F1051-1055
+                    start:   F1051
+                    end:     F1055
+                  - name:    'Ontario'
+                    range:   F1056-1059.7
+                    start:   F1056
+                    end:     F1059.7
+              - name:    'Canadian Northwest.  Northwest Territories'
+                range:   F1060-(1110.5)
+                start:   F1060
+                end:     F1110.5
+                sections:
+                  - name:    'Manitoba'
+                    range:   F1061-1065
+                    start:   F1061
+                    end:     F1065
+                  - name:    'Assiniboia'
+                    range:   F1067
+                    start:   F1067
+                    end:     F1067
+                  - name:    'Saskatchewan'
+                    range:   F1070-1074.7
+                    start:   F1070
+                    end:     F1074.7
+                  - name:    'Alberta'
+                    range:   F1075-1080
+                    start:   F1075
+                    end:     F1080
+                  - name:    'British Columbia'
+                    range:   F1086-1089.7
+                    start:   F1086
+                    end:     F1089.7
+                  - name:    'Rocky Mountains of Canada'
+                    range:   F1090
+                    start:   F1090
+                    end:     F1090
+                  - name:    'Arctic regions'
+                    range:   F1090.5
+                    start:   F1090.5
+                    end:     F1090.5
+                  - name:    'Yukon'
+                    range:   F1091-1095.5
+                    start:   F1091
+                    end:     F1095.5
+                  - name:    'Mackenzie'
+                    range:   F1096-1100.5
+                    start:   F1096
+                    end:     F1100.5
+                  - name:    'Franklin'
+                    range:   F1101-1105.7
+                    start:   F1101
+                    end:     F1105.7
+                  - name:    'Keewatin'
+                    range:   F1106-1110.5
+                    start:   F1106
+                    end:     F1110.5
+              - name:    'Newfoundland'
+                range:   F1121-1139
+                start:   F1121
+                end:     F1139
+                sections:
+                  - name:    'Labrador'
+                    range:   F1135-1139
+                    start:   F1135
+                    end:     F1139
+              - name:    'The Labrador Peninsula'
+                range:   F1140
+                start:   F1140
+                end:     F1140
+              - name:    'Nunavut'
+                note:    'Other than Canada Bahamas, see F1650+ Bermudas, see F1630+ British East asnd West Florida, 1763-1783, see F301, F314 British Guiana, see F2361+ British Honduras (Belize), see F1441+ British West Indies, see F2131+ Falkland Islands, see F3031+ Thirteen North American Colonies before 1776, see E186+ Dutch America Colony in Brazil, 1625-1661, see F2532 Dutch Guinea, see F2401+ Dutch West Indies, see F2141 New Netherlands to 1664, see F122.1 New Sweden (Dutch possession, 1655-1664), see F167'
+                range:   F1141-1145.2
+                start:   F1141
+                end:     F1145.2
+      - name:    'French America'
+        range:   F1170
+        start:   F1170
+        end:     F1170
+        sections:
+          - name:    'Saint Pierre and Miquelon'
+            note:    'Other French America Colony in Brazil, 1555-1567, see F2529 Colony in Florida, 1562-1565, see F314 French Guinana, see F2441+ French West Indies, see F2151 Louisiana, 1698-1803, see F372 New France and Acadia, 1600-1763, see F1030, F1038'
+            range:   F1170
+            start:   F1170
+            end:     F1170
+      - name:    'Latin America.  Spanish America'
+        range:   F1201-3799
+        start:   F1201
+        end:     F3799
+        sections:
+          - name:    'Mexico'
+            range:   F1201-1392
+            start:   F1201
+            end:     F1392
+            sections:
+              - name:    'Antiquities.  Indians'
+                range:   F1218.5-1221
+                start:   F1218.5
+                end:     F1221
+          - name:    'Latin America (General)'
+            range:   F1401-1419
+            start:   F1401
+            end:     F1419
+          - name:    'Central America'
+            range:   F1421-(1577)
+            start:   F1421
+            end:     F1577
+            sections:
+              - name:    'Mayas'
+                range:   F1435-1435.3
+                start:   F1435
+                end:     F1435.3
+              - name:    'Belize'
+                range:   F1441-1457
+                start:   F1441
+                end:     F1457
+              - name:    'Guatemala'
+                range:   F1461-1477
+                start:   F1461
+                end:     F1477
+              - name:    'Salvador (El Salvador)'
+                range:   F1481-1497
+                start:   F1481
+                end:     F1497
+              - name:    'Honduras'
+                range:   F1501-1517
+                start:   F1501
+                end:     F1517
+              - name:    'Nicaragua'
+                range:   F1521-1537
+                start:   F1521
+                end:     F1537
+              - name:    'Costa Rica'
+                range:   F1541-1557
+                start:   F1541
+                end:     F1557
+              - name:    'Panama'
+                range:   F1561-1577
+                start:   F1561
+                end:     F1577
+                sections:
+                  - name:    'Canal Zone.  Panama Canal'
+                    range:   F1569.C2
+                    start:   F1569.C2
+                    end:     F1569.C2
+          - name:    'West Indies'
+            range:   F1601-(2151)
+            start:   F1601
+            end:     F2151
+            sections:
+              - name:    'Bermudas'
+                range:   F1630-1640
+                start:   F1630
+                end:     F1640
+              - name:    'Bahamas'
+                range:   F1650-1660
+                start:   F1650
+                end:     F1660
+              - name:    'Greater Antilles'
+                range:   F1741-1991
+                start:   F1741
+                end:     F1991
+                sections:
+                  - name:    'Cuba'
+                    range:   F1751-1854.9
+                    start:   F1751
+                    end:     F1854.9
+                    sections:
+                      - name:    'Communist regime'
+                        range:   F1788-1788.22
+                        start:   F1788
+                        end:     F1788.22
+                  - name:    'Jamaica'
+                    range:   F1861-1896
+                    start:   F1861
+                    end:     F1896
+                  - name:    'Haiti (Island).  Hispaniola'
+                    range:   F1900-1941
+                    start:   F1900
+                    end:     F1941
+                    sections:
+                      - name:    'Haiti (Republic)'
+                        range:   F1912-1930
+                        start:   F1912
+                        end:     F1930
+                      - name:    'Dominican Republic'
+                        range:   F1931-1941
+                        start:   F1931
+                        end:     F1941
+                  - name:    'Puerto Rico'
+                    range:   F1951-1983
+                    start:   F1951
+                    end:     F1983
+                  - name:    'Navassa'
+                    range:   F1991
+                    start:   F1991
+                    end:     F1991
+              - name:    'Lesser Antilles'
+                range:   F2001-2151
+                start:   F2001
+                end:     F2151
+                sections:
+                  - name:    'Groups of islands, by geographical distribution'
+                    lcco:    false
+                    range:   F2006-2016
+                    start:   F2006
+                    end:     F2016
+                    sections:
+                      - name:    'Leeward islands'
+                        range:   F2006
+                        start:   F2006
+                        end:     F2006
+                      - name:    'Windward Islands'
+                        range:   F2011
+                        start:   F2011
+                        end:     F2011
+                      - name:    'Islands along Venezuela coast'
+                        range:   F2016
+                        start:   F2016
+                        end:     F2016
+                  - name:    'Individual islands'
+                    note:    'Groups of islands, by political allegiance'
+                    range:   F2033-(2151)
+                    start:   F2033
+                    end:     F2151
+                    sections:
+                      - name:    'British West Indies'
+                        range:   F2131-2133
+                        start:   F2131
+                        end:     F2133
+                      - name:    'Virgin Islands of the United States'
+                        range:   F2136
+                        start:   F2136
+                        end:     F2136
+                      - name:    'Netherlands West Indies.  Dutch West Indies'
+                        range:   F2141
+                        start:   F2141
+                        end:     F2141
+                      - name:    'French West Indies'
+                        range:   F2151
+                        start:   F2151
+                        end:     F2151
+          - name:    'Caribbean area.  Caribbean Sea'
+            range:   F2155-2191
+            start:   F2155
+            end:     F2191
+          - name:    'South America'
+            range:   F2201-3799
+            start:   F2201
+            end:     F3799
+            sections:
+              - name:    'General'
+                range:   F2201-2239
+                start:   F2201
+                end:     F2239
+              - name:    'Colombia'
+                range:   F2251-2299
+                start:   F2251
+                end:     F2299
+              - name:    'Venezuela'
+                range:   F2301-2349
+                start:   F2301
+                end:     F2349
+              - name:    'Guiana'
+                range:   F2351
+                start:   F2351
+                end:     F2351
+              - name:    'Guyana.  British Guiana'
+                range:   F2361-2391
+                start:   F2361
+                end:     F2391
+              - name:    'Surinam'
+                range:   F2401-2431
+                start:   F2401
+                end:     F2431
+              - name:    'French Guiana'
+                range:   F2441-2471
+                start:   F2441
+                end:     F2471
+              - name:    'Brazil'
+                range:   F2501-2659
+                start:   F2501
+                end:     F2659
+              - name:    'Paraguay'
+                range:   F2661-2699
+                start:   F2661
+                end:     F2699
+              - name:    'Uruguay'
+                range:   F2701-2799
+                start:   F2701
+                end:     F2799
+              - name:    'Argentina'
+                range:   F2801-3021
+                start:   F2801
+                end:     F3021
+              - name:    'Falkland Islands'
+                range:   F3031-3031.5
+                start:   F3031
+                end:     F3031.5
+              - name:    'Chile'
+                range:   F3051-3285
+                start:   F3051
+                end:     F3285
+              - name:    'Bolivia'
+                range:   F3301-3359
+                start:   F3301
+                end:     F3359
+              - name:    'Peru'
+                range:   F3401-3619
+                start:   F3401
+                end:     F3619
+              - name:    'Ecuador'
+                range:   F3701-3799
+                start:   F3701
+                end:     F3799

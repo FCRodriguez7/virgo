@@ -1,0 +1,64 @@
+// app/assets/stylesheets/feature/shelf-browse/_display_page.scss
+
+@include -trace-module("feature/shelf-browse/_display_page.scss");
+
+// ============================================================================
+// SHELF BROWSE DISPLAY - WEB PAGE
+//
+// Because the meaning of 100vw is not consistent across browser families (only
+// Firefox subtracts the width of the scrollbar), the initial width of the
+// shelf browse display has to be set by feature/shelf-browse.js.
+// ============================================================================
+
+// Provide the full width of the window.
+body.wide {
+
+    min-width: 0;
+    height:     100%;
+    max-height: 100%;
+    overflow:   hidden;
+
+    > .virgo-container {
+
+        height:     100%;
+        //height:     100vh;
+        background: none;
+
+        > .virgo-banner {
+            display: none;
+        }
+
+        // Provide the full width of the window.
+        > .page-container {
+
+            height: 100%;
+            width:  auto;
+            border: none;
+
+            // Remove borders that delineate normal Virgo pages.
+            > .page-content {
+
+                height:         100%;
+                padding-bottom: 2px;
+                border:         none;
+                overflow:       hidden;
+
+                > .shelf-browse.display {
+
+                    height: 100%;
+                    //width: 99.5vw;
+                    margin: 2px;
+
+                    .item-info {
+                        max-height: 55vh;
+                        height:     55vh;
+                    }
+                }
+            }
+        }
+
+        > .page-footer {
+            display: none;
+        }
+    }
+}

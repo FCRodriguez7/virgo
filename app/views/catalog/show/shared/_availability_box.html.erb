@@ -1,0 +1,91 @@
+<%# app/views/catalog/show/shared/_availability_box.html.erb -%>
+<%-
+  # Holdings, physical and online
+  #
+  # It should be safe to include this in any page since this partial (like
+  # others) contains logic to determine if it's applicable to the current
+  # document (which must be provided).
+
+  doc = document ||= @document
+  return unless doc && doc.availability_on_show_page?
+
+  css_class      ||= 'item-availability'
+  request_popup  ||= true
+  google_preview ||= true
+  google_preview = true_value?(google_preview)
+
+  # Add to hidden "skip navigation" menu.
+  availability_id = u("availability-#{doc.id}")
+  skip_nav << link_to('Item availability', ('#'+ availability_id))
+
+  h2_title, h3_title, link, article_links = show_page_availability(doc)
+  blocked, access_label, access_description = link && access_restricted(doc)
+
+  template_opt = { document: doc, request_popup: request_popup }
+
+  view_debug(__FILE__)
+-%>
+
+<div class="<%= css_class -%>" id="<%= availability_id -%>">
+
+  <%# === Section title === -%>
+  <h2><%= h2_title %></h2>
+
+  <%# === Google Preview === -%>
+  <%- if google_preview -%>
+    <%= render 'catalog/show/shared/google_preview', template_opt %>
+  <%- end -%>
+
+  <%# === Online link(s) === -%>
+  <%- if link || article_links -%>
+    <div class="online-availability holding">
+
+      <%- if article_links -%>
+
+        <%# ==== Article download/online links ==== -%>
+        <%- article_links.each do |entry| -%>
+          <%- h3_title, link = entry -%>
+          <h3><%= h3_title %></h3>
+          <div class="online-holding">
+            <%= link %>
+          </div>
+        <%- end -%>
+
+      <%- elsif !blocked -%>
+
+        <%# ==== Main online link ==== -%>
+        <h3><%= h3_title %></h3>
+        <div class="online-holding">
+          <%= link %>
+          <%- if access_label -%>
+            <%= " (#{access_label})" %>
+          <%- end -%>
+          <%- if access_description -%>
+            <div class="policy-explanation">
+              <%= access_description %>
+            </div>
+          <%- end -%>
+        </div>
+
+      <%- elsif access_label && access_description -%>
+
+        <%# ==== Explanation if access blocked ==== -%>
+        <h3><%= h3_title %></h3>
+        <div class="policy-explanation">
+          <%- if access_label -%>
+            <h4><%= access_label %>:</h4>
+          <%- end -%>
+          <%= access_description %>
+        </div>
+
+      <%- end -%>
+
+    </div>
+  <%- end -%>
+
+  <%# === Holdings === -%>
+  <%- if show_holdings?(doc) -%>
+    <%= render 'catalog/show/shared/availability', template_opt %>
+  <%- end -%>
+
+</div>

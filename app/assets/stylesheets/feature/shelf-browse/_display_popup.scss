@@ -1,0 +1,77 @@
+// app/assets/stylesheets/feature/shelf-browse/_display_popup.scss
+
+@include -trace-module("feature/shelf-browse/_display_popup.scss");
+
+// ============================================================================
+// SHELF BROWSE DISPLAY - COLORBOX POPUP
+//
+// Variations specific to displaying in a colorbox popup window.  Generally,
+// this involves rounding corners of backgrounds to conform to the colorbox
+// perimeter.
+// ============================================================================
+
+.shelf-browse.display.popup {
+
+    width:         99.7%;
+    margin-top:    1px;
+    border-radius: $sb-border-radius;
+
+    // ========================================================================
+    // SHELF BROWSE DISPLAY - COMPONENT: HEADER AREA
+    // ========================================================================
+
+    .header-area {
+        border-top-left-radius:  inherit;
+        border-top-right-radius: inherit;
+    }
+
+    // ========================================================================
+    // SHELF BROWSE DISPLAY - COMPONENT: SCROLLER CONTAINER
+    // ========================================================================
+
+    .scroller-container {
+
+        border-bottom-left-radius:  inherit;
+        border-bottom-right-radius: inherit;
+
+        .item-info {
+
+            border-bottom-left-radius:  inherit;
+            border-bottom-right-radius: inherit;
+
+            // ================================================================
+            // Components: Information panels.
+            // ================================================================
+
+            .item-ranges {
+                max-height:                 inherit;
+                border-bottom-left-radius:  inherit;
+            }
+
+            .item-details {
+                max-height:                 inherit;
+                border-bottom-right-radius: inherit;
+            }
+        }
+    }
+
+    // ========================================================================
+    // SHELF BROWSE DISPLAY - COMPONENT: Overlays
+    // ========================================================================
+
+    .help-overlay,
+    .lcc-overlay {
+        border-radius: inherit;
+    }
+}
+
+// Ensure that *all* shelf browse elements are overlaid when loading.
+// (Without this, if a new colorbox is being created in response to a window
+// resize, then item titles and call numbers "peek" through the overlay.)
+#cboxLoadingOverlay {
+    z-index: $z-sb-colorbox-overlay;
+}
+
+#cboxClose {
+    bottom: 0 !important;
+}

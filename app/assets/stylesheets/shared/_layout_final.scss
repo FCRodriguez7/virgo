@@ -1,0 +1,10 @@
+// app/assets/stylesheets/shared/_layout_final.scss
+//
+// Definitions which should come last after all other @import statements.
+
+@import "shared/no_gradients";
+@import "shared/no_js";
+
+// ============================================================================
+// Final overrides (typically for test/development purposes).
+// ============================================================================

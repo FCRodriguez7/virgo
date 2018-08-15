@@ -1,0 +1,37 @@
+RAILS_ENV: search_production
+RACK_ENV:  search_production
+
+# The environment.yml file defines environment variable values under which
+# Virgo will run. It overrides the local web server setting of those variables.
+#
+# The file should contain the environment variable name and its value:
+#
+# For a production Virgo, it should contain:
+#
+#     RAILS_ENV: search_production
+#     RACK_ENV:  search_production
+#
+# For a development and test machines (opacdev, searchtest, etc.), it should
+# contain:
+#
+#     RAILS_ENV: search_development
+#     RACK_ENV:  search_development
+#
+# The file's content is read in boot.rb and the environment variables are set
+# there.  Leading and trailing whitespace is stripped from a value string
+# before it is used.
+#
+# If the environment.yml file is not present, the environment variables will
+# default to whatever the local web server sets.
+#
+# The file you are reading now can be used by doing the following:
+# 1) Enter the environment variable name followed by a colon, then the value to
+#    which to set that variable.  No quotes should be used.
+# 2) Save the change as environment.yml in the config directory of Virgo (same
+#    location as other yml files and this sample_environment.yml file).
+#
+# On your local development machine and the CI server Jenkins there does not
+# need to be nor should there be an environment.yml file. On those machines,
+# the local web server or RubyMine or Jenkins or Passenger will set the
+# environment variables appropriately. The environment.yml file is meant to be
+# used primarily on vbt## machines.

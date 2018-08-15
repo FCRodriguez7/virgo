@@ -1,0 +1,80 @@
+// app/assets/stylesheets/feature/pagination.css.scss
+
+// ============================================================================
+// Kaminari paginator
+// ============================================================================
+
+.pagination {
+
+    @include width-fit-content;
+    @include user-select(none);
+
+    margin-left:  auto;
+    margin-right: auto;
+    padding:      20px;
+    text-align:   center;
+    white-space:  nowrap;
+
+    .disabled { display: none; }
+
+    a,
+    span {
+        display:     inline-block;
+        line-height: 23px;
+    }
+
+    span {
+        float: left;
+    }
+
+    .page {
+
+        border: none;
+
+        &.current {
+            color:      white;
+            background: black;
+            cursor:     default;
+        }
+
+        &.gap { padding: 0; }
+    }
+
+    a {
+        color: $virgo-link-color;
+
+        &,
+        &:link,
+        &:visited,
+        &:focus,
+        &:hover {
+            text-decoration: none !important;
+        }
+
+        &:focus {
+            outline-offset: -1px;
+        }
+
+        &:focus,
+        &:hover {
+            background-color: $virgo-link-hover;
+        }
+    }
+
+    .first, .prev, .next, .last {
+
+        $border-expansion: 4px; // To increase click target area.
+
+        a {
+            margin-left:  -$border-expansion;
+            margin-right: -$border-expansion;
+            border-left:  $border-expansion solid transparent;
+            border-right: $border-expansion solid transparent;
+        }
+    }
+
+    .prev,  .next          { font-weight:  bold; }
+    .first, .prev          { margin-right: 1em; }
+    .next,  .last          { margin-left:  1em; }
+    .page.current, .page a { padding:      0 0.5em; }
+}

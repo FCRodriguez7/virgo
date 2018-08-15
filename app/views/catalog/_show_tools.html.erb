@@ -1,0 +1,81 @@
+<%# app/views/catalog/_show_tools.html.erb -%>
+<%-
+  # Overrides Blacklight app/views/catalog/_show_tools.html.erb
+
+  # The visibility and :target attribute for some of these items are controlled
+  # by processStarCount() in app/assets/javascripts/feature/starred-items
+
+  doc = document ||= @document
+  return unless doc
+
+  id  = doc.doc_id
+  opt = (doc.doc_type == :article) ? { article_id: id } : { id: id }
+  print_opt = params.except(:aside).merge(opt).merge(view: 'print')
+
+  exports = doc.export_formats.keys
+  r = exports.include?(:refworks_marc_txt)
+  e = exports.include?(:endnote)
+  z = exports.include?(:ris)
+
+  folder_controls = {
+    view:          ['View Starred Items', folders_path,                :aside],
+  }
+
+  action_list = {
+    cite:          ['Cite',               citation_catalog_path(opt),  :aside],
+    email:         ['Email',              email_catalog_path(opt),     :aside],
+    sms:           ['Text Message',       sms_catalog_path(opt),       :aside],
+    print:         ['Print',              portal_show_path(print_opt), true],
+    refworks: r && ['Export to RefWorks', refworks_catalog_path(opt),  true],
+    endnote:  e && ['Export to EndNote',  endnote_catalog_path(opt)],
+    zotero:   z && ['Export to Zotero',   ris_catalog_path(opt)],
+  }
+
+  view_debug(__FILE__)
+-%>
+
+<div class="add-star">
+  <%= render 'catalog/folder_control', document: doc, show_label: true %>
+</div>
+
+<div class="action-list-container">
+  <div class="action-list" tabindex="0" role="menu"
+       aria-haspopup="true"
+       aria-expanded="false"
+       aria-labelledby="action-list-title">
+    <div class="list-title" id="action-list-title">
+      Item Actions
+    </div>
+    <div class="list-body hidden">
+
+      <ul class="action-list-menu folder-controls">
+        <%= menu_items(folder_controls) %>
+      </ul>
+
+      <ul class="action-list-menu">
+
+        <%= menu_items(action_list, 'this') %>
+
+        <%- if doc.reservable? -%>
+
+          <%- label = 'Include This Item in Course Reserve' -%>
+          <%- css   = 'course-reserve-this' -%>
+          <%- css  << ' hidden' if starred_document_ids.include?(id) -%>
+          <li class="<%= css -%>" role="menuitem">
+            <%= link_to(label, '', id: 'reserve-this', class: css) %>
+          </li>
+
+          <%- label = 'Place Starred Items on Course Reserve' -%>
+          <%- css   = 'course-reserve-starred' -%>
+          <%- css  << ' hidden' if folder_empty? -%>
+          <%- path  = reserves_email_path(id: id, aside: true) -%>
+          <li class="<%= css -%>" role="menuitem">
+            <%= out_link(label, path, class: css) %>
+          </li>
+
+        <%- end -%>
+
+      </ul>
+    </div>
+  </div>
+</div>

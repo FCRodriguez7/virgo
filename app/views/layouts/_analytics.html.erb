@@ -1,0 +1,15 @@
+<%# app/views/layouts/_analytics.html.erb -%>
+<%-
+  # For the actual functionality of supporting Piwik on the page:
+  # @see app/assets/javascripts/feature/analytics
+
+  return unless UVA::Piwik.site
+
+  no_script_image = "//#{UVA::Piwik.host}/piwik.php?idsite=#{UVA::Piwik.site}"
+
+  view_debug(__FILE__)
+-%>
+
+<noscript>
+  <p><img src="<%= no_script_image -%>" style="border:0;" alt="" /></p>
+</noscript>

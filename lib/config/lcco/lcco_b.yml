@@ -1,0 +1,2752 @@
+# lib/config/lcco_b.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from the Word document of the same base name.
+
+class:    B
+name:     'PHILOSOPHY.  PSYCHOLOGY.  RELIGION'
+sections:
+  - subclass:  B
+    name:     'Philosophy (General)'
+    sections:
+      - name:    'Philosophy (General)'
+        range:   B1-5802
+        start:   B1
+        end:     B5802
+        sections:
+          - name:    'General works'
+            range:   B69-99
+            start:   B69
+            end:     B99
+          - name:    'By period'
+            note:    'Including individual philosophers and schools of philosophy'
+            range:   B108-5802
+            start:   B108
+            end:     B5802
+            sections:
+              - name:    'Ancient'
+                range:   B108-708
+                start:   B108
+                end:     B708
+              - name:    'Medieval'
+                range:   B720-765
+                start:   B720
+                end:     B765
+              - name:    'Renaissance'
+                range:   B770-785
+                start:   B770
+                end:     B785
+              - name:    'Modern'
+                range:   B790-5802
+                start:   B790
+                end:     B5802
+                sections:
+                  - name:    'Special topics and schools of philosophy'
+                    range:   B808-849
+                    start:   B808
+                    end:     B849
+                  - name:    'By region or country'
+                    range:   B850-5739
+                    start:   B850
+                    end:     B5739
+                  - name:    'By religion'
+                    range:   B5800-5802
+                    start:   B5800
+                    end:     B5802
+  - subclass:  BC
+    name:     'Logic'
+    sections:
+      - name:    'Logic'
+        range:   BC1-199
+        start:   BC1
+        end:     BC199
+        sections:
+          - name:    'History'
+            range:   BC11-39
+            start:   BC11
+            end:     BC39
+            sections:
+              - name:    'By period'
+                range:   BC25-39
+                start:   BC25
+                end:     BC39
+          - name:    'General works'
+            range:   BC60-99
+            start:   BC60
+            end:     BC99
+          - name:    'Special topics'
+            range:   BC171-199
+            start:   BC171
+            end:     BC199
+  - subclass:  BD
+    name:     'Speculative philosophy'
+    sections:
+      - name:    'Speculative philosophy'
+        range:   BD10-701
+        start:   BD10
+        end:     BD701
+        sections:
+          - name:    'General philosophical works'
+            range:   BD10-41
+            start:   BD10
+            end:     BD41
+          - name:    'Metaphysics'
+            range:   BD95-131
+            start:   BD95
+            end:     BD131
+          - name:    'Epistemology.  Theory of knowledge'
+            range:   BD143-237
+            start:   BD143
+            end:     BD237
+          - name:    'Methodology'
+            range:   BD240-260
+            start:   BD240
+            end:     BD260
+          - name:    'Ontology'
+            note:    'Including being, the soul, life, death'
+            range:   BD300-450
+            start:   BD300
+            end:     BD450
+          - name:    'Cosmology'
+            note:    'Including teleology, space and time, structure of matter, plurality of worlds'
+            range:   BD493-701
+            start:   BD493
+            end:     BD701
+  - subclass:  BF
+    name:     'Psychology.  Parapsychology.  Occult sciences'
+    sections:
+      - name:    'Psychology'
+        range:   BF1-990
+        start:   BF1
+        end:     BF990
+        sections:
+          - name:    'Philosophy.  Relation to other topics'
+            range:   BF38-64
+            start:   BF38
+            end:     BF64
+          - name:    'Psychoanalysis'
+            range:   BF173-175.5
+            start:   BF173
+            end:     BF175.5
+          - name:    'Psychological tests and testing'
+            range:   BF176-176.5
+            start:   BF176
+            end:     BF176.5
+          - name:    'Experimental psychology'
+            range:   BF180-198.7
+            start:   BF180
+            end:     BF198.7
+          - name:    'Gestalt psychology'
+            range:   BF203
+            start:   BF203
+            end:     BF203
+          - name:    'Psychotropic drugs and other substances'
+            range:   BF207-209
+            start:   BF207
+            end:     BF209
+          - name:    'Sensation.  Aesthesiology'
+            range:   BF231-299
+            start:   BF231
+            end:     BF299
+          - name:    'Consciousness.  Cognition'
+            note:    'Including learning, attention, comprehension, memory, imagination, genius, intelligence, thought and thinking, psycholinguistics, mental fatigue'
+            range:   BF309-499
+            start:   BF309
+            end:     BF499
+          - name:    'Motivation'
+            range:   BF501-505
+            start:   BF501
+            end:     BF505
+          - name:    'Affection.  Feeling.  Emotion'
+            range:   BF511-593
+            start:   BF511
+            end:     BF593
+          - name:    'Will.  Volition.  Choice.  Control'
+            range:   BF608-635
+            start:   BF608
+            end:     BF635
+          - name:    'Applied psychology'
+            range:   BF636-637
+            start:   BF636
+            end:     BF637
+          - name:    'New Thought.  Menticulture, etc.'
+            range:   BF638-648
+            start:   BF638
+            end:     BF648
+          - name:    'Comparative psychology.  Animal and human psychology'
+            range:   BF660-685
+            start:   BF660
+            end:     BF685
+          - name:    'Psychology of sex.  Sexual behavior'
+            range:   BF692-692.5
+            start:   BF692
+            end:     BF692.5
+          - name:    'Differential psychology.  Individuality.  Self'
+            range:   BF697-697.5
+            start:   BF697
+            end:     BF697.5
+          - name:    'Personality'
+            range:   BF698-698.9
+            start:   BF698
+            end:     BF698.9
+          - name:    'Genetic psychology'
+            range:   BF699-711
+            start:   BF699
+            end:     BF711
+          - name:    'Developmental psychology'
+            note:    'Including infant psychology, child psychology, adolescence, adulthood'
+            range:   BF712-724.85
+            start:   BF712
+            end:     BF724.85
+          - name:    'Class psychology'
+            range:   BF725-727
+            start:   BF725
+            end:     BF727
+          - name:    'Temperament.  Character'
+            range:   BF795-839
+            start:   BF795
+            end:     BF839
+          - name:    'Physiognomy.  Phrenology'
+            range:   BF839.8-885
+            start:   BF839.8
+            end:     BF885
+          - name:    'Graphology.  Study of handwriting'
+            range:   BF889-905
+            start:   BF889
+            end:     BF905
+          - name:    'The hand.  Palmistry'
+            range:   BF908-940
+            start:   BF908
+            end:     BF940
+      - name:    'Parapsychology'
+        range:   BF1001-1389
+        start:   BF1001
+        end:     BF1389
+        sections:
+          - name:    'Psychic research.  Psychology of the conscious'
+            range:   BF1001-1045
+            start:   BF1001
+            end:     BF1045
+          - name:    'Hallucinations.  Sleep.  Dreaming.  Visions'
+            range:   BF1048-1108
+            start:   BF1048
+            end:     BF1108
+          - name:    'Hypnotism.  Suggestion.  Mesmerism.  Subliminal projection'
+            range:   BF1111-1156
+            start:   BF1111
+            end:     BF1156
+          - name:    'Telepathy.  Mind reading.  Thought transference'
+            range:   BF1161-1171
+            start:   BF1161
+            end:     BF1171
+          - name:    'Spiritualism'
+            note:    'Including mediumship, spirit messages, clairvoyance'
+            range:   BF1228-1389
+            start:   BF1228
+            end:     BF1389
+      - name:    'Occult sciences'
+        range:   BF1404-2055
+        start:   BF1404
+        end:     BF2055
+        sections:
+          - name:    'Ghosts.  Apparitions.  Hauntings'
+            range:   BF1444-1486
+            start:   BF1444
+            end:     BF1486
+          - name:    'Demonology.  Satanism.  Possession'
+            range:   BF1501-1562
+            start:   BF1501
+            end:     BF1562
+          - name:    'Witchcraft'
+            range:   BF1562.5-1584
+            start:   BF1562.5
+            end:     BF1584
+          - name:    'Magic.  Hermetics.  Necromancy'
+            range:   BF1585-1623
+            start:   BF1585
+            end:     BF1623
+          - name:    'Astrology'
+            range:   BF1651-1729
+            start:   BF1651
+            end:     BF1729
+          - name:    'Oracles.  Sibyls.  Divinations'
+            range:   BF1745-1779
+            start:   BF1745
+            end:     BF1779
+          - name:    'Seers.  Prophets.  Prophecies'
+            range:   BF1783-1815
+            start:   BF1783
+            end:     BF1815
+          - name:    'Fortune-telling'
+            range:   BF1845-1891
+            start:   BF1845
+            end:     BF1891
+          - name:    'Human-alien encounters.  Contact between humans and extraterrestrials'
+            range:   BF2050-2055
+            start:   BF2050
+            end:     BF2055
+  - subclass:  BH
+    name:     'Aesthetics'
+    sections:
+      - name:    'Aesthetics'
+        range:   BH1-301
+        start:   BH1
+        end:     BH301
+        sections:
+          - name:    'History'
+            range:   BH81-208
+            start:   BH81
+            end:     BH208
+          - name:    'Special topics'
+            range:   BH301
+            start:   BH301
+            end:     BH301
+  - subclass:  BJ
+    name:     'Ethics.  Social usages.  Etiquette'
+    sections:
+      - name:    'Ethics'
+        range:   BJ1-1725
+        start:   BJ1
+        end:     BJ1725
+        sections:
+          - name:    'History and general works'
+            note:    'Including individual ethical philosophers'
+            range:   BJ71-1185
+            start:   BJ71
+            end:     BJ1185
+          - name:    'Religious ethics'
+            range:   BJ1188-1295
+            start:   BJ1188
+            end:     BJ1295
+          - name:    'Evolutionary and genetic ethics'
+            range:   BJ1298-1335
+            start:   BJ1298
+            end:     BJ1335
+          - name:    'Positivist ethics'
+            range:   BJ1365-1385
+            start:   BJ1365
+            end:     BJ1385
+          - name:    'Socialist ethics'
+            range:   BJ1388
+            start:   BJ1388
+            end:     BJ1388
+          - name:    'Communist ethics'
+            range:   BJ1390-1390.5
+            start:   BJ1390
+            end:     BJ1390.5
+          - name:    'Totalitarian ethics'
+            range:   BJ1392
+            start:   BJ1392
+            end:     BJ1392
+          - name:    'Feminist ethics'
+            range:   BJ1395
+            start:   BJ1395
+            end:     BJ1395
+          - name:    'Individual ethics.  Character.  Virtue'
+            note:    'Including practical and applied ethics, conduct of life, vices, success, ethics for children'
+            range:   BJ1518-1697
+            start:   BJ1518
+            end:     BJ1697
+          - name:    'Ethics of social groups, classes, etc.  Professional ethics'
+            range:   BJ1725
+            start:   BJ1725
+            end:     BJ1725
+      - name:    'Social usages.  Etiquette'
+        range:   BJ1801-2195
+        start:   BJ1801
+        end:     BJ2195
+        sections:
+          - name:    'Etiquette of entertaining'
+            range:   BJ2021-2078
+            start:   BJ2021
+            end:     BJ2078
+          - name:    'Etiquette of travel'
+            range:   BJ2139-2156
+            start:   BJ2139
+            end:     BJ2156
+          - name:    'Telephone etiquette'
+            range:   BJ2195
+            start:   BJ2195
+            end:     BJ2195
+  - subclass:  BL
+    name:     'Religions.  Mythology.  Rationalism'
+    sections:
+      - name:    'Religions.  Mythology.  Rationalism'
+        range:   BL1-2790
+        start:   BL1
+        end:     BL2790
+        sections:
+          - name:    'Religion (General)'
+            range:   BL1-50
+            start:   BL1
+            end:     BL50
+          - name:    'Philosophy of religion.  Psychology of religion.  Religion in relation to other subjects'
+            range:   BL51-65
+            start:   BL51
+            end:     BL65
+          - name:    'Sacred books (General)'
+            range:   BL70-71
+            start:   BL70
+            end:     BL71
+          - name:    'Biography'
+            range:   BL71.5-73
+            start:   BL71.5
+            end:     BL73
+          - name:    'Religions of the world'
+            range:   BL74-99
+            start:   BL74
+            end:     BL99
+          - name:    'Natural theology'
+            range:   BL175-265
+            start:   BL175
+            end:     BL265
+            sections:
+              - name:    'General'
+                range:   BL175-190
+                start:   BL175
+                end:     BL190
+              - name:    'Theism'
+                range:   BL200
+                start:   BL200
+                end:     BL200
+              - name:    'Nature and attributes of Deity'
+                range:   BL205-216
+                start:   BL205
+                end:     BL216
+              - name:    'Polytheism'
+                range:   BL217
+                start:   BL217
+                end:     BL217
+              - name:    'Dualism'
+                range:   BL218
+                start:   BL218
+                end:     BL218
+              - name:    'Pantheism'
+                range:   BL220
+                start:   BL220
+                end:     BL220
+              - name:    'Monotheism'
+                range:   BL221
+                start:   BL221
+                end:     BL221
+              - name:    'Creation.  Theory of the earth'
+                range:   BL224-227
+                start:   BL224
+                end:     BL227
+              - name:    'Religion and science'
+                range:   BL239-265
+                start:   BL239
+                end:     BL265
+          - name:    'Unity and plurality'
+            range:   BL270
+            start:   BL270
+            end:     BL270
+          - name:    'The soul'
+            range:   BL290
+            start:   BL290
+            end:     BL290
+          - name:    'The myth.  Comparative mythology'
+            range:   BL300-325
+            start:   BL300
+            end:     BL325
+          - name:    'Classification of religions'
+            range:   BL350-385
+            start:   BL350
+            end:     BL385
+          - name:    'Religions in relation to one another'
+            range:   BL410
+            start:   BL410
+            end:     BL410
+          - name:    'Religious doctrines (General)'
+            range:   BL425-490
+            start:   BL425
+            end:     BL490
+            sections:
+              - name:    'Origins of religion'
+                range:   BL430
+                start:   BL430
+                end:     BL430
+              - name:    'Nature worship'
+                range:   BL435-457
+                start:   BL435
+                end:     BL457
+              - name:    'Women in comparative religion'
+                range:   BL458
+                start:   BL458
+                end:     BL458
+              - name:    'Sex worship.  Phallicism'
+                range:   BL460
+                start:   BL460
+                end:     BL460
+              - name:    'Worship of human beings'
+                range:   BL465-470
+                start:   BL465
+                end:     BL470
+              - name:    'Other'
+                range:   BL473-490
+                start:   BL473
+                end:     BL490
+          - name:    'Eschatology'
+            range:   BL500-547
+            start:   BL500
+            end:     BL547
+          - name:    'Worship.  Cultus'
+            range:   BL550-619
+            start:   BL550
+            end:     BL619
+          - name:    'Religious life'
+            range:   BL624-629.5
+            start:   BL624
+            end:     BL629.5
+          - name:    'Religious organization'
+            range:   BL630-(632.5)
+            start:   BL630
+            end:     BL632.5
+          - name:    'History and principles of religions'
+            range:   BL660-2680
+            start:   BL660
+            end:     BL2680
+            sections:
+              - name:    'Indo-European.  Aryan'
+                range:   BL660
+                start:   BL660
+                end:     BL660
+              - name:    'Ural-Altaic'
+                range:   BL685
+                start:   BL685
+                end:     BL685
+              - name:    'Mediterranean region'
+                range:   BL687
+                start:   BL687
+                end:     BL687
+              - name:    'European.  Occidental'
+                range:   BL689-980
+                start:   BL689
+                end:     BL980
+                sections:
+                  - name:    'Classical (Etruscan, Greek, Roman)'
+                    range:   BL700-820
+                    start:   BL700
+                    end:     BL820
+                  - name:    'Germanic and Norse'
+                    range:   BL830-875
+                    start:   BL830
+                    end:     BL875
+                  - name:    'Other European'
+                    range:   BL900-980
+                    start:   BL900
+                    end:     BL980
+              - name:    'Asian.  Oriental'
+                range:   BL1000-2370
+                start:   BL1000
+                end:     BL2370
+                sections:
+                  - name:    'General'
+                    range:   BL1000-1035
+                    start:   BL1000
+                    end:     BL1035
+                  - name:    'Northern and Central Asia'
+                    range:   BL1050
+                    start:   BL1050
+                    end:     BL1050
+                  - name:    'Southern and Eastern Asia'
+                    range:   BL1055
+                    start:   BL1055
+                    end:     BL1055
+                  - name:    'Southwestern Asia.  Asia Minor.  Levant'
+                    range:   BL1060
+                    start:   BL1060
+                    end:     BL1060
+                  - name:    'Hinduism'
+                    range:   BL1100-1295
+                    start:   BL1100
+                    end:     BL1295
+                    sections:
+                      - name:    'General'
+                        range:   BL1100-1107.5
+                        start:   BL1100
+                        end:     BL1107.5
+                      - name:    'Religious education'
+                        range:   BL1108.2-1108.7
+                        start:   BL1108.2
+                        end:     BL1108.7
+                      - name:    'Antiquities.  Archaeology.  Inscriptions'
+                        range:   BL1109.2-1109.7
+                        start:   BL1109.2
+                        end:     BL1109.7
+                      - name:    'Sacred books.  Sources'
+                        range:   BL1111-1143.2
+                        start:   BL1111
+                        end:     BL1143.2
+                        sections:
+                          - name:    'Vedic texts'
+                            range:   BL1112.2-1137.5
+                            start:   BL1112.2
+                            end:     BL1137.5
+                          - name:    'Purānas'
+                            sort_as: 'Puranas'
+                            range:   BL1140.2-1140.4
+                            start:   BL1140.2
+                            end:     BL1140.4
+                          - name:    'Tantric texts'
+                            range:   BL1141.2-1142.6
+                            start:   BL1141.2
+                            end:     BL1142.6
+                      - name:    'Hindu literature'
+                        range:   BL1145-1146
+                        start:   BL1145
+                        end:     BL1146
+                      - name:    'By region or country'
+                        range:   BL1153.7-1168
+                        start:   BL1153.7
+                        end:     BL1168
+                      - name:    'Doctrines.  Theology'
+                        range:   BL1212.32-1215
+                        start:   BL1212.32
+                        end:     BL1215
+                      - name:    'Hindu pantheon.  Deities'
+                        range:   BL1216-1225
+                        start:   BL1216
+                        end:     BL1225
+                      - name:    'Religious life'
+                        range:   BL1225.2-1243.58
+                        start:   BL1225.2
+                        end:     BL1243.58
+                      - name:    'Monasteries.  Temples, etc.'
+                        range:   BL1243.72-1243.78
+                        start:   BL1243.72
+                        end:     BL1243.78
+                      - name:    'Modifications.  Sects'
+                        range:   BL1271.2-1295
+                        start:   BL1271.2
+                        end:     BL1295
+                        sections:
+                          - name:    'Vaishnavism'
+                            range:   BL1284.5-1289.592
+                            start:   BL1284.5
+                            end:     BL1289.592
+                  - name:    'Jainism'
+                    range:   BL1300-1380
+                    start:   BL1300
+                    end:     BL1380
+                    sections:
+                      - name:    'Sacred books.  Sources'
+                        range:   BL1310-1314.2
+                        start:   BL1310
+                        end:     BL1314.2
+                      - name:    'Jain literature'
+                        range:   BL1315-1317
+                        start:   BL1315
+                        end:     BL1317
+                      - name:    'Jaina pantheon.  Deities'
+                        range:   BL1375.3-1375.7
+                        start:   BL1375.3
+                        end:     BL1375.7
+                      - name:    'Forms of worship'
+                        range:   BL1376-1378.85
+                        start:   BL1376
+                        end:     BL1378.85
+                      - name:    'Modifications, etc.'
+                        range:   BL1379-1380
+                        start:   BL1379
+                        end:     BL1380
+                  - name:    'Zoroastrianism (Mazdeism).  Parseeism'
+                    range:   BL1500-1590
+                    start:   BL1500
+                    end:     BL1590
+                  - name:    'Yezidis'
+                    range:   BL1595
+                    start:   BL1595
+                    end:     BL1595
+                  - name:    'Semitic religions'
+                    range:   BL1600-1695
+                    start:   BL1600
+                    end:     BL1695
+                    sections:
+                      - name:    'General'
+                        range:   BL1600-1605
+                        start:   BL1600
+                        end:     BL1605
+                      - name:    'Aramean'
+                        range:   BL1610
+                        start:   BL1610
+                        end:     BL1610
+                      - name:    'Sumerian'
+                        range:   BL1615-1616
+                        start:   BL1615
+                        end:     BL1616
+                      - name:    'Assyro-Babylonian'
+                        range:   BL1620-1625
+                        start:   BL1620
+                        end:     BL1625
+                      - name:    'Chaldean'
+                        range:   BL1630
+                        start:   BL1630
+                        end:     BL1630
+                      - name:    'Harranian.  Pseudo-Sabian'
+                        range:   BL1635
+                        start:   BL1635
+                        end:     BL1635
+                      - name:    'Syrian.  Palestinian.  Samaritan'
+                        range:   BL1640-1645
+                        start:   BL1640
+                        end:     BL1645
+                      - name:    'Hebrew'
+                        note:    'For Judaism, see subclass BM'
+                        range:   BL1650
+                        start:   BL1650
+                        end:     BL1650
+                      - name:    'Phoenician.  Carthaginian, etc.'
+                        range:   BL1660-1665
+                        start:   BL1660
+                        end:     BL1665
+                      - name:    'Canaanite'
+                        range:   BL1670-1672
+                        start:   BL1670
+                        end:     BL1672
+                      - name:    'Moabite.  Philistine'
+                        range:   BL1675
+                        start:   BL1675
+                        end:     BL1675
+                      - name:    'Arabian (except Islam)'
+                        range:   BL1680-1685
+                        start:   BL1680
+                        end:     BL1685
+                      - name:    'Druses'
+                        range:   BL1695
+                        start:   BL1695
+                        end:     BL1695
+                  - name:    'Ethiopian'
+                    range:   BL1710
+                    start:   BL1710
+                    end:     BL1710
+                  - name:    'By region or country'
+                    range:   BL1750-2350
+                    start:   BL1750
+                    end:     BL2350
+                    sections:
+                      - name:    'China'
+                        range:   BL1790-1975
+                        start:   BL1790
+                        end:     BL1975
+                        sections:
+                          - name:    'Confucianism'
+                            range:   BL1830-1883
+                            start:   BL1830
+                            end:     BL1883
+                          - name:    'Taoism'
+                            range:   BL1899-1942.85
+                            start:   BL1899
+                            end:     BL1942.85
+                      - name:    'India'
+                        range:   BL2000-2032
+                        start:   BL2000
+                        end:     BL2032
+                        sections:
+                          - name:    'Sikhism'
+                            range:   BL2017-2018.7
+                            start:   BL2017
+                            end:     BL2018.7
+                      - name:    'Japan'
+                        range:   BL2195-2228
+                        start:   BL2195
+                        end:     BL2228
+                        sections:
+                          - name:    'Shinto'
+                            range:   BL2216-2227.8
+                            start:   BL2216
+                            end:     BL2227.8
+                      - name:    'Korea'
+                        range:   BL2230-2240
+                        start:   BL2230
+                        end:     BL2240
+              - name:    'African'
+                range:   BL2390-2490
+                start:   BL2390
+                end:     BL2490
+                sections:
+                  - name:    'Egyptian'
+                    range:   BL2420-2460
+                    start:   BL2420
+                    end:     BL2460
+              - name:    'American'
+                note:    'For American Indians, see classes E-F'
+                range:   BL2500-2592
+                start:   BL2500
+                end:     BL2592
+              - name:    'Pacific Ocean islands.  Oceania'
+                range:   BL2600-2630
+                start:   BL2600
+                end:     BL2630
+              - name:    'Arctic regions'
+                range:   BL2670
+                start:   BL2670
+                end:     BL2670
+          - name:    'Rationalism'
+            range:   BL2700-2790
+            start:   BL2700
+            end:     BL2790
+  - subclass:  BM
+    name:     'Judaism'
+    sections:
+      - name:    'Judaism'
+        range:   BM1-990
+        start:   BM1
+        end:     BM990
+        sections:
+          - name:    'General'
+            range:   BM1-449
+            start:   BM1
+            end:     BM449
+            sections:
+              - name:    'Study and teaching'
+                range:   BM70-135
+                start:   BM70
+                end:     BM135
+              - name:    'History'
+                range:   BM150-449
+                start:   BM150
+                end:     BM449
+                sections:
+                  - name:    'By region or country'
+                    range:   BM201-449
+                    start:   BM201
+                    end:     BM449
+          - name:    'Pre-Talmudic Jewish literature (non-Biblical)'
+            range:   BM480-488.8
+            start:   BM480
+            end:     BM488.8
+          - name:    'Sources of Jewish religion.  Rabbinical literature'
+            range:   BM495-532
+            start:   BM495
+            end:     BM532
+            sections:
+              - name:    'Talmudic literature'
+                range:   BM497-509
+                start:   BM497
+                end:     BM509
+                sections:
+                  - name:    'Mishnah'
+                    range:   BM497-497.8
+                    start:   BM497
+                    end:     BM497.8
+                  - name:    'Palestinian Talmud'
+                    range:   BM498-498.8
+                    start:   BM498
+                    end:     BM498.8
+                  - name:    'Babylonian Talmud'
+                    range:   BM499-504.7
+                    start:   BM499
+                    end:     BM504.7
+                  - name:    'Baraita'
+                    range:   BM507-507.5
+                    start:   BM507
+                    end:     BM507.5
+                  - name:    'Tosefta'
+                    range:   BM508-508.5
+                    start:   BM508
+                    end:     BM508.5
+              - name:    'Midrash'
+                range:   BM510-518
+                start:   BM510
+                end:     BM518
+              - name:    'Halacha'
+                range:   BM520-523.7
+                start:   BM520
+                end:     BM523.7
+              - name:    'Cabala'
+                range:   BM525-526
+                start:   BM525
+                end:     BM526
+              - name:    'Jewish tradition'
+                range:   BM529
+                start:   BM529
+                end:     BM529
+          - name:    'Relation of Judaism to special subject fields'
+            range:   BM534-538
+            start:   BM534
+            end:     BM538
+            sections:
+              - name:    'Religions'
+                range:   BM534-536
+                start:   BM534
+                end:     BM536
+          - name:    'Principles of Judaism (General)'
+            range:   BM545-582
+            start:   BM545
+            end:     BM582
+          - name:    'Controversial works against the Jews'
+            range:   BM585-585.4
+            start:   BM585
+            end:     BM585.4
+          - name:    'Jewish works against Christianity and Islam'
+            range:   BM590-591
+            start:   BM590
+            end:     BM591
+          - name:    'Dogmatic Judaism'
+            range:   BM600-645
+            start:   BM600
+            end:     BM645
+          - name:    'Heresy, heresies'
+            range:   BM646
+            start:   BM646
+            end:     BM646
+          - name:    'Apologetics'
+            range:   BM648
+            start:   BM648
+            end:     BM648
+          - name:    'Practical Judaism'
+            range:   BM650-747
+            start:   BM650
+            end:     BM747
+            sections:
+              - name:    'Priests, rabbis, etc.'
+                range:   BM651-652.7
+                start:   BM651
+                end:     BM652.7
+              - name:    'Congregations.  Synagogues'
+                range:   BM653-653.7
+                start:   BM653
+                end:     BM653.7
+              - name:    'The tabernacle.  The temple'
+                range:   BM654-655.6
+                start:   BM654
+                end:     BM655.6
+              - name:    'Forms of worship'
+                range:   BM656-657
+                start:   BM656
+                end:     BM657
+              - name:    'Liturgy and ritual'
+                range:   BM660-679
+                start:   BM660
+                end:     BM679
+              - name:    'Festivals and fasts'
+                range:   BM690-695
+                start:   BM690
+                end:     BM695
+              - name:    'Rites and customs'
+                range:   BM700-720
+                start:   BM700
+                end:     BM720
+              - name:    'Jewish way of life.  Spiritual life.  Mysticism.  Personal religion.  Moral theology'
+                range:   BM723-729
+                start:   BM723
+                end:     BM729
+              - name:    'Preaching.  Homiletics'
+                range:   BM730-747
+                start:   BM730
+                end:     BM747
+          - name:    'Biography'
+            range:   BM750-755
+            start:   BM750
+            end:     BM755
+          - name:    'Samaritans'
+            range:   BM900-990
+            start:   BM900
+            end:     BM990
+  - subclass:  BP
+    name:     'Islam.  Bahai Faith.  Theosophy, etc.'
+    sections:
+      - name:    'Islam.  Bahai Faith.  Theosophy, etc.'
+        range:   BP1-610
+        start:   BP1
+        end:     BP610
+        sections:
+          - name:    'Islam'
+            range:   BP1-253
+            start:   BP1
+            end:     BP253
+            sections:
+              - name:    'General'
+                range:   BP1-68
+                start:   BP1
+                end:     BP68
+                sections:
+                  - name:    'Study and teaching'
+                    range:   BP42-48
+                    start:   BP42
+                    end:     BP48
+                  - name:    'History'
+                    range:   BP50-68
+                    start:   BP50
+                    end:     BP68
+              - name:    'Biography'
+                range:   BP70-80
+                start:   BP70
+                end:     BP80
+                sections:
+                  - name:    'Muhammad, Prophet, d. 632'
+                    range:   BP75-77.75
+                    start:   BP75
+                    end:     BP77.75
+              - name:    'Islamic literature'
+                range:   BP87-89
+                start:   BP87
+                end:     BP89
+              - name:    'Sacred books'
+                range:   BP100-(157)
+                start:   BP100
+                end:     BP157
+                sections:
+                  - name:    'Koran'
+                    range:   BP100-134
+                    start:   BP100
+                    end:     BP134
+                    sections:
+                      - name:    'Special parts and chapters'
+                        range:   BP128.15-129.83
+                        start:   BP128.15
+                        end:     BP129.83
+                      - name:    'Works about the Koran'
+                        range:   BP130-134
+                        start:   BP130
+                        end:     BP134
+                  - name:    'Hadith literature.  Traditions.  Sunna'
+                    range:   BP135-136.9
+                    start:   BP135
+                    end:     BP136.9
+                  - name:    'Koranic and other Islamic legends'
+                    range:   BP137-137.5
+                    start:   BP137
+                    end:     BP137.5
+              - name:    'General works on Islam'
+                range:   BP160-165
+                start:   BP160
+                end:     BP165
+              - name:    'Dogma (''Aqā''id)'
+                sort_as: 'Dogma (''Aqa''id)'
+                range:   BP165.5
+                start:   BP165.5
+                end:     BP165.5
+              - name:    'Theology (Kalām). كلام'
+                sort_as: 'Theology (Kalam). ????'
+                range:   BP166-166.94
+                start:   BP166
+                end:     BP166.94
+              - name:    'Heresy, heresies, heretics'
+                range:   BP167.5
+                start:   BP167.5
+                end:     BP167.5
+              - name:    'Apostasy from Islam'
+                range:   BP168
+                start:   BP168
+                end:     BP168
+              - name:    'Works against Islam and the Koran'
+                range:   BP169
+                start:   BP169
+                end:     BP169
+              - name:    'Works in defense of Islam.  Islamic apologetics'
+                range:   BP170
+                start:   BP170
+                end:     BP170
+              - name:    'Benevolent work.  Social work.  Welfare work, etc.'
+                range:   BP170.2
+                start:   BP170.2
+                end:     BP170.2
+              - name:    'Missionary work of Islam'
+                range:   BP170.3-170.5
+                start:   BP170.3
+                end:     BP170.5
+              - name:    'Relation of Islam to other religions'
+                range:   BP171-173
+                start:   BP171
+                end:     BP173
+              - name:    'Islamic sociology'
+                range:   BP173.25-173.45
+                start:   BP173.25
+                end:     BP173.45
+              - name:    'The practice of Islam'
+                range:   BP174-190
+                start:   BP174
+                end:     BP190
+                sections:
+                  - name:    'The five duties of a Moslem.  Pillars of Islam'
+                    range:   BP176-181
+                    start:   BP176
+                    end:     BP181
+                  - name:    'Jihad (Holy War)'
+                    range:   BP182
+                    start:   BP182
+                    end:     BP182
+                  - name:    'Religious ceremonies, rites, etc.'
+                    range:   BP184-184.9
+                    start:   BP184
+                    end:     BP184.9
+                  - name:    'Special days and seasons, fasts, feasts, festivals, etc.  Relics'
+                    range:   BP186-186.97
+                    start:   BP186
+                    end:     BP186.97
+                  - name:    'Shrines, sacred places, etc.'
+                    range:   BP187-187.9
+                    start:   BP187
+                    end:     BP187.9
+                  - name:    'Islamic religious life'
+                    range:   BP188-190
+                    start:   BP188
+                    end:     BP190
+                    sections:
+                      - name:    'Devotional literature'
+                        range:   BP188.2-188.3
+                        start:   BP188.2
+                        end:     BP188.3
+                      - name:    'Sufism.  Mysticism.  Dervishes'
+                        range:   BP188.45-189.65
+                        start:   BP188.45
+                        end:     BP189.65
+                      - name:    'Monasticism'
+                        range:   BP189.68-189.7
+                        start:   BP189.68
+                        end:     BP189.7
+              - name:    'Branches, sects, etc.'
+                range:   BP191-253
+                start:   BP191
+                end:     BP253
+                sections:
+                  - name:    'Shiites'
+                    range:   BP192-194.9
+                    start:   BP192
+                    end:     BP194.9
+                  - name:    'Black Muslims'
+                    range:   BP221-223
+                    start:   BP221
+                    end:     BP223
+                  - name:    'Moorish Science Temple of America'
+                    range:   BP232
+                    start:   BP232
+                    end:     BP232
+                  - name:    'Nurculuk'
+                    range:   BP251-253
+                    start:   BP251
+                    end:     BP253
+          - name:    'Bahai Faith'
+            range:   BP300-395
+            start:   BP300
+            end:     BP395
+          - name:    'Theosophy'
+            range:   BP500-585
+            start:   BP500
+            end:     BP585
+          - name:    'Anthroposophy'
+            range:   BP595-597
+            start:   BP595
+            end:     BP597
+          - name:    'Other beliefs and movements'
+            range:   BP600-610
+            start:   BP600
+            end:     BP610
+  - subclass:  BQ
+    name:     'Buddhism'
+    sections:
+      - name:    'Buddhism'
+        range:   BQ1-9800
+        start:   BQ1
+        end:     BQ9800
+        sections:
+          - name:    'Periodicals.  Yearbooks (General)'
+            range:   BQ1-10
+            start:   BQ1
+            end:     BQ10
+          - name:    'Societies, councils, associations, clubs, etc.'
+            range:   BQ12-93
+            start:   BQ12
+            end:     BQ93
+          - name:    'Financial institutions.  Trusts'
+            range:   BQ96-99
+            start:   BQ96
+            end:     BQ99
+          - name:    'Congresses.  Conferences (General)'
+            range:   BQ100-102
+            start:   BQ100
+            end:     BQ102
+          - name:    'Directories (General)'
+            range:   BQ104-105
+            start:   BQ104
+            end:     BQ105
+          - name:    'Museums.  Exhibitions'
+            range:   BQ107-109
+            start:   BQ107
+            end:     BQ109
+          - name:    'General collections.  Collected works'
+            range:   BQ115-126
+            start:   BQ115
+            end:     BQ126
+          - name:    'Encyclopedias (General)'
+            range:   BQ128
+            start:   BQ128
+            end:     BQ128
+          - name:    'Dictionaries (General)'
+            range:   BQ130
+            start:   BQ130
+            end:     BQ130
+          - name:    'Terminology'
+            range:   BQ133
+            start:   BQ133
+            end:     BQ133
+          - name:    'Questions and answers.  Maxims (General)'
+            range:   BQ135
+            start:   BQ135
+            end:     BQ135
+          - name:    'Religious education (General)'
+            range:   BQ141-209
+            start:   BQ141
+            end:     BQ209
+          - name:    'Research'
+            range:   BQ210-219
+            start:   BQ210
+            end:     BQ219
+          - name:    'Antiquities.  Archaeology'
+            range:   BQ221-249
+            start:   BQ221
+            end:     BQ249
+            sections:
+              - name:    'Literary discoveries'
+                range:   BQ240-244
+                start:   BQ240
+                end:     BQ244
+              - name:    'Inscriptions, etc.'
+                range:   BQ246-249
+                start:   BQ246
+                end:     BQ249
+          - name:    'History'
+            range:   BQ251-799
+            start:   BQ251
+            end:     BQ799
+          - name:    'Persecutions'
+            range:   BQ800-829
+            start:   BQ800
+            end:     BQ829
+          - name:    'Biography'
+            range:   BQ840-999
+            start:   BQ840
+            end:     BQ999
+            sections:
+              - name:    'Collective'
+                range:   BQ840-858
+                start:   BQ840
+                end:     BQ858
+              - name:    'Individual'
+                range:   BQ860-999
+                start:   BQ860
+                end:     BQ999
+                sections:
+                  - name:    'Gautama Buddha'
+                    range:   BQ860-939
+                    start:   BQ860
+                    end:     BQ939
+                  - name:    'Other'
+                    range:   BQ940-999
+                    start:   BQ940
+                    end:     BQ999
+          - name:    'Buddhist literature'
+            range:   BQ1001-1045
+            start:   BQ1001
+            end:     BQ1045
+          - name:    'Tripitaka (Canonical literature)'
+            range:   BQ1100-3340
+            start:   BQ1100
+            end:     BQ3340
+          - name:    'General works'
+            range:   BQ4000-4060
+            start:   BQ4000
+            end:     BQ4060
+          - name:    'Doctrinal and systematic Buddhism'
+            range:   BQ4061-4570
+            start:   BQ4061
+            end:     BQ4570
+            sections:
+              - name:    'Special doctrines'
+                range:   BQ4180-4565
+                start:   BQ4180
+                end:     BQ4565
+              - name:    'Special topics and relations to special subjects'
+                range:   BQ4570
+                start:   BQ4570
+                end:     BQ4570
+          - name:    'Relation to other religious and philosophical systems'
+            range:   BQ4600-4610
+            start:   BQ4600
+            end:     BQ4610
+          - name:    'Buddhist pantheon'
+            range:   BQ4620-4905
+            start:   BQ4620
+            end:     BQ4905
+          - name:    'Practice of Buddhism.  Forms of worship'
+            range:   BQ4911-5720
+            start:   BQ4911
+            end:     BQ5720
+            sections:
+              - name:    'Ceremonies and rites.  Ceremonial rules'
+                range:   BQ4965-5030
+                start:   BQ4965
+                end:     BQ5030
+              - name:    'Hymns.  Chants.  Recitations'
+                range:   BQ5035-5065
+                start:   BQ5035
+                end:     BQ5065
+              - name:    'Altar, liturgical objects, ornaments, memorials, etc.'
+                range:   BQ5070-5075
+                start:   BQ5070
+                end:     BQ5075
+              - name:    'Vestments, altar cloths, etc.'
+                range:   BQ5080-5085
+                start:   BQ5080
+                end:     BQ5085
+              - name:    'Liturgical functions'
+                range:   BQ5090-5095
+                start:   BQ5090
+                end:     BQ5095
+              - name:    'Symbols and symbolism'
+                range:   BQ5100-5125
+                start:   BQ5100
+                end:     BQ5125
+              - name:    'Temple.  Temple organization'
+                range:   BQ5130-5137
+                start:   BQ5130
+                end:     BQ5137
+              - name:    'Buddhist ministry.  Priesthood.  Organization'
+                range:   BQ5140-5355
+                start:   BQ5140
+                end:     BQ5355
+                sections:
+                  - name:    'Education and training'
+                    range:   BQ5251-5305
+                    start:   BQ5251
+                    end:     BQ5305
+                  - name:    'Preaching'
+                    range:   BQ5310-5350
+                    start:   BQ5310
+                    end:     BQ5350
+              - name:    'Religious life'
+                range:   BQ5360-5680
+                start:   BQ5360
+                end:     BQ5680
+                sections:
+                  - name:    'Precepts for laymen'
+                    range:   BQ5485-5530
+                    start:   BQ5485
+                    end:     BQ5530
+                  - name:    'Devotional literature.  Meditations.  Prayers'
+                    range:   BQ5535-5594
+                    start:   BQ5535
+                    end:     BQ5594
+                  - name:    'Devotion.  Meditation.  Prayer'
+                    range:   BQ5595-5633
+                    start:   BQ5595
+                    end:     BQ5633
+                  - name:    'Spiritual life.  Mysticism.  Englightenment.  Perfection'
+                    range:   BQ5635-5675
+                    start:   BQ5635
+                    end:     BQ5675
+              - name:    'Festivals.  Days and seasons'
+                range:   BQ5700-5720
+                start:   BQ5700
+                end:     BQ5720
+          - name:    'Folklore'
+            range:   BQ5725-5845
+            start:   BQ5725
+            end:     BQ5845
+            sections:
+              - name:    'Miracle literature'
+                range:   BQ5821-5845
+                start:   BQ5821
+                end:     BQ5845
+          - name:    'Benevolent work.  Social work.  Welfare work, etc.'
+            range:   BQ5851-5899
+            start:   BQ5851
+            end:     BQ5899
+          - name:    'Missionary work'
+            range:   BQ5901-5975
+            start:   BQ5901
+            end:     BQ5975
+          - name:    'Monasticism and monastic life  Samgha (Order)'
+            range:   BQ6001-6160
+            start:   BQ6001
+            end:     BQ6160
+          - name:    'Asceticism.  Hermits.  Wayfaring life'
+            range:   BQ6200-6240
+            start:   BQ6200
+            end:     BQ6240
+          - name:    'Monasteries.  Temples.  Shrines.  Sites'
+            range:   BQ6300-6388
+            start:   BQ6300
+            end:     BQ6388
+          - name:    'Pilgrims and pilgrimages'
+            range:   BQ6400-6495
+            start:   BQ6400
+            end:     BQ6495
+          - name:    'Modifications, schools, etc.'
+            range:   BQ7001-9800
+            start:   BQ7001
+            end:     BQ9800
+            sections:
+              - name:    'Theravāda (Hinayana) Buddhism'
+                sort_as: 'Theravada (Hinayana) Buddhism'
+                range:   BQ7100-7285
+                start:   BQ7100
+                end:     BQ7285
+              - name:    'Mahayana Buddhism'
+                range:   BQ7300-7529
+                start:   BQ7300
+                end:     BQ7529
+              - name:    'Tibetan Buddhism (Lamaism)'
+                range:   BQ7530-7950
+                start:   BQ7530
+                end:     BQ7950
+              - name:    'Bonpo (Sect)'
+                range:   BQ7960-7989
+                start:   BQ7960
+                end:     BQ7989
+              - name:    'Special modifications, sects, etc.'
+                range:   BQ8000-9800
+                start:   BQ8000
+                end:     BQ9800
+                sections:
+                  - name:    'Pure Land Buddhism'
+                    range:   BQ8500-8769
+                    start:   BQ8500
+                    end:     BQ8769
+                  - name:    'Tantric Buddhism'
+                    range:   BQ8900-9099
+                    start:   BQ8900
+                    end:     BQ9099
+                  - name:    'Zen Buddhism'
+                    range:   BQ9250-9519
+                    start:   BQ9250
+                    end:     BQ9519
+  - subclass:  BR
+    name:     'Christianity'
+    sections:
+      - name:    'Christianity'
+        range:   BR1-1725
+        start:   BR1
+        end:     BR1725
+        sections:
+          - name:    'Early Christian literature.  Fathers of the Church, etc.'
+            range:   BR60-67
+            start:   BR60
+            end:     BR67
+          - name:    'Christianity in relation to special subjects'
+            range:   BR115
+            start:   BR115
+            end:     BR115
+          - name:    'Christian antiquities.  Archaeology.  Museums'
+            range:   BR130-133.5
+            start:   BR130
+            end:     BR133.5
+          - name:    'History'
+            range:   BR140-1510
+            start:   BR140
+            end:     BR1510
+            sections:
+              - name:    'By period'
+                range:   BR160-481
+                start:   BR160
+                end:     BR481
+                sections:
+                  - name:    'Early and medieval'
+                    range:   BR160-275
+                    start:   BR160
+                    end:     BR275
+                  - name:    'Renaissance.  Renaissance and Reformation'
+                    range:   BR280
+                    start:   BR280
+                    end:     BR280
+                  - name:    'Modern period'
+                    range:   BR290-481
+                    start:   BR290
+                    end:     BR481
+                    sections:
+                      - name:    'Luther, Martin'
+                        range:   BR323.5-334.2
+                        start:   BR323.5
+                        end:     BR334.2
+              - name:    'By region or country'
+                range:   BR500-1510
+                start:   BR500
+                end:     BR1510
+          - name:    'Persecution.  Martyrs'
+            range:   BR1600-1609
+            start:   BR1600
+            end:     BR1609
+          - name:    'Dissent'
+            range:   BR1609.5
+            start:   BR1609.5
+            end:     BR1609.5
+          - name:    'Tolerance and toleration'
+            range:   BR1610
+            start:   BR1610
+            end:     BR1610
+          - name:    'Liberalism'
+            range:   BR1615-1617
+            start:   BR1615
+            end:     BR1617
+          - name:    'Sacrilege (History)'
+            range:   BR1620
+            start:   BR1620
+            end:     BR1620
+          - name:    'Biography'
+            range:   BR1690-1725
+            start:   BR1690
+            end:     BR1725
+  - subclass:  BS
+    name:     'The Bible'
+    sections:
+      - name:    'The Bible'
+        range:   BS1-2970
+        start:   BS1
+        end:     BS2970
+        sections:
+          - name:    'Early versions'
+            range:   BS11-115
+            start:   BS11
+            end:     BS115
+          - name:    'Modern texts and versions'
+            range:   BS125-355
+            start:   BS125
+            end:     BS355
+            sections:
+              - name:    'English'
+                range:   BS125-198
+                start:   BS125
+                end:     BS198
+              - name:    'Other European languages'
+                range:   BS199-313
+                start:   BS199
+                end:     BS313
+              - name:    'Non-European languages'
+                range:   BS315-355
+                start:   BS315
+                end:     BS355
+                sections:
+                  - name:    'Asian languages'
+                    range:   BS315
+                    start:   BS315
+                    end:     BS315
+                  - name:    'African languages'
+                    range:   BS325
+                    start:   BS325
+                    end:     BS325
+                  - name:    'Languages of Oceania and Australasia'
+                    range:   BS335
+                    start:   BS335
+                    end:     BS335
+                  - name:    'American Indian languages'
+                    range:   BS345
+                    start:   BS345
+                    end:     BS345
+                  - name:    'Mixed languages'
+                    range:   BS350
+                    start:   BS350
+                    end:     BS350
+                  - name:    'Artificial languages'
+                    range:   BS355
+                    start:   BS355
+                    end:     BS355
+          - name:    'Works about the Bible'
+            range:   BS410-680
+            start:   BS410
+            end:     BS680
+            sections:
+              - name:    'Criticism and interpretation'
+                range:   BS500-534.8
+                start:   BS500
+                end:     BS534.8
+              - name:    'The Bible as literature'
+                range:   BS535-537
+                start:   BS535
+                end:     BS537
+              - name:    'Bible stories.  Paraphrases of Bible stories.  The Bible story'
+                range:   BS546-558
+                start:   BS546
+                end:     BS558
+              - name:    'Men, women, and children of the Bible'
+                range:   BS569-580
+                start:   BS569
+                end:     BS580
+                sections:
+                  - name:    'Individual Old Testament characters'
+                    range:   BS580
+                    start:   BS580
+                    end:     BS580
+              - name:    'Study and teaching'
+                range:   BS585-613
+                start:   BS585
+                end:     BS613
+              - name:    'Prophecy'
+                range:   BS647-649
+                start:   BS647
+                end:     BS649
+              - name:    'Bible and science'
+                range:   BS650-667
+                start:   BS650
+                end:     BS667
+              - name:    'Bible and social sciences'
+                range:   BS670-672
+                start:   BS670
+                end:     BS672
+          - name:    'Old Testament'
+            range:   BS701-1830
+            start:   BS701
+            end:     BS1830
+            sections:
+              - name:    'Early versions'
+                range:   BS705-815
+                start:   BS705
+                end:     BS815
+              - name:    'Modern texts and versions'
+                range:   BS825-1013
+                start:   BS825
+                end:     BS1013
+              - name:    'Selections.  Quotations'
+                range:   BS1091-1099
+                start:   BS1091
+                end:     BS1099
+              - name:    'Works about the Old Testament'
+                range:   BS1110-1199
+                start:   BS1110
+                end:     BS1199
+                sections:
+                  - name:    'Criticism and interpretation'
+                    range:   BS1160-1191.5
+                    start:   BS1160
+                    end:     BS1191.5
+              - name:    'Special parts of the Old Testament'
+                range:   BS1200-1830
+                start:   BS1200
+                end:     BS1830
+          - name:    'New Testament'
+            range:   BS1901-2970
+            start:   BS1901
+            end:     BS2970
+            sections:
+              - name:    'Early texts and versions'
+                range:   BS1937-2020
+                start:   BS1937
+                end:     BS2020
+              - name:    'Modern texts and versions'
+                range:   BS2025-2213
+                start:   BS2025
+                end:     BS2213
+              - name:    'Selections.  Quotations'
+                range:   BS2260-2269
+                start:   BS2260
+                end:     BS2269
+              - name:    'Works about the New Testament'
+                range:   BS2280-2545
+                start:   BS2280
+                end:     BS2545
+                sections:
+                  - name:    'Criticism and interpretation'
+                    range:   BS2350-2393
+                    start:   BS2350
+                    end:     BS2393
+                  - name:    'The teachings of Jesus'
+                    range:   BS2415-2417
+                    start:   BS2415
+                    end:     BS2417
+                  - name:    'Men, women, and children of the New Testament'
+                    range:   BS2430-2520
+                    start:   BS2430
+                    end:     BS2520
+                  - name:    'Study and teaching'
+                    range:   BS2525-2544
+                    start:   BS2525
+                    end:     BS2544
+              - name:    'Special parts of the New Testament'
+                range:   BS2547-2970
+                start:   BS2547
+                end:     BS2970
+                sections:
+                  - name:    'Epistles of Paul'
+                    range:   BS2640-2765.6
+                    start:   BS2640
+                    end:     BS2765.6
+  - subclass:  BT
+    name:     'Doctrinal Theology'
+    sections:
+      - name:    'Doctrinal Theology'
+        range:   BT10-1480
+        start:   BT10
+        end:     BT1480
+        sections:
+          - name:    'Doctrine and dogma'
+            range:   BT19-37
+            start:   BT19
+            end:     BT37
+          - name:    'Judaism'
+            range:   BT93-93.6
+            start:   BT93
+            end:     BT93.6
+          - name:    'Divine law.  Moral government'
+            range:   BT95-97.2
+            start:   BT95
+            end:     BT97.2
+          - name:    'God'
+            range:   BT98-180
+            start:   BT98
+            end:     BT180
+            sections:
+              - name:    'Doctrine of the Trinity'
+                range:   BT109-115
+                start:   BT109
+                end:     BT115
+              - name:    'Holy Spirit.  The Paraclete'
+                range:   BT117-123
+                start:   BT117
+                end:     BT123
+              - name:    'Revelation'
+                range:   BT126-127.5
+                start:   BT126
+                end:     BT127.5
+              - name:    'Divine attributes'
+                range:   BT130-153
+                start:   BT130
+                end:     BT153
+          - name:    'Christology'
+            range:   BT198-590
+            start:   BT198
+            end:     BT590
+            sections:
+              - name:    'Life of Christ'
+                range:   BT296-500
+                start:   BT296
+                end:     BT500
+              - name:    'Miracles.  Apparitions.  Shrines, sanctuaries, images, processions, etc.'
+                range:   BT580
+                start:   BT580
+                end:     BT580
+              - name:    'Relics'
+                range:   BT587
+                start:   BT587
+                end:     BT587
+          - name:    'Mary, Mother of Jesus Christ.  Mariology'
+            range:   BT595-680
+            start:   BT595
+            end:     BT680
+            sections:
+              - name:    'Miracles.  Apparitions.  Shrines, sanctuaries, images, processions, etc.'
+                range:   BT650-660
+                start:   BT650
+                end:     BT660
+          - name:    'Creation'
+            range:   BT695-749
+            start:   BT695
+            end:     BT749
+          - name:    'Salvation.  Soteriology'
+            range:   BT750-811
+            start:   BT750
+            end:     BT811
+          - name:    'Eschatology.  Last things'
+            range:   BT819-891
+            start:   BT819
+            end:     BT891
+          - name:    'Future state.  Future life'
+            range:   BT899-940
+            start:   BT899
+            end:     BT940
+          - name:    'Invisible world (saints, demons, etc.)'
+            range:   BT960-985
+            start:   BT960
+            end:     BT985
+          - name:    'Creeds, confessions, covenants, etc.'
+            range:   BT990-1010
+            start:   BT990
+            end:     BT1010
+          - name:    'Catechisms'
+            range:   BT1029-1040
+            start:   BT1029
+            end:     BT1040
+          - name:    'Apologetics.  Evidences of Christianity'
+            range:   BT1095-1255
+            start:   BT1095
+            end:     BT1255
+          - name:    'History of specific doctrines and movements.  Heresies and schisms'
+            range:   BT1313-1480
+            start:   BT1313
+            end:     BT1480
+  - subclass:  BV
+    name:     'Practical Theology'
+    sections:
+      - name:    'Practical Theology'
+        range:   BV1-5099
+        start:   BV1
+        end:     BV5099
+        sections:
+          - name:    'Worship (Public and private)'
+            range:   BV5-530
+            start:   BV5
+            end:     BV530
+            sections:
+              - name:    'Times and seasons.  The Church year'
+                range:   BV30-135
+                start:   BV30
+                end:     BV135
+                sections:
+                  - name:    'Feast days'
+                    range:   BV43-64
+                    start:   BV43
+                    end:     BV64
+                  - name:    'Saints'' days'
+                    range:   BV65-70
+                    start:   BV65
+                    end:     BV70
+                  - name:    'Fasts'
+                    range:   BV80-105
+                    start:   BV80
+                    end:     BV105
+                  - name:    'Lord''s Day.  Sunday.  Sabbath'
+                    range:   BV107-133
+                    start:   BV107
+                    end:     BV133
+              - name:    'Christian symbols and symbolism'
+                range:   BV150-168
+                start:   BV150
+                end:     BV168
+              - name:    'Liturgy and ritual'
+                range:   BV169-199
+                start:   BV169
+                end:     BV199
+              - name:    'Family worship'
+                range:   BV200
+                start:   BV200
+                end:     BV200
+              - name:    'Prayer'
+                range:   BV205-287
+                start:   BV205
+                end:     BV287
+              - name:    'Hymnology'
+                range:   BV301-530
+                start:   BV301
+                end:     BV530
+                sections:
+                  - name:    'Denominational and special types of hymnbooks in English'
+                    range:   BV360-465
+                    start:   BV360
+                    end:     BV465
+                  - name:    'Hymns in languages other than English'
+                    range:   BV467-510
+                    start:   BV467
+                    end:     BV510
+          - name:    'Ecclesiastical theology'
+            range:   BV590-1652
+            start:   BV590
+            end:     BV1652
+            sections:
+              - name:    'The Church'
+                range:   BV598-603
+                start:   BV598
+                end:     BV603
+              - name:    'Church and state'
+                range:   BV629-631
+                start:   BV629
+                end:     BV631
+              - name:    'City churches'
+                range:   BV637-637.5
+                start:   BV637
+                end:     BV637.5
+              - name:    'The rural church.  The church and country life'
+                range:   BV638-638.8
+                start:   BV638
+                end:     BV638.8
+              - name:    'Church polity'
+                range:   BV646-651
+                start:   BV646
+                end:     BV651
+              - name:    'Church management.  Efficiency'
+                range:   BV652-652.9
+                start:   BV652
+                end:     BV652.9
+              - name:    'Mass media and telecommunication in religion'
+                range:   BV652.95-657
+                start:   BV652.95
+                end:     BV657
+              - name:    'Ministry.  Clergy.  Religious vocations'
+                range:   BV659-683
+                start:   BV659
+                end:     BV683
+              - name:    'Parish.  Congregation.  The local church'
+                range:   BV700-707
+                start:   BV700
+                end:     BV707
+              - name:    'Church finance.  Church property'
+                range:   BV770-777
+                start:   BV770
+                end:     BV777
+              - name:    'Sacraments.  Ordinances'
+                range:   BV800-873
+                start:   BV800
+                end:     BV873
+                sections:
+                  - name:    'Baptism'
+                    range:   BV803-814
+                    start:   BV803
+                    end:     BV814
+                  - name:    'Holy Communion.  Lord''s Supper.  Eucharist'
+                    range:   BV823-828
+                    start:   BV823
+                    end:     BV828
+                  - name:    'Marriage'
+                    range:   BV835-838
+                    start:   BV835
+                    end:     BV838
+                  - name:    'Penance'
+                    range:   BV840-850
+                    start:   BV840
+                    end:     BV850
+              - name:    'Shrines.  Holy places'
+                range:   BV895-896
+                start:   BV895
+                end:     BV896
+              - name:    'Religious societies, associations, etc.'
+                range:   BV900-1450
+                start:   BV900
+                end:     BV1450
+                sections:
+                  - name:    'Religious societies of men, brotherhoods, etc.'
+                    range:   BV950-1280
+                    start:   BV950
+                    end:     BV1280
+                    sections:
+                      - name:    'Young Men''s Christian Associations'
+                        range:   BV1000-1220
+                        start:   BV1000
+                        end:     BV1220
+                  - name:    'Religious societies of women'
+                    range:   BV1300-1395
+                    start:   BV1300
+                    end:     BV1395
+                    sections:
+                      - name:    'Young Women''s Christian Associations'
+                        range:   BV1300-1393
+                        start:   BV1300
+                        end:     BV1393
+              - name:    'Religious education (General)'
+                range:   BV1460-1615
+                start:   BV1460
+                end:     BV1615
+              - name:    'Social life, recreation, etc., in the church'
+                range:   BV1620-1652
+                start:   BV1620
+                end:     BV1652
+          - name:    'Missions'
+            range:   BV2000-3705
+            start:   BV2000
+            end:     BV3705
+            sections:
+              - name:    'Special churches'
+                range:   BV2123-2595
+                start:   BV2123
+                end:     BV2595
+                sections:
+                  - name:    'Roman Catholic Church'
+                    range:   BV2130-2300
+                    start:   BV2130
+                    end:     BV2300
+                  - name:    'Protestant churches'
+                    range:   BV2350-2595
+                    start:   BV2350
+                    end:     BV2595
+              - name:    'Special types of missions'
+                range:   BV2610-2695
+                start:   BV2610
+                end:     BV2695
+              - name:    'Missions in individual countries'
+                range:   BV2750-3695
+                start:   BV2750
+                end:     BV3695
+          - name:    'Evangelism.  Revivals'
+            range:   BV3750-3799
+            start:   BV3750
+            end:     BV3799
+          - name:    'Pastoral theology'
+            range:   BV4000-4470
+            start:   BV4000
+            end:     BV4470
+            sections:
+              - name:    'Education'
+                range:   BV4019-4180
+                start:   BV4019
+                end:     BV4180
+                sections:
+                  - name:    'Training for the ordained ministry'
+                    range:   BV4019-4167
+                    start:   BV4019
+                    end:     BV4167
+                  - name:    'Training for lay workers'
+                    range:   BV4168-4180
+                    start:   BV4168
+                    end:     BV4180
+              - name:    'Preaching.  Homiletics'
+                range:   BV4200-4317
+                start:   BV4200
+                end:     BV4317
+                sections:
+                  - name:    'Sermons'
+                    range:   BV4239-4317
+                    start:   BV4239
+                    end:     BV4317
+              - name:    'Personal life of the clergy'
+                range:   BV4390-4399
+                start:   BV4390
+                end:     BV4399
+              - name:    'Practical church work.  Social work.  Work of the layman'
+                range:   BV4400-4470
+                start:   BV4400
+                end:     BV4470
+          - name:    'Practical religion.  The Christian life'
+            range:   BV4485-5099
+            start:   BV4485
+            end:     BV5099
+            sections:
+              - name:    'Religious duties'
+                range:   BV4520-4526.2
+                start:   BV4520
+                end:     BV4526.2
+              - name:    'Moral theology'
+                range:   BV4625-4780
+                start:   BV4625
+                end:     BV4780
+                sections:
+                  - name:    'Sins and vices'
+                    range:   BV4625-4627
+                    start:   BV4625
+                    end:     BV4627
+                  - name:    'Virtues'
+                    range:   BV4630-4647
+                    start:   BV4630
+                    end:     BV4647
+                  - name:    'Precepts from the Bible'
+                    range:   BV4650-4715
+                    start:   BV4650
+                    end:     BV4715
+                  - name:    'Precepts of the Church.  Commandments of the Church'
+                    range:   BV4720-4780
+                    start:   BV4720
+                    end:     BV4780
+              - name:    'Works of meditation and devotion'
+                range:   BV4800-4897
+                start:   BV4800
+                end:     BV4897
+              - name:    'Works of consolation and cheer'
+                range:   BV4900-4911
+                start:   BV4900
+                end:     BV4911
+              - name:    'Conversion literature'
+                range:   BV4912-4950
+                start:   BV4912
+                end:     BV4950
+              - name:    'Asceticism'
+                range:   BV5015-5068
+                start:   BV5015
+                end:     BV5068
+              - name:    'Mysticism'
+                range:   BV5070-5095
+                start:   BV5070
+                end:     BV5095
+              - name:    'Quietism'
+                range:   BV5099
+                start:   BV5099
+                end:     BV5099
+  - subclass:  BX
+    name:     'Christian Denominations'
+    sections:
+      - name:    'Christian Denominations'
+        range:   BX1-9999
+        start:   BX1
+        end:     BX9999
+        sections:
+          - name:    'Church unity.  Ecumenical movement.  Interdenominational cooperation'
+            range:   BX1-9.5
+            start:   BX1
+            end:     BX9.5
+          - name:    'Eastern churches.  Oriental churches'
+            range:   BX100-189
+            start:   BX100
+            end:     BX189
+            sections:
+              - name:    'General'
+                range:   BX100-107
+                start:   BX100
+                end:     BX107
+              - name:    'Armenian Church'
+                range:   BX120-129
+                start:   BX120
+                end:     BX129
+              - name:    'Coptic Church'
+                range:   BX130-139
+                start:   BX130
+                end:     BX139
+              - name:    'Ethiopic or Abyssinian Church'
+                range:   BX140-149
+                start:   BX140
+                end:     BX149
+              - name:    'Nestorian, Chaldean, or East Syrian Church'
+                range:   BX150-159
+                start:   BX150
+                end:     BX159
+              - name:    'St. Thomas Christians.  Malabar Christians.  Mar Thoma Syrian Church'
+                range:   BX160-169
+                start:   BX160
+                end:     BX169
+              - name:    'Syrian or Jacobite Church'
+                range:   BX170-179
+                start:   BX170
+                end:     BX179
+              - name:    'Maronite Church'
+                range:   BX180-189
+                start:   BX180
+                end:     BX189
+          - name:    'Orthodox Eastern Church'
+            range:   BX200-756
+            start:   BX200
+            end:     BX756
+            sections:
+              - name:    'General'
+                range:   BX200-395
+                start:   BX200
+                end:     BX395
+              - name:    'Divisions of the church'
+                range:   BX400-756
+                start:   BX400
+                end:     BX756
+                sections:
+                  - name:    'Patriarchates of the East.  Melchites'
+                    range:   BX400-440
+                    start:   BX400
+                    end:     BX440
+                  - name:    'Church of Cyprus'
+                    range:   BX450-450.93
+                    start:   BX450
+                    end:     BX450.93
+                  - name:    'Russian Church'
+                    range:   BX460-605
+                    start:   BX460
+                    end:     BX605
+                  - name:    'Church of Greece'
+                    range:   BX610-620
+                    start:   BX610
+                    end:     BX620
+                  - name:    'Orthodox Church in Austria and Hungary'
+                    range:   BX630-639
+                    start:   BX630
+                    end:     BX639
+                  - name:    'Bulgarian Church'
+                    range:   BX650-659
+                    start:   BX650
+                    end:     BX659
+                  - name:    'Georgian Church'
+                    range:   BX660-669
+                    start:   BX660
+                    end:     BX669
+                  - name:    'Montenegrin Church'
+                    range:   BX670-679
+                    start:   BX670
+                    end:     BX679
+                  - name:    'Romanian Church'
+                    range:   BX690-699
+                    start:   BX690
+                    end:     BX699
+                  - name:    'Serbian Church.  Yugoslav Church'
+                    range:   BX710-719
+                    start:   BX710
+                    end:     BX719
+                  - name:    'Orthodox Eastern Church, Macedonian'
+                    range:   BX720-729
+                    start:   BX720
+                    end:     BX729
+                  - name:    'Orthodox Eastern Church, Ukrainian'
+                    range:   BX729.5
+                    start:   BX729.5
+                    end:     BX729.5
+                  - name:    'Orthodox Church in other regions or countries'
+                    range:   BX729.9-755
+                    start:   BX729.9
+                    end:     BX755
+          - name:    'Catholic Church'
+            range:   BX800-4795
+            start:   BX800
+            end:     BX4795
+            sections:
+              - name:    'Periodicals.  Societies, councils, congresses, etc.'
+                range:   BX800-839
+                start:   BX800
+                end:     BX839
+              - name:    'Museums.  Exhibitions'
+                range:   BX840
+                start:   BX840
+                end:     BX840
+              - name:    'Dictionaries.  Encyclopedias'
+                range:   BX841
+                start:   BX841
+                end:     BX841
+              - name:    'Directories.  Yearbooks'
+                range:   BX845
+                start:   BX845
+                end:     BX845
+              - name:    'Atlases'
+                range:   BX847
+                start:   BX847
+                end:     BX847
+              - name:    'Documents'
+                range:   BX850-875
+                start:   BX850
+                end:     BX875
+              - name:    'General collected works'
+                range:   BX880-891
+                start:   BX880
+                end:     BX891
+              - name:    'Study and teaching'
+                range:   BX895-939
+                start:   BX895
+                end:     BX939
+              - name:    'History'
+                note:    'Including lives of popes'
+                range:   BX940-1745
+                start:   BX940
+                end:     BX1745
+              - name:    'Theology.  Doctrine.  Dogmatics'
+                range:   BX1746-1755
+                start:   BX1746
+                end:     BX1755
+              - name:    'Sermons'
+                range:   BX1756
+                start:   BX1756
+                end:     BX1756
+              - name:    'Controversial works'
+                range:   BX1760-1779.5
+                start:   BX1760
+                end:     BX1779.5
+              - name:    'Catholic Church and other churches'
+                range:   BX1781-1788
+                start:   BX1781
+                end:     BX1788
+              - name:    'Catholic Church and the state'
+                range:   BX1790-1793
+                start:   BX1790
+                end:     BX1793
+              - name:    'Government and organization'
+                range:   BX1800-1920
+                start:   BX1800
+                end:     BX1920
+              - name:    'Creeds and catechisms'
+                range:   BX1958-1968
+                start:   BX1958
+                end:     BX1968
+              - name:    'Forms of worship.  Catholic practice'
+                range:   BX1969
+                start:   BX1969
+                end:     BX1969
+              - name:    'Liturgy and ritual'
+                range:   BX1970-2175
+                start:   BX1970
+                end:     BX2175
+                sections:
+                  - name:    'Prayers and devotions'
+                    range:   BX2050-2175
+                    start:   BX2050
+                    end:     BX2175
+              - name:    'Meditations.  Devotional readings.  Spiritual exercises, etc.'
+                range:   BX2177-2198
+                start:   BX2177
+                end:     BX2198
+              - name:    'Sacraments'
+                range:   BX2200-2292
+                start:   BX2200
+                end:     BX2292
+              - name:    'Sacramentals'
+                range:   BX2295-2310
+                start:   BX2295
+                end:     BX2310
+              - name:    'Images'
+                range:   BX2312
+                start:   BX2312
+                end:     BX2312
+              - name:    'Relics.  Shrines.  Pilgrimages.  Processions'
+                range:   BX2315-2324
+                start:   BX2315
+                end:     BX2324
+              - name:    'Saints.  Hagiology'
+                range:   BX2325-2333
+                start:   BX2325
+                end:     BX2333
+              - name:    'Practical religion.  Christian life'
+                range:   BX2347-2377
+                start:   BX2347
+                end:     BX2377
+              - name:    'Religious life.  Religious state'
+                range:   BX2380-2386
+                start:   BX2380
+                end:     BX2386
+              - name:    'Monasticism.  Religious orders'
+                range:   BX2400-4563
+                start:   BX2400
+                end:     BX4563
+                sections:
+                  - name:    'Religious orders of men'
+                    range:   BX2890-4192
+                    start:   BX2890
+                    end:     BX4192
+                  - name:    'Religious orders of women'
+                    range:   BX4200-4563
+                    start:   BX4200
+                    end:     BX4563
+              - name:    'Churches, cathedrals, abbeys (as parish churches), etc.'
+                range:   BX4600-4644
+                start:   BX4600
+                end:     BX4644
+              - name:    'Biography and portraits'
+                range:   BX4650-4705
+                start:   BX4650
+                end:     BX4705
+                sections:
+                  - name:    'Collective'
+                    range:   BX4650-4698
+                    start:   BX4650
+                    end:     BX4698
+                    sections:
+                      - name:    'Saints and martyrs'
+                        range:   BX4654-4662
+                        start:   BX4654
+                        end:     BX4662
+                  - name:    'Individual'
+                    range:   BX4700-4705
+                    start:   BX4700
+                    end:     BX4705
+                    sections:
+                      - name:    'Saints'
+                        range:   BX4700
+                        start:   BX4700
+                        end:     BX4700
+              - name:    'Eastern churches in communion with Rome.  Catholics of the Oriental rites.  Uniats'
+                range:   BX4710.1-4715.95
+                start:   BX4710.1
+                end:     BX4715.95
+              - name:    'Dissenting sects other than Protestant'
+                range:   BX4716.4-4795
+                start:   BX4716.4
+                end:     BX4795
+                sections:
+                  - name:    'Jansenists'
+                    range:   BX4718.5-4735
+                    start:   BX4718.5
+                    end:     BX4735
+                  - name:    'French schisms of the 19th century'
+                    range:   BX4737
+                    start:   BX4737
+                    end:     BX4737
+                  - name:    'German Catholics'
+                    range:   BX4740
+                    start:   BX4740
+                    end:     BX4740
+                  - name:    'Old Catholics'
+                    range:   BX4751-4793
+                    start:   BX4751
+                    end:     BX4793
+                  - name:    'Independent Catholic Churches'
+                    range:   BX4793.5-4794.25
+                    start:   BX4793.5
+                    end:     BX4794.25
+                  - name:    'Other'
+                    range:   BX4795
+                    start:   BX4795
+                    end:     BX4795
+          - name:    'Protestantism'
+            range:   BX4800-9999
+            start:   BX4800
+            end:     BX9999
+            sections:
+              - name:    'General'
+                range:   BX4800-4861
+                start:   BX4800
+                end:     BX4861
+              - name:    'Pre-Reformation'
+                range:   BX4872-4924
+                start:   BX4872
+                end:     BX4924
+                sections:
+                  - name:    'Waldenses and Albigenses'
+                    range:   BX4872-4893
+                    start:   BX4872
+                    end:     BX4893
+                  - name:    'Lollards.  Wycliffites'
+                    range:   BX4900-4906
+                    start:   BX4900
+                    end:     BX4906
+                  - name:    'Hussites'
+                    range:   BX4913-4924
+                    start:   BX4913
+                    end:     BX4924
+                    sections:
+                      - name:    'Bohemian Brethren'
+                        range:   BX4920-4924
+                        start:   BX4920
+                        end:     BX4924
+              - name:    'Post-Reformation'
+                range:   BX4929-4951
+                start:   BX4929
+                end:     BX4951
+                sections:
+                  - name:    'Anabaptists'
+                    range:   BX4929-4946
+                    start:   BX4929
+                    end:     BX4946
+                  - name:    'Plain People'
+                    range:   BX4950-4951
+                    start:   BX4950
+                    end:     BX4951
+              - name:    'Anglican Communion (General)'
+                range:   BX5001-5009
+                start:   BX5001
+                end:     BX5009
+              - name:    'Church of England'
+                range:   BX5011-5207
+                start:   BX5011
+                end:     BX5207
+                sections:
+                  - name:    'General'
+                    range:   BX5011-5050
+                    start:   BX5011
+                    end:     BX5050
+                  - name:    'History.  Local divisions'
+                    range:   BX5051-5110
+                    start:   BX5051
+                    end:     BX5110
+                  - name:    'Special parties and movements'
+                    range:   BX5115-5126
+                    start:   BX5115
+                    end:     BX5126
+                  - name:    'Church of England and other churches'
+                    range:   BX5127-5129.8
+                    start:   BX5127
+                    end:     BX5129.8
+                  - name:    'General'
+                    range:   BX5130-5132
+                    start:   BX5130
+                    end:     BX5132
+                  - name:    'Sermons.  Tracts.  Addresses.  Essays'
+                    range:   BX5133
+                    start:   BX5133
+                    end:     BX5133
+                  - name:    'Controversial works'
+                    range:   BX5135-5136
+                    start:   BX5135
+                    end:     BX5136
+                  - name:    'Creeds and catechisms, etc.'
+                    range:   BX5137-5139
+                    start:   BX5137
+                    end:     BX5139
+                  - name:    'Liturgy and ritual'
+                    range:   BX5140.5-5147
+                    start:   BX5140.5
+                    end:     BX5147
+                  - name:    'Sacraments'
+                    range:   BX5148-5149
+                    start:   BX5148
+                    end:     BX5149
+                  - name:    'Government.  Organization.  Discipline'
+                    range:   BX5150-5182.5
+                    start:   BX5150
+                    end:     BX5182.5
+                  - name:    'Religious communities.  Conventual life.  Religious societies'
+                    range:   BX5183-5187
+                    start:   BX5183
+                    end:     BX5187
+                  - name:    'Cathedrals, churches, etc. in England and Wales'
+                    range:   BX5194-5195
+                    start:   BX5194
+                    end:     BX5195
+                  - name:    'Biography'
+                    range:   BX5197-5199
+                    start:   BX5197
+                    end:     BX5199
+                  - name:    'Dissent and nonconformity'
+                    range:   BX5200-5207
+                    start:   BX5200
+                    end:     BX5207
+              - name:    'Episcopal Church in Scotland'
+                range:   BX5210-5395
+                start:   BX5210
+                end:     BX5395
+              - name:    'Church of Ireland'
+                range:   BX5410-5595
+                start:   BX5410
+                end:     BX5595
+              - name:    'Church in Wales'
+                range:   BX5596-5598
+                start:   BX5596
+                end:     BX5598
+              - name:    'Church of England outside of Great Britain'
+                range:   BX5600-5740
+                start:   BX5600
+                end:     BX5740
+                sections:
+                  - name:    'Anglican Church of Canada'
+                    range:   BX5601-5620
+                    start:   BX5601
+                    end:     BX5620
+              - name:    'Protestant Episcopal Church in the United States of America'
+                range:   BX5800-5995
+                start:   BX5800
+                end:     BX5995
+              - name:    'Protestant Episcopal Church outside the United States'
+                range:   BX5996-6030
+                start:   BX5996
+                end:     BX6030
+              - name:    'Reformed Episcopal Church'
+                range:   BX6051-6093
+                start:   BX6051
+                end:     BX6093
+              - name:    'Other Protestant denominations'
+                note:    'Alphabetical; only larger denominations listed The subarrangement is essentially the same for each sect, the primary features being indicated by way of example under Baptists'
+                range:   BX6101-9999
+                start:   BX6101
+                end:     BX9999
+                sections:
+                  - name:    'Adventists.  "Millerites"'
+                    range:   BX6101-6193
+                    start:   BX6101
+                    end:     BX6193
+                  - name:    'Arminians.  Remonstrants'
+                    range:   BX6195-6197
+                    start:   BX6195
+                    end:     BX6197
+                  - name:    'Baptists'
+                    range:   BX6201-6495
+                    start:   BX6201
+                    end:     BX6495
+                    sections:
+                      - name:    'General'
+                        range:   BX6201-6227
+                        start:   BX6201
+                        end:     BX6227
+                      - name:    'History.  Local divisions'
+                        range:   BX6231-6328
+                        start:   BX6231
+                        end:     BX6328
+                      - name:    'Baptists and other churches'
+                        range:   BX6329
+                        start:   BX6329
+                        end:     BX6329
+                      - name:    'Doctrine'
+                        range:   BX6330-6331.2
+                        start:   BX6330
+                        end:     BX6331.2
+                      - name:    'Sermons.  Tracts'
+                        range:   BX6333
+                        start:   BX6333
+                        end:     BX6333
+                      - name:    'Controversial works'
+                        range:   BX6334
+                        start:   BX6334
+                        end:     BX6334
+                      - name:    'Creeds.  Catechisms'
+                        range:   BX6335-6336
+                        start:   BX6335
+                        end:     BX6336
+                      - name:    'Service.  Ritual.  Liturgy'
+                        range:   BX6337
+                        start:   BX6337
+                        end:     BX6337
+                      - name:    'Sacraments'
+                        range:   BX6338-6339
+                        start:   BX6338
+                        end:     BX6339
+                      - name:    'Government.  Discipline'
+                        range:   BX6340-6346.3
+                        start:   BX6340
+                        end:     BX6346.3
+                      - name:    'Individual branches'
+                        range:   BX6349-6470
+                        start:   BX6349
+                        end:     BX6470
+                      - name:    'Individual Baptist churches'
+                        range:   BX6480-6490
+                        start:   BX6480
+                        end:     BX6490
+                      - name:    'Biography'
+                        range:   BX6493-6495
+                        start:   BX6493
+                        end:     BX6495
+                  - name:    'Catholic Apostolic Church.  Irvingites'
+                    range:   BX6551-6593
+                    start:   BX6551
+                    end:     BX6593
+                  - name:    'Christadelphians.  Brothers of Christ'
+                    range:   BX6651-6693
+                    start:   BX6651
+                    end:     BX6693
+                  - name:    'Christian Church'
+                    note:    'See also Disciples of Christ'
+                    range:   BX6751-6793
+                    start:   BX6751
+                    end:     BX6793
+                  - name:    'Christian Reformed Church'
+                    range:   BX6801-6843
+                    start:   BX6801
+                    end:     BX6843
+                  - name:    'Christian Science'
+                    range:   BX6901-6997
+                    start:   BX6901
+                    end:     BX6997
+                  - name:    'Christian Union'
+                    range:   BX7003
+                    start:   BX7003
+                    end:     BX7003
+                  - name:    'Church of God'
+                    range:   BX7020-7060
+                    start:   BX7020
+                    end:     BX7060
+                  - name:    'Churches of God'
+                    range:   BX7079-7097
+                    start:   BX7079
+                    end:     BX7097
+                  - name:    'Congregationalism'
+                    range:   BX7101-7260
+                    start:   BX7101
+                    end:     BX7260
+                  - name:    'Disciples of Christ.  Campbellites'
+                    range:   BX7301-7343
+                    start:   BX7301
+                    end:     BX7343
+                  - name:    'Dowieism.  Christian Catholic Church'
+                    range:   BX7401-7430
+                    start:   BX7401
+                    end:     BX7430
+                  - name:    'Evangelical and Reformed Church'
+                    range:   BX7451-7493
+                    start:   BX7451
+                    end:     BX7493
+                  - name:    'Evangelical United Brethren Church'
+                    range:   BX7556
+                    start:   BX7556
+                    end:     BX7556
+                  - name:    'Free Congregations (Germany).  Freie Gemeinden'
+                    range:   BX7580-7583
+                    start:   BX7580
+                    end:     BX7583
+                  - name:    'Friends.  Society of Friends.  Quakers'
+                    range:   BX7601-7795
+                    start:   BX7601
+                    end:     BX7795
+                  - name:    'German Baptist Brethren.  Church of the Brethren. Dunkards'
+                    range:   BX7801-7843
+                    start:   BX7801
+                    end:     BX7843
+                  - name:    'German Evangelical Protestant Church of North America. Evangelical Protestant Church of North America'
+                    range:   BX7850-7865
+                    start:   BX7850
+                    end:     BX7865
+                  - name:    'German Evangelical Synod of North America'
+                    range:   BX7901-7943
+                    start:   BX7901
+                    end:     BX7943
+                  - name:    'Holiness churches'
+                    range:   BX7990.H6-.H69
+                    start:   BX7990.H6
+                    end:     BX7990.H69
+                  - name:    'Lutheran churches'
+                    range:   BX8001-8080
+                    start:   BX8001
+                    end:     BX8080
+                  - name:    'Mennonites'
+                    range:   BX8101-8144
+                    start:   BX8101
+                    end:     BX8144
+                  - name:    'Methodism'
+                    range:   BX8201-8495
+                    start:   BX8201
+                    end:     BX8495
+                  - name:    'Millennial Dawnists.  Jehovah''s Witnesses'
+                    range:   BX8525-8528
+                    start:   BX8525
+                    end:     BX8528
+                  - name:    'Moravian Church.  United Brethren.  Unitas Fratrum. Herrnhuters'
+                    range:   BX8551-8593
+                    start:   BX8551
+                    end:     BX8593
+                  - name:    'Mormons.  Church of Jesus Christ of Latter-Day Saints'
+                    range:   BX8601-8695
+                    start:   BX8601
+                    end:     BX8695
+                  - name:    'New Jerusalem Church.  New Church.  Swedenborgianism'
+                    range:   BX8701-8749
+                    start:   BX8701
+                    end:     BX8749
+                  - name:    'Pentecostal churches'
+                    range:   BX8762-8785
+                    start:   BX8762
+                    end:     BX8785
+                  - name:    'Plymouth Brethren.  Darbyites'
+                    range:   BX8799-8809
+                    start:   BX8799
+                    end:     BX8809
+                  - name:    'Presbyterianism.  Calvinistic Methodism'
+                    range:   BX8901-9225
+                    start:   BX8901
+                    end:     BX9225
+                  - name:    'Puritanism'
+                    range:   BX9301-9359
+                    start:   BX9301
+                    end:     BX9359
+                  - name:    'Reformed or Calvinistic Churches'
+                    range:   BX9401-9640
+                    start:   BX9401
+                    end:     BX9640
+                  - name:    'River Brethren.  Brethren in Christ'
+                    range:   BX9675
+                    start:   BX9675
+                    end:     BX9675
+                  - name:    'Salvation Army'
+                    range:   BX9701-9743
+                    start:   BX9701
+                    end:     BX9743
+                  - name:    'Shakers.  United Society of Believers.  Millennial Church'
+                    range:   BX9751-9793
+                    start:   BX9751
+                    end:     BX9793
+                  - name:    'Unitarianism'
+                    range:   BX9801-9869
+                    start:   BX9801
+                    end:     BX9869
+                  - name:    'United Brethren in Christ.  Church of the United Brethren in Christ'
+                    range:   BX9875-9877.1
+                    start:   BX9875
+                    end:     BX9877.1
+                  - name:    'United Church of Canada'
+                    range:   BX9881-9882.95
+                    start:   BX9881
+                    end:     BX9882.95
+                  - name:    'United Church of Christ'
+                    range:   BX9884-9886
+                    start:   BX9884
+                    end:     BX9886
+                  - name:    'United Evangelical Church'
+                    range:   BX9887
+                    start:   BX9887
+                    end:     BX9887
+                  - name:    'United Missionary Church'
+                    range:   BX9889
+                    start:   BX9889
+                    end:     BX9889
+                  - name:    'Unviersalism.  Universalists'
+                    range:   BX9901-9969
+                    start:   BX9901
+                    end:     BX9969
+                  - name:    'Volunteers of America'
+                    range:   BX9975
+                    start:   BX9975
+                    end:     BX9975
+                  - name:    'Walloon Church'
+                    range:   BX9980
+                    start:   BX9980
+                    end:     BX9980
+                  - name:    'Other beliefs and movements akin to Christianity'
+                    range:   BX9998
+                    start:   BX9998
+                    end:     BX9998
+                  - name:    'Independent churches, parishes, societies, etc.'
+                    range:   BX9999
+                    start:   BX9999
+                    end:     BX9999

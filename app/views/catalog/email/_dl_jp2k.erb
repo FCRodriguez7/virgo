@@ -1,0 +1,27 @@
+<%# app/views/catalog/email/_dl_jp2k.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  # === Item metadata
+  fields ||= UVA::View::FieldSet.new(
+    :title            => doc.full_title,
+    :creator          => doc.show_heading_author,
+    'Image URL'       => doc.dl_jp2k_preview,
+    'Title'           => doc.get_title,
+    'Alternate Title' => :alternate_title_display,
+    'Series'          => doc.export_series,
+    'Date Created'    => doc.export_pub_date,
+    'Composition Era' => :composition_era_facet,
+    'Type'            => doc.export_work_type,
+    'Description'     => :media_description_display,
+    'Retrieval ID'    => doc.export_media_retrieval_id,
+    'Location'        => :location_display,
+    'Notes'           => :note_display,
+    'Collection'      => doc.export_collection,
+    copyright_label   => permission_uri(doc),
+  )
+
+  view_debug(__FILE__)
+-%>
+<%= fields.render(:email, doc) %>

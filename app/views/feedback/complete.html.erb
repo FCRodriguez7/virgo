@@ -1,0 +1,17 @@
+<%# app/views/feedback/complete.html.erb -%>
+<%-
+  # Overrides Blacklight app/views/feedback/complete.html.erb
+
+  set_meta_tags(title: 'Feedback - Complete')
+
+  view_debug(__FILE__)
+-%>
+
+<div class="tool-heading">
+  <h1 class="heading">Thank you for your feedback</h1>
+</div>
+
+<div class="tool-content feedback-response">
+  <h2>Thanks for helping us improve Virgo!</h2>
+  <h2><%= window_close_link(in_popup?) %></h2>
+</div>

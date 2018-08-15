@@ -1,0 +1,18 @@
+<%# app/views/account/_barred_status.html.erb -%>
+<%-
+  # Controlled by app/assets/javascripts/account/index
+  view_debug(__FILE__)
+-%>
+
+<p class="barred-notice">
+  Your library account is temporarily suspended due to overdue or recalled
+  materials, or we may not have contact information for your account.
+  If you need information on how to reactivate your account, please request
+  details by
+  <%= ask_a_librarian('contacting the Library', target: '_top') %>
+  or
+  <a href="<%= URL::CIRCULATION_POLICY -%>" target="_top">
+    view circulation policy information
+  </a>
+  .
+</p>

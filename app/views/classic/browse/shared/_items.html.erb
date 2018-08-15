@@ -1,0 +1,49 @@
+<%# app/views/classic/browse/shared/_items.html.erb -%>
+<%-
+  items ||= @facet_list
+  return unless items.present?
+
+  css_class   ||= 'document clearfix browse'
+  response    ||= @response
+  start       ||= (response && response.start).to_i
+  browse_mode ||= params[:browse_mode]
+
+  browse_mode = browse_mode.to_s.to_sym
+
+  if browse_mode == :title
+    facet_class = 'title-field'
+    link_path   = '#'
+  else
+    facet_class = 'browse-entry'
+    link_opt = {
+      search_field: 'advanced',
+      op:           'AND',
+      sort_key:     'published',
+      f_inclusive:  params[:f_inclusive],
+    }
+    set_nostem!(link_opt, browse_mode)
+    link_opt.delete_if { |_, v| v.blank? }
+    link_path = classic_index_path(link_opt)
+  end
+
+  show_hits        = (browse_mode != :title)
+  show_single_hits = false
+
+  opt = {
+    browse_mode:      browse_mode,
+    facet_class:      facet_class,
+    link_path:        link_path,
+    show_hits:        (show_hits || :false),
+    show_single_hits: (show_single_hits || :false),
+  }
+
+  view_debug(__FILE__)
+-%>
+
+<%- items.each_with_index do |item, counter| -%>
+  <%- number = start + counter + 1 -%>
+  <%- even   = (counter + 1).even? -%>
+  <%- css    = css_class + ' ' + (even ? 'even' : 'odd') -%>
+  <%- item_opt = opt.merge(number: number, item: item, css: css) -%>
+  <%= render 'classic/browse/shared/item', item_opt %>
+<%- end -%>

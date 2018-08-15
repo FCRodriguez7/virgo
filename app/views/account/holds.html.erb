@@ -1,0 +1,71 @@
+<%# app/views/account/holds.html.erb -%>
+<%-
+  set_meta_tags(title: 'My Account - Requests')
+
+  user       ||= @user_holds
+  requests   ||= user && user.sorted_holds
+  item_count ||= user && user.hold_count
+
+  no_items = requests.blank?
+
+  num = sr_only('Number')
+
+  view_debug(__FILE__)
+-%>
+
+<div class="list-heading">
+  <h1 class="heading">My Account</h1>
+  <%= print_view_link unless print_view? || no_items %>
+</div>
+
+<div class="account-container">
+
+  <%- if no_items -%>
+
+    <h2 class="sub-heading no-items">No Pending Requests</h2>
+
+  <%- else -%>
+
+    <h2 class="sub-heading">
+      Requested Items: <span class="account-total"><%= item_count %></span>
+      <%= link_spacer %>
+      <%= link_to_illiad_requests(class: 'renew-all-link') %>
+    </h2>
+
+    <table class="item-list requests">
+      <thead>
+        <tr>
+          <th class="account-number-heading hidden-heading"><%= num %></th>
+          <th class="account-title-heading">Title</th>
+          <th class="account-author-heading">Creator</th>
+          <th class="account-request-date-heading">Request date</th>
+          <th class="account-pickup-heading">Pick-up Library</th>
+          <th class="account-request-type-heading">Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%- requests.each_with_index do |hold, number| -%>
+          <%-
+            item   = hold.catalog_item
+            title  = item.title
+            author = item.authors
+            url    = item.document && catalog_path(item.document.doc_id)
+            title  = link_to(title, url) if url
+          -%>
+          <tr class="item <%= cycle('even', 'odd') -%>">
+            <td class="item-number"><%= number -%>.</td>
+            <td class="title"><%= title %></td>
+            <td class="author"><%= author %></td>
+            <td class="date-placed"><%= hold.date_placed_f %></td>
+            <td class="library"><%= hold.pickup_library.name %></td>
+            <td class="type"><%= hold.type %></td>
+          </tr>
+        <%- end -%>
+      </tbody>
+    </table>
+
+  <%- end -%>
+
+</div>
+
+<%= render 'account/sidebar', user: user %>

@@ -1,0 +1,156 @@
+<%# app/views/catalog/row/shared/_fields.html.erb -%>
+<%-
+  # Hints for RubyMine (skipped during execution).
+  include UVA::Helper::Links unless ONLY_FOR_DOCUMENTATION
+
+  doc = document ||= @document
+  return unless doc
+
+  css_class    ||= 'document'
+  portal       ||= current_portal_key
+  max_length   ||= CONTEXT[:folder][:max_len]
+
+  id           ||= doc.doc_id
+  number       ||= '<!--number -->'.html_safe
+  type         ||= 'Catalog'
+  availability ||= nil
+  title        ||= doc.basic_title
+  authors      ||= doc.get_authors
+  formats      ||= doc.get_format.reject { |v| v == 'Online' }
+  dates        ||= doc.get_pub_date(true)
+  access_link  ||= nil
+  dev_note     ||= nil
+
+  unstar_url   ||= unstar_path(doc)
+  unstar_label ||= UVA::StarredItems::STAR_LIT_LABEL
+  unstar_css   ||= UVA::StarredItems::STAR_LIT_CLASS
+
+  reserve_library = reserve_period = reserve_notes = check_availability = nil
+  library = call_number = nil
+
+  # Limit displayed field length based on context. # TODO: magic numbers
+  unless max_length
+    max_length = 70
+    max_length *= 4 if print_view?
+  end
+
+  # === Folder (star/unstar)
+  unstar_opts  = { title: unstar_label, class: unstar_css }
+  unstar_label = sr_only(unstar_label)
+  unstar_link  = link_to(unstar_label, unstar_url, unstar_opts)
+
+  # === Title
+  truncate_opts = { omission: '...', length: max_length }
+  title = title.first if title.is_a?(Array)
+  if title.present?
+    label = html_truncate(title, truncate_opts)
+    opt   = path_opt.merge(label: label, title: title, portal: portal)
+    title = link_to_document(doc, opt)
+  end
+
+  # === Author
+  truncate_opts[:length] = (max_length /= 2)
+  authors = authors.first if authors.is_a?(Array)
+  aut_tag = :span
+  if authors.blank? && (authors = doc.get_collection.first)
+    # Show the italicized collection name if there is no author.
+    authors += ' Collection' unless authors.include?('Collection')
+    aut_tag = :em
+  end
+  if authors.present?
+    label   = html_truncate(authors, truncate_opts)
+    authors = content_tag(aut_tag, label, title: authors)
+  end
+
+  # === Format
+  formats = formats.first if formats.is_a?(Array)
+  if formats.present? && (formats.length > max_length)
+    label   = html_truncate(formats, truncate_opts)
+    formats = content_tag(:span, label, title: formats)
+  end
+
+  if (reserves = show_reserves_dropdowns?)
+
+    # === Reserve Library
+    selected = selected_reserve_library(@reserve_request, doc)
+    options  = options_for_select(reserve_library_list, selected: selected)
+    reserve_library =
+      select_tag("library[#{id}]", options, class: 'reserve-library-select')
+
+    # === Reserve Period
+    selected = selected_reserve_loan_period(@reserve_request, doc)
+    options  = options_for_select(reserve_loan_list(doc), selected: selected)
+    reserve_period =
+      select_tag("loan_period[#{id}]", options, class: 'reserve-period-select')
+
+    # === Reserve Period
+    reserve_notes =
+      text_field_tag("notes[#{id}]", @reserve_request.reserve_item(id).notes)
+
+  else
+
+    # === Year
+    dates = dates.first if dates.is_a?(Array)
+
+    # === Type
+    type = type.first if type.is_a?(Array)
+
+    # === Availability or Online Access
+    if availability.present?
+      check_availability =
+        link_to('Check availability', catalog_path(id), dialog_button_opts)
+      library =
+        doc.values_for(:library_facet).join(ITEM_SEPARATOR).html_safe
+      call_number =
+        doc.shelf_numbers.join(ITEM_SEPARATOR).html_safe
+    elsif access_link.blank?
+      label       = online_access_label(doc)
+      access_link = link_to_document(doc, label: label, target: '_blank')
+    end
+
+  end
+
+  view_debug(__FILE__)
+-%>
+
+<%= template_comment(doc, dev_note) %>
+<tr class="<%= css_class -%>" id="<%= id -%>">
+
+  <td><%= number %></td>
+  <td class="star-container"><%= unstar_link %></td>
+  <td class="title"><%= title %></td>
+  <td class="author"><%= authors %></td>
+  <td class="format"><%= formats %></td>
+
+  <%- if reserves -%>
+
+    <td style="display:none;"><%= reserve_library %></td>
+    <td><%= reserve_period %></td>
+    <td><%= reserve_notes %></td>
+
+  <%- else -%>
+
+    <td class="year"><%= dates %></td>
+    <td class="type"><%= type %></td>
+    <%- if availability -%>
+
+      <td class="availability multiple-copies"><%= check_availability %></td>
+      <%- if library.blank? && call_number.blank? -%>
+        <td class="holding-data no-info print-only" colspan="5">
+          No information available at this time.
+        </td>
+      <%- else -%>
+        <td class="holding-data library-name print-only"><%= library %></td>
+        <td class="holding-data call-number print-only"><%= call_number %></td>
+      <%- end -%>
+
+    <%- else -%>
+
+      <td class="access"><%= access_link %></td>
+      <td class="holding-data library-name print-only"><!-- empty --></td>
+      <td class="holding-data call-number print-only"><!-- empty --></td>
+
+    <%- end -%>
+
+  <%- end %>
+</tr>

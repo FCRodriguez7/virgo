@@ -1,0 +1,32 @@
+<%# app/views/catalog/index/_dl_text.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  counter ||= -1
+  offset  ||= 0
+  partial_opts = { document: doc, counter: counter, offset: offset }
+
+  # === Item title
+  title_opts = partial_opts.merge(dev_note: __FILE__)
+
+  # === Item thumbnail
+  thumbnail_opts = partial_opts.merge(thumbnail_css: 'image-collection')
+
+  # === Item metadata
+  resource_link = (xtf_link(doc) unless doc.doc_sub_type == :finding_aid)
+
+  fields ||= UVA::View::FieldSet.new(
+    'Creator'    => [doc.get_authors, AUTHOR_OPT],
+    'Type'       => 'Text Resource',
+    'Date'       => [doc.get_pub_date, DATE_OPT],
+    'Collection' => doc.get_collection,
+    'Full Text'  => [resource_link, ONLINE_OPT],
+  )
+  fields_opts = { document: doc, fields: fields }
+
+  template_opts = title_opts.merge(thumbnail_opts).merge(fields_opts)
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/index/template/basic', template_opts %>

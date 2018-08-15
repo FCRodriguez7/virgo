@@ -1,0 +1,21 @@
+<%# app/views/catalog/_sidebar_close.html.erb -%>
+<%-
+  # Display a sidebar which contains nothing but a link to close the current
+  # browser tab (in order to return focus to the originating browser tab).
+
+  view_debug(__FILE__)
+-%>
+
+<%- sidebar_items << capture do -%>
+  <div class="sidebar-panel1 bookmarks_sub">
+    <div class="sidebar-inner">
+      <div class="account-menu tools" role="menu">
+        <ul>
+          <li role="menuitem">
+            <%= window_close_link(in_popup?) %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<%- end -%>

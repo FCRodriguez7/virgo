@@ -1,0 +1,3883 @@
+# lib/config/lcco_k.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from the Word document of the same base name.
+
+class:    K
+name:     'LAW'
+sections:
+  - subclass:  K
+    name:     'Law in general. Comparative and uniform law. Jurisprudence'
+    sections:
+      - name:    'Law in general. Comparative and uniform law. Jurisprudence'
+        range:   K1-7720
+        start:   K1
+        end:     K7720
+        sections:
+          - name:    'Periodicals'
+            range:   K1-36.5
+            start:   K1
+            end:     K36.5
+          - name:    'Bibliography'
+            range:   K37-44
+            start:   K37
+            end:     K44
+          - name:    'Monographic series'
+            range:   K46
+            start:   K46
+            end:     K46
+          - name:    'Encyclopedias'
+            range:   K48
+            start:   K48
+            end:     K48
+          - name:    'Dictionaries.  Words and phrases'
+            range:   K50-54
+            start:   K50
+            end:     K54
+          - name:    'Maxims.  Quotations'
+            range:   K58
+            start:   K58
+            end:     K58
+          - name:    'Yearbooks'
+            range:   K(64)
+            start:   K64
+            end:     K64
+          - name:    'Directories'
+            range:   K68-70
+            start:   K68
+            end:     K70
+          - name:    'Legal research'
+            range:   K85-89
+            start:   K85
+            end:     K89
+          - name:    'Legal composition and draftsmanship'
+            range:   K94
+            start:   K94
+            end:     K94
+          - name:    'Legal education'
+            range:   K100-103
+            start:   K100
+            end:     K103
+          - name:    'Law societies.  International bar associations'
+            range:   K109-110
+            start:   K109
+            end:     K110
+          - name:    'The legal profession'
+            range:   K115-130
+            start:   K115
+            end:     K130
+          - name:    'Legal aid.  Legal assistance to the poor'
+            range:   K133
+            start:   K133
+            end:     K133
+          - name:    'History of law'
+            range:   K140-165
+            start:   K140
+            end:     K165
+          - name:    'Biography'
+            range:   K170
+            start:   K170
+            end:     K170
+          - name:    'Congresses'
+            range:   K(175)
+            start:   K175
+            end:     K175
+          - name:    'Collected works (nonserial)'
+            range:   K(176)-(177)
+            start:   K176
+            end:     K177
+          - name:    'Addresses, essays, lectures'
+            range:   K(179)
+            start:   K179
+            end:     K179
+          - name:    'Miscellany'
+            range:   K181-184.7
+            start:   K181
+            end:     K184.7
+          - name:    'Ethnological jurisprudence.  Primitive law'
+            range:   K190-195
+            start:   K190
+            end:     K195
+          - name:    'Jurisprudence.  Philosophy and theory of law'
+            range:   K201-487
+            start:   K201
+            end:     K487
+            sections:
+              - name:    'Periodicals'
+                range:   K202
+                start:   K202
+                end:     K202
+              - name:    'Methodology'
+                range:   K212-213
+                start:   K212
+                end:     K213
+              - name:    'History'
+                range:   K215-218
+                start:   K215
+                end:     K218
+              - name:    'Universality and non-universality of law'
+                range:   K236
+                start:   K236
+                end:     K236
+              - name:    'The concept of law'
+                range:   K237-264
+                start:   K237
+                end:     K264
+              - name:    'Acts and events'
+                range:   K270-274
+                start:   K270
+                end:     K274
+              - name:    'Sources of law'
+                range:   K280-286
+                start:   K280
+                end:     K286
+              - name:    'Interpretation and construction of law.  Lacunae in law'
+                range:   K288-296
+                start:   K288
+                end:     K296
+              - name:    'Classification of law.  Typology'
+                range:   K300-304
+                start:   K300
+                end:     K304
+              - name:    'Schools of legal theory'
+                range:   K321-474
+                start:   K321
+                end:     K474
+                sections:
+                  - name:    'Historical jurisprudence'
+                    range:   K325-328
+                    start:   K325
+                    end:     K328
+                  - name:    'Positivism'
+                    range:   K330-344
+                    start:   K330
+                    end:     K344
+                  - name:    'Sociology of law.  Sociological jurisprudence'
+                    range:   K366-380
+                    start:   K366
+                    end:     K380
+                  - name:    'Natural law'
+                    range:   K400-474
+                    start:   K400
+                    end:     K474
+              - name:    'Relation of law to other topics'
+                range:   K486-487
+                start:   K486
+                end:     K487
+          - name:    'Comparative law.  International uniform law'
+            range:   K(520)-5582
+            start:   K520
+            end:     K5582
+            sections:
+              - name:    'Treaties and other international agreements'
+                range:   K524-525
+                start:   K524
+                end:     K525
+              - name:    'Trials'
+                range:   K540-546
+                start:   K540
+                end:     K546
+              - name:    'Concepts applying to several branches of law'
+                range:   K578-579
+                start:   K578
+                end:     K579
+              - name:    'Legal systems compared'
+                range:   K583-(591)
+                start:   K583
+                end:     K591
+              - name:    'Regional divisions.  Interregional comparative law'
+                range:   K592-597
+                start:   K592
+                end:     K597
+              - name:    'Private law'
+                range:   K600-615
+                start:   K600
+                end:     K615
+                sections:
+                  - name:    'Unification'
+                    range:   K605-615
+                    start:   K605
+                    end:     K615
+              - name:    'Civil law'
+                range:   K623-968
+                start:   K623
+                end:     K968
+                sections:
+                  - name:    'Persons'
+                    range:   K625-(669)
+                    start:   K625
+                    end:     K669
+                  - name:    'Domestic relations.  Family law'
+                    range:   K670-709
+                    start:   K670
+                    end:     K709
+                  - name:    'Property'
+                    range:   K720-792
+                    start:   K720
+                    end:     K792
+                  - name:    'Trusts and trustees'
+                    range:   K795-798
+                    start:   K795
+                    end:     K798
+                  - name:    'Succession upon death'
+                    range:   K805-821
+                    start:   K805
+                    end:     K821
+                  - name:    'Obligations'
+                    range:   K830-968
+                    start:   K830
+                    end:     K968
+                    sections:
+                      - name:    'Contracts'
+                        range:   K840-917
+                        start:   K840
+                        end:     K917
+                      - name:    'Restitution.  Quasi contracts.  Unjust enrichment'
+                        range:   K920
+                        start:   K920
+                        end:     K920
+                      - name:    'Torts'
+                        range:   K923-968
+                        start:   K923
+                        end:     K968
+              - name:    'Compensation to victims of crime.  Reparation'
+                range:   K970
+                start:   K970
+                end:     K970
+              - name:    'Commercial law'
+                range:   K1000-1395
+                start:   K1000
+                end:     K1395
+                sections:
+                  - name:    'The merchant.  Business enterprises'
+                    range:   K1010-1014
+                    start:   K1010
+                    end:     K1014
+                  - name:    'Commercial agency'
+                    range:   K1021-1022
+                    start:   K1021
+                    end:     K1022
+                  - name:    'Commercial contracts'
+                    range:   K1024-1132
+                    start:   K1024
+                    end:     K1132
+                    sections:
+                      - name:    'Sale of goods'
+                        range:   K1026-1045
+                        start:   K1026
+                        end:     K1045
+                      - name:    'Negotiable instruments'
+                        range:   K1054-1065.5
+                        start:   K1054
+                        end:     K1065.5
+                      - name:    'Banking'
+                        range:   K1066-1089
+                        start:   K1066
+                        end:     K1089
+                      - name:    'Loan of money'
+                        range:   K1094-1096
+                        start:   K1094
+                        end:     K1096
+                      - name:    'Secured transactions'
+                        range:   K1100-1109
+                        start:   K1100
+                        end:     K1109
+                      - name:    'Investments'
+                        range:   K1112-1116
+                        start:   K1112
+                        end:     K1116
+                      - name:    'Carriage of goods and passengers.  Carriers'
+                        range:   K1130-1132
+                        start:   K1130
+                        end:     K1132
+                  - name:    'Maritime law'
+                    range:   K1150-1231
+                    start:   K1150
+                    end:     K1231
+                    sections:
+                      - name:    'Maritime social legislation'
+                        range:   K1195-1223
+                        start:   K1195
+                        end:     K1223
+                      - name:    'Marine insurance'
+                        range:   K1226-1231
+                        start:   K1226
+                        end:     K1231
+                  - name:    'Insurance'
+                    range:   K1241-1287
+                    start:   K1241
+                    end:     K1287
+                  - name:    'Business associations'
+                    range:   K1301-1366
+                    start:   K1301
+                    end:     K1366
+                  - name:    'Insolvency and bankruptcy.  Creditors'' rights'
+                    range:   K1370-1395
+                    start:   K1370
+                    end:     K1395
+              - name:    'Intellectual property'
+                range:   K1401-1578
+                start:   K1401
+                end:     K1578
+                sections:
+                  - name:    'Copyright'
+                    range:   K1411-1485
+                    start:   K1411
+                    end:     K1485
+                  - name:    'Industrial property'
+                    range:   K1500-1578
+                    start:   K1500
+                    end:     K1578
+              - name:    'Social legislation'
+                range:   K1700-1973
+                start:   K1700
+                end:     K1973
+                sections:
+                  - name:    'Labor law'
+                    range:   K1701-1841
+                    start:   K1701
+                    end:     K1841
+                  - name:    'Social insurance'
+                    range:   K1861-1929
+                    start:   K1861
+                    end:     K1929
+                  - name:    'Public welfare.  Public assistance'
+                    range:   K1960-1973
+                    start:   K1960
+                    end:     K1973
+              - name:    'Courts.  Procedure'
+                range:   K2100-2385
+                start:   K2100
+                end:     K2385
+                sections:
+                  - name:    'Court organization and procedure'
+                    range:   K2110-2155
+                    start:   K2110
+                    end:     K2155
+                  - name:    'Civil procedure'
+                    range:   K2201-2385
+                    start:   K2201
+                    end:     K2385
+              - name:    'Negotiated settlement.  Compromise'
+                range:   K2390
+                start:   K2390
+                end:     K2390
+              - name:    'Arbitration and award'
+                range:   K2400-2405
+                start:   K2400
+                end:     K2405
+              - name:    'Public law'
+                range:   K3150
+                start:   K3150
+                end:     K3150
+              - name:    'Constitutional law'
+                range:   K3154-3370
+                start:   K3154
+                end:     K3370
+                sections:
+                  - name:    'Constitutional history'
+                    range:   K3161
+                    start:   K3161
+                    end:     K3161
+                  - name:    'The state'
+                    range:   K3169
+                    start:   K3169
+                    end:     K3169
+                  - name:    'Constitutional principles'
+                    range:   K3171-3179
+                    start:   K3171
+                    end:     K3179
+                  - name:    'Form and structure of government'
+                    range:   K3184-3188
+                    start:   K3184
+                    end:     K3188
+                  - name:    'National territory'
+                    range:   K3195
+                    start:   K3195
+                    end:     K3195
+                  - name:    'Foreign relations administration'
+                    range:   K3201
+                    start:   K3201
+                    end:     K3201
+                  - name:    'Public policy'
+                    range:   K3220
+                    start:   K3220
+                    end:     K3220
+                  - name:    'Individual and state'
+                    range:   K3224-3278
+                    start:   K3224
+                    end:     K3278
+                  - name:    'Church and state'
+                    range:   K3280-3282
+                    start:   K3280
+                    end:     K3282
+                  - name:    'Organs of government'
+                    range:   K3289-3367
+                    start:   K3289
+                    end:     K3367
+                    sections:
+                      - name:    'The people.  Election law'
+                        range:   K3290-3304
+                        start:   K3290
+                        end:     K3304
+                      - name:    'The legislature'
+                        range:   K3310-3329
+                        start:   K3310
+                        end:     K3329
+                      - name:    'Heads of state and the central government'
+                        range:   K3332-3363
+                        start:   K3332
+                        end:     K3363
+                      - name:    'The judiciary'
+                        range:   K3367
+                        start:   K3367
+                        end:     K3367
+                  - name:    'Constitutional courts and procedure'
+                    range:   K3370
+                    start:   K3370
+                    end:     K3370
+              - name:    'Colonial law'
+                range:   K3375
+                start:   K3375
+                end:     K3375
+              - name:    'Administrative law'
+                range:   K3400-3431
+                start:   K3400
+                end:     K3431
+                sections:
+                  - name:    'The administrative process'
+                    range:   K3402-3417
+                    start:   K3402
+                    end:     K3417
+                  - name:    'Administrative organization'
+                    range:   K3420-3431
+                    start:   K3420
+                    end:     K3431
+              - name:    'Civil service.  Government officials and employees'
+                range:   K3440-3460
+                start:   K3440
+                end:     K3460
+              - name:    'Public property.  Public restraint on private property'
+                range:   K3476-3560
+                start:   K3476
+                end:     K3560
+              - name:    'Public health'
+                range:   K3566-3578
+                start:   K3566
+                end:     K3578
+              - name:    'Environmental law'
+                range:   K3581-(3598)
+                start:   K3581
+                end:     K3598
+              - name:    'Medical legislation'
+                range:   K3601-3611
+                start:   K3601
+                end:     K3611
+              - name:    'Veterinary laws.  Veterinary medicine and hygiene.  Prevention of cruelty to animals'
+                range:   K3615-3622
+                start:   K3615
+                end:     K3622
+              - name:    'Food.  Drugs.  Cosmetics'
+                range:   K3625-3649
+                start:   K3625
+                end:     K3649
+              - name:    'Alcohol.  Alcoholic beverages'
+                range:   K3651-3654
+                start:   K3651
+                end:     K3654
+              - name:    'Public safety'
+                range:   K3661-3674
+                start:   K3661
+                end:     K3674
+              - name:    'Control of social activities'
+                range:   K3700-3705
+                start:   K3700
+                end:     K3705
+              - name:    'Education'
+                range:   K3740-3762
+                start:   K3740
+                end:     K3762
+              - name:    'Science and arts.  Research'
+                range:   K3770-3795
+                start:   K3770
+                end:     K3795
+              - name:    'Economic constitution, policy, planning, and development'
+                range:   K3820-3836
+                start:   K3820
+                end:     K3836
+              - name:    'Regulation of industry, trade, and commerce.  Occupational law'
+                range:   K3840-4375
+                start:   K3840
+                end:     K4375
+                sections:
+                  - name:    'Trade regulations.  Control of trade practices'
+                    range:   K3842-3862
+                    start:   K3842
+                    end:     K3862
+                  - name:    'Primary production.  Extractive industries'
+                    range:   K3870-3918
+                    start:   K3870
+                    end:     K3918
+                  - name:    'Manufacturing industries'
+                    range:   K3921-3925
+                    start:   K3921
+                    end:     K3925
+                  - name:    'Food processing industries'
+                    range:   K3926-3935
+                    start:   K3926
+                    end:     K3935
+                  - name:    'Trade and commerce'
+                    range:   K3941-3974
+                    start:   K3941
+                    end:     K3974
+                  - name:    'Public utilities'
+                    range:   K3978-3992
+                    start:   K3978
+                    end:     K3992
+                  - name:    'Transportation and communication'
+                    range:   K4011-4343
+                    start:   K4011
+                    end:     K4343
+                  - name:    'Professions and occupations'
+                    range:   K4360-4375
+                    start:   K4360
+                    end:     K4375
+              - name:    'Public finance'
+                range:   K4430-4675
+                start:   K4430
+                end:     K4675
+                sections:
+                  - name:    'National revenue'
+                    range:   K4453-4640
+                    start:   K4453
+                    end:     K4640
+                  - name:    'State and local finance'
+                    range:   K4650-4675
+                    start:   K4650
+                    end:     K4675
+              - name:    'Government measures in time of war, national emergency, or economic crisis'
+                range:   K4700-4705
+                start:   K4700
+                end:     K4705
+              - name:    'National defense.  Military law'
+                range:   K4720-4780
+                start:   K4720
+                end:     K4780
+                sections:
+                  - name:    'The military establishment.  Armed forces'
+                    range:   K4725-4734
+                    start:   K4725
+                    end:     K4734
+                  - name:    'Military criminal law and procedure'
+                    range:   K4740-4760
+                    start:   K4740
+                    end:     K4760
+              - name:    'Criminal law and procedure'
+                range:   K5000-5582
+                start:   K5000
+                end:     K5582
+                sections:
+                  - name:    'Criminal law'
+                    range:   K5015.4-5350
+                    start:   K5015.4
+                    end:     K5350
+                  - name:    'Criminal procedure'
+                    range:   K5401-5570
+                    start:   K5401
+                    end:     K5570
+                  - name:    'Juvenile criminal law and procedure'
+                    range:   K5575-5582
+                    start:   K5575
+                    end:     K5582
+          - name:    'Private international law.  Conflict of laws'
+            range:   K7000-7720
+            start:   K7000
+            end:     K7720
+            sections:
+              - name:    'International unification, approximation, and harmonization'
+                range:   K7051-7054
+                start:   K7051
+                end:     K7054
+              - name:    'Choice of law'
+                range:   K7060-7081
+                start:   K7060
+                end:     K7081
+              - name:    'Retroactive law.  Intertemporal law'
+                range:   K7085
+                start:   K7085
+                end:     K7085
+              - name:    'Juristic acts'
+                range:   K7090
+                start:   K7090
+                end:     K7090
+              - name:    'Persons'
+                range:   K7120-7197
+                start:   K7120
+                end:     K7197
+                sections:
+                  - name:    'Natural persons'
+                    range:   K7125-7140
+                    start:   K7125
+                    end:     K7140
+                  - name:    'Juristic persons.  Associations'
+                    range:   K7145-7148
+                    start:   K7145
+                    end:     K7148
+                  - name:    'Domestic relations.  Family law'
+                    range:   K7155-7197
+                    start:   K7155
+                    end:     K7197
+                    sections:
+                      - name:    'Marriage.  Husband and wife'
+                        range:   K7157-7179
+                        start:   K7157
+                        end:     K7179
+                      - name:    'Parent and child.  Guardian and ward'
+                        range:   K7181-7197
+                        start:   K7181
+                        end:     K7197
+              - name:    'Property'
+                range:   K7200-7218
+                start:   K7200
+                end:     K7218
+              - name:    'Trust and trustees'
+                range:   K7222
+                start:   K7222
+                end:     K7222
+              - name:    'Succession upon death'
+                range:   K7230-7245
+                start:   K7230
+                end:     K7245
+              - name:    'Obligations'
+                range:   K7260-7338
+                start:   K7260
+                end:     K7338
+                sections:
+                  - name:    'Contracts'
+                    range:   K7265-7305
+                    start:   K7265
+                    end:     K7305
+                  - name:    'Restitution.  Quasi contracts.  Unjust enrichment'
+                    range:   K7310
+                    start:   K7310
+                    end:     K7310
+                  - name:    'Torts'
+                    range:   K7315-7338
+                    start:   K7315
+                    end:     K7338
+              - name:    'Commercial law'
+                range:   K7340-7512
+                start:   K7340
+                end:     K7512
+                sections:
+                  - name:    'Commercial contracts'
+                    range:   K7350-7444
+                    start:   K7350
+                    end:     K7444
+                  - name:    'Maritime law'
+                    range:   K7449-7460
+                    start:   K7449
+                    end:     K7460
+                  - name:    'Insurance'
+                    range:   K7470
+                    start:   K7470
+                    end:     K7470
+                  - name:    'Business associations.  Business corporations'
+                    range:   K7485-7495
+                    start:   K7485
+                    end:     K7495
+                  - name:    'Insolvency and bankruptcy.  Creditors'' rights'
+                    range:   K7510-7512
+                    start:   K7510
+                    end:     K7512
+              - name:    'Intellectual property'
+                range:   K7550-7582
+                start:   K7550
+                end:     K7582
+                sections:
+                  - name:    'Copyright'
+                    range:   K7555-7557
+                    start:   K7555
+                    end:     K7557
+                  - name:    'Industrial property'
+                    range:   K7570-7582
+                    start:   K7570
+                    end:     K7582
+              - name:    'Social legislation'
+                range:   K7585-7595
+                start:   K7585
+                end:     K7595
+              - name:    'Civil procedure.  International civil procedure'
+                range:   K7611-7688
+                start:   K7611
+                end:     K7688
+              - name:    'Arbitration and award'
+                range:   K7690
+                start:   K7690
+                end:     K7690
+              - name:    'Recognition of foreign administrative acts'
+                range:   K7720
+                start:   K7720
+                end:     K7720
+  - subclass:  KB
+    name:     'Religious law in general.  Comparative religious law.  Jurisprudence'
+    sections:
+      - name:    'Religious law in general.  Comparative religious law. Jurisprudence'
+        range:   KB1-4855
+        start:   KB1
+        end:     KB4855
+        sections:
+          - name:    'Bibliography'
+            range:   KB2-4
+            start:   KB2
+            end:     KB4
+          - name:    'Periodicals'
+            range:   KB7-68
+            start:   KB7
+            end:     KB68
+          - name:    'Annuals.  Annuaires'
+            range:   KB68
+            start:   KB68
+            end:     KB68
+          - name:    'Monographic series.  By title, A-Z'
+            range:   KB70.A-Z
+            start:   KB70.A
+            end:     KB70.Z
+          - name:    'Collections.  Compilations (General and comprehensive)'
+            range:   KB73
+            start:   KB73
+            end:     KB73
+          - name:    'Auxiliary sciences'
+            range:   KB74-78
+            start:   KB74
+            end:     KB78
+          - name:    'Encyclopedias.  Law dictionaries.  Terms and phrases. Vocabularies.'
+            note:    'By author or title, A-Z'
+            range:   KB90.A-Z
+            start:   KB90.A
+            end:     KB90.Z
+          - name:    'Proverbia.  Legal maxims.  Brocardica juris.  Regulae juris.'
+            note:    'By author or title, A-Z'
+            range:   KB100.A-Z
+            start:   KB100.A
+            end:     KB100.Z
+          - name:    'Biography (Collective)'
+            range:   KB122
+            start:   KB122
+            end:     KB122
+          - name:    'Legal research.  Legal bibliography.  Methods of bibliographic research'
+            range:   KB130
+            start:   KB130
+            end:     KB130
+          - name:    'Conferences.  Symposia'
+            range:   KB150
+            start:   KB150
+            end:     KB150
+          - name:    'General works.  Treatises'
+            range:   KB160
+            start:   KB160
+            end:     KB160
+          - name:    'Legal systems compared'
+            range:   KB162-250
+            start:   KB162
+            end:     KB250
+          - name:    'Theory, philosophy, and science of religious law'
+            range:   KB270-280
+            start:   KB270
+            end:     KB280
+          - name:    'Interdisciplinary discussion of subjects'
+            range:   KB400-4855
+            start:   KB400
+            end:     KB4855
+            sections:
+              - name:    'Ritual law.  Religious observances and rituals'
+                range:   KB400
+                start:   KB400
+                end:     KB400
+              - name:    'Law reform and policies. Criticism'
+                range:   KB410
+                start:   KB410
+                end:     KB410
+              - name:    'Private law (General)'
+                range:   KB479
+                start:   KB479
+                end:     KB479
+              - name:    'Private international law. Conflict of laws'
+                range:   KB480-482
+                start:   KB480
+                end:     KB482
+              - name:    'Civil law (General)'
+                range:   KB491
+                start:   KB491
+                end:     KB491
+              - name:    'Persons'
+                range:   KB524-530
+                start:   KB524
+                end:     KB530
+              - name:    'Domestic relations. Family law'
+                range:   KB531-619
+                start:   KB531
+                end:     KB619
+              - name:    'Guardianship. Guardian and ward'
+                range:   KB622-628.5
+                start:   KB622
+                end:     KB628.5
+              - name:    'Inheritance and succession'
+                range:   KB632-636.2
+                start:   KB632
+                end:     KB636.2
+              - name:    'Gifts. Charitable gifts. Donations'
+                range:   KB636.3
+                start:   KB636.3
+                end:     KB636.3
+              - name:    'Property. Res in commercio'
+                range:   KB640-726
+                start:   KB640
+                end:     KB726
+              - name:    'Obligations. Contracts and transactions'
+                range:   KB810-962.8
+                start:   KB810
+                end:     KB962.8
+              - name:    'Labor laws and legislation'
+                range:   KB1270-1278
+                start:   KB1270
+                end:     KB1278
+              - name:    'Social laws and legislation. Welfare. Charities'
+                range:   KB1468-1550
+                start:   KB1468
+                end:     KB1550
+              - name:    'Courts and procedure'
+                range:   KB1572-1690
+                start:   KB1572
+                end:     KB1690
+              - name:    'Public law. The State'
+                range:   KB2000-2035
+                start:   KB2000
+                end:     KB2035
+              - name:    'Constitutions and religion. Constitutional and administrative law'
+                range:   KB2101-2862
+                start:   KB2101
+                end:     KB2862
+              - name:    'Civil service. Employees of state, communal agencies, and religious corporations'
+                range:   KB2870
+                start:   KB2870
+                end:     KB2870
+              - name:    'Police and public safety'
+                range:   KB3000-3034
+                start:   KB3000
+                end:     KB3034
+              - name:    'Public property. Government property'
+                range:   KB3040.5-3056
+                start:   KB3040.5
+                end:     KB3056
+              - name:    'Public health'
+                range:   KB3075-3096.5
+                start:   KB3075
+                end:     KB3096.5
+              - name:    'Medical legislation'
+                range:   KB3098-3121.7
+                start:   KB3098
+                end:     KB3121.7
+              - name:    'Veterinary medicine and hygiene. Veterinary public health'
+                range:   KB3122
+                start:   KB3122
+                end:     KB3122
+              - name:    'Animal protection. Animal welfare. Animal rights'
+                range:   KB3123-3123.5
+                start:   KB3123
+                end:     KB3123.5
+              - name:    'Birth control. Family planning'
+                range:   KB3124-3125
+                start:   KB3124
+                end:     KB3125
+              - name:    'Environmental law'
+                range:   KB3127-3135
+                start:   KB3127
+                end:     KB3135
+              - name:    'Cultural affairs'
+                range:   KB3137-3183
+                start:   KB3137
+                end:     KB3183
+              - name:    'Economic law'
+                range:   KB3190-3429
+                start:   KB3190
+                end:     KB3429
+              - name:    'Transportation and communication'
+                range:   KB3440-3500.7
+                start:   KB3440
+                end:     KB3500.7
+              - name:    'Professions. Intelligentsia'
+                range:   KB3515-3522
+                start:   KB3515
+                end:     KB3522
+              - name:    'Public finance'
+                range:   KB3526-3694
+                start:   KB3526
+                end:     KB3694
+              - name:    'Government measures in time of war, national emergency, or economic crisis'
+                range:   KB3709-3726
+                start:   KB3709
+                end:     KB3726
+              - name:    'Military law'
+                range:   KB3735-3780
+                start:   KB3735
+                end:     KB3780
+              - name:    'Criminal law and procedure'
+                range:   KB3790-4855
+                start:   KB3790
+                end:     KB4855
+  - subclass:  KBM
+    name:     'Jewish law.  Halakah'
+    sections:
+      - name:    'Jewish law.  Halakah'
+        range:   KBM1-4855
+        start:   KBM1
+        end:     KBM4855
+        sections:
+          - name:    'Halakah'
+            lcco:    false
+            range:   KBM523.6-523.72
+            start:   KBM523.6
+            end:     KBM523.72
+            sections:
+              - name:    'Even ha-''ezer law (General)'
+                range:   KBM523.6
+                start:   KBM523.6
+                end:     KBM523.6
+              - name:    'Hoshen mishpat law (General)'
+                range:   KBM523.72
+                start:   KBM523.72
+                end:     KBM523.72
+          - name:    'Mishpat Ivri'
+            range:   KBM523.8-4855
+            start:   KBM523.8
+            end:     KBM4855
+            sections:
+              - name:    'Bibliography'
+                range:   KBM523.8
+                start:   KBM523.8
+                end:     KBM523.8
+              - name:    'Monographic series'
+                range:   KBM523.82
+                start:   KBM523.82
+                end:     KBM523.82
+              - name:    'Legal education. Study and teaching'
+                range:   KBM523.9
+                start:   KBM523.9
+                end:     KBM523.9
+              - name:    'General works'
+                range:   KBM524
+                start:   KBM524
+                end:     KBM524
+              - name:    'The concept of Jewish law'
+                range:   KBM524.12-524.26
+                start:   KBM524.12
+                end:     KBM524.26
+              - name:    'Sources of Jewish law (Mishpat Ivri)'
+                range:   KBM524.3
+                start:   KBM524.3
+                end:     KBM524.3
+              - name:    'Methodology of law development'
+                range:   KBM524.32-.34
+                start:   KBM524.32
+                end:     KBM524.34
+              - name:    'Influence of other legal systems on Jewish law'
+                range:   KBM524.36
+                start:   KBM524.36
+                end:     KBM524.36
+              - name:    'Law reform and policies. Criticism'
+                range:   KBM524.38
+                start:   KBM524.38
+                end:     KBM524.38
+              - name:    'Concepts applying to several branches of the law, A-Z'
+                range:   KBM524.4.A-Z
+                start:   KBM524.4.A
+                end:     KBM524.4.Z
+              - name:    'Private law'
+                range:   KBM524.42
+                start:   KBM524.42
+                end:     KBM524.42
+              - name:    'Conflict of laws. Plurality of laws conflict'
+                range:   KBM524.43
+                start:   KBM524.43
+                end:     KBM524.43
+              - name:    'Assistance in emergencies'
+                range:   KBM524.5
+                start:   KBM524.5
+                end:     KBM524.5
+              - name:    'Persons'
+                range:   KBM524.6-530
+                start:   KBM524.6
+                end:     KBM530
+              - name:    'Domestic relations. Family law'
+                range:   KBM531-619
+                start:   KBM531
+                end:     KBM619
+              - name:    'Guardian and ward. Apotropos'
+                range:   KBM622-628.5
+                start:   KBM622
+                end:     KBM628.5
+              - name:    'Inheritance and succession'
+                range:   KBM632-636.2
+                start:   KBM632
+                end:     KBM636.2
+              - name:    'Gifts. Charitable gifts. Donations'
+                range:   KBM636.3
+                start:   KBM636.3
+                end:     KBM636.3
+              - name:    'Dinei mamonot'
+                range:   KBM639-1424
+                start:   KBM639
+                end:     KBM1424
+              - name:    'Social laws and legislation'
+                range:   KBM1468-1547
+                start:   KBM1468
+                end:     KBM1547
+              - name:    'Courts and procedure'
+                range:   KBM1572-1942
+                start:   KBM1572
+                end:     KBM1942
+              - name:    'Public law. The state and the Jewish community. Kehillah'
+                range:   KBM2000-2024
+                start:   KBM2000
+                end:     KBM2024
+              - name:    'Constitutional law. Constitutional principles of the Jewish community'
+                range:   KBM2070-2614
+                start:   KBM2070
+                end:     KBM2614
+              - name:    'Administrative law and process of communal agencies'
+                range:   KBM2711-2840
+                start:   KBM2711
+                end:     KBM2840
+              - name:    'Civil service. Employees of communal agencies'
+                range:   KBM2970
+                start:   KBM2970
+                end:     KBM2970
+              - name:    'Police and public safety'
+                range:   KBM3000-3036.5
+                start:   KBM3000
+                end:     KBM3036.5
+              - name:    'Public property. Communal property. Restraints on private property'
+                range:   KBM3040.5-3073
+                start:   KBM3040.5
+                end:     KBM3073
+              - name:    'Public health'
+                range:   KBM3075-3097
+                start:   KBM3075
+                end:     KBM3097
+              - name:    'Medical legislation'
+                range:   KBM3098-3122
+                start:   KBM3098
+                end:     KBM3122
+              - name:    'Birth control. Family planning'
+                range:   KBM3124-3125
+                start:   KBM3124
+                end:     KBM3125
+              - name:    'Environmental law'
+                range:   KBM3127-3134
+                start:   KBM3127
+                end:     KBM3134
+              - name:    'Cultural affairs'
+                range:   KBM3137-3183
+                start:   KBM3137
+                end:     KBM3183
+              - name:    'Economic law'
+                range:   KBM3190-3436
+                start:   KBM3190
+                end:     KBM3436
+              - name:    'Transportation and communication'
+                range:   KBM3440-3504.5
+                start:   KBM3440
+                end:     KBM3504.5
+              - name:    'Professions'
+                range:   KBM3515-3519
+                start:   KBM3515
+                end:     KBM3519
+              - name:    'Public finance'
+                range:   KBM3526-3695
+                start:   KBM3526
+                end:     KBM3695
+              - name:    'Measures in time of war, national emergency, or economic crisis'
+                range:   KBM3709-3729
+                start:   KBM3709
+                end:     KBM3729
+              - name:    'Community defense. Military law'
+                range:   KBM3738-3785
+                start:   KBM3738
+                end:     KBM3785
+              - name:    'Criminal law and procedure'
+                range:   KBM3790-4855
+                start:   KBM3790
+                end:     KBM4855
+  - subclass:  KBP
+    name:     'Islamic law. Sharī''ah. Fiqh. شريعة. فقه'
+    sort_as:  'Islamic law. Shari''ah. Fiqh. ?????. ???'
+    sections:
+      - name:    'Islamic law. Sharī''ah. Fiqh. شريعة. فقه'
+        sort_as: 'Islamic law. Shari''ah. Fiqh. ?????. ???'
+        range:   KBP1-4860
+        start:   KBP1
+        end:     KBP4860
+        sections:
+          - name:    'Bibliography'
+            range:   KBP2.2-8
+            start:   KBP2.2
+            end:     KBP8
+          - name:    'Monographic series'
+            range:   KBP9.5
+            start:   KBP9.5
+            end:     KBP9.5
+          - name:    'Societies. Associations'
+            range:   KBP10-14.5
+            start:   KBP10
+            end:     KBP14.5
+          - name:    'Congresses. Conferences'
+            range:   KBP15
+            start:   KBP15
+            end:     KBP15
+          - name:    'Academies. Institutes'
+            range:   KBP18
+            start:   KBP18
+            end:     KBP18
+          - name:    'Encyclopedias. Dictionaries'
+            range:   KBP40
+            start:   KBP40
+            end:     KBP40
+          - name:    'Maxims. Quotations'
+            range:   KBP40.2
+            start:   KBP40.2
+            end:     KBP40.2
+          - name:    'Directories'
+            range:   KBP40.5
+            start:   KBP40.5
+            end:     KBP40.5
+          - name:    'Legal research'
+            range:   KBP41
+            start:   KBP41
+            end:     KBP41
+          - name:    'Legal education. Study and teaching'
+            range:   KBP42-43
+            start:   KBP42
+            end:     KBP43
+          - name:    'History, development and application of Islamic law'
+            range:   KBP50-69
+            start:   KBP50
+            end:     KBP69
+          - name:    'Biography'
+            range:   KBP70-75.4
+            start:   KBP70
+            end:     KBP75.4
+          - name:    'Sources'
+            range:   KBP100-136.8
+            start:   KBP100
+            end:     KBP136.8
+          - name:    'General works'
+            range:   KBP144
+            start:   KBP144
+            end:     KBP144
+          - name:    'Islamic law and other disciplines or subjects'
+            range:   KBP173.25-.6
+            start:   KBP173.25
+            end:     KBP173.6
+          - name:    'Observances and practice of Islam'
+            range:   KBP174-190.5
+            start:   KBP174
+            end:     KBP190.5
+          - name:    'Schools of thought. Islamic legal schools. Madhāhib. مذاهب'
+            sort_as: 'Schools of thought. Islamic legal schools. Madhahib. ?????'
+            range:   KBP250-420
+            start:   KBP250
+            end:     KBP420
+          - name:    'Usūl al-fiqh. Jurisprudence and theory of law. Science of legal reasoning'
+            sort_as: 'Usul al-fiqh. Jurisprudence and theory of law. Science of legal reasoning'
+            range:   KBP425-466.3
+            start:   KBP425
+            end:     KBP466.3
+          - name:    'Influence of other legal systems on Islamic law'
+            range:   KBP469
+            start:   KBP469
+            end:     KBP469
+          - name:    'Law reform. Criticism. Tanzīm'
+            sort_as: 'Law reform. Criticism. Tanzim'
+            range:   KBP470
+            start:   KBP470
+            end:     KBP470
+          - name:    'Conflict of laws. Tanāzu'' al-qawānīn'
+            sort_as: 'Conflict of laws. Tanazu'' al-qawanin'
+            range:   KBP480-485
+            start:   KBP480
+            end:     KBP485
+          - name:    'Furū'' al-fiqh. Substantive law. Branches of law. فروع الفقه'
+            sort_as: 'Furu'' al-fiqh. Substantive law. Branches of law. ???? ?????'
+            range:   KBP490-4860
+            start:   KBP490
+            end:     KBP4860
+            sections:
+              - name:    'General works. Treatises'
+                range:   KBP490.2-.95
+                start:   KBP490.2
+                end:     KBP490.95
+              - name:    'Particular genres'
+                range:   KBP491-497.95
+                start:   KBP491
+                end:     KBP497.95
+              - name:    'General concepts'
+                range:   KBP500-509.8
+                start:   KBP500
+                end:     KBP509.8
+              - name:    'Ahwāl shakhsīyah. أحوال شخسية'
+                sort_as: 'Ahwal shakhsiyah. ????? ?????'
+                range:   KBP524-638
+                start:   KBP524
+                end:     KBP638
+              - name:    'Mu''āmalāt. معاملات'
+                sort_as: 'Mu''amalat. ???????'
+                range:   KBP639-1154
+                start:   KBP639
+                end:     KBP1154
+              - name:    'Intellectual and industrial property'
+                range:   KBP1155-1194
+                start:   KBP1155
+                end:     KBP1194
+              - name:    'Unfair competition'
+                range:   KBP1234-1259
+                start:   KBP1234
+                end:     KBP1259
+              - name:    'Labor laws and legislation'
+                range:   KBP1270-1467
+                start:   KBP1270
+                end:     KBP1467
+              - name:    'Social laws and legislation'
+                range:   KBP1468-1569
+                start:   KBP1468
+                end:     KBP1569
+              - name:    'Courts and procedure'
+                range:   KBP1572-1942
+                start:   KBP1572
+                end:     KBP1942
+              - name:    'Public law. The state and Islam'
+                range:   KBP2000-2035
+                start:   KBP2000
+                end:     KBP2035
+              - name:    'Constitution of the state. Constitutional law'
+                range:   KBP2101-2612
+                start:   KBP2101
+                end:     KBP2612
+              - name:    'Government and administration. Siyāsah. Administrative process'
+                sort_as: 'Government and administration. Siyasah. Administrative process'
+                range:   KBP2730-2968
+                start:   KBP2730
+                end:     KBP2968
+              - name:    'Civil service. Employees of communal agencies'
+                range:   KBP2970
+                start:   KBP2970
+                end:     KBP2970
+              - name:    'Police and public safety'
+                range:   KBP3000-3037
+                start:   KBP3000
+                end:     KBP3037
+              - name:    'Public property. Government property'
+                range:   KBP3040.5-3072
+                start:   KBP3040.5
+                end:     KBP3072
+              - name:    'Public health'
+                range:   KBP3075-3096.5
+                start:   KBP3075
+                end:     KBP3096.5
+              - name:    'Medical legislation'
+                range:   KBP3098-3121.5
+                start:   KBP3098
+                end:     KBP3121.5
+              - name:    'Veterinary medicine and hygiene. Veterinary public health'
+                range:   KBP3122
+                start:   KBP3122
+                end:     KBP3122
+              - name:    'Animal protection. Animal welfare. Animal rights'
+                range:   KBP3123-3123.5
+                start:   KBP3123
+                end:     KBP3123.5
+              - name:    'Birth control. Family planning'
+                range:   KBP3124-3125
+                start:   KBP3124
+                end:     KBP3125
+              - name:    'Environmental law'
+                range:   KBP3127-3135
+                start:   KBP3127
+                end:     KBP3135
+              - name:    'Cultural affairs'
+                range:   KBP3137-3183.3
+                start:   KBP3137
+                end:     KBP3183.3
+              - name:    'Economic law'
+                range:   KBP3190-3437
+                start:   KBP3190
+                end:     KBP3437
+              - name:    'Transportation and communication'
+                range:   KBP3440-3512
+                start:   KBP3440
+                end:     KBP3512
+              - name:    'Professions. Intelligentsia'
+                range:   KBP3515-3521
+                start:   KBP3515
+                end:     KBP3521
+              - name:    'Public finance'
+                range:   KBP3526-3705
+                start:   KBP3526
+                end:     KBP3705
+              - name:    'Government measures in time of war, national emergency, or economic crisis'
+                range:   KBP3709-3727
+                start:   KBP3709
+                end:     KBP3727
+              - name:    'Military law'
+                range:   KBP3738-3785
+                start:   KBP3738
+                end:     KBP3785
+              - name:    'Criminal law and procedure'
+                range:   KBP3790-4860
+                start:   KBP3790
+                end:     KBP4860
+  - subclass:  KBR
+    name:     'History of canon law'
+    sections:
+      - name:    'History of canon law'
+        range:   KBR2-4090
+        start:   KBR2
+        end:     KBR4090
+        sections:
+          - name:    'Bibliography'
+            range:   KBR2-19
+            start:   KBR2
+            end:     KBR19
+          - name:    'Annuals. Annuaires. Yearbooks'
+            range:   KBR21
+            start:   KBR21
+            end:     KBR21
+          - name:    'Monographic series'
+            range:   KBR22
+            start:   KBR22
+            end:     KBR22
+          - name:    'Official acts of the Holy See'
+            range:   KBR27-41.7
+            start:   KBR27
+            end:     KBR41.7
+          - name:    'Decisions of ecclesiastical tribunals and courts, and related materials'
+            range:   KBR42-54.5
+            start:   KBR42
+            end:     KBR54.5
+          - name:    'Encyclopedias. Law dictionaries. Terms and phrases. Vocabularia'
+            range:   KBR56
+            start:   KBR56
+            end:     KBR56
+          - name:    'Directories'
+            range:   KBR64
+            start:   KBR64
+            end:     KBR64
+          - name:    'Auxiliary sciences'
+            range:   KBR74-83
+            start:   KBR74
+            end:     KBR83
+          - name:    'Proverbia. Legal maxims. Brocardica juris. Regulae juris'
+            range:   KBR100.A-Z
+            start:   KBR100.A
+            end:     KBR100.Z
+          - name:    'Formularies. Clauses and forms. Formularia'
+            range:   KBR105.A-Z
+            start:   KBR105.A
+            end:     KBR105.Z
+          - name:    'Collective biography of canonists or jurists'
+            range:   KBR122-124
+            start:   KBR122
+            end:     KBR124
+          - name:    'Trials'
+            range:   KBR127-129.5
+            start:   KBR127
+            end:     KBR129.5
+          - name:    'Legal research. Legal bibliography. Methods of bibliographic research'
+            range:   KBR130-132
+            start:   KBR130
+            end:     KBR132
+          - name:    'Legal education. Study and teaching'
+            range:   KBR133-134
+            start:   KBR133
+            end:     KBR134
+          - name:    'Societies. Associations. Academies, etc.'
+            range:   KBR136-148
+            start:   KBR136
+            end:     KBR148
+          - name:    'Conferences. Symposia'
+            range:   KBR150
+            start:   KBR150
+            end:     KBR150
+          - name:    'General works'
+            range:   KBR160
+            start:   KBR160
+            end:     KBR160
+          - name:    'Sources'
+            range:   KBR190-2154.5
+            start:   KBR190
+            end:     KBR2154.5
+          - name:    'Canon law and other disciplines or subjects'
+            range:   KBR2155-2157
+            start:   KBR2155
+            end:     KBR2157
+          - name:    'Canonical jurisprudence. Canonical science'
+            range:   KBR2160-2204.5
+            start:   KBR2160
+            end:     KBR2204.5
+          - name:    'Influence of other legal systems on Canon law'
+            range:   KBR2205-2206.3
+            start:   KBR2205
+            end:     KBR2206.3
+          - name:    'Law reform and policies. Criticism'
+            range:   KBR2207
+            start:   KBR2207
+            end:     KBR2207
+          - name:    'General concepts and principles, A-Z'
+            range:   KBR2208.A-Z
+            start:   KBR2208.A
+            end:     KBR2208.Z
+          - name:    'Ius ecclesiasticum privatum'
+            range:   KBR2224-2295
+            start:   KBR2224
+            end:     KBR2295
+          - name:    'Constitution of the Church'
+            range:   KBR2310-3026
+            start:   KBR2310
+            end:     KBR3026
+          - name:    'The teaching office of the church. Magisterium. De ecclesiae munere docendi'
+            range:   KBR3040-3070
+            start:   KBR3040
+            end:     KBR3070
+          - name:    'Sacraments. Administration of sacraments. De sacramentis et administratione'
+            range:   KBR3077-3165
+            start:   KBR3077
+            end:     KBR3165
+          - name:    'Sacramentals. Sacramentalia'
+            range:   KBR3180-3182
+            start:   KBR3180
+            end:     KBR3182
+          - name:    'Other acts of divine worship. De ceteris actibus Cultus Divini'
+            range:   KBR3184-3256
+            start:   KBR3184
+            end:     KBR3256
+          - name:    'Social work of the Church. Public welfare. Caritas'
+            range:   KBR3264-3280
+            start:   KBR3264
+            end:     KBR3280
+          - name:    'Church property. Church economics and finance. Administration'
+            range:   KBR3320-3460
+            start:   KBR3320
+            end:     KBR3460
+          - name:    'Penal (Criminal) law. De lege poenali'
+            range:   KBR3500-3774
+            start:   KBR3500
+            end:     KBR3774
+          - name:    'Judiciary. Ecclesiastical courts and procedure. De processibus'
+            range:   KBR3780-3983
+            start:   KBR3780
+            end:     KBR3983
+          - name:    'Church and state relationships. De relationibus inter ecclesiam et status. Ius publicum ecclesiae'
+            range:   KBR4000-4090
+            start:   KBR4000
+            end:     KBR4090
+  - subclass:  KBU
+    name:     'Law of the Roman Catholic Church. The Holy See'
+    sections:
+      - name:    'Law of the Roman Catholic Church. The Holy See'
+        range:   KBU2-4820
+        start:   KBU2
+        end:     KBU4820
+        sections:
+          - name:    'Bibliography'
+            range:   KBU2-19
+            start:   KBU2
+            end:     KBU19
+          - name:    'Annuals. Annuaires. Yearbooks'
+            range:   KBU21
+            start:   KBU21
+            end:     KBU21
+          - name:    'Monographic series'
+            range:   KBU22
+            start:   KBU22
+            end:     KBU22
+          - name:    'Official gazette of the Holy See'
+            range:   KBU25-26
+            start:   KBU25
+            end:     KBU26
+          - name:    'Official acts of the Holy See'
+            range:   KBU26.8-41.5
+            start:   KBU26.8
+            end:     KBU41.5
+          - name:    'Decisions of ecclesiastical tribunals and courts, and related materials'
+            range:   KBU42-54.5
+            start:   KBU42
+            end:     KBU54.5
+          - name:    'Encyclopedias'
+            range:   KBU56
+            start:   KBU56
+            end:     KBU56
+          - name:    'Dictionaries. Terms and phrases. Vocabularies'
+            range:   KBU56.5
+            start:   KBU56.5
+            end:     KBU56.5
+          - name:    'Directories'
+            range:   KBU64
+            start:   KBU64
+            end:     KBU64
+          - name:    'Form books. Clauses and forms'
+            range:   KBU102
+            start:   KBU102
+            end:     KBU102
+          - name:    'Trials'
+            range:   KBU127-129.5
+            start:   KBU127
+            end:     KBU129.5
+          - name:    'Legal research. Legal bibliography. Methods of bibliographic research'
+            range:   KBU130-132
+            start:   KBU130
+            end:     KBU132
+          - name:    'Legal education. Study and teaching'
+            range:   KBU133
+            start:   KBU133
+            end:     KBU133
+          - name:    'Societies. Associations. Academies, etc.'
+            range:   KBU136-148
+            start:   KBU136
+            end:     KBU148
+          - name:    'Academies. Institutes'
+            range:   KBU149
+            start:   KBU149
+            end:     KBU149
+          - name:    'Conferences. Symposia'
+            range:   KBU150
+            start:   KBU150
+            end:     KBU150
+          - name:    'General works'
+            range:   KBU160
+            start:   KBU160
+            end:     KBU160
+          - name:    'Works on diverse aspects of a particular subject and falling within several branches of the law.'
+            note:    'By subject, A-Z'
+            range:   KBU180.A-Z
+            start:   KBU180.A
+            end:     KBU180.Z
+          - name:    'Collections. Compilations. Selections'
+            range:   KBU195-1565
+            start:   KBU195
+            end:     KBU1565
+          - name:    'Canon law and other disciplines or subjects'
+            range:   KBU2155-2157
+            start:   KBU2155
+            end:     KBU2157
+          - name:    'Canonical jurisprudence. Theory and science of canon law'
+            range:   KBU2160-2204
+            start:   KBU2160
+            end:     KBU2204
+          - name:    'Influence of other legal systems on canon law'
+            range:   KBU2205-2206
+            start:   KBU2205
+            end:     KBU2206
+          - name:    'Law reform and policies. Criticism'
+            range:   KBU2207
+            start:   KBU2207
+            end:     KBU2207
+          - name:    'Concepts applying to several branches of the law, A-Z'
+            range:   KBU2208.A-Z
+            start:   KBU2208.A
+            end:     KBU2208.Z
+          - name:    'The codes of canon law'
+            range:   KBU2210-2212
+            start:   KBU2210
+            end:     KBU2212
+          - name:    'General norms and principles. De normis generalibus'
+            range:   KBU2215-2308
+            start:   KBU2215
+            end:     KBU2308
+          - name:    'Constitution of the Church'
+            range:   KBU2310-3026
+            start:   KBU2310
+            end:     KBU3026
+          - name:    'The teaching office of the Church. Magisterium. De ecclesiae munere docendi'
+            range:   KBU3040-3070
+            start:   KBU3040
+            end:     KBU3070
+          - name:    'Sacraments. Administration of sacraments. De sacramentis et administratione'
+            range:   KBU3075-3165
+            start:   KBU3075
+            end:     KBU3165
+          - name:    'Sacramentals. Sacramentalia'
+            range:   KBU3180-3182
+            start:   KBU3180
+            end:     KBU3182
+          - name:    'Other acts of divine worship. De ceteris actibus Cultus Divini'
+            range:   KBU3184-3256
+            start:   KBU3184
+            end:     KBU3256
+          - name:    'Social work of the Church. Public welfare. Caritas'
+            range:   KBU3264-3280
+            start:   KBU3264
+            end:     KBU3280
+          - name:    'Medical ethics and legislation. Church policy'
+            range:   KBU3282-3310
+            start:   KBU3282
+            end:     KBU3310
+          - name:    'Church property. Church economics and finance'
+            range:   KBU3320-3460
+            start:   KBU3320
+            end:     KBU3460
+          - name:    'Sanctions in the Church. Criminal law. De sanctionibus in Ecclesia. De lege poenali'
+            range:   KBU3500-3774
+            start:   KBU3500
+            end:     KBU3774
+          - name:    'Courts and procedure. De processibus'
+            range:   KBU3780-3985
+            start:   KBU3780
+            end:     KBU3985
+          - name:    'Church and state relationships. De relationibus inter ecclesiam et status. Ius publicum ecclesiae'
+            range:   KBU4000-4097
+            start:   KBU4000
+            end:     KBU4097
+          - name:    'Local Church government'
+            range:   KBU4112-4820
+            start:   KBU4112
+            end:     KBU4820
+  - subclass:  KD
+    name:     'Law of the United Kingdom and Ireland'
+    sections:
+      - name:    'Law of the United Kingdom and Ireland'
+        range:   KD
+        start:   KD
+        end:     KDY999999
+        sections:
+          - name:    'England and Wales'
+            range:   KD51-9500
+            start:   KD51
+            end:     KD9500
+            sections:
+              - name:    'Local laws of England'
+                range:   KD8850-9312
+                start:   KD8850
+                end:     KD9312
+              - name:    'Local laws of Wales'
+                range:   KD9320-9355
+                start:   KD9320
+                end:     KD9355
+              - name:    'Wales'
+                range:   KD9400-9500
+                start:   KD9400
+                end:     KD9500
+          - name:    'Scotland'
+            range:   KDC51-990
+            start:   KDC51
+            end:     KDC990
+          - name:    'Northern Ireland'
+            range:   KDE 21-580
+            start:   KDE21
+            end:     KDE580
+          - name:    'Isle of Man.  Channel Islands'
+            range:   KDG26-540
+            start:   KDG26
+            end:     KDG540
+          - name:    'Ireland (Eire)'
+            range:   KDK21-1950
+            start:   KDK21
+            end:     KDK1950
+  - subclass:  KDZ
+    name:     'America.  North America'
+    sections:
+      - name:    'America.  North America'
+        range:   KDZ1-4999
+        start:   KDZ1
+        end:     KDZ4999
+        sections:
+          - name:    'Organization of American States (OAS)'
+            range:   KDZ1101-1199
+            start:   KDZ1101
+            end:     KDZ1199
+          - name:    'Bermuda'
+            range:   KDZ2001-2499.2
+            start:   KDZ2001
+            end:     KDZ2499.2
+          - name:    'Greenland'
+            range:   KDZ3001-3499
+            start:   KDZ3001
+            end:     KDZ3499
+          - name:    'St. Pierre and Miquelon'
+            range:   KDZ4001-4499
+            start:   KDZ4001
+            end:     KDZ4499
+  - subclass:  KE
+    name:     'Law of Canada'
+    sections:
+      - name:    'Law of Canada'
+        range:   KE
+        start:   KE
+        end:     KEZ999999
+        sections:
+          - name:    'Federal law.  Common and collective provincial law'
+            range:   KE1-9450
+            start:   KE1
+            end:     KE9450
+          - name:    'Individual provinces and territories'
+            lcco:    false
+            range:   KEA1-KEY599
+            start:   KEA1
+            end:     KEY599
+            sections:
+              - name:    'Alberta'
+                range:   KEA1-599
+                start:   KEA1
+                end:     KEA599
+              - name:    'British Columbia'
+                range:   KEB1-599
+                start:   KEB1
+                end:     KEB599
+              - name:    'Manitoba'
+                range:   KEM1-599
+                start:   KEM1
+                end:     KEM599
+              - name:    'New Brunswick'
+                range:   KEN1-599
+                start:   KEN1
+                end:     KEN599
+              - name:    'Newfoundland'
+                range:   KEN1201-1799
+                start:   KEN1201
+                end:     KEN1799
+              - name:    'Northwest Territories'
+                range:   KEN5401-5999
+                start:   KEN5401
+                end:     KEN5999
+              - name:    'Nova Scotia'
+                range:   KEN7401-7999
+                start:   KEN7401
+                end:     KEN7999
+              - name:    'Ontario'
+                range:   KEO1-1199
+                start:   KEO1
+                end:     KEO1199
+              - name:    'Prince Edward Island'
+                range:   KEP1-599
+                start:   KEP1
+                end:     KEP599
+              - name:    'Quebec'
+                range:   KEQ1-1199
+                start:   KEQ1
+                end:     KEQ1199
+              - name:    'Saskatchewan'
+                range:   KES1-599
+                start:   KES1
+                end:     KES599
+              - name:    'Yukon Territory'
+                range:   KEY1-599
+                start:   KEY1
+                end:     KEY599
+          - name:    'Individual cities, A-Z'
+            range:   KEZ1-9999
+            start:   KEZ1
+            end:     KEZ9999
+  - subclass:  KF
+    name:     'Law of the United States'
+    sections:
+      - name:    'Law of the United States'
+        range:   KF
+        start:   KF
+        end:     KFZ999999
+        sections:
+          - name:    'Federal law.  Common and collective state law'
+            range:   KF1-9827
+            start:   KF1
+            end:     KF9827
+          - name:    'Individual states'
+            lcco:    false
+            range:   KFA1-KFW4799
+            start:   KFA1
+            end:     KFW4799
+            sections:
+              - name:    'Alabama'
+                range:   KFA1-599
+                start:   KFA1
+                end:     KFA599
+              - name:    'Alaska'
+                range:   KFA1201-1799
+                start:   KFA1201
+                end:     KFA1799
+              - name:    'Arizona'
+                range:   KFA2401-2999
+                start:   KFA2401
+                end:     KFA2999
+              - name:    'Arkansas'
+                range:   KFA3601-4199
+                start:   KFA3601
+                end:     KFA4199
+              - name:    'California'
+                range:   KFC1-1199
+                start:   KFC1
+                end:     KFC1199
+              - name:    'Colorado'
+                range:   KFC1801-2399
+                start:   KFC1801
+                end:     KFC2399
+              - name:    'Connecticut'
+                range:   KFC3601-4199
+                start:   KFC3601
+                end:     KFC4199
+              - name:    'Delaware'
+                range:   KFD1-599
+                start:   KFD1
+                end:     KFD599
+              - name:    'District of Columbia'
+                range:   KFD1201-1799
+                start:   KFD1201
+                end:     KFD1799
+              - name:    'Florida'
+                range:   KFF1-599
+                start:   KFF1
+                end:     KFF599
+              - name:    'Georgia'
+                range:   KFG1-599
+                start:   KFG1
+                end:     KFG599
+              - name:    'Hawaii'
+                range:   KFH1-599
+                start:   KFH1
+                end:     KFH599
+              - name:    'Idaho'
+                range:   KFI1-599
+                start:   KFI1
+                end:     KFI599
+              - name:    'Illinois'
+                range:   KFI1201-1799
+                start:   KFI1201
+                end:     KFI1799
+              - name:    'Indiana'
+                range:   KFI3001-3599
+                start:   KFI3001
+                end:     KFI3599
+              - name:    'Iowa'
+                range:   KFI4201-4799
+                start:   KFI4201
+                end:     KFI4799
+              - name:    'Kansas'
+                range:   KFK1-599
+                start:   KFK1
+                end:     KFK599
+              - name:    'Kentucky'
+                range:   KFK1201-1799
+                start:   KFK1201
+                end:     KFK1799
+              - name:    'Louisiana'
+                range:   KFL1-599
+                start:   KFL1
+                end:     KFL599
+              - name:    'Maine'
+                range:   KFM1-599
+                start:   KFM1
+                end:     KFM599
+              - name:    'Maryland'
+                range:   KFM1201-1799
+                start:   KFM1201
+                end:     KFM1799
+              - name:    'Massachusetts'
+                range:   KFM2401-2999
+                start:   KFM2401
+                end:     KFM2999
+              - name:    'Michigan'
+                range:   KFM4201-4799
+                start:   KFM4201
+                end:     KFM4799
+              - name:    'Minnesota'
+                range:   KFM5401-5999
+                start:   KFM5401
+                end:     KFM5999
+              - name:    'Mississippi'
+                range:   KFM6601-7199
+                start:   KFM6601
+                end:     KFM7199
+              - name:    'Missouri'
+                range:   KFM7801-8399
+                start:   KFM7801
+                end:     KFM8399
+              - name:    'Montana'
+                range:   KFM9001-9599
+                start:   KFM9001
+                end:     KFM9599
+              - name:    'Nebraska'
+                range:   KFN1-599
+                start:   KFN1
+                end:     KFN599
+              - name:    'Nevada'
+                range:   KFN601-1199
+                start:   KFN601
+                end:     KFN1199
+              - name:    'New Hampshire'
+                range:   KFN1201-1799
+                start:   KFN1201
+                end:     KFN1799
+              - name:    'New Jersey'
+                range:   KFN1801-2399
+                start:   KFN1801
+                end:     KFN2399
+              - name:    'New Mexico'
+                range:   KFN3601-4199
+                start:   KFN3601
+                end:     KFN4199
+              - name:    'New York'
+                range:   KFN5001-6199
+                start:   KFN5001
+                end:     KFN6199
+              - name:    'North Carolina'
+                range:   KFN7401-7999
+                start:   KFN7401
+                end:     KFN7999
+              - name:    'North Dakota'
+                range:   KFN8601-9199
+                start:   KFN8601
+                end:     KFN9199
+              - name:    'Ohio'
+                range:   KFO1-599
+                start:   KFO1
+                end:     KFO599
+              - name:    'Oklahoma'
+                range:   KFO1201-1799
+                start:   KFO1201
+                end:     KFO1799
+              - name:    'Oregon'
+                range:   KFO2401-2999
+                start:   KFO2401
+                end:     KFO2999
+              - name:    'Pennsylvania'
+                range:   KFP1-599
+                start:   KFP1
+                end:     KFP599
+              - name:    'Rhode Island'
+                range:   KFR1-599
+                start:   KFR1
+                end:     KFR599
+              - name:    'South Carolina'
+                range:   KFS1801-2399
+                start:   KFS1801
+                end:     KFS2399
+              - name:    'South Dakota'
+                range:   KFS3001-3599
+                start:   KFS3001
+                end:     KFS3599
+              - name:    'Tennessee'
+                range:   KFT1-599
+                start:   KFT1
+                end:     KFT599
+              - name:    'Texas'
+                range:   KFT1201-1799
+                start:   KFT1201
+                end:     KFT1799
+              - name:    'Utah'
+                range:   KFU1-599
+                start:   KFU1
+                end:     KFU599
+              - name:    'Vermont'
+                range:   KFV1-599
+                start:   KFV1
+                end:     KFV599
+              - name:    'Virginia'
+                range:   KFV2401-2999
+                start:   KFV2401
+                end:     KFV2999
+              - name:    'Washington'
+                range:   KFW1-599
+                start:   KFW1
+                end:     KFW599
+              - name:    'West Virginia'
+                range:   KFW1201-1799
+                start:   KFW1201
+                end:     KFW1799
+              - name:    'Wisconsin'
+                range:   KFW2401-2999
+                start:   KFW2401
+                end:     KFW2999
+              - name:    'Wyoming'
+                range:   KFW4201-4799
+                start:   KFW4201
+                end:     KFW4799
+          - name:    'Individual cities, A-Z'
+            range:   KFX1-9999
+            start:   KFX1
+            end:     KFX9999
+          - name:    'Northwest Territory'
+            range:   KFZ1801-2399
+            start:   KFZ1801
+            end:     KFZ2399
+          - name:    'Confederate States of America'
+            range:   KFZ8601-9199
+            start:   KFZ8601
+            end:     KFZ9199
+  - subclass:  KG
+    name:     'Latin America.  Mexico and Central America.  West Indies.  Caribbean area'
+    sections:
+      - name:    'Latin America (General)'
+        range:   KG1-999
+        start:   KG1
+        end:     KG999
+      - name:    'Mexico and Central America (General)'
+        range:   KG3001-3999
+        start:   KG3001
+        end:     KG3999
+      - name:    'Belize'
+        range:   KGA1-9000
+        start:   KGA1
+        end:     KGA9000
+      - name:    'Costa Rica'
+        range:   KGB1-9000
+        start:   KGB1
+        end:     KGB9000
+      - name:    'El Salvador'
+        range:   KGC1-9800
+        start:   KGC1
+        end:     KGC9800
+      - name:    'Guatemala'
+        range:   KGD1-9990
+        start:   KGD1
+        end:     KGD9990
+      - name:    'Honduras'
+        range:   KGE1-9990
+        start:   KGE1
+        end:     KGE9990
+      - name:    'Mexico'
+        range:   KGF1-9900
+        start:   KGF1
+        end:     KGF9900
+      - name:    'Nicaragua'
+        range:   KGG1-9800
+        start:   KGG1
+        end:     KGG9800
+      - name:    'Panama'
+        range:   KGH1-8000
+        start:   KGH1
+        end:     KGH8000
+      - name:    'Panama Canal Zone'
+        range:   KGH9001-9499
+        start:   KGH9001
+        end:     KGH9499
+      - name:    'West Indies.  Caribbean area'
+        lcco:    false
+        range:   KGJ1-KGZ499
+        start:   KGJ1
+        end:     KGZ499
+        sections:
+          - name:    'General'
+            range:   KGJ1-999
+            start:   KGJ1
+            end:     KGJ999
+          - name:    'Anguilla'
+            range:   KGJ7001-7499
+            start:   KGJ7001
+            end:     KGJ7499
+          - name:    'Antigua and Barbuda'
+            range:   KGK1-499
+            start:   KGK1
+            end:     KGK499
+          - name:    'Aruba'
+            range:   KGK1001-1499
+            start:   KGK1001
+            end:     KGK1499
+          - name:    'Bahamas'
+            range:   KGL1-499
+            start:   KGL1
+            end:     KGL499
+          - name:    'Barbados'
+            range:   KGL1001-1499
+            start:   KGL1001
+            end:     KGL1499
+          - name:    'Bonaire'
+            range:   KGL2001-2499
+            start:   KGL2001
+            end:     KGL2499
+          - name:    'British Leeward Islands'
+            range:   KGL3001-3499
+            start:   KGL3001
+            end:     KGL3499
+          - name:    'British Virgin Islands'
+            range:   KGL4001-4499
+            start:   KGL4001
+            end:     KGL4499
+          - name:    'British West Indies'
+            range:   KGL5001-5999
+            start:   KGL5001
+            end:     KGL5999
+          - name:    'British Windward Islands'
+            range:   KGL6001-6499
+            start:   KGL6001
+            end:     KGL6499
+          - name:    'Cayman Islands'
+            range:   KGM1-499
+            start:   KGM1
+            end:     KGM499
+          - name:    'Cuba'
+            range:   KGN1-9800
+            start:   KGN1
+            end:     KGN9800
+          - name:    'Curaçao'
+            sort_as: 'Curacao'
+            range:   KGP1-499
+            start:   KGP1
+            end:     KGP499
+          - name:    'Dominica'
+            range:   KGP2001-2499
+            start:   KGP2001
+            end:     KGP2499
+          - name:    'Dominican Republic'
+            range:   KGQ1-9800
+            start:   KGQ1
+            end:     KGQ9800
+          - name:    'Dutch Leeward Islands (General)'
+            range:   KGR1-499
+            start:   KGR1
+            end:     KGR499
+          - name:    'Dutch West Indies (Netherlands Antilles)'
+            range:   KGR1001-1499
+            start:   KGR1001
+            end:     KGR1499
+          - name:    'Dutch Windward Islands (General)'
+            range:   KGR2001-2499
+            start:   KGR2001
+            end:     KGR2499
+          - name:    'French West Indies (General)'
+            range:   KGR3001-3499
+            start:   KGR3001
+            end:     KGR3499
+          - name:    'Grenada'
+            range:   KGR4001-4499
+            start:   KGR4001
+            end:     KGR4499
+          - name:    'Guadeloupe'
+            range:   KGR5001-5499
+            start:   KGR5001
+            end:     KGR5499
+          - name:    'Haiti'
+            range:   KGS1-9000
+            start:   KGS1
+            end:     KGS9000
+          - name:    'Jamaica'
+            range:   KGT1-499
+            start:   KGT1
+            end:     KGT499
+          - name:    'Martinique'
+            range:   KGT1001-1499
+            start:   KGT1001
+            end:     KGT1499
+          - name:    'Montserrat'
+            range:   KGT2001-2499
+            start:   KGT2001
+            end:     KGT2499
+          - name:    'Navassa Islands'
+            range:   KGU1-499
+            start:   KGU1
+            end:     KGU499
+          - name:    'Puerto Rico'
+            range:   KGV1-8200
+            start:   KGV1
+            end:     KGV8200
+          - name:    'Saba'
+            range:   KGW1-499
+            start:   KGW1
+            end:     KGW499
+          - name:    'Saint Christopher (Saint Kitts), Nevis, and Anguilla'
+            range:   KGW2001-2499
+            start:   KGW2001
+            end:     KGW2499
+          - name:    'Saint Lucia'
+            range:   KGW3001-3499
+            start:   KGW3001
+            end:     KGW3499
+          - name:    'Saint Vincent and the Grenadines'
+            range:   KGW5001-5499
+            start:   KGW5001
+            end:     KGW5499
+          - name:    'Sint Eustatius'
+            range:   KGW7001-7499
+            start:   KGW7001
+            end:     KGW7499
+          - name:    'Sint Maarten'
+            range:   KGW8001-8499
+            start:   KGW8001
+            end:     KGW8499
+          - name:    'Trinidad and Tobago'
+            range:   KGX1-499
+            start:   KGX1
+            end:     KGX499
+          - name:    'Turks and Caicos Islands'
+            range:   KGY1-499
+            start:   KGY1
+            end:     KGY499
+          - name:    'Virgin Islands of the United States'
+            range:   KGZ1-499
+            start:   KGZ1
+            end:     KGZ499
+  - subclass:  KH
+    name:     'South America'
+    sections:
+      - name:    'South America (General)'
+        range:   KH1-999
+        start:   KH1
+        end:     KH999
+      - name:    'Argentina'
+        range:   KHA1-9800
+        start:   KHA1
+        end:     KHA9800
+      - name:    'Bolivia'
+        range:   KHC1-8200
+        start:   KHC1
+        end:     KHC8200
+      - name:    'Brazil'
+        range:   KHD1-9900
+        start:   KHD1
+        end:     KHD9900
+      - name:    'Chile'
+        range:   KHF1-9800
+        start:   KHF1
+        end:     KHF9800
+      - name:    'Colombia'
+        range:   KHH1-9900
+        start:   KHH1
+        end:     KHH9900
+      - name:    'Ecuador'
+        range:   KHK1-9990
+        start:   KHK1
+        end:     KHK9990
+      - name:    'Falkland Islands'
+        range:   KHL1-9000
+        start:   KHL1
+        end:     KHL9000
+      - name:    'French Guiana'
+        range:   KHM1-9000
+        start:   KHM1
+        end:     KHM9000
+      - name:    'Guyana'
+        range:   KHN1-9000
+        start:   KHN1
+        end:     KHN9000
+      - name:    'Paraguay'
+        range:   KHP1-9700
+        start:   KHP1
+        end:     KHP9700
+      - name:    'Peru'
+        range:   KHQ1-9800
+        start:   KHQ1
+        end:     KHQ9800
+      - name:    'Surinam'
+        range:   KHS1-9000
+        start:   KHS1
+        end:     KHS9000
+      - name:    'Uruguay'
+        range:   KHU1-9800
+        start:   KHU1
+        end:     KHU9800
+      - name:    'Venezuela'
+        range:   KHW1-9900
+        start:   KHW1
+        end:     KHW9900
+  - subclass:  KJ
+    name:     'Europe -- History of Law.  Comparative law -- Albania to France'
+    sections:
+      - name:    'History of Law.  Comparative law.   Albania to France'
+        range:   KJ
+        start:   KJ
+        end:     KJZ999999
+        sections:
+          - name:    'History of Law'
+            range:   KJ2-1040
+            start:   KJ2
+            end:     KJ1040
+            sections:
+              - name:    'Germanic law'
+                range:   KJ160-1040
+                start:   KJ160
+                end:     KJ1040
+          - name:    'Roman law'
+            range:   KJA2-3660
+            start:   KJA2
+            end:     KJA3660
+          - name:    'Regional comparative and uniform law'
+            range:   KJC2-9799
+            start:   KJC2
+            end:     KJC9799
+          - name:    'Regional organization and integration.  Comparative law'
+            range:   KJE5-7975
+            start:   KJE5
+            end:     KJE7975
+          - name:    'Albania'
+            range:   KJG1-4999
+            start:   KJG1
+            end:     KJG4999
+          - name:    'Andorra'
+            range:   KJH1-499
+            start:   KJH1
+            end:     KJH499
+          - name:    'Austria'
+            range:   KJJ1-4999
+            start:   KJJ1
+            end:     KJJ4999
+          - name:    'Belgium'
+            range:   KJK1-4999
+            start:   KJK1
+            end:     KJK4999
+          - name:    'Bulgaria'
+            range:   KJM1-4999
+            start:   KJM1
+            end:     KJM4999
+          - name:    'Cyprus'
+            range:   KJN1-499
+            start:   KJN1
+            end:     KJN499
+          - name:    'Czechoslovakia'
+            range:   KJP1-4999
+            start:   KJP1
+            end:     KJP4999
+          - name:    'Denmark'
+            range:   KJR1-4999
+            start:   KJR1
+            end:     KJR4999
+          - name:    'Estonia'
+            range:   KJS1-4985
+            start:   KJS1
+            end:     KJS4985
+          - name:    'Finland'
+            range:   KJT1-4999
+            start:   KJT1
+            end:     KJT4999
+          - name:    'France'
+            lcco:    false
+            range:   KJV2-KJW9600
+            start:   KJV2
+            end:     KJW9600
+            sections:
+              - name:    'National laws'
+                range:   KJV2-9158
+                start:   KJV2
+                end:     KJV9158
+              - name:    'Individual regions, provinces, departments, etc.'
+                range:   KJW51-4360
+                start:   KJW51
+                end:     KJW4360
+              - name:    'Individual cities'
+                range:   KJW5201-9600
+                start:   KJW5201
+                end:     KJW9600
+  - subclass:  KK
+    name:     'Europe -- Germany to Yugoslavia'
+    sections:
+      - name:    'Germany to Yugoslavia'
+        range:   KK
+        start:   KK
+        end:     KKZ999999
+        sections:
+          - name:    'Germany'
+            range:   KK2-KKC
+            start:   KK2
+            end:     KKC999999
+            sections:
+              - name:    'Germany and West Germany'
+                range:   KK2-9799.3
+                start:   KK2
+                end:     KK9799.3
+              - name:    'East Germany'
+                range:   KKA7-9796
+                start:   KKA7
+                end:     KKA9796
+              - name:    'Individual states, provinces, and cities'
+                range:   KKB-KKC
+                start:   KKB
+                end:     KKC999999
+          - name:    'Greece'
+            range:   KKE1-4999
+            start:   KKE1
+            end:     KKE4999
+          - name:    'Hungary'
+            range:   KKF1-4999
+            start:   KKF1
+            end:     KKF4999
+          - name:    'Iceland'
+            range:   KKG1-499
+            start:   KKG1
+            end:     KKG499
+          - name:    'Italy'
+            range:   KKH1-4999
+            start:   KKH1
+            end:     KKH4999
+          - name:    'Latvia'
+            range:   KKI1-4890
+            start:   KKI1
+            end:     KKI4890
+          - name:    'Liechtenstein'
+            range:   KKJ1-499
+            start:   KKJ1
+            end:     KKJ499
+          - name:    'Lithuania'
+            range:   KKJ501-9890
+            start:   KKJ501
+            end:     KKJ9890
+          - name:    'Luxembourg'
+            range:   KKK1-499
+            start:   KKK1
+            end:     KKK499
+          - name:    'Malta'
+            range:   KKK1001-1499
+            start:   KKK1001
+            end:     KKK1499
+          - name:    'Monaco'
+            range:   KKL1-499
+            start:   KKL1
+            end:     KKL499
+          - name:    'Netherlands'
+            range:   KKM1-4999
+            start:   KKM1
+            end:     KKM4999
+          - name:    'Norway'
+            range:   KKN1-4999
+            start:   KKN1
+            end:     KKN4999
+          - name:    'Poland'
+            range:   KKP1-4999
+            start:   KKP1
+            end:     KKP4999
+          - name:    'Portugal'
+            range:   KKQ1-4999
+            start:   KKQ1
+            end:     KKQ4999
+          - name:    'Romania'
+            range:   KKR1-4999
+            start:   KKR1
+            end:     KKR4999
+          - name:    'San Marino'
+            range:   KKS1-499
+            start:   KKS1
+            end:     KKS499
+          - name:    'Spain'
+            range:   KKT1-4999
+            start:   KKT1
+            end:     KKT4999
+          - name:    'Sweden'
+            range:   KKV1-4999
+            start:   KKV1
+            end:     KKV4999
+          - name:    'Switzerland'
+            range:   KKW1-4999
+            start:   KKW1
+            end:     KKW4999
+          - name:    'Turkey'
+            range:   KKX1-4999
+            start:   KKX1
+            end:     KKX4999
+          - name:    'Ukraine (1991-    )'
+            range:   KKY1-4999
+            start:   KKY1
+            end:     KKY4999
+          - name:    'Yugoslavia'
+            range:   KKZ1-4999
+            start:   KKZ1
+            end:     KKZ4999
+  - subclass:  KL
+    name:     'History of law.  The ancient orient.  Eurasia'
+    sections:
+      - name:    'Asia and Eurasia, Africa, Pacific Area'
+        lcco:    false
+        range:   KL2-KLZ
+        start:   KL2
+        end:     KLZ999999
+        sections:
+          - name:    'History of law.  The ancient orient'
+            range:   KL2-(6199)
+            start:   KL2
+            end:     KL6199
+            sections:
+              - name:    'General'
+                range:   KL2-135
+                start:   KL2
+                end:     KL135
+              - name:    'Ancient legal systems compared'
+                range:   KL147-177
+                start:   KL147
+                end:     KL177
+              - name:    'Sources'
+                range:   KL190-420
+                start:   KL190
+                end:     KL420
+              - name:    'Mesopotamia.  Assyro-Babylonian law'
+                range:   KL700-(2499)
+                start:   KL700
+                end:     KL2499
+                sections:
+                  - name:    'Sumer'
+                    range:   KL1000-1299
+                    start:   KL1000
+                    end:     KL1299
+                  - name:    'Assyria'
+                    range:   KL1600-1899
+                    start:   KL1600
+                    end:     KL1899
+                  - name:    'Babylonia'
+                    range:   KL2200-2499
+                    start:   KL2200
+                    end:     KL2499
+              - name:    'Egypt'
+                range:   KL2800-3099
+                start:   KL2800
+                end:     KL3099
+              - name:    'Elam'
+                range:   KL3500-3799
+                start:   KL3500
+                end:     KL3799
+              - name:    'Greek law'
+                range:   KL4110-4399
+                start:   KL4110
+                end:     KL4399
+              - name:    'Hittite law'
+                range:   KL4700-4999
+                start:   KL4700
+                end:     KL4999
+              - name:    'Persia'
+                range:   KL5300-5599
+                start:   KL5300
+                end:     KL5599
+              - name:    'Phoenicia'
+                range:   KL5900-6199
+                start:   KL5900
+                end:     KL6199
+          - name:    'Eurasia'
+            note:    'Turkey, see KKX'
+            lcco:    false
+            range:   KLA1-KLW490
+            start:   KLA1
+            end:     KLW490
+            sections:
+              - name:    'Russia.  Soviet Union'
+                range:   KLA1-9999
+                start:   KLA1
+                end:     KLA9999
+              - name:    'Russia (Federation, 1992-    )'
+                range:   KLB1-6499
+                start:   KLB1
+                end:     KLB6499
+              - name:    'Armenian S.S.R. (to 1991)'
+                range:   KLD1-490
+                start:   KLD1
+                end:     KLD490
+              - name:    'Azerbaijan'
+                range:   KLE1-490
+                start:   KLE1
+                end:     KLE490
+              - name:    'Belarus (Republic)'
+                note:    'Estonia, see KJS'
+                range:   KLF1-490
+                start:   KLF1
+                end:     KLF490
+              - name:    'Georgia (Republic)'
+                note:    'Latvia, see KKI Lithuania, see KKJ'
+                range:   KLH1-490
+                start:   KLH1
+                end:     KLH490
+              - name:    'Moldova'
+                range:   KLM1-490
+                start:   KLM1
+                end:     KLM490
+              - name:    'Russian S.F.S.R. (to 1991)'
+                range:   KLN1-489
+                start:   KLN1
+                end:     KLN489
+              - name:    'Ukraine (1919-1991)'
+                range:   KLP1-4989
+                start:   KLP1
+                end:     KLP4989
+              - name:    'Zakavkazskaia Sotsialisticheskaia Federativnaia Sovetskaia Respublika (to 1936)'
+                range:   KLP9001-9499
+                start:   KLP9001
+                end:     KLP9499
+              - name:    'Bukharskaia Narodnaia Sovetskaia Respublika (to 1924)'
+                range:   KLQ1-499
+                start:   KLQ1
+                end:     KLQ499
+              - name:    'Kazakhstan'
+                range:   KLR1-490
+                start:   KLR1
+                end:     KLR490
+              - name:    'Khorezmskaia Sovetskaia Sotsialisticheskaia Respublika (to 1924)'
+                range:   KLR1001-1499
+                start:   KLR1001
+                end:     KLR1499
+              - name:    'Kyrgyzstan'
+                range:   KLS1-490
+                start:   KLS1
+                end:     KLS490
+              - name:    'Tadjikistan'
+                range:   KLT1-490
+                start:   KLT1
+                end:     KLT490
+              - name:    'Turkmenistan'
+                range:   KLV1-490
+                start:   KLV1
+                end:     KLV490
+              - name:    'Uzbekistan'
+                range:   KLW1-490
+                start:   KLW1
+                end:     KLW490
+  - subclass:  KM
+    name:     'Asia -- General.  Middle East.  Southwest Asia'
+    sections:
+      - name:    'Asia and Eurasia, Africa, Pacific Area'
+        lcco:    false
+        range:   KM-KMZ
+        start:   KM
+        end:     KMZ999999
+        sections:
+          - name:    'Asia'
+            lcco:    false
+            range:   KM1-KMZ
+            start:   KM1
+            end:     KMZ999999
+            sections:
+              - name:    'General'
+                range:   KM1-999
+                start:   KM1
+                end:     KM999
+              - name:    'Middle East.  Southwest Asia'
+                lcco:    false
+                range:   KMC1-KMY489
+                start:   KMC1
+                end:     KMY489
+                sections:
+                  - name:    'Regional comparative and uniform law'
+                    range:   KMC1-799
+                    start:   KMC1
+                    end:     KMC799
+                  - name:    'Regional organization and integration'
+                    range:   KME10-799
+                    start:   KME10
+                    end:     KME799
+                  - name:    'Armenia (Republic)'
+                    range:   KMF1-293.5
+                    start:   KMF1
+                    end:     KMF293.5
+                  - name:    'Bahrain'
+                    range:   KMF1001-1490
+                    start:   KMF1001
+                    end:     KMF1490
+                  - name:    'Gaza'
+                    range:   KMG1-489
+                    start:   KMG1
+                    end:     KMG489
+                  - name:    'Iran'
+                    range:   KMH1-4990
+                    start:   KMH1
+                    end:     KMH4990
+                  - name:    'Iraq'
+                    range:   KMJ1-4990
+                    start:   KMJ1
+                    end:     KMJ4990
+                  - name:    'Israel'
+                    range:   KMK1-4990
+                    start:   KMK1
+                    end:     KMK4990
+                  - name:    'Jerusalem'
+                    range:   KML1-490
+                    start:   KML1
+                    end:     KML490
+                  - name:    'Jordan'
+                    range:   KMM1-490
+                    start:   KMM1
+                    end:     KMM490
+                  - name:    'West Bank (Territory under Israeli occupation, 1967-    )'
+                    range:   KMM501-994
+                    start:   KMM501
+                    end:     KMM994
+                  - name:    'Kuwait'
+                    range:   KMN1-499
+                    start:   KMN1
+                    end:     KMN499
+                  - name:    'Lebanon'
+                    range:   KMP1-490
+                    start:   KMP1
+                    end:     KMP490
+                  - name:    'Oman'
+                    range:   KMQ1-490
+                    start:   KMQ1
+                    end:     KMQ490
+                  - name:    'Palestine (to 1948)'
+                    range:   KMQ1001-1499
+                    start:   KMQ1001
+                    end:     KMQ1499
+                  - name:    'Qatar'
+                    range:   KMS1-490
+                    start:   KMS1
+                    end:     KMS490
+                  - name:    'Saudi Arabia'
+                    note:    'Southern Yemen, see KMY'
+                    range:   KMT1-4990
+                    start:   KMT1
+                    end:     KMT4990
+                  - name:    'Syria'
+                    range:   KMU1-490
+                    start:   KMU1
+                    end:     KMU490
+                  - name:    'United Arab Emirates'
+                    range:   KMV1-9870
+                    start:   KMV1
+                    end:     KMV9870
+                  - name:    'Yemen'
+                    range:   KMX1001-1526
+                    start:   KMX1001
+                    end:     KMX1526
+                  - name:    'Yemen (People''s Democratic Republic) (to 1990)'
+                    range:   KMY1-489
+                    start:   KMY1
+                    end:     KMY489
+  - subclass:  KN
+    name:     'Asia -- South Asia.  Southeast Asia.  East Asia -- Afghanistan to Japan'
+    sections:
+      - name:    'Asia and Eurasia, Africa, Pacific Area'
+        lcco:    false
+        range:   KN-KNZ
+        start:   KN
+        end:     KNZ999999
+        sections:
+          - name:    'Asia'
+            lcco:    false
+            range:   KN-KNZ
+            start:   KN
+            end:     KNZ999999
+            sections:
+              - name:    'South Asia.  Southeast Asia.  East Asia'
+                lcco:    false
+                range:   KNC1-KNZ
+                start:   KNC1
+                end:     KNZ999999
+                sections:
+                  - name:    'Regional comparative and uniform law'
+                    range:   KNC1-999
+                    start:   KNC1
+                    end:     KNC999
+                  - name:    'Regional organization and integration'
+                    range:   KNE150-499
+                    start:   KNE150
+                    end:     KNE499
+                  - name:    'Afghanistan'
+                    range:   KNF1-4990
+                    start:   KNF1
+                    end:     KNF4990
+                  - name:    'Bangladesh'
+                    range:   KNG1-4990
+                    start:   KNG1
+                    end:     KNG4990
+                  - name:    'Bhutan'
+                    range:   KNH1-490
+                    start:   KNH1
+                    end:     KNH490
+                  - name:    'Brunei'
+                    range:   KNK1-490
+                    start:   KNK1
+                    end:     KNK490
+                  - name:    'Burma'
+                    range:   KNL1-4990
+                    start:   KNL1
+                    end:     KNL4990
+                  - name:    'Cambodia'
+                    range:   KNM1-4990
+                    start:   KNM1
+                    end:     KNM4990
+                  - name:    'China'
+                    range:   KNN1-9000
+                    start:   KNN1
+                    end:     KNN9000
+                  - name:    'China (Republic, 1949-   ).  Taiwan'
+                    range:   KNP1-599
+                    start:   KNP1
+                    end:     KNP599
+                  - name:    'China (People''s Republic, 1949-    )'
+                    range:   KNQ1-9665
+                    start:   KNQ1
+                    end:     KNQ9665
+                  - name:    'Hong Kong'
+                    range:   KNR1-489
+                    start:   KNR1
+                    end:     KNR489
+                  - name:    'India'
+                    range:   KNS1-4999
+                    start:   KNS1
+                    end:     KNS4999
+                  - name:    'India.  States, cities, etc.'
+                    range:   KNT-KNU
+                    start:   KNT
+                    end:     KNU999999
+                  - name:    'French Indochina'
+                    range:   KNV1-489
+                    start:   KNV1
+                    end:     KNV489
+                  - name:    'Indonesia'
+                    range:   KNW1-4990
+                    start:   KNW1
+                    end:     KNW4990
+                  - name:    'Japan'
+                    range:   KNX1-4999
+                    start:   KNX1
+                    end:     KNX4999
+                  - name:    'Japan.  Cities, etc.'
+                    range:   KNY10-220
+                    start:   KNY10
+                    end:     KNY220
+  - subclass:  KP
+    name:     'Asia -- South Asia.  Southeast Asia.  East Asia -- Korea to Vietnam'
+    sections:
+      - name:    'Asia and Eurasia, Africa, Pacific Area'
+        lcco:    false
+        range:   KP-KPZ
+        start:   KP
+        end:     KPZ999999
+        sections:
+          - name:    'Asia'
+            lcco:    false
+            range:   KP-KPW489
+            start:   KP
+            end:     KPW489
+            sections:
+              - name:    'South Asia.  Southeast Asia.  East Asia'
+                lcco:    false
+                range:   KP-KPW489
+                start:   KP
+                end:     KPW489
+                sections:
+                  - name:    'Korea.  South Korea'
+                    range:   KPA1-4990
+                    start:   KPA1
+                    end:     KPA4990
+                  - name:    'Democratic People''s Republic of Korea.  North Korea'
+                    range:   KPC1-4990
+                    start:   KPC1
+                    end:     KPC4990
+                  - name:    'Laos'
+                    range:   KPE1-4990
+                    start:   KPE1
+                    end:     KPE4990
+                  - name:    'Macao'
+                    range:   KPF1-489
+                    start:   KPF1
+                    end:     KPF489
+                  - name:    'Malaysia'
+                    range:   KPG1-6999
+                    start:   KPG1
+                    end:     KPG6999
+                  - name:    'States of East and West Malaysia (1957-    ) (Part 1)'
+                    range:   KPG7001-9999
+                    start:   KPG7001
+                    end:     KPG9999
+                  - name:    'States of East and West Malaysia (1957-    ) (Part 2)'
+                    range:   KPH1-4990
+                    start:   KPH1
+                    end:     KPH4990
+                  - name:    'Maldives'
+                    range:   KPH5001-5490
+                    start:   KPH5001
+                    end:     KPH5490
+                  - name:    'Mongolia'
+                    range:   KPJ1-490
+                    start:   KPJ1
+                    end:     KPJ490
+                  - name:    'Nepal'
+                    range:   KPK1-490
+                    start:   KPK1
+                    end:     KPK490
+                  - name:    'Pakistan'
+                    range:   KPL1-4990
+                    start:   KPL1
+                    end:     KPL4990
+                  - name:    'Philippines'
+                    range:   KPM1-4990
+                    start:   KPM1
+                    end:     KPM4990
+                  - name:    'Singapore'
+                    range:   KPP1-499
+                    start:   KPP1
+                    end:     KPP499
+                  - name:    'Sri Lanka'
+                    range:   KPS1-4990
+                    start:   KPS1
+                    end:     KPS4990
+                  - name:    'Thailand'
+                    range:   KPT1-4990
+                    start:   KPT1
+                    end:     KPT4990
+                  - name:    'Vietnam'
+                    range:   KPV1-8094
+                    start:   KPV1
+                    end:     KPV8094
+                  - name:    'Vietnam.  South Vietnam'
+                    range:   KPW1-489
+                    start:   KPW1
+                    end:     KPW489
+  - subclass:  KQ
+    name:     'Africa -- History of law.  Comparative law -- Algeria to Cape Verde'
+    sections:
+      - name:    'Asia and Eurasia, Africa, Pacific Area'
+        lcco:    false
+        range:   KQ-KQZ
+        start:   KQ
+        end:     KQZ999999
+        sections:
+          - name:    'Africa'
+            lcco:    false
+            range:   KQ2-KQZ
+            start:   KQ2
+            end:     KQZ999999
+            sections:
+              - name:    'History of law'
+                range:   KQ2-197
+                start:   KQ2
+                end:     KQ197
+              - name:    'Law of indigenous peoples'
+                range:   KQ2010-9000
+                start:   KQ2010
+                end:     KQ9000
+              - name:    'Regional comparative and uniform law'
+                range:   KQC1-999
+                start:   KQC1
+                end:     KQC999
+              - name:    'Regional organization and integration'
+                range:   KQE10-1249
+                start:   KQE10
+                end:     KQE1249
+              - name:    'Algeria'
+                range:   KQG1-4990
+                start:   KQG1
+                end:     KQG4990
+              - name:    'Angola'
+                range:   KQH1-4990
+                start:   KQH1
+                end:     KQH4990
+              - name:    'Benin'
+                range:   KQJ1-490
+                start:   KQJ1
+                end:     KQJ490
+              - name:    'Botswana'
+                range:   KQK1-490
+                start:   KQK1
+                end:     KQK490
+              - name:    'British Central Africa Protectorate'
+                range:   KQM1-499
+                start:   KQM1
+                end:     KQM499
+              - name:    'British Indian Ocean Territory'
+                range:   KQP1-499
+                start:   KQP1
+                end:     KQP499
+              - name:    'British Somaliland'
+                range:   KQP1001-1499
+                start:   KQP1001
+                end:     KQP1499
+              - name:    'Burkina Faso'
+                range:   KQT1-490
+                start:   KQT1
+                end:     KQT490
+              - name:    'Burundi'
+                range:   KQV1-490
+                start:   KQV1
+                end:     KQV490
+              - name:    'Cameroon'
+                range:   KQW1-8020
+                start:   KQW1
+                end:     KQW8020
+              - name:    'Cape Verde'
+                range:   KQX1-490
+                start:   KQX1
+                end:     KQX490
+  - subclass:  KR
+    name:     'Africa -- Central African Republic to Gibraltar'
+    sections:
+      - name:    'Asia and Eurasia, Africa, Pacific Area'
+        lcco:    false
+        range:   KR-KRZ
+        start:   KR
+        end:     KRZ999999
+        sections:
+          - name:    'Africa'
+            lcco:    false
+            range:   KR-KRZ
+            start:   KR
+            end:     KRZ999999
+            sections:
+              - name:    'Central African Republic'
+                range:   KRB1-490
+                start:   KRB1
+                end:     KRB490
+              - name:    'Chad'
+                range:   KRC1-490
+                start:   KRC1
+                end:     KRC490
+              - name:    'Comoros'
+                range:   KRE1-490
+                start:   KRE1
+                end:     KRE490
+              - name:    'Congo'
+                range:   KRG1-490
+                start:   KRG1
+                end:     KRG490
+              - name:    'Djibouti'
+                range:   KRK1-490
+                start:   KRK1
+                end:     KRK490
+              - name:    'East Africa Protectorate'
+                range:   KRL1-499
+                start:   KRL1
+                end:     KRL499
+              - name:    'Egypt'
+                range:   KRM1-4990
+                start:   KRM1
+                end:     KRM4990
+              - name:    'Eritrea'
+                range:   KRN1-499
+                start:   KRN1
+                end:     KRN499
+              - name:    'Ethiopia'
+                range:   KRP1-4990
+                start:   KRP1
+                end:     KRP4990
+              - name:    'French Equatorial Africa'
+                range:   KRR1-499
+                start:   KRR1
+                end:     KRR499
+              - name:    'French West Africa'
+                range:   KRS1-499
+                start:   KRS1
+                end:     KRS499
+              - name:    'Gabon'
+                range:   KRU1-490
+                start:   KRU1
+                end:     KRU490
+              - name:    'Gambia'
+                range:   KRV1-489
+                start:   KRV1
+                end:     KRV489
+              - name:    'German East Africa'
+                range:   KRW1-499
+                start:   KRW1
+                end:     KRW499
+              - name:    'Ghana'
+                range:   KRX1-4990
+                start:   KRX1
+                end:     KRX4990
+              - name:    'Gibraltar'
+                range:   KRY1-499
+                start:   KRY1
+                end:     KRY499
+  - subclass:  KS
+    name:     'Africa -- Guinea to Niger'
+    sections:
+      - name:    'Asia and Eurasia, Africa, Pacific Area'
+        lcco:    false
+        range:   KS-KSZ
+        start:   KS
+        end:     KSZ999999
+        sections:
+          - name:    'Africa'
+            lcco:    false
+            range:   KS-KSZ
+            start:   KS
+            end:     KSZ999999
+            sections:
+              - name:    'Guinea'
+                range:   KSA1-490
+                start:   KSA1
+                end:     KSA490
+              - name:    'Guinea-Bissau'
+                range:   KSC1-490
+                start:   KSC1
+                end:     KSC490
+              - name:    'Equatorial Guinea'
+                range:   KSE1-490
+                start:   KSE1
+                end:     KSE490
+              - name:    'Ifni'
+                range:   KSE601-699
+                start:   KSE601
+                end:     KSE699
+              - name:    'Italian East Africa'
+                range:   KSG1-499
+                start:   KSG1
+                end:     KSG499
+              - name:    'Italian Somaliland'
+                range:   KSG1001-1499
+                start:   KSG1001
+                end:     KSG1499
+              - name:    'Ivory Coast'
+                range:   KSH1-4990
+                start:   KSH1
+                end:     KSH4990
+              - name:    'Kenya'
+                range:   KSK1-4990
+                start:   KSK1
+                end:     KSK4990
+              - name:    'Lesotho'
+                range:   KSL1-490
+                start:   KSL1
+                end:     KSL490
+              - name:    'Liberia'
+                range:   KSN1-490
+                start:   KSN1
+                end:     KSN490
+              - name:    'Libya'
+                range:   KSP1-4990
+                start:   KSP1
+                end:     KSP4990
+              - name:    'Madagascar'
+                range:   KSR1-490
+                start:   KSR1
+                end:     KSR490
+              - name:    'Malawi'
+                range:   KSS1-490
+                start:   KSS1
+                end:     KSS490
+              - name:    'Mali'
+                range:   KST1-490
+                start:   KST1
+                end:     KST490
+              - name:    'Mauritania'
+                range:   KSU1-490
+                start:   KSU1
+                end:     KSU490
+              - name:    'Mauritius'
+                range:   KSV1-490
+                start:   KSV1
+                end:     KSV490
+              - name:    'Mayotte'
+                range:   KSV5001-5490
+                start:   KSV5001
+                end:     KSV5490
+              - name:    'Morocco'
+                range:   KSW1-4990
+                start:   KSW1
+                end:     KSW4990
+              - name:    'Mozambique'
+                range:   KSX1-4990
+                start:   KSX1
+                end:     KSX4990
+              - name:    'Namibia'
+                range:   KSY1-4990
+                start:   KSY1
+                end:     KSY4990
+              - name:    'Niger'
+                range:   KSZ1-490
+                start:   KSZ1
+                end:     KSZ490
+  - subclass:  KT
+    name:     'Africa -- Nigeria to Zimbabwe'
+    sections:
+      - name:    'Asia and Eurasia, Africa, Pacific Area'
+        lcco:    false
+        range:   KT-KTZ
+        start:   KT
+        end:     KTZ999999
+        sections:
+          - name:    'Africa'
+            lcco:    false
+            range:   KT-KTZ490
+            start:   KT
+            end:     KTZ490
+            sections:
+              - name:    'Nigeria'
+                range:   KTA1-9150
+                start:   KTA1
+                end:     KTA9150
+              - name:    'Réunion'
+                sort_as: 'Reunion'
+                range:   KTC1-499
+                start:   KTC1
+                end:     KTC499
+              - name:    'Rwanda'
+                range:   KTD1-490
+                start:   KTD1
+                end:     KTD490
+              - name:    'Saint Helena'
+                range:   KTE1-490
+                start:   KTE1
+                end:     KTE490
+              - name:    'São Tomé and Principe'
+                sort_as: 'Sao Tome and Principe'
+                range:   KTF1-490
+                start:   KTF1
+                end:     KTF490
+              - name:    'Senegal'
+                range:   KTG1-4990
+                start:   KTG1
+                end:     KTG4990
+              - name:    'Seychelles'
+                range:   KTH1-490
+                start:   KTH1
+                end:     KTH490
+              - name:    'Sierra Leone'
+                range:   KTJ1-490
+                start:   KTJ1
+                end:     KTJ490
+              - name:    'Somalia'
+                range:   KTK1-490
+                start:   KTK1
+                end:     KTK490
+              - name:    'South Africa, Republic of'
+                range:   KTL1-9560
+                start:   KTL1
+                end:     KTL9560
+              - name:    'Spanish West Africa (to 1958)'
+                range:   KTN1-499
+                start:   KTN1
+                end:     KTN499
+              - name:    'Spanish Sahara (to 1975)'
+                range:   KTN601-699
+                start:   KTN601
+                end:     KTN699
+              - name:    'Sudan'
+                range:   KTQ1-4990
+                start:   KTQ1
+                end:     KTQ4990
+              - name:    'Swaziland'
+                range:   KTR1-490
+                start:   KTR1
+                end:     KTR490
+              - name:    'Tanzania'
+                range:   KTT1-9910
+                start:   KTT1
+                end:     KTT9910
+              - name:    'Togo'
+                range:   KTU1-490
+                start:   KTU1
+                end:     KTU490
+              - name:    'Tunisia'
+                range:   KTV1-4990
+                start:   KTV1
+                end:     KTV4990
+              - name:    'Uganda'
+                range:   KTW1-490
+                start:   KTW1
+                end:     KTW490
+              - name:    'Zaire'
+                range:   KTX1-4990
+                start:   KTX1
+                end:     KTX4990
+              - name:    'Zambia'
+                range:   KTY1-490
+                start:   KTY1
+                end:     KTY490
+              - name:    'Zanzibar (to 1964)'
+                range:   KTY1501-1599
+                start:   KTY1501
+                end:     KTY1599
+              - name:    'Zimbabwe'
+                range:   KTZ1-490
+                start:   KTZ1
+                end:     KTZ490
+  - subclass:  KU
+    name:     'Pacific Area -- Australia.  New Zealand'
+    sections:
+      - name:    'Asia and Eurasia, Africa, Pacific Area'
+        lcco:    false
+        range:   KU-KUZ
+        start:   KU
+        end:     KUZ999999
+        sections:
+          - name:    'Pacific Area'
+            lcco:    false
+            range:   KU1-KUZ
+            start:   KU1
+            end:     KUZ999999
+            sections:
+              - name:    'Australia'
+                range:   KU1-4999
+                start:   KU1
+                end:     KU4999
+              - name:    'Australia.  States and territories'
+                range:   KUA-KUH
+                start:   KUA
+                end:     KUH999999
+              - name:    'Australia.  External territories'
+                lcco:    false
+                range:   KUN501-599
+                start:   KUN501
+                end:     KUN599
+                sections:
+                  - name:    'Norfolk Island'
+                    range:   KUN501-599
+                    start:   KUN501
+                    end:     KUN599
+              - name:    'Australia.  Cities, communities, etc.'
+                range:   KUN3001-3050
+                start:   KUN3001
+                end:     KUN3050
+              - name:    'New Zealand'
+                range:   KUQ1-4990
+                start:   KUQ1
+                end:     KUQ4990
+  - subclass:  KV
+    name:     'Pacific Area -- History of Law.  Comparative law -- American Samoa to New Caledonia'
+    sections:
+      - name:    'Asia and Eurasia, Africa, Pacific Area'
+        lcco:    false
+        range:   KV-KVZ
+        start:   KV
+        end:     KVZ999999
+        sections:
+          - name:    'Pacific Area'
+            lcco:    false
+            range:   KV-KVZ
+            start:   KV
+            end:     KVZ999999
+            sections:
+              - name:    'Pacific area jurisdictions'
+                lcco:    false
+                range:   KVB1-KVZ
+                start:   KVB1
+                end:     KVZ999999
+                sections:
+                  - name:    'Regional comparative and uniform law'
+                    lcco:    false
+                    range:   KVB1-KVC999
+                    start:   KVB1
+                    end:     KVC999
+                    sections:
+                      - name:    'Australia and New Zealand'
+                        range:   KVB1-999
+                        start:   KVB1
+                        end:     KVB999
+                      - name:    'Other Pacific area jurisdictions'
+                        range:   KVC1-999
+                        start:   KVC1
+                        end:     KVC999
+                  - name:    'Regional organization and integration'
+                    range:   KVE200-349
+                    start:   KVE200
+                    end:     KVE349
+                  - name:    'American Samoa'
+                    range:   KVH1-490
+                    start:   KVH1
+                    end:     KVH490
+                  - name:    'British New Guinea (Territory of Papua)'
+                    range:   KVH1001-1499
+                    start:   KVH1001
+                    end:     KVH1499
+                  - name:    'Cook Islands'
+                    range:   KVL1-489
+                    start:   KVL1
+                    end:     KVL489
+                  - name:    'Easter Island'
+                    range:   KVM1-489
+                    start:   KVM1
+                    end:     KVM489
+                  - name:    'Fiji'
+                    range:   KVN1-490
+                    start:   KVN1
+                    end:     KVN490
+                  - name:    'French Polynesia'
+                    range:   KVP1-100
+                    start:   KVP1
+                    end:     KVP100
+                  - name:    'German New Guinea (to 1914)'
+                    range:   KVP1001-1099
+                    start:   KVP1001
+                    end:     KVP1099
+                  - name:    'Guam'
+                    range:   KVQ1-490
+                    start:   KVQ1
+                    end:     KVQ490
+                  - name:    'Kiribati'
+                    range:   KVR1-490
+                    start:   KVR1
+                    end:     KVR490
+                  - name:    'Marshall Islands'
+                    range:   KVS1-490
+                    start:   KVS1
+                    end:     KVS490
+                  - name:    'Micronesia (Federated States)'
+                    range:   KVS501-990
+                    start:   KVS501
+                    end:     KVS990
+                  - name:    'Midway Islands'
+                    range:   KVS2501-2999
+                    start:   KVS2501
+                    end:     KVS2999
+                  - name:    'Nauru'
+                    range:   KVU1-499
+                    start:   KVU1
+                    end:     KVU499
+                  - name:    'Netherlands New Guinea (to 1963)'
+                    range:   KVU1001-1099
+                    start:   KVU1001
+                    end:     KVU1099
+                  - name:    'New Caledonia'
+                    range:   KVW1-490
+                    start:   KVW1
+                    end:     KVW490
+  - subclass:  KW
+    name:     'Pacific Area -- Niue to Western Samoa'
+    sections:
+      - name:    'Asia and Eurasia, Africa, Pacific Area'
+        lcco:    false
+        range:   KW-KWW490
+        start:   KW
+        end:     KWW490
+        sections:
+          - name:    'Pacific Area'
+            lcco:    false
+            range:   KW-KWW490
+            start:   KW
+            end:     KWW490
+            sections:
+              - name:    'Pacific area jurisdictions'
+                lcco:    false
+                range:   KW-KWW490
+                start:   KW
+                end:     KWW490
+                sections:
+                  - name:    'Niue'
+                    range:   KWA1-489
+                    start:   KWA1
+                    end:     KWA489
+                  - name:    'Northern Mariana Islands'
+                    range:   KWC1-490
+                    start:   KWC1
+                    end:     KWC490
+                  - name:    'Pacific Islands (Trust Territory)'
+                    range:   KWE1-499
+                    start:   KWE1
+                    end:     KWE499
+                  - name:    'Palau'
+                    range:   KWG1-490
+                    start:   KWG1
+                    end:     KWG490
+                  - name:    'Papua New Guinea'
+                    range:   KWH1-490
+                    start:   KWH1
+                    end:     KWH490
+                  - name:    'Pitcairn Island'
+                    range:   KWL1-499
+                    start:   KWL1
+                    end:     KWL499
+                  - name:    'Solomon Islands'
+                    range:   KWL2001-2490
+                    start:   KWL2001
+                    end:     KWL2490
+                  - name:    'Tonga'
+                    range:   KWP1-490
+                    start:   KWP1
+                    end:     KWP490
+                  - name:    'Tuvalu'
+                    range:   KWQ1-490
+                    start:   KWQ1
+                    end:     KWQ490
+                  - name:    'Vanuatu'
+                    range:   KWR1-490
+                    start:   KWR1
+                    end:     KWR490
+                  - name:    'Wake Island'
+                    range:   KWT1-489
+                    start:   KWT1
+                    end:     KWT489
+                  - name:    'Wallis and Futuna Islands'
+                    range:   KWT2001-2490
+                    start:   KWT2001
+                    end:     KWT2490
+                  - name:    'Western Samoa'
+                    range:   KWW1-490
+                    start:   KWW1
+                    end:     KWW490
+  - subclass:  KWX
+    name:     'Antarctica'
+    sections:
+          - name:    'Antarctica'
+            lcco:    false
+            range:   KWX-KWX999999
+            start:   KWX
+            end:     KWX999999
+  - subclass:  KZ
+    name:     'Law of nations.  Law of the sea.  Space law.  Law of outer space'
+    sections:
+      - name:    'Law of nations'
+        range:   KZ2-6795
+        start:   KZ2
+        end:     KZ6795
+        sections:
+          - name:    'Bibliography'
+            range:   KZ2-5.5
+            start:   KZ2
+            end:     KZ5.5
+          - name:    'Societies, etc.'
+            range:   KZ24-38
+            start:   KZ24
+            end:     KZ38
+            sections:
+              - name:    'National'
+                range:   KZ27-37
+                start:   KZ27
+                end:     KZ37
+          - name:    'Intergovernmental congresses and conferences'
+            range:   KZ(60)-62.5
+            start:   KZ60
+            end:     KZ62.5
+          - name:    'Sources.  Fontes juris gentium'
+            range:   KZ(63)-1152
+            start:   KZ63
+            end:     KZ1152
+            sections:
+              - name:    'Treaties and other international agreements'
+                range:   KZ118-194
+                start:   KZ118
+                end:     KZ194
+                sections:
+                  - name:    'To 1920'
+                    range:   KZ119-165
+                    start:   KZ119
+                    end:     KZ165
+                  - name:    '1920-'
+                    range:   KZ170-173
+                    start:   KZ170
+                    end:     KZ173
+                  - name:    'Boundary treaties'
+                    range:   KZ176-182.5
+                    start:   KZ176
+                    end:     KZ182.5
+                  - name:    'Treaties of arbitration, investigation, etc.'
+                    range:   KZ183-183.5
+                    start:   KZ183
+                    end:     KZ183.5
+                  - name:    'Peace treaties'
+                    range:   KZ184-194
+                    start:   KZ184
+                    end:     KZ194
+              - name:    'Judicial decisions and arbitral awards.  Law reports'
+                range:   KZ199-218
+                start:   KZ199
+                end:     KZ218
+              - name:    'By region or country'
+                range:   KZ221-1152
+                start:   KZ221
+                end:     KZ1152
+          - name:    'Trials'
+            range:   KZ1165-1208
+            start:   KZ1165
+            end:     KZ1208
+            sections:
+              - name:    'War crime trials'
+                range:   KZ1168-1208
+                start:   KZ1168
+                end:     KZ1208
+          - name:    'Legal research.  Legal bibliography'
+            range:   KZ1234-1236
+            start:   KZ1234
+            end:     KZ1236
+          - name:    'International law and other disciplines'
+            range:   KZ1249-1252
+            start:   KZ1249
+            end:     KZ1252
+          - name:    'Theory and principles'
+            range:   KZ1255-1273
+            start:   KZ1255
+            end:     KZ1273
+            sections:
+              - name:    'Domain of the law of nations'
+                range:   KZ1267-1273
+                start:   KZ1267
+                end:     KZ1273
+          - name:    'Methodology'
+            range:   KZ1284-1285.5
+            start:   KZ1284
+            end:     KZ1285.5
+          - name:    'Codification of the law of nations'
+            range:   KZ1287-1296
+            start:   KZ1287
+            end:     KZ1296
+          - name:    'The law of treaties.  System of treaty law'
+            range:   KZ1298-1304
+            start:   KZ1298
+            end:     KZ1304
+          - name:    'International legal regimes'
+            range:   KZ(1319)-(1327)
+            start:   KZ1319
+            end:     KZ1327
+          - name:    'Early/Medieval development to ca. 1900.  Ius Naturae et Gentium'
+            range:   KZ1329-3085
+            start:   KZ1329
+            end:     KZ3085
+            sections:
+              - name:    'Peace of Westphalia to the French Revolution (1648-1789)'
+                range:   KZ1330-1339
+                start:   KZ1330
+                end:     KZ1339
+              - name:    'French Revolution to the American Civil War (1789-1861)'
+                range:   KZ1345-1369
+                start:   KZ1345
+                end:     KZ1369
+              - name:    'American Civil War to the First Conference of the Hague (1861-1899)'
+                range:   KZ1373-1387.2
+                start:   KZ1373
+                end:     KZ1387.2
+              - name:    'Publicists.  Writers on public international law'
+                range:   KZ2064-3085
+                start:   KZ2064
+                end:     KZ3085
+          - name:    '20th century'
+            range:   KZ3092-3405
+            start:   KZ3092
+            end:     KZ3405
+            sections:
+              - name:    'Publicists.  Writers on public international law'
+                range:   KZ3110-3405
+                start:   KZ3110
+                end:     KZ3405
+          - name:    '21st century'
+            range:   KZ3410
+            start:   KZ3410
+            end:     KZ3410
+          - name:    'Objects of the law of nations.  Territory and its different parts'
+            range:   KZ3670-3881
+            start:   KZ3670
+            end:     KZ3881
+          - name:    'The international legal community and members'
+            range:   KZ3900-(5490)
+            start:   KZ3900
+            end:     KZ5490
+            sections:
+              - name:    'Subjects of the law of nations'
+                range:   KZ3910-(5490)
+                start:   KZ3910
+                end:     KZ5490
+                sections:
+                  - name:    'The state'
+                    range:   KZ4002-4080
+                    start:   KZ4002
+                    end:     KZ4080
+                  - name:    'By region'
+                    range:   KZ4110
+                    start:   KZ4110
+                    end:     KZ4110
+                  - name:    'By state'
+                    range:   KZ4112-4820
+                    start:   KZ4112
+                    end:     KZ4820
+                  - name:    'Intergovernmental organizations.  IGOs'
+                    range:   KZ4850-(5490)
+                    start:   KZ4850
+                    end:     KZ5490
+                    sections:
+                      - name:    'The League of Nations'
+                        range:   KZ4853-(4934)
+                        start:   KZ4853
+                        end:     KZ4934
+                      - name:    'The United Nations'
+                        range:   KZ(4935)-5275
+                        start:   KZ4935
+                        end:     KZ5275
+                      - name:    'Regional organizations'
+                        range:   KZ(5330)-(5490)
+                        start:   KZ5330
+                        end:     KZ5490
+          - name:    'International law of peace and peace enforcement'
+            range:   KZ5510-6299
+            start:   KZ5510
+            end:     KZ6299
+            sections:
+              - name:    'The system of collective security'
+                range:   KZ5586-5893
+                start:   KZ5586
+                end:     KZ5893
+                sections:
+                  - name:    'Arms control and disarmament regimes'
+                    range:   KZ5615-5893
+                    start:   KZ5615
+                    end:     KZ5893
+                    sections:
+                      - name:    'Conventional arms control'
+                        range:   KZ5637-5645
+                        start:   KZ5637
+                        end:     KZ5645
+                      - name:    'Nuclear (Strategic) arms limitation'
+                        range:   KZ5647-5686
+                        start:   KZ5647
+                        end:     KZ5686
+                      - name:    'Nuclear weapon free zones and zones of peace'
+                        range:   KZ5687-5788.5
+                        start:   KZ5687
+                        end:     KZ5788.5
+                      - name:    'Other weapons of mass destruction'
+                        range:   KZ5834-5865
+                        start:   KZ5834
+                        end:     KZ5865
+                      - name:    'Mutual and balanced reduction of armed forces'
+                        range:   KZ5870-5893
+                        start:   KZ5870
+                        end:     KZ5893
+              - name:    'Military pact systems for collective self-defense'
+                range:   KZ5900-5967
+                start:   KZ5900
+                end:     KZ5967
+              - name:    'Pacific settlement of international disputes and conflict resolution'
+                range:   KZ6009-6299
+                start:   KZ6009
+                end:     KZ6299
+                sections:
+                  - name:    'Arbitration and adjudication'
+                    range:   KZ6115-6299
+                    start:   KZ6115
+                    end:     KZ6299
+          - name:    'Enforced settlement of international disputes'
+            range:   KZ6350-6785
+            start:   KZ6350
+            end:     KZ6785
+            sections:
+              - name:    'Non-military coercion'
+                range:   KZ6360-6373
+                start:   KZ6360
+                end:     KZ6373
+              - name:    'Threat of force'
+                range:   KZ6374-(6377)
+                start:   KZ6374
+                end:     KZ6377
+              - name:    'Law of war and neutrality.  Jus belli'
+                range:   KZ6378-(6785)
+                start:   KZ6378
+                end:     KZ6785
+                sections:
+                  - name:    'Warfare on land'
+                    range:   KZ6427-6437
+                    start:   KZ6427
+                    end:     KZ6437
+                  - name:    'Humanitarian law'
+                    range:   KZ6440-6530
+                    start:   KZ6440
+                    end:     KZ6530
+                  - name:    'Warfare on sea'
+                    range:   KZ6540-6660
+                    start:   KZ6540
+                    end:     KZ6660
+                  - name:    'Air warfare'
+                    range:   KZ6665-6714
+                    start:   KZ6665
+                    end:     KZ6714
+                  - name:    'The end of war.  Armistice.  Surrender.  Postliminy'
+                    range:   KZ6730-6785
+                    start:   KZ6730
+                    end:     KZ6785
+      - name:    'Law of the sea'
+        range:   KZA1002-(4205)
+        start:   KZA1002
+        end:     KZA4205
+        sections:
+          - name:    'Intergovernmental congresses and conferences'
+            range:   KZA1040-1065
+            start:   KZA1040
+            end:     KZA1065
+          - name:    'Treaties and other international agreements'
+            range:   KZA1118-1122
+            start:   KZA1118
+            end:     KZA1122
+          - name:    'Concepts and principles'
+            range:   KZA1340-1417
+            start:   KZA1340
+            end:     KZA1417
+            sections:
+              - name:    'Mare clausum doctrine'
+                range:   KZA1340
+                start:   KZA1340
+                end:     KZA1340
+              - name:    'Mare liberum doctrine'
+                range:   KZA1348-1405
+                start:   KZA1348
+                end:     KZA1405
+          - name:    'Maritime boundaries'
+            range:   KZA1430-1690
+            start:   KZA1430
+            end:     KZA1690
+            sections:
+              - name:    'Continental shelf'
+                range:   KZA1630-1664
+                start:   KZA1630
+                end:     KZA1664
+          - name:    'Marine resources conservation and development'
+            range:   KZA(3481)-(3900)
+            start:   KZA3481
+            end:     KZA3900
+            sections:
+              - name:    'High-seas fisheries and fisheries regimes'
+                range:   KZA(3891)-(3900)
+                start:   KZA3891
+                end:     KZA3900
+          - name:    'Public order of the oceans'
+            range:   KZA4130-(4205)
+            start:   KZA4130
+            end:     KZA4205
+      - name:    'Space law.  Law of outer space'
+        range:   KZD1002-6715
+        start:   KZD1002
+        end:     KZD6715
+        sections:
+          - name:    'Intergovernmental congresses and conferences'
+            range:   KZD1040-1065
+            start:   KZD1040
+            end:     KZD1065
+          - name:    'Treaties and other international agreements'
+            range:   KZD1118-1122
+            start:   KZD1118
+            end:     KZD1122
+          - name:    'Concepts and principles.  Theory'
+            range:   KZD1340-1400
+            start:   KZD1340
+            end:     KZD1400
+            sections:
+              - name:    'Regulated use theory'
+                range:   KZD1390-1400
+                start:   KZD1390
+                end:     KZD1400
+          - name:    'The source of the law of space'
+            range:   KZD1410
+            start:   KZD1410
+            end:     KZD1410
+          - name:    'Boundaries'
+            range:   KZD1420-1455
+            start:   KZD1420
+            end:     KZD1455
+          - name:    'Peaceful uses of outer space'
+            range:   KZD3489-4406
+            start:   KZD3489
+            end:     KZD4406
+            sections:
+              - name:    'Space resources'
+                range:   KZD3489.5-3608
+                start:   KZD3489.5
+                end:     KZD3608
+              - name:    'Public order in space and outer space'
+                range:   KZD4030-4326
+                start:   KZD4030
+                end:     KZD4326
+                sections:
+                  - name:    'Space flight'
+                    range:   KZD4080-4210
+                    start:   KZD4080
+                    end:     KZD4210
+                  - name:    'Space communication'
+                    range:   KZD(4301)-4310
+                    start:   KZD4301
+                    end:     KZD4310
+                  - name:    'Rescue operations in outer space'
+                    range:   KZD4320.2-4326
+                    start:   KZD4320.2
+                    end:     KZD4326
+              - name:    'Liability for accidents'
+                range:   KZD(4404)-4406
+                start:   KZD4404
+                end:     KZD4406
+          - name:    'Un-peaceful uses of outer space'
+            range:   KZD5614-6715
+            start:   KZD5614
+            end:     KZD6715
+            sections:
+              - name:    'Treaties and other international agreements'
+                range:   KZD5620-5622.2
+                start:   KZD5620
+                end:     KZD5622.2
+              - name:    'Disarmament and demilitarization regimes in outer space'
+                range:   KZD5648-5680.2
+                start:   KZD5648
+                end:     KZD5680.2

@@ -1,0 +1,26 @@
+<%# app/views/catalog/index/shared/_thumbnail.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc && !classic_lens?
+
+  thumbnail_css ||= nil
+  counter       ||= -1
+  offset        ||= 0
+  portal        ||= nil
+  link_opts     ||= {}
+
+  thumbnail_css =
+    case thumbnail_css
+      when Array  then thumbnail_css.compact.unshift(nil).join(SPACE)
+      when String then thumbnail_css.strip.prepend(SPACE)
+    end
+
+  item_index = 1 + counter + offset
+  link_opts  = { portal: portal, counter: item_index }.merge(link_opts)
+
+  view_debug(__FILE__)
+-%>
+
+<div class="preview-thumbnail<%= thumbnail_css -%>" aria-hidden="true">
+  <%= index_thumbnail(doc, link_opts) %>
+</div>

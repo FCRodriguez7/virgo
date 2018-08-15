@@ -1,0 +1,36 @@
+<%# app/views/maps_users/new.html.erb -%>
+<%-
+  set_meta_tags(title: 'Maps Users - New User')
+
+  view_debug(__FILE__)
+-%>
+
+<div class="list-heading">
+  <h1 class="heading">Create a New Map User</h1>
+</div>
+
+<div class="tool-content">
+
+  <%- if @maps_user.errors.present? -%>
+    <ul>
+      <%- @maps_user.errors.full_messages.each do |msg| -%>
+        <li><%= msg %></li>
+      <%- end -%>
+    </ul>
+  <%- end -%>
+
+  <%= form_for(@maps_user) do |f| %>
+    <fieldset class="maps-user-form maps-container">
+      <%= sr_only(:legend, 'Specify the user to add:') %>
+      <div class="row">
+        <%= label(:maps_user, :computing_id, 'Computing ID') %>
+        <%= f.text_field :computing_id %>
+      </div>
+      <div class="row">
+        <%= f.submit 'Create', class: 'button btn' %>
+        <%= link_to  'Cancel', maps_users_path, class: 'btn' %>
+      </div>
+    </fieldset>
+  <%- end -%>
+
+</div>

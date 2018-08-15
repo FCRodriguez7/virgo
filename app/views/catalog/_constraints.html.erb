@@ -1,0 +1,71 @@
+<%# app/views/catalog/_constraints.html.erb -%>
+<%-
+  # Overrides Blacklight app/views/catalog/_constraints.html.erb
+
+  css_class   ||= 'applied-params'
+  response    ||= @response
+  browse_mode ||= params[:browse_mode]
+
+  has_results = hit_count(response, browse_mode).nonzero?
+
+  heading =
+    if print_view?
+      if browse_mode
+        type = browse_mode_label(browse_mode).downcase
+        "Virgo browse by #{type} results"
+      else
+        type = search_result_label.downcase
+        type = (" #{type}" unless type == 'catalog')
+        "Virgo#{type} search results"
+      end
+    else
+      if browse_mode
+        'Browsing by'
+      elsif classic_lens?
+        'Listing for'
+      else
+        'You searched for:'
+      end
+    end
+  css_class += ' browse' if browse_mode
+
+  view_debug(__FILE__)
+-%>
+
+<div class="<%= css_class -%>">
+
+  <h2 class="tagline"><%= heading -%></h2>
+
+  <%# === Query and/or facet "bubbles" === -%>
+  <%= show_queries %>
+  <%= show_facets unless browse_mode.present? %>
+
+  <%- unless combined_search_results? -%>
+
+    <div class="result-line">
+
+      <%# === Pagination information === -%>
+      <span class="current-page">
+        <%- if index_page? || browse_page? -%>
+          <%# === Search results total or "No items found." === -%>
+          <%= virgo_page_entries_info(response, entry_name: 'item') %>
+        <%- else -%>
+          <%# === Position of current item in the search results === -%>
+          <%- current = format_num(search_session[:counter].to_i) -%>
+          <%- total   = format_num(search_session[:total].to_i) -%>
+          Displaying item
+          <strong><%= current -%></strong> of <strong><%= total -%></strong>
+        <%- end -%>
+      </span>
+
+      <%# === Pagination control links === -%>
+      <%= pagination_links(response) if has_results %>
+
+    </div>
+
+    <%# === "Refine search" button === -%>
+    <%= refine_search_link unless classic_lens? %>
+
+  <%- end -%>
+
+</div>

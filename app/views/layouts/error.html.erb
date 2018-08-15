@@ -1,0 +1,80 @@
+<%# app/views/layouts/error.html.erb -%>
+<%-
+  # This layout is only for error pages.
+  page_css = %w(error-page)
+  page_css << 'print-view' if print_view?
+  page_css = page_css.join(SPACE)
+
+  # Initial stylesheets and scripts for all routes using this layout.
+  javascripts = [] <<  'application.js'
+  stylesheets = [] << ('application.css' unless print_view?)
+
+  # Print styling comes after all other html_head entries.
+  print_media = [] << 'print' << ('screen' if print_view?)
+  print_media = print_media.compact.join(LIST_SEPARATOR)
+  html_head << stylesheet_link_tag('print.css', media: print_media)
+
+  # Add to the start of the hidden "skip navigation" menu.
+  skip_nav.unshift(link_to('Main Content', '#content'))
+
+  # Conditional width for main content.
+  no_sidebar    = sidebar_items.include?(:no_sidebar)
+  no_sidebar  ||= page_css.end_with?('wide')
+  full_width    = 24
+  sidebar_width = no_sidebar ? 0 : 6
+  content_width = full_width - sidebar_width
+  content_width = "grid_#{content_width}"
+  content_css   = "page-content #{content_width} alpha omega"
+
+  view_debug(__FILE__)
+-%>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+
+  <%# === Meta tags === -%>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <%= show_meta_tags %>
+
+  <%# === Include CSS, JavaScript and items added by the action page === -%>
+  <%= show_html_head(stylesheets, javascripts) -%>
+
+</head>
+
+<body class="<%= page_css -%>">
+
+  <div class="virgo-container">
+
+    <%# === Top banner === -%>
+    <%= render 'layouts/header' %>
+
+    <div class="page-container container_24">
+
+      <%# === Sidebar with close link. === -%>
+      <%- unless no_sidebar -%>
+        <%= render 'catalog/sidebar_close' %>
+        <%= render 'layouts/sidebar', width: sidebar_width %>
+      <%- end -%>
+
+      <article class="<%= content_css -%>" id="content" role="main">
+
+        <%# === Flash messages (if any are active) === -%>
+        <%= render '/flash_msg' %>
+
+        <%# === NOTE: rendering of action page inserted here === -%>
+        <%= yield %>
+
+      </article>
+
+    </div>
+
+    <%# === Page bottom === -%>
+    <%= render 'layouts/footer', layout: __FILE__ %>
+
+  </div>
+
+  <%= render 'layouts/copyright' %>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<%# app/views/advanced/_advanced_search_help.html.erb -%>
+<%-
+  entries ||= []
+
+  entries << {
+    topic:   'Use quotation marks to find phrases:',
+    example: %q(> "grapes of wrath")
+  }
+
+  entries << {
+    topic:   'Use uppercase OR, AND, and NOT to create complex searches:',
+    example: [
+      %q(> kyoto NOT protocol),
+      %q(> "frida kahlo" AND exhibitions),
+    ]
+  }
+
+  entries << {
+    topic:   'Use parentheses to group parts of your search:',
+    example: %q(> (calico OR "tortoise shell") AND cats)
+  }
+
+  entries << {
+    topic: %q(
+      Use “Limit Results By” options on the left to refine searches by limiting
+      results to items matching any of the selected values.
+    ),
+    example: %q(
+      Some facet selection lists are very long; use your browser's page search
+      (usually Ctrl-F) to locate the selections you want to include.
+    )
+  }
+
+  if articles_lens?
+    entries << {
+      topic: %Q(
+        Use one of the Library's #{specialized_databases} to search within even
+        more journals to find the articles you need.
+      ),
+    }
+  else
+    entries << {
+      topic: %q(
+        Check "Don't Stem" to turn off word stemming and search for words
+        exactly as entered.
+      ),
+      example: %q(
+        With this selected, alternate word endings (-ing, -able, -tion, -ed,
+        etc.) will not be included in the search unless specified.
+      )
+    }
+  end
+
+  entries.map! { |entry|
+    [:topic, :example].map { |section|
+      content = Array(entry[section])
+      content.map! { |line| line.squish.html_safe if line.present? }
+      content.compact!
+      [section, content]
+    }.to_h
+  }
+  entries.compact!
+
+  return unless entries.present?
+
+  # Add to hidden "skip navigation" menu.
+  skip_nav << link_to('Help on advanced search', '#help')
+
+  view_debug(__FILE__)
+-%>
+
+<h2 class="heading" id="help">Search Tips</h2>
+
+<ul class="advanced_help">
+  <%- entries.each do |entry| -%>
+    <li>
+      <%- entry[:topic].each do |topic| -%>
+        <p class="advanced-help-topic"><%= topic %></p>
+      <%- end -%>
+      <%- entry[:example].each do |example| -%>
+        <pre class="advanced-help-example"><%= example %></pre>
+      <%- end -%>
+    </li>
+  <%- end -%>
+</ul>

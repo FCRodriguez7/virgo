@@ -1,0 +1,364 @@
+// app/assets/stylesheets/feature/classic.css.scss
+
+.classic-page.classic-view {
+
+    $left-pad: 8px;
+    $indent:   4 * $left-pad;
+
+    .loader,
+    .in-progress {
+        display: inline-block;
+        margin:  0;
+        padding: 0;
+    }
+
+    // ========================================================================
+    // Virgo Classic lens generic page.
+    // ========================================================================
+
+    // Flash errors.
+    .ui-corner-all {
+        width:        90%;
+        margin-left:  auto;
+        margin-right: auto;
+    }
+
+    .page-sidebar {
+        position:   absolute;
+        left:       0;
+        visibility: hidden; // TODO: Invisible for now...
+    }
+
+    .page-content {
+
+        @include width-available;
+
+        // ====================================================================
+        // Components
+        // ====================================================================
+
+        // Appears within .result-line and after .classic-results.
+        .pagination {
+
+            $left-margin: calc(#{$indent} + #{$left-pad});
+
+            margin:     2em 0 2em $left-margin;
+            padding:    0;
+            text-align: initial;
+
+            &:last-of-type { margin: 0 0 0 $left-margin; }
+        }
+
+        // Search queries and results.
+        .applied-params {
+
+            width:      100%;
+            margin-top: 10px;
+
+            .start-over-link { // TODO: should move...
+                top:   50px;
+                right: 5px;
+            }
+
+            .result-line {
+                width: 98%;
+            }
+        }
+
+        // Page results area.
+        .classic-results {
+
+            // Result entries (for either search results or browse results).
+            .document {
+
+                padding-left: $left-pad;
+
+                &.even { margin-bottom: 1em; }
+                &.odd  { margin-bottom: 1em; background: #f4f4f4; }
+
+                .details {
+
+                    padding-top:    6px;
+                    padding-bottom: 4px;
+
+                    dd {
+
+                        margin-bottom: 2px;
+
+                        a { text-decoration: underline; }
+                    }
+
+                    .metadata.hd {
+
+                        .list-item-number {
+                            width:   $indent;
+                            margin:  -2px 0 0 0;
+                            padding: 0;
+                        }
+
+                        dd.title-field a,
+                        .browse-entry a {
+                            display:     inline;
+                            line-height: 125%;
+                            margin:      0;
+                            padding:     0;
+                        }
+                        .browse-entry a {
+                            text-decoration: none;
+                        }
+
+                        .hits {
+                            display:     inline-block;
+                            margin-left: 0.25em;
+                            font-size:   115%;
+                            font-weight: normal;
+                        }
+                    }
+
+                    .preview-thumbnail {
+                        display: none;
+                    }
+
+                    .metadata:not(.hd) {
+                        dt { display:     none; }
+                        dd { margin-left: $indent; }
+                    }
+                }
+
+                .tools {
+                    .star-container .submit-form {
+
+                        display:    block;
+                        height:     17px;
+                        width:      16px;
+                        position:   absolute;
+                        top:        20px;
+                        color:      transparent;
+                        background: transparent no-repeat scroll 0 6px;
+
+                        &:focus       { outline-offset: 3px; }
+
+                        &             { background-image: $star-unlit-image;  }
+                        &.remove-star { background-image: $star-lit-image;    }
+                        &.saving-star { background-image: $star-change-image; }
+                    }
+                }
+            }
+
+            // Item details show page information that slides down below the
+            // associated .document entry.
+            .item-display {
+
+                display:       none; // Initially hidden.
+                height:        auto;
+                margin:        1em (2 * $left-pad);
+                padding:       0 (2 * $left-pad) $left-pad $left-pad;
+                position:      relative;
+                color:         #55534e;
+                background:    #fffefa;
+                border-bottom: 1px solid #e5e2e0;
+                border-top:    1px solid #e5e2e0;
+                box-shadow:    inset 0 0 6px rgba(99, 95, 92, 0.2);
+
+                .in-progress {
+                    padding-top: 4px;
+                }
+
+                .item-content {
+
+                    dt, dd {
+                        padding-top:    0.25em;
+                        padding-bottom: 0.25em;
+                    }
+
+                    dd {
+                        @include width-available;
+                    }
+
+                    .item-fields {
+                        dd:not(.technical-details) a {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    .item-availability {
+
+                        width:       unset;
+                        padding-top: 1em; // If availability is at the end.
+
+                        .request-buttons {
+                            top: 13px;
+                        }
+
+                        .physical-availability {
+                            width: unset;
+                        }
+
+                        .online-holding {
+                            width: unset;
+                            float: none;
+                        }
+                    }
+
+                    .item-toggle {
+
+                        cursor: pointer;
+
+                        &.btn {
+                            display:  block;
+                            position: absolute;
+                            left:     104%;
+                            &.top    { top:    -1px; }
+                            &.bottom { bottom: -18px; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // ========================================================================
+    // Virgo Classic lens home page.
+    // ========================================================================
+
+    &.home-page .page-content {
+
+        h1 {
+            font-size: large;
+            margin:    0.5em 0;
+        }
+
+        h2 {
+            font-size: larger;
+            margin:    0.5em 0;
+        }
+
+        p {
+            margin-bottom: 0.25em;
+            text-indent:   0.5em;
+            font-style:    italic;
+        }
+
+        .adv-search-button {
+            margin-top:    0.25em;
+            margin-bottom: 0.25em;
+            padding:       2px 6px;
+        }
+
+        .browse-searches {
+
+            display: block;
+            float:   left;
+            width:   50%;
+
+            label {
+                display: inline-block;
+                width:   30%;
+            }
+
+            input[type="text"] {
+                display: inline-block;
+                width:   40%;
+            }
+        }
+
+        .standard-searches {
+
+            display: block;
+            float:   left;
+            width:   50%;
+
+            .portal-button-container {
+                width: 90%;
+            }
+        }
+    }
+
+    // ========================================================================
+    // Virgo Classic lens browse results page.
+    // ========================================================================
+
+    &.browse-page .page-content {
+
+        .applied-params {
+            .applied-query      { padding-right: 8px; }
+            .applied-filter     { padding-right: 8px; }
+            //.remove-filter    { display: none; }
+            .refine-search-link { display: none; }
+        }
+
+        .search-tools {
+            .sort-form-container    { display: none; }
+            .library-form-container { display: inline-block; margin-left: 8px; }
+            .per-page-container     { display: inline-block; margin-left: 8px; }
+            .action-list-container  { display: none; }
+            .rss-button             { display: none; }
+        }
+
+        // Page results area.
+        .classic-results {
+
+            margin-bottom: 1em;
+
+            > .in-progress {
+                padding-left: $left-pad;
+            }
+
+            // Alternate searches displayed when browse search has no results.
+            .alt-search {
+
+                margin-left: $left-pad;
+
+                .browse-search-header,
+                .browse-search {
+                    font-size: 15px;
+                }
+
+                .browse-search-header {
+                    margin-bottom: 0.5em;
+                    line-height:   125%;
+                    font-weight:   bold;
+                }
+
+                .browse-search {
+
+                    margin-bottom: 0.25em;
+
+                    > * {
+                        display:     inline-block;
+                        margin-left: 0;
+                        line-height: normal;
+                    }
+                }
+            }
+
+            // Browse result entries.
+            .document {
+
+                margin-bottom: 0;
+
+            }
+        }
+    }
+
+    // ========================================================================
+    // Virgo Classic lens search results page.
+    // ========================================================================
+
+    &.index-page .page-content {
+
+        // Page results area.
+        .classic-results {
+
+            // Search results area
+            .document {
+                // For now, no variation from the generic page definition.
+            }
+
+            // Item details show page information
+            .item-display {
+                // For now, no variation from the generic page definition.
+            }
+        }
+    }
+}

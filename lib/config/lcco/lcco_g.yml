@@ -1,0 +1,1054 @@
+# lib/config/lcco_g.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from the Word document of the same base name.
+
+class:    G
+name:     'GEOGRAPHY.  ANTHROPOLOGY.  RECREATION'
+sections:
+  - subclass:  G
+    name:     'Geography (General).  Atlases.  Globes.  Maps'
+    sections:
+      - name:    'Geography (General)'
+        range:   G1-922
+        start:   G1
+        end:     G922
+        sections:
+          - name:    'Geographers'
+            range:   G65-69
+            start:   G65
+            end:     G69
+          - name:    'Philosophy.  Relation to other topics.  Methodology'
+            range:   G70-70.6
+            start:   G70
+            end:     G70.6
+          - name:    'History of geography'
+            range:   G80-99
+            start:   G80
+            end:     G99
+          - name:    'Toponymy'
+            note:    'Including gazetteers, geographic names and terms'
+            range:   G100.5-108.5
+            start:   G100.5
+            end:     G108.5
+          - name:    'Great cities of the world'
+            range:   G140
+            start:   G140
+            end:     G140
+          - name:    'Historical geography'
+            range:   G141
+            start:   G141
+            end:     G141
+          - name:    'Aerial geography'
+            range:   G142
+            start:   G142
+            end:     G142
+          - name:    'Travel.  Voyages and travels (General)'
+            range:   G149-180
+            start:   G149
+            end:     G180
+            sections:
+              - name:    'Travel and state.  Tourism'
+                range:   G154.9-155.8
+                start:   G154.9
+                end:     G155.8
+          - name:    'History of discoveries, explorations, and travel'
+            range:   G200-336
+            start:   G200
+            end:     G336
+          - name:    'Special voyages and travels'
+            range:   G369-503
+            start:   G369
+            end:     G503
+          - name:    'Adventures, shipwrecks, buried treasure, etc.'
+            range:   G521-539
+            start:   G521
+            end:     G539
+          - name:    'Seafaring life, ocean travel, etc.'
+            range:   G540-550
+            start:   G540
+            end:     G550
+          - name:    'Arctic and Antarctic regions'
+            range:   G575-890
+            start:   G575
+            end:     G890
+          - name:    'Tropics (General)'
+            range:   G905-910
+            start:   G905
+            end:     G910
+          - name:    'Northern and Southern Hemispheres'
+            range:   G912-922
+            start:   G912
+            end:     G922
+      - name:    'Atlases'
+        range:   G1000-3122
+        start:   G1000
+        end:     G3122
+        sections:
+          - name:    'Atlases of the moon, planets, etc.'
+            range:   G1000-1000.5
+            start:   G1000
+            end:     G1000.5
+          - name:    'World atlases.  Atlases of the Earth'
+            range:   G1001-1046
+            start:   G1001
+            end:     G1046
+          - name:    'Northern and Southern Hemispheres'
+            range:   G1050-1052
+            start:   G1050
+            end:     G1052
+          - name:    'Tropics.  Torrid Zone'
+            range:   G1053
+            start:   G1053
+            end:     G1053
+          - name:    'Polar regions.  Frigid Zone'
+            range:   G1054-1055
+            start:   G1054
+            end:     G1055
+          - name:    'Maritime atlases (General)'
+            range:   G1059-1061
+            start:   G1059
+            end:     G1061
+          - name:    'By region or country'
+            range:   G1100-3102
+            start:   G1100
+            end:     G3102
+            sections:
+              - name:    'America.  Western Hemisphere'
+                range:   G1100-1779
+                start:   G1100
+                end:     G1779
+                sections:
+                  - name:    'North America'
+                    range:   G1105-1692
+                    start:   G1105
+                    end:     G1692
+                    sections:
+                      - name:    'Greenland'
+                        range:   G1110-1114
+                        start:   G1110
+                        end:     G1114
+                      - name:    'Canada'
+                        range:   G1115-(1193)
+                        start:   G1115
+                        end:     G1193
+                      - name:    'United States'
+                        range:   G1200-1534.24
+                        start:   G1200
+                        end:     G1534.24
+                      - name:    'Caribbean area'
+                        range:   G1535-1537
+                        start:   G1535
+                        end:     G1537
+                      - name:    'Latin America (General)'
+                        range:   G1540-1542
+                        start:   G1540
+                        end:     G1542
+                      - name:    'Mexico'
+                        range:   G1545-1549
+                        start:   G1545
+                        end:     G1549
+                      - name:    'Central America'
+                        range:   G1550-(1594)
+                        start:   G1550
+                        end:     G1594
+                      - name:    'West Indies'
+                        range:   G1600-1692
+                        start:   G1600
+                        end:     G1692
+                  - name:    'South America'
+                    range:   G1700-1779
+                    start:   G1700
+                    end:     G1779
+              - name:    'Eastern Hemisphere.  Eurasia, Africa, etc.'
+                range:   G1780-2799
+                start:   G1780
+                end:     G2799
+                sections:
+                  - name:    'Europe'
+                    range:   G1791-2196
+                    start:   G1791
+                    end:     G2196
+                    sections:
+                      - name:    'Former Soviet republics.  Union of Soviet Socialist Republics (U.S.S.R.).  Russia (Empire)'
+                        range:   G2110-2196
+                        start:   G2110
+                        end:     G2196
+                  - name:    'Asia'
+                    range:   G2200-2444.84
+                    start:   G2200
+                    end:     G2444.84
+                  - name:    'Africa'
+                    range:   G2445-2739
+                    start:   G2445
+                    end:     G2739
+                  - name:    'Australasia'
+                    range:   G2740-2799
+                    start:   G2740
+                    end:     G2799
+              - name:    'Oceans (General)'
+                range:   G2800-3064
+                start:   G2800
+                end:     G3064
+              - name:    'Antarctica'
+                range:   G3100-3102
+                start:   G3100
+                end:     G3102
+          - name:    'Atlases of imaginary, literary, and mythological regions, etc., A-Z'
+            range:   G3122
+            start:   G3122
+            end:     G3122
+      - name:    'Globes'
+        range:   G3160-3171
+        start:   G3160
+        end:     G3171
+      - name:    'Maps'
+        range:   G3180-9980
+        start:   G3180
+        end:     G9980
+        sections:
+          - name:    'Universe.  Solar system'
+            range:   G3180-3182
+            start:   G3180
+            end:     G3182
+          - name:    'Celestial maps'
+            range:   G3190-3191
+            start:   G3190
+            end:     G3191
+          - name:    'Moon'
+            range:   G3195-3197
+            start:   G3195
+            end:     G3197
+          - name:    'World.  Earth'
+            range:   G3200-3202
+            start:   G3200
+            end:     G3202
+          - name:    'Northern and Southern Hemispheres'
+            range:   G3210-3221
+            start:   G3210
+            end:     G3221
+          - name:    'Tropics.  Torrid Zone'
+            range:   G3240-3241
+            start:   G3240
+            end:     G3241
+          - name:    'Temperate Zone'
+            range:   G3250-3251
+            start:   G3250
+            end:     G3251
+          - name:    'Polar regions.  Frigid Zone'
+            range:   G3260-3272
+            start:   G3260
+            end:     G3272
+          - name:    'By region or country'
+            range:   G3290-9880
+            start:   G3290
+            end:     G9880
+            sections:
+              - name:    'America.  Western Hemisphere'
+                range:   G3290-5667
+                start:   G3290
+                end:     G5667
+                sections:
+                  - name:    'North America'
+                    range:   G3300-5184
+                    start:   G3300
+                    end:     G5184
+                    sections:
+                      - name:    'Greenland'
+                        range:   G3380-3384
+                        start:   G3380
+                        end:     G3384
+                      - name:    'Canada'
+                        range:   G3400-(3612)
+                        start:   G3400
+                        end:     G3612
+                      - name:    'United States'
+                        range:   G3700-4384
+                        start:   G3700
+                        end:     G4384
+                      - name:    'Caribbean area'
+                        range:   G4390-4392
+                        start:   G4390
+                        end:     G4392
+                      - name:    'Mexico'
+                        range:   G4410-4763
+                        start:   G4410
+                        end:     G4763
+                      - name:    'Central America'
+                        range:   G4800-4874
+                        start:   G4800
+                        end:     G4874
+                      - name:    'West Indies'
+                        range:   G4900-5184
+                        start:   G4900
+                        end:     G5184
+                  - name:    'South America'
+                    range:   G5200-5667
+                    start:   G5200
+                    end:     G5667
+              - name:    'Eastern Hemisphere.  Eurasia, Africa, etc.'
+                range:   G5670-8904
+                start:   G5670
+                end:     G8904
+                sections:
+                  - name:    'Europe'
+                    range:   G5700-7342
+                    start:   G5700
+                    end:     G7342
+                    sections:
+                      - name:    'Former Soviet republics.  Union of Soviet Socialist Republics (U.S.S.R.).  Russia (Empire)'
+                        range:   G7000-7342
+                        start:   G7000
+                        end:     G7342
+                  - name:    'Asia'
+                    range:   G7400-8198.54
+                    start:   G7400
+                    end:     G8198.54
+                  - name:    'Africa'
+                    range:   G8200-8904
+                    start:   G8200
+                    end:     G8904
+              - name:    'Australasia'
+                range:   G8950-9084
+                start:   G8950
+                end:     G9084
+              - name:    'Oceans (General)'
+                range:   G9095-9794
+                start:   G9095
+                end:     G9794
+              - name:    'Antarctica'
+                range:   G9800-9804
+                start:   G9800
+                end:     G9804
+          - name:    'Unlocalized maps'
+            range:   G9900-9980
+            start:   G9900
+            end:     G9980
+  - subclass:  GA
+    name:     'Mathematical geography.  Cartography'
+    sections:
+      - name:    'Mathematical geography.  Cartography'
+        range:   GA1-1776
+        start:   GA1
+        end:     GA1776
+        sections:
+          - name:    'Surveys (General)'
+            range:   GA51-87
+            start:   GA51
+            end:     GA87
+          - name:    'Cartography'
+            range:   GA101-1776
+            start:   GA101
+            end:     GA1776
+            sections:
+              - name:    'Aerial cartography'
+                range:   GA109
+                start:   GA109
+                end:     GA109
+              - name:    'Cadastral mapping'
+                range:   GA109.5
+                start:   GA109.5
+                end:     GA109.5
+              - name:    'Statistical mapping'
+                range:   GA109.8
+                start:   GA109.8
+                end:     GA109.8
+              - name:    'Projection'
+                range:   GA110-115
+                start:   GA110
+                end:     GA115
+              - name:    'Map drawing, modeling, printing, reading, etc.'
+                range:   GA125-155
+                start:   GA125
+                end:     GA155
+              - name:    'Collections of maps, globes, etc.  Map libraries'
+                range:   GA192-197.3
+                start:   GA192
+                end:     GA197.3
+              - name:    'Cartographers'
+                range:   GA197.5-198
+                start:   GA197.5
+                end:     GA198
+              - name:    'Globe making.  Globes'
+                range:   GA260-288
+                start:   GA260
+                end:     GA288
+              - name:    'World maps, general atlases, etc.'
+                range:   GA300-325
+                start:   GA300
+                end:     GA325
+              - name:    'Maps.  By region or country'
+                range:   GA341-1776
+                start:   GA341
+                end:     GA1776
+  - subclass:  GB
+    name:     'Physical geography'
+    sections:
+      - name:    'Physical geography'
+        range:   GB3-5030
+        start:   GB3
+        end:     GB5030
+        sections:
+          - name:    'Geomorphology.  Landforms.  Terrain'
+            range:   GB400-649
+            start:   GB400
+            end:     GB649
+            sections:
+              - name:    'Climatic geomorphology'
+                range:   GB447
+                start:   GB447
+                end:     GB447
+              - name:    'Slopes'
+                range:   GB448
+                start:   GB448
+                end:     GB448
+              - name:    'Coasts'
+                range:   GB450-460
+                start:   GB450
+                end:     GB460
+              - name:    'Reefs'
+                range:   GB461-468.995
+                start:   GB461
+                end:     GB468.995
+              - name:    'Islands'
+                range:   GB471-478.995
+                start:   GB471
+                end:     GB478.995
+              - name:    'Mountains.  Orography'
+                range:   GB500-555
+                start:   GB500
+                end:     GB555
+              - name:    'Other natural landforms: Floodplains, caves, deserts, dunes, etc.'
+                range:   GB561-649
+                start:   GB561
+                end:     GB649
+          - name:    'Hydrology.  Water'
+            range:   GB651-2998
+            start:   GB651
+            end:     GB2998
+            sections:
+              - name:    'Ground and surface waters'
+                range:   GB980-2998
+                start:   GB980
+                end:     GB2998
+                sections:
+                  - name:    'Watersheds.  Runoff.  Drainage'
+                    range:   GB980-992
+                    start:   GB980
+                    end:     GB992
+                  - name:    'Groundwater.  Hydrogeology'
+                    range:   GB1001-1199.8
+                    start:   GB1001
+                    end:     GB1199.8
+                  - name:    'Rivers.  Stream measurements'
+                    range:   GB1201-1598
+                    start:   GB1201
+                    end:     GB1598
+                  - name:    'Lakes.  Limnology.  Ponds.  Lagoons'
+                    range:   GB1601-2398
+                    start:   GB1601
+                    end:     GB2398
+                  - name:    'Ice.  Glaciers.  Ice sheets.  Sea ice'
+                    range:   GB2401-2598
+                    start:   GB2401
+                    end:     GB2598
+                  - name:    'Snow.  Snow surveys'
+                    range:   GB2601-2798
+                    start:   GB2601
+                    end:     GB2798
+                  - name:    'Hydrometeorology'
+                    range:   GB2801-2998
+                    start:   GB2801
+                    end:     GB2998
+          - name:    'Natural disasters'
+            range:   GB5000-5030
+            start:   GB5000
+            end:     GB5030
+  - subclass:  GC
+    name:     'Oceanography'
+    sections:
+      - name:    'Oceanography'
+        range:   GC1-1581
+        start:   GC1
+        end:     GC1581
+        sections:
+          - name:    'Oceanographic expeditions'
+            range:   GC63
+            start:   GC63
+            end:     GC63
+          - name:    'Underwater exploration'
+            range:   GC65-78
+            start:   GC65
+            end:     GC78
+          - name:    'Submarine topography'
+            range:   GC83-87.6
+            start:   GC83
+            end:     GC87.6
+          - name:    'Estuarine oceanography'
+            range:   GC96-97.8
+            start:   GC96
+            end:     GC97.8
+          - name:    'Seawater'
+            range:   GC100-103
+            start:   GC100
+            end:     GC103
+          - name:    'Chemical oceanography'
+            range:   GC109-149
+            start:   GC109
+            end:     GC149
+          - name:    'Physical oceanography'
+            range:   GC150-182
+            start:   GC150
+            end:     GC182
+            sections:
+              - name:    'Density'
+                range:   GC151-155
+                start:   GC151
+                end:     GC155
+              - name:    'Temperature'
+                range:   GC160-177
+                start:   GC160
+                end:     GC177
+              - name:    'Optical oceanography'
+                range:   GC177.6-182
+                start:   GC177.6
+                end:     GC182
+          - name:    'Ocean-atmosphere interaction'
+            range:   GC190-190.5
+            start:   GC190
+            end:     GC190.5
+          - name:    'Dynamics of the ocean'
+            range:   GC200-376
+            start:   GC200
+            end:     GC376
+            sections:
+              - name:    'Waves'
+                range:   GC205-227
+                start:   GC205
+                end:     GC227
+              - name:    'Ocean circulation'
+                range:   GC228.5-228.6
+                start:   GC228.5
+                end:     GC228.6
+              - name:    'Currents'
+                range:   GC229-296.8
+                start:   GC229
+                end:     GC296.8
+              - name:    'Water masses and oceanic mixing'
+                range:   GC297-299
+                start:   GC297
+                end:     GC299
+              - name:    'Tides'
+                range:   GC300-376
+                start:   GC300
+                end:     GC376
+          - name:    'Marine sediments'
+            range:   GC377-399
+            start:   GC377
+            end:     GC399
+          - name:    'Oceanography.  By region'
+            range:   GC401-881
+            start:   GC401
+            end:     GC881
+          - name:    'Marine resources.  Applied oceanography'
+            range:   GC1000-1023
+            start:   GC1000
+            end:     GC1023
+          - name:    'Marine pollution.  Sea water pollution'
+            range:   GC1080-1581
+            start:   GC1080
+            end:     GC1581
+  - subclass:  GE
+    name:     'Environmental sciences'
+    sections:
+      - name:    'Environmental sciences'
+        range:   GE1-350
+        start:   GE1
+        end:     GE350
+        sections:
+          - name:    'Environmental education'
+            range:   GE70-90
+            start:   GE70
+            end:     GE90
+          - name:    'Environmental policy'
+            range:   GE170-190
+            start:   GE170
+            end:     GE190
+          - name:    'Environmentalism.  Green movement'
+            range:   GE195-199
+            start:   GE195
+            end:     GE199
+          - name:    'Environmental management'
+            range:   GE300-350
+            start:   GE300
+            end:     GE350
+  - subclass:  GF
+    name:     'Human ecology.  Anthropogeography'
+    sections:
+      - name:    'Human ecology.  Anthropogeography'
+        range:   GF1-900
+        start:   GF1
+        end:     GF900
+        sections:
+          - name:    'Environmental influences on humans'
+            range:   GF51
+            start:   GF51
+            end:     GF51
+          - name:    'Human influences on the environment'
+            range:   GF75
+            start:   GF75
+            end:     GF75
+          - name:    'Settlements'
+            range:   GF101-127
+            start:   GF101
+            end:     GF127
+            sections:
+              - name:    'Cities.  Urban geography'
+                range:   GF125
+                start:   GF125
+                end:     GF125
+              - name:    'Rural settlements.  Rural geography'
+                range:   GF127
+                start:   GF127
+                end:     GF127
+          - name:    'By region or country'
+            range:   GF500-900
+            start:   GF500
+            end:     GF900
+  - subclass:  GN
+    name:     'Anthropology'
+    sections:
+      - name:    'Anthropology'
+        range:   GN1-890
+        start:   GN1
+        end:     GN890
+        sections:
+          - name:    'Physical anthropology.  Somatology'
+            range:   GN49-298
+            start:   GN49
+            end:     GN298
+            sections:
+              - name:    'Anthropometry'
+                range:   GN51-59
+                start:   GN51
+                end:     GN59
+              - name:    'Human variation'
+                note:    'Including growth, physical form, skeleton, nervous system, skin, etc.'
+                range:   GN62.8-265
+                start:   GN62.8
+                end:     GN265
+              - name:    'Race (General)'
+                range:   GN269-279
+                start:   GN269
+                end:     GN279
+              - name:    'Man as an animal.  Simian traits versus human traits'
+                range:   GN280.7
+                start:   GN280.7
+                end:     GN280.7
+              - name:    'Human evolution'
+                range:   GN281-289
+                start:   GN281
+                end:     GN289
+                sections:
+                  - name:    'Fossil man.  Human paleontology'
+                    range:   GN282-286.7
+                    start:   GN282
+                    end:     GN286.7
+              - name:    'Medical anthropology'
+                range:   GN296-296.5
+                start:   GN296
+                end:     GN296.5
+          - name:    'Ethnology.  Social and cultural anthropology'
+            range:   GN301-674
+            start:   GN301
+            end:     GN674
+            sections:
+              - name:    'Culture and cultural processes'
+                note:    'Including social change, structuralism, diffusion, etc.'
+                range:   GN357-367
+                start:   GN357
+                end:     GN367
+              - name:    'Collected ethnographies'
+                range:   GN378-396
+                start:   GN378
+                end:     GN396
+              - name:    'Applied anthropology'
+                range:   GN397-397.7
+                start:   GN397
+                end:     GN397.7
+              - name:    'Cultural traits, customs, and institutions'
+                range:   GN406-517
+                start:   GN406
+                end:     GN517
+                sections:
+                  - name:    'Technology.  Material culture'
+                    note:    'Including food, shelter, fire, tools, etc.'
+                    range:   GN406-442
+                    start:   GN406
+                    end:     GN442
+                  - name:    'Economic organization.  Economic anthropology'
+                    range:   GN448-450.8
+                    start:   GN448
+                    end:     GN450.8
+                  - name:    'Intellectual life'
+                    note:    'Including communication, recreation, philosophy, religion, knowledge, etc.'
+                    range:   GN451-477.7
+                    start:   GN451
+                    end:     GN477.7
+                  - name:    'Social organization'
+                    range:   GN478-491.7
+                    start:   GN478
+                    end:     GN491.7
+                  - name:    'Political organization.  Political anthropology'
+                    range:   GN492-495.2
+                    start:   GN492
+                    end:     GN495.2
+                  - name:    'Societal groups, ethnocentrism, diplomacy, warfare, etc.'
+                    range:   GN495.4-498
+                    start:   GN495.4
+                    end:     GN498
+                  - name:    'Psychological anthropology'
+                    range:   GN502-517
+                    start:   GN502
+                    end:     GN517
+              - name:    'Ethnic groups and races'
+                range:   GN537-674
+                start:   GN537
+                end:     GN674
+                sections:
+                  - name:    'By region or country'
+                    range:   GN550-674
+                    start:   GN550
+                    end:     GN674
+          - name:    'Prehistoric archaeology'
+            range:   GN700-890
+            start:   GN700
+            end:     GN890
+  - subclass:  GR
+    name:     'Folklore'
+    sections:
+      - name:    'Folklore'
+        range:   GR1-950
+        start:   GR1
+        end:     GR950
+        sections:
+          - name:    'Folk literature (General)'
+            note:    'Including folktales, legends'
+            range:   GR72-79
+            start:   GR72
+            end:     GR79
+          - name:    'Folk beliefs, superstitions, etc. (General)'
+            range:   GR81
+            start:   GR81
+            end:     GR81
+          - name:    'By region or country'
+            range:   GR99.6-390
+            start:   GR99.6
+            end:     GR390
+          - name:    'By subject'
+            range:   GR420-950
+            start:   GR420
+            end:     GR950
+            sections:
+              - name:    'Costume, jewelry'
+                range:   GR420-426
+                start:   GR420
+                end:     GR426
+              - name:    'Folklore relating to private life'
+                note:    'Including dreams, love, children, nursery rhymes, etc.'
+                range:   GR430-488
+                start:   GR430
+                end:     GR488
+              - name:    'Supernatural beings, demonology, fairies, ghosts, charms, etc.'
+                range:   GR500-615
+                start:   GR500
+                end:     GR615
+              - name:    'Cosmic phenomena, weather lore'
+                range:   GR620-640
+                start:   GR620
+                end:     GR640
+              - name:    'Geographical topics'
+                range:   GR650-690
+                start:   GR650
+                end:     GR690
+              - name:    'Animals, plants, and minerals'
+                range:   GR700-860
+                start:   GR700
+                end:     GR860
+              - name:    'Transportation, travel, commerce, etc.'
+                range:   GR865-874
+                start:   GR865
+                end:     GR874
+              - name:    'Medicine.  Folk medicine'
+                range:   GR880
+                start:   GR880
+                end:     GR880
+              - name:    'Occupations'
+                range:   GR890-915
+                start:   GR890
+                end:     GR915
+              - name:    'Signs and symbols'
+                range:   GR931-935
+                start:   GR931
+                end:     GR935
+              - name:    'Mythical places'
+                range:   GR940-941
+                start:   GR940
+                end:     GR941
+  - subclass:  GT
+    name:     'Manners and customs (General)'
+    sections:
+      - name:    'Manners and customs (General)'
+        range:   GT1-7070
+        start:   GT1
+        end:     GT7070
+        sections:
+          - name:    'Houses.  Dwellings'
+            range:   GT165-476
+            start:   GT165
+            end:     GT476
+          - name:    'Churches and church going'
+            range:   GT485
+            start:   GT485
+            end:     GT485
+          - name:    'Human body and its parts.  Personal beauty'
+            range:   GT495-499
+            start:   GT495
+            end:     GT499
+          - name:    'Costume.  Dress.  Fashion'
+            range:   GT500-2370
+            start:   GT500
+            end:     GT2370
+          - name:    'Customs relative to private life'
+            note:    'Including children, marriage, eating and drinking, funeral customs, etc.'
+            range:   GT2400-3390.5
+            start:   GT2400
+            end:     GT3390.5
+          - name:    'Customs relative to public and social life'
+            note:    'Including town life, court life, festivals, holidays, ceremonies of royalty, etc.'
+            range:   GT3400-5090
+            start:   GT3400
+            end:     GT5090
+          - name:    'Customs relative to transportation and travel'
+            range:   GT5220-5286
+            start:   GT5220
+            end:     GT5286
+          - name:    'Customs relative to special classes'
+            range:   GT5320-6737
+            start:   GT5320
+            end:     GT6737
+            sections:
+              - name:    'By birth, rank, etc.'
+                range:   GT5320-5690
+                start:   GT5320
+                end:     GT5690
+              - name:    'By occupation'
+                range:   GT5750-6390
+                start:   GT5750
+                end:     GT6390
+  - subclass:  GV
+    name:     'Recreation.  Leisure'
+    sections:
+      - name:    'Recreation.  Leisure'
+        range:   GV1-1860
+        start:   GV1
+        end:     GV1860
+        sections:
+          - name:    'Recreation leadership.  Administration of recreation services'
+            range:   GV181.35-181.6
+            start:   GV181.35
+            end:     GV181.6
+          - name:    'Recreational areas and facilities.  Recreation centers'
+            range:   GV182-182.5
+            start:   GV182
+            end:     GV182.5
+          - name:    'Outdoor life.  Outdoor recreation'
+            range:   GV191.2-200.66
+            start:   GV191.2
+            end:     GV200.66
+            sections:
+              - name:    'Camping'
+                range:   GV191.68-198.975
+                start:   GV191.68
+                end:     GV198.975
+                sections:
+                  - name:    'Farm vacations, dude ranches, etc.'
+                    range:   GV198.945-198.975
+                    start:   GV198.945
+                    end:     GV198.975
+              - name:    'Hiking.  Pedestrian tours'
+                range:   GV199-199.62
+                start:   GV199
+                end:     GV199.62
+              - name:    'Mountaineering'
+                range:   GV199.8-200.35
+                start:   GV199.8
+                end:     GV200.35
+              - name:    'Orienteering.  Wilderness survival'
+                range:   GV200.4-200.56
+                start:   GV200.4
+                end:     GV200.56
+              - name:    'Caving.  Spelunking'
+                range:   GV200.6-200.66
+                start:   GV200.6
+                end:     GV200.66
+          - name:    'Physical education and training'
+            range:   GV201-555
+            start:   GV201
+            end:     GV555
+            sections:
+              - name:    'School and college athletics.  Intramural and interscholastic athletics'
+                range:   GV346-351.5
+                start:   GV346
+                end:     GV351.5
+              - name:    'Physical education facilities.  Sports facilities'
+                note:    'Including gymnasiums, athletic fields, playgrounds, etc.'
+                range:   GV401-433
+                start:   GV401
+                end:     GV433
+              - name:    'Physical measurements.  Physical tests, etc.'
+                range:   GV435-436.7
+                start:   GV435
+                end:     GV436.7
+              - name:    'Nudism.  Sunbathing'
+                range:   GV450-451.4
+                start:   GV450
+                end:     GV451.4
+              - name:    'Gymnastics.  Gymnastic exercises'
+                note:    'Including calisthenics, heavy exercises, acrobatics, etc.'
+                range:   GV460-555
+                start:   GV460
+                end:     GV555
+          - name:    'Sports'
+            range:   GV557-1198.995
+            start:   GV557
+            end:     GV1198.995
+            sections:
+              - name:    'Coaching'
+                range:   GV711
+                start:   GV711
+                end:     GV711
+              - name:    'Athletic contests.  Sports events'
+                range:   GV712-725
+                start:   GV712
+                end:     GV725
+              - name:    'Professionalism in sports.  Professional sports (General)'
+                range:   GV733-734.5
+                start:   GV733
+                end:     GV734.5
+              - name:    'Umpires.  Sports officiating'
+                range:   GV735
+                start:   GV735
+                end:     GV735
+              - name:    'Athletic and sporting goods, supplies, etc.'
+                range:   GV743-749
+                start:   GV743
+                end:     GV749
+              - name:    'Air sports: Airplane flying, kiteflying, bungee jumping, etc.'
+                range:   GV750-770.27
+                start:   GV750
+                end:     GV770.27
+              - name:    'Water sports: Canoeing, sailing, yachting, scuba diving, etc.'
+                range:   GV770.3-840
+                start:   GV770.3
+                end:     GV840
+              - name:    'Winter sports: Ice hockey, skiing, bobsledding, snowmobiling, etc.'
+                range:   GV840.7-857
+                start:   GV840.7
+                end:     GV857
+              - name:    'Ball games: Baseball, football, golf, etc.'
+                range:   GV861-1017
+                start:   GV861
+                end:     GV1017
+              - name:    'Automobile travel.  Motoring.  Automobile racing'
+                range:   GV1020-1034
+                start:   GV1020
+                end:     GV1034
+              - name:    'Cycling.  Bicycling.  Motorcycling'
+                range:   GV1040-1060.4
+                start:   GV1040
+                end:     GV1060.4
+              - name:    'Track and field athletics'
+                range:   GV1060.5-1098
+                start:   GV1060.5
+                end:     GV1098
+              - name:    'Fighting sports: Bullfighting, boxing, fencing, etc.'
+                range:   GV1100-1150.9
+                start:   GV1100
+                end:     GV1150.9
+              - name:    'Shooting.  Archery'
+                range:   GV1151-1190
+                start:   GV1151
+                end:     GV1190
+              - name:    'Wrestling'
+                range:   GV1195-1198.995
+                start:   GV1195
+                end:     GV1198.995
+          - name:    'Games and amusements'
+            range:   GV1199-1570
+            start:   GV1199
+            end:     GV1570
+            sections:
+              - name:    'Hobbies (General)'
+                range:   GV1201.5
+                start:   GV1201.5
+                end:     GV1201.5
+              - name:    'Children''s games and amusements'
+                range:   GV1203-1220.8
+                start:   GV1203
+                end:     GV1220.8
+                sections:
+                  - name:    'Toys'
+                    range:   GV1218.5-1220.8
+                    start:   GV1218.5
+                    end:     GV1220.8
+              - name:    'Indoor games and amusements'
+                range:   GV1221-1469.63
+                start:   GV1221
+                end:     GV1469.63
+                sections:
+                  - name:    'Card games: Poker, patience, whist, etc.'
+                    range:   GV1232-1299
+                    start:   GV1232
+                    end:     GV1299
+                  - name:    'Gambling.  Chance and banking games'
+                    range:   GV1301-1311
+                    start:   GV1301
+                    end:     GV1311
+                  - name:    'Board games.  Move games'
+                    note:    'Including chess, go, checkers, etc.'
+                    range:   GV1312-1469
+                    start:   GV1312
+                    end:     GV1469
+                  - name:    'Computer games.  Video games.  Fantasy games'
+                    range:   GV1469.15-1469.62
+                    start:   GV1469.15
+                    end:     GV1469.62
+              - name:    'Parties.  Party games and stunts'
+                range:   GV1470-1511
+                start:   GV1470
+                end:     GV1511
+                sections:
+                  - name:    'Puzzles'
+                    range:   GV1491-1507
+                    start:   GV1491
+                    end:     GV1507
+              - name:    'Parlor magic and tricks'
+                range:   GV1541-1561
+                start:   GV1541
+                end:     GV1561
+              - name:    'Darts'
+                range:   GV1564-1565
+                start:   GV1564
+                end:     GV1565
+          - name:    'Dancing'
+            range:   GV1580-1799.4
+            start:   GV1580
+            end:     GV1799.4
+          - name:    'Circuses, spectacles, etc.'
+            note:    'Including rodeos, waxworks, amusement parks, etc.'
+            range:   GV1800-1860
+            start:   GV1800
+            end:     GV1860

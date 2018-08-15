@@ -1,0 +1,34 @@
+// app/assets/stylesheets/about/index.css.scss
+
+// ============================================================================
+// About controller (/about/index).
+// ============================================================================
+
+.about-title,
+.about-section {
+    padding: 1em 0;
+}
+
+.about-title {
+    font-size: x-large;
+}
+
+.about-section {
+    text-decoration-line: underline;
+    font-size:            larger;
+}
+
+.about-item {
+    display:     inline-block;
+    font-weight: bold;
+}
+
+.about-value {
+    display:     inline-block;
+    margin-left: 0.25em;
+}
+
+// Push the first sidebar item down so that it is below the title.
+.about-sidebar {
+    margin-top: 75px;
+}

@@ -1,0 +1,334 @@
+# lib/config/library.yml
+#
+# These are all the libraries that Solr currently reports plus the libraries
+# that Sirsi reports via Firehose.
+#
+# Ideally, this information should be generated from a Solr request at startup.
+#
+# Each entry has the following parts:
+#
+# name:       The name of the library as it appears in Solr results;
+#               if *~* or missing then it is a library that appears in Sirsi
+#               but not in the Solr library facet.
+#
+# short_name: A designation for the library for use in lists where character
+#               count is limited; if *~* or missing then this is the same as
+#               the value for :name.
+#
+# full_name:  For use in formal displays where the official name of the library
+#               should be displayed (possibly in conjunction with the school);
+#               if *~* or missing then this is the same as the value for :name
+#               or :short_name (if :name is *~* or missing).
+#
+# ils_code:   The library code as reported by Sirsi via Firehose; if *~* or
+#               missing then the entry is associated with a library that
+#               appears in the Solr library facet but is not one of the
+#               libraries that appear in the Sirsi ILS.
+#
+# ils_name:   The library name as reported by Sirsi via Firehose; if *~* or
+#               missing then the entry is associated with a library that
+#               appears in the Solr library facet but is not one of the
+#               libraries that appear in the Sirsi ILS.
+#
+# school:     The UVA entity responsible for the library; if *~* or missing
+#               then it is not a UVA library.
+#
+# on_site:    Materials can be used on-site at the library.
+#
+# checkouts:  Materials can be checked out (either in person or through LEO).
+#
+# on_grounds: Materials are located within the main UVA campus.
+#
+# The entries for which 'on_site', 'checkouts' and 'on_grounds' are all *true*
+# would basically encompass all of what a patron would normally think of as
+# UVA library materials.
+
+alderman:
+  name:       'Alderman'
+  short_name: 'Alderman'
+  full_name:  'Alderman Library'
+  ils_code:   'ALDERMAN'
+  ils_name:   'Alderman'
+  school:     'UVA Library'
+  on_site:    true
+  checkouts:  true
+  on_grounds: true
+
+astronomy:
+  name:       'Astronomy'
+  short_name: 'Astro'
+  full_name:  'Astronomy Library'
+  ils_code:   'ASTRONOMY'
+  ils_name:   'Astronomy'
+  school:     'UVA Library'
+  on_site:    true
+  checkouts:  true
+  on_grounds: true
+
+biology:
+  name:       'Biology & Psychology'
+  short_name: 'Bio-Psych'
+  full_name:  'Biology & Psychology Library'
+  ils_code:   ~
+  ils_name:   ~
+  school:     'UVA Library'
+  on_site:    true
+  checkouts:  true
+  on_grounds: true
+
+nursing:
+  name:       'Bjoring Center for Nursing Historical Inquiry'
+  short_name: 'Nursing'
+  full_name:  'Bjoring Center for Nursing Historical Inquiry'
+  ils_code:   ~
+  ils_name:   ~
+  school:     'School of Nursing'
+  on_site:    true
+  checkouts:  false
+  on_grounds: true
+
+blandy:
+  name:       'Blandy Experimental Farm'
+  short_name: 'Blandy'
+  full_name:  'Blandy Experimental Farm Library'
+  ils_code:   'BLANDY'
+  ils_name:   'Blandy'
+  school:     ~
+  on_site:    true
+  checkouts:  true
+  on_grounds: false
+
+brown:
+  name:       'Brown SEL'
+  short_name: 'Brown'
+  full_name:  'Brown Science and Engineering Library'
+  ils_code:   'SCI-ENG'
+  ils_name:   'Brown Science and Engineering'
+  school:     'UVA Library'
+  on_site:    true
+  checkouts:  true
+  on_grounds: true
+
+chemistry:
+  name:       'Chemistry'
+  short_name: 'Chem'
+  full_name:  'Chemistry at Brown SEL'
+  ils_code:   'CHEMISTRY'
+  ils_name:   'Brown Chemistry'
+  school:     'UVA Library'
+  on_site:    true
+  checkouts:  true
+  on_grounds: true
+
+clemons:
+  name:       'Clemons'
+  short_name: 'Clemons'
+  full_name:  'Clemons Library'
+  ils_code:   'CLEMONS'
+  ils_name:   'Clemons'
+  school:     'UVA Library'
+  on_site:    true
+  checkouts:  true
+  on_grounds: true
+
+darden:
+  name:       'Darden Business School'
+  short_name: 'Darden'
+  full_name:  'Camp Library'
+  ils_code:   'DARDEN'
+  ils_name:   'Darden'
+  school:     'Darden School of Business'
+  on_site:    true
+  checkouts:  true
+  on_grounds: true
+
+education:
+  name:       'Library Data Commons'
+  short_name: 'LDC'
+  full_name:  'Library Data Commons'
+  ils_code:   'EDUCATION'
+  ils_name:   'Library Data Commons'
+  school:     'UVA Library'
+  on_site:    true
+  checkouts:  true
+  on_grounds: true
+
+fine_arts:
+  name:       'Fine Arts'
+  short_name: 'Arts'
+  full_name:  'Fiske Kimball Fine Arts Library'
+  ils_code:   'FINE-ARTS'
+  ils_name:   'Fine Arts'
+  school:     'UVA Library'
+  on_site:    true
+  checkouts:  true
+  on_grounds: true
+
+hathi:
+  name:       'Hathi Trust Digital Library'
+  short_name: 'Hathi'
+  full_name:  'HathiTrust Digital Library'
+  ils_code:   ~
+  ils_name:   ~
+  school:     ~
+  on_site:    false
+  checkouts:  false
+  on_grounds: false
+
+hsl:
+  name:       'Health Sciences'
+  short_name: 'HSL'
+  full_name:  'Claude Moore Health Sciences Library'
+  ils_code:   'HEALTHSCI'
+  ils_name:   'Health Sciences'
+  school:     'School of Medicine'
+  on_site:    true
+  checkouts:  true
+  on_grounds: true
+
+ivy:
+  name:       'Ivy'
+  short_name: 'Ivy'
+  full_name:  'Ivy Stacks'
+  ils_code:   'IVY'
+  ils_name:   'Ivy'
+  school:     'UVA Library'
+  on_site:    true
+  checkouts:  true
+  on_grounds: true
+
+jag:
+  name:       'JAG School'
+  short_name: 'JAG'
+  full_name:  'Judge Advocate General School Library'
+  ils_code:   'JAG'
+  ils_name:   'JAG'
+  school:     'JAG School'
+  on_site:    true
+  checkouts:  false
+  on_grounds: true
+
+kluge:
+  name:       'Kluge-Ruhe Study Center'
+  short_name: 'Kluge-Ruhe'
+  full_name:  'Kluge-Ruhe Aboriginal Art Collection Study Center'
+  ils_code:   ~
+  ils_name:   ~
+  school:     ~
+  on_site:    true
+  checkouts:  false
+  on_grounds: true
+
+law:
+  name:       'Law School'
+  short_name: 'Law'
+  full_name:  'Arthur J. Morris Law Library'
+  ils_code:   'LAW'
+  ils_name:   'Law'
+  school:     'School of Law'
+  on_site:    true
+  checkouts:  true
+  on_grounds: true
+
+math:
+  name:       'Mathematics'
+  short_name: 'Math'
+  full_name:  'Mathematics Library'
+  ils_code:   'MATH'
+  ils_name:   'Math'
+  school:     'UVA Library'
+  on_site:    true
+  checkouts:  true
+  on_grounds: true
+
+mt_lake:
+  name:       'Mountain Lake'
+  short_name: 'Mt. Lake'
+  full_name:  'Mountain Lake Biological Station Library'
+  ils_code:   'MT-LAKE'
+  ils_name:   'Mountain Lake'
+  school:     ~
+  on_site:    true
+  checkouts:  true
+  on_grounds: false
+
+music:
+  name:       'Music'
+  short_name: 'Music'
+  full_name:  'Music Library'
+  ils_code:   'MUSIC'
+  ils_name:   'Music'
+  school:     'UVA Library'
+  on_site:    true
+  checkouts:  true
+  on_grounds: true
+
+physics:
+  name:       'Physics'
+  short_name: 'Physics'
+  full_name:  'Physics Library'
+  ils_code:   'PHYSICS'
+  ils_name:   'Physics'
+  school:     'UVA Library'
+  on_site:    true
+  checkouts:  true
+  on_grounds: true
+
+spec_coll:
+  name:       'Special Collections'
+  short_name: 'Spec. Coll.'
+  full_name:  'Albert and Shirley Small Special Collections Library'
+  ils_code:   'SPEC-COLL'
+  ils_name:   'Special Collections'
+  school:     'UVA Library'
+  on_site:    true
+  checkouts:  false
+  on_grounds: true
+
+# =============================================================================
+# Sirsi libraries that do not show in the Solr library facet.
+# =============================================================================
+
+uva_lib:
+  name:       ~
+  short_name: 'All'
+  full_name:  'All UVA Libraries'
+  ils_code:   ~
+  ils_name:   ~
+  school:     'UVA Library'
+  on_site:    false
+  checkouts:  false
+  on_grounds: false
+
+uva_online:
+  name:       ~
+  short_name: 'UVA Online'
+  full_name:  'UVA Online Library'
+  ils_code:   'UVA-LIB'
+  ils_name:   'UVA Library'
+  school:     'UVA Library'
+  on_site:    false
+  checkouts:  false
+  on_grounds: false
+
+media_center:
+  name:       ~
+  short_name: 'RMC'
+  full_name:  'Robertson Media Center'
+  ils_code:   'MEDIA-CTR'
+  ils_name:   'Media Center'
+  school:     'UVA Library'
+  on_site:    true
+  checkouts:  false
+  on_grounds: true
+
+leo:
+  name:       ~
+  short_name: 'LEO'
+  full_name:  'LEO Library Express On-Grounds'
+  ils_code:   'LEO'
+  ils_name:   'LEO'
+  school:     'UVA Library'
+  on_site:    false
+  checkouts:  false
+  on_grounds: false

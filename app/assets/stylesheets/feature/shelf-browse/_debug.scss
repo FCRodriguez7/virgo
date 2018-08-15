@@ -1,0 +1,61 @@
+// app/assets/stylesheets/feature/shelf-browse/_debug.scss
+
+$sb-debug: false !default;
+$sb-trace: false !default;
+
+$sb-import: (null) !default;          // Dynamic list of templates.
+
+// ============================================================================
+// SHELF BROWSE - Debug output
+// ============================================================================
+
+/// Unconditionally emit log output.
+///
+/// @param {String} $message          String to display.
+/// @param {String} $prefix           Optional tag to prepend to the message.
+///
+@mixin -log($message: "", $prefix: "") {
+    @if $prefix != "" {
+        $message: "#{$prefix}: #{$message}";
+    }
+    @debug(unquote($message));
+}
+
+/// Emit log output if debugging.
+///
+/// @param {String} $message          String to display.
+/// @param {String} $prefix           Optional tag to prepend to the message.
+///
+@mixin -debug($message: "", $prefix: "") {
+    @if $sb-debug {
+        @include -log($message, $prefix);
+    }
+}
+
+// ============================================================================
+// SHELF BROWSE - Module tracing
+// ============================================================================
+
+/// Emit log output to indicate the first inclusion of a module.
+///
+/// @param {String} $module           Name of the module.
+/// @param {String} $message          String to display.
+/// @param {String} $prefix           Optional tag to prepend to the message.
+///
+@mixin -trace-module($module, $message: "", $prefix: "TRACE") {
+    @if not index($sb-import, $module) {
+        $sb-import: append($sb-import, $module);
+        @if $sb-trace {
+            $message: "including #{$module} #{$message}";
+            @include -log($message, $prefix);
+        }
+    }
+}
+
+/// Display all included modules in log output.
+///
+@mixin -dump-modules {
+    @if $sb-trace {
+        @include -log(#{$sb-import}, "MODULES");
+    }
+}

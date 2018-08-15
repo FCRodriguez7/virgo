@@ -1,0 +1,24 @@
+<%# app/views/catalog/brief_availability.json.erb -%>
+<%-
+  doc = document ||= @document
+
+  availability = doc          && doc.availability
+  holdings     = availability && availability.holdings.presence
+  holding      = holdings     && holdings.first
+  copy         = holding      && holding.copies.first
+  library      = holding      && holding.library.presence
+  stacks_map   = copy         && copy.stacks_map(holding).presence
+
+  library &&= (library.name unless library.is_special_collections?)
+
+  result = {
+    availability: availability_label(holding, copy),
+    library:      library,
+    location:     location_text(holding, copy),
+    map:          (stacks_map && stacks_map.url),
+  }
+  result.delete_if { |_, v| v.blank? }
+
+  view_debug(__FILE__)
+-%>
+{<%= result.to_json[1..-2] -%>}

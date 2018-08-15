@@ -1,0 +1,1942 @@
+# lib/config/lcco_h.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from the Word document of the same base name.
+
+class:    H
+name:     'SOCIAL SCIENCES'
+sections:
+  - subclass:  H
+    name:     'Social sciences (General)'
+    sections:
+      - name:    'Social sciences (General)'
+        range:   H1-99
+        start:   H1
+        end:     H99
+  - subclass:  HA
+    name:     'Statistics'
+    sections:
+      - name:    'Statistics'
+        range:   HA1-4737
+        start:   HA1
+        end:     HA4737
+        sections:
+          - name:    'Theory and method of social science statistics'
+            range:   HA29-32
+            start:   HA29
+            end:     HA32
+          - name:    'Statistical services.  Statistical bureaus'
+            range:   HA36-37
+            start:   HA36
+            end:     HA37
+          - name:    'Registration of vital events.  Vital records'
+            range:   HA38-39
+            start:   HA38
+            end:     HA39
+          - name:    'Statistical data'
+            range:   HA154-4737
+            start:   HA154
+            end:     HA4737
+            sections:
+              - name:    'Universal statistics'
+                range:   HA154-155
+                start:   HA154
+                end:     HA155
+              - name:    'By region or country'
+                range:   HA175-473
+                start:   HA175
+                end:     HA473
+  - subclass:  HB
+    name:     'Economic theory.  Demography'
+    sections:
+      - name:    'Economic theory.  Demography'
+        range:   HB1-3840
+        start:   HB1
+        end:     HB3840
+        sections:
+          - name:    'Economics as a science.  Relation to other subjects'
+            range:   HB71-74
+            start:   HB71
+            end:     HB74
+          - name:    'History of economics.  History of economic theory'
+            note:    'Including special economic schools'
+            range:   HB75-130
+            start:   HB75
+            end:     HB130
+          - name:    'Methodology'
+            range:   HB131-147
+            start:   HB131
+            end:     HB147
+            sections:
+              - name:    'Mathematical economics.  Quantitative methods'
+                note:    'Including econometrics, input-output analysis, game theory'
+                range:   HB135-147
+                start:   HB135
+                end:     HB147
+          - name:    'Value.  Utility'
+            range:   HB201-206
+            start:   HB201
+            end:     HB206
+          - name:    'Price'
+            range:   HB221-236
+            start:   HB221
+            end:     HB236
+          - name:    'Competition.  Production.  Wealth'
+            range:   HB238-251
+            start:   HB238
+            end:     HB251
+          - name:    'Capital.  Capitalism'
+            range:   HB501
+            start:   HB501
+            end:     HB501
+          - name:    'Income.  Factor shares'
+            range:   HB522-715
+            start:   HB522
+            end:     HB715
+            sections:
+              - name:    'Interest'
+                range:   HB535-551
+                start:   HB535
+                end:     HB551
+              - name:    'Profit'
+                range:   HB601
+                start:   HB601
+                end:     HB601
+              - name:    'Entrepreneurship.  Risk and uncertainty. Property'
+                range:   HB615-715
+                start:   HB615
+                end:     HB715
+          - name:    'Consumption.  Demand'
+            range:   HB801-843
+            start:   HB801
+            end:     HB843
+          - name:    'Welfare theory'
+            range:   HB846-846.8
+            start:   HB846
+            end:     HB846.8
+          - name:    'Demography.  Population.  Vital events'
+            range:   HB848-3697
+            start:   HB848
+            end:     HB3697
+          - name:    'Business cycles.  Economic fluctuations'
+            range:   HB3711-3840
+            start:   HB3711
+            end:     HB3840
+  - subclass:  HC
+    name:     'Economic history and conditions'
+    sections:
+      - name:    'Economic history and conditions'
+        range:   HC10-1085
+        start:   HC10
+        end:     HC1085
+        sections:
+          - name:    'Special topics'
+            note:    'Including air pollution, automation, consumer demand, famines, flow of funds, etc.'
+            range:   HC79
+            start:   HC79
+            end:     HC79
+          - name:    'Economic geography of the oceans (General)'
+            range:   HC92
+            start:   HC92
+            end:     HC92
+          - name:    'By region or country'
+            range:   HC94-1085
+            start:   HC94
+            end:     HC1085
+  - subclass:  HD
+    name:     'Industries.  Land use.  Labor'
+    sections:
+      - name:    'Industries.  Land use.  Labor'
+        range:   HD28-9999
+        start:   HD28
+        end:     HD9999
+        sections:
+          - name:    'Management.  Industrial management'
+            range:   HD28-70
+            start:   HD28
+            end:     HD70
+            sections:
+              - name:    'Capital.  Capital investments'
+                range:   HD39-40.7
+                start:   HD39
+                end:     HD40.7
+              - name:    'Competition'
+                range:   HD41
+                start:   HD41
+                end:     HD41
+              - name:    'Technological innovations.  Automation'
+                range:   HD45-45.2
+                start:   HD45
+                end:     HD45.2
+              - name:    'Costs'
+                range:   HD47-47.4
+                start:   HD47
+                end:     HD47.4
+              - name:    'Crisis management.  Emergency management. Inflation'
+                range:   HD49-49.5
+                start:   HD49
+                end:     HD49.5
+              - name:    'Delegation of authority.  Decentralization. Span of control'
+                range:   HD50-50.5
+                start:   HD50
+                end:     HD50.5
+              - name:    'Industrial productivity'
+                range:   HD56-57.5
+                start:   HD56
+                end:     HD57.5
+              - name:    'Location of industry'
+                range:   HD58
+                start:   HD58
+                end:     HD58
+              - name:    'Organizational behavior, change and effectiveness.  Corporate culture'
+                range:   HD58.7-58.95
+                start:   HD58.7
+                end:     HD58.95
+              - name:    'Public relations.  Industrial publicity'
+                range:   HD59-59.6
+                start:   HD59
+                end:     HD59.6
+              - name:    'Social responsibility of business'
+                range:   HD60-60.5
+                start:   HD60
+                end:     HD60.5
+              - name:    'Risk in industry.  Risk management'
+                range:   HD61
+                start:   HD61
+                end:     HD61
+              - name:    'Standardization.  Simplification.  Waste'
+                range:   HD62
+                start:   HD62
+                end:     HD62
+              - name:    'Management of special enterprises'
+                range:   HD62.2-62.8
+                start:   HD62.2
+                end:     HD62.8
+              - name:    'Work groups.  Team work in industry. Quality circles'
+                range:   HD66-66.2
+                start:   HD66
+                end:     HD66.2
+              - name:    'Other'
+                note:    'Including business consultants, capacity, size of industries, etc.'
+                range:   HD69
+                start:   HD69
+                end:     HD69
+          - name:    'Economic growth, development, planning'
+            range:   HD72-88
+            start:   HD72
+            end:     HD88
+          - name:    'Land use'
+            range:   HD101-1395.5
+            start:   HD101
+            end:     HD1395.5
+            sections:
+              - name:    'Land tenure'
+                lcco:    false
+                range:   HD1286-1339
+                start:   HD1286
+                end:     HD1339
+                sections:
+                  - name:    'Communal ownership'
+                    range:   HD1286-1289
+                    start:   HD1286
+                    end:     HD1289
+                  - name:    'Municipal ownership'
+                    range:   HD1290-1291
+                    start:   HD1290
+                    end:     HD1291
+                  - name:    'Nationalization (Agrarian socialism)'
+                    range:   HD1301-1313
+                    start:   HD1301
+                    end:     HD1313
+                  - name:    'Large holdings'
+                    range:   HD1326-1329
+                    start:   HD1326
+                    end:     HD1329
+                  - name:    'Landlord and peasant'
+                    range:   HD1330-1331
+                    start:   HD1330
+                    end:     HD1331
+                  - name:    'Land reform.  Agrarian reform'
+                    range:   HD1332-1333.5
+                    start:   HD1332
+                    end:     HD1333.5
+                  - name:    'Consolidation of land holdings'
+                    range:   HD1334-1335
+                    start:   HD1334
+                    end:     HD1335
+                  - name:    'Small holdings.  Peasant proprietors. Parcellation'
+                    range:   HD1336-1339
+                    start:   HD1336
+                    end:     HD1339
+              - name:    'Real estate business'
+                range:   HD1361-1395.5
+                start:   HD1361
+                end:     HD1395.5
+          - name:    'Agriculture'
+            range:   HD1401-2210
+            start:   HD1401
+            end:     HD2210
+            sections:
+              - name:    'International cooperation'
+                range:   HD1428-1431
+                start:   HD1428
+                end:     HD1431
+              - name:    'Size of farms'
+                range:   HD1470-1476
+                start:   HD1470
+                end:     HD1476
+              - name:    'Sharecropping'
+                range:   HD1478
+                start:   HD1478
+                end:     HD1478
+              - name:    'Agricultural associations, societies, etc.'
+                range:   HD1483-1486
+                start:   HD1483
+                end:     HD1486
+              - name:    'Cooperative agriculture'
+                range:   HD1491-1491.5
+                start:   HD1491
+                end:     HD1491.5
+              - name:    'Collective farms'
+                range:   HD1492-1492.5
+                start:   HD1492
+                end:     HD1492.5
+              - name:    'Government owned and operated farms.  State farms.  Sovkhozes'
+                range:   HD1493-1493.5
+                start:   HD1493
+                end:     HD1493.5
+              - name:    'Agricultural classes'
+                note:    'Including farm tenancy, agricultural laborers'
+                range:   HD1501-1542
+                start:   HD1501
+                end:     HD1542
+              - name:    'Gleaning'
+                range:   HD1549
+                start:   HD1549
+                end:     HD1549
+              - name:    'Reclamation of agricultural land.  Melioration'
+                range:   HD1580
+                start:   HD1580
+                end:     HD1580
+              - name:    'Utilization and culture of special classes of lands'
+                note:    'Including pasture lands, water resources development'
+                range:   HD1635-1702
+                start:   HD1635
+                end:     HD1702
+              - name:    'Irrigation'
+                range:   HD1711-1741
+                start:   HD1711
+                end:     HD1741
+          - name:    'Industry'
+            range:   HD2321-4730.9
+            start:   HD2321
+            end:     HD4730.9
+            sections:
+              - name:    'Industrialization'
+                range:   HD2329
+                start:   HD2329
+                end:     HD2329
+              - name:    'Rural industries'
+                range:   HD2330
+                start:   HD2330
+                end:     HD2330
+              - name:    'Home labor.  Home-based businesses'
+                range:   HD2331-2336
+                start:   HD2331
+                end:     HD2336
+              - name:    'Sweatshops'
+                range:   HD2337-2339
+                start:   HD2337
+                end:     HD2339
+              - name:    'Small and medium-sized businesses, artisans, handicrafts, trades'
+                range:   HD2340.8-2346.5
+                start:   HD2340.8
+                end:     HD2346.5
+              - name:    'Large industry.  Factory system.  Big business'
+                range:   HD2350.8-2356
+                start:   HD2350.8
+                end:     HD2356
+              - name:    'Contracting.  Letting of contracts'
+                range:   HD2365-2385
+                start:   HD2365
+                end:     HD2385
+              - name:    'Trade associations'
+                range:   HD2421-2429
+                start:   HD2421
+                end:     HD2429
+              - name:    'Corporations'
+                note:    'Including international business enter- prises, diversification, industrial concentration, public utilities'
+                range:   HD2709-2930.7
+                start:   HD2709
+                end:     HD2930.7
+              - name:    'Cooperation.  Cooperative societies'
+                range:   HD2951-3575
+                start:   HD2951
+                end:     HD3575
+              - name:    'Industrial policy.  The state and industrial organization'
+                note:    'Including licensing of occupations and professions, subsidies, inspection, government ownership, municipal services'
+                range:   HD3611-4730.9
+                start:   HD3611
+                end:     HD4730.9
+          - name:    'Labor.  Work.  Working class'
+            range:   HD4801-8943
+            start:   HD4801
+            end:     HD8943
+            sections:
+              - name:    'Labor systems'
+                range:   HD4861-4895
+                start:   HD4861
+                end:     HD4895
+              - name:    'Wages'
+                range:   HD4909-5100.9
+                start:   HD4909
+                end:     HD5100.9
+              - name:    'Hours of labor'
+                note:    'Including overtime, shift work, sick leave, vacations'
+                range:   HD5106-5267
+                start:   HD5106
+                end:     HD5267
+              - name:    'Labor disputes.  Strikes and lockouts'
+                range:   HD5306-5474
+                start:   HD5306
+                end:     HD5474
+              - name:    'Industrial arbitration.  Mediation  and conciliation'
+                range:   HD5481-5630.7
+                start:   HD5481
+                end:     HD5630.7
+              - name:    'Employee participation in management. Employee ownership.  Industrial democracy. Works councils'
+                range:   HD5650-5660
+                start:   HD5650
+                end:     HD5660
+              - name:    'Labor market.  Labor supply.  Labor demand'
+                note:    'Including unemployment, manpower policy, occupational training, employment agencies'
+                range:   HD5701-6000.9
+                start:   HD5701
+                end:     HD6000.9
+              - name:    'Classes of labor'
+                note:    'Including women, children, students, middle-aged and older persons, minorities'
+                range:   HD6050-6305
+                start:   HD6050
+                end:     HD6305
+              - name:    'Trade unions.  Labor unions.  Workers'' associations'
+                range:   HD6350-6940.7
+                start:   HD6350
+                end:     HD6940.7
+              - name:    'Employers'' associations'
+                range:   HD6941-6948
+                start:   HD6941
+                end:     HD6948
+              - name:    'Industrial sociology.  Social conditions of labor'
+                range:   HD6951-6957
+                start:   HD6951
+                end:     HD6957
+              - name:    'Industrial relations'
+                range:   HD6958.5-6976
+                start:   HD6958.5
+                end:     HD6976
+              - name:    'Cost and standard of living'
+                range:   HD6977-7080
+                start:   HD6977
+                end:     HD7080
+              - name:    'Social insurance.  Social security.  Pension'
+                range:   HD7088-7252
+                start:   HD7088
+                end:     HD7252
+              - name:    'Vocational rehabilitation.  Employment of people with disabilities'
+                range:   HD7255-7256
+                start:   HD7255
+                end:     HD7256
+              - name:    'Industrial hygiene. Industrial welfare'
+                range:   HD7260-7780.8
+                start:   HD7260
+                end:     HD7780.8
+              - name:    'Labor policy.  Labor and the state'
+                range:   HD7795-8027
+                start:   HD7795
+                end:     HD8027
+              - name:    'Labor in politics.  Political activity of the working class'
+                range:   HD8031
+                start:   HD8031
+                end:     HD8031
+              - name:    'Professions (General).  Professional employees'
+                range:   HD8038
+                start:   HD8038
+                end:     HD8038
+              - name:    'By industry or trade'
+                range:   HD8039
+                start:   HD8039
+                end:     HD8039
+              - name:    'By region or country'
+                range:   HD8045-8943
+                start:   HD8045
+                end:     HD8943
+          - name:    'Special industries and trades'
+            range:   HD9000-9999
+            start:   HD9000
+            end:     HD9999
+            sections:
+              - name:    'Agricultural industries'
+                range:   HD9000-9495
+                start:   HD9000
+                end:     HD9495
+              - name:    'Energy industries.  Energy policy.  Fuel trade'
+                range:   HD9502-9502.5
+                start:   HD9502
+                end:     HD9502.5
+              - name:    'Mineral industries.  Metal trade'
+                range:   HD9506-9624
+                start:   HD9506
+                end:     HD9624
+              - name:    'Chemical industries'
+                range:   HD9650-9663
+                start:   HD9650
+                end:     HD9663
+              - name:    'Pharmaceutical industry'
+                range:   HD9665-9675
+                start:   HD9665
+                end:     HD9675
+              - name:    'Mechanical industries'
+                note:    'Including electric utilities, electronic industries, and machinery'
+                range:   HD9680-9714
+                start:   HD9680
+                end:     HD9714
+              - name:    'Construction industry'
+                range:   HD9715-9717.5
+                start:   HD9715
+                end:     HD9717.5
+              - name:    'Manufacturing industries'
+                range:   HD9720-9975
+                start:   HD9720
+                end:     HD9975
+              - name:    'Miscellaneous industries and trades'
+                range:   HD9999
+                start:   HD9999
+                end:     HD9999
+  - subclass:  HE
+    name:     'Transportation and communications'
+    sections:
+      - name:    'Transportation and communications'
+        range:   HE1-9990
+        start:   HE1
+        end:     HE9990
+        sections:
+          - name:    'Freight (General)'
+            range:   HE199-199.5
+            start:   HE199
+            end:     HE199.5
+          - name:    'Passenger traffic (General)'
+            range:   HE199.9
+            start:   HE199.9
+            end:     HE199.9
+          - name:    'Urban transportation'
+            range:   HE305-311
+            start:   HE305
+            end:     HE311
+          - name:    'Transportation geography.  Trade routes'
+            range:   HE323-328
+            start:   HE323
+            end:     HE328
+          - name:    'Traffic engineering.  Roads and highways. Streets'
+            range:   HE331-380
+            start:   HE331
+            end:     HE380
+            sections:
+              - name:    'Traffic surveys (General)'
+                range:   HE369-373
+                start:   HE369
+                end:     HE373
+              - name:    'Bridges'
+                range:   HE374-377
+                start:   HE374
+                end:     HE377
+              - name:    'Tunnels.  Vehicular tunnels'
+                range:   HE379-380
+                start:   HE379
+                end:     HE380
+          - name:    'Water transportation'
+            range:   HE380.8-971
+            start:   HE380.8
+            end:     HE971
+            sections:
+              - name:    'Waterways'
+                range:   HE380.8-560
+                start:   HE380.8
+                end:     HE560
+              - name:    'Shipping'
+                range:   HE561-971
+                start:   HE561
+                end:     HE971
+                sections:
+                  - name:    'Merchant marine.  Ocean shipping.  Coastwise shipping'
+                    range:   HE730-943
+                    start:   HE730
+                    end:     HE943
+          - name:    'Railroads.  Rapid transit systems'
+            range:   HE1001-5600
+            start:   HE1001
+            end:     HE5600
+          - name:    'Automotive transportation'
+            note:    'Including trucking, bus lines, and taxicab service'
+            range:   HE5601-5725
+            start:   HE5601
+            end:     HE5725
+          - name:    'Stage lines'
+            range:   HE5746-5749
+            start:   HE5746
+            end:     HE5749
+          - name:    'Ferries'
+            range:   HE5751-5870
+            start:   HE5751
+            end:     HE5870
+          - name:    'Express service'
+            range:   HE5880-5990
+            start:   HE5880
+            end:     HE5990
+          - name:    'Postal service.  Stamps.  Philately'
+            range:   HE6000-7500
+            start:   HE6000
+            end:     HE7500
+          - name:    'Pneumatic service'
+            range:   HE7511-7549
+            start:   HE7511
+            end:     HE7549
+          - name:    'Telecommunication industry.  Telegraph'
+            range:   HE7601-(8700.95)
+            start:   HE7601
+            end:     HE8700.95
+            sections:
+              - name:    'Wireless telegraph.  Radiotelegraphy'
+                range:   HE8660-8688
+                start:   HE8660
+                end:     HE8688
+              - name:    'Radio and television broadcasting'
+                range:   HE8689-8700.95
+                start:   HE8689
+                end:     HE8700.95
+          - name:    'Telephone industry'
+            range:   HE8701-9680.7
+            start:   HE8701
+            end:     HE9680.7
+          - name:    'Cellular telephone services industry.  Wireless telephone industry'
+            range:   HE9713-9715
+            start:   HE9713
+            end:     HE9715
+          - name:    'Artificial satellite telecommunications'
+            range:   HE9719-9721
+            start:   HE9719
+            end:     HE9721
+          - name:    'Signaling'
+            range:   HE9723-9737
+            start:   HE9723
+            end:     HE9737
+          - name:    'Messenger service'
+            range:   HE9751-9756
+            start:   HE9751
+            end:     HE9756
+          - name:    'Air transportation.  Airlines'
+            range:   HE9761-9900
+            start:   HE9761
+            end:     HE9900
+  - subclass:  HF
+    name:     'Commerce'
+    sections:
+      - name:    'Commerce'
+        range:   HF1-6182
+        start:   HF1
+        end:     HF6182
+        sections:
+          - name:    'Boards of trade.  Chambers of commerce. Merchants'' associations'
+            range:   HF294-343
+            start:   HF294
+            end:     HF343
+          - name:    'Balance of trade'
+            range:   HF1014
+            start:   HF1014
+            end:     HF1014
+          - name:    'Commercial geography.  Economic geography'
+            range:   HF1021-1027
+            start:   HF1021
+            end:     HF1027
+          - name:    'Commodities.  Commercial products'
+            range:   HF1040-1054
+            start:   HF1040
+            end:     HF1054
+          - name:    'Tariff.  Free trade.  Protectionism'
+            range:   HF1701-2701
+            start:   HF1701
+            end:     HF2701
+          - name:    'By region or country'
+            range:   HF3000-4055
+            start:   HF3000
+            end:     HF4055
+          - name:    'Business'
+            range:   HF5001-6182
+            start:   HF5001
+            end:     HF6182
+            sections:
+              - name:    'Vocational guidance.  Career devlopment'
+                range:   HF5381-5386
+                start:   HF5381
+                end:     HF5386
+              - name:    'Business ethics'
+                range:   HF5387-5387.5
+                start:   HF5387
+                end:     HF5387.5
+              - name:    'Marketing.  Distribution of products'
+                range:   HF5410-5417.5
+                start:   HF5410
+                end:     HF5417.5
+              - name:    'Wholesale trade'
+                range:   HF5419-5422
+                start:   HF5419
+                end:     HF5422
+              - name:    'Retail trade'
+                range:   HF5428-5429.6
+                start:   HF5428
+                end:     HF5429.6
+              - name:    'Shopping centers.  Shopping malls'
+                range:   HF5429.7-5430.6
+                start:   HF5429.7
+                end:     HF5430.6
+              - name:    'Purchasing.  Selling.  Sales personnel.  Sales executives'
+                range:   HF5437-5444
+                start:   HF5437
+                end:     HF5444
+              - name:    'Canvassing.  Peddling'
+                range:   HF5446-5459
+                start:   HF5446
+                end:     HF5459
+              - name:    'Department stores.  Mail order business. Supermarkets.  Convenience stores'
+                range:   HF5460-5469.5
+                start:   HF5460
+                end:     HF5469.5
+              - name:    'Markets.  Fairs'
+                range:   HF5469.7-5481
+                start:   HF5469.7
+                end:     HF5481
+              - name:    'Secondhand trade'
+                range:   HF5482-5482.4
+                start:   HF5482
+                end:     HF5482.4
+              - name:    'Black market'
+                range:   HF5482.6-5482.65
+                start:   HF5482.6
+                end:     HF5482.65
+              - name:    'Warehouses.  Storage'
+                range:   HF5484-5495
+                start:   HF5484
+                end:     HF5495
+              - name:    'Office equipment and supplies'
+                range:   HF5520-5541
+                start:   HF5520
+                end:     HF5541
+              - name:    'Office management'
+                range:   HF5546-5548.6
+                start:   HF5546
+                end:     HF5548.6
+              - name:    'Industrial psychology'
+                range:   HF5548.7-5548.85
+                start:   HF5548.7
+                end:     HF5548.85
+              - name:    'Personnel management.  Employment management'
+                range:   HF5549-5549.5
+                start:   HF5549
+                end:     HF5549.5
+              - name:    'Accounting.  Bookkeeping'
+                range:   HF5601-5689
+                start:   HF5601
+                end:     HF5689
+              - name:    'Business mathematics.  Commercial arithmetic'
+                note:    'Including tables, etc.'
+                range:   HF5691-5716
+                start:   HF5691
+                end:     HF5716
+              - name:    'Business communication'
+                note:    'Including business report writing, business correspondence'
+                range:   HF5717-5734.7
+                start:   HF5717
+                end:     HF5734.7
+              - name:    'Business records management'
+                range:   HF5735-5746
+                start:   HF5735
+                end:     HF5746
+              - name:    'Shipment of goods.  Delivery of goods'
+                range:   HF5761-5780
+                start:   HF5761
+                end:     HF5780
+              - name:    'Advertising'
+                range:   HF5801-6182
+                start:   HF5801
+                end:     HF6182
+  - subclass:  HG
+    name:     'Finance'
+    sections:
+      - name:    'Finance'
+        range:   HG1-9999
+        start:   HG1
+        end:     HG9999
+        sections:
+          - name:    'Liquidity'
+            range:   HG178
+            start:   HG178
+            end:     HG178
+          - name:    'Personal finance'
+            range:   HG179
+            start:   HG179
+            end:     HG179
+          - name:    'Money'
+            range:   HG201-1496
+            start:   HG201
+            end:     HG1496
+            sections:
+              - name:    'Precious metals.  Bullion'
+                range:   HG258-312
+                start:   HG258
+                end:     HG312
+              - name:    'Small coins'
+                range:   HG315
+                start:   HG315
+                end:     HG315
+              - name:    'Mints.  Assaying'
+                range:   HG321-329
+                start:   HG321
+                end:     HG329
+              - name:    'Counterfeiting'
+                range:   HG335-339
+                start:   HG335
+                end:     HG339
+              - name:    'Paper money'
+                range:   HG348-353.5
+                start:   HG348
+                end:     HG353.5
+              - name:    'Legal tender'
+                range:   HG361-363
+                start:   HG361
+                end:     HG363
+              - name:    'International coinage'
+                range:   HG381-395
+                start:   HG381
+                end:     HG395
+              - name:    'Bimetallism'
+                range:   HG401-421
+                start:   HG401
+                end:     HG421
+              - name:    'By region or country'
+                range:   HG451-1496
+                start:   HG451
+                end:     HG1496
+          - name:    'Banking'
+            range:   HG1501-3550
+            start:   HG1501
+            end:     HG3550
+            sections:
+              - name:    'Interest rates.  Interest tables'
+                range:   HG1621-1638
+                start:   HG1621
+                end:     HG1638
+              - name:    'Bank loans.  Bank credit.  Commercial loans'
+                range:   HG1641-1643
+                start:   HG1641
+                end:     HG1643
+              - name:    'Discount'
+                range:   HG1651-1654
+                start:   HG1651
+                end:     HG1654
+              - name:    'Acceptances'
+                range:   HG1655
+                start:   HG1655
+                end:     HG1655
+              - name:    'Bank reserves.  Bank liquidity.  Loan loss reserves'
+                range:   HG1656
+                start:   HG1656
+                end:     HG1656
+              - name:    'Bank accounts.  Bank deposits.  Deposit banking'
+                range:   HG1660
+                start:   HG1660
+                end:     HG1660
+              - name:    'Insurance of deposits.  Deposit insurance'
+                range:   HG1662
+                start:   HG1662
+                end:     HG1662
+              - name:    'Drafts.  Checks'
+                range:   HG1685-1704
+                start:   HG1685
+                end:     HG1704
+              - name:    'Accounting.  Bookkeeping'
+                range:   HG1706-1708
+                start:   HG1706
+                end:     HG1708
+              - name:    'Data processing'
+                range:   HG1709
+                start:   HG1709
+                end:     HG1709
+              - name:    'Electronic funds transfers'
+                range:   HG1710-1710.5
+                start:   HG1710
+                end:     HG1710.5
+              - name:    'Bank mergers'
+                range:   HG1722
+                start:   HG1722
+                end:     HG1722
+              - name:    'Bank stocks.  Banking as an investment'
+                range:   HG1723
+                start:   HG1723
+                end:     HG1723
+              - name:    'Banks and the state.  State supervision of banks'
+                range:   HG1725-1778
+                start:   HG1725
+                end:     HG1778
+              - name:    'Special classes of banks and financial institutions'
+                range:   HG1811-2351
+                start:   HG1811
+                end:     HG2351
+              - name:    'By region or country'
+                range:   HG2397-3550
+                start:   HG2397
+                end:     HG3550
+          - name:    'Credit.  Debt.  Loans'
+            note:    'Including credit institutions, credit instruments, consumer credit, bank- ruptcy'
+            range:   HG3691-3769
+            start:   HG3691
+            end:     HG3769
+          - name:    'Foreign exchange.  International finance. International monetary system'
+            range:   HG3810-4000
+            start:   HG3810
+            end:     HG4000
+          - name:    'Finance management.  Business finance. Corporation finance'
+            range:   HG4001-4285
+            start:   HG4001
+            end:     HG4285
+          - name:    'Trust services.  Trust companies'
+            range:   HG4301-4480.9
+            start:   HG4301
+            end:     HG4480.9
+          - name:    'Investment, capital formation, speculation'
+            range:   HG4501-6051
+            start:   HG4501
+            end:     HG6051
+            sections:
+              - name:    'Investment companies.  Investment trusts. Mutual funds'
+                range:   HG4530
+                start:   HG4530
+                end:     HG4530
+              - name:    'Foreign investments'
+                range:   HG4538
+                start:   HG4538
+                end:     HG4538
+              - name:    'Stock exchanges'
+                range:   HG4551-4598
+                start:   HG4551
+                end:     HG4598
+              - name:    'Stockbrokers.  Security dealers.  Investment advisers'
+                range:   HG4621
+                start:   HG4621
+                end:     HG4621
+              - name:    'Government securities.  Industrial securities. Venture capital'
+                range:   HG4701-4751
+                start:   HG4701
+                end:     HG4751
+              - name:    'By region or country'
+                range:   HG4900-5993
+                start:   HG4900
+                end:     HG5993
+              - name:    'Speculation'
+                range:   HG6001-6051
+                start:   HG6001
+                end:     HG6051
+          - name:    'Lotteries'
+            range:   HG6105-6270.9
+            start:   HG6105
+            end:     HG6270.9
+          - name:    'Insurance'
+            range:   HG8011-9999
+            start:   HG8011
+            end:     HG9999
+            sections:
+              - name:    'Insurance for professions.  Malpractice insurance.  Professional liability insurance'
+                range:   HG8053.5-8054.45
+                start:   HG8053.5
+                end:     HG8054.45
+              - name:    'Business insurance'
+                range:   HG8059
+                start:   HG8059
+                end:     HG8059
+              - name:    'Insurance business.  Insurance management'
+                range:   HG8075-8107
+                start:   HG8075
+                end:     HG8107
+              - name:    'Government policy.  State supervision'
+                range:   HG8111-8123
+                start:   HG8111
+                end:     HG8123
+              - name:    'Government insurance'
+                range:   HG8205-8220
+                start:   HG8205
+                end:     HG8220
+              - name:    'By region or country'
+                range:   HG8501-8745
+                start:   HG8501
+                end:     HG8745
+              - name:    'Life insurance'
+                range:   HG8751-9295
+                start:   HG8751
+                end:     HG9295
+                sections:
+                  - name:    'Actuarial science.  Statistical theory and methodology applied to insurance'
+                    range:   HG8779-8793
+                    start:   HG8779
+                    end:     HG8793
+                  - name:    'By class insured, by risk, by plan'
+                    range:   HG8799-8830
+                    start:   HG8799
+                    end:     HG8830
+                  - name:    'Life insurance business.  Management'
+                    range:   HG8835-8899
+                    start:   HG8835
+                    end:     HG8899
+                  - name:    'Government policy.  State supervision'
+                    range:   HG8901-8914
+                    start:   HG8901
+                    end:     HG8914
+                  - name:    'By region or country'
+                    range:   HG8941-9200.5
+                    start:   HG8941
+                    end:     HG9200.5
+                  - name:    'Mutual life insurance.  Assessment life insurance.  Fraternal life insurance'
+                    range:   HG9201-9245
+                    start:   HG9201
+                    end:     HG9245
+                  - name:    'Industrial life insurance'
+                    range:   HG9251-9262
+                    start:   HG9251
+                    end:     HG9262
+                  - name:    'Child insurance.  Life insurance for children'
+                    range:   HG9271
+                    start:   HG9271
+                    end:     HG9271
+                  - name:    'Maternity insurance'
+                    range:   HG9291-9295
+                    start:   HG9291
+                    end:     HG9295
+              - name:    'Accident insurance'
+                range:   HG9301-9343
+                start:   HG9301
+                end:     HG9343
+              - name:    'Health insurance'
+                range:   HG9371-9399
+                start:   HG9371
+                end:     HG9399
+              - name:    'Fire insurance'
+                range:   HG9651-9899
+                start:   HG9651
+                end:     HG9899
+              - name:    'Casualty insurance'
+                range:   HG9956-9969
+                start:   HG9956
+                end:     HG9969
+              - name:    'Other insurance'
+                note:    'Including automobile, burglary, credit, disaster, title insurance'
+                range:   HG9969.5-9999
+                start:   HG9969.5
+                end:     HG9999
+  - subclass:  HJ
+    name:     'Public finance'
+    sections:
+      - name:    'Public finance'
+        range:   HJ9-9940
+        start:   HJ9
+        end:     HJ9940
+        sections:
+          - name:    'Periodicals.  Serials.  By region or country'
+            range:   HJ9-99.8
+            start:   HJ9
+            end:     HJ99.8
+          - name:    'History'
+            range:   HJ210-240
+            start:   HJ210
+            end:     HJ240
+          - name:    'By region or country'
+            range:   HJ241-1620
+            start:   HJ241
+            end:     HJ1620
+          - name:    'Income and expenditure.  Budget'
+            range:   HJ2005-2216
+            start:   HJ2005
+            end:     HJ2216
+          - name:    'Revenue.  Taxation.  Internal revenue'
+            range:   HJ2240-5908
+            start:   HJ2240
+            end:     HJ5908
+            sections:
+              - name:    'Tax incidence.  Tax shifting.  Tax equity'
+                range:   HJ2321-2323
+                start:   HJ2321
+                end:     HJ2323
+              - name:    'Progressive taxation'
+                range:   HJ2326-2327
+                start:   HJ2326
+                end:     HJ2327
+              - name:    'Tax exemption'
+                range:   HJ2336-2337
+                start:   HJ2336
+                end:     HJ2337
+              - name:    'Taxation of government property'
+                range:   HJ2338
+                start:   HJ2338
+                end:     HJ2338
+              - name:    'Inflation and taxation'
+                range:   HJ2351
+                start:   HJ2351
+                end:     HJ2351
+              - name:    'Tax revenue estimating'
+                range:   HJ2351.4
+                start:   HJ2351.4
+                end:     HJ2351.4
+              - name:    'By region or country'
+                range:   HJ2361-3192.7
+                start:   HJ2361
+                end:     HJ3192.7
+              - name:    'Revenue from sources other than taxation'
+                range:   HJ3801-3844
+                start:   HJ3801
+                end:     HJ3844
+              - name:    'Direct taxation'
+                range:   HJ3863-3925
+                start:   HJ3863
+                end:     HJ3925
+              - name:    'Property tax'
+                range:   HJ4113-4601
+                start:   HJ4113
+                end:     HJ4601
+              - name:    'Income tax'
+                range:   HJ4629-4830
+                start:   HJ4629
+                end:     HJ4830
+              - name:    'Capitation.  Poll tax'
+                range:   HJ4919-4936
+                start:   HJ4919
+                end:     HJ4936
+              - name:    'Administrative fees.  User charges. License fees'
+                range:   HJ5309-5510
+                start:   HJ5309
+                end:     HJ5510
+          - name:    'Customs administration'
+            range:   HJ6603-7390
+            start:   HJ6603
+            end:     HJ7390
+          - name:    'Expenditures.  Government spending'
+            range:   HJ7461-7980
+            start:   HJ7461
+            end:     HJ7980
+          - name:    'Public debts'
+            range:   HJ8001-8899
+            start:   HJ8001
+            end:     HJ8899
+            sections:
+              - name:    'Sinking funds.  Amortization'
+                range:   HJ8052
+                start:   HJ8052
+                end:     HJ8052
+              - name:    'By region or country'
+                range:   HJ8101-8899
+                start:   HJ8101
+                end:     HJ8899
+          - name:    'Local finance.  Municipal finance'
+            note:    'Including the revenue, budget, expenditure, etc. of counties, boroughs, communes, municipalities, etc.'
+            range:   HJ9103-9695
+            start:   HJ9103
+            end:     HJ9695
+          - name:    'Public accounting.  Auditing'
+            range:   HJ9701-9940
+            start:   HJ9701
+            end:     HJ9940
+  - subclass:  HM
+    name:     'Sociology'
+    sections:
+      - name:    'Sociology'
+        range:   HM(1)-1281
+        start:   HM1
+        end:     HM1281
+        sections:
+          - name:    'These are obsolete numbers no longer used by the Library of Congress'
+            range:   HM1-299
+            start:   HM1
+            end:     HM299
+          - name:    'History of sociology.  History of sociological theory'
+            range:   HM435-477
+            start:   HM435
+            end:     HM477
+            sections:
+              - name:    'Schools of sociology.  Schools of social thought'
+                range:   HM461-473
+                start:   HM461
+                end:     HM473
+          - name:    'Theory.  Method.  Relations to other subjects'
+            range:   HM481-554
+            start:   HM481
+            end:     HM554
+          - name:    'Culture'
+            range:   HM621-656
+            start:   HM621
+            end:     HM656
+          - name:    'Social control'
+            range:   HM661-696
+            start:   HM661
+            end:     HM696
+          - name:    'Social systems'
+            range:   HM701
+            start:   HM701
+            end:     HM701
+          - name:    'Social structure'
+            range:   HM706
+            start:   HM706
+            end:     HM706
+          - name:    'Groups and organizations'
+            range:   HM711-806
+            start:   HM711
+            end:     HM806
+            sections:
+              - name:    'Community'
+                range:   HM756-781
+                start:   HM756
+                end:     HM781
+              - name:    'Organizational sociology.  Organization theory'
+                range:   HM786-806
+                start:   HM786
+                end:     HM806
+          - name:    'Deviant behavior.  Social deviance'
+            range:   HM811-821
+            start:   HM811
+            end:     HM821
+          - name:    'Social institutions'
+            range:   HM826
+            start:   HM826
+            end:     HM826
+          - name:    'Social change'
+            range:   HM831-901
+            start:   HM831
+            end:     HM901
+          - name:    'Social psychology'
+            range:   HM1001-1281
+            start:   HM1001
+            end:     HM1281
+            sections:
+              - name:    'Social perception.  Social cognition'
+                note:    'Including perception of the self and others, prejudices, stereotype'
+                range:   HM1041-1101
+                start:   HM1041
+                end:     HM1101
+              - name:    'Interpersonal relations.  Social behavior'
+                range:   HM1106-1171
+                start:   HM1106
+                end:     HM1171
+              - name:    'Social influence.  Social pressure'
+                range:   HM1176-1281
+                start:   HM1176
+                end:     HM1281
+  - subclass:  HN
+    name:     'Social history and conditions.  Social problems.  Social reform'
+    sections:
+      - name:    'Social history and conditions.  Social problems. Social reform'
+        range:   HN1-995
+        start:   HN1
+        end:     HN995
+        sections:
+          - name:    'The church and social problems'
+            range:   HN30-39
+            start:   HN30
+            end:     HN39
+          - name:    'Community centers.  Social centers'
+            range:   HN41-46
+            start:   HN41
+            end:     HN46
+          - name:    'By region or country'
+            range:   HN50-995
+            start:   HN50
+            end:     HN995
+  - subclass:  HQ
+    name:     'The Family.  Marriage.  Women'
+    sections:
+      - name:    'The Family.  Marriage.  Women'
+        range:   HQ1-2044
+        start:   HQ1
+        end:     HQ2044
+        sections:
+          - name:    'Sexual life'
+            range:   HQ12-449
+            start:   HQ12
+            end:     HQ449
+            sections:
+              - name:    'Sexual behavior and attitudes.  Sexuality'
+                range:   HQ19-30.7
+                start:   HQ19
+                end:     HQ30.7
+              - name:    'Sex instruction and sexual ethics'
+                range:   HQ31-64
+                start:   HQ31
+                end:     HQ64
+              - name:    'Sexual deviations'
+                range:   HQ71-72
+                start:   HQ71
+                end:     HQ72
+              - name:    'Bisexuality'
+                range:   HQ74-74.2
+                start:   HQ74
+                end:     HQ74.2
+              - name:    'Homosexuality.  Lesbianism'
+                range:   HQ75-76.8
+                start:   HQ75
+                end:     HQ76.8
+              - name:    'Transvestism'
+                range:   HQ77-77.2
+                start:   HQ77
+                end:     HQ77.2
+              - name:    'Transexualism'
+                range:   HQ77.7-77.95
+                start:   HQ77.7
+                end:     HQ77.95
+              - name:    'Sadism.  Masochism.  Fetishism, etc.'
+                range:   HQ79
+                start:   HQ79
+                end:     HQ79
+              - name:    'Prostitution'
+                range:   HQ101-440.7
+                start:   HQ101
+                end:     HQ440.7
+              - name:    'Masturbation'
+                range:   HQ447
+                start:   HQ447
+                end:     HQ447
+              - name:    'Emasculation.  Eunuchs, etc.'
+                range:   HQ449
+                start:   HQ449
+                end:     HQ449
+          - name:    'Erotica'
+            range:   HQ450-472
+            start:   HQ450
+            end:     HQ472
+          - name:    'The family.  Marriage.  Home'
+            range:   HQ503-1064
+            start:   HQ503
+            end:     HQ1064
+            sections:
+              - name:    'Eugenics'
+                range:   HQ750-755.5
+                start:   HQ750
+                end:     HQ755.5
+              - name:    'Parents.  Parenthood'
+                note:    'Including parent and child, husbands, fathers, wives, mothers'
+                range:   HQ755.7-759.92
+                start:   HQ755.7
+                end:     HQ759.92
+              - name:    'Family size'
+                range:   HQ760-767.7
+                start:   HQ760
+                end:     HQ767.7
+              - name:    'Children.  Child development'
+                note:    'Including child rearing, child life, play, socialization, children''s rights'
+                range:   HQ767.8-792.2
+                start:   HQ767.8
+                end:     HQ792.2
+              - name:    'Youth.  Adolescents.  Teenagers'
+                range:   HQ793-799.2
+                start:   HQ793
+                end:     HQ799.2
+              - name:    'Young men and women'
+                range:   HQ799.5-799.9
+                start:   HQ799.5
+                end:     HQ799.9
+              - name:    'Adulthood'
+                range:   HQ799.95-799.97
+                start:   HQ799.95
+                end:     HQ799.97
+              - name:    'Single people'
+                range:   HQ800-800.4
+                start:   HQ800
+                end:     HQ800.4
+              - name:    'Man-woman relationships.  Courtship.  Dating'
+                range:   HQ801-801.83
+                start:   HQ801
+                end:     HQ801.83
+              - name:    'Matrimonial bureaus.  Marriage brokerage'
+                range:   HQ802
+                start:   HQ802
+                end:     HQ802
+              - name:    'Matrimonial advertisements'
+                range:   HQ802.5
+                start:   HQ802.5
+                end:     HQ802.5
+              - name:    'Temporary marriage.  Trial marriage. Companionate marriage'
+                range:   HQ803
+                start:   HQ803
+                end:     HQ803
+              - name:    'Breach of promise'
+                range:   HQ804
+                start:   HQ804
+                end:     HQ804
+              - name:    'Desertion'
+                range:   HQ805
+                start:   HQ805
+                end:     HQ805
+              - name:    'Adultery'
+                range:   HQ806
+                start:   HQ806
+                end:     HQ806
+              - name:    'Divorce'
+                range:   HQ811-960.7
+                start:   HQ811
+                end:     HQ960.7
+              - name:    'Free love'
+                range:   HQ961-967
+                start:   HQ961
+                end:     HQ967
+              - name:    'Polygamy'
+                range:   HQ981-996
+                start:   HQ981
+                end:     HQ996
+              - name:    'Polyandry'
+                range:   HQ997
+                start:   HQ997
+                end:     HQ997
+              - name:    'Illegitimacy.  Unmarried mothers'
+                range:   HQ998-999
+                start:   HQ998
+                end:     HQ999
+              - name:    'The state and marriage'
+                range:   HQ1001-1006
+                start:   HQ1001
+                end:     HQ1006
+              - name:    'The church and marriage'
+                range:   HQ1051-1057
+                start:   HQ1051
+                end:     HQ1057
+              - name:    'Widows and widowers.  Widowhood'
+                range:   HQ1058-1058.5
+                start:   HQ1058
+                end:     HQ1058.5
+              - name:    'Aged.  Gerontology (Social aspects). Retirement'
+                range:   HQ1060-1064
+                start:   HQ1060
+                end:     HQ1064
+          - name:    'Thanatology.  Death.  Dying'
+            range:   HQ1073-1073.5
+            start:   HQ1073
+            end:     HQ1073.5
+          - name:    'Sex role'
+            range:   HQ1075-1075.5
+            start:   HQ1075
+            end:     HQ1075.5
+          - name:    'Men'
+            range:   HQ1088-1090.7
+            start:   HQ1088
+            end:     HQ1090.7
+          - name:    'Women.  Feminism'
+            range:   HQ1101-2030.7
+            start:   HQ1101
+            end:     HQ2030.7
+            sections:
+              - name:    'Women''s clubs'
+                range:   HQ1871-2030.7
+                start:   HQ1871
+                end:     HQ2030.7
+          - name:    'Life skills.  Coping skills.  Everyday living skills'
+            range:   HQ2035-2039
+            start:   HQ2035
+            end:     HQ2039
+          - name:    'Life style'
+            range:   HQ2042-2044
+            start:   HQ2042
+            end:     HQ2044
+  - subclass:  HS
+    name:     'Societies: secret, benevolent, etc.'
+    sections:
+      - name:    'Societies: secret, benevolent, etc.'
+        range:   HS1-3371
+        start:   HS1
+        end:     HS3371
+        sections:
+          - name:    'Secret societies'
+            range:   HS101-330.7
+            start:   HS101
+            end:     HS330.7
+          - name:    'Freemasons'
+            range:   HS351-929
+            start:   HS351
+            end:     HS929
+          - name:    'Odd Fellows'
+            range:   HS951-1179
+            start:   HS951
+            end:     HS1179
+          - name:    'Knights of Pythias'
+            range:   HS1201-1350
+            start:   HS1201
+            end:     HS1350
+          - name:    'Other societies'
+            range:   HS1355
+            start:   HS1355
+            end:     HS1355
+          - name:    'Other societies.  By classes'
+            range:   HS1501-2460.7
+            start:   HS1501
+            end:     HS2460.7
+            sections:
+              - name:    'Benevolent and "friendly" societies and mutual assessment fraternities'
+                range:   HS1501-1510
+                start:   HS1501
+                end:     HS1510
+              - name:    'Religious societies'
+                range:   HS1525-1560
+                start:   HS1525
+                end:     HS1560
+              - name:    'Race societies'
+                range:   HS1601-2265
+                start:   HS1601
+                end:     HS2265
+              - name:    'Occupation societies'
+                range:   HS2275
+                start:   HS2275
+                end:     HS2275
+              - name:    'Political and "patriotic" societies'
+                range:   HS2301-2460.7
+                start:   HS2301
+                end:     HS2460.7
+          - name:    'Clubs.  Clubs and societies for special classes'
+            note:    'Including boys'' societies, Boy scouts, girls'' societies'
+            range:   HS2501-3371
+            start:   HS2501
+            end:     HS3371
+  - subclass:  HT
+    name:     'Communities.  Classes.  Races'
+    sections:
+      - name:    'Communities.  Classes.  Races'
+        range:   HT51-1595
+        start:   HT51
+        end:     HT1595
+        sections:
+          - name:    'Human settlements.  Communities'
+            range:   HT51-65
+            start:   HT51
+            end:     HT65
+          - name:    'Urban groups.  The city.  Urban sociology'
+            range:   HT101-395
+            start:   HT101
+            end:     HT395
+            sections:
+              - name:    'Garden cities.  "The city beautiful"'
+                range:   HT161-165
+                start:   HT161
+                end:     HT165
+              - name:    'City planning'
+                range:   HT165.5-169.9
+                start:   HT165.5
+                end:     HT169.9
+              - name:    'Urban renewal.  Urban redevelopment'
+                range:   HT170-178
+                start:   HT170
+                end:     HT178
+              - name:    'City population'
+                note:    'Including children in cities, immigration'
+                range:   HT201-221
+                start:   HT201
+                end:     HT221
+              - name:    'Effect of city life'
+                range:   HT231
+                start:   HT231
+                end:     HT231
+              - name:    'Mental and moral life'
+                range:   HT251-265
+                start:   HT251
+                end:     HT265
+              - name:    'Recreation.  Amusements'
+                range:   HT281
+                start:   HT281
+                end:     HT281
+              - name:    'The city as an economic factor.  City promotion'
+                range:   HT321-325
+                start:   HT321
+                end:     HT325
+              - name:    'Metropolitan areas'
+                range:   HT330-334
+                start:   HT330
+                end:     HT334
+              - name:    'Suburban cities and towns'
+                range:   HT351-352
+                start:   HT351
+                end:     HT352
+              - name:    'Urbanization.  City and country'
+                range:   HT361-384
+                start:   HT361
+                end:     HT384
+              - name:    'Regional economics.  Space in economics'
+                range:   HT388
+                start:   HT388
+                end:     HT388
+              - name:    'Regional planning'
+                range:   HT390-395
+                start:   HT390
+                end:     HT395
+          - name:    'Rural groups.  Rural sociology'
+            range:   HT401-485
+            start:   HT401
+            end:     HT485
+          - name:    'Classes'
+            range:   HT601-1445
+            start:   HT601
+            end:     HT1445
+            sections:
+              - name:    'Origin of social classes'
+                range:   HT621-635
+                start:   HT621
+                end:     HT635
+              - name:    'Classes arising from birth'
+                note:    'Including royalty, nobility, commons'
+                range:   HT641-657
+                start:   HT641
+                end:     HT657
+              - name:    'Classes arising from occupation'
+                range:   HT675-690
+                start:   HT675
+                end:     HT690
+              - name:    'Caste system'
+                range:   HT713-725
+                start:   HT713
+                end:     HT725
+              - name:    'Freedmen'
+                range:   HT731
+                start:   HT731
+                end:     HT731
+              - name:    'Serfdom'
+                range:   HT751-815
+                start:   HT751
+                end:     HT815
+              - name:    'Slavery'
+                range:   HT851-1445
+                start:   HT851
+                end:     HT1445
+          - name:    'Races'
+            note:    'Including race as a social group and race relations in general'
+            range:   HT1501-1595
+            start:   HT1501
+            end:     HT1595
+  - subclass:  HV
+    name:     'Social pathology.  Social and public welfare.  Criminology'
+    sections:
+      - name:    'Social pathology.  Social and public welfare. Criminology'
+        range:   HV1-9960
+        start:   HV1
+        end:     HV9960
+        sections:
+          - name:    'Social service.  Social work.  Charity organization and practice'
+            note:    'Including social case work, private and public relief, institutional care, rural social work, work relief'
+            range:   HV40-69
+            start:   HV40
+            end:     HV69
+          - name:    'By region or country'
+            range:   HV85-525
+            start:   HV85
+            end:     HV525
+          - name:    'The church and charity'
+            range:   HV530
+            start:   HV530
+            end:     HV530
+          - name:    'Women and charity'
+            range:   HV541
+            start:   HV541
+            end:     HV541
+          - name:    'Charity fairs, bazaars, etc.'
+            range:   HV544
+            start:   HV544
+            end:     HV544
+          - name:    'International social work'
+            range:   HV544.5
+            start:   HV544.5
+            end:     HV544.5
+          - name:    'Self-help groups'
+            range:   HV547
+            start:   HV547
+            end:     HV547
+          - name:    'Emergency management'
+            range:   HV551.2-639
+            start:   HV551.2
+            end:     HV639
+            sections:
+              - name:    'Relief in case of disasters'
+                range:   HV553-639
+                start:   HV553
+                end:     HV639
+                sections:
+                  - name:    'Red Cross.  Red Crescent'
+                    range:   HV560-583
+                    start:   HV560
+                    end:     HV583
+                  - name:    'Special types of disasters'
+                    range:   HV599-639
+                    start:   HV599
+                    end:     HV639
+          - name:    'Refugee problems'
+            range:   HV640-645
+            start:   HV640
+            end:     HV645
+          - name:    'Life saving'
+            range:   HV650-670
+            start:   HV650
+            end:     HV670
+          - name:    'Accidents.  Prevention of accidents'
+            range:   HV675-677
+            start:   HV675
+            end:     HV677
+          - name:    'Free professional services'
+            note:    'Including medical charities'
+            range:   HV680-696
+            start:   HV680
+            end:     HV696
+          - name:    'Protection, assistance and relief'
+            range:   HV697-4959
+            start:   HV697
+            end:     HV4959
+            sections:
+              - name:    'Special classes'
+                range:   HV697-3024
+                start:   HV697
+                end:     HV3024
+                sections:
+                  - name:    'Families.  Mothers.  Widow''s pensions'
+                    range:   HV697-700.7
+                    start:   HV697
+                    end:     HV700.7
+                  - name:    'Children'
+                    range:   HV701-1420.5
+                    start:   HV701
+                    end:     HV1420.5
+                    sections:
+                      - name:    'Foundlings'
+                        range:   HV835-847
+                        start:   HV835
+                        end:     HV847
+                      - name:    'Destitute, neglected, and abandoned children.  Street children'
+                        range:   HV873-887
+                        start:   HV873
+                        end:     HV887
+                      - name:    'Children with disabilities'
+                        range:   HV888-907
+                        start:   HV888
+                        end:     HV907
+                      - name:    'Fresh-air funds'
+                        range:   HV931-941
+                        start:   HV931
+                        end:     HV941
+                      - name:    'Orphanages.  Orphans'
+                        range:   HV959-1420.5
+                        start:   HV959
+                        end:     HV1420.5
+                  - name:    'Young adults.  Youth.  Teenagers'
+                    range:   HV1421-1441
+                    start:   HV1421
+                    end:     HV1441
+                  - name:    'Women'
+                    range:   HV1442-1448
+                    start:   HV1442
+                    end:     HV1448
+                  - name:    'Gay men.  Lesbians'
+                    range:   HV1449
+                    start:   HV1449
+                    end:     HV1449
+                  - name:    'Aged'
+                    range:   HV1450-1494
+                    start:   HV1450
+                    end:     HV1494
+                  - name:    'People with disabilities'
+                    note:    'Including blind, deaf, people with physical and mental disabilities'
+                    range:   HV1551-3024
+                    start:   HV1551
+                    end:     HV3024
+              - name:    'Special classes.  By occupation'
+                range:   HV3025-3174
+                start:   HV3025
+                end:     HV3174
+                sections:
+                  - name:    'Mariners'
+                    range:   HV3025-3163
+                    start:   HV3025
+                    end:     HV3163
+                  - name:    'Shop women, clerks, etc.'
+                    range:   HV3165-3173
+                    start:   HV3165
+                    end:     HV3173
+                  - name:    'Other.  By occupation'
+                    range:   HV3174
+                    start:   HV3174
+                    end:     HV3174
+              - name:    'Special classes.  By race or ethnic group'
+                range:   HV3176-3199
+                start:   HV3176
+                end:     HV3199
+              - name:    'Immigrants'
+                range:   HV4005-4013
+                start:   HV4005
+                end:     HV4013
+              - name:    'Poor in cities.  Slums'
+                range:   HV4023-4470.7
+                start:   HV4023
+                end:     HV4470.7
+              - name:    'Mendicancy.  Vagabondism.  Tramps. Homelessness'
+                range:   HV4480-4630
+                start:   HV4480
+                end:     HV4630
+              - name:    'Protection of animals.  Animal rights.  Animal welfare'
+                range:   HV4701-4890.9
+                start:   HV4701
+                end:     HV4890.9
+              - name:    'Animal experimentation.  Anti-vivisection'
+                range:   HV4905-4959
+                start:   HV4905
+                end:     HV4959
+          - name:    'Degeneration'
+            range:   HV4961-4995
+            start:   HV4961
+            end:     HV4995
+          - name:    'Alcoholism.  Intemperance.  Temperance reform'
+            range:   HV5001-5720.5
+            start:   HV5001
+            end:     HV5720.5
+          - name:    'Tobacco habit'
+            range:   HV5725-5770
+            start:   HV5725
+            end:     HV5770
+          - name:    'Drug habits.  Drug abuse'
+            range:   HV5800-5840
+            start:   HV5800
+            end:     HV5840
+          - name:    'Criminology'
+            range:   HV6001-7220.5
+            start:   HV6001
+            end:     HV7220.5
+            sections:
+              - name:    'Criminal anthropology'
+                note:    'Including criminal types, criminal psychology, prison psychology, causes of crime'
+                range:   HV6035-6197
+                start:   HV6035
+                end:     HV6197
+              - name:    'Criminal classes'
+                range:   HV6201-6249
+                start:   HV6201
+                end:     HV6249
+              - name:    'Victims of crimes.  Victimology'
+                range:   HV6250-6250.4
+                start:   HV6250
+                end:     HV6250.4
+              - name:    'Crimes and offenses'
+                range:   HV6251-6773.55
+                start:   HV6251
+                end:     HV6773.55
+              - name:    'Crimes and criminal classes'
+                range:   HV6774-7220.5
+                start:   HV6774
+                end:     HV7220.5
+          - name:    'Criminal justice administration'
+            range:   HV7231-9960
+            start:   HV7231
+            end:     HV9960
+            sections:
+              - name:    'Social work with delinquents and criminals'
+                range:   HV7428
+                start:   HV7428
+                end:     HV7428
+              - name:    'Prevention of crime, methods, etc.'
+                range:   HV7431
+                start:   HV7431
+                end:     HV7431
+              - name:    'Gun control'
+                range:   HV7435-7439
+                start:   HV7435
+                end:     HV7439
+              - name:    'Police.  Detectives.  Constabulary'
+                range:   HV7551-8280.7
+                start:   HV7551
+                end:     HV8280.7
+                sections:
+                  - name:    'Administration and organization'
+                    range:   HV7935-8025
+                    start:   HV7935
+                    end:     HV8025
+                  - name:    'Police duty.  Methods of protection'
+                    range:   HV8031-8080
+                    start:   HV8031
+                    end:     HV8080
+                    sections:
+                      - name:    'Special classes of crimes, offenses and criminals'
+                        range:   HV8035-8069
+                        start:   HV8035
+                        end:     HV8069
+                      - name:    'Investigation of crimes.  Examination and identification of prisoners'
+                        range:   HV8073-8079.35
+                        start:   HV8073
+                        end:     HV8079.35
+                        sections:
+                          - name:    'Police social work'
+                            range:   HV8079.2-8079.35
+                            start:   HV8079.2
+                            end:     HV8079.35
+                      - name:    'Traffic control.  Traffic accident investigation'
+                        range:   HV8079.5-8079.55
+                        start:   HV8079.5
+                        end:     HV8079.55
+                  - name:    'Private detectives.  Detective bureaus'
+                    range:   HV8081-8099
+                    start:   HV8081
+                    end:     HV8099
+                  - name:    'By region or country'
+                    range:   HV8130-8280.7
+                    start:   HV8130
+                    end:     HV8280.7
+              - name:    'Private security services'
+                range:   HV8290-8291
+                start:   HV8290
+                end:     HV8291
+              - name:    'Penology.  Prisons.  Corrections'
+                range:   HV8301-9920.7
+                start:   HV8301
+                end:     HV9920.7
+                sections:
+                  - name:    'The juvenile offender.  Juvenile delinquency. Reform schools, etc.'
+                    range:   HV9051-9230.7
+                    start:   HV9051
+                    end:     HV9230.7
+                  - name:    'Reformation and reclamation of adult prisoners'
+                    range:   HV9261-9430.7
+                    start:   HV9261
+                    end:     HV9430.7
+                  - name:    'By region or country'
+                    range:   HV9441-9920.7
+                    start:   HV9441
+                    end:     HV9920.7
+              - name:    'By region or country'
+                range:   HV9950-9960
+                start:   HV9950
+                end:     HV9960
+  - subclass:  HX
+    name:     'Socialism.  Communism.  Anarchism'
+    sections:
+      - name:    'Socialism.  Communism.  Anarchism'
+        range:   HX1-(970.9)
+        start:   HX1
+        end:     HX970.9
+        sections:
+          - name:    'Communism/socialism in relation to special topics'
+            range:   HX519-550
+            start:   HX519
+            end:     HX550
+          - name:    'Communism: Utopian socialism, collective settlements'
+            range:   HX626-696
+            start:   HX626
+            end:     HX696
+          - name:    'Utopias.  The ideal state'
+            range:   HX806-811
+            start:   HX806
+            end:     HX811
+          - name:    'Anarchism'
+            range:   HX821-970.9
+            start:   HX821
+            end:     HX970.9

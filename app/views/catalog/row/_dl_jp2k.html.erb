@@ -1,0 +1,22 @@
+<%# app/views/catalog/row/_dl_jp2k.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  resource_url  ||= doc.dl_jp2k_viewer
+  resource_link ||=
+    if resource_url
+      preview_url ||= doc.dl_jp2k_preview
+      image = image_tag(preview_url, class: :photo)
+      link_to(image, resource_url, popup: true)
+    end
+
+  fields_opts ||= {
+    document:    doc,
+    access_link: resource_link,
+    dev_note:    __FILE__,
+  }
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/row/shared/fields', fields_opts -%>

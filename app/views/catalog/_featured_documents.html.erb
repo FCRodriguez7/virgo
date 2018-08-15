@@ -1,0 +1,79 @@
+<%# app/views/catalog/_featured_documents.html.erb -%>
+<%-
+  # Hints for RubyMine (skipped during execution).
+  include UVA::Helper::Links unless ONLY_FOR_DOCUMENTATION
+
+  if print_view?
+
+    section_title ||= featured_title
+
+    divider = rss_button = print_button = thumb_class = link_class = omit = nil
+
+  else
+
+    section_title ||= featured_label
+
+    divider = content_divider
+
+    # === RSS button
+    rss_button = rss_link
+
+    # === Print button
+    print_opt = { title: "#{section_title} Print View" }
+    print_opt[:path] = video_index_path if video_home_page?
+    print_opt[:path] = music_index_path if music_home_page?
+    print_button = print_view_link(print_opt)
+
+    # === Thumbnails
+    omit = '...'
+    thumb_class = 'preview-thumbnail'
+    if video_lens?
+      thumb_class << ' see-more-info'
+      link_class = 'video'
+    else
+      link_class = 'album'
+    end
+
+    # Add to hidden "skip navigation" menu.
+    skip_nav << link_to(section_title, '#featured-items')
+
+  end
+
+  view_debug(__FILE__)
+-%>
+
+<h2 class="recently-added-header" id="featured-items">
+  <%= section_title %>
+  <%= divider %>
+  <%= print_button %>
+  <%= rss_button %>
+</h2>
+
+<%- if print_view? -%>
+
+  <%= render 'catalog/document_list', documents: @featured_documents %>
+
+<%- else -%>
+
+  <div class="recently-added-items">
+    <%- featured_documents_rows.each do |row| -%>
+      <div class="recently-added-row">
+        <%- row.each do |doc| -%>
+          <%- tip   = doc.export_title -%>
+          <%- label = doc.main_title(style: false) -%>
+          <%- label = label.truncate(30, omission: '', separator: ' ') -%>
+          <%- label << omit unless label == tip -%>
+          <%- thumb_opt = { class: link_class, title: tip } -%>
+          <%- link_opt  = { label: label, title: tip, counter: -1 } -%>
+          <div class="<%= thumb_class -%>">
+            <%= index_thumbnail(doc, thumb_opt) %>
+            <div class="thumb-label">
+              <%= link_to_document(doc, link_opt) %>
+            </div>
+          </div>
+        <%- end -%>
+      </div>
+    <%- end -%>
+  </div>
+
+<%- end -%>

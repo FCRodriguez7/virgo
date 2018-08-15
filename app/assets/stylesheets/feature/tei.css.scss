@@ -1,0 +1,114 @@
+// app/assets/stylesheets/feature/tei.css.scss
+
+.context-header {
+
+    margin:      1em;
+    padding:     0.5em;
+    font-family: Georgia, Times, serif;
+    font-size:   large;
+    font-weight: bold;
+    border:      1px solid gray;
+
+    a {
+        margin-left: 0.25em;
+        font-size:   inherit;
+    }
+}
+
+.transformed-tei {
+
+    margin: 1em;
+
+    .tei-head {
+        margin-top:      0.5em;
+        margin-bottom:   0.5em;
+        font-size:       x-large;
+    }
+
+    .tei-hi-rend_superscript {
+        display:         inline-block;
+        vertical-align:  super;
+        font-size:       smaller;
+    }
+
+    .tei-p {
+        margin-bottom:   1em;
+    }
+
+    .tei-unclear {
+        display:         inline-block;
+        margin-left:     0.1em;
+        margin-right:    0.1em;
+        color:           #444444;
+        font-weight:     bold;
+        font-style:      italic;
+    }
+
+    .tei-opener {
+        margin-top:      1em;
+        margin-bottom:   1em;
+    }
+
+    .tei-dateline {
+        margin-top:      1em;
+        margin-bottom:   1em;
+    }
+
+    .tei-date {
+        display:         inline-block;
+    }
+
+    .tei-salute {
+        margin-top:      1em;
+    }
+
+    .tei-closer {
+        margin-top:      1em;
+    }
+
+    .tei-signed {
+        margin-top:      0.5em;
+        margin-bottom:   0.5em;
+        font-family:     serif;
+        font-weight:     bold;
+    }
+
+    .tei-seg {
+        margin-top:      1em;
+        margin-bottom:   1em;
+        font-style:      italic;
+    }
+
+    .tei-del {
+        display:         inline-block;
+        text-decoration: line-through;
+    }
+
+    .tei-add {
+        display:         inline-block;
+    }
+
+    .tei-hi {
+        display:         inline-block;
+        font-weight:     bold;
+    }
+
+    .tei-xref {
+        display:         inline-block;
+    }
+
+    .tei-table {
+        display:         table;
+        border-collapse: separate;
+        border-spacing:  1em;
+    }
+
+    .tei-row {
+        display:         table-row;
+    }
+
+    .tei-cell {
+        display:         table-cell;
+    }
+
+}

@@ -1,0 +1,26 @@
+<%# app/views/catalog/email/_article.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  # === Item metadata
+  abstract = [doc.export_abstract(separator: "\n\n"), value: { before: "\n" }]
+  fields ||= UVA::View::FieldSet.new(
+    :title       => doc.show_heading_title,
+    'Author'     => doc.show_heading_author,
+    'Type'       => doc.export_type,
+    'Date'       => doc.export_pub_date,
+    'Journal'    => doc.export_journal,
+    'Volume'     => doc.export_volume,
+    'Issue'      => doc.export_issue,
+    'Pages'      => doc.export_pages,
+    'Language'   => doc.export_language,
+    'Subjects'   => doc.export_subjects,
+    'Identifier' => doc.export_identifiers,
+    'ID'         => doc.search.id,
+    :abstract    => abstract,
+  )
+
+  view_debug(__FILE__)
+-%>
+<%= fields.render(:email, doc) %>

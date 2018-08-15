@@ -1,0 +1,29 @@
+<%# app/views/account_requests/error.html.erb -%>
+<%-
+  set_meta_tags(title: 'Requests - Error')
+
+  return_opt = { class: 'btn', target: '_top' }
+  unless in_popup?
+    return_opt[:label] = '&larr; Return to item record'.html_safe
+    return_opt[:path]  = catalog_path(params[:id])
+  end
+
+  view_debug(__FILE__)
+-%>
+
+<% if @disable_recalls %>
+  <div class="ui-state-error ui-corner-all error">
+    <p>
+      Due to upgrades of the cataloging system, holds and recalls will not be
+      available form Aug 8th to Aug 11th.
+    </p>
+    <p>
+      Please make your request after this time. If you have any questions or
+      need help, please <%= ask_a_librarian -%>.
+    </p>
+  </div>
+<%end%>
+
+<div class="return-to-item">
+  <%# window_close_link(in_popup?, return_opt) %>
+</div>

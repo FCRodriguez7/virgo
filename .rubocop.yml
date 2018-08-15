@@ -1,0 +1,153 @@
+# .rubocop.yml
+#
+# This file contains settings for Rubocop which override those from its
+# "default.yml" file.  Each cop listed there is also listed here, although only
+# some are overridden.  Rubocop does not accept empty sections in this config
+# file, so cops without overridden values have to be completely commented-out.
+#
+# Where there are configuration choices, the setting for the default value is
+# listed first followed by commented-out variations of the same configuration
+# item for each possible value.
+#
+# Although the default TargetRubyVersion is "2.0", rubocop is supposed to
+# adjust this value based on the contents of ".ruby-version".  Unfortunately,
+# it isn't able to make sense of the RVM versioning conventions so the value of
+# TargetRubyVersion has to be set here explicitly.
+#
+# @see https://raw.githubusercontent.com/bbatsov/rubocop/master/config/default.yml
+# =============================================================================
+
+AllCops:
+  TargetRubyVersion: 1.9
+  Exclude:
+    - 'db/**/*'
+    - 'doc/**/*'
+    - 'lib/tasks/cucumber.rake'
+    - 'log/**/*'
+    - 'public/**/*'
+    - 'server/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+  DisplayCopNames:   true
+  DisplayStyleGuide: true
+  ExtraDetails:      true
+
+inherit_from:
+  - '.rubocop.enabled.yml'
+  - '.rubocop.disabled.yml'
+
+# =============================================================================
+# Style cops
+# =============================================================================
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
+Style/AlignHash:
+  EnforcedHashRocketStyle:       table
+  EnforcedColonStyle:            table
+  EnforcedLastArgumentHashStyle: ignore_implicit
+
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/BlockDelimiters:
+  EnforcedStyle: braces_for_chaining
+
+Style/CaseIndentation:
+  IndentWhenRelativeTo: end
+  IndentOneStep:        true
+
+Style/EmptyLineBetweenDefs:
+  AllowAdjacentOneLineDefs: true
+
+Style/EmptyLinesAroundBlockBody:
+  EnforcedStyle: empty_lines
+
+Style/Encoding:
+  EnforcedStyle: when_needed
+  AutoCorrectEncodingComment: '# Encoding: UTF-8'
+  Enabled: true
+
+Style/ExtraSpacing:
+  AllowForAlignment: true
+
+Style/FormatString:
+  EnforcedStyle: sprintf
+
+Style/IndentArray:
+  EnforcedStyle: consistent
+
+Style/IndentHash:
+  EnforcedStyle: consistent
+
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Style/NumericLiterals:
+  MinDigits: 7
+
+Style/RedundantReturn:
+  AllowMultipleReturnValues: true
+
+Style/RegexpLiteral:
+  EnforcedStyle:     mixed
+  AllowInnerSlashes: true
+
+Style/Semicolon:
+  AllowAsExpressionSeparator: true
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+# =============================================================================
+# Metrics cops
+# =============================================================================
+
+Metrics/AbcSize:
+  Max: 45
+
+Metrics/ClassLength:
+  Max: 300
+
+Metrics/CyclomaticComplexity:
+  Max: 18
+
+# When viewing code in a terminal window, the "newline" character consumes a
+# column, so the total line length needs to be one less than the apparently
+# line length.
+Metrics/LineLength:
+  Max: 79
+
+Metrics/MethodLength:
+  Max: 35
+
+Metrics/ModuleLength:
+  Max: 300
+
+Metrics/ParameterLists:
+  CountKeywordArgs: true
+
+Metrics/PerceivedComplexity:
+  Max: 21
+
+# =============================================================================
+# Lint cops
+# =============================================================================
+
+# =============================================================================
+# Performance cops
+# =============================================================================
+
+# =============================================================================
+# Rails cops
+# =============================================================================
+
+Rails:
+  Enabled: true

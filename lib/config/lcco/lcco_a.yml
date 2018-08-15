@@ -1,0 +1,185 @@
+# lib/config/lcco_a.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from the Word document of the same base name.
+
+class:    A
+name:     'GENERAL WORKS'
+sections:
+  - subclass:  AC
+    name:     'Collections.  Series.  Collected works'
+    sections:
+      - name:    'Collections.  Series.  Collected works'
+        range:   AC1-999
+        start:   AC1
+        end:     AC999
+        sections:
+          - name:    'Collections of monographs, essays, etc.'
+            range:   AC1-195
+            start:   AC1
+            end:     AC195
+            sections:
+              - name:    'American and English'
+                range:   AC1-8
+                start:   AC1
+                end:     AC8
+              - name:    'Other languages'
+                range:   AC9-195
+                start:   AC9
+                end:     AC195
+          - name:    'Collections for Jewish readers'
+            range:   AC200
+            start:   AC200
+            end:     AC200
+          - name:    'Inaugural and program dissertations'
+            range:   AC801-895
+            start:   AC801
+            end:     AC895
+          - name:    'Pamphlet collections'
+            range:   AC901-995
+            start:   AC901
+            end:     AC995
+          - name:    'Scrapbooks'
+            range:   AC999
+            start:   AC999
+            end:     AC999
+  - subclass:  AE
+    name:     'Encyclopedias'
+    sections:
+      - name:    'Encyclopedias'
+        range:   AE1-(90)
+        start:   AE1
+        end:     AE90
+        sections:
+          - name:    'By language'
+            range:   AE5-(90)
+            start:   AE5
+            end:     AE90
+  - subclass:  AG
+    name:     'Dictionaries and other general reference works'
+    sections:
+      - name:    'Dictionaries and other general reference works'
+        range:   AG2-600
+        start:   AG2
+        end:     AG600
+  - subclass:  AI
+    name:     'Indexes'
+    sections:
+      - name:    'Indexes'
+        range:   AI1-21
+        start:   AI1
+        end:     AI21
+  - subclass:  AM
+    name:     'Museums.  Collectors and collecting'
+    sections:
+      - name:    'Museums.  Collectors and collecting'
+        range:   AM1-(501)
+        start:   AM1
+        end:     AM501
+        sections:
+          - name:    'By country'
+            range:   AM10-100
+            start:   AM10
+            end:     AM100
+          - name:    'Museology.  Museum methods, technique, etc.'
+            range:   AM111-160
+            start:   AM111
+            end:     AM160
+          - name:    'Collectors and collecting'
+            range:   AM200-(501)
+            start:   AM200
+            end:     AM501
+  - subclass:  AN
+    name:     'Newspapers'
+    sections:
+      - name:    'Newspapers'
+        range:   AN
+        start:   AN
+        end:     ANZ999999
+  - subclass:  AP
+    name:     'Periodicals'
+    sections:
+      - name:    'Periodicals'
+        range:   AP1-(271)
+        start:   AP1
+        end:     AP271
+        sections:
+          - name:    'Humorous periodicals'
+            range:   AP101-115
+            start:   AP101
+            end:     AP115
+          - name:    'Juvenile periodicals'
+            range:   AP200-230
+            start:   AP200
+            end:     AP230
+          - name:    'Periodicals for women'
+            range:   AP(250)-(265)
+            start:   AP250
+            end:     AP265
+          - name:    'Periodicals for Blacks'
+            range:   AP(270)-(271)
+            start:   AP270
+            end:     AP271
+  - subclass:  AS
+    name:     'Academies and learned societies'
+    sections:
+      - name:    'Academies and learned societies'
+        range:   AS1-945
+        start:   AS1
+        end:     AS945
+        sections:
+          - name:    'International associations, congresses, conferences, etc.'
+            range:   AS2.5-4
+            start:   AS2.5
+            end:     AS4
+          - name:    'By region or country'
+            range:   AS11-785
+            start:   AS11
+            end:     AS785
+  - subclass:  AY
+    name:     'Yearbooks.  Almanacs.  Directories'
+    sections:
+      - name:    'Yearbooks.  Almanacs.  Directories'
+        range:   AY10-2001
+        start:   AY10
+        end:     AY2001
+        sections:
+          - name:    'Annuals'
+            range:   AY10-29
+            start:   AY10
+            end:     AY29
+          - name:    'Almanacs'
+            range:   AY30-1730
+            start:   AY30
+            end:     AY1730
+          - name:    'Directories'
+            note:    'Class directories by subject in B-Z'
+            range:   AY2001
+            start:   AY2001
+            end:     AY2001
+  - subclass:  AZ
+    name:     'History of scholarship and learning.  The humanities'
+    sections:
+      - name:    'History of scholarship and learning.  The humanities'
+        range:   AZ(20)-999
+        start:   AZ20
+        end:     AZ999
+        sections:
+          - name:    'Philosophy.  Theory'
+            range:   AZ101-(181)
+            start:   AZ101
+            end:     AZ181
+          - name:    'Evaluation'
+            range:   AZ191-193
+            start:   AZ191
+            end:     AZ193
+          - name:    'History'
+            range:   AZ200-361
+            start:   AZ200
+            end:     AZ361
+          - name:    'By region or country'
+            range:   AZ501-908
+            start:   AZ501
+            end:     AZ908

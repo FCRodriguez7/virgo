@@ -1,0 +1,49 @@
+<%# app/views/catalog/show/shared/_view_online.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc && !print_view?
+
+  has_tei   ||= doc.has_feature?('has_tei')
+  has_image ||= doc.has_feature?('has_djatoka_image')
+  pid       ||= doc.values_for(:digitized_item_pid_display).first
+
+  return unless has_tei || (has_image && pid)
+
+  heading   ||= 'Access Online'
+  id        ||= doc.doc_id
+
+  # Add to hidden "skip navigation" menu.
+  view_id = u("view-#{id}")
+  skip_nav << link_to('Content Viewer', ('#'+ view_id))
+
+  viewer_path = has_image && doc.dl_jp2k_viewer_applet
+  image =
+    if has_image
+      preview_url = doc.dl_jp2k_preview(pid)
+      alt_text    = "Preview image for #{id}"
+      image_tag(preview_url, class: :photo, alt: alt_text)
+    end
+  tei_url = has_tei && tei_catalog_path(id)
+
+  view_debug(__FILE__)
+-%>
+
+<h2 class="streaming-gallery-heading" id="<%= view_id -%>"><%= heading %></h2>
+<div class="player-gallery">
+  <div class="streaming-thumbnail">
+
+    <%- if viewer_path -%>
+      <%= out_link(image, viewer_path, ARIA_HIDDEN => true) %>
+      <div class="image-caption">
+        <%= out_link('View image', viewer_path) %>
+      </div>
+    <%- end -%>
+
+    <%- if tei_url -%>
+      <div class="image-caption">
+        <%= out_link('View transcript', tei_url) %>
+      </div>
+    <%- end -%>
+
+  </div>
+</div>

@@ -1,0 +1,65 @@
+<%# app/views/catalog/_marc_view.html.erb -%>
+<%-
+  # Overrides Blacklight app/views/catalog/_marc_view.html.erb
+
+  doc = document ||= @document
+  marc ||= doc && doc.to_marc
+  return unless marc
+
+  ignored_tags ||= %w(940 946)
+  space        ||= '&nbsp;&nbsp;'.html_safe
+
+  title        ||= nil
+  show_title   ||= title.present?
+  show_ignored ||= false
+  show_invalid ||= false # HathiTrust, for one, includes non-MARC fields.
+
+  title = 'Librarian View' if show_title && title.blank?
+
+  view_debug(__FILE__)
+-%>
+
+<%- if show_title -%>
+  <h1 class="heading"><%= title %></h1>
+<%- else -%>
+  <br/>
+<%- end -%>
+
+<div class="marc-view">
+
+  <%# === Display MARC leader field === -%>
+  <%- marc_tag = 'LEADER' -%>
+  <%- unless !show_ignored && ignored_tags.include?(marc_tag) -%>
+    <div class="field">
+      <span class="tag"><%= marc_term(marc_tag) %></span>
+      <span class="control-field-values"><%= h(marc.leader) %></span>
+    </div>
+  <%- end -%>
+
+  <%# === Display MARC control and data fields === -%>
+  <%- marc.each do |field| -%>
+    <%- marc_tag = field.tag.to_s -%>
+    <%- next if !show_invalid && (marc_tag !~ /^\d{3}$/) -%>
+    <%- next if !show_ignored && ignored_tags.include?(marc_tag) -%>
+    <div class="field">
+      <div class="tag-ind">
+        <span class="tag"><%= marc_term(marc_tag) %></span>
+        <%- if field.is_a?(MARC::ControlField) -%>
+          <span class="control-field-values"><%= h(field.value) %></span>
+        <%- elsif field.is_a?(MARC::DataField) -%>
+          <div class="ind1"><%= h(field.indicator1.presence || space) %></div>
+          <div class="ind2"><%= h(field.indicator2.presence || space) %></div>
+        <%- end -%>
+      </div>
+      <%- if field.is_a?(MARC::DataField) -%>
+        <div class="subfields">
+          <%- field.each do |sub| -%>
+            <span class="subfield"><%= h(sub.code) -%>|</span>
+            <%= h(sub.value) %>
+          <%- end -%>
+        </div>
+      <%- end -%>
+    </div>
+  <%- end -%>
+
+</div>

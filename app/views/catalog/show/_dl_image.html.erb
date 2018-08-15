@@ -1,0 +1,73 @@
+<%# app/views/catalog/show/_dl_image.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  css_class ||= 'item-content document'
+  dev_note  ||= __FILE__
+
+  # === Item title/author
+  title_opts = { dev_note: dev_note }
+
+  # === Item metadata
+  id ||= doc.doc_id
+  collection = facet_search_links(:digital_collection_facet, doc, title: nil)
+  resource_ids = doc.values_for(:media_resource_id_display)
+
+  # If the description comes from parsing the XML in :desc_meta_file_display
+  # the "description" will hold <dt>/<dd> pairs.  In this case, the
+  # "Description" line on the show page would be blank; by making it a symbol,
+  # display of the label is turned off.
+  description = doc.get_description
+  desc_label  = 'Description'
+  desc_label  = desc_label.to_sym if has_embedded_html?(description.first)
+
+  fields ||= UVA::View::FieldSet.new(
+    'Format'          => doc.export_format,
+    'Alternate Title' => :alternate_title_display,
+    'Creator'         => doc.get_authors,
+    'Date Created'    => doc.get_pub_date,
+    'Series'          => doc.get_series,
+    'Composition Era' => :composition_era_facet,
+    'Subject / Genre' => doc.export_work_type,
+    desc_label        => description,
+    'Retrieval ID'    => doc.get_media_retrieval_id,
+    'Collection'      => collection,
+    copyright_field   => copyright_and_permissions(doc),
+    'Date Indexed'    => show_date_indexed(doc),
+  )
+  fields_opts = { document: doc, fields: fields }
+
+  template_opts = title_opts.merge(fields_opts)
+
+  view_debug(__FILE__)
+-%>
+
+<%= template_comment(doc, dev_note) %>
+<div class="<%= css_class -%>" id="doc-<%= id -%>">
+
+  <%# === Item title/author === -%>
+  <%= render 'catalog/show/shared/title', title_opts %>
+
+  <%# === Item metadata === -%>
+  <%= render 'catalog/show/shared/fields', fields_opts %>
+
+  <%# === Item access === -%>
+  <div class="preview-thumbnail image-collection-list">
+    <%- resource_ids.each_with_index do |resource_id, index| -%>
+      <%- first = nil -%>
+      <%- first = ' first' if (index % 4).zero? -%>
+      <div class="image-collection preview-thumbnail<%= first -%>">
+        <%- thumbnail = doc.dl_image_preview_src(resource_id) -%>
+        <%- alt_text  = "Preview image for #{id}" -%>
+        <%- label     = image_tag(thumbnail, class: :photo, alt: alt_text) -%>
+        <%- url       = doc.dl_image_full_src(resource_id) -%>
+        <%- tooltip   = get_image_title(doc, index) -%>
+        <%= link_to(label, url, title: tooltip, :'data-group' => id) %>
+      </div>
+    <%- end -%>
+  </div>
+
+</div>
+
+<%= render 'catalog/show/shared/sidebar', template_opts %>

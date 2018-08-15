@@ -1,0 +1,46 @@
+<%# app/views/catalog/availability.json.erb -%>
+<%-
+  doc = document ||= @document
+  availability   ||= doc && doc.availability
+
+  if special_collections_lens?
+    holdings    = availability && availability.special_collections_holdings
+    unique_site = false
+  else
+    holdings    = availability && availability.holdings
+    unique_site = unique_site_type(doc) # :kluge, et. al.
+  end
+  holdings ||= []
+
+  item_copies =
+    holdings.flat_map { |holding|
+      library = holding.library
+      lib = library && library.name
+      holding.copies.map { |copy|
+        stacks_map = copy.stacks_map(holding)
+        {
+          library:      lib,
+          location:     location_text(holding, copy),
+          call_number:  holding.call_number,
+          availability: availability_label(holding, copy),
+          circulates:   copy.circulates?,
+          map:          (stacks_map && stacks_map.url),
+        }
+      }
+    }
+
+  # Special entry for items at unique sites like Kluge-Ruhe.
+  if item_copies.blank? && unique_site
+    item_copies << {
+      library:      doc.values_for(:library_facet).join(LIST_SEPARATOR),
+      location:     doc.values_for(:location_facet).join(LIST_SEPARATOR),
+      call_number:  doc.call_numbers.first,
+      availability: 'On-site Only',
+      circulates:   false,
+      map:          nil,
+    }
+  end
+
+  view_debug(__FILE__)
+-%>
+[<%= item_copies.to_json[1..-2] -%>]

@@ -1,0 +1,36 @@
+<%# app/views/catalog/show/shared/_related_names.html.erb -%>
+<%-
+  doc = document ||= @document
+  related_names ||= doc && doc.get_related_names
+  return if related_names.blank?
+
+  heading ||= 'Related Name'
+  heading = heading.pluralize unless related_names.size == 1
+
+  # NOTE: Peer-reviewed limiter by default for article search.
+  link_opts = params.except(:action, :id, :index, :q).rdup
+  adjust_tlevel!(link_opts) if articles_lens?
+
+  view_debug(__FILE__)
+-%>
+
+<div class="box related-names">
+  <h2><%= heading %></h2>
+  <ul>
+    <%- related_names.each do |name| -%>
+      <%- link_label = h(name) -%>
+      <%- if articles_lens? -%>
+        <%- name = name.gsub(/\s*,\s*(Author)$/i, '') -%>
+        <%- opts = link_opts.merge(author: name) -%>
+      <%- else -%>
+        <%- url_params = { q: name } -%>
+        <%- url_params[:search_field] = 'author' unless name =~ /(advisor)/ -%>
+        <%- opts = link_opts.merge(url_params) -%>
+      <%- end -%>
+      <%- link_path = portal_index_path(opts) -%>
+      <li>
+        <%= link_to(link_label, link_path) %>
+      </li>
+    <%- end -%>
+  </ul>
+</div>

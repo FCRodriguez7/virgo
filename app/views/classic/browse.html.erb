@@ -1,0 +1,36 @@
+<%# app/views/classic/browse.html.erb -%>
+<%-
+  # Modified search results for "browse by".
+
+  set_search_meta_tags
+  set_cache_refresh
+
+  html_head << 'feature/classic.css' if print_view?
+
+  docs        ||= @document_list || []
+  facets      ||= @facet_list    || []
+  response    ||= @response
+  browse_mode ||= params[:browse_mode]
+
+  has_results = hit_count(response, browse_mode).nonzero?
+
+  template_opts = {
+    response:    response,
+    docs:        docs,
+    facets:      facets,
+    browse_mode: browse_mode
+  }
+
+  view_debug(__FILE__)
+-%>
+
+<%- if show_constraints? -%>
+  <%= render 'catalog/constraints',       template_opts %>
+  <%= render 'catalog/sort_and_per_page', template_opts %>
+<%- end -%>
+
+<div class="classic-results browse">
+  <%= render("classic/browse/#{browse_mode}", template_opts) if browse_mode %>
+</div>
+
+<%= pagination_links(response) if has_results %>

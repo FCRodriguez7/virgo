@@ -1,0 +1,75 @@
+<%# app/views/account/index.html.erb -%>
+<%-
+  set_meta_tags(title: 'My Account')
+
+  user     ||= @account
+  title    ||= user && user.title
+  profile  ||= user && user.profile
+
+  user_title = [title, profile].reject(&:blank?).join(' &ndash; ').html_safe
+
+  leo      ||= (URL::LEO               if user && user.can_use_leo?)
+  ill      ||= (URL::ILL_REQUESTS      if user && user.can_use_ill?)
+  reserves ||= (URL::COURSE_RESERVES   if user && user.can_make_reserves?)
+  purchase ||= (URL::PURCHASE_REQUESTS if user && user.can_request_purchase?)
+  scanning ||= (URL::DIGITIZATION      if user && user.can_request_scanning?)
+  barred   ||= user && user.barred?
+
+  out_links = {
+    'Request LEO delivery'                              => leo,
+    'Request interlibrary loan'                         => ill,
+    'Place course reserve request (Print &amp; Collab)' => reserves,
+    'Request a purchase (books, videos, etc.)'          => purchase,
+    'Request scanning of Special Collections materials' => scanning,
+  }
+  out_links.delete_if { |_, v| v.blank? }
+
+  view_debug(__FILE__)
+-%>
+
+<div class="list-heading">
+  <h1 class="heading">My Account</h1>
+  <%= print_view_link unless print_view? %>
+</div>
+
+<div class="account-container">
+
+  <div class="vcard">
+    <%- if user -%>
+      <h2 class="sub-heading">
+        <span class="fn"><%= user.display_name %></span>
+        (<span class="uid"><%= user.computing_id %></span>)
+      </h2>
+      <p class="title"><%= user_title %></p>
+      <p class="org"><%= user.organizational_unit %></p>
+      <p class="adr"><%= user.physical_delivery %></p>
+      <p class="email"><%= user.email %></p>
+      <p class="tel"><%= user.telephone %></p>
+    <%- else -%>
+      <h2 class="sub-heading">Patron information not available</h2>
+    <%- end -%>
+  </div>
+
+  <%- if barred -%>
+    <p class="user-status">
+      <span class="user-status-name">Barred</span>
+      <a href="#" class="whats-this">What's this?</a>
+      <%= ask_a_librarian('Contact the Library') %>
+    </p>
+  <%- end -%>
+
+  <div class="account-tasks">
+    <h2 class="sub-heading">Tasks</h2>
+    <ul>
+      <li><%= link_to 'Renew items', renew_all_path %></li>
+      <%- out_links.each_pair do |label, url| -%>
+        <li><%= external_link(label.html_safe, url) %></li>
+      <%- end -%>
+      <li><%= link_to_illiad_reset %></li>
+    </ul>
+  </div>
+
+</div>
+
+<%= render 'account/sidebar', user: user %>
+<%= render 'account/barred_status' %>

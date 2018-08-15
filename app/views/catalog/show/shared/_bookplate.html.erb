@@ -1,0 +1,15 @@
+<%# app/views/catalog/show/shared/_bookplate.html.erb -%>
+<%-
+  doc = document ||= @document
+  fund_codes = doc && doc.values_for(:fund_code_facet)
+  return unless fund_codes.present?
+
+  view_debug(__FILE__)
+-%>
+<div class="bookplate-section">
+  <%- fund_codes.each do |fund_code| -%>
+    <div class="bookplate">
+      <a href="#" data-fund-id="<%= fund_code -%>" target="_blank"></a>
+    </div>
+  <%- end -%>
+</div>

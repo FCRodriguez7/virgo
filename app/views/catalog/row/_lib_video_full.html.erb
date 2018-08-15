@@ -1,0 +1,13 @@
+<%# app/views/catalog/row/_lib_video_full.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  fields_opts ||= {
+    document: doc,
+    dev_note: __FILE__,
+  }
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/row/template/video', fields_opts %>

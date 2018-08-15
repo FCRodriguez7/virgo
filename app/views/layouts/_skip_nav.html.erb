@@ -1,0 +1,14 @@
+<%# app/views/layouts/_skip_nav.html.erb -%>
+<%-
+  # Hidden main "skip navigation" menu.
+  skip_links = show_skip_nav
+  return unless skip_links.present?
+
+  view_debug(__FILE__)
+-%>
+<nav class="skip-nav main">
+  <h2 class="sub-heading">Skip directly to:</h2>
+  <ul class="skip-nav-links">
+    <%= skip_links %>
+  </ul>
+</nav>

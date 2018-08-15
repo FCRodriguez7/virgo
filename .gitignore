@@ -1,0 +1,148 @@
+# .gitignore
+
+# =============================================================================
+# :section: Project-specific files and directories
+# =============================================================================
+
+# Host-specific files.
+/config/environment.yml
+
+# Documentation can be recreated at will and doesn't need to be stored with the
+# project.
+/doc/
+
+# Assets are completely recreated via `rake assets:precompile`.
+/public/assets/
+/public/dev-assets/
+
+# ignore generated sitemaps
+/public/sitemap*
+/public/Sitemap/*
+
+# Ignore everything in the cover image harvest directory.
+/app/assets/images/bookcovers/
+
+# RubyMine inserts this on the fly when debugging with Passenger selected as
+# the web server.  It's harmless but probably wouldn't be useful in a deployed
+# setting without some additional effort.
+/config/initializers/rubymine_passenger_debug.rb
+
+# =============================================================================
+# :section: Generic system files
+# =============================================================================
+
+# === Linux / Unix
+nohup.out
+
+# === Mac OS / OS X
+._*
+.AppleDouble
+.DS_Store
+.DS_Store?
+.LSOverride
+.Spotlight-V100
+.Trashes
+Icon
+Icon?
+
+# === Windows
+desktop.ini
+Thumbs.db
+
+# =============================================================================
+# :section: Editor files
+# =============================================================================
+
+# === Emacs
+.emacs.*
+.elc
+auto-save-list
+tramp
+*~
+\#*
+
+# === Textmate
+*.tmproj
+tmtags
+
+# === Vim
+*.sw?
+
+# =============================================================================
+# :section: Development files
+# =============================================================================
+
+# === Ruby / Rails
+pkg
+# Gemfile.lock
+
+# === RubyMine
+/.idea/
+
+# === RVM / rbenv
+.rbenv-version
+# .ruby-version
+# .ruby-gemset
+.rvmrc
+.versions.conf
+
+# === Cucumber
+rerun.txt
+
+# === Bundler
+.bundle
+
+# === Railroad
+# Output files at project root.
+/*.dot
+/*.svg
+
+# === Rcov
+coverage/
+coverage.data
+
+# === YARD
+/.yardoc/
+
+# === SQLite
+*.sqlite
+*.sqlite3
+
+# === SASS
+/.sass-cache/
+
+# === Ctags
+tags
+
+# === Eclipse
+.buildpath
+.classpath
+.loadpath
+.metadata/
+.project
+.settings/
+*.launch
+*.pydevproject
+local.properties
+
+# =============================================================================
+# :section: Other applications
+# =============================================================================
+
+# === Picasa
+.picasa.ini
+
+# =============================================================================
+# :section: Generic files
+# =============================================================================
+
+# === Backup files
+*.bak
+
+# === Log files
+*.log
+/log/
+
+# === Temporary files
+*.tmp
+/tmp/

@@ -1,0 +1,15 @@
+<%# app/views/reserves/course.html.erb -%>
+<%-
+  set_meta_tags(title: 'Course Reserves')
+
+  view_debug(__FILE__)
+-%>
+
+<h2>Reserves</h2>
+
+<%- @reserves.courses.each do |course| -%>
+  <h3><%= course.code %> : <%= course.name %></h3>
+<%- end -%>
+<h3><%= @reserves.display_name %></h3>
+
+<%= render 'catalog/document_list' %>

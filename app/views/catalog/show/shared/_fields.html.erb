@@ -1,0 +1,24 @@
+<%# app/views/catalog/show/shared/_fields.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc
+
+  fields       ||= nil
+  tech_details ||= :false
+  tech_details = true_value?(tech_details)
+
+  opt = { document: doc }
+
+  # Validate usage of this template.
+  raise('Caller must supply fields') unless fields
+
+  view_debug(__FILE__)
+-%>
+
+<div class="item-fields">
+  <dl>
+    <%= fields.render(:show, doc) %>
+    <%= render('catalog/show/shared/tech_details', opt) if tech_details %>
+    <%= render('catalog/show/shared/see_more', opt)     if fields.size > 3 %>
+  </dl>
+</div>

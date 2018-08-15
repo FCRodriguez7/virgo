@@ -1,0 +1,25 @@
+<%# app/views/shelf_browse/help/_discussion.html.erb -%>
+<%-
+  # Locals are defined in shelf_browse/shared/_help_content.html.erb where this
+  # file is included.
+
+  view_debug(__FILE__)
+-%>
+
+<div class="<%= help_topic_css(:help_discussion) -%>">
+  <h2>Virtual Shelf</h2>
+  <p>
+    If you imagine each of the shelves from every UVA library combined into
+    shelves that contain neighboring call numbers, then take each of these new
+    shelves and place them end-to-end, that's the effect of the virtual shelf
+    -- a continuous row of titles about 5 million items long.
+  </p>
+  <p>
+    When you click on the virtual bookshelf icon, you enter that single unified
+    "shelf" at a particular point based on the call number of the item.
+    That item is placed in the center of your view (surrounded by a double
+    border to indicate it is the focus item).
+    To the right of it are items with higher call numbers.
+    To the left of it are items with lower call numbers.
+  </p>
+</div>

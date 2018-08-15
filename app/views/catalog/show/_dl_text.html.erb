@@ -1,0 +1,35 @@
+<%# app/views/catalog/show/_dl_text.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  fields_only ||= false
+
+  # === Item title/author
+  title_opts = { dev_note: __FILE__ }
+
+  # === Item metadata
+  collection = facet_search_links(:digital_collection_facet, doc, title: nil)
+
+  fields ||= UVA::View::FieldSet.new(
+    'Format'          => doc.export_format,
+    'Creator'         => doc.get_authors,
+    'Date'            => doc.get_pub_date,
+    'Composition Era' => :composition_era_facet,
+    'Collection'      => collection,
+    'Notes'           => :note_display,
+    copyright_field   => copyright_and_permissions(doc),
+    'Date Indexed'    => show_date_indexed(doc),
+  )
+
+  fields_opts = { document: doc, fields: fields }
+
+  template_opts = title_opts.merge(fields_opts)
+
+  view_debug(__FILE__)
+-%>
+<%- if fields_only -%>
+  <%= render 'catalog/show/shared/fields', fields_opts %>
+<%- else -%>
+  <%= render 'catalog/show/template/basic', template_opts %>
+<%- end -%>

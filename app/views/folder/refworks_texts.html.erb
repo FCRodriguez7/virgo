@@ -1,0 +1,41 @@
+<%# app/views/folder/refworks_texts.html.erb -%>
+<%-
+  # Hints for RubyMine (skipped during execution).
+  include UVA::Helper::Export unless ONLY_FOR_DOCUMENTATION
+
+  documents ||= @documents || []
+  articles  ||= @articles  || []
+  documents += articles
+
+  post_url      ||= refworks_catalog_export_url
+  data          ||= render_refworks_texts(documents)
+  page_title    ||= 'Export to RefWorks'
+  page_subtitle ||= %q(
+    Now exporting to RefWorks.
+    If you are not redirected to RefWorks, please click the button below to
+    export again.
+  ).squish
+
+  page_title += " (#{documents.size} items)" if documents.present?
+
+  set_meta_tags(title: page_title)
+
+  view_debug(__FILE__)
+-%>
+
+<div class="list-heading">
+  <h1 class="heading"><%= page_title -%></h1>
+</div>
+
+<%= render 'catalog/sidebar_close' %>
+
+<div class="refworks-export">
+  <h2><%= page_subtitle -%></h2>
+  <%= form_tag(post_url, name: 'refworks') do %>
+    <%= hidden_field_tag('ImportData', data) if data %>
+    <%= submit_tag('Export to RefWorks') %>
+  <%- end -%>
+  <script type="text/javascript">
+    window.onload = document.refworks.submit();
+  </script>
+</div>

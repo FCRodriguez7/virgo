@@ -1,0 +1,42 @@
+<%# app/views/catalog/_document_actions.html.erb -%>
+<%-
+  # The visibility and :target attribute for some of these items are controlled
+  # by processStarCount() in app/assets/javascripts/feature/starred-items
+
+  folder_controls = {
+    view:           ['View Starred Items',                    folders_path,                 :aside],
+    clear:          ['Clear Starred Items',                   clear_folders_path]
+  }
+
+  action_list = {
+    cite:           ['Cite',                                  citation_folders_path,        :aside],
+    email:          ['Email',                                 email_folders_path,           :aside],
+    print:          ['Print',                                 print_folders_path,           true],
+    refworks:       ['Export to RefWorks',                    refworks_texts_folders_path,  true],
+    endnote:        ['Export to EndNote',                     endnote_folders_path],
+    zotero:         ['Export to Zotero',                      ris_folders_path],
+    course_reserve: ['Place Starred Items on Course Reserve', reserves_email_path,          :aside],
+  }
+
+  view_debug(__FILE__)
+-%>
+
+<div class="action-list-container">
+  <div class="action-list" tabindex="0" role="menu"
+       aria-haspopup="true"
+       aria-expanded="false"
+       aria-labelledby="action-list-title">
+    <div class="list-title" id="action-list-title">
+      Starred Items
+      <%= star_counter %>
+    </div>
+    <div class="list-body hidden">
+      <ul class="action-list-menu folder-controls">
+        <%= menu_items(folder_controls) %>
+      </ul>
+      <ul class="action-list-menu">
+        <%= menu_items(action_list) %>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+// app/assets/stylesheets/page_turner.css.scss
+//
+// Styles for the page turner layout.
+
+@import "shared/layout_initial";
+@import "shared/no_print_view";
+@import "feature/page-turner";
+
+// ============================================================================
+// Definitions that must come last.
+// ============================================================================
+
+@import "shared/layout_final";

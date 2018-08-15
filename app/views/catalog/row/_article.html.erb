@@ -1,0 +1,20 @@
+<%# app/views/catalog/row/_article.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  portal       ||= :articles
+  resource_url ||= doc.get_url.first
+  resource_url &&= external_link(online_access_label(doc), resource_url)
+
+  fields_opts ||= {
+    document:    doc,
+    type:        'Article',
+    access_link: resource_url,
+    portal:      portal,
+    dev_note:    __FILE__,
+  }
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/row/shared/fields', fields_opts -%>

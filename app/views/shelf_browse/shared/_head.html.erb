@@ -1,0 +1,12 @@
+<%# app/views/shelf_browse/shared/_head.html.erb -%>
+<%-
+  # Common setup for virtual shelf browse pages.
+
+  unless popup
+    title ||= UVA::ShelfBrowse.default_title
+    set_meta_tags(title: h(title))
+    sidebar_items << :no_sidebar # Maximize available display width
+  end
+
+  view_debug(__FILE__)
+-%>

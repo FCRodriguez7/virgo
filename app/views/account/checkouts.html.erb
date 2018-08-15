@@ -1,0 +1,108 @@
+<%# app/views/account/checkouts.html.erb -%>
+<%-
+  set_meta_tags(title: 'My Account - Checkouts')
+
+  user            ||= @user_checkouts
+  checkouts       ||= user && user.sorted_checkouts
+  item_count      ||= user && user.checkout_count
+  renew_all_label ||= 'Renew All Items'
+
+  no_items = checkouts.blank?
+
+  num  = sr_only('Number')
+  stat = sr_only('Item Status')
+  renu = sr_only('Renew Item')
+
+  view_debug(__FILE__)
+-%>
+
+<div class="list-heading">
+  <h1 class="heading">My Account</h1>
+  <%= print_view_link unless print_view? || no_items %>
+</div>
+
+<div class="account-container">
+
+  <%- if no_items -%>
+
+    <h2 class="sub-heading no-items">No Checked-out Items</h2>
+
+  <%- else -%>
+
+    <h2 class="sub-heading">
+      Checked-out Items: <span class="account-total"><%= item_count %></span>
+      <%- unless item_count.zero? -%>
+        <%= link_spacer %>
+        <%= link_to renew_all_label, renew_all_path, class: 'renew-all-link' %>
+      <%- end -%>
+    </h2>
+
+    <table class="item-list checkouts">
+      <thead>
+        <tr>
+          <th class="account-number-heading hidden-heading"><%= num %></th>
+          <th class="account-title-heading">Title</th>
+          <th class="account-author-heading">Creator</th>
+          <th class="account-item-status-heading hidden-heading"><%=stat%></th>
+          <th class="account-due-heading">Due Date</th>
+          <th class="account-library-heading">Library</th>
+          <th class="account-call-heading">Call #</th>
+          <th class="account-renew-heading hidden-heading"><%= renu %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%- number = 1 -%>
+        <%- checkouts.each do |checkout| -%>
+          <%-
+            due_date  = checkout.date_due_f
+            item      = checkout.catalog_item
+            title     = item.title
+            author    = item.authors
+            overdue   = ('overdue'  if checkout.overdue?)
+            recalled  = ('recalled' if checkout.recalled?)
+            alerts    = [overdue, recalled].compact
+            alert_css = ('account-notice-container' if alerts.present?)
+            url       = item.document && catalog_path(item.document.doc_id)
+            renew_link =
+              if checkout.renewable?
+                link_to('Renew', renew_path(item.key, checkout.key))
+              end
+          -%>
+          <%- item.holdings.each do |holding| -%>
+            <%- library     = holding.library.name -%>
+            <%- call_number = holding.call_number -%>
+            <%- holding.copies.each do |copy| -%>
+              <%- title = link_to(title, url) if url && !copy.shadowed? -%>
+              <tr class="item <%= cycle('even', 'odd') -%>">
+                <td class="item-number"><%= number -%>.</td>
+                <td class="title"><%= title %></td>
+                <td class="author"><%= author %></td>
+                <td class="item-status">
+                  <%- alerts.each do |alert| -%>
+                    <%= alert %>
+                  <%- end -%>
+                </td>
+                <td class="date <%= alert_css -%>">
+                  <%= due_date %>
+                  <%- alerts.each do |alert| -%>
+                    <span class="account-notice <%= alert -%>">
+                      <%= alert %>
+                    </span>
+                  <%- end -%>
+                </td>
+                <td class="location"><%= library %></td>
+                <td class="call-number"><%= call_number %></td>
+                <td><%= renew_link %></td>
+              </tr>
+              <%- number += 1 -%>
+            <%- end -%>
+          <%- end -%>
+        <%- end -%>
+      </tbody>
+    </table>
+
+  <%- end -%>
+
+</div>
+
+<%= render 'account/sidebar', user: user %>

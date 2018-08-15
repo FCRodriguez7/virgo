@@ -1,0 +1,39 @@
+<%# app/views/layouts/popup.html.erb -%>
+<%-
+  # Initial stylesheets and scripts for all routes using this layout.
+  javascripts = %w(popup.js)
+  stylesheets = %w(popup.css)
+
+  view_debug(__FILE__)
+-%>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+
+  <%# === Meta tags === -%>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <%= show_meta_tags %>
+  <%= csrf_meta_tags %>
+
+  <%# === Include CSS, JavaScript and items added by the action page === -%>
+  <%= show_html_head(stylesheets, javascripts) -%>
+
+</head>
+
+<body>
+
+  <div class="popup-content">
+
+    <%# === Flash messages (if any are active) === -%>
+    <%= render '/flash_msg' %>
+
+    <%# === NOTE: rendering of action page inserted here === -%>
+    <%= yield %>
+
+  </div>
+
+  <%= render 'layouts/copyright' %>
+
+</body>
+</html>

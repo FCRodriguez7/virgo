@@ -1,0 +1,70 @@
+<%# app/views/catalog/show/template/_basic.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc
+
+  css_class    ||= 'item-content document'
+  title        ||= nil
+  linked_title ||= nil
+  author       ||= nil
+  linked_resp  ||= nil
+  fields       ||= nil
+  inset_view   ||= classic_lens? && inset_view?
+  marc         ||= doc.has_marc?
+  tech_details ||= inset_view ? :false : marc
+  portal       ||= nil
+  dev_note     ||= nil
+
+  # === Item title/author
+  title_opts = {
+    linked_title: linked_title,
+    title:        title,
+    linked_resp:  linked_resp,
+    author:       author,
+    portal:       portal,
+    dev_note:     dev_note
+  }
+
+  # === Item metadata
+  fields_opts = {
+    document:     doc,
+    fields:       fields,
+    tech_details: tech_details
+  }
+
+  template_opts = title_opts.merge(fields_opts)
+
+  view_debug(__FILE__)
+-%>
+
+<%= template_comment(doc, dev_note) %>
+<div class="<%= css_class -%>" id="doc-<%= doc.doc_id -%>">
+
+  <%# === Print view control to close "Virgo Classic" item details === -%>
+  <%= classic_details_close_button('top') if inset_view && print_view? %>
+
+  <%# === Item title/author === -%>
+  <%= render 'catalog/show/shared/title', title_opts %>
+
+  <%# === Item metadata === -%>
+  <%- if fields.present? -%>
+    <%= render 'catalog/show/shared/fields', fields_opts %>
+  <%- elsif marc.present? -%>
+    <%= render 'catalog/show/shared/marc_details', template_opts %>
+  <%- end -%>
+
+  <%# === Item access === -%>
+  <%= render 'catalog/show/shared/availability_box',      template_opts %>
+  <%= render 'catalog/show/shared/bookplate',             template_opts %>
+  <%= render 'catalog/show/shared/full_text_viewer',      template_opts %>
+  <%= render 'catalog/show/shared/streaming_player',      template_opts %>
+  <%= render 'catalog/show/shared/iiif_viewer',           template_opts %>
+  <%= render 'catalog/show/shared/hierarchy_descendants', template_opts %>
+  <%= render 'catalog/show/shared/view_online',           template_opts %>
+
+  <%# === Control to close item details in the "Virgo Classic" lens === -%>
+  <%= classic_details_close_button('bottom') if inset_view %>
+
+</div>
+
+<%= render 'catalog/show/shared/sidebar', template_opts %>

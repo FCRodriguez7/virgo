@@ -1,0 +1,135 @@
+<%# app/views/catalog/show/_dl_wsls_video.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+  return unless (pbcore = doc.pbcore)
+
+  css_class ||= 'item-content document'
+  dev_note  ||= __FILE__
+
+  # Add to hidden "skip navigation" menu.
+  view_id = u("view-#{doc.id}")
+  skip_nav << link_to('Content Viewer', ('#'+ view_id))
+
+  # The tree control in the sidebar should always be visible.
+  sidebar_items << :sticky_sidebar
+
+  # === Item title/author
+  title_opts = { title: doc.basic_title, dev_note: dev_note }
+
+  # === Item metadata
+  abstract = pbcore.abstract
+
+  collection_description = %q(
+    The WSLS-TV News Film Collection, 1951-1971, comprises anchor scripts and
+    16mm news film created by Roanoke, Va., television station WSLS.
+    A grant from the National Endowment for the Humanities funded the
+    preservation and digitization of this collection.
+  ).squish.html_safe
+  collection_text = content_tag(:p, collection_description)
+
+  collection = doc.export_collection
+  if collection.present?
+    link_label = "View all items from #{collection}"
+    link_path =
+      catalog_index_path(:'f[digital_collection_facet][]' => collection)
+    collection_link = link_to(link_label, link_path)
+    collection_text << content_tag(:p, collection_link)
+  end
+
+  blocked, access_label, access_description = access_restricted(doc)
+  excerpt =
+    if !abstract && !blocked && (summary = anchor_script_summary(doc))
+      out_link(summary, anchor_script_text_url(doc))
+    end
+
+  fields ||= UVA::View::FieldSet.new(
+    'Digital Collection' => collection_text,
+    'Format'             => doc.export_format,
+    'Release Date'       => doc.get_pub_date,
+    'Run Time'           => pbcore.instantiation.pretty_print_duration,
+    'Sound'              => pbcore.instantiation.annotation,
+    'Color'              => pbcore.instantiation.color,
+    'Abstract'           => abstract,
+    'Script Excerpt'     => excerpt,
+    'Copyright Notice'   => copyright_notice_html(doc),
+    copyright_field      => copyright_and_permissions(doc),
+    'Related Resources' => link_to_related_resources(doc),
+    'Date Indexed'       => show_date_indexed(doc)
+  )
+
+  fields_opts = { document: doc, fields: fields }
+
+  width, height, video_opts, http_opts, webm_opts = nil
+  embed_player = !blocked && doc.get_url.present? && !print_view?
+  if embed_player
+    pbcore_id    ||= pbcore.identifier
+    webm_service ||= 'http://xxx.virginia.edu'
+    http_service ||= 'http://xxx.virginia.edu:1935'
+    width        ||= 640
+    height       ||= 480
+    video_opts = {
+      controls: true,
+      width:    width,
+      height:   height,
+      id:       'video-tag',
+      class:    'mejs-avalon',
+      preload:  'auto',
+      poster:   fedora_proxy_datastream(doc, 'poster/content')
+    }
+    webm_opts = {
+      :'data-plugin-type' => 'native',
+      type: 'video/webm',
+      src:  "#{webm_service}/wsls/#{pbcore_id}.webm"
+    }
+    http_opts = {
+      :'data-plugin-type' => 'native',
+      type: 'application/vnd.apple.mpegURL',
+      src:  "#{http_service}/WSLS/_definst_/mp4:#{pbcore_id}.mp4/playlist.m3u8"
+    }
+  end
+
+  template_opts = title_opts.merge(fields_opts)
+
+  view_debug(__FILE__)
+-%>
+
+<%= template_comment(doc, dev_note) %>
+<div class="<%= css_class -%>" id="doc-<%= doc.doc_id -%>">
+
+  <%# === Item title / Breadcrumbs === -%>
+  <%= render 'catalog/show/shared/title', title_opts %>
+
+  <%# === Item metadata === -%>
+  <%= render 'catalog/show/shared/fields', fields_opts %>
+
+  <%# === Item access === -%>
+  <h2 class="streaming-gallery-heading" id="<%= view_id -%>">View Online</h2>
+  <%- if blocked -%>
+
+    <%- unless access_label.blank? || access_description.blank? -%>
+      <div class="policy-explanation">
+        <h4><%= "#{access_label}:" unless access_label.blank? %></h4>
+        <%= access_description %>
+      </div>
+    <%- end -%>
+
+  <%- elsif embed_player -%>
+
+    <div class="player-gallery">
+        <%= content_tag(:video, video_opts) do %>
+          <%= tag(:source, webm_opts) %>
+          <%= tag(:source, http_opts) %>
+        <%- end -%>
+    </div>
+
+  <%- end -%>
+
+  <%# === Item thumbnails === -%>
+  <div class="anchor-frame">
+    <%= show_anchor_script_thumbnails(doc) %>
+  </div>
+
+</div>
+
+<%= render 'catalog/show/shared/sidebar', template_opts %>

@@ -1,0 +1,56 @@
+<%# app/views/catalog/show/_article.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  fields_only ||= false
+  portal      ||= :articles
+
+  # === Item title/author
+  title_opts = { portal: portal, dev_note: __FILE__ }
+
+  # === Item metadata
+  identifier = doc.identifiers.presence
+  identifier &&=
+    identifier.split(ITEM_SEPARATOR).map { |id_term|
+      if (issn = id_term.sub(/^(ISSN)(\s+)/i, '')) && (lm = $LAST_MATCH_INFO)
+        id_term = vocabulary_term(lm[1]) + lm[2] + issn
+      elsif (doi = id_term.sub(/^(DOI)(\s+)/i, '')) && (lm = $LAST_MATCH_INFO)
+        id_term = vocabulary_term(lm[1]) + lm[2] + doi_link(doi)
+      end
+      id_term.html_safe
+    }
+
+  abstract = doc.get_abstract.presence || 'Not provided'
+
+  cn_link_opts ||= { dev_note: [__FILE__] }
+  call_numbers =
+    doc.call_numbers.map { |number|
+      single_call_number_display(doc, number, cn_link_opts)
+    }
+
+  fields ||= UVA::View::FieldSet.new(
+    'Type'          => doc.get_type,
+    'Published in'  => doc.get_is_part_of,
+    'Language'      => doc.get_language,
+    'Abstract'      => abstract,
+    'Identifier'    => identifier,
+    'Creation Date' => doc.get_pub_date,
+    'Journal'       => doc.get_journal,
+    'Volume'        => doc.get_volume,
+    'Issue'         => doc.get_issue,
+    'Pages'         => doc.get_pages,
+    'ID'            => doc.search.id,
+    'Call Number'   => [call_numbers, CALL_NUMBER_OPT.merge(DEBUG_OPT)],
+  )
+  fields_opts = { document: doc, fields: fields }
+
+  template_opts = title_opts.merge(fields_opts)
+
+  view_debug(__FILE__)
+-%>
+<%- if fields_only -%>
+  <%= render 'catalog/show/shared/fields', fields_opts %>
+<%- else -%>
+  <%= render 'catalog/show/template/basic', template_opts %>
+<%- end -%>

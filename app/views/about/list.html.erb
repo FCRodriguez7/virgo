@@ -1,0 +1,48 @@
+<%# app/views/about/list.html.erb -%>
+<%-
+
+  topic      ||= @topic
+  topic_list ||= @topic_list
+
+  case topic
+    when :library
+      description       = library_description
+      topic_heading_row = library_heading_row
+      topic_rows        = library_rows(topic_list)
+    when :location
+      description       = location_description
+      topic_heading_row = location_heading_row
+      topic_rows        = location_rows(topic_list)
+    else
+      description       = nil
+      topic_heading_row = nil
+      topic_rows        = []
+  end
+
+  title =
+    if topic_heading_row
+      "#{topic.to_s.capitalize} Codes"
+    else
+      %Q(No information on "#{topic}")
+    end
+
+  set_meta_tags(title: title, robots: false)
+
+  view_debug(__FILE__)
+-%>
+
+<%= render 'about/sidebar' %>
+
+<h1 class="about-topic-title"><%= title %></h1>
+<div class="about-topic-description"><%= description %></div>
+
+<table class="about-topic-table">
+  <thead>
+    <%= topic_heading_row %>
+  </thead>
+  <tbody>
+    <%- topic_rows.each do |topic_row| -%>
+      <%= topic_row %>
+    <%- end -%>
+  </tbody>
+</table>

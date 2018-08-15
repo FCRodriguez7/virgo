@@ -1,0 +1,122 @@
+<%# app/views/catalog/_facets.html.erb -%>
+<%-
+  # Overrides Blacklight app/views/catalog/_facets.html.erb
+
+  # Hints for RubyMine (skipped during execution).
+  include UVA::Helper::Facets unless ONLY_FOR_DOCUMENTATION
+
+  # Add to hidden "skip navigation" menu.
+  skip_nav << link_to('Search Filters', '#filters-tools')
+
+  entries_per_facet ||= 3
+  link_css          ||= 'facet-list-link'
+  see_more_title    ||= 'See all %s selections for the current search.'
+  no_more_title     ||= 'No other %s for the current search.'
+  response          ||= @response
+  response_facets   ||= (response && response.facets) || []
+
+  has_opt_facet = response_facets.find { |f| f.name == 'has_optional_facet'}
+  has_opt_facet &&= has_opt_facet.items
+  has_opt_facet ||= []
+  optional_facets =
+    has_opt_facet.map { |f|
+      next unless f
+      logger.debug { "#{f.value} has #{f.hits} out of #{response.total}" }
+      f.value unless f.hits < response.total
+    }.compact
+
+  url_params = facet_link_params
+
+  html_opt = dialog_button_opts(class: link_css, ARIA_HASPOPUP => 'listbox')
+
+  view_debug(__FILE__)
+-%>
+
+<div class="facet-selections" id="filters-tools">
+
+  <h2 class="facet-selections-header">
+    <span class="ribbon-corner"><!-- ribbon corner triangle --></span>
+    Limit results by:
+  </h2>
+
+  <%- facet_field_names.each do |facet_name| -%>
+    <%- resp_facet = response_facets.find { |f| facet_name == f.name } -%>
+    <%- items = resp_facet && resp_facet.items -%>
+    <%- next if items.blank? -%>
+    <%- hits = 0 -%>
+    <%- items.each { |item| hits += item.hits } -%>
+    <%- next if hits.zero? -%>
+    <%- name = resp_facet.name -%>
+    <%- facet_config = facet_configuration_for_field(name) -%>
+    <%- next if facet_config.optional && !optional_facets.include?(name) -%>
+    <%- peer_review_limiter = (facet_name.to_s == 'tlevel') -%>
+    <%- link_opt  = url_params.merge(id: name) -%>
+    <%- link_path = portal_facet_path(link_opt) -%>
+
+    <div class="facet-menu">
+
+      <%# The facet name as a heading.
+        #
+        # With the exception of the article search "peer reviewed" limiter,
+        # the name is also a link to "See All", which opens a listing of all
+        # facet values and the number of hits associated with them.
+      -%>
+      <%- facet_label = h(facet_config.label) << sr_only(': ') -%>
+      <%- if peer_review_limiter -%>
+        <div class="facet-menu-heading">
+          <span><%= facet_label %></span>
+        </div>
+      <%- else -%>
+        <div class="facet-menu-heading active">
+          <%= link_to(facet_label, link_path, html_opt) %>
+        </div>
+      <%- end -%>
+
+      <div class="facet-menu-list">
+
+        <%# The facet values under the above heading name.
+          #
+          # Turn each facet value into a link which modifies the current search
+          # to include that facet as a search criterion, except for the facet
+          # value(s) which are already in the current search.
+        -%>
+        <%- count = 0 -%>
+        <%- facet_sort(items).each do |item| -%>
+          <%- break if count >= entries_per_facet -%>
+          <%- count += 1 -%>
+          <span class="facet-value">
+            <%= add_facet_link(facet_name, item) %>
+          </span>
+        <%- end -%>
+
+        <%# The 'See All facet values' link.
+          #
+          # With the exception of the article search "peer reviewed" limiter,
+          # include a "See All" link which opens a listing of all facet values
+          # and the number of hits associated with them.
+        -%>
+        <div class="facet-menu-see-all">
+          <%- unless peer_review_limiter -%>
+            <%- link_label = 'See All →' -%>
+            <%- if count < items.size -%>
+              <%- tip = see_more_title % facet_label -%>
+              <%- opt = html_opt -%>
+            <%- else -%>
+              <%- tip = no_more_title % facet_label.pluralize -%>
+              <%- opt = html_opt.except(ARIA_HASPOPUP) -%>
+              <%- opt[:tabindex] = -1 -%>
+              <%- opt[:class] += ' link-disabled' -%>
+            <%- end -%>
+            <span title="<%= tip -%>">
+              <%= link_to(link_label, link_path, opt) %>
+            </span>
+          <%- end -%>
+        </div>
+
+      </div>
+
+    </div>
+
+  <%- end -%>
+
+</div>

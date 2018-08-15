@@ -1,0 +1,9 @@
+<%# app/views/catalog/_access_denied.html.erb -%>
+<%-
+  view_debug(__FILE__)
+-%>
+
+<div class="ui-state-highlight ui-corner-all error" role="alert">
+  <h3>Access Denied: <%= @access_label %></h3>
+  <%= @access_description %>
+</div>

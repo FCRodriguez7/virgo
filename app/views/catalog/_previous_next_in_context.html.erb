@@ -1,0 +1,28 @@
+<%# app/views/catalog/_previous_next_in_context.html.erb -%>
+<%-
+  prev_item  ||= @prev_component
+  next_item  ||= @next_component
+
+  return unless prev_item || next_item
+
+  prev_label ||= '&laquo; Previous'.html_safe
+  next_label ||= 'Next &raquo;'.html_safe
+  leader     ||= nil
+  separator  ||= '|'
+
+  prev_item &&= link_to(prev_label, catalog_path(prev_item))
+  next_item &&= link_to(next_label, catalog_path(next_item))
+
+  leader    &&= content_tag(:span, leader, class: 'leader')
+  separator &&=
+    if prev_item && next_item
+      content_tag(:span, separator, class: 'separator', ARIA_HIDDEN => true)
+    end
+
+  view_debug(__FILE__)
+-%>
+
+<%= leader %>
+<%= prev_item %>
+<%= separator %>
+<%= next_item %>

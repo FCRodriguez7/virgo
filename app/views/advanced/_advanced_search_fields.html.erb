@@ -1,0 +1,36 @@
+<%# app/views/advanced/_advanced_search_fields.html.erb -%>
+<%-
+  fields ||= self.advanced_search_fields
+
+  view_debug(__FILE__)
+-%>
+
+<%- fields.each do |key, field_def| -%>
+  <%- next if false_value?(field_def.include_in_advanced_search) -%>
+  <%- label = vocabulary_term(field_def.label) -%>
+  <%- if true_value?(field_def.range) -%>
+
+    <fieldset class="adv-search-field range" id="<%= sanitize_to_id(key) -%>">
+      <legend><%= label %></legend>
+      <div class="start-end">
+        <%= label_tag      "#{key}_start", 'Start' %>
+        <%= text_field_tag "#{key}_start", range_value(key)[:start] %>
+        <div class="gap" aria-hidden="true"></div>
+        <%= label_tag      "#{key}_end",   'End' %>
+        <%= text_field_tag "#{key}_end",   range_value(key)[:end] %>
+      </div>
+    </fieldset>
+
+  <%- else -%>
+
+    <div class="adv-search-field">
+      <%= label_tag(key, label) %>
+      <%= text_field_tag(key, label_tag_default_for(key)) %>
+      <%- unless articles_lens? -%>
+        <%= render 'advanced/nostem_checkbox',   base_field: key %>
+        <%= render 'advanced/fulltext_checkbox', base_field: key %>
+      <%- end -%>
+    </div>
+
+  <%- end -%>
+<%- end -%>

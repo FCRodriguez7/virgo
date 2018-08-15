@@ -1,0 +1,10 @@
+<%# app/views/catalog/ris.erb -%>
+<%-
+  documents ||= @documents || []
+  articles  ||= @articles  || []
+  all_items = documents + articles
+  set_output_filename(all_items, :ris)
+
+  view_debug(__FILE__)
+-%>
+<%= render_ris_texts(all_items).html_safe %>

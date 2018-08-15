@@ -1,0 +1,491 @@
+// app/assets/stylesheets/feature/articles.css.scss
+
+// ============================================================================
+// Article download buttons.
+//
+// To highlight articles that have full-text content and/or PDF download,
+// "buttons" are displayed to the right of the title on the item details show
+// page to make these available without scrolling.
+//
+// If appropriate, a "download-button-panel" is included to the right of the
+// title, containing a "download-button" instance for each full-text and
+// download selection.
+//
+// CLASSES
+// download-button-panel    Container for download buttons on the show page.
+// download-marker          Download button on search result (index) pages.
+// download-button          Download button on item details (show) pages.
+// ============================================================================
+
+// Wrapper for .item-identifier-fields and .download-button-panel.
+.articles-show-page .title-area {
+    @include flex-box(row);
+}
+
+// Explicitly request the full width of the display area so that the download
+// button panel appears flush with the right side of the display area.
+// (Otherwise, the panel will be directly to the right of short titles.)
+.articles-show-page .item-identifier-fields {
+    width: 100%;
+}
+
+// Adjustments for article search result pages.
+.articles-index-page {
+
+    .search-tools {
+
+        // Account for the narrower "Sort by" menu so that the print view and
+        // RSS buttons show up in the same screen location as for catalog
+        // search results pages.
+        .action-list-container {
+            margin-right: 100px;
+        }
+    }
+
+}
+
+// For the full-text page, allow Ctrl-A to select just the full-text contents
+// by ensuring that no other elements on the page will be selected.
+.full_text-page {
+    @include user-select(none);
+}
+
+// Container for download buttons on the item details show page.
+.download-button-panel,
+.full-record-button-panel {
+    float: right;
+    @include flex-box(column, flex-start);
+    margin-top:  1.5em;
+    margin-left: -0.5em;
+}
+
+// Marker on the search results (index) entries to indicate availability of
+// full-text content or PDF download.
+a.download-marker {
+    display:       inline;
+    margin-left:   0.75em;
+    padding:       0.5px 3px 1px;
+    font-weight:   bold;
+    font-variant:  all-small-caps;
+    border-radius: 3px;
+}
+
+// Button on the item details show page to jump to full-text or download a PDF.
+a.download-button,
+a.full-record-button {
+    min-width:     5em;
+    margin:        0.25em;
+    padding:       3px;
+    font-weight:   bold;
+    border-radius: 4px;
+}
+
+// ============================================================================
+// Display of full-text content on the article details show page.
+//
+// Article full-text content from EBSCO includes "XML" elements to express
+// formatting.  Some of these are transformed into standard HTML tags (<sub>,
+// <sup>, etc). Others are kept with the same tag name (the ones that RubyMine
+// will mark in red as errors) so that there is no conflict between styling for
+// the page and styling for the "embedded" full-text.
+//
+// Some full-text articles contain tables, which are wrapped inside a <ephtml>
+// tag.  These tables have escaped HTML tags (e.g. "&lt; td&gt; " instead of
+// "<td>"; after unescaping these, the result seems to be very basic HTML table
+// elements.
+//
+// CLASSES
+// full-text-top        Anchor target for "#full-text" URL fragment.
+// full-text-viewer     Full-text "viewer" area.
+// banner               Initial viewer element.
+// jump-list            Links to jump to other in-page locations.
+// scroller             Scrollable resizeable text display.
+// ============================================================================
+
+// Used with the anchor target prior to the viewer itself.
+.full-text-top {
+    display:        block;
+    height:         0.5em;
+    margin:         2em 0 0;
+    vertical-align: top;
+}
+
+// The full-text "viewer" area is made almost the full height of the browser
+// display area to maximize the amount of displayed text without needing to
+// scroll the browser tab itself.
+.full-text-viewer {
+
+    @include flex-box(column);
+
+    height:     auto;
+    width:      700px; // Same as .item-availability
+    max-height: 97vh;
+    max-width:  98vw;
+    margin:     0 0 2em;
+
+    // Maximize length for full-page view.
+    &.full-page {
+        max-height: initial;
+    }
+
+    // This class is used as a marker for the initial .full-text-viewer
+    // element.
+    .banner {
+
+        h2 {
+            display:     inline-block;
+            font-weight: bold;
+        }
+
+        a:focus { outline: thin dashed black; }
+
+        // A "jump list" of in-page locations on the "Full Text" sub-heading
+        // gives the user some context if they jump straight into the full-text
+        // from the index.
+        .jump-list {
+
+            float:        right;
+            margin-right: 2.25em;
+            font-size:    medium;
+            font-weight:  normal;
+
+            a:focus { outline-offset: 4px; }
+        }
+
+        .print-view-button {
+
+            position: relative;
+            top:      0;
+            right:    -87%;
+
+            &:focus { outline-offset: 2px; }
+        }
+
+        &.full-page .print-view-button {
+            top:   2px;
+            right: -96.5%;
+        }
+    }
+
+    // The scrollable text assumes that it follows a .banner and takes up all
+    // of the remaining viewer area.
+    //
+    // NOTE: Resizing only works as intended in Firefox -- Webkit (Chrome, etc)
+    // doesn't allow you to resize the area smaller; MS Internet Explorer and
+    // Edge don't appear to allow resizing at all.
+    //
+    // Also, IE doesn't handle the height calculations well, so the background
+    // color is set explicitly to ensure that the text is readable when the
+    // "scroller" overlaps the page footer.
+    //
+    .scroller {
+
+        height:     auto;
+        width:      100%;
+        max-width:  96.1%; // Limit to width of .banner minus scrollbar width
+        resize:     both;
+        position:   relative;
+        right:      0; // Align with the right side of .banner
+        padding:    1em;
+        overflow-y: scroll !important;
+        background: white;
+        border-left:   1px solid #ada590;
+        border-right:  1px solid #ada590;
+        border-bottom: 1px solid #ada590;
+
+        &:focus {
+            outline:         2px dotted black;
+            outline-offset: -1px;
+        }
+
+        // Maximize length for full-page view and allow Ctrl-A to select the
+        // full-text contents.
+        &.full-page {
+
+            @include user-select(text);
+
+            resize:   none;
+            overflow: auto !important;
+        }
+
+        // Treat each paragraph and other top-level element as a block.
+        > :not(br) {
+            display:       block;
+            margin-top:    0;
+            margin-bottom: 0.75em;
+        }
+
+        // === Leading content elements (usually seen once at the start)
+
+        // Article ID and other information (<anid> in the received data).
+        > anid {
+            word-break:   break-all;
+            font-variant: all-small-caps;
+            color:        gray;
+        }
+
+        // Journal section (<jsection> in the received data).
+        > jsection {
+            margin-top:   0.75em;
+            padding-left: 0.25em;
+            font-size:    larger;
+            font-weight:  bolder;
+            font-variant: all-small-caps;
+            border:       1px solid gray;
+        }
+
+        // Extended title? (<et> in the received data).
+        > et {
+            font-style: italic;
+        }
+
+        // Article title (<title> in the received data).
+        > atitle {
+            margin-top:  0.75em;
+            font-size:   large;
+            font-weight: bolder;
+        }
+
+        // Article subtitle or tagline (<sbt> in the received data).
+        > sbt {
+            margin-bottom: 1.5em;
+            font-style:    italic;
+        }
+
+        // Author by-line (<aug> in the received data).
+        //
+        // One or more of these elements may been seen in the initial parts of
+        // articles like book reviews where the title and author of the subject
+        // book is shown as part of the lines that precede the text of the
+        // article.
+        //
+        aug {
+            margin-top:    0.5em;
+            margin-bottom: 1em;
+            padding-left:  0.75em;
+            padding-right: 1em;
+            font-style:    italic;
+        }
+
+        // Author by-line and background (<aug> in the received data).
+        //
+        // For most received articles this is the final element, which serves
+        // as a "statement of responsibility" for the article itself -- usually
+        // one or more author names and affiliations/biographies.
+        //
+        aug:last-of-type {
+            margin-top:    1.5em;
+            margin-bottom: 0;
+            padding-left:  0;
+            padding-right: 0;
+        }
+
+        // Paragraphs within responsibility section.
+        aug * {
+            margin-top: 0.5em;
+            font-style: inherit;
+        }
+
+        // === Main content elements
+
+        // Top-level paragraphs and bibliographic entries are given a "reading"
+        // font. (Consequently, all other elements stand out as visual breaks
+        // in the natural flow of the text since they appear in the default
+        // [sans-serif] font.)
+        > p, bibtext {
+            font: medium "Times New Roman","Times",serif;
+        }
+
+        // Top-level paragraphs (<p> in the received data).
+        > p {
+            text-align: justify;
+            @include hyphens(auto); // Compass @mixin
+        }
+
+        // Section heading (<hd> in the received data).
+        // Reference section title (<title> in the received data).
+        hd, ref atitle {
+            margin-top:  1.5em;
+            font-size:   larger;
+            font-weight: bolder;
+        }
+
+        // Sub-section heading (<hd1> in the received data).
+        hd1 {
+            margin-top:  1.25em;
+            font-weight: bolder;
+        }
+
+        // Image (<img> in the received data).
+        img {
+            display:   block;
+            max-width: 100%;
+            margin:    0.5em auto;
+        }
+
+        // Ordered list   (<olist> in the received data).
+        // Unordered list (<ulist> in the received data).
+        ol, ul {
+            margin: 1em 2em 1em;
+        }
+
+        // Bibliography list (<blist> in the received data).
+        blist {
+            margin: 1em 0;
+        }
+
+        // Ordered list item   (<item> in the received data).
+        // Unordered list item (<item> in the received data).
+        // Bibliography item   (<bibtext> in the received data).
+        ol li,
+        ul li,
+        blist bibtext {
+            margin-top:    0;
+            margin-bottom: 0.75em;
+        }
+
+        // Ordered list item (<item> in the received data).
+        ol li {
+            list-style:  decimal;
+            font-size:   110%;
+        }
+
+        // Unordered list item (<item> in the received data).
+        ul li {
+            list-style:  square;
+            font-size:   110%;
+        }
+
+        // Bibliography list item (<bibtext> in the received data).
+        blist bibtext {
+            list-style: none;
+            display:    list-item;
+        }
+
+        // Footnote reference (<reflink> in the received data).
+        // Footnote number    (<bibl> in the received data).
+        reflink, bibl {
+            vertical-align: top;
+            font:           caption;
+            background:     whitesmoke;
+        }
+
+        // Footnote reference (<reflink> in the received data).
+        reflink {
+            font-size: 75%;
+            opacity:   0.9;
+        }
+
+        // Footnote number (<bibl> in the received data).
+        bibl {
+            font-size: 100%;
+            display:   inline;
+        }
+
+        // Bibliography item following a footnote number goes on the same line.
+        bibl + bibtext {
+            display:   inline;
+            &:before { content: " "; }
+        }
+
+        // Erroneous footnote linkage (<nolink> in the received data).
+        nolink {
+            // TBD
+        }
+
+        // Constant-width table? (<ct> in the received data).
+        ct {
+            display:     block;
+            @include width-fit-content;
+            margin:      2% 4%;
+            padding:     2%;
+            white-space: pre;
+            font-family: monospace;
+            background:  whitesmoke;
+        }
+
+        // ? (<rj> in the received data).
+        rj {
+            // TBD
+        }
+
+        // Table elements.
+        table {
+            max-width:       100%;
+            border:          1px solid transparent;
+            border-collapse: collapse;
+        }
+        th {
+            font-weight: bold;
+        }
+        th, td {
+            padding: 0.5em;
+            border:  1px solid black;
+        }
+
+        // Links
+        a {
+            text-decoration: underline;
+        }
+        reflink a,
+        bibl    a {
+            text-decoration: none;
+        }
+
+        // Reference section (<ref> in the received data).
+        ref {
+            @include flex-box(column);
+        }
+        ref blist {
+            margin: 0.5em 0;
+        }
+    }
+}
+
+// ============================================================================
+// /articles/direct page - displays contents of an EBSCO EDS reply
+// /catalog/direct page  - displays contents of a Solr response
+// ============================================================================
+
+.ebsco-direct,
+.solr-direct {
+
+    // === Section headings
+
+    h1, .heading { font-size: xx-large; }
+    h2, .sub-heading { font-size: x-large; padding: 1em 0; }
+    h3, .section { font-size: large; }
+
+    // === Data tables
+
+    table { border:      solid thin; }
+    th    { font-weight: bold; }
+    tr    { border:      solid thin; }
+
+    th, td {
+        padding-left:  0.2em;
+        padding-right: 1em;
+    }
+
+    // === Table-of-contents with jump links
+
+    .toc {
+
+        width: 100%;
+
+        table {
+            width:         100%;
+            min-width:     100%;
+            max-width:     100%;
+            margin-top:    -1px;
+            margin-bottom: 0;
+            background:    #c6edf9;
+        }
+
+        .first {
+            width:       70px;
+            min-width:   70px;
+            font-weight: bold;
+        }
+    }
+}

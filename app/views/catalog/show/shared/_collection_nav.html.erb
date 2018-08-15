@@ -1,0 +1,72 @@
+<%# app/views/catalog/show/shared/_collection_nav.html.erb -%>
+<%-
+  # Controlled by app/assets/javascripts/feature/collection-nav
+
+  doc = document ||= @document
+  return unless doc && !print_view?
+
+  wsls_video = (doc.doc_type == :dl_wsls_video)
+  return unless wsls_video || doc.has_feature?('has_hierarchy')
+
+  id      ||= doc.doc_id
+  c_id    ||= doc.ead_collection_id
+  c_facet ||= doc.get_collection.first
+  return if c_id.blank? || c_facet.blank?
+
+  # Add to hidden "skip navigation" menu.
+  skip_nav << link_to('Search inside collection',    '#search-coll')
+  skip_nav << link_to('Browse collection hierarchy', '#browse-coll')
+
+  # === Search within collection ===
+  base_path  = portal_index_path
+  query      = h(params[:q])
+  text       = 'Search by keywords or subjects...'
+  search_opt = { class: 'search-home', placeholder: text, ARIA_LABEL => text }
+  hidden     = { 'f[digital_collection_facet][]' => c_facet }
+
+  tree_data = {
+    id:        id,
+    cid:       c_id,
+    base_path: base_path,
+    cid_path:  portal_show_path(c_id)
+  }.map { |k, v|
+    %Q(data-#{h(k)}="#{h(v)}")
+  }.join(' ').html_safe
+
+  # === Browse collection ===
+  css_class ||= 'item-content document ead-document ead-collection'
+  browse_help = %q(
+    Use and down arrow keys to traverse the tree of dates and titles.
+    Use the right arrow key to open and enter a sub-tree.
+    Use the left arrow key to close a sub-tree.
+  ).squish
+
+  view_debug(__FILE__)
+-%>
+
+<%# === Collection Information === -%>
+<h2 class="item-information-header">Collection Information</h2>
+<p class="collection-information">
+  You are currently viewing a resource within the archival collection
+  <%= link_to c_facet, catalog_path(c_id) -%>.
+</p>
+
+<%# === Search within collection === -%>
+<h2 class="item-information-header" id="search-coll">Search Collection</h2>
+<div class="collection-actions-container" aria-label="<%= text -%>">
+  <form action="<%= base_path -%>" method="get" id="search" role="search">
+    <%= text_field_tag(:q, query, search_opt) %>
+    <%= hash_as_hidden_fields(hidden) %>
+    <button class="btn small" type="submit">Search Inside Collection</button>
+  </form>
+</div>
+
+<%# === Browse collection === -%>
+<h2 class="item-information-header" id="browse-coll">Browse Collection</h2>
+<div class="box" aria-label="<%= browse_help -%>">
+  <div class="<%= css_class -%>" id="doc-<%= c_id -%>">
+    <div class="tree-scroller" <%= tree_data -%> tabindex="0">
+      <div class="collection-tree"><!-- Tree widget inserted here. --></div>
+    </div>
+  </div>
+</div>

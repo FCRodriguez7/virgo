@@ -1,0 +1,44 @@
+<%# app/views/about/index.html.erb -%>
+<%-
+  set_meta_tags(title: 'About Virgo', robots: true)
+
+  missing ||= '&mdash;'.html_safe
+
+  user = current_user && current_user.login
+  user += ' (admin)' if user_is_admin?(user)
+
+  ip_addr   = get_current_ip
+  true_addr = get_current_ip(true)
+  fake_addr = (ip_addr unless ip_addr == true_addr)
+  true_addr = nil unless fake_addr.present?
+
+  session_items = {
+    'User'              => user                 || missing,
+    'IP address'        => ip_addr,
+    'True IP address'   => true_addr,
+    'Forged IP address' => fake_addr,
+    'Session ID'        => session[:session_id] || missing
+  }.map { |k, v|
+    next unless v.present?
+    content_tag(:p) {
+      label = content_tag(:span, h(k), class: 'about-item')
+      value = h(v)
+      "#{label}: #{value}".html_safe
+    }
+  }.compact.join(NEWLINE)
+
+  view_debug(__FILE__)
+-%>
+
+<%= render 'about/sidebar' %>
+
+<h1 class="about-title">About Virgo</h1>
+
+<p><%= DateTime.current %></p>
+<p><span class="about-item">Version</span> <%= APP_VERSION %></p>
+
+<h2 class="about-section">Current Session</h2>
+
+<%= session_items %>
+
+<%= render 'about/internal_status' if @can_view_about %>

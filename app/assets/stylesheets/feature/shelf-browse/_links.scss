@@ -1,0 +1,88 @@
+// app/assets/stylesheets/feature/shelf-browse/_links.scss
+
+@include -trace-module("feature/shelf-browse/_links.scss");
+
+// ============================================================================
+// SHELF BROWSE LINKS
+//
+// Generally these are placed where ever a call number is displayed, leading to
+// a shelf browse popup centered on the given item.
+// ============================================================================
+
+.shelf-browse.links {
+
+    @include flex-box(row);
+
+    // ========================================================================
+    // Controls
+    // ========================================================================
+
+    // Button for virtual shelf browse (with the URL in 'data-path').
+    .browse-button {
+
+        @include user-select(none);
+
+        display:     block;
+        width:       auto;
+        margin-left: 0.5em;
+
+        // The interior element which has the title (tooltip) and other
+        // attributes that should not be picked up by the resulting colorbox.
+        div {
+
+            width:         auto;
+            color:         $sb-browse-color;
+            background:    $sb-browse-background;
+            border:        $sb-browse-border;
+            cursor:        $sb-browse-cursor;
+            border-radius: 4px;
+
+            img {
+                width:  20px;
+                height: 15px;
+
+                // Increase click target area.
+                margin: -2px !important;
+                border: 2px solid transparent;
+            }
+        }
+    }
+
+    // Call number link to virtual shelf browse (with the URL in an enclosed
+    // anchor element).
+    .call-number.browse {
+
+        display:    block;
+        width:      auto;
+        color:      $sb-browse-color;
+        background: $sb-browse-background;
+        border:     $sb-browse-border;
+        cursor:     $sb-browse-cursor;
+
+        a,
+        a:link,
+        a:visited {
+            text-decoration: none;
+        }
+    }
+}
+
+// ============================================================================
+// SHELF BROWSE LINKS - AVAILABILITY TABLE
+//
+// In the context of the availability table, the call number and browse button
+// are handled slightly differently.
+// ============================================================================
+
+.holdings .shelf-browse.links {
+
+    justify-content: space-between;
+
+    // ========================================================================
+    // Controls
+    // ========================================================================
+
+    .browse-button {
+        margin-left: 0;
+    }
+}

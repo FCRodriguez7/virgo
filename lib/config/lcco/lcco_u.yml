@@ -1,0 +1,525 @@
+# lib/config/lcco_u.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from the Word document of the same base name.
+
+class:    U
+name:     'MILITARY SCIENCE'
+sections:
+  - subclass:  U
+    name:     'Military science (General)'
+    sections:
+      - name:    'Military science (General)'
+        range:   U1-900
+        start:   U1
+        end:     U900
+        sections:
+          - name:    'War.  Philosophy.  Military sociology'
+            range:   U21-22.3
+            start:   U21
+            end:     U22.3
+          - name:    'History of military science'
+            range:   U27-43
+            start:   U27
+            end:     U43
+          - name:    'Historiography'
+            range:   U45
+            start:   U45
+            end:     U45
+          - name:    'Army clubs'
+            range:   U56-59
+            start:   U56
+            end:     U59
+          - name:    'Military planning'
+            range:   U150-155
+            start:   U150
+            end:     U155
+          - name:    'Strategy'
+            range:   U161-163
+            start:   U161
+            end:     U163
+          - name:    'Tactics'
+            range:   U164-167.5
+            start:   U164
+            end:     U167.5
+          - name:    'Logistics'
+            range:   U168
+            start:   U168
+            end:     U168
+          - name:    'Maneuvers (combined arms)'
+            range:   U250-255
+            start:   U250
+            end:     U255
+          - name:    'Joint operations.  Combined operations'
+            range:   U260
+            start:   U260
+            end:     U260
+          - name:    'Amphibious warfare'
+            range:   U261
+            start:   U261
+            end:     U261
+          - name:    'Commando tactics'
+            range:   U262
+            start:   U262
+            end:     U262
+          - name:    'Atomic warfare.  Atomic weapons'
+            range:   U263-264.5
+            start:   U263
+            end:     U264.5
+          - name:    'Artillery and rifle ranges'
+            range:   U300-305
+            start:   U300
+            end:     U305
+          - name:    'War games'
+            range:   U310-310.2
+            start:   U310
+            end:     U310.2
+          - name:    'Physical training of soldiers'
+            range:   U320-325
+            start:   U320
+            end:     U325
+          - name:    'Military education and training'
+            range:   U400-714
+            start:   U400
+            end:     U714
+          - name:    'Military life, manners and customs, antiquities, etc.'
+            range:   U750-773
+            start:   U750
+            end:     U773
+          - name:    'History of arms and armor'
+            range:   U799-897
+            start:   U799
+            end:     U897
+  - subclass:  UA
+    name:     'Armies: Organization, distribution, military situation'
+    sections:
+      - name:    'Armies: Organization, distribution, military situation'
+        range:   UA10-997
+        start:   UA10
+        end:     UA997
+        sections:
+          - name:    'By region or country'
+            range:   UA21-885
+            start:   UA21
+            end:     UA885
+          - name:    'Mobilization'
+            range:   UA910-915
+            start:   UA910
+            end:     UA915
+          - name:    'Plans for attack and defense'
+            range:   UA920-925
+            start:   UA920
+            end:     UA925
+          - name:    'Civil defense'
+            range:   UA926-929
+            start:   UA926
+            end:     UA929
+          - name:    'War damage in industry.  Industrial defense'
+            range:   UA929.5-929.95
+            start:   UA929.5
+            end:     UA929.95
+          - name:    'Military communication'
+            range:   UA940-945
+            start:   UA940
+            end:     UA945
+          - name:    'Routes of travel.  Distances'
+            range:   UA950-979
+            start:   UA950
+            end:     UA979
+          - name:    'Military geography'
+            range:   UA985-997
+            start:   UA985
+            end:     UA997
+  - subclass:  UB
+    name:     'Military administration'
+    sections:
+      - name:    'Military administration'
+        range:   UB1-900
+        start:   UB1
+        end:     UB900
+        sections:
+          - name:    'Records, returns, muster rolls, etc.'
+            range:   UB160-165
+            start:   UB160
+            end:     UB165
+          - name:    'Adjutant generals'' offices'
+            range:   UB170-175
+            start:   UB170
+            end:     UB175
+          - name:    'Civilian personnel departments'
+            range:   UB180-197
+            start:   UB180
+            end:     UB197
+          - name:    'Intelligence'
+            range:   UB250-271
+            start:   UB250
+            end:     UB271
+          - name:    'Sabotage'
+            range:   UB273-274
+            start:   UB273
+            end:     UB274
+          - name:    'Psychological warfare.  Propaganda'
+            range:   UB275-277
+            start:   UB275
+            end:     UB277
+          - name:    'Enlistment, recruiting, etc.'
+            range:   UB320-338
+            start:   UB320
+            end:     UB338
+          - name:    'Compulsory service.  Conscription and exemption'
+            range:   UB340-345
+            start:   UB340
+            end:     UB345
+          - name:    'Provision for veterans'
+            range:   UB356-369.5
+            start:   UB356
+            end:     UB369.5
+          - name:    'Military pensions, etc.'
+            range:   UB370-375
+            start:   UB370
+            end:     UB375
+          - name:    'Soldiers'' and sailors'' homes'
+            range:   UB380-385
+            start:   UB380
+            end:     UB385
+          - name:    'Warrant officers.  Noncommissioned officers'
+            range:   UB407-409
+            start:   UB407
+            end:     UB409
+          - name:    'Officers'
+            range:   UB410-415
+            start:   UB410
+            end:     UB415
+          - name:    'Minorities, women, etc. in armed forces'
+            range:   UB416-419
+            start:   UB416
+            end:     UB419
+          - name:    'Furloughs'
+            range:   UB420-425
+            start:   UB420
+            end:     UB425
+          - name:    'Retired military personnel'
+            range:   UB440-449.5
+            start:   UB440
+            end:     UB449.5
+  - subclass:  UC
+    name:     'Maintenance and transportation'
+    sections:
+      - name:    'Maintenance and transportation'
+        range:   UC10-780
+        start:   UC10
+        end:     UC780
+        sections:
+          - name:    'Organization of the service.  By region or country'
+            range:   UC20-258
+            start:   UC20
+            end:     UC258
+          - name:    'Supplies and stores'
+            range:   UC260-267
+            start:   UC260
+            end:     UC267
+          - name:    'Transportation'
+            range:   UC270-360
+            start:   UC270
+            end:     UC360
+          - name:    'Barracks.  Quarters.  Camps'
+            range:   UC400-440
+            start:   UC400
+            end:     UC440
+          - name:    'Clothing and equipment'
+            range:   UC460-535
+            start:   UC460
+            end:     UC535
+          - name:    'Equipage.  Field kits'
+            range:   UC540-585
+            start:   UC540
+            end:     UC585
+          - name:    'Horses.  Mules.  Remount service'
+            range:   UC600-695
+            start:   UC600
+            end:     UC695
+          - name:    'Subsistence'
+            range:   UC700-780
+            start:   UC700
+            end:     UC780
+  - subclass:  UD
+    name:     'Infantry'
+    sections:
+      - name:    'Infantry'
+        range:   UD1-495
+        start:   UD1
+        end:     UD495
+        sections:
+          - name:    'Tactics.  Maneuvers.  Drill regulations'
+            range:   UD157-302
+            start:   UD157
+            end:     UD302
+          - name:    'Manual of arms'
+            range:   UD320-325
+            start:   UD320
+            end:     UD325
+          - name:    'Firing.  Military sharpshooting'
+            range:   UD330-335
+            start:   UD330
+            end:     UD335
+          - name:    'Bayonet drill'
+            range:   UD340-345
+            start:   UD340
+            end:     UD345
+          - name:    'Small arms.  Swords, etc.'
+            range:   UD380-425
+            start:   UD380
+            end:     UD425
+          - name:    'Mounted infantry'
+            range:   UD450-455
+            start:   UD450
+            end:     UD455
+          - name:    'Mountain troops'
+            range:   UD460-464
+            start:   UD460
+            end:     UD464
+          - name:    'Ski troops'
+            range:   UD470-475
+            start:   UD470
+            end:     UD475
+          - name:    'Airborne troops.  Parachute troops'
+            range:   UD480-485
+            start:   UD480
+            end:     UD485
+          - name:    'Airmobile operations'
+            range:   UD490-495
+            start:   UD490
+            end:     UD495
+  - subclass:  UE
+    name:     'Cavalry.  Armor'
+    sections:
+      - name:    'Cavalry.  Armor'
+        note:    'Including horse cavalry, armored cavalry, mechanized cavalry'
+        range:   UE1-500
+        start:   UE1
+        end:     UE500
+        sections:
+          - name:    'Horse cavalry'
+            range:   UE144-145
+            start:   UE144
+            end:     UE145
+          - name:    'Armored cavalry'
+            range:   UE147
+            start:   UE147
+            end:     UE147
+          - name:    'Tactics.  Maneuvers.  Drill regulations'
+            range:   UE157-302
+            start:   UE157
+            end:     UE302
+          - name:    'Cavalry sword exercises'
+            range:   UE420-425
+            start:   UE420
+            end:     UE425
+          - name:    'Horses'
+            range:   UE460-475
+            start:   UE460
+            end:     UE475
+  - subclass:  UF
+    name:     'Artillery'
+    sections:
+      - name:    'Artillery'
+        range:   UF1-910
+        start:   UF1
+        end:     UF910
+        sections:
+          - name:    'Tactics.  Maneuvers.  Drill regulations'
+            range:   UF157-302
+            start:   UF157
+            end:     UF302
+          - name:    'Field artillery'
+            range:   UF400-405
+            start:   UF400
+            end:     UF405
+          - name:    'Seacoast artillery'
+            range:   UF450-455
+            start:   UF450
+            end:     UF455
+          - name:    'Siege artillery'
+            range:   UF460-465
+            start:   UF460
+            end:     UF465
+          - name:    'Howitzer artillery.  Mortar batteries'
+            range:   UF470-475
+            start:   UF470
+            end:     UF475
+          - name:    'Garrison artillery'
+            range:   UF480-485
+            start:   UF480
+            end:     UF485
+          - name:    'Weapons systems'
+            range:   UF500-515
+            start:   UF500
+            end:     UF515
+          - name:    'Ordnance and small arms'
+            range:   UF520-537
+            start:   UF520
+            end:     UF537
+          - name:    'Arsenals, magazines, armories, etc.'
+            range:   UF540-545
+            start:   UF540
+            end:     UF545
+          - name:    'Ordnance material (Ordnance proper)'
+            range:   UF560-780
+            start:   UF560
+            end:     UF780
+          - name:    'Ballistics.  Velocities and motions of projectiles'
+            range:   UF820-830
+            start:   UF820
+            end:     UF830
+          - name:    'Artillery instruments.  Fire control, etc.'
+            range:   UF848-856
+            start:   UF848
+            end:     UF856
+  - subclass:  UG
+    name:     'Military engineering.  Air warfare.  Space warfare.'
+    sections:
+      - name:    'Military engineering'
+        range:   UG1-620
+        start:   UG1
+        end:     UG620
+        sections:
+          - name:    'Tactics and regulations'
+            range:   UG160-302
+            start:   UG160
+            end:     UG302
+          - name:    'Bridges'
+            range:   UG335
+            start:   UG335
+            end:     UG335
+          - name:    'Tunnels'
+            range:   UG340
+            start:   UG340
+            end:     UG340
+          - name:    'Field engineering'
+            range:   UG360-390
+            start:   UG360
+            end:     UG390
+          - name:    'Fortification'
+            range:   UG400-442
+            start:   UG400
+            end:     UG442
+          - name:    'Attack and defense.  Siege warfare'
+            range:   UG443-449
+            start:   UG443
+            end:     UG449
+          - name:    'Military surveying, topography, and  mapping'
+            range:   UG470-474
+            start:   UG470
+            end:     UG474
+          - name:    'Land mines, etc.'
+            range:   UG490
+            start:   UG490
+            end:     UG490
+          - name:    'Technical troops and other special corps'
+            range:   UG500-565
+            start:   UG500
+            end:     UG565
+          - name:    'Military signaling'
+            range:   UG570-582
+            start:   UG570
+            end:     UG582
+          - name:    'Military telegraphy and telephony'
+            range:   UG590-613.5
+            start:   UG590
+            end:     UG613.5
+          - name:    'Military electric lighting'
+            range:   UG614-614.5
+            start:   UG614
+            end:     UG614.5
+          - name:    'Military motor vehicles'
+            range:   UG615-620
+            start:   UG615
+            end:     UG620
+      - name:    'Air forces.  Air warfare'
+        range:   UG622-1435
+        start:   UG622
+        end:     UG1435
+        sections:
+          - name:    'By region or country'
+            range:   UG633-635
+            start:   UG633
+            end:     UG635
+          - name:    'Education and training'
+            range:   UG637-639
+            start:   UG637
+            end:     UG639
+          - name:    'Military aeronautical research'
+            range:   UG640-645
+            start:   UG640
+            end:     UG645
+          - name:    'Tactics'
+            range:   UG700-705
+            start:   UG700
+            end:     UG705
+          - name:    'Air defenses'
+            range:   UG730-735
+            start:   UG730
+            end:     UG735
+          - name:    'Aerial reconnaissance'
+            range:   UG760-765
+            start:   UG760
+            end:     UG765
+          - name:    'Organization.  Personnel management'
+            range:   UG770-1045
+            start:   UG770
+            end:     UG1045
+          - name:    'Air bases'
+            range:   UG1097
+            start:   UG1097
+            end:     UG1097
+          - name:    'Equipment and supplies'
+            range:   UG1100-1435
+            start:   UG1100
+            end:     UG1435
+      - name:    'Military astronautics.  Space warfare.  Space surveillance'
+        range:   UG1500-1530
+        start:   UG1500
+        end:     UG1530
+        sections:
+          - name:    'By region or country'
+            range:   UG1523-1525
+            start:   UG1523
+            end:     UG1525
+  - subclass:  UH
+    name:     'Other services'
+    sections:
+      - name:    'Other services'
+        range:   UH20-910
+        start:   UH20
+        end:     UH910
+        sections:
+          - name:    'Chaplains'
+            range:   UH20-25
+            start:   UH20
+            end:     UH25
+          - name:    'Medical and sanitary services'
+            range:   UH201-515
+            start:   UH201
+            end:     UH515
+          - name:    'Care of sick and wounded.  Relief societies'
+            range:   UH520-(560)
+            start:   UH520
+            end:     UH560
+          - name:    'Military hygiene and sanitation'
+            range:   UH600-629.5
+            start:   UH600
+            end:     UH629.5
+          - name:    'Public relations.  Press.  War correspondents'
+            range:   UH700-705
+            start:   UH700
+            end:     UH705
+          - name:    'Military social work.  Social welfare services'
+            range:   UH750-769
+            start:   UH750
+            end:     UH769
+          - name:    'Recreation and information services'
+            range:   UH800-910
+            start:   UH800
+            end:     UH910

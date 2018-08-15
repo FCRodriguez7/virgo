@@ -1,0 +1,410 @@
+// app/assets/stylesheets/feature/ead.css.scss
+
+// ============================================================================
+// HIERARCHICAL DISPLAY
+// ============================================================================
+
+.ead-breadcrumbs {
+
+    padding:       6px 0 14px;
+    line-height:   19px;
+    overflow:      hidden;
+    font-size:     14px;
+    border-bottom: 1px solid #eeeeee;
+
+    em, a {
+        display: block;
+        float:   left;
+    }
+
+    em {
+        padding:     0 0.5em 0 0.25em;
+        font-family: georgia, times, serif;
+        font-style:  italic;
+        color:       #555555;
+    }
+
+    em.step {
+        clear:        left;
+        padding-left: 1em;
+        line-height:  16px;
+        font-size:    14px;
+        font-style:   normal;
+    }
+
+    em.step ~ a {
+        font-size: 13px;
+    }
+
+    em.step ~ em.step {
+        padding-left: 2em;
+    }
+}
+
+.ead-heading-container {
+
+    margin:        0.5em 0;
+    padding:       12px;
+    background:    #fcfbfa;
+    border:        1px solid #e7e6e5;
+    border-radius: 4px;
+
+    .ead-description {
+        margin-top: 1em;
+    }
+
+    h2, h3 {
+        font-family:   "Cardo", "Times New Roman", Times, serif;
+        color:         #604927;
+    }
+
+    h2 {
+        margin-top:    20px;
+        margin-bottom: 5px;
+        font-size:     20px;
+    }
+
+    h3 {
+        margin-top:    16px;
+        margin-bottom: 4px;
+        font-size:     16px;
+    }
+
+    p {
+        padding: 0 0 1.2em;
+    }
+
+    dl dd {
+        margin-left:   2em;
+        margin-bottom: 0.25em;
+    }
+}
+
+.ead-details {
+
+    margin-top: 3em;
+
+    a:focus { outline-offset: -1px; }
+}
+
+.item-identifier-fields .ead-heading-container h1.title-field {
+    margin:      0;
+    font-weight: normal;
+    text-shadow: none;
+}
+
+.ead-description p {
+    padding: 0 0 1.2em;
+}
+
+.ead-toggle .btn.small {
+    margin:    0 2px;
+    font-size: 12px;
+}
+
+.ead-count {
+    margin-left: 0.33em;
+    font-size:   13px;
+    color:       #6a6a6a;
+}
+
+.ead-details-section,
+.ead-materials-list {
+    clear:       both;
+    margin-left: 2em;
+    padding:     0 0 1.25em;
+    overflow:    hidden;
+}
+
+.ead-details-section {
+    padding-bottom: 1.5em;
+}
+.ead-details-section .ead-details-heading {
+    clear:       both;
+    font-family: georgia, times, serif;
+    font-size:   18px;
+    padding:     0 0 0.75em;
+}
+.ead-details-section .ead-details-heading .ead-more-heading {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size:   12px;
+}
+
+.ead-materials-item a {
+    clear:       both;
+    display:     inline-block;
+    font-size:   14px;
+    font-weight: bold;
+    padding:     0 0 0.5em;
+}
+
+.ead-details-section .ead-details-description p {
+    color:   #444444;
+    padding: 0 0 1.33em 0;
+}
+.ead-details-section .ead-details-subsection .ead-details-description p {
+    display: none;
+}
+
+.ead-materials-item .ead-materials-item a,
+.ead-details-subsection .ead-details-heading {
+    margin-right:  8px;
+    padding-right: 0;
+}
+
+.ead-materials-item .ead-materials-item a:after,
+.ead-details-subsection .ead-details-heading:after {
+    margin-left:     8px;
+    padding:         0;
+    text-decoration: none;
+    color:           #aaaaaa;
+    content:         "|";
+}
+
+.ead-materials-item .ead-materials-item.ead-materials-more a:after,
+.ead-materials-item .ead-materials-item:last-child a:after,
+.ead-details-subsection:last-child .ead-details-heading:after {
+    content: "";
+}
+
+.ead-materials-item .ead-materials-item a,
+.ead-details-subsection .ead-details-heading,
+.ead-details-subsection .ead-details-description {
+    clear:         none;
+    float:         left;
+    margin-bottom: 0.33em;
+    padding:       0;
+    line-height:   1.4em;
+    font-family:   "Helvetica Neue", Arial, sans-serif;
+    font-size:     13px;
+    font-style:    normal;
+    font-weight:   normal;
+}
+
+// ============================================================================
+// Transformed EAD
+// ============================================================================
+
+/**
+ * The new approach for EAD content is to transform the EAD XML into
+ * a valid HTML using DIVs.  The following styling renders that content
+ * as expected.
+ *
+ * The following monstrosity was painstakingly chosen to render the
+ * Reed collection in a manner similar to it's rendering on the
+ * Virginia Heritage site.
+ */
+.transformed-ead {
+
+    // Most things should be displayed inline, exceptions are below.
+    display: inline;
+
+    // Attributes should usually be hidden.
+    .ead-attribute { display: none; }
+
+    // List rendering.
+    ul { padding: 0 0 1.2em; }
+    ul li { list-style-type: disc; margin-left: 3em; }
+    ul li div { display: inline; }
+
+    .ead-italic { font-style: italic; }
+    .ead-title-italic { font-style: italic; display: inline; }
+    .ead-title-doublequote { display: inline; }
+    .ead-title-doublequote::before { content: open-quote; }
+    .ead-title-doublequote::after  { content: close-quote; }
+
+    .ead-emph { display: inline; font-style: italic; }
+
+    .ead-runner { display: none; }
+
+    dl {  }
+    dl dt { display: inline; font-weight: normal; }
+    dl dd { display: inline; margin: 0; }
+
+    .ead-list .ead-head { display: none; }
+
+    h1.title-field div.ead-date {
+        display:    block;
+        font-size:  16px;
+        font-style: italic;
+    }
+
+    .ead-frontmatter {
+
+        margin-bottom: 0.5em;
+        text-align:    center;
+
+        li {
+            margin-left:     0;
+            list-style-type: none;
+        }
+    }
+
+    .ead-title-page {
+        img { display: none; }
+        ul { display: none; }
+        dl { display: none; }
+        .ead-publisher { display: none; }
+        .ead-date { display: none; }
+    }
+
+    .ead-did .ead-head { display: none; }
+
+    .ead-archdesc .ead-did {
+
+        margin-top:   0.5em;
+        padding-left: 12em;
+
+        .ead-unittitle { display: none; } // The title is displayed above.
+        .ead-unittitle .ead-unitdate .ead-label { display: none; }
+
+        .ead-langmaterial { display: inline; }
+        .ead-langmaterial .ead-element { display: inline; }
+
+        .ead-element .ead-label {
+            float:       left;
+            display:     block;
+            width:       12em;
+            position:    absolute;
+            left:        0;
+            text-align:  right;
+            font-weight: bold;
+        }
+    }
+
+    .ead-descgrp,
+    .ead-bioghist,
+    .ead-scopecontent,
+    .ead-arrangement {
+
+        margin-top: 2em;
+        border-top: 1px solid black;
+
+        .ead-head {
+            padding-top:    0.25em;
+            padding-bottom: 0.25em;
+            font-family:    Georgia, Times, serif;
+            font-size:      18px;
+            font-weight:    bold;
+        }
+
+        .ead-element .ead-head {
+            padding-top:    0.25em;
+            padding-bottom: 0.25em;
+            font-family:    Georgia, Times, serif;
+            font-size:      16px;
+            font-weight:    bold;
+        }
+    }
+
+    .ead-dsc { display: none; }
+
+    .ead-component .ead-unittitle {
+        margin-top:    20px;
+        margin-bottom: 5px;
+        font-family:   "Cardo", "Times New Roman", Times, serif;
+        font-size:     20px;
+        color:         #604927;
+    }
+    .ead-unittitle div.ead-element { font-size: 14px; }
+
+    // Display the collection type before the collection number.
+    .ead-num { display: block; }
+    .ead-num .ead-type { display: inline; }
+    .ead-num .ead-type::after { content: " " }
+
+    // The extent should be on it's own line.
+    .ead-extent { display: block; }
+
+    // The container (box, folder or whatever) should be displayed on its own
+    // line, and the type (which is an attribute and would be hidden) should be
+    // displayed followed by a space.
+    .ead-container { display: block; }
+    .ead-container .ead-label { display: inline; }
+    .ead-container .ead-label::after { content: " " }
+
+    // Spacing between descriptive identification section and the remaining
+    // sections.
+    .ead-did { margin-bottom: 0.5em; margin-top: 0.5em; }
+
+    // This is the pid and should be hidden since it's already in the URL.
+    .ead-unitid { display: none; }
+
+    .ead-controlaccess { display: none; }
+
+    // These are displayed in the sidebar from indexed field.
+    .ead-genreform { display: none; }
+    .ead-subject { display: none; }
+}
+
+// ============================================================================
+// Collection tweaks
+// ============================================================================
+
+.transformed-ead {
+
+    // Hide the EAD header.
+    .ead-eadheader { display: none; }
+
+    .collapsed-to-header {
+        height:   30px;
+        overflow: hidden;
+    }
+
+    .ead-did > * {
+        margin-top:    1em;
+        margin-bottom: 1em;
+    }
+
+    .ead-did > .ead-origination {
+        margin-top:    initial;
+        margin-bottom: initial;
+    }
+
+    ul li {
+        margin-bottom: 0.5em;
+    }
+}
+
+// ============================================================================
+// Breadcrumbs
+// ============================================================================
+
+.breadcrumbs {
+
+    padding:       0.5em 1em 0.5em 36px;
+    margin:        1em 1em 0 52px;
+    border-radius: 4px;
+    border:        1px solid #e7e6e5;
+    background:    image-url('collection.png') no-repeat scroll 10px 49%
+                   #fcfbfa;
+
+    .step {
+        padding:     0 0.5em;
+        line-height: 15px;
+        font-size:   16px;
+        color:       #626262;
+    }
+
+    .breadcrumbs-self,
+    .breadcrumbs-label {
+        font-weight: bold;
+        color:       #555555;
+    }
+}
+
+.toggle-button {
+
+    float:        right;
+    display:      inline-block;
+    width:        22px;
+    height:       22px;
+    padding:      0;
+    margin-right: 4px;
+    background:  image-url('collapse_22.png') no-repeat scroll 0 0 transparent;
+
+    &:focus { outline-offset: 3px; }
+}
+.collapsed-to-header .toggle-button {
+    background: image-url('expand_22.png') no-repeat scroll 0 0 transparent;
+}

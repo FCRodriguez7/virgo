@@ -1,0 +1,9 @@
+<%# app/views/catalog/show/shared/_google_preview.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc && !print_view?
+
+  view_debug(__FILE__)
+-%>
+
+<%= google_preview_control(doc) %>

@@ -1,0 +1,143 @@
+<%# app/views/advanced/_advanced_search_form.html.erb -%>
+<%-
+  # NOTE: The enclosing <form> element is in layouts/application.html.erb.
+
+  submit_label ||= 'Search'
+  submit_css   ||= 'adv-search-button'
+  submit_id    ||= 'advanced-search'
+  submit_opt   ||= {}
+  clear_label  ||= 'Clear'
+  clear_opt    ||= {}
+
+  submit_opt = {
+    id:             submit_id,
+    class:          submit_css,
+    'aria-label' => submit_label,
+    role:           'button'
+  }.merge(submit_opt)
+
+  clear_opt = {
+    class:          "reset #{submit_css}",
+    'aria-label' => clear_label,
+    role:           'button'
+  }.merge(clear_opt)
+
+  # Include non-advanced-search parameters as hidden fields.
+  ignored_params = extended_search_fields.keys
+  hidden = advanced_search_context.except(*ignored_params)
+  hidden[:search_field] = current_blacklight_config.advanced_search[:url_key]
+
+  and_or_menu = {
+    'all' => 'AND',
+    'any' => 'OR'
+  }
+
+  if articles_lens?
+    other            = 'Catalog'
+    other_search     = catalog_index_path
+    other_adv_search = catalog_advanced_path
+    other_class      = 'catalog-search'
+    clear_path       = articles_advanced_path
+  else
+    other            = 'Article'
+    other_search     = articles_path
+    other_adv_search = articles_advanced_path
+    other_class      = 'article-search'
+    clear_path       = catalog_advanced_path
+  end
+  combined           = 'Catalog + Article'
+  combined_search    = catalog_index_path(catalog_select: 'all')
+  combined_class     = 'catalog-article-search'
+
+  elsewhere_links = {
+    "#{combined} Search"       => [combined_search,  class: combined_class],
+    "#{other} Search"          => [other_search,     class: other_class],
+    "#{other} Advanced Search" => [other_adv_search, class: other_class],
+    'Music Search'             => [music_index_path, class: 'music-search'],
+    'Video Search'             => [video_index_path, class: 'video-search'],
+    'Start Over'               => [root_path,        class: 'start-over']
+  }.map { |link_label, link_args|
+    content_tag(:li, link_to(link_label, *link_args))
+  }.join.html_safe
+
+  view_debug(__FILE__)
+-%>
+
+<%= search_as_hidden_fields(params: hidden) %>
+
+<%- unless articles_lens? -%>
+  <div class="adv-search-logical-op">
+    <%- id = :op -%>
+    <%= label_tag(id, 'Find items that match') %>
+    <%- default = label_tag_default_for(id) -%>
+    <%= select_tag(id, options_for_select(and_or_menu, default)) %>
+    <span>of the fields below.</span>
+  </div>
+<%- end -%>
+
+<%= render 'advanced/advanced_search_fields' %>
+
+<div class="adv-search-field special">
+
+  <%- if articles_lens? -%>
+    <div class="adv-search-peer-reviewed">
+      <%- id = :peer_reviewed_only -%>
+      <%- checked = !false_value?(params[:peer_reviewed]) -%>
+      <%- checked &&= !false_value?(session[:peer_reviewed]) -%>
+      <%= check_box_tag 'peer_reviewed', 'true', checked, id: id %>
+      <%= label_tag(id, 'Limit to peer reviewed articles') %>
+    </div>
+  <%- else -%>
+    <div class="adv-search-collections">
+      <%- id = :include_collection_members -%>
+      <%- checked = params[:undiscoverable] -%>
+      <%= check_box_tag 'undiscoverable', 'true', checked, id: id %>
+      <%= label_tag(id, 'Search within collections', class: 'tooltip') do %>
+        Search within collections
+        <span>
+          <strong>
+            Select "Search within collections" to include items that are
+            typically only available within the context of a collection.
+          </strong>
+          <br/>
+          Normally these items are not available in broad searches because they
+          often lack sufficient description out of context and may overwhelm
+          other results.
+          <br/>
+          Searches that have been limited to a single collection will include
+          all the collection members by default.
+        </span>
+        <div class="fa fa-question-circle" aria-hidden="true"></div>
+      <%- end -%>
+    </div>
+  <%- end -%>
+
+  <div class="adv-search-sort">
+    <%- id = :sort_key -%>
+    <%= label_tag(id, 'Sort results by') %>
+    <%- default = label_tag_default_for(id) -%>
+    <%= select_tag(id, options_for_select(sort_fields, default)) %>
+  </div>
+
+</div>
+
+<div class="adv-search-buttons">
+  <%= submit_tag(submit_label, submit_opt) %>
+  <%= link_to clear_label, clear_path, clear_opt %>
+</div>
+
+<%- sidebar_items << capture do -%>
+
+  <%= render 'advanced/advanced_search_facets' %>
+
+  <nav class="advanced-elsewhere">
+
+    <h3 class="elsewhere-heading">Go to:</h3>
+    <ul class="elsewhere-links"><%= elsewhere_links %></ul>
+
+    <h3 class="elsewhere-heading">Also try:</h3>
+    <ul class="elsewhere-links"><%= other_resources_links %></ul>
+
+  </nav>
+
+<%- end -%>

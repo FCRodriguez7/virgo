@@ -1,0 +1,1121 @@
+// app/assets/stylesheets/shared/components.css.scss
+
+@import "feature/bookmarks";
+@import "feature/pagination";
+
+%action-icon {
+
+    @include user-select(none);
+
+    display:  inline-block;
+    margin:   0;
+    padding:  0;
+    position: relative;
+    top:      0;
+    right:    0;
+
+    &:focus { outline-offset: 3px; }
+}
+
+// from structures.css
+
+.print-view-button {
+
+    @extend %action-icon;
+
+    width:      20px;
+    height:     20px;
+    background: $sprite-image no-repeat scroll 0 -352px transparent;
+}
+
+.rss-button {
+    @extend %action-icon;
+}
+
+// ============================================================================
+// Applied search parameters
+// ============================================================================
+
+.applied-params {
+
+    clear:         both;
+    display:       block;
+    width:         100%;
+    margin-bottom: 0 !important;
+    margin-top:    20px;
+    position:      relative;
+
+    .tagline {
+
+        @include user-select(none);
+
+        display:     inline-block;
+        margin:      0 0.25em 0 0.75em;
+        position:    relative;
+        overflow:    visible;
+        font-size:   15px;
+        font-style:  italic;
+        font-weight: 300;
+        color:       #555555;
+    }
+
+    .applied-query-set,
+    .applied-filter-set {
+        display:     inline;
+    }
+
+    .applied-query,
+    .applied-filter {
+
+        display:       inline-block;
+        margin:        1px 10px 10px;
+        padding:       6px 8px;
+        position:      relative;
+        overflow:      visible;
+        background:    #e2edfe;
+        border:        1px solid #c4dafe;
+        border-radius: 12px;
+
+        &.no-keywords {
+            padding-right: 8px;
+        }
+
+        &.outer {
+            padding-top:    3px;
+            padding-bottom: 4px;
+        }
+
+        // ====================================================================
+        // Standard filter is a single facet name/value with a removal button.
+        // ====================================================================
+
+        .name-and-value {
+
+            display: inline;
+
+            .query-name,
+            .query-value,
+            .filter-name,
+            .filter-value {
+                position: relative;
+                border:   0;
+            }
+
+            .query-name,
+            .filter-name {
+                display:       inline;
+                padding-right: 16px;
+                background:    image-url('separator.gif') no-repeat right
+                               center;
+            }
+
+            .query-value,
+            .filter-value {
+                padding-left:  2px;
+                padding-right: 30px;
+            }
+        }
+
+        .remove-filter {
+
+            @include user-select(none);
+
+            display:     inline-block;
+            width:       27px;
+            height:      100%;
+            position:    absolute;
+            top:         0;
+            right:       0;
+            color:       transparent;
+            border-left: 1px solid #d2ddee;
+            background:  image-url('remove.gif') no-repeat center center;
+
+            &:focus,
+            &:hover {
+                background-color:           rgba(255, 255, 255, 0.9);
+                border-top-right-radius:    50%;
+                border-bottom-right-radius: 50%;
+                outline-offset:             -4px;
+            }
+
+            &:active {
+                background-blend-mode: difference;
+            }
+        }
+
+        // ====================================================================
+        // Advanced filter is a facet name, one or more facet values separated
+        // by "OR", and a removal button for each facet value.
+        // ====================================================================
+
+        .applied-query.inner,
+        .applied-filter.inner {
+
+            display: inline;
+            margin:  0;
+            padding: 1px 0 1px 4px;
+            border:  1px solid #98abcb;
+
+            .wrapper {
+                display: inline-block;
+            }
+
+            .name-and-value {
+
+                display:        inline-block;
+                margin-bottom:  -2px;
+                padding-bottom: 4px;
+
+                .query-value,
+                .filter-value {
+                    padding-left:  1px;
+                    padding-right: 4px;
+                }
+            }
+
+            .remove-filter {
+                display:     inline-block;
+                width:       18px;
+                position:    relative;
+                top:         0;
+                right:       0;
+                border-left: 1px solid #98abcb;
+            }
+        }
+
+        .connector {
+            display:      inline-block;
+            font-weight:  bold;
+            font-style:   italic;
+            font-size:    smaller;
+        }
+    }
+
+    .applied-query  .connector { margin: 0 0.5em 0 0; }
+    .applied-filter .connector { margin: 0 0.5em; }
+
+    .start-over-link { // TODO: should move...
+
+        padding:         0 11px 1px 36px;
+        position:        absolute;
+        top:             -60px;
+        right:           -17px;
+        line-height:     37px;
+        text-decoration: none;
+        font-size:       14px;
+        font-weight:     bold;
+        transition:      color 200ms ease-in-out;
+        color:           #f8f4ea;
+        border-top:      1px solid transparent;
+        border-right:    1px solid transparent;
+        border-left:     1px solid #e7cfa2;
+        background:      $sprite-image no-repeat scroll 10px -272px #6c5250;
+        text-shadow:     0 -1px 0 black;
+        box-shadow:      inset 0 0 3px #442200;
+
+        &:link, &:visited { color: #f8f4ea; }
+        &:hover           { color: white; }
+    }
+
+    // Result item count and pagination links.
+    .result-line {
+
+        clear:      both;
+        width:      100%;
+        margin:     5px 0 10px;
+        padding:    8px;
+        overflow:   hidden;
+        background: #f5f5f5;
+
+        b, strong { font-weight: bold; }
+
+        .current-page {
+            float:       left;
+            width:       auto;
+            line-height: 23px;
+        }
+
+        // For page numbers with 2 or less digits in them, the default margins
+        // and padding are fine.  Links for pages with higher digit counts
+        // require additional adjustment so that the whole element fits in next
+        // to the "Refine search" button.
+        .pagination {
+
+            float:   left;
+            width:   auto;
+            padding: 0;
+
+            // For 1- and 2- digit page numbers.
+            &.d1,
+            &.d2 {
+                margin-left: 1.5em;
+                .first, .prev          { margin-right: 1em; }
+                .next,  .last          { margin-left:  1em; }
+                .page.current, .page a { padding:      0 0.5em; }
+            }
+
+            // For 3-digit page numbers.
+            &.d3 {
+                margin-left: 1.3em;
+                .first, .prev          { margin-right: 0.75em; }
+                .next,  .last          { margin-left:  0.75em; }
+                .page.current, .page a { padding:      0 0.4em; }
+            }
+
+            // For 4-digit page numbers.
+            &.d4 {
+                margin-left: 0.5em;
+                .first, .prev          { margin-right: 0.5em; }
+                .next,  .last          { margin-left:  0.5em; }
+                .page.current, .page a { padding:      0 0.25em; }
+            }
+
+            // For 5-or-more-digit page numbers.
+            &.d5,
+            &.d6 {
+                margin-left: 0.1em;
+                .first, .prev, .next, .last {
+                    a {
+                        margin: 0;
+                        border: none;
+                    }
+                }
+                .first, .prev          { margin-right: 0.1em; }
+                .next,  .last          { margin-left:  0.1em; }
+                .page.current, .page a { padding:      0 0.1em; }
+            }
+        }
+    }
+
+    .refine-search-link {
+
+        @include user-select(none);
+
+        padding:         5px 8px 5px;
+        position:        absolute;
+        bottom:          6px;
+        right:           -12px;
+        text-decoration: none;
+        color:           white;
+        background:      image-url('refine_search.gif') no-repeat center
+                         center;
+
+        &:link, &:visited, &:hover {
+            color: white;
+        }
+
+        &:focus {
+            outline:        thin dotted white;
+            outline-offset: -5px;
+        }
+    }
+
+    // For search failures.
+    .flash-message {
+        .dialog {
+            padding:    0.5em;
+            text-align: center;
+        }
+    }
+}
+
+.search-tools {
+
+    margin:  0 0 1em 0;
+    padding: 10px 0;
+
+    .action-list-container {
+        margin: -4px 0 4px 25px;
+    }
+
+    .print-view-button {
+        top:   -4px;
+        right: -7%;
+    }
+
+    .rss-button {
+        top:   -11px;
+        right: -7.5%;
+    }
+}
+
+.sort-form-container,
+.library-form-container,
+.per-page-container {
+    float: left;
+    width: auto;
+}
+
+.library-form-container {
+    display: none;
+}
+
+.per-page-container {
+    margin-left: 25px;
+}
+
+.related-subjects,
+.related-names,
+.related-places {
+
+    padding: 0 1em 0 0;
+
+    h2 {
+        margin-top:  0;
+        font-size:   1.23em;
+        font-weight: bold;
+    }
+
+    li {
+        margin:       8px 0;
+        padding-left: 15px;
+        background:   $square-bullet no-repeat 0.2em 0.58em;
+
+        $border-expansion:  0.25em; // To increase click target area.
+        $border-horizontal: (1.5 * $border-expansion);
+        $border-vertical:   $border-expansion;
+
+        a {
+            display:            inline-block;
+            margin:             -#{$border-vertical} -#{$border-horizontal};
+            border:             $border-expansion solid transparent;
+            border-left-width:  $border-horizontal;
+            border-right-width: $border-horizontal;
+
+            &:focus {
+                outline-offset: -($border-expansion / 2);
+            }
+
+            &:focus,
+            &:hover {
+
+                background-color: $virgo-link-hover;
+
+                &:not(:focus) {
+                    margin-left: 0;
+                    border-left: none;
+                }
+            }
+        }
+    }
+}
+
+.sidebar-inner h2 {
+    margin-bottom: 0.35em;
+}
+
+// ============================================================================
+// Generic search results item
+// ============================================================================
+
+.results {
+
+    clear:  both;
+    margin: 0.5em 0 1.5em;
+    width:  717px;
+
+    .metadata {
+        margin: .384em 0 0;
+        width:  80%;
+    }
+
+    .hd {
+        float:            none;
+        width:            100%;
+        border-top:       1px solid #a4c6ef;
+        background-color: #eef5fb;
+        min-height:       50px;
+        padding-left:     10px;
+    }
+
+    dt {
+        float:       left;
+        line-height: 16px;
+        margin:      0 8px 0 10px;
+        text-align:  right;
+        width:       137px;
+    }
+
+    dd {
+        margin-left: 160px;
+    }
+
+    dd.title-field {
+        margin:    0;
+        font-size: 1.08em;
+    }
+
+    dd.title-field + dd.title-field {
+        border: none;
+        a { padding-top: 0; }
+    }
+
+    dd img {
+        margin-top: .5em;
+    }
+
+    .online-access-field a {
+
+        $border-expansion: 4px; // To increase click target area.
+
+        margin:               -$border-expansion;
+        border:               $border-expansion solid transparent;
+        text-decoration-line: underline;
+
+        &:focus { outline-offset: -($border-expansion / 2); }
+    }
+
+    // Rails adds an annoying div tag around the hidden "authenticity_token"
+    // input field.
+    .tools form,
+    .tools form div {
+        display: inline;
+    }
+}
+
+.list-item-number {
+    float:        left;
+    margin-right: 10px;
+    margin-left:  1px;
+    padding:      8px 0;
+    font:         italic normal normal 13px/22px helvetica, arial, sans-serif;
+    background:   none;
+    color:        #676767;
+}
+
+.browse-entry,
+.browse-search,
+dd.title-field {
+    a {
+        display:         block;
+        margin-left:     32px;
+        padding:         7px 10px;
+        line-height:     22px;
+        font-size:       15px;
+        text-decoration: underline;
+
+        &:focus { outline-offset: -4px; }
+    }
+}
+
+// This prevents the ajax loading image from bumping the page around.
+.availability img.ajax-loader {
+    position:      relative;
+    top:           -9px;
+    margin-bottom: -9px;
+}
+
+// ============================================================================
+// Components
+// ============================================================================
+
+// Generic line divider
+.divider {
+
+    height: 1px;
+    margin: 1.8em 0;
+
+    hr {
+        position: absolute;
+        left:     -5000px;
+        height:   1px;
+        color:    white;
+    }
+}
+
+// Generic image thumbnails
+.photo {
+    max-width: 100%;
+    border:    2px solid lightgrey;
+}
+
+// Images used for item "covers"
+.cover-image,
+.coin-image,
+.jp2k-preview {
+    img:not(.ajax-loader) {
+        max-height: 120px;
+        max-width:  120px;
+        display:    block;
+        margin:     0 auto;
+    }
+}
+
+// Cover images on index
+.results {
+    .cover-image,
+    .coin-image,
+    .jp2k-preview {
+        img:not(.ajax-loader) {
+            min-height: 120px;
+            max-width:  240px !important;
+        }
+    }
+}
+
+.sidebar-inner {
+    .cover-image,
+    .coin-image,
+    .jp2k-preview {
+        img {
+            margin-bottom: 1.5em;
+        }
+    }
+}
+
+// Cover images on Video and Music feature items.
+.recently-added-items {
+    .cover-image,
+    .coin-image,
+    .jp2k-preview {
+        img:not(.ajax-loader) {
+            float:      none;
+            border:     2px solid lightgrey;
+            min-height: 120px;
+            max-width:  120px !important;
+        }
+    }
+}
+
+.page-sidebar {
+    .photo {
+        border:     2px solid lightgrey;
+        max-width:  95%;
+        max-height: 30vh;
+    }
+    .cover-image,
+    .coin-image,
+    .jp2k-preview {
+        img:not(.ajax-loader) {
+            @extend .photo;
+        }
+    }
+}
+
+// ============================================================================
+// Components - show page
+// ============================================================================
+
+.show-page {
+
+    .sidebar-inner {
+        width:       218px;
+        padding-top: 2em;
+    }
+
+    .page-container {
+        .item-identifier-fields {
+            padding-bottom: 0.77em;
+        }
+        h1, .heading {
+            margin:      0.5em 0;
+            line-height: 1.25em;
+        }
+    }
+
+    .resp-stmt-field {
+        font-size:   1.154em;
+        line-height: 1.5em;
+    }
+
+    .document {
+
+        position: relative;
+
+        dd ul  { margin-left:   0; }
+        dd li  { margin-bottom: 0.5em; }
+
+        .tools {
+
+            float:            right;
+            clear:            none;
+            width:            470px;
+            margin:           0;
+            padding:          15px 15px 28px;
+            background-color: #e3ecfd;
+            border-bottom:    1px solid #d1d7df;
+
+            li, form, div { display: block; }
+
+            ul {
+                margin:     0;
+                padding:    0;
+                list-style: none inside none;
+            }
+
+            li {
+                padding:    0 15px 8px 15px;
+                background: $square-bullet no-repeat 0.2em 0.58em;
+            }
+
+            h3 {
+                float:         left;
+                margin:        0;
+                padding-right: 10px;
+            }
+        }
+    }
+
+    .item-fields {
+        width:    100%;
+        clear:    both;
+        margin:   1.5em 0 2em;
+        overflow: hidden;
+    }
+
+    .holding {
+        padding: 0.35em 0;
+    }
+
+    .item-availability {
+        .first { border-top: 0; }
+        dt { width: auto; }
+    }
+
+    .preview-thumbnail {
+
+        float:      none;
+        max-width:  100%;
+        min-height: 10vh;
+        margin:     0 auto;
+        padding:    15px;
+        border:     0;
+        text-align: center; // For coin sidebar thumbnail
+        background: transparent;
+
+        &.image-collection-list { width: 700px; }
+    }
+}
+
+.image-collection.preview-thumbnail {
+
+    padding-left: 0;
+
+    // Avoid growing image height in this context to avoid distortion.
+    img { min-height: 0; }
+}
+
+.item-content { clear: both; }
+
+.item-fields {
+
+    $field-dt-width: 139px;
+    $field-spacing:  0.67em;
+
+    clear: both;
+
+    a {
+        text-decoration: none;
+        color:           #0a3685;
+        &:visited { color: #660099; }
+        &:hover   { text-decoration: underline; }
+    }
+
+    ul,
+    ul li {
+        margin-left:  0;
+        padding-left: 0;
+    }
+
+    dl {
+        margin-bottom: 5px;
+    }
+
+    dt, dd {
+        float:         left;
+        padding:       $field-spacing 0 0 0;
+        margin:        0 0 $field-spacing 0;
+        text-align:    left;
+        border-top:    1px solid #eeeeee;
+    }
+
+    dt {
+        clear:        both;
+        width:        $field-dt-width;
+        margin-right: -100%;
+        font-weight:  bold;
+        color:        #121212;
+    }
+
+    dd {
+        width:       560px;
+        margin-left: $field-dt-width;
+    }
+
+    dd + dd {
+        padding-top: 0;
+        border-top:  none;
+    }
+
+    dd, ul {
+        > * {
+            margin-top: ($field-spacing / 2);
+        }
+        > :first-child {
+            margin-top: 0;
+        }
+        sup, sub {
+            display:    inline-block;
+            margin-top: unset;
+        }
+    }
+
+    .show-details {
+
+        clear:           both;
+        display:         block;
+        padding:         15px 0 10px 135px;
+        text-decoration: none;
+        font-weight:     bold;
+        cursor:          pointer;
+
+        .see-more-label {
+            display: inline-block;
+        }
+
+        .always-show-link {
+
+            display:     inline-block;
+            margin-left: 3em;
+
+            a:visited { color: initial; }
+        }
+    }
+
+    .technical-details .marc-view-switch,
+    .show-details .see-more-label,
+    .show-details .always-show-link a {
+
+        display: inline-block;
+        margin:  -4px;
+        border:  4px solid transparent;
+
+        &:focus {
+            outline-offset: -1px;
+        }
+
+        &:focus,
+        &:hover {
+            text-decoration:  none;
+            background-color: $virgo-link-hover;
+        }
+    }
+}
+
+.holding-header {
+    padding:     0.15em 0;
+    font-weight: bold;
+    font-size:   1.1em;
+    font-style:  italic;
+}
+
+.holding-group {
+    padding: 0.35em 0;
+}
+
+.feedback-show-page .tools li {
+    background: initial;
+}
+
+.preview-thumbnail {
+    float:   right;
+    width:   auto;
+    margin:  9px;
+    padding: 0;
+}
+.index-page .preview-thumbnail {
+
+    max-width: 240px;
+    margin:    12px 3px 0 12px;
+
+    img {
+        max-height: 120px;
+        border-radius: 1px;
+        border:        2px solid lightgrey;
+    }
+}
+
+.recently-added-items {
+    .preview-thumbnail {
+        height:     120px;
+        width:      80px;
+        min-height: 100%;
+        max-height: 100%;
+        margin:     25px;
+        border:     none;
+    }
+    div.thumb-label {
+        min-width: 150%;
+        max-width: 200%;
+    }
+}
+
+.result-nav {
+
+    @include user-select(none);
+
+    display:       inline;
+    margin-top:    5px;
+    margin-right:  0;
+    margin-bottom: 5px;
+    padding-left:  10px;
+    line-height:   30px;
+
+    &.top {
+        padding-bottom: 30px;
+        border-bottom:  1px solid #eeeeee;
+    }
+
+    &.bottom {
+        display:      block;
+        width:        690px;
+        margin-right: 15px;
+        padding-top:  10px;
+        border-top:   1px solid #eeeeee;
+    }
+
+    @mixin result-nav_link($border-expansion) {
+        display:            inline-block;
+        margin:             0 -$border-expansion;
+        border:             0 solid transparent;
+        border-left-width:  $border-expansion;
+        border-right-width: $border-expansion;
+
+        &:focus { outline-offset: 0; }
+    }
+
+    .return-to-search {
+
+        float:        left;
+        margin-right: 15px;
+
+        a:not(.btn)       { @include result-nav-link(6px); }
+        a.start-over-link { margin-left: 1em; }
+    }
+
+    .prev-next {
+
+        float:          right;
+        padding-bottom: 0;
+        padding-right:  10px;
+        padding-left:   10px;
+        color:          #aaaaaa;
+
+        a          { @include result-nav-link(4px); }
+        .separator { margin: 0 0.25em; }
+    }
+}
+
+.prev-next-doc,
+.prev-next-collection {
+
+    display:     inline;
+    float:       right;
+    white-space: nowrap;
+
+    span {
+        margin-right: 1em;
+        font-family:  georgia, times, serif;
+        font-style:   italic;
+        color:        #555555;
+    }
+
+    $border-expansion: 4px; // To increase click target area.
+
+    a {
+        margin: -$border-expansion;
+        border: $border-expansion solid transparent;
+
+        &:focus {
+            outline-offset: -1px;
+        }
+
+        &:focus, &:hover {
+            text-decoration:  none;
+            background-color: $virgo-link-hover;
+        }
+    }
+
+    .separator {
+        margin: 0 0.25em;
+    }
+}
+
+.prev-next-collection {
+    clear: both;
+}
+
+.results .document {
+
+    .star-container {
+
+        display:  block;
+        position: absolute;
+        top:      30px;
+        left:     10px;
+
+        .submit-form {
+
+            display:    block;
+            height:     16px;
+            width:      16px;
+            margin-top: 1px;
+            color:      transparent; // Hide label text
+            background: transparent no-repeat;
+
+            &             { background-image: $star-unlit-image; }
+            &.remove-star { background-image: $star-lit-image;   }
+        }
+    }
+
+    .favorites {
+        position: absolute;
+        top:      13px;
+        right:    10px;
+    }
+
+    .tools .iconHeartSmall {
+        padding: 0 0 0 25px;
+    }
+}
+
+.folder-page   .results .document,
+.reserves-page .results .document {
+
+    .star-container {
+
+        display:  table-cell;
+        position: static;
+
+        .remove-star { background-image: $star-lit-image;    }
+        .saving-star { background-image: $star-change-image; }
+    }
+}
+
+.star-container {
+    @include user-select(none);
+}
+
+.show-page .prev-next {
+    padding: 0.5em 0 0.5em 1em;
+}
+
+// Table displaying catalog availability info.
+.item-availability {
+    width:         700px;
+    margin-bottom: 10px;
+}
+
+.item-availability,
+.physical-availability {
+    clear: both;
+}
+
+.item-availability h2,
+.full-text-viewer .banner,
+.availability-header {
+    margin:           0;
+    padding:          0.5em;
+    font-size:        1.23em;
+    font-weight:      bold;
+    color:            black;
+    background-color: #cad6e2;
+    border:           1px solid #b7c1cb;
+    border-bottom:    3px #c2cfd9;
+}
+
+.item-availability h4 {
+    margin-bottom: 0;
+}
+
+.folder-tools {
+    ul {
+        float:           left;
+        margin:          10px 0 0 0;
+        padding:         0;
+        list-style-type: none;
+    }
+    li {
+        padding: 0 10px 0 0;
+    }
+}
+
+// ============================================================================
+// Utility styles
+// ============================================================================
+
+.hide { display: none; }
+
+.skip,
+.hide,
+.print {
+    position: absolute;
+    top:      -1000em;
+    left:     -1000em;
+    height:   1px;
+    width:    1px;
+}
+
+// Make skip links visible when using tab navigation
+.skip:focus,
+.skip:active {
+    position: static;
+    top:      0;
+    left:     0;
+    height:   auto;
+    width:    auto;
+}
+
+.box              { margin-bottom: 1.54em; }
+.quiet            { color: #666666; }
+.loud             { color: black; font-weight: bold; }
+.note, .important { background: #ffffdd; }
+.highlight        { background:#ffff00; }
+
+.success, .ok, .yes, .go, .added, .correct {
+    color: $success-color;
+}
+
+.fail, .no, .stop, .error, .removed, .wrong, .warning {
+    color: $error-color;
+}
+
+div {
+    &.success, &.ok, &.yes, &.go, &.added, &.correct {
+        background: $success-bg-color;
+    }
+    &.fail, &.no, &.stop, &.error, &.removed, &.wrong, &.warning {
+        background: $error-bg-color;
+    }
+}
+
+// ============================================================================
+// Librarian view
+// ============================================================================
+
+@import "feature/marc-view";
+
+// ============================================================================
+// Request links
+// ============================================================================
+
+@import "feature/requests";
+
+// ============================================================================
+// ReCAPTCHA placeholder
+// ============================================================================
+
+// Style to mimic the appearance of the reCAPTCHA widget for the purpose of
+// maintaining page layout while indicating why reCAPTCHA is not currently
+// required.
+.no-recaptcha {
+    width:         300px;
+    height:        74px;
+    line-height:   74px;
+    padding-left:  1em;
+    color:         limegreen;
+    background:    #f9f9f9;
+    border-radius: 3px;
+    border:        1px solid #d3d3d3;
+    box-shadow:    0 0 4px 1px rgba(0, 0, 0, 0.08);
+}

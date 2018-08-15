@@ -1,0 +1,53 @@
+<%# app/views/shelf_browse/shared/_item_metadata.html.erb -%>
+<%-
+  # Virtual shelf browse item metadata display.
+
+  # Values from :locals template parameter.
+  item    ||= nil
+  tile_id ||= nil
+  error   ||= nil
+
+  # Prepare tile ID.
+  tile_id &&= " data-tile=#{tile_id}"
+
+  # Catalog show page template options.
+  template_opts = {
+    document:       item,
+    tech_details:   :false,
+    link_params:    remove_shelf_browse_params,
+    shelf_browse:   true,
+  }
+  template_opts[:request_popup] = :false if popup
+
+  # Special handling for unique sites
+  fields_template =
+    if item && unique_site_type(item)
+      template_opts[:fields_only] = true
+      'catalog/show/kluge'
+    else
+      'catalog/show/shared/marc_details'
+    end
+
+  # Format the error message if there is one.  Blank lines are needed to ensure
+  # that the .item-details panel does not shrink when displaying the message.
+  error &&=
+    content_tag(:em) do
+      'This is not a missing catalog item -- this is just a placeholder ' \
+      "indicating that the Solr indexing server returned #{error}."
+    end + ('<br/>' * 20).html_safe
+
+  view_debug(__FILE__)
+-%>
+
+<div class="item-metadata"<%= tile_id -%>>
+  <%- if item -%>
+    <%= render 'catalog/show/shared/title',            template_opts %>
+    <%= render fields_template,                        template_opts %>
+    <%= render 'catalog/show/shared/availability_box', template_opts %>
+    <%= render 'catalog/show/shared/bookplate',        template_opts %>
+    <%= extra_metadata(item) %>
+  <%- else -%>
+    <%= error %>
+  <%- end -%>
+  <p>&nbsp;</p><%# Fodder for IE since it chops off the last item -%>
+</div>

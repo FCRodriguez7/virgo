@@ -1,0 +1,22 @@
+<%# app/views/maps/_form.html.erb -%>
+<%-
+  collection ||= ::Library.all(order: :name)
+  options    ||= { prompt: 'Select a library' }
+
+  view_debug(__FILE__)
+-%>
+
+<div class="row">
+  <%= label(:map, :library_id) %>
+  <%= collection_select(:map, :library_id, collection, :id, :name, options) %>
+</div>
+
+<div class="row">
+  <%= label(:map, :description) %>
+  <%= form.text_field :description %>
+</div>
+
+<div class="row">
+  <%= label(:map, :url) %>
+  <%= form.text_field :url %>
+</div>

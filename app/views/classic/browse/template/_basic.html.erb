@@ -1,0 +1,17 @@
+<%# app/views/classic/browse/template/_basic.html.erb -%>
+<%-
+  # Modified search results for "browse by".
+
+  facet_items ||= @facet_list
+  browse_mode ||= params[:browse_mode]
+
+  opt = { browse_mode: browse_mode.to_s.to_sym }
+
+  view_debug(__FILE__)
+-%>
+
+<%- if facet_items.present? -%>
+  <%= render 'classic/browse/shared/items', opt.merge(items: facet_items) %>
+<%- else -%>
+  <%= render 'classic/browse/shared/alt_search', opt %>
+<%- end -%>

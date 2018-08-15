@@ -1,0 +1,48 @@
+<%# app/views/catalog/show/shared/_full_text_viewer.html.erb -%>
+<%-
+  doc  = document ||= @document
+  type = doc && doc.doc_type
+  download_text = (type == :article) && doc.download_text
+  return if download_text.blank?
+
+  full_page ||= nil
+  header    ||= 'Full Text'
+
+  if full_page
+    header = content_tag(:h1, sr_only(header))
+    full_page = 'full-page' unless full_page.is_a?(String)
+    full_page = full_page.strip.prepend(SPACE)
+    links = nil
+    print_view_opt = {}
+  else
+    header = content_tag(:h2, header)
+    full_page_path = articles_full_text_path(id: doc.doc_id)
+    links =
+      content_tag(:span, class: 'jump-list', role: 'navigation') {
+        [
+          link_to('View Record', '#',
+            title: 'Jump to the top of this page.'),
+          out_link('Full Page', full_page_path,
+            title: 'View the text of the article in a separate browser tab.')
+        ].join(link_spacer).html_safe
+      }
+    print_view_opt = {
+      path:  full_page_path,
+      title: 'Open a print view for the text of the article.'
+    }
+  end
+
+  view_debug(__FILE__)
+-%>
+
+<div id="full-text" class="full-text-top<%= full_page -%>">&nbsp;</div>
+<div class="full-text-viewer<%= full_page -%>">
+  <div class="banner<%= full_page -%>">
+    <%= header %>
+    <%= links %>
+    <%= print_view_link(print_view_opt) unless print_view? %>
+  </div>
+  <div class="scroller<%= full_page -%>" tabindex="0" role="article">
+    <%= download_text.html_safe -%>
+  </div>
+</div>

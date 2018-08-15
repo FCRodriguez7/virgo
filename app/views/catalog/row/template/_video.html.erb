@@ -1,0 +1,27 @@
+<%# app/views/catalog/row/template/_video.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc
+
+  title   ||= doc.values_for(:linked_title_display).join(ITEM_SEPARATOR)
+  formats ||= doc.get_format.reject { |v| %w(Online Video).include?(v) }
+  formats << 'Video' if formats.blank?
+  formats = formats.join(ITEM_SEPARATOR).gsub(/\s+/, '&nbsp;').html_safe
+
+  access = online_access_label(doc)
+  resource_link ||=
+    link_to_online_access(doc, label: access, separator: ITEM_SEPARATOR)
+  dev_note ||= __FILE__
+
+  fields_opts ||= {
+    document:     doc,
+    title:        title.presence,
+    formats:      formats.presence,
+    access_link:  resource_link,
+    availability: !resource_link,
+    dev_note:     dev_note,
+  }
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/row/shared/fields', fields_opts -%>

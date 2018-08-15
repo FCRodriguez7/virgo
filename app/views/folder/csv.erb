@@ -1,0 +1,10 @@
+<%# app/views/folder/csv.erb -%>
+<%-
+  documents ||= @documents || []
+  articles  ||= @articles  || []
+  all_items = documents + articles
+  set_output_filename(all_items, :csv)
+
+  view_debug(__FILE__)
+-%>
+<%= render_csv(all_items).html_safe %>

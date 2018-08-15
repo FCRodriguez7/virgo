@@ -1,0 +1,67 @@
+<%# app/views/layouts/tei.html.erb -%>
+<%-
+  # This layout is for TEI documents.
+  page_css = %w(tei-page)
+  page_css << 'print-view' if print_view?
+  page_css = page_css.join(SPACE)
+
+  # Initial stylesheets and scripts for all routes using this layout.
+  javascripts = []
+  stylesheets = [] << 'tei.css'
+
+  # Print styling comes after all other html_head entries.
+  print_media = [] << 'print' << ('screen' if print_view?)
+  print_media = print_media.compact.join(LIST_SEPARATOR)
+  html_head << stylesheet_link_tag('print.css', media: print_media)
+
+  # Fixed width for main content.
+  content_css = 'page-content grid_24 alpha omega'
+
+  view_debug(__FILE__)
+-%>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+
+  <%# === Meta tags === -%>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <%= show_meta_tags %>
+  <%= csrf_meta_tags %>
+
+  <%# === Include CSS, JavaScript and items added by the action page === -%>
+  <%= show_html_head(stylesheets, javascripts) -%>
+
+</head>
+<body class="<%= page_css -%>">
+
+  <div class="virgo-container">
+
+    <%# === Top banner === -%>
+    <%# render 'layouts/header' %>
+
+    <div class="page-container container_24">
+
+      <article class="<%= content_css -%>" id="content" role="main">
+
+        <%# === Controls visible for on-screen print view === -%>
+        <%= print_view_controls if print_view? %>
+
+        <%# === NOTE: rendering of action page inserted here === -%>
+        <%= yield %>
+
+      </article>
+
+    </div>
+
+    <%# === Page bottom === -%>
+    <%# render 'layouts/footer', layout: __FILE__ %>
+
+  </div>
+
+  <%# render 'layouts/skip_nav' %>
+  <%= render 'layouts/analytics' %>
+  <%= render 'layouts/copyright' %>
+
+</body>
+</html>

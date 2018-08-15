@@ -1,0 +1,42 @@
+<%# app/views/advanced/_nostem_checkbox.html.erb -%>
+<%-
+  # Check box for per-item "Don't stem" option.
+
+  base_field     ||= nil
+  checkbox_field ||= nostem_field(base_field)
+  return if checkbox_field.nil?
+  value          ||= nostem_param(checkbox_field)
+  selected_value ||= nostem_selected_value
+
+  checked  = (value == selected_value)
+  field_id = "#{checkbox_field}_cb".to_sym # E.g. "keyword_nostem_cb"
+
+  view_debug(__FILE__)
+-%>
+
+<%= check_box_tag(checkbox_field, selected_value, checked, id: field_id) %>
+<%= label_tag(field_id, %q(Don't stem), class: 'tooltip') do %>
+  Don't Stem
+  <span>
+    <strong>
+      Select “Don’t stem” to turn off stemming to find the exact form of words.
+    </strong>
+    <br/>
+    By default, words are stemmed so that their root parts are searched.
+    <br/>
+    • This means that if you search for the word “creative,” you may find
+    results with the words “create,” “created,” and “creation,” for example.
+    <br/>
+    <br/>
+    <strong>
+      Turning off stemming by checking “Don’t Stem” eliminates alternate word
+      endings.
+    </strong>
+    Select this option to remove the stemming default.
+    <br/>
+    • Example: A search for “creative” only searches for the word “creative.”
+    (The search will not include the related words “created,” “creation,”
+    etc.).
+  </span>
+  <div class="fa fa-question-circle" aria-hidden="true"></div>
+<%- end -%>

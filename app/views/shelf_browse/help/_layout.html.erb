@@ -1,0 +1,28 @@
+<%# app/views/shelf_browse/help/_layout.html.erb -%>
+<%-
+  # Locals are defined in shelf_browse/shared/_help_content.html.erb where this
+  # file is included.
+
+  view_debug(__FILE__)
+-%>
+
+<div class="<%= help_topic_css(:help_layout) -%>">
+  <h2>Parts of the display</h2>
+  <ul>
+    <li>Title
+      <ul>
+        <li>Browse by topic</li>
+        <li>Original call number</li>
+      </ul>
+    </li>
+    <li>Item shelf
+      <ul>
+        <li>Page backwards controls</li>
+        <li>Item tiles</li>
+        <li>Page forwards controls</li>
+      </ul>
+    </li>
+    <li>Displayed call number range context</li>
+    <li>Item details</li>
+  </ul>
+</div>

@@ -1,0 +1,198 @@
+<%# app/views/layouts/_header.html.erb -%>
+<%-
+  notices = session[:notices_count].to_i
+  opt     = { rel: 'nofollow' }
+
+  # === Library logo
+  url      = URL::LIBRARY_HOME
+  tooltip  = 'Go to the main UVA Library web site.'
+  alt_text = 'University of Virginia Library'
+  logo     = image_tag('uva_lib_logo.png', size: '200x15', alt: alt_text)
+  library_home = external_link(logo, url, title: tooltip, ARIA_LABEL => false)
+
+  # === Portal status
+  portal_status_class = 'portal-status'
+  portal_status_class += ' hidden' unless special_collections_lens?
+
+  # === Ask a Librarian link
+  label = "#{help_symbol} Ask a Librarian".html_safe
+  tip = 'Need help finding something? Ask a librarian through real-time chat.'
+  ask_a_librarian =
+    ask_a_librarian(label, title: tip, class: 'ask-highlight', role: 'button')
+
+  # === Virgo logo
+  virgo_logo = application_logo
+  logo_label = "#{virgo_logo} Home"
+
+  # === Search scope
+  search_scope =
+    if portal_controller
+      if classic_browse_results?
+        "Browse by #{browse_mode_label}"
+      elsif !home_page?
+        "#{search_result_label} Search"
+      end
+    end
+  scope_opt = { class: 'search-scope' }
+  if search_scope
+    scope_opt[:class] += " #{search_result_label.downcase}-scope"
+  else
+    scope_opt[:class] += ' hidden'
+    scope_opt[ARIA_HIDDEN] = true
+  end
+  search_scope = content_tag(:div, search_scope, scope_opt)
+
+  # === Out-links to other library services
+  util_link_table = {
+    'GIS' => [
+      URL::GIS_HOME,
+      'Search for maps, datasets and other geographical information.'
+    ],
+    'Libra' => [
+      URL::LIBRA_HOME,
+      "The University of Virginia's archive of online scholarship -\n" \
+      'UVA electronic theses, dissertations and open-access works.'
+    ],
+    'Course Reserves' => [
+      URL::SIRSI_COURSE_RESERVES,
+      "Locate materials held on reserve\n" \
+      'by course name, course ID or instructor.'
+    ],
+  }
+  if classic_lens?
+    util_link_table.merge!(
+      'Databases' => [
+        URL::DATABASES,
+        "Subject-specific collections of research materials\n" \
+        'provided by external publication sources.'
+      ],
+      'Journals' => [
+        URL::JOURNAL_FINDER,
+        'Locate online versions of journals by title or ISSN.'
+      ],
+      'Guides' => [
+        URL::LIBGUIDES,
+        "A wealth of resources organized by topic and\n" \
+        'maintained by UVA Library subject-matter experts.'
+      ],
+    )
+  else
+    util_link_table.merge!(
+      'Virgo Classic' => [
+        URL::SIRSI_HOME,
+        'Interface to the integrated library system (ILS) for cataloging ' \
+        'and circulation.'
+      ]
+    )
+  end
+  util_link_table.keep_if { |link_label, value|
+    link_path, _tooltip = value
+    link_label.present? && link_path.present?
+  }
+  li_class = Array.new(util_link_table.size)
+  li_class[0]  = 'first'
+  li_class[-1] = 'last'
+
+  util_links =
+    util_link_table.map { |link_label, value|
+      link_path, tooltip = value
+      link_opts = { title: tooltip, :'aria-label' => link_label }
+      li_class.shift.tap { |c| link_opts[:class] = c if c }
+      content_tag(:li, role: 'menuitem') {
+        external_link(link_label, link_path, link_opts)
+      }
+    }.join(NEWLINE).html_safe
+
+  view_debug(__FILE__)
+-%>
+
+<header class="virgo-banner" role="banner">
+
+  <div class="lib-banner-container">
+    <div class="lib-banner container_24">
+
+      <div class="uva-lib-logo grid_13 alpha">
+
+        <%# === Library logo === -%>
+        <%= library_home %>
+
+        <%# === Portal status information and links === -%>
+        <div class="<%= portal_status_class -%>">
+          <%- if special_collections_lens? -%>
+            <span class="special-collections">
+              &nbsp;&nbsp;Special Collections
+            </span>
+            <span class="exit-special-collections">
+              <a href="/?special_collections=false" rel="nofollow">
+                View Full Collection
+              </a>
+            </span>
+          <%- end -%>
+        </div>
+
+      </div>
+
+      <nav class="account-nav grid_11 omega">
+
+        <%= sr_only(:h2, 'Account Links') %>
+
+        <ul class="account-links">
+
+          <%- if current_user -%>
+
+            <%# === Account links for an authenticated user session === -%>
+            <li class="first">
+              <%- link_label = "My Account (#{current_user.login})" -%>
+              <%= link_to link_label, accounts_path, opt %>
+            </li>
+            <%- unless notices.zero? -%>
+              <li class="notice-badge">
+                <%= link_to notices, notices_accounts_path, opt %>
+              </li>
+            <%- end -%>
+            <li>
+              <%= link_to 'Sign out', logout_path, opt %>
+            </li>
+
+          <%- else -%>
+
+            <%# === Sign-on links for an anonymous session === -%>
+            <li class="first">
+              <%= link_to 'Sign in', login_path, opt.merge(id: 'hd_login') %>
+            </li>
+            <li>
+              <%= link_to 'Non-UVA User?', patron_login_path, opt %>
+            </li>
+
+          <%- end -%>
+
+          <%# === Generic links for any session === -%>
+          <li class="last">
+            <%= ask_a_librarian %>
+          </li>
+        </ul>
+
+      </nav>
+
+    </div>
+  </div>
+
+  <div class="app-banner-container">
+    <div class="app-banner container_24">
+
+      <%# === Virgo logo and search scope === -%>
+      <div class="virgo-logo alpha">
+        <h2 class="virgo-logo-heading"><%= virgo_logo %></h2>
+        <%= search_scope %>
+      </div>
+
+      <%# === Out-links to other library services === -%>
+      <nav class="util-nav omega">
+        <%= sr_only(:h2, 'Other Services') %>
+        <ul class="util-links" role="menubar"><%= util_links %></ul>
+      </nav>
+
+    </div>
+  </div>
+
+</header>

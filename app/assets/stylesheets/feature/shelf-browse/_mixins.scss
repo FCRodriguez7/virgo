@@ -1,0 +1,301 @@
+// app/assets/stylesheets/feature/shelf-browse/_mixins.scss
+
+@include -trace-module("feature/shelf-browse/_mixins.scss");
+
+// ============================================================================
+// Generic - Box model
+// ============================================================================
+
+/// Position an element at the center of its parent with the given offsets.
+///
+/// @param {Number} $left
+/// @param {Number} $top
+/// @param {String} $position         Either *absolute* or *relative*.
+///
+@mixin center-xy($left, $top, $position) {
+    position:  $position;
+    left:      $left;
+    top:       $top;
+    transform: translate(-$left, -$top);
+}
+
+/// Position an element at the center of its parent.
+///
+@mixin center {
+    @include center-xy(50%, 50%, relative);
+}
+
+// ============================================================================
+// Generic - Backgrounds
+// ============================================================================
+
+/// Insert an image as an element.
+///
+/// @param {String} $path             Image location.
+/// @param {Number} $height           Height of displayed image.
+/// @param {Number} $width            Width of displayed image.
+///
+@mixin image($path, $height: auto, $width: $height) {
+    display: block;
+    height:  $height;
+    width:   $width;
+    background-image: image-url($path);
+    background-size:  100% 100%;
+}
+
+// ============================================================================
+// Generic - Buttons
+// ============================================================================
+
+/// Properties for dialog control buttons.
+///
+@mixin control-button {
+    display: inline-block;
+}
+
+/// Properties for dialog close buttons.
+///
+@mixin close-button {
+
+    @include control-button;
+    @include image("close_button.png", $sb-dropdown-button-size);
+}
+
+/// Properties for application button appearance.
+///
+@mixin button {
+
+    display:        inline-block;
+    padding:        0 3px;
+    text-align:     center;
+    background:     $sb-scroller-background;
+    border:         1px solid $sb-button-border-color;
+    border-radius:  4px;
+    box-shadow:     inset 0 0 4px 1px #8495b9;
+
+    // Properties when tabbing into the button.
+    &:focus {
+        box-shadow: 0 0 7px 1px $sb-highlight-color;
+    }
+
+    // Properties when the mouse hovers over the button.
+    &:hover {
+        cursor:     $sb-link-cursor;
+        border:     1px solid $sb-highlight-color;
+        box-shadow: 0 0 7px 1px $sb-highlight-color;
+        outline:    none;
+    }
+}
+
+// ============================================================================
+// Generic - Text
+// ============================================================================
+
+/// Outline text with multiple text shadows.
+///
+/// @param {Number} $h      Horizontal offset
+/// @param {Number} $v      Vertical offset
+/// @param {Number} $blur   Blur radius
+/// @param {Color}  $color
+///
+@mixin text-outline($h: 1px, $v: 1px, $blur: 0, $color: black) {
+    $x-pos: $h;
+    $x-neg: -#{$h};
+    $y-pos: $v;
+    $y-neg: -#{$v};
+    text-shadow:
+        $x-pos $y-pos $blur $color,
+        $x-pos $y-neg $blur $color,
+        $x-neg $y-pos $blur $color,
+        $x-neg $y-neg $blur $color;
+}
+
+// ============================================================================
+// Item display
+// ============================================================================
+
+/// Border for items inside item tiles.
+///
+/// @param {String} $style            Border style (solid, dashed, dotted, etc)
+/// @param {Color}  $color            Border color.
+///
+@mixin item-border($style, $color) {
+    border: $sb-item-border-width $style $color;
+}
+
+// ============================================================================
+// Main display
+// ============================================================================
+
+/// Properties for a call number displayed in the top-level elements.
+///
+/// @param {Number} $opacity          From 0.0 to 1.0.
+///
+@mixin sb-title-call-number($opacity) {
+    display:       inline-block;
+    padding:       0 5px;
+    background:    $sb-scroller-background;
+    border:        1px solid rgba($sb-header-color, $opacity);
+    border-radius: 2px;
+}
+
+/// Properties of text that appears in the title areas.
+///
+@mixin sb-title-font {
+    color:       $sb-header-color;
+    font-size:   20px;
+    font-weight: 300;
+}
+
+// ============================================================================
+// Call number range buttons
+// ============================================================================
+
+/// Properties for a call number range button.
+///
+@mixin range-button {
+
+    @include button;
+
+    min-width: 3.5em;
+
+    &:focus {
+        outline:        thin dashed white;
+        outline-offset: -3px;
+    }
+
+    // The call number range is wrapped in an element with a URL in 'data-path'
+    // which goes to the virtual shelf at the start of that call number range.
+    div {
+        white-space: nowrap;
+    }
+}
+
+/// Properties for a call number range button when the range is an LCC class.
+///
+@mixin range-button-class {
+
+    @include range-button;
+
+    font-weight: bolder;
+    color:       $sb-class-color;
+    background:  $sb-class-background;
+    border:      1px solid $sb-class-border-color;
+}
+
+/// Properties for a call number range button when the range is an LCC
+/// subclass.
+///
+@mixin range-button-subclass {
+
+    @include range-button;
+
+    font-weight: bolder;
+    color:       $sb-subclass-color;
+    background:  $sb-subclass-background;
+    border:      1px solid $sb-subclass-border-color;
+}
+
+/// Properties for a call number range button when the range is neither an LCC
+/// class nor an LCC subclass.
+///
+@mixin range-button-range {
+
+    @include range-button;
+
+    color:       $sb-range-color;
+    background:  $sb-range-background;
+    border:      1px solid $sb-range-border-color;
+}
+
+/// Properties for .lcc-root, .lcc-class, .lcc-subclass and .lcc-range in both
+/// the .item-ranges and .lcc-tree contexts.
+///
+@mixin lcc-range {
+
+    @include flex-box(row);
+
+    // ========================================================================
+    // Call number range controls
+    // ========================================================================
+
+    .class    { @include range-button-class; }
+    .subclass { @include range-button-subclass; }
+    .range    { @include range-button-range; }
+}
+
+// ============================================================================
+// Item metadata formatting
+// ============================================================================
+
+/// Metadata formatting styles are broken out so that these definitions can be
+/// used from within .item-metadata and .item-fields.  They are placed at the
+/// top level so that they can be used from within media query overrides.
+///
+/// @param {Number} $dt-width
+///
+@mixin item-metadata-format($dt-width: 15%) {
+
+    $dd-width:      (99% - $dt-width);
+    $field-spacing: 2px;
+
+    // ========================================================================
+    // Display elements.
+    // ========================================================================
+
+    p {
+        text-indent: 2.5%;
+        text-align:  justify;
+    }
+
+    // The Virgo show page layout simply isn't designed for flex so we have to
+    // drop back to floating titles to the left and values to the right.
+    dl {
+        display: block;
+    }
+
+    dt, dd {
+        margin-top:    0;
+        margin-bottom: $field-spacing;
+    }
+
+    dt {
+        @include hyphenation; // Compass @mixin
+        width:        $dt-width;
+        margin-right: 0;
+    }
+
+    dd {
+        float:        right;
+        width:        $dd-width;
+        margin-left:  0;
+    }
+
+    dd + dd {
+        padding-top:  0;
+    }
+
+    dd, ul {
+        display:    block;
+    }
+
+    // ========================================================================
+    // Styles.
+    // ========================================================================
+
+    b, strong { font-weight: bolder; }
+}
+
+// ============================================================================
+// CSS ANIMATIONS
+// ============================================================================
+
+// Frames for range progress bar animation
+//
+// The first frame starts hidden so that the rounded corners of the bar do not
+// appear before the bar action starts into action.
+//
+@include keyframes(range-progress) {
+    0%   { width: 0;    visibility: visible; }
+    100% { width: 100%;                      }
+}

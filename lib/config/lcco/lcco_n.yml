@@ -1,0 +1,741 @@
+# lib/config/lcco_n.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from the Word document of the same base name.
+
+class:    N
+name:     'FINE ARTS'
+sections:
+  - subclass:  N
+    name:     'Visual arts'
+    sections:
+      - name:    'Visual arts'
+        range:   N1-(9211)
+        start:   N1
+        end:     N9211
+        sections:
+          - name:    'General'
+            range:   N1-58
+            start:   N1
+            end:     N58
+          - name:    'Theory.  Philosophy.  Aesthetics of the visual arts'
+            range:   N61-72
+            start:   N61
+            end:     N72
+          - name:    'Study and teaching.  Research'
+            range:   N81-390
+            start:   N81
+            end:     N390
+          - name:    'Art museums, galleries, etc.'
+            range:   N400-3990
+            start:   N400
+            end:     N3990
+          - name:    'Exhibitions'
+            range:   N4390-5098
+            start:   N4390
+            end:     N5098
+          - name:    'Private collections and collectors'
+            range:   N5198-5299
+            start:   N5198
+            end:     N5299
+          - name:    'History'
+            range:   N5300-7418
+            start:   N5300
+            end:     N7418
+          - name:    'General works'
+            range:   N7420-7525.8
+            start:   N7420
+            end:     N7525.8
+          - name:    'Special subjects of art'
+            range:   N7560-8266
+            start:   N7560
+            end:     N8266
+          - name:    'Art as a profession.  Artists'
+            range:   N8350-8356
+            start:   N8350
+            end:     N8356
+          - name:    'Art studios, materials, etc.'
+            range:   N8510-8553
+            start:   N8510
+            end:     N8553
+          - name:    'Examination and conservation of works of art'
+            range:   N8554-8585
+            start:   N8554
+            end:     N8585
+          - name:    'Economics of art'
+            range:   N8600-8675
+            start:   N8600
+            end:     N8675
+          - name:    'Art and the state.  Public art'
+            range:   N8700-9165
+            start:   N8700
+            end:     N9165
+  - subclass:  NA
+    name:     'Architecture'
+    sections:
+      - name:    'Architecture'
+        range:   NA1-9428
+        start:   NA1
+        end:     NA9428
+        sections:
+          - name:    'General'
+            range:   NA1-60
+            start:   NA1
+            end:     NA60
+          - name:    'Architecture and the state'
+            range:   NA100-130
+            start:   NA100
+            end:     NA130
+          - name:    'History'
+            range:   NA190-1555.5
+            start:   NA190
+            end:     NA1555.5
+          - name:    'Architecture as a profession'
+            range:   NA1995
+            start:   NA1995
+            end:     NA1995
+          - name:    'Study and teaching.  Research'
+            range:   NA2000-2320
+            start:   NA2000
+            end:     NA2320
+          - name:    'Competitions'
+            range:   NA2335-2360
+            start:   NA2335
+            end:     NA2360
+          - name:    'Museums.  Exhibitions'
+            range:   NA2400-2460
+            start:   NA2400
+            end:     NA2460
+          - name:    'General works'
+            range:   NA2500-2599
+            start:   NA2500
+            end:     NA2599
+          - name:    'Architectural criticism'
+            range:   NA2599.5-2599.9
+            start:   NA2599.5
+            end:     NA2599.9
+          - name:    'Architectural drawing and design'
+            range:   NA2695-2793
+            start:   NA2695
+            end:     NA2793
+          - name:    'Details and decoration'
+            range:   NA2835-4050
+            start:   NA2835
+            end:     NA4050
+          - name:    'Special classes of buildings'
+            range:   NA4100-8480
+            start:   NA4100
+            end:     NA8480
+            sections:
+              - name:    'Classed by material'
+                range:   NA4100-4145
+                start:   NA4100
+                end:     NA4145
+              - name:    'Classed by form'
+                range:   NA4150-4160
+                start:   NA4150
+                end:     NA4160
+              - name:    'Classed by use'
+                range:   NA4170-8480
+                start:   NA4170
+                end:     NA8480
+                sections:
+                  - name:    'Public buildings'
+                    range:   NA4170-(7020)
+                    start:   NA4170
+                    end:     NA7020
+                    sections:
+                      - name:    'Religious architecture'
+                        range:   NA4590-5621
+                        start:   NA4590
+                        end:     NA5621
+                  - name:    'Domestic architecture.  Houses.  Dwellings'
+                    range:   NA7100-7884
+                    start:   NA7100
+                    end:     NA7884
+                  - name:    'Clubhouses, guild houses, etc.'
+                    range:   NA7910-8125
+                    start:   NA7910
+                    end:     NA8125
+                  - name:    'Farm architecture'
+                    range:   NA8200-8260
+                    start:   NA8200
+                    end:     NA8260
+                  - name:    'Outbuildings, gates, fences, etc.'
+                    range:   NA8300-8480
+                    start:   NA8300
+                    end:     NA8480
+          - name:    'Aesthetics of cities.  City planning and beautifying'
+            range:   NA9000-9428
+            start:   NA9000
+            end:     NA9428
+  - subclass:  NB
+    name:     'Sculpture'
+    sections:
+      - name:    'Sculpture'
+        range:   NB1-1952
+        start:   NB1
+        end:     NB1952
+        sections:
+          - name:    'General'
+            range:   NB1-50
+            start:   NB1
+            end:     NB50
+          - name:    'History'
+            note:    'Including collective biography'
+            range:   NB60-1115
+            start:   NB60
+            end:     NB1115
+          - name:    'Study and teaching'
+            range:   NB1120-1133
+            start:   NB1120
+            end:     NB1133
+          - name:    'Competitions'
+            range:   NB1134-1134.4
+            start:   NB1134
+            end:     NB1134.4
+          - name:    'General works'
+            range:   NB1135-1150
+            start:   NB1135
+            end:     NB1150
+          - name:    'Designs and technique'
+            range:   NB1160-1195
+            start:   NB1160
+            end:     NB1195
+          - name:    'Restoration of sculptures'
+            range:   NB1199-1200
+            start:   NB1199
+            end:     NB1200
+          - name:    'Special materials'
+            range:   NB1203-1270
+            start:   NB1203
+            end:     NB1270
+          - name:    'Mobiles, color, sculpture gardens, etc.'
+            range:   NB1272-1291
+            start:   NB1272
+            end:     NB1291
+          - name:    'Special forms'
+            range:   NB1293-1895
+            start:   NB1293
+            end:     NB1895
+            sections:
+              - name:    'Portrait sculpture'
+                range:   NB1293-1310
+                start:   NB1293
+                end:     NB1310
+              - name:    'Equestrian statues'
+                range:   NB1312-1313
+                start:   NB1312
+                end:     NB1313
+              - name:    'Sculptural monuments'
+                range:   NB1330-1685
+                start:   NB1330
+                end:     NB1685
+              - name:    'Religious monuments and shrines'
+                range:   NB1750-1793
+                start:   NB1750
+                end:     NB1793
+              - name:    'Sepulchral monuments'
+                range:   NB1800-1880
+                start:   NB1800
+                end:     NB1880
+          - name:    'Special subjects'
+            range:   NB1910-1952
+            start:   NB1910
+            end:     NB1952
+  - subclass:  NC
+    name:     'Drawing.  Design.  Illustration'
+    sections:
+      - name:    'Drawing.  Design.  Illustration'
+        range:   NC1-1940
+        start:   NC1
+        end:     NC1940
+        sections:
+          - name:    'General'
+            note:    'Including collective biography'
+            range:   NC1-45
+            start:   NC1
+            end:     NC45
+          - name:    'History of drawing'
+            range:   NC50-266
+            start:   NC50
+            end:     NC266
+          - name:    'Study and teaching'
+            range:   NC390-670
+            start:   NC390
+            end:     NC670
+          - name:    'Competitions'
+            range:   NC673-677
+            start:   NC673
+            end:     NC677
+          - name:    'General works'
+            range:   NC703-725
+            start:   NC703
+            end:     NC725
+          - name:    'Technique'
+            range:   NC730-758
+            start:   NC730
+            end:     NC758
+          - name:    'Special subjects'
+            range:   NC760-825
+            start:   NC760
+            end:     NC825
+          - name:    'Graphic art materials'
+            range:   NC845-915
+            start:   NC845
+            end:     NC915
+          - name:    'Conservation and restoration of drawings'
+            range:   NC930
+            start:   NC930
+            end:     NC930
+          - name:    'Illustration'
+            range:   NC950-(996)
+            start:   NC950
+            end:     NC996
+          - name:    'Commercial art.  Advertising art'
+            range:   NC997-1003
+            start:   NC997
+            end:     NC1003
+          - name:    'Printed ephemera.  Imagerie populaire'
+            range:   NC1280-1284
+            start:   NC1280
+            end:     NC1284
+          - name:    'Pictorial humor, caricature, etc.'
+            range:   NC1300-1766
+            start:   NC1300
+            end:     NC1766
+          - name:    'Posters'
+            range:   NC1800-1850
+            start:   NC1800
+            end:     NC1850
+          - name:    'Greeting cards, postcards, invitations, book jackets, etc.'
+            range:   NC1860-1896
+            start:   NC1860
+            end:     NC1896
+          - name:    'Copying, enlarging, and reduction of drawings'
+            range:   NC1920-1940
+            start:   NC1920
+            end:     NC1940
+  - subclass:  ND
+    name:     'Painting'
+    sections:
+      - name:    'Painting'
+        range:   ND25-3416
+        start:   ND25
+        end:     ND3416
+        sections:
+          - name:    'General'
+            range:   ND25-(48)
+            start:   ND25
+            end:     ND48
+          - name:    'History'
+            range:   ND49-813
+            start:   ND49
+            end:     ND813
+          - name:    'Study and teaching'
+            range:   ND1115-1120
+            start:   ND1115
+            end:     ND1120
+          - name:    'General works'
+            range:   ND1130-1156
+            start:   ND1130
+            end:     ND1156
+          - name:    'Special subjects'
+            range:   ND1288-1460
+            start:   ND1288
+            end:     ND1460
+            sections:
+              - name:    'Human figure'
+                range:   ND1290-1293
+                start:   ND1290
+                end:     ND1293
+              - name:    'Portraits'
+                range:   ND1300-1337
+                start:   ND1300
+                end:     ND1337
+              - name:    'Landscape painting'
+                range:   ND1340-1367
+                start:   ND1340
+                end:     ND1367
+              - name:    'Marine painting'
+                range:   ND1370-1375
+                start:   ND1370
+                end:     ND1375
+              - name:    'Animals.  Birds'
+                range:   ND1380-1383
+                start:   ND1380
+                end:     ND1383
+              - name:    'Sports.  Hunting, fishing, etc.'
+                range:   ND1385-1388
+                start:   ND1385
+                end:     ND1388
+              - name:    'Still life'
+                range:   ND1390-1393
+                start:   ND1390
+                end:     ND1393
+              - name:    'Flowers.  Fruit.  Trees'
+                range:   ND1400-1403
+                start:   ND1400
+                end:     ND1403
+              - name:    'Other subjects'
+                range:   ND1410-1460
+                start:   ND1410
+                end:     ND1460
+          - name:    'Technique and materials'
+            range:   ND1470-1625
+            start:   ND1470
+            end:     ND1625
+          - name:    'Examination and conservation of paintings'
+            range:   ND1630-1662
+            start:   ND1630
+            end:     ND1662
+          - name:    'Watercolor painting'
+            range:   ND1700-2495
+            start:   ND1700
+            end:     ND2495
+          - name:    'Mural painting'
+            range:   ND2550-2733
+            start:   ND2550
+            end:     ND2733
+          - name:    'Illuminating of manuscripts and books'
+            range:   ND2889-3416
+            start:   ND2889
+            end:     ND3416
+  - subclass:  NE
+    name:     'Print media'
+    sections:
+      - name:    'Print media'
+        range:   NE1-3002
+        start:   NE1
+        end:     NE3002
+        sections:
+          - name:    'Printmaking and engraving'
+            range:   NE1-978
+            start:   NE1
+            end:     NE978
+            sections:
+              - name:    'General'
+                range:   NE1-90
+                start:   NE1
+                end:     NE90
+              - name:    'Engraved portraits.  Self-portraits'
+                range:   NE218-(330)
+                start:   NE218
+                end:     NE330
+              - name:    'Conservation and restoration of prints'
+                range:   NE380
+                start:   NE380
+                end:     NE380
+              - name:    'Collected works'
+                range:   NE390-395
+                start:   NE390
+                end:     NE395
+              - name:    'History of printmaking'
+                range:   NE400-773
+                start:   NE400
+                end:     NE773
+              - name:    'General works'
+                range:   NE830-898
+                start:   NE830
+                end:     NE898
+              - name:    'Special subjects'
+                range:   NE951-962
+                start:   NE951
+                end:     NE962
+              - name:    'Tradesmen''s cards'
+                range:   NE965-965.3
+                start:   NE965
+                end:     NE965.3
+              - name:    'Study and teaching'
+                range:   NE970-973
+                start:   NE970
+                end:     NE973
+              - name:    'Competitions'
+                range:   NE975-975.4
+                start:   NE975
+                end:     NE975.4
+              - name:    'Equipment'
+                range:   NE977-978
+                start:   NE977
+                end:     NE978
+          - name:    'Wood engraving'
+            range:   NE1000-1352
+            start:   NE1000
+            end:     NE1352
+            sections:
+              - name:    'General'
+                range:   NE1000-1027
+                start:   NE1000
+                end:     NE1027
+              - name:    'History'
+                range:   NE1030-1196.3
+                start:   NE1030
+                end:     NE1196.3
+              - name:    'General works'
+                range:   NE1220-1233
+                start:   NE1220
+                end:     NE1233
+              - name:    'Japanese prints'
+                range:   NE1310-1326.5
+                start:   NE1310
+                end:     NE1326.5
+              - name:    'Linoleum block prints'
+                range:   NE1330-1336
+                start:   NE1330
+                end:     NE1336
+              - name:    'Fish prints'
+                range:   NE1340
+                start:   NE1340
+                end:     NE1340
+              - name:    'Potato prints'
+                range:   NE1344-1345
+                start:   NE1344
+                end:     NE1345
+              - name:    'Other materials used in relief printing'
+                range:   NE1350-1352
+                start:   NE1350
+                end:     NE1352
+          - name:    'Metal engraving'
+            range:   NE1400-1879
+            start:   NE1400
+            end:     NE1879
+            sections:
+              - name:    'General'
+                range:   NE1400-1422
+                start:   NE1400
+                end:     NE1422
+              - name:    'General works'
+                range:   NE1620-1630
+                start:   NE1620
+                end:     NE1630
+              - name:    'History'
+                range:   NE1634-1749
+                start:   NE1634
+                end:     NE1749
+              - name:    'Copper engraving'
+                range:   NE1750-1775
+                start:   NE1750
+                end:     NE1775
+              - name:    'Color prints'
+                range:   NE1850-1879
+                start:   NE1850
+                end:     NE1879
+          - name:    'Etching and aquatint'
+            range:   NE1940-2232.5
+            start:   NE1940
+            end:     NE2232.5
+            sections:
+              - name:    'General'
+                range:   NE1940-1975
+                start:   NE1940
+                end:     NE1975
+              - name:    'History'
+                range:   NE1980-2055.5
+                start:   NE1980
+                end:     NE2055.5
+              - name:    'General works'
+                range:   NE2120-2140
+                start:   NE2120
+                end:     NE2140
+              - name:    'Special subjects'
+                range:   NE2141-2149
+                start:   NE2141
+                end:     NE2149
+              - name:    'Dry point'
+                range:   NE2220-2225
+                start:   NE2220
+                end:     NE2225
+          - name:    'Serigraphy'
+            range:   NE2236-2240.6
+            start:   NE2236
+            end:     NE2240.6
+          - name:    'Monotype (Printmaking)'
+            range:   NE2242-2246
+            start:   NE2242
+            end:     NE2246
+          - name:    'Lithography'
+            range:   NE2250-2570
+            start:   NE2250
+            end:     NE2570
+          - name:    'Lumiprints'
+            range:   NE2685-2685.8
+            start:   NE2685
+            end:     NE2685.8
+          - name:    'Engraving on glass'
+            range:   NE2690
+            start:   NE2690
+            end:     NE2690
+          - name:    'Printing of engravings'
+            range:   NE2800-2880
+            start:   NE2800
+            end:     NE2880
+          - name:    'Copying art.  Copying machine art'
+            range:   NE3000-3002
+            start:   NE3000
+            end:     NE3002
+  - subclass:  NK
+    name:     'Decorative arts'
+    sections:
+      - name:    'Decorative arts'
+        range:   NK1-(9990)
+        start:   NK1
+        end:     NK9990
+        sections:
+          - name:    'General'
+            range:   NK1-570
+            start:   NK1
+            end:     NK570
+          - name:    'History'
+            range:   NK600-806
+            start:   NK600
+            end:     NK806
+          - name:    'Arts and crafts movement'
+            range:   NK1135-1149.5
+            start:   NK1135
+            end:     NK1149.5
+          - name:    'Decoration and ornament.  Design'
+            range:   NK1160-1590
+            start:   NK1160
+            end:     NK1590
+            sections:
+              - name:    'General'
+                range:   NK1160-1174
+                start:   NK1160
+                end:     NK1174
+              - name:    'History'
+                range:   NK1175-(1498)
+                start:   NK1175
+                end:     NK1498
+              - name:    'General works'
+                range:   NK1505-1535
+                start:   NK1505
+                end:     NK1535
+              - name:    'Special subjects for design'
+                range:   NK1548-1590
+                start:   NK1548
+                end:     NK1590
+          - name:    'Religious art'
+            range:   NK1648-1678
+            start:   NK1648
+            end:     NK1678
+          - name:    'Interior decoration.  House decoration'
+            range:   NK1700-2195
+            start:   NK1700
+            end:     NK2195
+            sections:
+              - name:    'General.  History, etc.'
+                note:    'Including special rooms'
+                range:   NK1700-2138
+                start:   NK1700
+                end:     NK2138
+              - name:    'Decorative painting'
+                range:   NK2140-2180
+                start:   NK2140
+                end:     NK2180
+              - name:    'Church decoration'
+                range:   NK2190-2192
+                start:   NK2190
+                end:     NK2192
+          - name:    'Furniture'
+            range:   NK2200-2750
+            start:   NK2200
+            end:     NK2750
+          - name:    'Rugs and carpets'
+            range:   NK2775-2898
+            start:   NK2775
+            end:     NK2898
+          - name:    'Tapestries'
+            range:   NK2975-3049
+            start:   NK2975
+            end:     NK3049
+          - name:    'Upholstery.  Drapery'
+            range:   NK3175-3296.3
+            start:   NK3175
+            end:     NK3296.3
+          - name:    'Wallpapers'
+            range:   NK3375-3496.3
+            start:   NK3375
+            end:     NK3496.3
+          - name:    'Other arts and art industries'
+            range:   NK3600-(9990)
+            start:   NK3600
+            end:     NK9990
+            sections:
+              - name:    'Ceramics'
+                range:   NK3700-4695
+                start:   NK3700
+                end:     NK4695
+              - name:    'Costume'
+                range:   NK4700-4890
+                start:   NK4700
+                end:     NK4890
+              - name:    'Glass'
+                range:   NK5100-5440
+                start:   NK5100
+                end:     NK5440
+              - name:    'Glyptic arts'
+                range:   NK5500-6060
+                start:   NK5500
+                end:     NK6060
+              - name:    'Metalwork'
+                range:   NK6400-8459
+                start:   NK6400
+                end:     NK8459
+              - name:    'Textiles'
+                range:   NK8800-9505.5
+                start:   NK8800
+                end:     NK9505.5
+              - name:    'Woodwork'
+                range:   NK9600-9955
+                start:   NK9600
+                end:     NK9955
+  - subclass:  NX
+    name:     'Arts in general'
+    sections:
+      - name:    'Arts in general'
+        range:   NX1-820
+        start:   NX1
+        end:     NX820
+        sections:
+          - name:    'General'
+            range:   NX1-260
+            start:   NX1
+            end:     NX260
+          - name:    'Study and teaching.  Research'
+            range:   NX280-410
+            start:   NX280
+            end:     NX410
+          - name:    'Competitions'
+            range:   NX411-415
+            start:   NX411
+            end:     NX415
+          - name:    'Exhibitions'
+            range:   NX420-430
+            start:   NX420
+            end:     NX430
+          - name:    'History of the arts'
+            range:   NX440-632
+            start:   NX440
+            end:     NX632
+          - name:    'Special subjects, characters, persons, religious arts, etc.'
+            range:   NX650-694
+            start:   NX650
+            end:     NX694
+          - name:    'Patronage of the arts'
+            range:   NX700-750
+            start:   NX700
+            end:     NX750
+          - name:    'Administration of the arts'
+            range:   NX760-770
+            start:   NX760
+            end:     NX770
+          - name:    'Voluntarism in the arts'
+            range:   NX775-777
+            start:   NX775
+            end:     NX777
+          - name:    'Arts centers and facilities'
+            range:   NX798-820
+            start:   NX798
+            end:     NX820

@@ -1,0 +1,26 @@
+<%# app/views/catalog/show/shared/_tech_details.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc && doc.marc_display
+
+  css_class ||= 'technical-details'
+  heading   ||= 'Technical Details'
+
+  sirsi_link   = link_to_ilink_record(doc)
+  sirsi_link &&= content_tag(:li, sirsi_link)
+
+  librarian_view   = marc_view
+  librarian_view &&= content_tag(:li, librarian_view)
+
+  view_debug(__FILE__)
+-%>
+
+<dt class="<%= css_class -%>">
+  <%= heading %>
+</dt>
+<dd class="<%= css_class -%>">
+  <ul>
+    <%= sirsi_link %>
+    <%= librarian_view %>
+  </ul>
+</dd>

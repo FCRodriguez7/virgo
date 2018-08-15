@@ -1,0 +1,86 @@
+// app/assets/stylesheets/shared/_datatables.scss
+
+// ============================================================================
+// General settings
+// ============================================================================
+
+.dataTables_wrapper {
+
+    width:      auto;
+    border-top: 1px solid #d6ceb7;
+
+    select, input { height: 1em; }
+}
+
+.dataTables_filter {
+
+    clear:        none;
+    width:        auto;
+    height:       26px;
+    padding:      $holding-hspace-edge;
+    background:   $holding-header-color;
+    border-left:  1px solid $holding-border-color;
+    border-right: 1px solid $holding-border-color;
+
+    label {
+        display: none;
+    }
+
+    input {
+
+        height:     19px;
+        width:      40%;
+        padding:    3px 4px;
+        font-size:  13px;
+        background: white;
+        border:     1px solid $holding-border-color;
+
+        &.default_filter { color: #aaaaaa; }
+    }
+}
+
+// ============================================================================
+// Starred item and account listings
+// ============================================================================
+
+/// Define and adjust the image for the sorting control which indicates the
+/// current state of the sort.
+///
+/// @param {String} $icon             Location of the image.
+/// @param {Number} $v_pos            Vertical position.
+/// @param {Number} $h_pos            Horizontal position.
+///
+@mixin menu-sort-icon($icon, $v_pos: 100%, $h_pos: 50%) {
+    min-width:         60px; // Leave room for the sorting arrows.
+    background:        #f2f8ff $icon no-repeat scroll $v_pos $h_pos;
+    background-origin: border-box;
+    background-size:   25px;
+    cursor:            pointer;
+}
+
+/// The sorting control image for an unsorted column.
+///
+/// @param {Number} $v_pos            Vertical position.
+/// @param {Number} $h_pos            Horizontal position.
+///
+@mixin sorting-std-icon($v_pos: 100%, $h_pos: 50%) {
+    @include menu-sort-icon($menu-up-down-icon, $v_pos, $h_pos)
+}
+
+/// The sorting control image for a column sorted in ascending order.
+///
+/// @param {Number} $v_pos            Vertical position.
+/// @param {Number} $h_pos            Horizontal position.
+///
+@mixin sorting-asc-icon($v_pos: 100%, $h_pos: 50%) {
+    @include menu-sort-icon($menu-up-icon, $v_pos, $h_pos)
+}
+
+/// The sorting control image for a column sorted in descending order.
+///
+/// @param {Number} $v_pos            Vertical position.
+/// @param {Number} $h_pos            Horizontal position.
+///
+@mixin sorting-dsc-icon($v_pos: 100%, $h_pos: 50%) {
+    @include menu-sort-icon($menu-down-icon, $v_pos, $h_pos)
+}

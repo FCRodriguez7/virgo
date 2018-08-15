@@ -1,0 +1,80 @@
+<%# app/views/reserves/send_email_record.html.erb -%>
+<%-
+  set_meta_tags(title: 'Course Reserves - Complete')
+
+  documents ||= @documents || []
+
+  opt = { class: 'btn small' }
+
+  # Button to clear starred items explicitly removes the HTTP referrer so that
+  # /folder/clear doesn't redirect back to this transient page.
+  finish_label = 'Finish &amp; Clear Starred Items'.html_safe
+  finish_and_clear_starred_items =
+    link_to(finish_label, clear_folders_path, opt.merge(rel: 'noreferrer'))
+
+  # Buttons for out-links to other Library services.
+  opt.merge!(aside: true)
+  purchase_request =
+    external_link('Purchase Request', URL::PURCHASE_REQUESTS, opt)
+  personal_copy_form =
+    external_link('Personal Copy Form', URL::COURSE_RESERVES_PERSONAL, opt)
+
+  num  = sr_only('Number')
+  star = sr_only('Remove Star')
+
+  view_debug(__FILE__)
+-%>
+
+<div class="list-heading">
+  <h1 class="heading">Course Reserve</h1>
+</div>
+
+<%= render 'catalog/sidebar_close' %>
+
+<div class="account-container results">
+
+  <div class="ui-state-highlight ui-corner-all notice">
+    <p>
+      <strong>Thank you for your course reserve request.</strong>
+      A copy of your request has been emailed to you.
+    </p>
+    <p>
+      If we have questions regarding your request someone will contact you.
+      When your request has been processed, you'll be able to see your reserves
+      by signing into your Virgo account.
+    </p>
+    <p class="control">
+      <%= finish_and_clear_starred_items %>
+    </p>
+  </div>
+
+  <ul class="ui-corner-all added-notes">
+    <li>
+      If the Library doesn't own an item that you need for reserve, you may
+      make a <%= purchase_request %>.
+    </li>
+    <li>
+      If you have personal copies of items to be placed on reserve, please
+      complete our <%= personal_copy_form %> and bring it with the items.
+    </li>
+  </ul>
+
+  <table class="item-list starred-items">
+    <thead>
+      <tr>
+        <th class="starred-number-heading hidden-heading"><%= num %></th>
+        <th class="starred-star-heading hidden-heading"><%= star %></th>
+        <th class="starred-title-heading">Title</th>
+        <th class="starred-author-heading">Creator</th>
+        <th class="starred-format-heading">Format</th>
+        <th class="starred-year-heading">Year</th>
+        <th class="starred-library-heading">Type</th>
+        <th class="starred-availability-heading">Availability</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render 'folder/folder_rows', documents: documents %>
+    </tbody>
+  </table>
+
+</div>

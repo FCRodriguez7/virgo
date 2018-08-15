@@ -1,0 +1,238 @@
+// app/assets/stylesheets/feature/shelf-browse/_display_small.scss
+
+@include -trace-module("feature/shelf-browse/_display_small.scss");
+
+// ============================================================================
+// SHELF BROWSE DISPLAY - SMALLS DISPLAYS
+//
+// This is a stab at making the feature (somewhat) usable on small-form factor
+// displays.  It's barely sufficient and this probably isn't the right approach
+// anyway -- it would be better to control the scaling of parts of the feature
+// through SCSS variables and use media queries to set the values there.
+// (Real responsive design will probably have to wait for a later version of
+// Virgo.)
+// ============================================================================
+
+// Adjustments for small screens (less than 640 pixels high).
+@media screen and (max-device-height: 640px) {
+
+    @mixin item-metadata-overrides {
+
+        @include item-metadata-format($dt-width: 20%);
+
+        dl {
+            dt {
+                padding-top:    3px;
+                padding-bottom: 2px;
+            }
+            dd {
+                padding:        3px 0;
+            }
+        }
+    }
+
+    .shelf-browse.display {
+
+        font-size:   9px;
+        line-height: 1;
+
+        // ====================================================================
+        // SHELF BROWSE DISPLAY - COMPONENT: HEADER AREA
+        // ====================================================================
+
+        .header-area {
+
+            padding: 2px;
+
+            // ================================================================
+            // Components
+            // ================================================================
+
+            .lcc-button {
+                padding:   0 2px;
+                font-size: 12px;
+            }
+
+            .title-text {
+                margin-top: 3px;
+                font-size:  12px;
+            }
+
+            .origin {
+                position:   relative;
+                padding:    0 2px;
+                font-size:  12px;
+            }
+        }
+
+        // ====================================================================
+        // SHELF BROWSE DISPLAY - COMPONENT: CALL NUMBER RANGES AREA
+        // ====================================================================
+
+        .current-range-area {
+            height:    14px;
+            padding:   1px 3px;
+            font-size: 11px;
+        }
+
+        // ====================================================================
+        // SHELF BROWSE DISPLAY - COMPONENT: SCROLLER CONTAINER
+        // ====================================================================
+
+        .page-scroller {
+
+            padding: 0.25em 1px 1.25em;
+
+            .item-page {
+                .tile-container {
+                    .item-tile {
+
+                        margin: auto 4px;
+
+                        // ====================================================
+                        // Components
+                        // ====================================================
+
+                        .item {
+                            height: 25vh;
+                            width:  12.5vh;
+                        }
+
+                        .item-status-tray {
+
+                            height: 12px;
+
+                            .item-status-marker {
+                                height:        80%;
+                                margin:        auto 1px;
+                                padding-left:  2px;
+                                padding-right: 2px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .item-info {
+
+            min-height: 25vh;
+            max-height: 40vh;
+
+            // ================================================================
+            // SCSS mixins
+            // ================================================================
+
+            @mixin info-section {
+                padding: 2px;
+                margin:  4px;
+            }
+
+            // ================================================================
+            // Components: Information panels.
+            // ================================================================
+
+            .item-ranges {
+                @include info-section;
+            }
+
+            .item-info-separator {
+                @if $sb-item-info-splitter {
+                    width: 4px;
+                }
+            }
+
+            .item-details {
+
+                @include info-section;
+
+                .item-metadata {
+
+                    // ========================================================
+                    // Content styling.
+                    // ========================================================
+
+                    @include item-metadata-overrides;
+
+                    line-height: 1;
+
+                    .title-area {
+                        .item-identifier-fields {
+                            .title-field     { font-size: 15px; }
+                            .resp-stmt-field { font-size: 11px; }
+                        }
+                    }
+
+                    .item-fields {
+
+                        margin-top: 0.5em;
+
+                        @include item-metadata-overrides;
+
+                        dd:last-of-type { margin-bottom: 5px; }
+                    }
+
+                    .item-availability {
+
+                        .request-buttons {
+                            padding: 0 5px;
+                            top:     -4px;
+                            height:  34px;
+                        }
+
+                        .btn {
+                            padding:   4px 4px 0 4px !important;
+                            margin:    9px 0 9px 8px;
+                            font-size: 10px;
+                        }
+
+                        .availability-indicator,
+                        .map-indicator {
+                            font-size: 8px;
+                        }
+
+                        .holdings td {
+                            th { padding: 0.3em; }
+                            td { padding: 0.2em 0.3em; }
+                        }
+
+                        div.pda-purchase {
+                            padding: 0;
+                        }
+
+                        div.pda-about {
+                            padding-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        // ====================================================================
+        // SHELF BROWSE DISPLAY - COMPONENT: LCC browser
+        // ====================================================================
+
+        .lcc-tree-display {
+
+            .lcc-tree {
+
+                .jstree {
+
+                    li {
+                        line-height: 16px;
+                        min-height:  16px;
+                    }
+
+                    ins {
+                        height:      14px;
+                    }
+
+                    a {
+                        line-height: 10px;
+                        height:      12px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+<%# app/views/shelf_browse/help/lcc/_browse.html.erb -%>
+<%-
+  # Locals are defined in shelf_browse/shared/_help_content.html.erb where this
+  # file is included.
+
+  view_debug(__FILE__)
+-%>
+
+<div class="<%= help_topic_css(:help_lcc_browse) -%>">
+  <h2>LCC hierarchy browser</h2>
+  <p>
+    This is an interactive tree of the <%= sb_link[:lcc] -%> (LCC) outline,
+    allowing you to navigate to any portion of the classes, topics, and
+    sub-topics used to group related materials on library shelves.
+  </p>
+  <ul>
+    <li><u>Closed subtree</u>:
+      click
+      <span class="jstree-closed-icon">&nbsp;</span>
+      to open up the items within the indicated range of call numbers.
+    </li>
+    <li><u>Open subtree</u>:
+      click
+      <span class="jstree-open-icon">&nbsp;</span>
+      to collapse the subtree.
+      For the root node, clicking on this resets the open/closed state of all
+      subtrees.
+    </li>
+    <li><u>Reset tree</u>:
+      At the root node, click on
+      <span class="jstree-open-icon">&nbsp;</span>
+      to restore the tree to its original state with all subtrees collapsed.
+    </li>
+    <li><u>Go to topic</u>:
+      Click <div class="range-button">QA71-90</div>
+      to jump to the virtual shelf section at the start of the call numbers for
+      that topic.
+    </li>
+    <li>Hover over item labels ending with "<strong>*</strong>" for additional
+      notes about that range of call numbers.
+    </li>
+    <p></p>
+  </ul>
+</div>

@@ -1,0 +1,152 @@
+<%# app/views/catalog/_holdings.html.erb -%>
+<%-
+  doc = document ||= @document
+  availability   ||= doc && doc.availability
+  cn_link_opts   ||= { dev_note: [__FILE__] }
+
+  holdings     = availability ? availability.holdings : []
+  missing_lost = (holdings.blank? && availability) ? availability.lost : {}
+  no_info_text = 'No information available at this time.'
+  unique_site  = unique_site_type(doc) # :kluge, et. al.
+
+  # In the Special Collections lens, if an item has any Special Collections
+  # holdings then only those holdings are shown; otherwise display it the
+  # usual way.  (The latter case only arises in virtual shelf browse; index
+  # search results would never show items without Special Collections
+  # holdings.)
+  if special_collections_lens?
+    sc_holdings = availability && availability.special_collections_holdings
+    if sc_holdings.present?
+      holdings     = sc_holdings
+      no_info_text = 'No Special Collections items for this title.'
+      unique_site  = false
+    end
+  end
+
+  map_heading = 'Map'
+  map_heading = "<!-- #{map_heading} -->".html_safe if unique_site
+
+  availability_opt = {
+    title:    'Availability status for this individual copy or volume.',
+    disabled: true
+  }
+  non_circ_indicator =
+    availability_indicator(
+      av_mode:  'non-circ',
+      av_label: 'Non-Circ.',
+      title:    'This individual item cannot be checked out.'
+    )
+  despined_barcodes = doc.values_for(:despined_barcodes_display)
+
+  view_debug(__FILE__)
+-%>
+
+<table class="holdings">
+  <thead>
+    <tr class="head-row">
+      <th class="holding-head library-name">Library</th>
+      <th class="holding-head location-name">Location</th>
+      <th class="holding-head map-it"><%= map_heading %></th>
+      <th class="holding-head num-available">Availability</th>
+      <th class="holding-head call-number">Call Number</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <%- css_first = 'first' -%>
+    <%- css_cycle = cycle('even', 'odd') -%>
+
+    <%# === A row for each reported holding for this title === -%>
+    <%- holdings.each do |holding| -%>
+      <%- lib = holding.library && holding.library.name -%>
+      <%- cn  = holding.call_number -%>
+      <%- sas = is_sas(holding) -%>
+      <%- if sas -%>
+        <%- loc_css = 'section-name' -%>
+        <%- map_css = 'map' -%>
+        <%- cn      = content_tag(:span, cn, class: 'holding-call-number') -%>
+      <%- else -%>
+        <%- loc_css = 'location-name' -%>
+        <%- map_css = 'map-it' -%>
+      <%- end -%>
+      <%- holding.copies.each do |copy| -%>
+        <%- loc = location_text(holding, copy) -%>
+        <%- map = link_to_map(holding, copy) -%>
+        <tr class="holding <%= css_first -%> <%= css_cycle -%>">
+          <td class="holding-data library-name"><%= lib %></td>
+          <td class="holding-data <%= loc_css -%>"><%= loc %></td>
+          <td class="holding-data <%= map_css -%>"><%= map %></td>
+          <td class="holding-data availability">
+            <%- unless sas -%>
+              <%= availability_button(holding, copy, availability_opt) %>
+              <%= non_circ_indicator unless copy.circulates? %>
+            <%- end -%>
+            <%- if despined_barcodes.include?(copy.barcode) -%>
+              <%- open_tip  = 'Click for circulation status explanation.' -%>
+              <%- close_tip = 'Click to dismiss this popup.' -%>
+              <div class="disbound-help-link" role="button" tabindex="0"
+                   aria-label="<%= open_tip %>" title="<%= open_tip %>">
+                <div class="fa fa-question-circle disbound-help-icon"
+                    aria-hidden="true"></div>
+                <div class="disbound-help-container" role="note"
+                     aria-label="<%= close_tip %>" title="<%= close_tip %>">
+                   This item was disbound in the UVA Library’s first
+                   digitization project, 1998-99, which included a select group
+                   of public domain books.
+                </div>
+              </div>
+            <%- end -%>
+          </td>
+          <td class="holding-data call-number">
+            <%= single_call_number_display(doc, cn, cn_link_opts) -%>
+          </td>
+        </tr>
+        <%- css_first = nil -%>
+        <%- css_cycle = cycle('even', 'odd') -%>
+      <%- end -%>
+    <%- end -%>
+
+    <%# === A row for each missing/lost copy (if no holdings visible) === -%>
+    <%- missing_lost.each_pair do |lib, copy| -%>
+      <%- loc = content_tag(:em, h(copy.capitalize)) -%>
+      <%- map = link_to_map(nil, nil) -%>
+      <%- cn  = doc.call_numbers.first -%>
+      <tr class="holding <%= css_first -%> <%= css_cycle -%>">
+        <td class="holding-data library-name"><%= lib %></td>
+        <td class="holding-data location-name"><%= loc %></td>
+        <td class="holding-data map-it"><%= map %></td>
+        <td class="holding-data availability">
+          <%= availability_button(nil, nil, availability_opt) %>
+        </td>
+        <td class="holding-data call-number">
+          <%= single_call_number_display(doc, cn, cn_link_opts) -%>
+        </td>
+      </tr>
+      <%- css_first = nil -%>
+      <%- css_cycle = cycle('even', 'odd') -%>
+    <%- end -%>
+
+    <%# === A single row if there were no holdings === -%>
+    <%- if css_first -%>
+      <tr class="holding <%= css_first -%> <%= css_cycle -%>">
+        <%- if unique_site -%>
+          <%- lib = doc.values_for(:library_facet).join(LIST_SEPARATOR) -%>
+          <%- loc = doc.values_for(:location_facet).join(LIST_SEPARATOR) -%>
+          <%- map = '<!-- no map -->'.html_safe -%>
+          <%- cn  = doc.call_numbers.first -%>
+          <%- cn_link_opts[:dev_note] << "(#{unique_site.inspect})" -%>
+          <td class="holding-data library-name"><%= lib %></td>
+          <td class="holding-data location-name"><%= loc %></td>
+          <td class="holding-data map-it"><%= map %></td>
+          <td class="holding-data availability">On-site Only</td>
+          <td class="holding-data call-number">
+            <%= single_call_number_display(doc, cn, cn_link_opts) -%>
+          </td>
+        <%- else -%>
+          <td class="holding-data no-info" colspan="5"><%= no_info_text %></td>
+        <%- end -%>
+      </tr>
+    <%- end -%>
+
+  </tbody>
+</table>

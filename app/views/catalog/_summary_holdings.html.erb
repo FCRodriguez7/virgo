@@ -1,0 +1,41 @@
+<%# app/views/catalog/_summary_holdings.html.erb -%>
+<%-
+  doc = document ||= @document
+  availability   ||= doc && doc.availability
+  libraries      ||= availability && availability.summary_libraries
+  return unless libraries
+
+  view_debug(__FILE__)
+-%>
+
+<%- libraries.each_with_index do |library, library_idx| -%>
+  <%- library_css = library.name.downcase.tr(SPACE, '_') -%>
+  <%- library_css << ' first' if library_idx.zero? -%>
+  <div class="holding <%= library_css -%>">
+    <h3><%= library.name %></h3>
+    <%- library.summary_locations.each do |location| -%>
+      <div class="holding-group">
+        <div class="home-location"><%= location.name.presence %></div>
+        <%- last_summary = location.summaries.length - 1 -%>
+        <%- location.summaries.each_with_index do |summary, summary_idx| -%>
+          <%- number = summary.call_number_information.presence -%>
+          <%- text   = summary.text.presence -%>
+          <%- note   = summary.note.presence -%>
+          <%- group_css = note && 'note-entry' -%>
+          <div class="summary-group <%= group_css -%>">
+            <%- if number -%>
+              <div class="summary-call-number"><%= number %></div>
+            <%- end -%>
+            <%- if text -%>
+              <%- text += ',' unless note || (summary_idx == last_summary) -%>
+              <div class="summary-text"><%= text %></div>
+            <%- end -%>
+            <%- if note -%>
+              <div class="summary-note"><%= note %></div>
+            <%- end -%>
+          </div>
+        <%- end -%>
+      </div>
+    <%- end -%>
+  </div>
+<%- end -%>

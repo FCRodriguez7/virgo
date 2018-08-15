@@ -1,0 +1,9 @@
+<%# app/views/catalog/email/_lib_video.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/email/template/video',      document: doc %>
+<%= render 'catalog/email/shared/availability', document: doc %>

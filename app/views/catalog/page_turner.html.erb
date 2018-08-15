@@ -1,0 +1,140 @@
+<%# app/views/catalog/page_turner.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc
+
+  repo        ||= @repository
+  images      ||= @images
+  exemplar_id ||= @exemplar_id
+
+  id          ||= doc.doc_id
+  title       ||= doc.export_title
+  author      ||= doc.export_authors
+  date        ||= doc.export_pub_date
+  start_page  ||= params[:page] || exemplar_id
+  lock        ||= params[:lock] || 'false'
+
+  page_title   = 'Document Viewer'
+  page_title  << ' | ' << title.truncate(80) if title.present?
+  set_meta_tags(doc, title: page_title)
+
+  # Pass repo URL and exemplar PID via JavaScript inserted into the <head>.
+  # @see app/assets/javascripts/feature/page-turner.js
+  parameters = {
+    x:    params[:x],
+    y:    params[:y],
+    z:    params[:z],
+    repo: %Q('#{repo}'),
+    id:   %Q('#{id}'),
+    pid:  %Q('#{start_page}'),
+    lock: %Q('#{lock}')
+  }.map { |k, v| "#{k}: #{v}" if v }.compact.join(",\n")
+
+  html_head.unshift(javascript_tag("var PageTurner = {\n#{parameters}\n};"))
+
+  lock_css = (lock == 'true') ? 'lock-active' : 'lock-inactive'
+
+  image_opts   = { alt: 'loading page image', class: 'page-default' }
+  loader_image = image_tag('page-turner/page_default.gif', image_opts)
+
+  terms_of_use =
+    content_tag(:span, terms_of_use_link, class: 'terms-of-use-link')
+
+  image_sizes = {
+    Small:  640,
+    Medium: 800,
+    Large:  1200,
+  }
+
+  start_page_index = images.map { |image| image[:pid] }.index(start_page)
+
+  view_debug(__FILE__)
+-%>
+
+<div class="page-turner-head">
+
+  <%# === Title === -%>
+  <div class="page-turner-title">
+    <%- if title.present? -%>
+      <h1 class="heading"><%= title %></h1>
+    <%- end -%>
+    <%- if author.present? -%>
+      <h2 class="sub-heading"><%= author %></h2>
+    <%- end -%>
+    <%- if date.present? -%>
+      <h3>[<%= date %>]</h3>
+    <%- end -%>
+  </div>
+
+  <%# === Controls === -%>
+  <div class="page-turner-nav">
+    <a class="page-turner-return" href="javascript:close();" role="button">
+      <em>&#88;</em> Close
+    </a>
+    <a class="page-permalink" href="#">Permalink</a>
+    <button class="lock-zoom <%= lock_css -%>">Set Default Zoom</button>
+    <span class="page-turner-prev" role="button" tabindex="0">
+      &laquo;&nbsp;Previous
+    </span>
+    <span class="page-turner-select">
+      <select>
+        <%- images.each do |image| -%>
+          <option value="<%= image[:pid] -%>"><%= image[:title] %></option>
+        <%- end -%>
+      </select>
+    </span>
+    <span class="page-turner-next" role="button" tabindex="0">
+      Next&nbsp;&raquo;
+    </span>
+    <button class="hide-header">Hide</button>
+  </div>
+
+</div>
+
+<div class="page-container">
+
+  <%# === NOTE: Page viewer === -%>
+  <div id="page_viewer"><!-- OpenLayers loads here --></div>
+
+  <%# === Page thumbnails === -%>
+  <div class="page-thumbs">
+    <ul class="page-thumbs-list">
+      <%- images.each do |image| -%>
+        <%-
+          image_desc = image[:description]
+          image_desc = nil if image_desc == 'n/a'
+          pid  = image[:pid]
+          css  = 'page-thumb preview-thumbnail'
+          css << ' thumb-select' if pid == start_page
+          base_url = "#{repo}/objects/#{pid}/methods/djatoka:StaticSDef"
+          full_url = "#{base_url}/getStaticImage"
+        -%>
+        <li id="<%= pid -%>" class="<%= css -%>">
+          <span class="jp2k-preview"><%= loader_image %></span>
+          <p class="page-title"><%= image[:title] %></p>
+          <p class="page-description"><%= image_desc %></p>
+          <p class="page-download">
+            <%- image_sizes.each_pair do |label, size| -%>
+              <%- uri  = "#{base_url}/getScaled" -%>
+              <%- uri << "?maxWidth=#{size}&maxHeight=#{size}" -%>
+              <%= out_link(label, uri) %>
+            <%- end -%>
+            <%= out_link('Full Size', full_url) %>
+            <%= terms_of_use %>
+          </p>
+        </li>
+      <%- end -%>
+    </ul>
+  </div>
+
+  <div class="page-thumbs-nav">
+    <span class="page-thumbs-info">
+      Image
+      <span class="thumbs-current-num"><%= start_page_index %></span>
+      of
+      <span class="thumbs-total"><%= images.length %></span>
+    </span>
+    <button class="hide-thumbs">Hide</button>
+  </div>
+
+</div>

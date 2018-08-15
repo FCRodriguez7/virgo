@@ -1,0 +1,57 @@
+# config/solr.yml
+
+# =============================================================================
+# Settings not directly related to a specific Rails environment.
+# =============================================================================
+
+# Development Solr instance (UVa on-Grounds or via VPN).
+_solr_dev_uva:                                                 &SOLR_DEV_UVALIB
+  url: http://xxx.virginia.edu/xxx
+
+# Production Solr instance (UVa on-Grounds or via VPN).
+_solr_prod_uva:                                               &SOLR_PROD_UVALIB
+  url: http://xxx.virginia.edu/xxx
+
+# Local development Solr instance.
+_solr_dev_local:                                                &SOLR_DEV_LOCAL
+  <<: *SOLR_DEV_UVALIB
+
+# Local production Solr instance.
+_solr_prod_local:                                              &SOLR_PROD_LOCAL
+  <<: *SOLR_PROD_UVALIB
+
+# =============================================================================
+# Desktop development configurations (UVa on-Grounds or via VPN)
+# =============================================================================
+
+# For the 'development' Rails environment (local).
+development:                                                         &DEV_LOCAL
+  <<: *SOLR_DEV_LOCAL
+
+# For the 'test' Rails environment (local).
+test:                                                               &TEST_LOCAL
+  <<: *SOLR_DEV_LOCAL
+
+# For the 'production' Rails environment (local).
+production:                                                         &PROD_LOCAL
+  <<: *SOLR_PROD_LOCAL
+
+# For the 'cucumber' Rails environment (local).
+cucumber:
+  <<: *TEST_LOCAL
+
+# =============================================================================
+# UVa Library configurations (UVa on-Grounds)
+# =============================================================================
+
+# For the 'search_development' Rails environment (opacdev.lib.virginia.edu).
+search_development:                                                 &DEV_UVALIB
+  <<: *SOLR_DEV_UVALIB
+
+# For the 'search_test' Rails environment (hudson*.lib.virginia.edu).
+search_test:                                                       &TEST_UVALIB
+  <<: *SOLR_DEV_UVALIB
+
+# For the 'search_development' Rails environment (vbt*.lib.virginia.edu).
+search_production:                                                 &PROD_UVALIB
+  <<: *SOLR_PROD_UVALIB

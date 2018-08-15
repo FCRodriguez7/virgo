@@ -1,0 +1,24 @@
+<%# app/views/catalog/tei.html.erb -%>
+<%-
+  # Hints for RubyMine (skipped during execution).
+  include UVA::Helper::Links unless ONLY_FOR_DOCUMENTATION
+
+  doc = document ||= @document
+  return unless doc
+
+  title ||= doc.export_title.html_safe
+
+  set_meta_tags(doc, title: "Transcription: #{title}")
+
+  # Maximize available width by not displaying the sidebar.
+  sidebar_items << :no_sidebar
+
+  view_debug(__FILE__)
+-%>
+<div class="context-header">
+  A transcription of <%= link_to_document(doc, label: title) %>
+  <%= close_side_window(class: 'close-button btn small') %>
+</div>
+<div class="transformed-tei">
+  <%= doc.tei %>
+</div>

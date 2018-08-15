@@ -1,0 +1,46 @@
+<%# app/views/catalog/index/_lib_video.html.erb -%>
+<%-
+  # NOTE: This is for video search results via the VideoController.
+
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  css_class ||= 'document video-doc clearfix'
+  counter   ||= -1
+  offset    ||= 0
+  dev_note  ||= __FILE__
+
+  even = (counter + 1).even?
+  css_class += ' ' + (even ? 'even' : 'odd')
+  item_number = 1 + counter + offset
+  link_opts ||= { counter: item_number }
+
+  partial_opts = { document: doc, counter: counter, offset: offset }
+
+  # === Item title
+  title_opts = partial_opts.merge(dev_note: dev_note)
+
+  # === Item metadata
+  format = video_format(doc).presence || '&nbsp;'.html_safe
+  date = (doc.get_pub_date unless doc.journal?).presence || '&nbsp;'.html_safe
+
+  fields ||= UVA::View::FieldSet.new(
+    format: [format, VIDEO_FORMAT_OPT],
+    year:   [date,   VIDEO_YEAR_OPT],
+  )
+
+  view_debug(__FILE__)
+-%>
+
+<%= template_comment(doc, dev_note) %>
+<div class="<%= css_class -%>" id="doc-<%= doc.doc_id -%>">
+
+  <%# === Item title === -%>
+  <%= render 'catalog/index/shared/title', title_opts %>
+  <%= video_details_popup(doc, link_opts) %>
+
+  <%# === Item metadata === -%>
+  <%= fields.render(:index, doc) %>
+  <%= render 'catalog/availability_inline', document: doc %>
+
+</div>

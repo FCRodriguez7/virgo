@@ -1,0 +1,45 @@
+<%# app/views/shelf_browse/help/_keys.html.erb -%>
+<%-
+  # Locals are defined in shelf_browse/shared/_help_content.html.erb where this
+  # file is included.
+
+  view_debug(__FILE__)
+-%>
+
+<div class="<%= help_topic_css(:help_keys) -%>">
+  <h2>Keyboard Controls</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Keys</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th><%= sb_key[:right_arrow] -%></th>
+        <td>Move right to focus on the next item tile</td>
+      </tr>
+      <tr>
+        <th><%= sb_key[:left_arrow] -%></th>
+        <td>Move left to focus on the previous item tile</td>
+      </tr>
+      <tr>
+        <th><%= sb_key[:home_key] -%></th>
+        <td>Move focus to the first item tile</td>
+      </tr>
+      <tr>
+        <th><%= sb_key[:end_key] -%></th>
+        <td>Move focus to the last item tile</td>
+      </tr>
+      <tr>
+        <th><%= sb_key[:shift_right_arrow] -%></th>
+        <td>Go forward to items with higher call numbers</td>
+      </tr>
+      <tr>
+        <th><%= sb_key[:shift_left_arrow] -%></th>
+        <td>Go backward to items with lower call numbers</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

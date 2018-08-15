@@ -1,0 +1,157 @@
+// vendor/stylesheets/jquery-resizable.scss
+//
+// CSS class definitions to support lightweight resizable panels.
+//
+// This is a companion to vendor/assets/javascripts/jquery-resizable.js which
+// defines a minimal set of CSS functionality required for that feature.
+//
+// These classes can be used directly or their definitions can be included in
+// other classes using "@extend".
+//
+// ==== Implementation Notes
+// Although jQueryUI includes similar functionality, this was introduced for
+// virtual shelf browse because of difficulties in getting jQueryUI to play
+// nicely with jQuery Colorbox.  (In researching this issue, the Colorbox
+// author's recommendation was that everything should be done in an <iframe>,
+// but that was not a satisfactory solution for the virtual shelf browse
+// implementation.)
+//
+// @see https://github.com/RickStrahl/jquery-resizable
+
+// ============================================================================
+// SCSS mixins
+// ============================================================================
+
+/// Definition for the splitter between two resizable panels.
+///
+/// @param {String} $direction        Either "horizontal" or "vertical".
+/// @param {Number} $width            The height/width of the image.
+///
+@mixin splitter-image($direction, $width: 8px, $grip_image: '') {
+    @if $direction == "horizontal" {
+        $grip-image:     "hsizegrip.png";
+        background-size: ($width * 3) $width;
+    }
+    @else {
+        $grip-image:     "vsizegrip.png";
+        background-size: $width ($width * 3);
+    }
+    background: transparent image-url($grip-image) no-repeat center;
+}
+
+/// Definition for the splitter between two resizable panels.
+///
+/// @param {String} $direction        Either "horizontal" or "vertical".
+/// @param {Number} $thickness        The height/width of the image.
+///
+@mixin splitter-element($direction, $thickness: 12px) {
+    flex: none;
+    @include splitter-image($direction);
+    @if $direction == "horizontal" {
+        height: $thickness;
+        cursor: row-resize;
+    }
+    @else {
+        width:  $thickness;
+        cursor: col-resize;
+    }
+}
+
+/// Properties for a pair of resizable panels.
+///
+/// @param {String} $direction        Either "horizontal" or "vertical".
+///
+@mixin resizable-pair($direction) {
+
+    $direction: if(($direction == "horizontal"), row, column);
+
+    display:        flex;
+    flex-direction: $direction;
+    overflow:       hidden;
+}
+
+/// First of a resizable pair.
+///
+@mixin resizable-first {
+    flex: none;
+}
+
+/// Second of a resizable pair.
+///
+@mixin resizable-second {
+    flex: 1 1 auto;
+}
+
+// ============================================================================
+// Panel component definitions
+// ============================================================================
+
+// First of horizontal resizable pair.
+.resizable-left {
+    @include resizable-first;
+}
+
+// First of vertical resizable pair.
+.resizable-top {
+    @include resizable-first;
+}
+
+// Second of horizontal resizable pair.
+.resizable-right {
+    @include resizable-second;
+}
+
+// Second of vertical resizable pair.
+.resizable-bottom {
+    @include resizable-second;
+}
+
+// Narrow box with gripper image.
+.vertical-splitter {
+    @include splitter-element("vertical");
+}
+
+// Shallow box with gripper image.
+.horizontal-splitter {
+    @include splitter-element("horizontal");
+}
+
+// ============================================================================
+// Horizontal panels
+//
+// Functional requirements for a horizontal container with two resizable
+// panels separated by a splitter spanning vertically between them.
+// ============================================================================
+
+.resizable-horizontal {
+
+    @include resizable-pair("horizontal");
+
+    // ========================================================================
+    // Components
+    // ========================================================================
+
+    > .resizable-left {}    // Panel to the left of the splitter.
+    > .vertical-splitter {} // Narrow box with gripper image.
+    > .resizable-right {}   // Panel to the right of the splitter.
+}
+
+// ============================================================================
+// Vertical panels
+//
+// Functional requirements for a vertical container with two resizable panels
+// separated by a splitter spanning horizontally between them.
+// ============================================================================
+
+.resizable-vertical {
+
+    @include resizable-pair("vertical");
+
+    // ========================================================================
+    // Components
+    // ========================================================================
+
+    > .resizable-top {}       // Panel above the splitter.
+    > .horizontal-splitter {} // Shallow box with gripper image.
+    > .resizable-bottom {}    // Panel below the splitter.
+}

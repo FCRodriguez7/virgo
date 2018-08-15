@@ -1,0 +1,88 @@
+<%# app/views/catalog/_email_form.html.erb -%>
+<%-
+  # Overrides Blacklight app/views/catalog/_email_form.html.erb
+
+  documents    ||= @documents || []
+  articles     ||= @articles  || []
+  originator   ||= @originator
+  to           ||= @field[:to]
+  message      ||= @field[:message]
+  full_record  ||= @field[:full_record]
+  max_per_page ||= true
+  submit_label ||= 'Send'
+  submit_opt   ||= { class: 'btn large' }
+  cancel_label ||= 'Cancel'
+  cancel_opt   ||= { label: cancel_label, class: 'btn' }
+  title        ||= 'E-mail'
+  originator   ||= 'email'
+
+  all_items   = documents + articles
+  single_item = (all_items.size == 1)
+
+  set_meta_tags(all_items, title: title)
+
+  s = single_item ? '' : 's'
+  heading ||= "Send Record#{s} by #{title}"
+
+  form_opt = { id: 'email_form', method: :post }
+
+  label_for = {
+    to:          'E-mail',
+    message:     'Message',
+    full_record: 'Brief or detailed record',
+    recaptcha:   'User verification'
+  }
+
+  full_record = full_record.to_s
+  full_record = 'false' if full_record.blank?
+  full_record_radio_buttons = {
+    'false' => 'Send a brief listing of the record',
+    'true'  => 'Send a detailed listing of the record',
+  }.map { |button_value, button_label|
+    checked = (button_value == full_record)
+    button_label = "&nbsp;#{button_label}#{s}<br/>\n".html_safe
+    radio_button_tag(:full_record, button_value, checked) << button_label
+  }.join.html_safe
+
+  hidden_fields = {
+    id:                documents.map(&:doc_id).join(','),
+    article_id:        articles.map(&:doc_id).join(','),
+    style:             originator,
+    show_max_per_page: max_per_page
+  }.map { |k, v|
+    hidden_field_tag(k, v) if v.present?
+  }.compact.join("\n").html_safe
+
+  view_debug(__FILE__)
+-%>
+
+<div class="tool-heading">
+  <h1 class="heading"><%= heading %></h1>
+</div>
+
+<%= render 'catalog/sidebar_close' %>
+<%= render '/flash_msg' %>
+
+<div class="tool-content">
+  <%= form_tag(send_email_record_catalog_path, form_opt) do %>
+
+    <%= label_tag(:to, label_for[:to]) %>
+    <%= text_field_tag(:to, to) %>
+
+    <%= label_tag(:message, label_for[:message]) %>
+    <%= text_area_tag(:message, message) %>
+
+    <%= label_tag(:full_record, label_for[:full_record]) %>
+    <%= full_record_radio_buttons %>
+
+    <%= label_tag(label_for[:recaptcha]) %>
+    <%= recaptcha_widget %>
+
+    <div class="request-submit">
+      <%= hidden_fields %>
+      <%= submit_tag(submit_label, submit_opt) %>
+      <%= window_close_link(in_popup?, cancel_opt) %>
+    </div>
+
+  <%- end -%>
+</div>

@@ -1,0 +1,95 @@
+<%# app/views/articles/show.html.erb -%>
+<%-
+  doc = document ||= @document
+  inset_view     ||= classic_lens? && inset_view?
+
+  set_meta_tags(doc)
+  set_cache_refresh
+
+  in_result_set = [current_portal_key, :all].include?(search_context)
+  prev_next_opt = { prev_item: @previous_article, next_item: @next_article }
+
+  back_link = start_over = flash_back_link = flash_role = nil
+
+  unless inset_view
+    if in_aside?
+      back_link  = close_side_window
+    else
+      back_link  = link_back_to_search if in_result_set
+      start_over = start_over_link
+    end
+  end
+
+  unless doc
+    flash_role = in_result_set ? 'alertdialog' : 'alert'
+    flash_back_link =
+      link_back_to_search(
+        label: 'Return to search results',
+        class: 'btn small',
+        style: 'margin: 1em 0 0.5em;'
+      ) if in_result_set
+  end
+
+  template_opt = { document: doc }
+
+  view_debug(__FILE__)
+-%>
+
+<%= print_view_link unless print_view? || !doc %>
+
+<%- unless inset_view -%>
+
+  <%= hidden_search_properties unless print_view? -%>
+
+  <div class="result-nav top" role="navigation">
+
+    <div class="return-to-search">
+      <%= back_link %>
+      <%= start_over %>
+    </div>
+
+    <%= render 'catalog/show_tools', template_opt if doc %>
+
+    <div class="prev-next">
+      <%= render 'catalog/previous_next_doc', prev_next_opt if in_result_set %>
+    </div>
+
+  </div>
+
+<%- end -%>
+
+<%- if doc -%>
+
+  <%= hidden_item_properties unless print_view? %>
+  <%# === NOTE: format-specific details of the item inserted here === -%>
+  <%= render 'catalog/show/article', template_opt %>
+
+<%- else -%>
+
+  <div class="flash-message static" role="<%= flash_role -%>">
+    <div class="dialog ui-state-error error">
+      <p>
+        We were not able to retrieve the results of your search.
+        Please try again.
+      </p>
+      <p>
+        You can access the article directly through the
+        <strong>Access Online</strong> link on the search results page.
+      </p>
+      <%= flash_back_link %>
+    </div>
+  </div>
+
+<%- end -%>
+
+<%- unless inset_view -%>
+
+  <div class="clearfix"><!-- ye olde clearfixe --></div>
+  <%- role = in_result_set ? 'role="navigation"' : 'aria-hidden="true"' -%>
+  <div class="result-nav bottom" <%= role -%>>
+    <div class="prev-next-doc">
+      <%= render 'catalog/previous_next_doc', prev_next_opt if in_result_set %>
+    </div>
+  </div>
+
+<%- end -%>

@@ -1,0 +1,3866 @@
+# lib/config/lcco_p.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from the Word document of the same base name.
+
+class:    P
+name:     'LANGUAGE AND LITERATURE'
+sections:
+  - subclass:  P
+    name:     'Philology.  Linguistics'
+    sections:
+      - name:    'Philology.  Linguistics'
+        range:   P1-1091
+        start:   P1
+        end:     P1091
+        sections:
+          - name:    'General'
+            range:   P1-85
+            start:   P1
+            end:     P85
+          - name:    'Communication.  Mass media'
+            range:   P87-96
+            start:   P87
+            end:     P96
+            sections:
+              - name:    'Interpersonal communication'
+                range:   P94.7
+                start:   P94.7
+                end:     P94.7
+              - name:    'Oral communication.  Speech'
+                range:   P95-95.6
+                start:   P95
+                end:     P95.6
+          - name:    'Computational linguistics.  Natural language processing'
+            range:   P98-98.5
+            start:   P98
+            end:     P98.5
+          - name:    'Semiotics.  Signs and symbols'
+            range:   P99-99.4
+            start:   P99
+            end:     P99.4
+          - name:    'Nonverbal communication'
+            range:   P99.5-99.6
+            start:   P99.5
+            end:     P99.6
+          - name:    'Language.  Linguistic theory.  Comparative grammar'
+            range:   P101-410
+            start:   P101
+            end:     P410
+            sections:
+              - name:    'Language acquisition'
+                range:   P118-118.75
+                start:   P118
+                end:     P118.75
+              - name:    'Science of language (Linguistics)'
+                range:   P121-149
+                start:   P121
+                end:     P149
+              - name:    'Comparative grammar'
+                range:   P201-299
+                start:   P201
+                end:     P299
+              - name:    'Style.  Composition.  Rhetoric'
+                range:   P301-301.5
+                start:   P301
+                end:     P301.5
+              - name:    'Discourse analysis'
+                range:   P302-302.87
+                start:   P302
+                end:     P302.87
+              - name:    'Translating and interpreting'
+                range:   P306-310
+                start:   P306
+                end:     P310
+              - name:    'Etymology'
+                range:   P321-324.5
+                start:   P321
+                end:     P324.5
+              - name:    'Semantics'
+                range:   P325-325.5
+                start:   P325
+                end:     P325.5
+              - name:    'Lexicology'
+                range:   P326-326.5
+                start:   P326
+                end:     P326.5
+              - name:    'Lexicography'
+                range:   P327-327.5
+                start:   P327
+                end:     P327.5
+              - name:    'Linguistic geography'
+                range:   P375-381
+                start:   P375
+                end:     P381
+          - name:    'Indo-European (Indo-Germanic) philology'
+            range:   P501-769
+            start:   P501
+            end:     P769
+          - name:    'Extinct ancient or medieval languages'
+            range:   P901-1091
+            start:   P901
+            end:     P1091
+  - subclass:  PA
+    name:     'Classical languages'
+    sections:
+      - name:    'Classical philology'
+        range:   PA1-199
+        start:   PA1
+        end:     PA199
+      - name:    'Greek philology and language'
+        range:   PA201-899
+        start:   PA201
+        end:     PA899
+      - name:    'Medieval and modern Greek language'
+        range:   PA1000-1179
+        start:   PA1000
+        end:     PA1179
+      - name:    'Latin philology and language'
+        range:   PA2001-2915
+        start:   PA2001
+        end:     PA2915
+      - name:    'Classical literature'
+        range:   PA3000-3049
+        start:   PA3000
+        end:     PA3049
+      - name:    'Greek literature'
+        range:   PA3050-4505
+        start:   PA3050
+        end:     PA4505
+        sections:
+          - name:    'Literary history'
+            range:   PA3051-3285
+            start:   PA3051
+            end:     PA3285
+          - name:    'Collections'
+            range:   PA3300-3516
+            start:   PA3300
+            end:     PA3516
+          - name:    'Criticism, interpretation, etc.'
+            range:   PA3520-3564
+            start:   PA3520
+            end:     PA3564
+          - name:    'Translations'
+            range:   PA3601-3681
+            start:   PA3601
+            end:     PA3681
+          - name:    'Individual authors'
+            note:    'Including:'
+            range:   PA3818-4505
+            start:   PA3818
+            end:     PA4505
+            sections:
+              - name:    'Aeschylus'
+                range:   PA3825-3849
+                start:   PA3825
+                end:     PA3849
+              - name:    'Aesop'
+                range:   PA3851-3858
+                start:   PA3851
+                end:     PA3858
+              - name:    'Aristotle'
+                range:   PA3890-3926
+                start:   PA3890
+                end:     PA3926
+              - name:    'Demosthenes'
+                range:   PA3949-3964
+                start:   PA3949
+                end:     PA3964
+              - name:    'Euripedes'
+                range:   PA3973-3992
+                start:   PA3973
+                end:     PA3992
+              - name:    'Homer'
+                range:   PA4018-4209
+                start:   PA4018
+                end:     PA4209
+              - name:    'Plato'
+                range:   PA4279-4333
+                start:   PA4279
+                end:     PA4333
+              - name:    'Plutarch'
+                range:   PA4367-4389
+                start:   PA4367
+                end:     PA4389
+              - name:    'Sophocles'
+                range:   PA4413-4434
+                start:   PA4413
+                end:     PA4434
+              - name:    'Thucydides'
+                range:   PA4452-4486
+                start:   PA4452
+                end:     PA4486
+              - name:    'Xenophon'
+                range:   PA4494-4499
+                start:   PA4494
+                end:     PA4499
+      - name:    'Byzantine and modern Greek literature'
+        range:   PA5000-5660
+        start:   PA5000
+        end:     PA5660
+        sections:
+          - name:    'Individual authors'
+            range:   PA5301-5638.36
+            start:   PA5301
+            end:     PA5638.36
+      - name:    'Roman literature'
+        range:   PA6000-6971
+        start:   PA6000
+        end:     PA6971
+        sections:
+          - name:    'Literary history'
+            range:   PA6001-6097
+            start:   PA6001
+            end:     PA6097
+          - name:    'Collections'
+            range:   PA6100-6140
+            start:   PA6100
+            end:     PA6140
+          - name:    'Criticism, interpretation, etc.'
+            range:   PA6141-6144
+            start:   PA6141
+            end:     PA6144
+          - name:    'Translations'
+            range:   PA6155-6191
+            start:   PA6155
+            end:     PA6191
+          - name:    'Individual authors'
+            note:    'Including:'
+            range:   PA6202-6971
+            start:   PA6202
+            end:     PA6971
+            sections:
+              - name:    'Caesar, Julius'
+                range:   PA6235-6269
+                start:   PA6235
+                end:     PA6269
+              - name:    'Cicero, Marcus Tullius'
+                range:   PA6278-6370
+                start:   PA6278
+                end:     PA6370
+              - name:    'Horace'
+                range:   PA6393-6444
+                start:   PA6393
+                end:     PA6444
+              - name:    'Lucretius Carus, Titus'
+                range:   PA6482-6496
+                start:   PA6482
+                end:     PA6496
+              - name:    'Martial'
+                range:   PA6501-6510
+                start:   PA6501
+                end:     PA6510
+              - name:    'Ovid'
+                range:   PA6519-6553
+                start:   PA6519
+                end:     PA6553
+              - name:    'Plautus, Titus Maccius'
+                range:   PA6568-6609
+                start:   PA6568
+                end:     PA6609
+              - name:    'Pliny, the Elder'
+                range:   PA6611-6637
+                start:   PA6611
+                end:     PA6637
+              - name:    'Seneca, Lucius Annaeus'
+                range:   PA6661-6693
+                start:   PA6661
+                end:     PA6693
+              - name:    'Tacitus, Cornelius'
+                range:   PA6705-6753
+                start:   PA6705
+                end:     PA6753
+              - name:    'Terentius Apher, Publius (Terence)'
+                range:   PA6755-6785
+                start:   PA6755
+                end:     PA6785
+              - name:    'Vergilius Maro, Publius (Virgil)'
+                range:   PA6801-6961
+                start:   PA6801
+                end:     PA6961
+      - name:    'Medieval and modern Latin literature'
+        range:   PA8001-8595
+        start:   PA8001
+        end:     PA8595
+        sections:
+          - name:    'Individual authors'
+            range:   PA8200-8595
+            start:   PA8200
+            end:     PA8595
+  - subclass:  PB
+    name:     'Modern languages.  Celtic languages'
+    sections:
+      - name:    'Modern languages.  Celtic languages'
+        range:   PB1-3029
+        start:   PB1
+        end:     PB3029
+        sections:
+          - name:    'Modern languages'
+            range:   PB1-431
+            start:   PB1
+            end:     PB431
+          - name:    'Celtic languages and literature'
+            range:   PB1001-3029
+            start:   PB1001
+            end:     PB3029
+            sections:
+              - name:    'Goidelic.  Gaelic'
+                range:   PB1101-1200
+                start:   PB1101
+                end:     PB1200
+              - name:    'Irish'
+                range:   PB1201-1449
+                start:   PB1201
+                end:     PB1449
+              - name:    'Gaelic (Scottish Gaelic, Erse)'
+                range:   PB1501-1709
+                start:   PB1501
+                end:     PB1709
+              - name:    'Manx'
+                range:   PB1801-1867
+                start:   PB1801
+                end:     PB1867
+              - name:    'Pict'
+                range:   PB1950
+                start:   PB1950
+                end:     PB1950
+              - name:    'Brittanic group'
+                range:   PB2001-3029
+                start:   PB2001
+                end:     PB3029
+                sections:
+                  - name:    'Welsh.  Cymric'
+                    range:   PB2101-2499
+                    start:   PB2101
+                    end:     PB2499
+                  - name:    'Cornish'
+                    range:   PB2501-2621
+                    start:   PB2501
+                    end:     PB2621
+                  - name:    'Breton.  Armorican'
+                    range:   PB2801-2932
+                    start:   PB2801
+                    end:     PB2932
+                  - name:    'Gaulish'
+                    range:   PB3001-3029
+                    start:   PB3001
+                    end:     PB3029
+  - subclass:  PC
+    name:     'Romance languages'
+    sections:
+      - name:    'Romance'
+        range:   PC1-5498
+        start:   PC1
+        end:     PC5498
+        sections:
+          - name:    'General'
+            range:   PC1-400
+            start:   PC1
+            end:     PC400
+          - name:    'Romanian'
+            range:   PC601-872
+            start:   PC601
+            end:     PC872
+          - name:    'Raeto-Romance'
+            note:    'Including Romansh'
+            range:   PC901-986
+            start:   PC901
+            end:     PC986
+          - name:    'Italian'
+            range:   PC1001-1977
+            start:   PC1001
+            end:     PC1977
+          - name:    'Sardinian'
+            range:   PC1981-1984
+            start:   PC1981
+            end:     PC1984
+          - name:    'French'
+            range:   PC2001-3761
+            start:   PC2001
+            end:     PC3761
+            sections:
+              - name:    'Dialects.  Provincialisms'
+                range:   PC2700-(3708)
+                start:   PC2700
+                end:     PC3708
+                sections:
+                  - name:    'Old French'
+                    range:   PC2813-(2898)
+                    start:   PC2813
+                    end:     PC2898
+                  - name:    'Provencal (Old)'
+                    range:   PC3201-3366
+                    start:   PC3201
+                    end:     PC3366
+                  - name:    'Modern patois of South France'
+                    range:   PC3371-3420.5
+                    start:   PC3371
+                    end:     PC3420.5
+                  - name:    'Langue d''oc dialects'
+                    range:   PC3420.8-3495
+                    start:   PC3420.8
+                    end:     PC3495
+              - name:    'Slang.  Argot'
+                range:   PC3721-3761
+                start:   PC3721
+                end:     PC3761
+          - name:    'Catalan'
+            range:   PC3801-3976
+            start:   PC3801
+            end:     PC3976
+          - name:    'Spanish'
+            range:   PC4001-4977
+            start:   PC4001
+            end:     PC4977
+          - name:    'Portuguese'
+            range:   PC5001-5498
+            start:   PC5001
+            end:     PC5498
+  - subclass:  PD
+    name:     'Germanic languages'
+    sections:
+      - name:    'Germanic'
+        range:   PD1-(7159)
+        start:   PD1
+        end:     PD7159
+        sections:
+          - name:    'General'
+            range:   PD1-780
+            start:   PD1
+            end:     PD780
+          - name:    'Old Germanic dialects'
+            range:   PD1001-1350
+            start:   PD1001
+            end:     PD1350
+            sections:
+              - name:    'Gothic'
+                range:   PD1101-1211
+                start:   PD1101
+                end:     PD1211
+          - name:    'North Germanic.  Scandinavian'
+            range:   PD1501-(7159)
+            start:   PD1501
+            end:     PD7159
+            sections:
+              - name:    'Old Norse.  Old Icelandic and Old Norwegian'
+                range:   PD2201-2393
+                start:   PD2201
+                end:     PD2393
+              - name:    'Modern Icelandic'
+                range:   PD2401-2446
+                start:   PD2401
+                end:     PD2446
+              - name:    'Norwegian'
+                range:   PD(2501)-2999
+                start:   PD2501
+                end:     PD2999
+              - name:    'Danish'
+                range:   PD3001-3929
+                start:   PD3001
+                end:     PD3929
+              - name:    'Swedish'
+                range:   PD5001-5929
+                start:   PD5001
+                end:     PD5929
+              - name:    'Scandinavian dialects, Modern'
+                range:   PD(6000)-(7159)
+                start:   PD6000
+                end:     PD7159
+  - subclass:  PE
+    name:     'English language'
+    sections:
+      - name:    'English'
+        range:   PE1-3729
+        start:   PE1
+        end:     PE3729
+        sections:
+          - name:    'Anglo-Saxon.  Old English'
+            range:   PE101-(458)
+            start:   PE101
+            end:     PE458
+          - name:    'Middle English'
+            range:   PE501-(693)
+            start:   PE501
+            end:     PE693
+          - name:    'Early Modern English'
+            range:   PE(814)-896
+            start:   PE814
+            end:     PE896
+          - name:    'Modern English'
+            range:   PE1001-1693
+            start:   PE1001
+            end:     PE1693
+          - name:    'Dialects.  Provincialisms, etc.'
+            range:   PE1700-3602
+            start:   PE1700
+            end:     PE3602
+          - name:    'Slang.  Argot, etc.'
+            range:   PE3701-3729
+            start:   PE3701
+            end:     PE3729
+  - subclass:  PF
+    name:     'West Germanic language'
+    sections:
+      - name:    'West Germanic'
+        range:   PF1-5999
+        start:   PF1
+        end:     PF5999
+        sections:
+          - name:    'Dutch'
+            range:   PF1-979
+            start:   PF1
+            end:     PF979
+          - name:    'Flemish'
+            range:   PF1001-1184
+            start:   PF1001
+            end:     PF1184
+          - name:    'Friesian'
+            range:   PF1401-1541
+            start:   PF1401
+            end:     PF1541
+          - name:    'German'
+            range:   PF3001-5999
+            start:   PF3001
+            end:     PF5999
+            sections:
+              - name:    'Old High German'
+                range:   PF3801-3991
+                start:   PF3801
+                end:     PF3991
+              - name:    'Old Saxon'
+                range:   PF3992-4010
+                start:   PF3992
+                end:     PF4010
+              - name:    'Middle High German'
+                range:   PF4043-(4350)
+                start:   PF4043
+                end:     PF4350
+              - name:    'Early Modern German'
+                range:   PF(4501)-(4596)
+                start:   PF4501
+                end:     PF4596
+              - name:    'Dialects.  Provincialism, etc.'
+                range:   PF5000-5951
+                start:   PF5000
+                end:     PF5951
+              - name:    'Slang.  Argot, etc.'
+                range:   PF5971-5999
+                start:   PF5971
+                end:     PF5999
+  - subclass:  PG
+    name:     'Slavic.  Baltic.  Albanian'
+    sections:
+      - name:    'Slavic.  Baltic.  Albanian'
+        range:   PG1-9665
+        start:   PG1
+        end:     PG9665
+        sections:
+          - name:    'Slavic'
+            range:   PG1-7925
+            start:   PG1
+            end:     PG7925
+            sections:
+              - name:    'Slavic philology and languages (General)'
+                range:   PG1-499
+                start:   PG1
+                end:     PG499
+              - name:    'Slavic literature (General)'
+                range:   PG500-585
+                start:   PG500
+                end:     PG585
+              - name:    'Church Slavic'
+                range:   PG601-716
+                start:   PG601
+                end:     PG716
+              - name:    'Bulgarian Church Slavic'
+                range:   PG(771)-(799)
+                start:   PG771
+                end:     PG799
+              - name:    'Bulgarian'
+                range:   PG801-1146
+                start:   PG801
+                end:     PG1146
+              - name:    'Macedonian'
+                range:   PG1151-1199
+                start:   PG1151
+                end:     PG1199
+              - name:    'Serbo-Croatian'
+                range:   PG1201-1749
+                start:   PG1201
+                end:     PG1749
+              - name:    'Slovenian'
+                range:   PG1801-1962
+                start:   PG1801
+                end:     PG1962
+              - name:    'Russian language'
+                range:   PG2001-2826
+                start:   PG2001
+                end:     PG2826
+              - name:    'Belarusian'
+                range:   PG2830-2847
+                start:   PG2830
+                end:     PG2847
+              - name:    'Russian literature'
+                range:   PG2900-(3698)
+                start:   PG2900
+                end:     PG3698
+                sections:
+                  - name:    'History and criticism'
+                    range:   PG2900-3190
+                    start:   PG2900
+                    end:     PG3190
+                    sections:
+                      - name:    'General'
+                        range:   PG2900-2998
+                        start:   PG2900
+                        end:     PG2998
+                      - name:    'Special periods'
+                        range:   PG3001-3026
+                        start:   PG3001
+                        end:     PG3026
+                      - name:    'Poetry'
+                        range:   PG3041-3065
+                        start:   PG3041
+                        end:     PG3065
+                      - name:    'Drama'
+                        range:   PG3071-3089
+                        start:   PG3071
+                        end:     PG3089
+                      - name:    'Prose'
+                        range:   PG3091-3099
+                        start:   PG3091
+                        end:     PG3099
+                      - name:    'Folk literature'
+                        note:    'Including texts'
+                        range:   PG(3100)-(3155)
+                        start:   PG3100
+                        end:     PG3155
+                  - name:    'Collections'
+                    range:   PG3199-3299
+                    start:   PG3199
+                    end:     PG3299
+                    sections:
+                      - name:    'General'
+                        range:   PG3199-3205
+                        start:   PG3199
+                        end:     PG3205
+                      - name:    'Translations'
+                        range:   PG(3211)-3219
+                        start:   PG3211
+                        end:     PG3219
+                      - name:    'Special periods'
+                        range:   PG3223-3229.2
+                        start:   PG3223
+                        end:     PG3229.2
+                      - name:    'Poetry'
+                        range:   PG3230-3238
+                        start:   PG3230
+                        end:     PG3238
+                      - name:    'Drama'
+                        range:   PG3240-3255
+                        start:   PG3240
+                        end:     PG3255
+                      - name:    'Prose'
+                        range:   PG3260-3299
+                        start:   PG3260
+                        end:     PG3299
+                  - name:    'Individual authors and works'
+                    range:   PG3300-3493.96
+                    start:   PG3300
+                    end:     PG3493.96
+                    sections:
+                      - name:    'Early to 1700'
+                        range:   PG3300-3308
+                        start:   PG3300
+                        end:     PG3308
+                      - name:    '18th century'
+                        range:   PG3310-3319
+                        start:   PG3310
+                        end:     PG3319
+                        sections:
+                          - name:    'Derzhavin'
+                            range:   PG3312
+                            start:   PG3312
+                            end:     PG3312
+                          - name:    'Karamzin'
+                            range:   PG3314
+                            start:   PG3314
+                            end:     PG3314
+                          - name:    'Lomonosov'
+                            range:   PG3316
+                            start:   PG3316
+                            end:     PG3316
+                          - name:    'Sumarokov'
+                            range:   PG3318
+                            start:   PG3318
+                            end:     PG3318
+                      - name:    '1800-1870'
+                        range:   PG3320-3447
+                        start:   PG3320
+                        end:     PG3447
+                        sections:
+                          - name:    'Dostoyevsky'
+                            range:   PG3325-3328
+                            start:   PG3325
+                            end:     PG3328
+                          - name:    'Gogol'''
+                            range:   PG3332-3335
+                            start:   PG3332
+                            end:     PG3335
+                          - name:    'Pushkin'
+                            range:   PG3340-3359
+                            start:   PG3340
+                            end:     PG3359
+                          - name:    'Tolstoi'
+                            range:   PG3365-3417
+                            start:   PG3365
+                            end:     PG3417
+                          - name:    'Turgenev'
+                            range:   PG3420-3445
+                            start:   PG3420
+                            end:     PG3445
+                      - name:    '1870-1917'
+                        range:   PG3450-3470
+                        start:   PG3450
+                        end:     PG3470
+                        sections:
+                          - name:    'Andreev'
+                            range:   PG3452
+                            start:   PG3452
+                            end:     PG3452
+                          - name:    'Chekhov'
+                            range:   PG3455-3458
+                            start:   PG3455
+                            end:     PG3458
+                          - name:    'Gorky'
+                            range:   PG3462-3465
+                            start:   PG3462
+                            end:     PG3465
+                      - name:    '1917-1960'
+                        range:   PG3475-3476
+                        start:   PG3475
+                        end:     PG3476
+                      - name:    '1961-2000'
+                        range:   PG3477-3490
+                        start:   PG3477
+                        end:     PG3490
+                      - name:    '2001-'
+                        range:   PG3491.2-3493.96
+                        start:   PG3491.2
+                        end:     PG3493.96
+                  - name:    'Provincial, local, etc.'
+                    range:   PG3500-3505
+                    start:   PG3500
+                    end:     PG3505
+                  - name:    'Outside the Russian Federation'
+                    range:   PG3515-3550
+                    start:   PG3515
+                    end:     PG3550
+                  - name:    'Special subjects'
+                    range:   PG(3651)-(3698)
+                    start:   PG3651
+                    end:     PG3698
+              - name:    'Ukrainian'
+                range:   PG3801-3987
+                start:   PG3801
+                end:     PG3987
+              - name:    'Carpatho-Rusyn'
+                range:   PG3990
+                start:   PG3990
+                end:     PG3990
+              - name:    'Czech'
+                range:   PG4001-5146
+                start:   PG4001
+                end:     PG5146
+              - name:    'Slovak'
+                range:   PG5201-5546
+                start:   PG5201
+                end:     PG5546
+              - name:    'Sorbian (Wendic)'
+                range:   PG5631-5689
+                start:   PG5631
+                end:     PG5689
+              - name:    'Polish'
+                range:   PG6001-7446
+                start:   PG6001
+                end:     PG7446
+              - name:    'Lechitic dialects'
+                range:   PG7900-7925
+                start:   PG7900
+                end:     PG7925
+          - name:    'Baltic'
+            range:   PG8001-9146
+            start:   PG8001
+            end:     PG9146
+            sections:
+              - name:    'Old Prussian'
+                range:   PG8201-8208
+                start:   PG8201
+                end:     PG8208
+              - name:    'Lithuanian'
+                range:   PG8501-8772
+                start:   PG8501
+                end:     PG8772
+              - name:    'Latvian'
+                range:   PG8801-9146
+                start:   PG8801
+                end:     PG9146
+          - name:    'Albanian'
+            range:   PG9501-9665
+            start:   PG9501
+            end:     PG9665
+  - subclass:  PH
+    name:     'Uralic.  Basque'
+    sections:
+      - name:    'Uralic.  Basque'
+        range:   PH1-5490
+        start:   PH1
+        end:     PH5490
+        sections:
+          - name:    'General'
+            range:   PH1-87
+            start:   PH1
+            end:     PH87
+          - name:    'Finnic.  Baltic-Finnic'
+            range:   PH91-98.5
+            start:   PH91
+            end:     PH98.5
+          - name:    'Finnish'
+            range:   PH101-405
+            start:   PH101
+            end:     PH405
+          - name:    'Other Finnic languages and dialects'
+            range:   PH501-1109
+            start:   PH501
+            end:     PH1109
+            sections:
+              - name:    'Karelian'
+                range:   PH501-509
+                start:   PH501
+                end:     PH509
+              - name:    'Olonets'
+                range:   PH521-529
+                start:   PH521
+                end:     PH529
+              - name:    'Ludic'
+                range:   PH531-539
+                start:   PH531
+                end:     PH539
+              - name:    'Veps'
+                range:   PH541-549
+                start:   PH541
+                end:     PH549
+              - name:    'Ingrian'
+                range:   PH551-559
+                start:   PH551
+                end:     PH559
+              - name:    'Votic'
+                range:   PH561-569
+                start:   PH561
+                end:     PH569
+              - name:    'Livonian'
+                range:   PH581-589
+                start:   PH581
+                end:     PH589
+              - name:    'Estonian'
+                range:   PH601-671
+                start:   PH601
+                end:     PH671
+              - name:    'Sami'
+                range:   PH701-735
+                start:   PH701
+                end:     PH735
+              - name:    'Mordvin'
+                range:   PH751-785
+                start:   PH751
+                end:     PH785
+              - name:    'Mari'
+                range:   PH801-836
+                start:   PH801
+                end:     PH836
+              - name:    'Permic'
+                range:   PH1001-1079
+                start:   PH1001
+                end:     PH1079
+              - name:    'Udmurt'
+                range:   PH1101-1109
+                start:   PH1101
+                end:     PH1109
+          - name:    'Ugric languages'
+            range:   PH1201-1409
+            start:   PH1201
+            end:     PH1409
+          - name:    'Hungarian'
+            range:   PH2001-3445
+            start:   PH2001
+            end:     PH3445
+          - name:    'Samoyedic languages'
+            range:   PH3801-3820
+            start:   PH3801
+            end:     PH3820
+          - name:    'Basque'
+            range:   PH5001-5490
+            start:   PH5001
+            end:     PH5490
+  - subclass:  PJ
+    name:     'Oriental philology and literature'
+    sections:
+      - name:    'Oriental philology and literature'
+        range:   PJ1-(9500)
+        start:   PJ1
+        end:     PJ9500
+        sections:
+          - name:    'General'
+            range:   PJ1-489
+            start:   PJ1
+            end:     PJ489
+            sections:
+              - name:    'Languages'
+                range:   PJ1-(195)
+                start:   PJ1
+                end:     PJ195
+              - name:    'Literature'
+                range:   PJ306-489
+                start:   PJ306
+                end:     PJ489
+          - name:    'Special groups'
+            range:   PJ601-989
+            start:   PJ601
+            end:     PJ989
+            sections:
+              - name:    'Christian Oriental'
+                range:   PJ601-621
+                start:   PJ601
+                end:     PJ621
+              - name:    'Islamic'
+                range:   PJ701-989
+                start:   PJ701
+                end:     PJ989
+          - name:    'Afroasiatic languages'
+            range:   PJ991-995
+            start:   PJ991
+            end:     PJ995
+          - name:    'Egyptology'
+            range:   PJ1001-1989
+            start:   PJ1001
+            end:     PJ1989
+            sections:
+              - name:    'Egyptian writing and its decipherment'
+                range:   PJ1091-1109
+                start:   PJ1091
+                end:     PJ1109
+              - name:    'Language'
+                range:   PJ1111-1446
+                start:   PJ1111
+                end:     PJ1446
+              - name:    'Literature.  Inscriptions'
+                range:   PJ1481-1989
+                start:   PJ1481
+                end:     PJ1989
+          - name:    'Coptic'
+            range:   PJ2001-2199
+            start:   PJ2001
+            end:     PJ2199
+          - name:    'Libyco-Berber languages.  Berber languages'
+            range:   PJ2340-2399
+            start:   PJ2340
+            end:     PJ2399
+            sections:
+              - name:    'Libyan group'
+                range:   PJ2353-2367
+                start:   PJ2353
+                end:     PJ2367
+              - name:    'Berber languages'
+                range:   PJ2369-2399
+                start:   PJ2369
+                end:     PJ2399
+          - name:    'Cushitic languages'
+            range:   PJ2401-2594
+            start:   PJ2401
+            end:     PJ2594
+          - name:    'Semitic philology and literature'
+            range:   PJ3001-3097
+            start:   PJ3001
+            end:     PJ3097
+          - name:    'Assyriology.  Akkadian'
+            range:   PJ3101-(3971)
+            start:   PJ3101
+            end:     PJ3971
+            sections:
+              - name:    'Language'
+                range:   PJ3231-3595
+                start:   PJ3231
+                end:     PJ3595
+              - name:    'Literature.  Inscriptions'
+                range:   PJ3601-(3971)
+                start:   PJ3601
+                end:     PJ3971
+          - name:    'Sumerian'
+            range:   PJ4001-(4091)
+            start:   PJ4001
+            end:     PJ4091
+          - name:    'West and North Semitic languages'
+            range:   PJ4101-4197
+            start:   PJ4101
+            end:     PJ4197
+            sections:
+              - name:    'Phoenician-Punic'
+                range:   PJ4171-4197
+                start:   PJ4171
+                end:     PJ4197
+          - name:    'Hebrew'
+            range:   PJ4501-5192
+            start:   PJ4501
+            end:     PJ5192
+            sections:
+              - name:    'Language (Biblical and modern)'
+                range:   PJ4543-4937
+                start:   PJ4543
+                end:     PJ4937
+              - name:    'Medieval Hebrew'
+                range:   PJ4951-4996
+                start:   PJ4951
+                end:     PJ4996
+              - name:    'Literature'
+                range:   PJ5001-5060
+                start:   PJ5001
+                end:     PJ5060
+                sections:
+                  - name:    'Individual authors and works'
+                    range:   PJ5050-5055.51
+                    start:   PJ5050
+                    end:     PJ5055.51
+              - name:    'Other languages used by Jews'
+                range:   PJ5061-5192
+                start:   PJ5061
+                end:     PJ5192
+                sections:
+                  - name:    'Yiddish'
+                    range:   PJ5111-5192
+                    start:   PJ5111
+                    end:     PJ5192
+          - name:    'Aramaic'
+            range:   PJ5201-5329.5
+            start:   PJ5201
+            end:     PJ5329.5
+            sections:
+              - name:    'West Aramaic'
+                range:   PJ5211-5289
+                start:   PJ5211
+                end:     PJ5289
+                sections:
+                  - name:    'Biblical (Chaldaic)'
+                    range:   PJ5211-5219.5
+                    start:   PJ5211
+                    end:     PJ5219.5
+                  - name:    'Palmyrene inscriptions'
+                    range:   PJ5229
+                    start:   PJ5229
+                    end:     PJ5229
+                  - name:    'Nabataean inscriptions'
+                    range:   PJ5239
+                    start:   PJ5239
+                    end:     PJ5239
+                  - name:    'Christian Palestinian'
+                    range:   PJ5241-5249
+                    start:   PJ5241
+                    end:     PJ5249
+                  - name:    'Jewish Palestinian'
+                    range:   PJ5251-5259
+                    start:   PJ5251
+                    end:     PJ5259
+                  - name:    'Samaritan'
+                    range:   PJ5271-5279
+                    start:   PJ5271
+                    end:     PJ5279
+                  - name:    'Neo-Aramaic'
+                    range:   PJ5281-5289
+                    start:   PJ5281
+                    end:     PJ5289
+              - name:    'East Aramaic'
+                range:   PJ5301-5329.5
+                start:   PJ5301
+                end:     PJ5329.5
+                sections:
+                  - name:    'Mandaean'
+                    range:   PJ5321-5329.5
+                    start:   PJ5321
+                    end:     PJ5329.5
+          - name:    'Syriac'
+            range:   PJ5401-5809
+            start:   PJ5401
+            end:     PJ5809
+            sections:
+              - name:    'Language'
+                range:   PJ5414-5495
+                start:   PJ5414
+                end:     PJ5495
+              - name:    'Literature'
+                range:   PJ5601-5695
+                start:   PJ5601
+                end:     PJ5695
+              - name:    'East Syriac (Nestorian)'
+                range:   PJ5701-5709
+                start:   PJ5701
+                end:     PJ5709
+              - name:    'West Syriac (Jacobite)'
+                range:   PJ5711-5719
+                start:   PJ5711
+                end:     PJ5719
+              - name:    'Neo-Syriac dialects (Modern Syriac)'
+                range:   PJ5801-5809
+                start:   PJ5801
+                end:     PJ5809
+          - name:    'South Semitic languages'
+            range:   PJ5901-5909
+            start:   PJ5901
+            end:     PJ5909
+          - name:    'Arabic'
+            range:   PJ6001-8517
+            start:   PJ6001
+            end:     PJ8517
+            sections:
+              - name:    'Language'
+                range:   PJ6073-7144
+                start:   PJ6073
+                end:     PJ7144
+                sections:
+                  - name:    'Ancient Arabic'
+                    range:   PJ6690-6697
+                    start:   PJ6690
+                    end:     PJ6697
+                  - name:    'Modern Arabic dialects'
+                    range:   PJ6701-6901
+                    start:   PJ6701
+                    end:     PJ6901
+                  - name:    'South Arabian'
+                    range:   PJ6950-7144
+                    start:   PJ6950
+                    end:     PJ7144
+                    sections:
+                      - name:    'Ancient'
+                        range:   PJ6950-6981
+                        start:   PJ6950
+                        end:     PJ6981
+                      - name:    'Modern'
+                        range:   PJ7051-7144
+                        start:   PJ7051
+                        end:     PJ7144
+              - name:    'Arabic literature'
+                range:   PJ7501-8517
+                start:   PJ7501
+                end:     PJ8517
+                sections:
+                  - name:    'Individual authors or works'
+                    range:   PJ7695.8-7976
+                    start:   PJ7695.8
+                    end:     PJ7976
+          - name:    'Ethiopian languages'
+            range:   PJ8991-9348
+            start:   PJ8991
+            end:     PJ9348
+            sections:
+              - name:    'Ethiopic (Geez)'
+                range:   PJ9001-9101
+                start:   PJ9001
+                end:     PJ9101
+              - name:    'Amharic'
+                range:   PJ9201-9269
+                start:   PJ9201
+                end:     PJ9269
+  - subclass:  PK
+    name:     'Indo-Iranian philology and literature'
+    sections:
+      - name:    'Indo-Iranian philology and literature'
+        range:   PK1-(9601)
+        start:   PK1
+        end:     PK9601
+        sections:
+          - name:    'General'
+            range:   PK1-85
+            start:   PK1
+            end:     PK85
+          - name:    'Indo-Aryan languages'
+            range:   PK101-2899
+            start:   PK101
+            end:     PK2899
+            sections:
+              - name:    'General'
+                range:   PK101-185
+                start:   PK101
+                end:     PK185
+              - name:    'Vedic'
+                range:   PK(201)-379
+                start:   PK201
+                end:     PK379
+              - name:    'Sanskrit'
+                range:   PK401-976
+                start:   PK401
+                end:     PK976
+              - name:    'Pali'
+                range:   PK1001-1095
+                start:   PK1001
+                end:     PK1095
+              - name:    'Prakrit'
+                range:   PK1201-1409.5
+                start:   PK1201
+                end:     PK1409.5
+              - name:    'Apabhramsa'
+                range:   PK1421-1429.5
+                start:   PK1421
+                end:     PK1429.5
+              - name:    'Middle Indo-Aryan dialects'
+                range:   PK1471-1490
+                start:   PK1471
+                end:     PK1490
+              - name:    'Modern Indo-Aryan languages'
+                range:   PK1501-2899
+                start:   PK1501
+                end:     PK2899
+                sections:
+                  - name:    'Particular languages and dialects'
+                    range:   PK1550-2899
+                    start:   PK1550
+                    end:     PK2899
+                    sections:
+                      - name:    'Assamese'
+                        range:   PK1550-1569
+                        start:   PK1550
+                        end:     PK1569
+                      - name:    'Bengali'
+                        range:   PK1651-(1799)
+                        start:   PK1651
+                        end:     PK1799
+                      - name:    'Bihari'
+                        range:   PK1801-1831.95
+                        start:   PK1801
+                        end:     PK1831.95
+                      - name:    'Gujarati'
+                        range:   PK1841-1870.95
+                        start:   PK1841
+                        end:     PK1870.95
+                      - name:    'Hindi, Urdu, Hindustani languages and literatures'
+                        range:   PK1931-2212
+                        start:   PK1931
+                        end:     PK2212
+                        sections:
+                          - name:    'Hindi language'
+                            range:   PK1931-1970
+                            start:   PK1931
+                            end:     PK1970
+                          - name:    'Urdu language'
+                            range:   PK1971-1979.5
+                            start:   PK1971
+                            end:     PK1979.5
+                          - name:    'Hindustani language'
+                            range:   PK1981-2000
+                            start:   PK1981
+                            end:     PK2000
+                          - name:    'Hindi, Hindustani literatures'
+                            range:   PK2030-2142
+                            start:   PK2030
+                            end:     PK2142
+                          - name:    'Urdu literature'
+                            range:   PK2151-2212
+                            start:   PK2151
+                            end:     PK2212
+                      - name:    'Lahndā'
+                        sort_as: 'Lahnda'
+                        range:   PK2261-2270.9
+                        start:   PK2261
+                        end:     PK2270.9
+                      - name:    'Marathi'
+                        range:   PK2351-2418
+                        start:   PK2351
+                        end:     PK2418
+                      - name:    'Marwari'
+                        range:   PK2461-2479
+                        start:   PK2461
+                        end:     PK2479
+                      - name:    'Oriya'
+                        range:   PK2561-2579.5
+                        start:   PK2561
+                        end:     PK2579.5
+                      - name:    'Pahari'
+                        range:   PK2591-2610
+                        start:   PK2591
+                        end:     PK2610
+                      - name:    'Panjabi'
+                        range:   PK2631-2659
+                        start:   PK2631
+                        end:     PK2659
+                      - name:    'Rajasthani'
+                        range:   PK2701-2708.9
+                        start:   PK2701
+                        end:     PK2708.9
+                      - name:    'Sindhi'
+                        range:   PK2781-2790
+                        start:   PK2781
+                        end:     PK2790
+                      - name:    'Sinhalese (Singhalese)'
+                        range:   PK2801-2891
+                        start:   PK2801
+                        end:     PK2891
+                      - name:    'Siraiki'
+                        range:   PK2892-2892.95
+                        start:   PK2892
+                        end:     PK2892.95
+                      - name:    'Romani'
+                        range:   PK2896-2899
+                        start:   PK2896
+                        end:     PK2899
+          - name:    'Indo-Aryan literature'
+            range:   PK(2901)-5471
+            start:   PK2901
+            end:     PK5471
+            sections:
+              - name:    'General'
+                range:   PK(2901)-2979
+                start:   PK2901
+                end:     PK2979
+              - name:    'Sanskrit'
+                range:   PK3591-4485
+                start:   PK3591
+                end:     PK4485
+                sections:
+                  - name:    'Individual authors and works'
+                    range:   PK3791-3799
+                    start:   PK3791
+                    end:     PK3799
+                  - name:    'Special subjects'
+                    range:   PK(3801)-(4251)
+                    start:   PK3801
+                    end:     PK4251
+                  - name:    'Translations'
+                    range:   PK4471-4485
+                    start:   PK4471
+                    end:     PK4485
+              - name:    'Pali literature'
+                range:   PK(4501)-4681
+                start:   PK4501
+                end:     PK4681
+              - name:    'Prakrit literature'
+                range:   PK4990-5046
+                start:   PK4990
+                end:     PK5046
+              - name:    'Modern Indo-Aryan literature'
+                range:   PK5401-5471
+                start:   PK5401
+                end:     PK5471
+          - name:    'Iranian philology and literature'
+            range:   PK6001-6996
+            start:   PK6001
+            end:     PK6996
+            sections:
+              - name:    'General'
+                range:   PK6001-6099
+                start:   PK6001
+                end:     PK6099
+              - name:    'Avestan'
+                range:   PK6101-(6119)
+                start:   PK6101
+                end:     PK6119
+              - name:    'Old Persian'
+                range:   PK6121-6129
+                start:   PK6121
+                end:     PK6129
+              - name:    'Middle Iranian languages'
+                range:   PK6135-6199.9
+                start:   PK6135
+                end:     PK6199.9
+                sections:
+                  - name:    'Pahlavi'
+                    range:   PK6141-6199.5
+                    start:   PK6141
+                    end:     PK6199.5
+              - name:    'New Persian'
+                range:   PK6201-(6599.7)
+                start:   PK6201
+                end:     PK6599.7
+                sections:
+                  - name:    'Language'
+                    range:   PK6201-6399
+                    start:   PK6201
+                    end:     PK6399
+                  - name:    'Literature'
+                    range:   PK6400-(6599.7)
+                    start:   PK6400
+                    end:     PK6599.7
+                    sections:
+                      - name:    'Individual authors or works'
+                        range:   PK6450.9-6562.35
+                        start:   PK6450.9
+                        end:     PK6562.35
+                        sections:
+                          - name:    'Firdawsī'
+                            sort_as: 'Firdawsi'
+                            range:   PK6455-6460
+                            start:   PK6455
+                            end:     PK6460
+                          - name:    'Hāfiz'
+                            sort_as: 'Hafiz'
+                            range:   PK6465
+                            start:   PK6465
+                            end:     PK6465
+                          - name:    'Ibn Yamīn, Fakhr al-Dīn Mahmūd'
+                            sort_as: 'Ibn Yamin, Fakhr al-Din Mahmud'
+                            range:   PK6475
+                            start:   PK6475
+                            end:     PK6475
+                          - name:    'Jalāl al-Dīn Rūmī Maulana'
+                            sort_as: 'Jalal al-Din Rumi Maulana'
+                            range:   PK6478-6482
+                            start:   PK6478
+                            end:     PK6482
+                          - name:    'Jāmī'
+                            sort_as: 'Jami'
+                            range:   PK6490
+                            start:   PK6490
+                            end:     PK6490
+                          - name:    'Nizāmī Ganjavī'
+                            sort_as: 'Nizami Ganjavi'
+                            range:   PK6501
+                            start:   PK6501
+                            end:     PK6501
+                          - name:    'Omar Khayyam'
+                            range:   PK6510-6525
+                            start:   PK6510
+                            end:     PK6525
+                          - name:    'Sa''dī'
+                            sort_as: 'Sa''di'
+                            range:   PK6540-6546
+                            start:   PK6540
+                            end:     PK6546
+              - name:    'Afghan (Pashto, Pushto, Pushtu, etc.)'
+                range:   PK6701-6821
+                start:   PK6701
+                end:     PK6821
+          - name:    'Dardic (Pisacha)'
+            range:   PK7001-7075
+            start:   PK7001
+            end:     PK7075
+            sections:
+              - name:    'Kashmiri'
+                range:   PK7021-7037
+                start:   PK7021
+                end:     PK7037
+              - name:    'Kohistani'
+                range:   PK7040-7045
+                start:   PK7040
+                end:     PK7045
+              - name:    'Nuristani (Kafiri) group'
+                range:   PK7050-7065
+                start:   PK7050
+                end:     PK7065
+          - name:    'Armenian'
+            range:   PK8001-8832
+            start:   PK8001
+            end:     PK8832
+            sections:
+              - name:    'Language'
+                range:   PK8001-8496
+                start:   PK8001
+                end:     PK8496
+              - name:    'Literature'
+                range:   PK8501-8832
+                start:   PK8501
+                end:     PK8832
+          - name:    'Caucasian languages'
+            range:   PK9001-9201
+            start:   PK9001
+            end:     PK9201
+            sections:
+              - name:    'Georgian'
+                range:   PK9101-9169
+                start:   PK9101
+                end:     PK9169
+  - subclass:  PL
+    name:     'Languages of Eastern Asia, Africa, Oceania'
+    sections:
+      - name:    'Languages of Eastern Asia, Africa, Oceania'
+        range:   PL1-8844
+        start:   PL1
+        end:     PL8844
+        sections:
+          - name:    'Ural-Altaic languages'
+            range:   PL1-481
+            start:   PL1
+            end:     PL481
+            sections:
+              - name:    'Turkic languages'
+                range:   PL21-396
+                start:   PL21
+                end:     PL396
+              - name:    'Mongolian languages'
+                range:   PL400-431
+                start:   PL400
+                end:     PL431
+              - name:    'Tungus Manchu languages'
+                range:   PL450-481
+                start:   PL450
+                end:     PL481
+          - name:    'Far Eastern languages and literature'
+            range:   PL(490)-495
+            start:   PL490
+            end:     PL495
+          - name:    'Japanese language and literature'
+            range:   PL501-889
+            start:   PL501
+            end:     PL889
+            sections:
+              - name:    'Japanese language'
+                range:   PL501-699
+                start:   PL501
+                end:     PL699
+              - name:    'Japanese literature'
+                range:   PL700-889
+                start:   PL700
+                end:     PL889
+                sections:
+                  - name:    'History and criticism'
+                    range:   PL700-751.5
+                    start:   PL700
+                    end:     PL751.5
+                  - name:    'Collections'
+                    range:   PL752-783
+                    start:   PL752
+                    end:     PL783
+                  - name:    'Individual authors and works'
+                    range:   PL784-866
+                    start:   PL784
+                    end:     PL866
+                  - name:    'Local literature'
+                    range:   PL885-889
+                    start:   PL885
+                    end:     PL889
+          - name:    'Korean language and literature'
+            range:   PL901-998
+            start:   PL901
+            end:     PL998
+            sections:
+              - name:    'Korean language'
+                range:   PL901-949
+                start:   PL901
+                end:     PL949
+              - name:    'Korean literature'
+                range:   PL950-998
+                start:   PL950
+                end:     PL998
+                sections:
+                  - name:    'History and criticism'
+                    range:   PL950.2-969.5
+                    start:   PL950.2
+                    end:     PL969.5
+                  - name:    'Collections'
+                    range:   PL969.8-985
+                    start:   PL969.8
+                    end:     PL985
+                  - name:    'Individual authors and works'
+                    range:   PL986-993
+                    start:   PL986
+                    end:     PL993
+                  - name:    'Local literature'
+                    range:   PL997-998
+                    start:   PL997
+                    end:     PL998
+          - name:    'Chinese language and literature'
+            range:   PL1001-3208
+            start:   PL1001
+            end:     PL3208
+            sections:
+              - name:    'Chinese language'
+                range:   PL1001-1960
+                start:   PL1001
+                end:     PL1960
+              - name:    'Chinese literature'
+                range:   PL2250-3208
+                start:   PL2250
+                end:     PL3208
+                sections:
+                  - name:    'History and criticism'
+                    range:   PL2250-2443
+                    start:   PL2250
+                    end:     PL2443
+                  - name:    'Collections'
+                    range:   PL2450-2659
+                    start:   PL2450
+                    end:     PL2659
+                  - name:    'Individual authors and works'
+                    range:   PL2661-2979
+                    start:   PL2661
+                    end:     PL2979
+                  - name:    'Provincial, local, colonial, etc.'
+                    range:   PL3030-3208
+                    start:   PL3030
+                    end:     PL3208
+          - name:    'Non-Chinese languages of China'
+            range:   PL3301-3311
+            start:   PL3301
+            end:     PL3311
+          - name:    'Non-Aryan languages of India and Southeastern Asia in general'
+            range:   PL3501-3509
+            start:   PL3501
+            end:     PL3509
+          - name:    'Malaysian literature'
+            range:   PL3512
+            start:   PL3512
+            end:     PL3512
+          - name:    'Singapore literature'
+            range:   PL3515
+            start:   PL3515
+            end:     PL3515
+          - name:    'Languages of the Montagnards'
+            range:   PL3518
+            start:   PL3518
+            end:     PL3518
+          - name:    'Sino-Tibetan languages'
+            range:   PL3521-4001
+            start:   PL3521
+            end:     PL4001
+            sections:
+              - name:    'Tibeto-Burman languages'
+                range:   PL3551-4001
+                start:   PL3551
+                end:     PL4001
+                sections:
+                  - name:    'Tibeto-Himalayan languages'
+                    range:   PL3561-3801
+                    start:   PL3561
+                    end:     PL3801
+                    sections:
+                      - name:    'Tibetan'
+                        range:   PL3601-3775
+                        start:   PL3601
+                        end:     PL3775
+                      - name:    'Himalayan languages'
+                        range:   PL3781-3801
+                        start:   PL3781
+                        end:     PL3801
+                  - name:    'Assam and Burma'
+                    range:   PL3851-4001
+                    start:   PL3851
+                    end:     PL4001
+          - name:    'Karen languages'
+            range:   PL4051-4054
+            start:   PL4051
+            end:     PL4054
+          - name:    'Miao-Yao languages'
+            range:   PL4070-4074
+            start:   PL4070
+            end:     PL4074
+          - name:    'Austroasiatic languages'
+            range:   PL4281-4587
+            start:   PL4281
+            end:     PL4587
+            sections:
+              - name:    'Mon-Khmer (Mon-Anam) languages'
+                range:   PL4301-4470
+                start:   PL4301
+                end:     PL4470
+                sections:
+                  - name:    'Vietnamese.  Annamese'
+                    range:   PL4371-4379
+                    start:   PL4371
+                    end:     PL4379
+                  - name:    'Bru, Chrau, Khasi, Muong, etc.'
+                    range:   PL4423-4470
+                    start:   PL4423
+                    end:     PL4470
+              - name:    'Nicobarese'
+                range:   PL4471-4471.5
+                start:   PL4471
+                end:     PL4471.5
+              - name:    'Chamic languages'
+                range:   PL4490-4498
+                start:   PL4490
+                end:     PL4498
+              - name:    'Munda languages (Kolarian languages)'
+                range:   PL4501-4587
+                start:   PL4501
+                end:     PL4587
+          - name:    'Dravidian languages'
+            range:   PL4601-(4890)
+            start:   PL4601
+            end:     PL4890
+          - name:    'Languages of Oceania'
+            range:   PL5001-7511
+            start:   PL5001
+            end:     PL7511
+            sections:
+              - name:    'Austronesian, Papuan, and Australian languages'
+                range:   PL5001-7101
+                start:   PL5001
+                end:     PL7101
+                sections:
+                  - name:    'Malayan (Indonesian) languages'
+                    range:   PL5051-5497
+                    start:   PL5051
+                    end:     PL5497
+                  - name:    'Philippine languages'
+                    range:   PL5501-6135
+                    start:   PL5501
+                    end:     PL6135
+                  - name:    'Taiwan languages'
+                    range:   PL6145-6167
+                    start:   PL6145
+                    end:     PL6167
+                  - name:    'Micronesian and Melanesian languages'
+                    range:   PL6191-6341
+                    start:   PL6191
+                    end:     PL6341
+                  - name:    'Polynesian languages'
+                    range:   PL6401-6551
+                    start:   PL6401
+                    end:     PL6551
+                  - name:    'Papuan languages'
+                    range:   PL6601-6621
+                    start:   PL6601
+                    end:     PL6621
+                  - name:    'Australian languages'
+                    range:   PL7001-7101
+                    start:   PL7001
+                    end:     PL7101
+          - name:    'African languages and literature'
+            range:   PL8000-8844
+            start:   PL8000
+            end:     PL8844
+            sections:
+              - name:    'Languages'
+                range:   PL8000-8009
+                start:   PL8000
+                end:     PL8009
+              - name:    'Literature'
+                range:   PL8009.5-8014
+                start:   PL8009.5
+                end:     PL8014
+              - name:    'Languages.  By region or country'
+                range:   PL8015-8021
+                start:   PL8015
+                end:     PL8021
+              - name:    'Special families of languages'
+                range:   PL8024-8027
+                start:   PL8024
+                end:     PL8027
+              - name:    'Special languages (alphabetically)'
+                range:   PL8035-8844
+                start:   PL8035
+                end:     PL8844
+  - subclass:  PM
+    name:     'Hyperborean, Indian, and artificial languages'
+    sections:
+      - name:    'Hyperborean, Indian, and artificial languages'
+        range:   PM1-9021
+        start:   PM1
+        end:     PM9021
+        sections:
+          - name:    'Hperborean languages of Arctic Asia and America'
+            range:   PM1-94
+            start:   PM1
+            end:     PM94
+          - name:    'American languages (Aboriginal)'
+            range:   PM101-2711
+            start:   PM101
+            end:     PM2711
+            sections:
+              - name:    'American languages of British North America'
+                range:   PM231-355
+                start:   PM231
+                end:     PM355
+              - name:    'American languages of the United States (and Mexico)'
+                range:   PM(401)-501
+                start:   PM401
+                end:     PM501
+              - name:    'Special languages of the United States and Canada (alphabetically)'
+                range:   PM549-2711
+                start:   PM549
+                end:     PM2711
+          - name:    'Languages of Mexico and Central America'
+            range:   PM3001-4566
+            start:   PM3001
+            end:     PM4566
+          - name:    'Languages of South America and the West Indies'
+            range:   PM5001-7356
+            start:   PM5001
+            end:     PM7356
+          - name:    'Mixed languages'
+            range:   PM7801-7895
+            start:   PM7801
+            end:     PM7895
+            sections:
+              - name:    'Creole languages'
+                range:   PM7831-7875
+                start:   PM7831
+                end:     PM7875
+          - name:    'Artificial languages--Universal languages'
+            range:   PM8001-8995
+            start:   PM8001
+            end:     PM8995
+            sections:
+              - name:    'Esperanto'
+                range:   PM8201-8298
+                start:   PM8201
+                end:     PM8298
+          - name:    'Picture languages'
+            range:   PM8999
+            start:   PM8999
+            end:     PM8999
+          - name:    'Secret languages'
+            range:   PM9001-9021
+            start:   PM9001
+            end:     PM9021
+  - subclass:  PN
+    name:     'Literature (General)'
+    sections:
+      - name:    'Literature (General)'
+        range:   PN1-6790
+        start:   PN1
+        end:     PN6790
+        sections:
+          - name:    'Periodicals'
+            range:   PN1-9
+            start:   PN1
+            end:     PN9
+          - name:    'Societies'
+            range:   PN20-30
+            start:   PN20
+            end:     PN30
+          - name:    'Theory.  Philosophy.  Esthetics'
+            range:   PN45-57
+            start:   PN45
+            end:     PN57
+          - name:    'Study and teaching'
+            range:   PN59-72
+            start:   PN59
+            end:     PN72
+          - name:    'Criticism'
+            range:   PN80-99
+            start:   PN80
+            end:     PN99
+          - name:    'Authorship'
+            range:   PN101-245
+            start:   PN101
+            end:     PN245
+            sections:
+              - name:    'Technique.  Literary composition, etc.'
+                range:   PN172-239
+                start:   PN172
+                end:     PN239
+              - name:    'Translating as a literary pursuit'
+                range:   PN241-241.5
+                start:   PN241
+                end:     PN241.5
+          - name:    'Literary history'
+            range:   PN441-1009.5
+            start:   PN441
+            end:     PN1009.5
+            sections:
+              - name:    'Biography'
+                range:   PN451-497
+                start:   PN451
+                end:     PN497
+              - name:    'Collections'
+                range:   PN500-519
+                start:   PN500
+                end:     PN519
+              - name:    'Special relations, movements, and currents of literature'
+                range:   PN597-605
+                start:   PN597
+                end:     PN605
+              - name:    'By period'
+                range:   PN610-779
+                start:   PN610
+                end:     PN779
+                sections:
+                  - name:    'Ancient'
+                    range:   PN611-649
+                    start:   PN611
+                    end:     PN649
+                  - name:    'Medieval (to 1500)'
+                    range:   PN661-694
+                    start:   PN661
+                    end:     PN694
+                    sections:
+                      - name:    'Legends'
+                        range:   PN683-687
+                        start:   PN683
+                        end:     PN687
+                      - name:    'Poetry'
+                        range:   PN688-691
+                        start:   PN688
+                        end:     PN691
+                      - name:    'Prose.  Prose fiction'
+                        range:   PN692-693
+                        start:   PN692
+                        end:     PN693
+                  - name:    'Modern'
+                    range:   PN695-779
+                    start:   PN695
+                    end:     PN779
+                    sections:
+                      - name:    'Renaissance (1500-1700)'
+                        range:   PN715-749
+                        start:   PN715
+                        end:     PN749
+              - name:    'Romance literature'
+                range:   PN801-820
+                start:   PN801
+                end:     PN820
+              - name:    'Germanic literature'
+                range:   PN821-840
+                start:   PN821
+                end:     PN840
+              - name:    'Black literature (General)'
+                range:   PN841
+                start:   PN841
+                end:     PN841
+              - name:    'Jewish literature in various languages'
+                range:   PN842
+                start:   PN842
+                end:     PN842
+              - name:    'Comparative literature'
+                range:   PN851-(884)
+                start:   PN851
+                end:     PN884
+              - name:    'Folk literature'
+                range:   PN(905)-1008
+                start:   PN905
+                end:     PN1008
+                sections:
+                  - name:    'Fables'
+                    range:   PN980-995
+                    start:   PN980
+                    end:     PN995
+              - name:    'Juvenile literature'
+                range:   PN1008.2-1009.5
+                start:   PN1008.2
+                end:     PN1009.5
+          - name:    'Poetry'
+            range:   PN1010-1525
+            start:   PN1010
+            end:     PN1525
+            sections:
+              - name:    'Theory, philosophy, relations, etc.'
+                range:   PN1031-1049
+                start:   PN1031
+                end:     PN1049
+              - name:    'Relations to, and treatment of, special subjects'
+                range:   PN1065-1085
+                start:   PN1065
+                end:     PN1085
+              - name:    'History and criticism'
+                range:   PN1110-1279
+                start:   PN1110
+                end:     PN1279
+              - name:    'Epic poetry'
+                range:   PN1301-1333
+                start:   PN1301
+                end:     PN1333
+              - name:    'Folk poetry'
+                range:   PN1341-1347
+                start:   PN1341
+                end:     PN1347
+              - name:    'Lyric poetry'
+                range:   PN1351-1389
+                start:   PN1351
+                end:     PN1389
+          - name:    'The monologue'
+            range:   PN1530
+            start:   PN1530
+            end:     PN1530
+          - name:    'The dialogue'
+            range:   PN1551
+            start:   PN1551
+            end:     PN1551
+          - name:    'The performing arts.  Show business'
+            range:   PN1560-1590
+            start:   PN1560
+            end:     PN1590
+            sections:
+              - name:    'Centers for the performing arts'
+                range:   PN1585-1589
+                start:   PN1585
+                end:     PN1589
+          - name:    'Drama'
+            range:   PN1600-3307
+            start:   PN1600
+            end:     PN3307
+            sections:
+              - name:    'Relation to, and treatment of, special subjects'
+                range:   PN1635-1650
+                start:   PN1635
+                end:     PN1650
+              - name:    'Technique of dramatic composition'
+                range:   PN1660-1693
+                start:   PN1660
+                end:     PN1693
+              - name:    'History'
+                range:   PN1720-1861
+                start:   PN1720
+                end:     PN1861
+              - name:    'Special types'
+                range:   PN1865-1988
+                start:   PN1865
+                end:     PN1988
+              - name:    'Broadcasting'
+                range:   PN1990-1992.92
+                start:   PN1990
+                end:     PN1992.92
+                sections:
+                  - name:    'Radio broadcasts'
+                    range:   PN1991-1991.9
+                    start:   PN1991
+                    end:     PN1991.9
+                  - name:    'Television broadcasts'
+                    range:   PN1992-1992.92
+                    start:   PN1992
+                    end:     PN1992.92
+              - name:    'Nonbroadcast video recordings'
+                range:   PN1992.93-.95
+                start:   PN1992.93
+                end:     PN1992.95
+              - name:    'Motion pictures'
+                range:   PN1993-1999
+                start:   PN1993
+                end:     PN1999
+                sections:
+                  - name:    'Plays, scenarios, etc.'
+                    range:   PN1997-1997.85
+                    start:   PN1997
+                    end:     PN1997.85
+              - name:    'Dramatic representation.  The theater'
+                range:   PN2000-3307
+                start:   PN2000
+                end:     PN3307
+                sections:
+                  - name:    'Art of acting'
+                    range:   PN2061-2071
+                    start:   PN2061
+                    end:     PN2071
+                  - name:    'The stage and accessories'
+                    range:   PN2085-2091
+                    start:   PN2085
+                    end:     PN2091
+                  - name:    'By period'
+                    range:   PN2131-2193
+                    start:   PN2131
+                    end:     PN2193
+                    sections:
+                      - name:    'Ancient'
+                        range:   PN2131-2145
+                        start:   PN2131
+                        end:     PN2145
+                      - name:    'Medieval'
+                        range:   PN2152-2160
+                        start:   PN2152
+                        end:     PN2160
+                      - name:    'Renaissance'
+                        range:   PN2171-2179
+                        start:   PN2171
+                        end:     PN2179
+                      - name:    'Modern'
+                        range:   PN2181-2193
+                        start:   PN2181
+                        end:     PN2193
+                  - name:    'Special regions or countries'
+                    range:   PN2219.3-3030
+                    start:   PN2219.3
+                    end:     PN3030
+                  - name:    'The Jewish theater'
+                    range:   PN3035
+                    start:   PN3035
+                    end:     PN3035
+                  - name:    'Amateur theater'
+                    range:   PN3151-3171
+                    start:   PN3151
+                    end:     PN3171
+                  - name:    'College and school theatricals'
+                    range:   PN3175-3191
+                    start:   PN3175
+                    end:     PN3191
+                  - name:    'Tableaux, pageants, "Happenings," etc.'
+                    range:   PN3203-3299
+                    start:   PN3203
+                    end:     PN3299
+          - name:    'Prose.  Prose fiction'
+            range:   PN3311-3503
+            start:   PN3311
+            end:     PN3503
+            sections:
+              - name:    'Philosophy, theory, etc.'
+                range:   PN3329-3352
+                start:   PN3329
+                end:     PN3352
+              - name:    'Technique.  Authorship'
+                range:   PN3355-3383
+                start:   PN3355
+                end:     PN3383
+              - name:    'Special kinds of fiction.  Fiction genres'
+                range:   PN3427-3448
+                start:   PN3427
+                end:     PN3448
+              - name:    'History'
+                range:   PN3451-3503
+                start:   PN3451
+                end:     PN3503
+          - name:    'Oratory.  Elocution, etc.'
+            range:   PN4001-4355
+            start:   PN4001
+            end:     PN4355
+            sections:
+              - name:    'Study and teaching'
+                range:   PN4071-4095
+                start:   PN4071
+                end:     PN4095
+              - name:    'Debating'
+                range:   PN4177-4191
+                start:   PN4177
+                end:     PN4191
+              - name:    'Recitations (in English)'
+                range:   PN4199-4321
+                start:   PN4199
+                end:     PN4321
+              - name:    'Recitations in foreign languages'
+                range:   PN4331-4355
+                start:   PN4331
+                end:     PN4355
+          - name:    'Diaries'
+            range:   PN4390
+            start:   PN4390
+            end:     PN4390
+          - name:    'Letters (Literary history)'
+            range:   PN4400
+            start:   PN4400
+            end:     PN4400
+          - name:    'Essays (Literary history)'
+            range:   PN4500
+            start:   PN4500
+            end:     PN4500
+          - name:    'Journalism.  The periodical press, etc.'
+            range:   PN4699-5650
+            start:   PN4699
+            end:     PN5650
+            sections:
+              - name:    'Relation to the state.  Government and the press.  Liberty of the press'
+                range:   PN4735-4748
+                start:   PN4735
+                end:     PN4748
+              - name:    'Technique.  Practical journalism'
+                range:   PN4775-4784
+                start:   PN4775
+                end:     PN4784
+              - name:    'Amateur journalism'
+                range:   PN4825-4830
+                start:   PN4825
+                end:     PN4830
+              - name:    'Magazines and other periodicals'
+                range:   PN4832-4836
+                start:   PN4832
+                end:     PN4836
+              - name:    'By region or country'
+                range:   PN4840-5648
+                start:   PN4840
+                end:     PN5648
+              - name:    'The Jewish press'
+                range:   PN5650
+                start:   PN5650
+                end:     PN5650
+          - name:    'Collections of general literature'
+            range:   PN6010-6790
+            start:   PN6010
+            end:     PN6790
+            sections:
+              - name:    'Special classes of authors'
+                range:   PN6066-6069
+                start:   PN6066
+                end:     PN6069
+              - name:    'Quotations'
+                range:   PN6080-6095
+                start:   PN6080
+                end:     PN6095
+                sections:
+                  - name:    'English'
+                    range:   PN6081-6084
+                    start:   PN6081
+                    end:     PN6084
+                  - name:    'French'
+                    range:   PN6086-6089
+                    start:   PN6086
+                    end:     PN6089
+                  - name:    'German'
+                    range:   PN6090-(6095)
+                    start:   PN6090
+                    end:     PN6095
+              - name:    'Poetry'
+                range:   PN6099-6110
+                start:   PN6099
+                end:     PN6110
+              - name:    'Drama'
+                range:   PN6110.5-6120
+                start:   PN6110.5
+                end:     PN6120
+              - name:    'Fiction'
+                range:   PN6120.15-.95
+                start:   PN6120.15
+                end:     PN6120.95
+              - name:    'Orations'
+                range:   PN6121-6129
+                start:   PN6121
+                end:     PN6129
+              - name:    'Letters'
+                range:   PN6130-6140
+                start:   PN6130
+                end:     PN6140
+              - name:    'Essays'
+                range:   PN6141-6145
+                start:   PN6141
+                end:     PN6145
+              - name:    'Wit and humor'
+                range:   PN6146.5-6231
+                start:   PN6146.5
+                end:     PN6231
+                sections:
+                  - name:    'By region or country'
+                    range:   PN6157-6222
+                    start:   PN6157
+                    end:     PN6222
+              - name:    'Anacreontic literature'
+                range:   PN6233-6238
+                start:   PN6233
+                end:     PN6238
+              - name:    'Literary extracts.  Commonplace books'
+                range:   PN6244-6246
+                start:   PN6244
+                end:     PN6246
+              - name:    'Ana'
+                range:   PN6249-6258
+                start:   PN6249
+                end:     PN6258
+              - name:    'Anecdotes.  Table talk'
+                range:   PN6259-6268
+                start:   PN6259
+                end:     PN6268
+              - name:    'Aphorisms.  Apothegms'
+                range:   PN6269-6278
+                start:   PN6269
+                end:     PN6278
+              - name:    'Epigrams'
+                range:   PN6279-6288
+                start:   PN6279
+                end:     PN6288
+              - name:    'Epitaphs'
+                range:   PN6288.5-6298
+                start:   PN6288.5
+                end:     PN6298
+              - name:    'Maxims'
+                range:   PN6299-6308
+                start:   PN6299
+                end:     PN6308
+              - name:    'Mottoes'
+                range:   PN6309-6318
+                start:   PN6309
+                end:     PN6318
+              - name:    'Sayings, bon mots, etc.'
+                range:   PN6319-6328
+                start:   PN6319
+                end:     PN6328
+              - name:    'Thoughts'
+                range:   PN6329-6338
+                start:   PN6329
+                end:     PN6338
+              - name:    'Toasts'
+                range:   PN6340-6348
+                start:   PN6340
+                end:     PN6348
+              - name:    'Emblems, devices'
+                range:   PN6348.5-6358
+                start:   PN6348.5
+                end:     PN6358
+              - name:    'Paradoxes'
+                range:   PN6361
+                start:   PN6361
+                end:     PN6361
+              - name:    'Riddles, acrostics, charades, conundrums, etc.'
+                range:   PN6366-6377
+                start:   PN6366
+                end:     PN6377
+              - name:    'Proverbs'
+                range:   PN6400-6525
+                start:   PN6400
+                end:     PN6525
+              - name:    'Comic books, strips, etc.'
+                range:   PN6700-6790
+                start:   PN6700
+                end:     PN6790
+  - subclass:  PQ
+    name:     'French, Italian, Spanish, Portuguese literature'
+    sections:
+      - name:    'French literature'
+        range:   PQ1-3999
+        start:   PQ1
+        end:     PQ3999
+        sections:
+          - name:    'History and criticism'
+            range:   PQ1-771
+            start:   PQ1
+            end:     PQ771
+            sections:
+              - name:    'General'
+                range:   PQ1-150
+                start:   PQ1
+                end:     PQ150
+              - name:    'Medieval.  Old French'
+                range:   PQ151-221
+                start:   PQ151
+                end:     PQ221
+              - name:    'Modern'
+                range:   PQ226-317
+                start:   PQ226
+                end:     PQ317
+              - name:    'Poetry'
+                range:   PQ400-491
+                start:   PQ400
+                end:     PQ491
+              - name:    'Drama'
+                range:   PQ500-591
+                start:   PQ500
+                end:     PQ591
+              - name:    'Prose and prose fiction'
+                range:   PQ601-771
+                start:   PQ601
+                end:     PQ771
+          - name:    'Folk literature'
+            range:   PQ(781)-(841)
+            start:   PQ781
+            end:     PQ841
+          - name:    'Juvenile literature'
+            range:   PQ845
+            start:   PQ845
+            end:     PQ845
+          - name:    'Collections'
+            range:   PQ1100-1297
+            start:   PQ1100
+            end:     PQ1297
+            sections:
+              - name:    'General'
+                range:   PQ1100-1145
+                start:   PQ1100
+                end:     PQ1145
+              - name:    'Poetry'
+                range:   PQ1160-1193
+                start:   PQ1160
+                end:     PQ1193
+              - name:    'Drama'
+                range:   PQ1211-1241
+                start:   PQ1211
+                end:     PQ1241
+              - name:    'Prose'
+                range:   PQ1243-1297
+                start:   PQ1243
+                end:     PQ1297
+          - name:    'Old French literature'
+            note:    'Class here Old French literature to ca. 1500/1550'
+            range:   PQ1300-1595
+            start:   PQ1300
+            end:     PQ1595
+            sections:
+              - name:    'Collections'
+                note:    'Individual authors and works'
+                range:   PQ1300-1391
+                start:   PQ1300
+                end:     PQ1391
+              - name:    'To 1350/1400'
+                range:   PQ1411-1545
+                start:   PQ1411
+                end:     PQ1545
+              - name:    '(14th-) 15th century (to ca. 1525)'
+                range:   PQ1551-1595
+                start:   PQ1551
+                end:     PQ1595
+          - name:    'Modern literature'
+            note:    'Individual authors'
+            range:   PQ1600-2726
+            start:   PQ1600
+            end:     PQ2726
+            sections:
+              - name:    '16th century'
+                range:   PQ1600-1709
+                start:   PQ1600
+                end:     PQ1709
+              - name:    '17th century'
+                range:   PQ1710-1935
+                start:   PQ1710
+                end:     PQ1935
+              - name:    '18th century'
+                range:   PQ1947-2147
+                start:   PQ1947
+                end:     PQ2147
+              - name:    '19th century'
+                range:   PQ2149-2551
+                start:   PQ2149
+                end:     PQ2551
+              - name:    '1900-1960'
+                range:   PQ2600-2651
+                start:   PQ2600
+                end:     PQ2651
+              - name:    '1961-2000'
+                range:   PQ2660-2686
+                start:   PQ2660
+                end:     PQ2686
+              - name:    '2001-'
+                range:   PQ2700-2726
+                start:   PQ2700
+                end:     PQ2726
+          - name:    'Provincial, local, colonial, etc.'
+            range:   PQ3800-3999
+            start:   PQ3800
+            end:     PQ3999
+      - name:    'Italian literature'
+        range:   PQ4001-5999
+        start:   PQ4001
+        end:     PQ5999
+        sections:
+          - name:    'History and criticism'
+            range:   PQ4001-4199.5
+            start:   PQ4001
+            end:     PQ4199.5
+            sections:
+              - name:    'General'
+                range:   PQ4001-4063
+                start:   PQ4001
+                end:     PQ4063
+              - name:    'Early to 1500'
+                range:   PQ4064-4075
+                start:   PQ4064
+                end:     PQ4075
+              - name:    'Modern'
+                range:   PQ4077-4088
+                start:   PQ4077
+                end:     PQ4088
+              - name:    'Poetry'
+                range:   PQ4091-(4131)
+                start:   PQ4091
+                end:     PQ4131
+              - name:    'Drama'
+                range:   PQ4133-4160
+                start:   PQ4133
+                end:     PQ4160
+              - name:    'Prose'
+                range:   PQ4161-4185
+                start:   PQ4161
+                end:     PQ4185
+              - name:    'Folk literature'
+                range:   PQ(4186)-(4199)
+                start:   PQ4186
+                end:     PQ4199
+              - name:    'Juvenile literature (General)'
+                range:   PQ4199.5
+                start:   PQ4199.5
+                end:     PQ4199.5
+          - name:    'Collections'
+            range:   PQ4201-4263
+            start:   PQ4201
+            end:     PQ4263
+            sections:
+              - name:    'General'
+                range:   PQ4201-4204
+                start:   PQ4201
+                end:     PQ4204
+              - name:    'Translations'
+                range:   PQ4205-4206
+                start:   PQ4205
+                end:     PQ4206
+              - name:    'Poetry'
+                range:   PQ4207-4225
+                start:   PQ4207
+                end:     PQ4225
+              - name:    'Drama'
+                range:   PQ4227-4245
+                start:   PQ4227
+                end:     PQ4245
+              - name:    'Prose'
+                range:   PQ4247-4263
+                start:   PQ4247
+                end:     PQ4263
+          - name:    'Individual authors and works to 1400'
+            range:   PQ4265-4556
+            start:   PQ4265
+            end:     PQ4556
+          - name:    'Individual authors, 1400-1700'
+            range:   PQ4561-4664
+            start:   PQ4561
+            end:     PQ4664
+          - name:    'Individual authors, 1701-1900'
+            range:   PQ4675-4734
+            start:   PQ4675
+            end:     PQ4734
+          - name:    'Individual authors, 1900-1960'
+            range:   PQ4800-4851
+            start:   PQ4800
+            end:     PQ4851
+          - name:    'Individual authors, 1961-2000'
+            range:   PQ4860-4886
+            start:   PQ4860
+            end:     PQ4886
+          - name:    'Individual authors, 2001-'
+            range:   PQ4900-4926
+            start:   PQ4900
+            end:     PQ4926
+          - name:    'Regional, provincial, local, etc.'
+            range:   PQ5901-5999
+            start:   PQ5901
+            end:     PQ5999
+      - name:    'Spanish literature'
+        range:   PQ6001-8929
+        start:   PQ6001
+        end:     PQ8929
+        sections:
+          - name:    'History and criticism'
+            range:   PQ6001-6168
+            start:   PQ6001
+            end:     PQ6168
+            sections:
+              - name:    'General'
+                range:   PQ6001-6056
+                start:   PQ6001
+                end:     PQ6056
+                sections:
+                  - name:    'Moorish-Spanish literature'
+                    range:   PQ6056
+                    start:   PQ6056
+                    end:     PQ6056
+              - name:    'Early to 1500'
+                range:   PQ6058-6060
+                start:   PQ6058
+                end:     PQ6060
+              - name:    'Modern'
+                range:   PQ(6061)-6073
+                start:   PQ6061
+                end:     PQ6073
+              - name:    'Poetry'
+                range:   PQ6075-6098
+                start:   PQ6075
+                end:     PQ6098
+              - name:    'Drama'
+                range:   PQ6098.7-6129
+                start:   PQ6098.7
+                end:     PQ6129
+              - name:    'Prose'
+                range:   PQ6131-6153
+                start:   PQ6131
+                end:     PQ6153
+              - name:    'Folk literature'
+                range:   PQ(6155)-(6167)
+                start:   PQ6155
+                end:     PQ6167
+              - name:    'Juvenile literature (General)'
+                range:   PQ6168
+                start:   PQ6168
+                end:     PQ6168
+          - name:    'Collections'
+            range:   PQ6170-6269
+            start:   PQ6170
+            end:     PQ6269
+            sections:
+              - name:    'General'
+                range:   PQ6170-6174.9
+                start:   PQ6170
+                end:     PQ6174.9
+              - name:    'Poetry'
+                range:   PQ6174.95-6215
+                start:   PQ6174.95
+                end:     PQ6215
+              - name:    'Drama'
+                range:   PQ6217-(6241)
+                start:   PQ6217
+                end:     PQ6241
+              - name:    'Prose'
+                range:   PQ6247-6264
+                start:   PQ6247
+                end:     PQ6264
+              - name:    'Translations'
+                range:   PQ(6265)-6269
+                start:   PQ6265
+                end:     PQ6269
+          - name:    'Individual authors and works to 1700'
+            range:   PQ6271-6498
+            start:   PQ6271
+            end:     PQ6498
+          - name:    'Individual authors, 1700-ca. 1868'
+            range:   PQ6500-6576
+            start:   PQ6500
+            end:     PQ6576
+          - name:    'Individual authors, 1868-1960'
+            range:   PQ6600-6647
+            start:   PQ6600
+            end:     PQ6647
+          - name:    'Individual authors, 1961-2000'
+            range:   PQ6650-6676
+            start:   PQ6650
+            end:     PQ6676
+          - name:    'Individual authors, 2001-'
+            range:   PQ6700-6726
+            start:   PQ6700
+            end:     PQ6726
+          - name:    'Provincial, local, colonial, etc.'
+            range:   PQ7000-8929
+            start:   PQ7000
+            end:     PQ8929
+            sections:
+              - name:    'Spanish America'
+                range:   PQ7081-8560
+                start:   PQ7081
+                end:     PQ8560
+      - name:    'Portuguese literature'
+        range:   PQ9000-9999
+        start:   PQ9000
+        end:     PQ9999
+        sections:
+          - name:    'History and criticism'
+            range:   PQ9000-9129
+            start:   PQ9000
+            end:     PQ9129
+            sections:
+              - name:    'General'
+                range:   PQ9000-9034
+                start:   PQ9000
+                end:     PQ9034
+              - name:    'Special periods'
+                range:   PQ9035-9055
+                start:   PQ9035
+                end:     PQ9055
+              - name:    'Poetry'
+                range:   PQ9061-9081
+                start:   PQ9061
+                end:     PQ9081
+              - name:    'Drama'
+                range:   PQ9083-9095
+                start:   PQ9083
+                end:     PQ9095
+              - name:    'Prose'
+                range:   PQ9097-9119
+                start:   PQ9097
+                end:     PQ9119
+              - name:    'Folk literature'
+                range:   PQ(9121)-(9128)
+                start:   PQ9121
+                end:     PQ9128
+              - name:    'Juvenile literature (General)'
+                range:   PQ9129
+                start:   PQ9129
+                end:     PQ9129
+          - name:    'Collections'
+            range:   PQ9131-9188
+            start:   PQ9131
+            end:     PQ9188
+            sections:
+              - name:    'General'
+                range:   PQ9131-9144
+                start:   PQ9131
+                end:     PQ9144
+                sections:
+                  - name:    'Translations'
+                    range:   PQ9137
+                    start:   PQ9137
+                    end:     PQ9137
+              - name:    'Poetry'
+                range:   PQ9149-9163
+                start:   PQ9149
+                end:     PQ9163
+              - name:    'Drama'
+                range:   PQ9164-9170
+                start:   PQ9164
+                end:     PQ9170
+              - name:    'Prose'
+                range:   PQ9172-9188
+                start:   PQ9172
+                end:     PQ9188
+          - name:    'Individual authors and works to 1500'
+            range:   PQ9189
+            start:   PQ9189
+            end:     PQ9189
+          - name:    'Individual authors and works, 1500-1700'
+            range:   PQ9191-9255
+            start:   PQ9191
+            end:     PQ9255
+          - name:    'Individual authors, 1701-1960'
+            range:   PQ9261
+            start:   PQ9261
+            end:     PQ9261
+          - name:    'Individual authors, 1961-2000'
+            range:   PQ9262-9288
+            start:   PQ9262
+            end:     PQ9288
+          - name:    'Individual authors, 2001-'
+            range:   PQ9300-9326
+            start:   PQ9300
+            end:     PQ9326
+          - name:    'Provincial, local, colonial, etc.'
+            range:   PQ9400-9999
+            start:   PQ9400
+            end:     PQ9999
+            sections:
+              - name:    'Brazil'
+                range:   PQ9500-9698.436
+                start:   PQ9500
+                end:     PQ9698.436
+  - subclass:  PR
+    name:     'English literature'
+    sections:
+      - name:    'English literature'
+        range:   PR1-9680
+        start:   PR1
+        end:     PR9680
+        sections:
+          - name:    'Literary history and criticism'
+            range:   PR1-56
+            start:   PR1
+            end:     PR56
+          - name:    'Criticism'
+            range:   PR57-78
+            start:   PR57
+            end:     PR78
+          - name:    'Women authors'
+            range:   PR111-116
+            start:   PR111
+            end:     PR116
+          - name:    'Relations to other literatures and countries'
+            range:   PR125-(138.5)
+            start:   PR125
+            end:     PR138.5
+          - name:    'By period'
+            range:   PR161-488
+            start:   PR161
+            end:     PR488
+            sections:
+              - name:    'Anglo-Saxon (Beginnings through 1066)'
+                range:   PR171-236
+                start:   PR171
+                end:     PR236
+              - name:    'Medieval.  Middle English (1066-1500)'
+                range:   PR251-369
+                start:   PR251
+                end:     PR369
+              - name:    'Modern'
+                range:   PR401-488
+                start:   PR401
+                end:     PR488
+                sections:
+                  - name:    'Elizabethan era (1550-1640)'
+                    range:   PR421-(429)
+                    start:   PR421
+                    end:     PR429
+                  - name:    '17th century'
+                    range:   PR431-(439)
+                    start:   PR431
+                    end:     PR439
+                  - name:    '18th century'
+                    range:   PR441-(449)
+                    start:   PR441
+                    end:     PR449
+                  - name:    '19th century'
+                    range:   PR451-(469)
+                    start:   PR451
+                    end:     PR469
+                  - name:    '20th century'
+                    range:   PR471-(479)
+                    start:   PR471
+                    end:     PR479
+                  - name:    '21st century'
+                    range:   PR481-488
+                    start:   PR481
+                    end:     PR488
+          - name:    'Poetry'
+            range:   PR500-614
+            start:   PR500
+            end:     PR614
+            sections:
+              - name:    'By period'
+                range:   PR521-614
+                start:   PR521
+                end:     PR614
+          - name:    'Drama'
+            range:   PR621-744
+            start:   PR621
+            end:     PR744
+            sections:
+              - name:    'By period'
+                range:   PR641-744
+                start:   PR641
+                end:     PR744
+          - name:    'Prose'
+            range:   PR750-890
+            start:   PR750
+            end:     PR890
+            sections:
+              - name:    'By period'
+                range:   PR767-818
+                start:   PR767
+                end:     PR818
+              - name:    'Prose fiction.  The novel'
+                range:   PR821-890
+                start:   PR821
+                end:     PR890
+          - name:    'Oratory'
+            range:   PR901-907.2
+            start:   PR901
+            end:     PR907.2
+          - name:    'Diaries'
+            range:   PR908
+            start:   PR908
+            end:     PR908
+          - name:    'Letters'
+            range:   PR911-918
+            start:   PR911
+            end:     PR918
+          - name:    'Essays'
+            range:   PR921-928
+            start:   PR921
+            end:     PR928
+          - name:    'Wit and humor'
+            range:   PR931-938
+            start:   PR931
+            end:     PR938
+          - name:    'Folk literature'
+            range:   PR(951)-981
+            start:   PR951
+            end:     PR981
+          - name:    'Collections of English literature'
+            range:   PR1098-1369
+            start:   PR1098
+            end:     PR1369
+            sections:
+              - name:    'Special classes of authors'
+                range:   PR1110
+                start:   PR1110
+                end:     PR1110
+              - name:    'By period'
+                range:   PR1119-1151
+                start:   PR1119
+                end:     PR1151
+              - name:    'Poetry'
+                range:   PR1170-1228
+                start:   PR1170
+                end:     PR1228
+              - name:    'Drama'
+                range:   PR1241-1273
+                start:   PR1241
+                end:     PR1273
+              - name:    'Prose (General)'
+                range:   PR1281-1309
+                start:   PR1281
+                end:     PR1309
+              - name:    'Oratory'
+                range:   PR1321-1329
+                start:   PR1321
+                end:     PR1329
+              - name:    'Diaries'
+                range:   PR1330
+                start:   PR1330
+                end:     PR1330
+              - name:    'Letters'
+                range:   PR1341-1349
+                start:   PR1341
+                end:     PR1349
+              - name:    'Essays'
+                range:   PR1361-1369
+                start:   PR1361
+                end:     PR1369
+          - name:    'Anglo-Saxon literature'
+            range:   PR1490-1799
+            start:   PR1490
+            end:     PR1799
+          - name:    'Anglo-Norman period.  Early English.  Middle English'
+            range:   PR1803-2165
+            start:   PR1803
+            end:     PR2165
+          - name:    'English renaissance (1500-1640)'
+            range:   PR2199-3195
+            start:   PR2199
+            end:     PR3195
+          - name:    '17th and 18th centuries (1640-1770)'
+            range:   PR3291-3785
+            start:   PR3291
+            end:     PR3785
+          - name:    '19th century, 1770/1800-1890/1900'
+            range:   PR3991-5990
+            start:   PR3991
+            end:     PR5990
+          - name:    '1900-1960'
+            range:   PR6000-6049
+            start:   PR6000
+            end:     PR6049
+          - name:    '1961-2000'
+            range:   PR6050-6076
+            start:   PR6050
+            end:     PR6076
+          - name:    '2001-'
+            range:   PR6100-6126
+            start:   PR6100
+            end:     PR6126
+          - name:    'English literature: Provincial, local, etc.'
+            range:   PR8309-9680
+            start:   PR8309
+            end:     PR9680
+  - subclass:  PS
+    name:     'American literature.  Canadian literature'
+    sections:
+      - name:    'American literature'
+        range:   PS1-(3626)
+        start:   PS1
+        end:     PS3626
+        sections:
+          - name:    'Biography, memoirs, letters, etc.'
+            range:   PS126-138
+            start:   PS126
+            end:     PS138
+          - name:    'Women authors'
+            range:   PS147-152
+            start:   PS147
+            end:     PS152
+          - name:    'Treatment of special subjects, classes'
+            range:   PS163-173
+            start:   PS163
+            end:     PS173
+          - name:    'By period'
+            range:   PS185-231
+            start:   PS185
+            end:     PS231
+            sections:
+              - name:    '17th-18th centuries'
+                range:   PS185-195
+                start:   PS185
+                end:     PS195
+              - name:    '19th century'
+                range:   PS201-217
+                start:   PS201
+                end:     PS217
+              - name:    '20th century'
+                range:   PS221-228
+                start:   PS221
+                end:     PS228
+              - name:    '21st century'
+                range:   PS229-231
+                start:   PS229
+                end:     PS231
+          - name:    'Special regions, states, etc.'
+            range:   PS241-286
+            start:   PS241
+            end:     PS286
+            sections:
+              - name:    'North'
+                range:   PS241-255
+                start:   PS241
+                end:     PS255
+              - name:    'South'
+                range:   PS261-267
+                start:   PS261
+                end:     PS267
+              - name:    'West and Central'
+                range:   PS271-285
+                start:   PS271
+                end:     PS285
+          - name:    'Poetry'
+            range:   PS301-326
+            start:   PS301
+            end:     PS326
+          - name:    'Drama'
+            range:   PS330-353
+            start:   PS330
+            end:     PS353
+          - name:    'Prose'
+            range:   PS360-380
+            start:   PS360
+            end:     PS380
+            sections:
+              - name:    'Prose fiction'
+                range:   PS370-380
+                start:   PS370
+                end:     PS380
+          - name:    'Oratory'
+            range:   PS400-408.2
+            start:   PS400
+            end:     PS408.2
+          - name:    'Diaries'
+            range:   PS409
+            start:   PS409
+            end:     PS409
+          - name:    'Letters'
+            range:   PS410-419
+            start:   PS410
+            end:     PS419
+          - name:    'Essays'
+            range:   PS420-429
+            start:   PS420
+            end:     PS429
+          - name:    'Wit and humor.  Satire'
+            range:   PS430-439
+            start:   PS430
+            end:     PS439
+          - name:    'Folk literature'
+            range:   PS(451)-478
+            start:   PS451
+            end:     PS478
+          - name:    'Juvenile literature (General)'
+            range:   PS490
+            start:   PS490
+            end:     PS490
+          - name:    'Collections of American literature'
+            range:   PS501-689
+            start:   PS501
+            end:     PS689
+            sections:
+              - name:    'By period'
+                range:   PS530-536.3
+                start:   PS530
+                end:     PS536.3
+              - name:    'By region'
+                range:   PS537-574
+                start:   PS537
+                end:     PS574
+                sections:
+                  - name:    'North'
+                    range:   PS538-549
+                    start:   PS538
+                    end:     PS549
+                  - name:    'South'
+                    range:   PS551-559
+                    start:   PS551
+                    end:     PS559
+                  - name:    'West and Central'
+                    range:   PS561-572
+                    start:   PS561
+                    end:     PS572
+              - name:    'Poetry'
+                range:   PS580-619
+                start:   PS580
+                end:     PS619
+                sections:
+                  - name:    'By form'
+                    range:   PS593
+                    start:   PS593
+                    end:     PS593
+                  - name:    'By period'
+                    range:   PS601-617
+                    start:   PS601
+                    end:     PS617
+              - name:    'Drama'
+                range:   PS623-(635)
+                start:   PS623
+                end:     PS635
+              - name:    'Prose (General)'
+                range:   PS642-659.5
+                start:   PS642
+                end:     PS659.5
+                sections:
+                  - name:    'By period'
+                    range:   PS651-659.2
+                    start:   PS651
+                    end:     PS659.2
+              - name:    'Oratory'
+                range:   PS660-668.2
+                start:   PS660
+                end:     PS668.2
+                sections:
+                  - name:    'By period'
+                    range:   PS666-668.2
+                    start:   PS666
+                    end:     PS668.2
+              - name:    'Diaries'
+                range:   PS669
+                start:   PS669
+                end:     PS669
+              - name:    'Letters'
+                range:   PS670-678.2
+                start:   PS670
+                end:     PS678.2
+              - name:    'Essays'
+                range:   PS680-689
+                start:   PS680
+                end:     PS689
+          - name:    'Individual authors'
+            range:   PS700-(3626)
+            start:   PS700
+            end:     PS3626
+            sections:
+              - name:    'Colonial period (17th and 18th centuries)'
+                range:   PS700-893
+                start:   PS700
+                end:     PS893
+              - name:    '19th century'
+                range:   PS991-(3390)
+                start:   PS991
+                end:     PS3390
+              - name:    '1900-1960'
+                range:   PS3500-3549
+                start:   PS3500
+                end:     PS3549
+              - name:    '1961-2000'
+                range:   PS3550-3576
+                start:   PS3550
+                end:     PS3576
+              - name:    '2001-'
+                range:   PS3600-3626
+                start:   PS3600
+                end:     PS3626
+      - name:    'Canadian  literature'
+        range:   PS(8001-8599)
+        start:   PS8001
+        end:     PS8599
+  - subclass:  PT
+    name:     'Germanic and Scandinavian literature'
+    sections:
+      - name:    'German literature'
+        range:   PT1-4897
+        start:   PT1
+        end:     PT4897
+        sections:
+          - name:    'Literary history and criticism'
+            range:   PT1-80
+            start:   PT1
+            end:     PT80
+          - name:    'History of German literature'
+            range:   PT83-(873)
+            start:   PT83
+            end:     PT873
+            sections:
+              - name:    'Medieval'
+                range:   PT175-230
+                start:   PT175
+                end:     PT230
+              - name:    'Modern'
+                range:   PT236-405
+                start:   PT236
+                end:     PT405
+              - name:    'Poetry'
+                range:   PT500-597
+                start:   PT500
+                end:     PT597
+              - name:    'Drama'
+                range:   PT605-709
+                start:   PT605
+                end:     PT709
+              - name:    'Prose'
+                range:   PT711-871
+                start:   PT711
+                end:     PT871
+          - name:    'Folk literature'
+            range:   PT(881)-(951)
+            start:   PT881
+            end:     PT951
+            sections:
+              - name:    'Faust legend'
+                range:   PT923-937
+                start:   PT923
+                end:     PT937
+          - name:    'Collections'
+            range:   PT1100-1479
+            start:   PT1100
+            end:     PT1479
+            sections:
+              - name:    'General'
+                range:   PT1100-1141
+                start:   PT1100
+                end:     PT1141
+              - name:    'Poetry'
+                range:   PT1151-1241
+                start:   PT1151
+                end:     PT1241
+              - name:    'Drama'
+                range:   PT1251-1299
+                start:   PT1251
+                end:     PT1299
+              - name:    'Prose'
+                range:   PT1301-1360
+                start:   PT1301
+                end:     PT1360
+              - name:    'Early to 1950.  Old and Middle High German'
+                range:   PT1371-(1374)
+                start:   PT1371
+                end:     PT1374
+              - name:    'Middle High German'
+                range:   PT1375-1479
+                start:   PT1375
+                end:     PT1479
+          - name:    'Individual authors or works'
+            range:   PT1501-(2728)
+            start:   PT1501
+            end:     PT2728
+            sections:
+              - name:    'Middle High German, ca. 1050-1450/1500'
+                range:   PT1501-1695
+                start:   PT1501
+                end:     PT1695
+              - name:    '1500-ca. 1700'
+                range:   PT1701-1797
+                start:   PT1701
+                end:     PT1797
+              - name:    '1700-ca. 1860/70'
+                range:   PT1799-2592
+                start:   PT1799
+                end:     PT2592
+                sections:
+                  - name:    'Goethe'
+                    range:   PT1891-2239
+                    start:   PT1891
+                    end:     PT2239
+                    sections:
+                      - name:    'Works'
+                        range:   PT1891-2017
+                        start:   PT1891
+                        end:     PT2017
+                      - name:    'Translations'
+                        range:   PT2026-(2039)
+                        start:   PT2026
+                        end:     PT2039
+                      - name:    'Biography and criticism'
+                        range:   PT(2044)-2239
+                        start:   PT2044
+                        end:     PT2239
+              - name:    '1860/70-1960'
+                range:   PT2600-2653
+                start:   PT2600
+                end:     PT2653
+              - name:    '1961-2000'
+                range:   PT2660-2688
+                start:   PT2660
+                end:     PT2688
+              - name:    '2001-'
+                range:   PT2700-2728
+                start:   PT2700
+                end:     PT2728
+          - name:    'Provincial, local, colonial, etc.'
+            range:   PT3701-3971
+            start:   PT3701
+            end:     PT3971
+            sections:
+              - name:    'East Germany'
+                range:   PT3701-3746
+                start:   PT3701
+                end:     PT3746
+          - name:    'Low German literature'
+            range:   PT4801-4897
+            start:   PT4801
+            end:     PT4897
+      - name:    'Dutch literature'
+        range:   PT5001-5980
+        start:   PT5001
+        end:     PT5980
+        sections:
+          - name:    'Literary history and criticism'
+            range:   PT5001-5348
+            start:   PT5001
+            end:     PT5348
+            sections:
+              - name:    'General'
+                range:   PT5001-5112
+                start:   PT5001
+                end:     PT5112
+              - name:    'Special periods'
+                range:   PT5121-5185
+                start:   PT5121
+                end:     PT5185
+              - name:    'Poetry'
+                range:   PT5201-5243
+                start:   PT5201
+                end:     PT5243
+              - name:    'Drama'
+                range:   PT5250-5295
+                start:   PT5250
+                end:     PT5295
+              - name:    'Prose'
+                range:   PT5300-5348
+                start:   PT5300
+                end:     PT5348
+          - name:    'Folk literature'
+            range:   PT(5351)-5395
+            start:   PT5351
+            end:     PT5395
+          - name:    'Juvenile literature (General)'
+            range:   PT5398
+            start:   PT5398
+            end:     PT5398
+          - name:    'Collections'
+            range:   PT5400-5547
+            start:   PT5400
+            end:     PT5547
+            sections:
+              - name:    'General'
+                range:   PT5400-5409
+                start:   PT5400
+                end:     PT5409
+              - name:    'Translations'
+                range:   PT5410-5414
+                start:   PT5410
+                end:     PT5414
+              - name:    'Special periods'
+                range:   PT5420-5460
+                start:   PT5420
+                end:     PT5460
+              - name:    'Poetry'
+                range:   PT5470-5488
+                start:   PT5470
+                end:     PT5488
+              - name:    'Drama'
+                range:   PT5490-5515
+                start:   PT5490
+                end:     PT5515
+              - name:    'Prose'
+                range:   PT5517-5547
+                start:   PT5517
+                end:     PT5547
+          - name:    'Individual authors or works'
+            range:   PT5555-(5882.36)
+            start:   PT5555
+            end:     PT5882.36
+            sections:
+              - name:    'Medieval'
+                range:   PT5555-5595
+                start:   PT5555
+                end:     PT5595
+              - name:    '16th-18th centuries'
+                range:   PT5600-5739
+                start:   PT5600
+                end:     PT5739
+                sections:
+                  - name:    'Cats, Jacob'
+                    range:   PT5620-5637
+                    start:   PT5620
+                    end:     PT5637
+                  - name:    'Vondel, Joost van den'
+                    range:   PT5700-5732
+                    start:   PT5700
+                    end:     PT5732
+              - name:    '1800-1960'
+                range:   PT5800-5880
+                start:   PT5800
+                end:     PT5880
+              - name:    '1961-2000'
+                range:   PT5881-5881.36
+                start:   PT5881
+                end:     PT5881.36
+              - name:    '2001-'
+                range:   PT5882-5882.36
+                start:   PT5882
+                end:     PT5882.36
+          - name:    'Provincial, local, foreign'
+            range:   PT5901-5980
+            start:   PT5901
+            end:     PT5980
+      - name:    'Flemish literature since 1830'
+        range:   PT6000-6467.36
+        start:   PT6000
+        end:     PT6467.36
+        sections:
+          - name:    'Literary history and criticism'
+            range:   PT6000-6199
+            start:   PT6000
+            end:     PT6199
+          - name:    'Folk literature'
+            range:   PT(6200)-(6230)
+            start:   PT6200
+            end:     PT6230
+          - name:    'Juvenile literature (General)'
+            range:   PT6250
+            start:   PT6250
+            end:     PT6250
+          - name:    'Collections'
+            range:   PT6300-6397
+            start:   PT6300
+            end:     PT6397
+          - name:    'Individual authors or works'
+            range:   PT6400-6467.36
+            start:   PT6400
+            end:     PT6467.36
+      - name:    'Afrikaans literature'
+        range:   PT6500-6593.36
+        start:   PT6500
+        end:     PT6593.36
+        sections:
+          - name:    'Literary history and criticism'
+            range:   PT6500-6530
+            start:   PT6500
+            end:     PT6530
+          - name:    'Folk literature'
+            range:   PT(6540)-6545
+            start:   PT6540
+            end:     PT6545
+          - name:    'Collections'
+            range:   PT6550-6575
+            start:   PT6550
+            end:     PT6575
+          - name:    'Local'
+            range:   PT6580
+            start:   PT6580
+            end:     PT6580
+          - name:    'Individual authors or works'
+            range:   PT6590-6593.36
+            start:   PT6590
+            end:     PT6593.36
+      - name:    'Scandinavian literature'
+        range:   PT7001-7099
+        start:   PT7001
+        end:     PT7099
+        sections:
+          - name:    'General'
+            range:   PT7001-7099
+            start:   PT7001
+            end:     PT7099
+            sections:
+              - name:    'Literary history and criticism'
+                range:   PT7001-7087
+                start:   PT7001
+                end:     PT7087
+              - name:    'Folk literature'
+                range:   PT(7088)-(7089)
+                start:   PT7088
+                end:     PT7089
+              - name:    'Collections'
+                range:   PT7090-7099
+                start:   PT7090
+                end:     PT7099
+      - name:    'Old Norse literature: Old Icelandic and Old Norwegian'
+        range:   PT7101-7338
+        start:   PT7101
+        end:     PT7338
+        sections:
+          - name:    'Literary history and criticism'
+            range:   PT7101-7211
+            start:   PT7101
+            end:     PT7211
+            sections:
+              - name:    'Poetry'
+                range:   PT7170-7176
+                start:   PT7170
+                end:     PT7176
+              - name:    'Prose'
+                range:   PT7177-7211
+                start:   PT7177
+                end:     PT7211
+                sections:
+                  - name:    'Sagas'
+                    range:   PT7181-7193
+                    start:   PT7181
+                    end:     PT7193
+                  - name:    'Scientific and learned literature'
+                    range:   PT7195-7211
+                    start:   PT7195
+                    end:     PT7211
+          - name:    'Collections'
+            range:   PT7220-7262.5
+            start:   PT7220
+            end:     PT7262.5
+            sections:
+              - name:    'Poetry'
+                range:   PT7230-7252
+                start:   PT7230
+                end:     PT7252
+              - name:    'Prose'
+                range:   PT7255-7262.5
+                start:   PT7255
+                end:     PT7262.5
+                sections:
+                  - name:    'Sagas'
+                    range:   PT7261-7262.5
+                    start:   PT7261
+                    end:     PT7262.5
+          - name:    'Individual sagas and historical works'
+            range:   PT7263-7296
+            start:   PT7263
+            end:     PT7296
+          - name:    'Religious works'
+            range:   PT7298-7309
+            start:   PT7298
+            end:     PT7309
+          - name:    'Scientific and learned literature'
+            range:   PT7312-7318
+            start:   PT7312
+            end:     PT7318
+          - name:    'Individual authors or works before 1540'
+            range:   PT7326-7338
+            start:   PT7326
+            end:     PT7338
+      - name:    'Modern Icelandic literature'
+        range:   PT7351-7550
+        start:   PT7351
+        end:     PT7550
+        sections:
+          - name:    'Literary history and criticism'
+            range:   PT7351-7418
+            start:   PT7351
+            end:     PT7418
+          - name:    'Folk literature'
+            range:   PT(7420)-(7438)
+            start:   PT7420
+            end:     PT7438
+          - name:    'Juvenile literature (General)'
+            range:   PT7442
+            start:   PT7442
+            end:     PT7442
+          - name:    'Collections'
+            range:   PT7450-7495
+            start:   PT7450
+            end:     PT7495
+          - name:    'Individual authors or works'
+            range:   PT7500-(7513)
+            start:   PT7500
+            end:     PT7513
+            sections:
+              - name:    '16th-18th centuries'
+                range:   PT7500-7501
+                start:   PT7500
+                end:     PT7501
+              - name:    '19th-20th centuries'
+                range:   PT7510-7511
+                start:   PT7510
+                end:     PT7511
+              - name:    '21st century'
+                range:   PT7512-7513
+                start:   PT7512
+                end:     PT7513
+          - name:    'Provincial, local, foreign'
+            range:   PT7520-7550
+            start:   PT7520
+            end:     PT7550
+      - name:    'Faroese literature'
+        range:   PT7581-7599
+        start:   PT7581
+        end:     PT7599
+        sections:
+          - name:    'Literary history and criticism'
+            range:   PT7581-7592
+            start:   PT7581
+            end:     PT7592
+          - name:    'Collections'
+            range:   PT7593-7596.5
+            start:   PT7593
+            end:     PT7596.5
+          - name:    'Local'
+            range:   PT7597
+            start:   PT7597
+            end:     PT7597
+          - name:    'Individual authors or works'
+            range:   PT7598-7599
+            start:   PT7598
+            end:     PT7599
+      - name:    'Danish literature'
+        range:   PT7601-8260
+        start:   PT7601
+        end:     PT8260
+        sections:
+          - name:    'Literary history and criticism'
+            range:   PT7601-7869
+            start:   PT7601
+            end:     PT7869
+            sections:
+              - name:    'Special periods'
+                range:   PT7721-7762
+                start:   PT7721
+                end:     PT7762
+              - name:    'Poetry'
+                range:   PT7770-7794
+                start:   PT7770
+                end:     PT7794
+              - name:    'Drama'
+                range:   PT7800-7832
+                start:   PT7800
+                end:     PT7832
+              - name:    'Prose'
+                range:   PT7835-7869
+                start:   PT7835
+                end:     PT7869
+          - name:    'Folk literature'
+            range:   PT(7900)-7930
+            start:   PT7900
+            end:     PT7930
+          - name:    'Juvenile literature (General)'
+            range:   PT7935
+            start:   PT7935
+            end:     PT7935
+          - name:    'Collections'
+            range:   PT7945-8046
+            start:   PT7945
+            end:     PT8046
+            sections:
+              - name:    'Poetry'
+                range:   PT7975-7994
+                start:   PT7975
+                end:     PT7994
+              - name:    'Drama'
+                range:   PT7999-8020
+                start:   PT7999
+                end:     PT8020
+              - name:    'Prose'
+                range:   PT8021-8046
+                start:   PT8021
+                end:     PT8046
+          - name:    'Individual authors or works'
+            range:   PT8050-8177.36
+            start:   PT8050
+            end:     PT8177.36
+            sections:
+              - name:    'Medieval'
+                range:   PT8050
+                start:   PT8050
+                end:     PT8050
+              - name:    '16th-18th centuries'
+                range:   PT8060-8098
+                start:   PT8060
+                end:     PT8098
+                sections:
+                  - name:    'Holberg, Ludvig'
+                    range:   PT8070-8094.5
+                    start:   PT8070
+                    end:     PT8094.5
+              - name:    '19th century'
+                range:   PT8100-8167
+                start:   PT8100
+                end:     PT8167
+                sections:
+                  - name:    'Andersen, Hans Christian'
+                    range:   PT8102-8120
+                    start:   PT8102
+                    end:     PT8120
+                  - name:    'Oehlenschläger, Adam Gottlob'
+                    sort_as: 'Oehlenschlager, Adam Gottlob'
+                    range:   PT8145-8157
+                    start:   PT8145
+                    end:     PT8157
+              - name:    '1900-1960'
+                range:   PT8174-8175
+                start:   PT8174
+                end:     PT8175
+              - name:    '1961-2000'
+                range:   PT8176-8176.36
+                start:   PT8176
+                end:     PT8176.36
+              - name:    '2001-'
+                range:   PT8177-8177.36
+                start:   PT8177
+                end:     PT8177.36
+          - name:    'Provincial, local, foreign'
+            range:   PT8205-8260
+            start:   PT8205
+            end:     PT8260
+      - name:    'Norwegian literature'
+        range:   PT8301-9155
+        start:   PT8301
+        end:     PT9155
+        sections:
+          - name:    'Literary history and criticism'
+            range:   PT8301-8574
+            start:   PT8301
+            end:     PT8574
+            sections:
+              - name:    'Special periods'
+                range:   PT(8420)-8456
+                start:   PT8420
+                end:     PT8456
+              - name:    'Poetry'
+                range:   PT8460-8489
+                start:   PT8460
+                end:     PT8489
+              - name:    'Drama'
+                range:   PT8500-8534
+                start:   PT8500
+                end:     PT8534
+              - name:    'Prose'
+                range:   PT8540-8574
+                start:   PT8540
+                end:     PT8574
+          - name:    'Folk literature'
+            range:   PT(8600)-(8637)
+            start:   PT8600
+            end:     PT8637
+          - name:    'Juvenile literature (General)'
+            range:   PT8640
+            start:   PT8640
+            end:     PT8640
+          - name:    'Collections'
+            range:   PT8650-8733
+            start:   PT8650
+            end:     PT8733
+            sections:
+              - name:    'Poetry'
+                range:   PT8675-8695
+                start:   PT8675
+                end:     PT8695
+              - name:    'Drama'
+                range:   PT8699-8718
+                start:   PT8699
+                end:     PT8718
+              - name:    'Prose'
+                range:   PT8719-8723
+                start:   PT8719
+                end:     PT8723
+          - name:    'Individual authors or works'
+            range:   PT8750-8952.36
+            start:   PT8750
+            end:     PT8952.36
+            sections:
+              - name:    '16th-18th centuries'
+                range:   PT8750-8775
+                start:   PT8750
+                end:     PT8775
+              - name:    '19th century'
+                range:   PT8800-8942
+                start:   PT8800
+                end:     PT8942
+                sections:
+                  - name:    'Ibsen, Henrik'
+                    range:   PT8851-8900
+                    start:   PT8851
+                    end:     PT8900
+              - name:    '1900-1960'
+                range:   PT8949-8950
+                start:   PT8949
+                end:     PT8950
+              - name:    '1961-2000'
+                range:   PT8951-8951.36
+                start:   PT8951
+                end:     PT8951.36
+              - name:    '2001-'
+                range:   PT8952-8952.36
+                start:   PT8952
+                end:     PT8952.36
+          - name:    'Landsmaal or New Norwegian'
+            range:   PT9000-9094
+            start:   PT9000
+            end:     PT9094
+            sections:
+              - name:    'Literary history and criticism'
+                range:   PT9000-9019
+                start:   PT9000
+                end:     PT9019
+              - name:    'Collections'
+                range:   PT9025-9055
+                start:   PT9025
+                end:     PT9055
+              - name:    'Individual authors'
+                range:   PT9064-9094
+                start:   PT9064
+                end:     PT9094
+          - name:    'Provincial, local, foreign'
+            range:   PT9100-9155
+            start:   PT9100
+            end:     PT9155
+      - name:    'Swedish literature'
+        range:   PT9201-9999
+        start:   PT9201
+        end:     PT9999
+        sections:
+          - name:    'Literary history and criticism'
+            range:   PT9201-9499
+            start:   PT9201
+            end:     PT9499
+            sections:
+              - name:    'Special periods'
+                range:   PT9320-9370
+                start:   PT9320
+                end:     PT9370
+              - name:    'Poetry'
+                range:   PT9375-9404
+                start:   PT9375
+                end:     PT9404
+              - name:    'Drama'
+                range:   PT9415-9449
+                start:   PT9415
+                end:     PT9449
+              - name:    'Prose'
+                range:   PT9460-9499
+                start:   PT9460
+                end:     PT9499
+          - name:    'Folk literature'
+            range:   PT(9509)-(9542)
+            start:   PT9509
+            end:     PT9542
+          - name:    'Juvenile literature (General)'
+            range:   PT9544
+            start:   PT9544
+            end:     PT9544
+          - name:    'Collections'
+            range:   PT9547-9639
+            start:   PT9547
+            end:     PT9639
+            sections:
+              - name:    'Translations'
+                range:   PT9565-9570
+                start:   PT9565
+                end:     PT9570
+              - name:    'Poetry'
+                range:   PT9580-9599
+                start:   PT9580
+                end:     PT9599
+              - name:    'Drama'
+                range:   PT9605-9625
+                start:   PT9605
+                end:     PT9625
+              - name:    'Prose'
+                range:   PT9626-9639
+                start:   PT9626
+                end:     PT9639
+          - name:    'Individual authors or works'
+            range:   PT9650-9877.36
+            start:   PT9650
+            end:     PT9877.36
+            sections:
+              - name:    'Medieval'
+                range:   PT9650-9651
+                start:   PT9650
+                end:     PT9651
+              - name:    '16th-18th centuries'
+                range:   PT9674-9715
+                start:   PT9674
+                end:     PT9715
+              - name:    '19th century'
+                range:   PT9725-9850
+                start:   PT9725
+                end:     PT9850
+                sections:
+                  - name:    'Lagerlöf, Selma'
+                    sort_as: 'Lagerlof, Selma'
+                    range:   PT9759-9771
+                    start:   PT9759
+                    end:     PT9771
+                  - name:    'Strindberg, Johan August'
+                    range:   PT9800-9817
+                    start:   PT9800
+                    end:     PT9817
+                  - name:    'Tegnér, Esaias'
+                    sort_as: 'Tegner, Esaias'
+                    range:   PT9820-9838
+                    start:   PT9820
+                    end:     PT9838
+              - name:    '1900-1960'
+                range:   PT9870-9875
+                start:   PT9870
+                end:     PT9875
+              - name:    '1961-2000'
+                range:   PT9876-9876.36
+                start:   PT9876
+                end:     PT9876.36
+              - name:    '2001-'
+                range:   PT9877-9877.36
+                start:   PT9877
+                end:     PT9877.36
+          - name:    'Provincial, local, foreign'
+            range:   PT9950-9999
+            start:   PT9950
+            end:     PT9999
+  - subclass:  PZ
+    name:     'Fiction and juvenile belles lettres'
+    sections:
+      - name:    'Fiction and juvenile belles lettres'
+        range:   PZ(1)-90
+        start:   PZ1
+        end:     PZ90
+        sections:
+          - name:    'Fiction in English'
+            range:   PZ(1)-(4)
+            start:   PZ1
+            end:     PZ4
+          - name:    'Juvenile belles lettres'
+            range:   PZ5-90
+            start:   PZ5
+            end:     PZ90

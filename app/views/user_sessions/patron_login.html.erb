@@ -1,0 +1,44 @@
+<%# app/views/user_sessions/patron_login.html.erb -%>
+<%-
+  set_meta_tags(title: 'My Account - Sign In')
+
+  id       ||= params[:id]
+  redirect ||= params[:redirect]
+
+  view_debug(__FILE__)
+-%>
+
+<div class="list-heading">
+  <h1 class="heading">My Account</h1>
+</div>
+
+<div class="account-container tool-content">
+
+  <h2 class="sign-in-heading">Please sign in to view your account.</h2>
+
+  <%= form_tag(do_patron_login_path, method: :post) do %>
+    <fieldset class="patron-login">
+      <%= sr_only(:legend, 'Identification:') %>
+      <p class="login-field">
+        <%= label_tag      :login, 'Library ID' %>
+        <%= text_field_tag :login %>
+      </p>
+      <small class="login-helper">
+        Driver's License Number, eg: A12345678
+      </small>
+      <p class="login-field">
+        <%= label_tag          :pin, 'PIN' %>
+        <%= password_field_tag :pin %>
+      </p>
+      <small class="login-helper">
+        Last four digits of your ID, unless you've updated it
+      </small>
+      <p class="login-submit">
+        <%= hidden_field_tag(:redirect, redirect) if redirect %>
+        <%= hidden_field_tag(:id, id) if id %>
+        <%= submit_tag('Sign in', class: 'button btn') %>
+      </p>
+    </fieldset>
+  <%- end -%>
+
+</div>

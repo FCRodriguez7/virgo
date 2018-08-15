@@ -1,0 +1,225 @@
+<%# app/views/articles/direct.html.erb -%>
+<%-
+  set_meta_tags(title: 'Output from EBSCO EDS')
+
+  facets ||= @response.facets
+  docs   ||= @response.docs
+
+  add_title       ||= 'Add this facet selection to the search'
+  remove_title    ||= 'Remove this facet selection from the search'
+  replace_title   ||= 'Perform a new query with only this facet selection'
+  facetfilter     ||= 'facetfilter'
+  response_fields ||= %w(
+    provider error_code response params current_page per_page counts
+  )
+
+  sections = ['fields']
+  sections << 'documents' if docs.present?
+  sections << 'facets'    if facets.present?
+
+  add_opt     = { title: add_title }
+  remove_opt  = { title: remove_title }
+  replace_opt = { title: replace_title, target: '_blank' }
+
+  # Query keys may be duplicated (which means that the `params` hash may be
+  # missing information) so take the query directly from the HTTP request.
+  last_filter_no = -1
+  param_array =
+    request.query_string.split('&').map { |pair|
+      parts = pair.split('=')
+      key   = parts.shift
+      value = parts.join('=')
+      #value = URI.encode(URI.decode(value))
+      if key == facetfilter
+        value_parts = value.split(',')
+        number = value_parts.shift.to_i
+        last_filter_no = number if last_filter_no < number
+      end
+      [key, value]
+    }
+  next_filter_no = last_filter_no + 1
+
+  # Maximize available width by not displaying the sidebar.
+  sidebar_items << :no_sidebar
+
+  view_debug(__FILE__)
+-%>
+
+<div class="document ebsco-direct">
+
+  <h1 class="heading">Direct output from EBSCO EDS</h1>
+  <div class="toc">
+    <table>
+      <tr>
+        <td class="first">
+          <a href="#fields">Fields</a>
+        </td>
+      </tr>
+      <tr>
+        <%- if facets.blank? -%>
+          <td class="first">Facets</td>
+        <%- else -%>
+          <td class="first"><a href="#facets">Facets</a></td>
+          <%- facets.each do |facet| -%>
+            <%- name = facet.name.to_s -%>
+            <td><a href="#<%= name.parameterize -%>"><%= name %></a></td>
+          <%- end -%>
+        <%- end -%>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <%- if docs.blank? -%>
+          <td class="first">Documents</td>
+        <%- else -%>
+          <td class="first"><a href="#documents">Documents</a></td>
+          <%- index = 0 -%>
+          <%- docs.each do -%>
+            <%- index += 1 -%>
+            <td><a href="#doc_<%= index -%>"><%= index %></a></td>
+          <%- end -%>
+        <%- end -%>
+      </tr>
+    </table>
+  </div>
+
+  <%# === URL parameters === -%>
+  <div class="response-url">
+    <h2 class="sub-heading" id="params">Params</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Value</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%- param_array.each do |pair| -%>
+          <%- key, value = pair -%>
+          <tr>
+            <td><%= key %></td>
+            <td><%= CGI.unescape(value).inspect %></td>
+            <td>
+              <%=
+                if key == facetfilter
+                  query =
+                    param_array.map { |pr|
+                      k, v = pr
+                      "#{k}=#{v}" unless (k == key) && (v == value)
+                    }.compact.join('&')
+                  url = "#{request.path}?#{query}"
+                  link_to('remove', url, remove_opt)
+                end
+              %>
+            </td>
+          </tr>
+        <%- end -%>
+      </tbody>
+    </table>
+  </div>
+
+  <%# === Response fields === -%>
+  <div class="response-fields">
+    <h2 class="sub-heading" id="fields">@response Fields</h2>
+    <table>
+      <thead>
+      <tr>
+        <th>Item</th>
+        <th>Value</th>
+      </tr>
+      </thead>
+      <tbody>
+      <%- response_fields.each do |item| -%>
+        <tr>
+          <td><%= item %></td>
+          <td><%= @response.send(item.to_sym).inspect %></td>
+        </tr>
+      <%- end -%>
+      </tbody>
+    </table>
+  </div>
+
+  <%# === Facets === -%>
+  <%- if facets.present? -%>
+    <div class="response-facets">
+      <h2 class="sub-heading" id="facets">@response Facets</h2>
+      <%- facets.each do |facet| -%>
+        <h3 class="section" id="<%= facet.name.to_s.parameterize -%>">
+          Facet <%= facet.name.inspect %>
+        </h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Hits</th>
+              <th>Value</th>
+              <th>Add</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%- facet.items.each do |item| -%>
+              <%- this_filter = "#{facet.name}:#{CGI.escape(item.value)}" -%>
+              <tr>
+                <td>
+                  <%= item.hits %>
+                </td>
+                <%- p = param_array.reject { |pr| pr[0] == facetfilter } -%>
+                <%- p << [facetfilter, "0,#{this_filter}"] -%>
+                <%- query = p.map { |pair| pair.join('=') }.join('&') -%>
+                <%- replace_url = "#{request.path}?#{query}" -%>
+                <td>
+                  <%= link_to(item.value, replace_url, replace_opt) %>
+                </td>
+                <%- p = param_array.dup -%>
+                <%- p << [facetfilter, "#{next_filter_no},#{this_filter}"] -%>
+                <%- query = p.map { |pair| pair.join('=') }.join('&') -%>
+                <%- add_url = "#{request.path}?#{query}" -%>
+                <td>
+                  <%= link_to('add', add_url, add_opt) %>
+                </td>
+              </tr>
+            <%- end -%>
+          </tbody>
+        </table>
+      <%- end -%>
+    </div>
+  <%- end -%>
+
+  <%# === Documents === -%>
+  <%- if docs.present? -%>
+    <div class="response-documents">
+      <h2 class="sub-heading" id="documents">@response Documents</h2>
+      <%- index = 0 -%>
+      <%- docs.each do |doc| -%>
+        <%- index += 1 -%>
+        <h3 class="section" id="doc_<%= index -%>">Document <%= index %></h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%- doc.as_json.each_pair do |label, item| -%>
+              <%-
+                value =
+                  case item
+                    when String, Symbol, Numeric then item.inspect
+                    when Array                   then '[]' if item.empty?
+                    when Hash                    then '{}' if item.empty?
+                  end
+                value ||= JSON.pretty_generate(item) rescue item.inspect
+              -%>
+              <tr>
+                <td><%= label %></td>
+                <td><pre><%= value %></pre></td>
+              </tr>
+            <%- end -%>
+          </tbody>
+        </table>
+      <%- end -%>
+    </div>
+  <%- end -%>
+
+</div>

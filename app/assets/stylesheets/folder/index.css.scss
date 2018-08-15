@@ -1,0 +1,36 @@
+// app/assets/stylesheets/folder/index.css.scss
+
+// ============================================================================
+// Folder controller (/folder/index).
+// ============================================================================
+
+.folder-page {
+
+    .page-content {
+        padding-left:  0;
+        padding-right: 0;
+        width:         727px;
+    }
+
+    .list-heading {
+
+        @include flex-box(row, space-between);
+
+        margin: 0;
+
+        // Display print view icon to the right of the heading.
+        .print-view-button {
+            margin: auto 0;
+        }
+    }
+
+    .notice {
+        margin: 1em 1em 0;
+    }
+
+    .dataTables_wrapper {
+        width:        99%;
+        margin-left:  auto;
+        margin-right: auto;
+    }
+}

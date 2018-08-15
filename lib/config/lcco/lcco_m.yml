@@ -1,0 +1,565 @@
+# lib/config/lcco_m.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from the Word document of the same base name.
+
+class:    M
+name:     'MUSIC'
+sections:
+  - subclass:  M
+    name:     'Music'
+    sections:
+      - name:    'Music'
+        range:   M1-5000
+        start:   M1
+        end:     M5000
+        sections:
+          - name:    'Music printed or copied in manuscript in the United States or the colonies before 1860'
+            range:   M1-1.A15
+            start:   M1
+            end:     M1.A15
+          - name:    'Collections'
+            range:   M1.A5-3.3
+            start:   M1.A5
+            end:     M3.3
+            sections:
+              - name:    'Miscellaneous'
+                range:   M1.A5-Z
+                start:   M1.A5
+                end:     M1.Z
+              - name:    'Musical sources'
+                range:   M2-2.3
+                start:   M2
+                end:     M2.3
+              - name:    'Collected works of individual composers'
+                range:   M3-3.3
+                start:   M3
+                end:     M3.3
+          - name:    'Instrumental music'
+            range:   M5-1480
+            start:   M5
+            end:     M1480
+            sections:
+              - name:    'Collections'
+                range:   M5
+                start:   M5
+                end:     M5
+              - name:    'One solo instrument'
+                range:   M6-175.5
+                start:   M6
+                end:     M175.5
+              - name:    'Motion picture music'
+                range:   M176
+                start:   M176
+                end:     M176
+              - name:    'Radio and television music'
+                range:   M176.5
+                start:   M176.5
+                end:     M176.5
+              - name:    'Two or more solo instruments'
+                range:   M177-990
+                start:   M177
+                end:     M990
+              - name:    'Orchestra'
+                range:   M1000-1075
+                start:   M1000
+                end:     M1075
+              - name:    'String orchestra'
+                range:   M1100-1160
+                start:   M1100
+                end:     M1160
+              - name:    'Band'
+                range:   M1200-1270
+                start:   M1200
+                end:     M1270
+              - name:    'Other ensembles'
+                range:   M1350-1366
+                start:   M1350
+                end:     M1366
+              - name:    'Instrumental music for children'
+                range:   M1375-1420
+                start:   M1375
+                end:     M1420
+              - name:    'Aleatory music. Electronic music. Mixed media'
+                range:   M1470-1480
+                start:   M1470
+                end:     M1480
+          - name:    'Music printed or copied in manuscript before 1700'
+            range:   M1490
+            start:   M1490
+            end:     M1490
+          - name:    'Vocal music'
+            range:   M1495-2199
+            start:   M1495
+            end:     M2199
+            sections:
+              - name:    'Collections'
+                range:   M1495
+                start:   M1495
+                end:     M1495
+              - name:    'Secular vocal music'
+                range:   M1497-1998
+                start:   M1497
+                end:     M1998
+                sections:
+                  - name:    'Collections'
+                    range:   M1497
+                    start:   M1497
+                    end:     M1497
+                  - name:    'Dramatic music'
+                    range:   M1500-1527.8
+                    start:   M1500
+                    end:     M1527.8
+                  - name:    'Two or more solo voices'
+                    range:   M1528-1529.5
+                    start:   M1528
+                    end:     M1529.5
+                  - name:    'Choruses'
+                    range:   M1530-1609
+                    start:   M1530
+                    end:     M1609
+                  - name:    'One solo voice'
+                    range:   M1611-1624.8
+                    start:   M1611
+                    end:     M1624.8
+                  - name:    'Recitations with music'
+                    range:   M1625-1626
+                    start:   M1625
+                    end:     M1626
+                  - name:    'Folk, national and ethnic music'
+                    range:   M1627-1853
+                    start:   M1627
+                    end:     M1853
+                  - name:    'Songs of specific groups or on specific topics'
+                    range:   M1900-1985
+                    start:   M1900
+                    end:     M1985
+                  - name:    'Secular vocal music for children'
+                    range:   M1990-1998
+                    start:   M1990
+                    end:     M1998
+              - name:    'Sacred vocal music'
+                range:   M1999-2199
+                start:   M1999
+                end:     M2199
+                sections:
+                  - name:    'Collections'
+                    range:   M1999
+                    start:   M1999
+                    end:     M1999
+                  - name:    'Dramatic music'
+                    range:   M2000-2007
+                    start:   M2000
+                    end:     M2007
+                  - name:    'Choral services, etc.'
+                    range:   M2010-2017.6
+                    start:   M2010
+                    end:     M2017.6
+                  - name:    'Two or more solo voices'
+                    range:   M2018-2019.5
+                    start:   M2018
+                    end:     M2019.5
+                  - name:    'Choruses'
+                    range:   M2020-2101.5
+                    start:   M2020
+                    end:     M2101.5
+                  - name:    'One solo voice'
+                    range:   M2102-2114.8
+                    start:   M2102
+                    end:     M2114.8
+                  - name:    'Hymnals. Hymn collections'
+                    range:   M2115-2146
+                    start:   M2115
+                    end:     M2146
+                  - name:    'Liturgy and ritual'
+                    range:   M2147-2188
+                    start:   M2147
+                    end:     M2188
+                  - name:    'Sacred vocal music for children'
+                    range:   M2190-2196
+                    start:   M2190
+                    end:     M2196
+                  - name:    'Popular religious and devotional music'
+                    range:   M2198-2199
+                    start:   M2198
+                    end:     M2199
+          - name:    'Unidentified compositions'
+            range:   M5000
+            start:   M5000
+            end:     M5000
+  - subclass:  ML
+    name:     'Literature on music'
+    sections:
+      - name:    'Literature on music'
+        range:   ML1-3930
+        start:   ML1
+        end:     ML3930
+        sections:
+          - name:    'Periodicals. Serials'
+            range:   ML1-5
+            start:   ML1
+            end:     ML5
+          - name:    'Directories. Almanacs'
+            range:   ML12-21
+            start:   ML12
+            end:     ML21
+          - name:    'Societies and other organizations'
+            range:   ML25-28
+            start:   ML25
+            end:     ML28
+          - name:    'Special collections'
+            range:   ML29-31
+            start:   ML29
+            end:     ML31
+          - name:    'Institutions'
+            range:   ML32-33
+            start:   ML32
+            end:     ML33
+          - name:    'Festivals. Congresses'
+            range:   ML35-38
+            start:   ML35
+            end:     ML38
+          - name:    'Programs'
+            range:   ML40-44
+            start:   ML40
+            end:     ML44
+          - name:    'Circulars and advertisements'
+            range:   ML45
+            start:   ML45
+            end:     ML45
+          - name:    'Scrapbooks'
+            range:   ML46
+            start:   ML46
+            end:     ML46
+          - name:    'Librettos. Texts. Scenarios'
+            range:   ML47-54.8
+            start:   ML47
+            end:     ML54.8
+          - name:    'Aspects of the field of music as a whole'
+            range:   ML55-89
+            start:   ML55
+            end:     ML89
+          - name:    'Manuscript studies and manuscripts'
+            range:   ML93-96.5
+            start:   ML93
+            end:     ML96.5
+          - name:    'Dictionaries. Encyclopedias'
+            range:   ML100-109
+            start:   ML100
+            end:     ML109
+          - name:    'Music librarianship'
+            range:   ML110-111.5
+            start:   ML110
+            end:     ML111.5
+          - name:    'Music printing and publishing'
+            range:   ML112-112.5
+            start:   ML112
+            end:     ML112.5
+          - name:    'Bibliography'
+            range:   ML112.8-158.8
+            start:   ML112.8
+            end:     ML158.8
+          - name:    'History and criticism'
+            range:   ML159-3785
+            start:   ML159
+            end:     ML3785
+            sections:
+              - name:    'General works'
+                range:   ML159-161
+                start:   ML159
+                end:     ML161
+              - name:    'By period'
+                range:   ML162-197
+                start:   ML162
+                end:     ML197
+              - name:    'By region or country'
+                range:   ML198-360.6
+                start:   ML198
+                end:     ML360.6
+              - name:    'Biography'
+                range:   ML385-429
+                start:   ML385
+                end:     ML429
+              - name:    'Composition and performance'
+                range:   ML430-458
+                start:   ML430
+                end:     ML458
+              - name:    'Instruments and instrumental music'
+                range:   ML459-1380
+                start:   ML459
+                end:     ML1380
+              - name:    'Vocal music'
+                range:   ML1400-3275
+                start:   ML1400
+                end:     ML3275
+              - name:    'Program music'
+                range:   ML3300-3351
+                start:   ML3300
+                end:     ML3351
+              - name:    'Dance music'
+                range:   ML3400-3465
+                start:   ML3400
+                end:     ML3465
+              - name:    'Popular music'
+                range:   ML3469-3541
+                start:   ML3469
+                end:     ML3541
+              - name:    'Folk, national, and ethnic music'
+                range:   ML3544-3776
+                start:   ML3544
+                end:     ML3776
+              - name:    'Music on particular topics'
+                range:   ML3780
+                start:   ML3780
+                end:     ML3780
+              - name:    'Musical journalism'
+                range:   ML3785
+                start:   ML3785
+                end:     ML3785
+          - name:    'Music trade'
+            range:   ML3790-3792
+            start:   ML3790
+            end:     ML3792
+          - name:    'Music as a profession. Vocational guidance'
+            range:   ML3795
+            start:   ML3795
+            end:     ML3795
+          - name:    'Musical research'
+            range:   ML3797-3799.5
+            start:   ML3797
+            end:     ML3799.5
+          - name:    'acoustics of music. Physiological aspects of music'
+            range:   ML3800-3923
+            start:   ML3800
+            end:     ML3923
+            sections:
+              - name:    'General works'
+                range:   ML3800
+                start:   ML3800
+                end:     ML3800
+              - name:    'Physics and acoustics'
+                range:   ML3805-3817
+                start:   ML3805
+                end:     ML3817
+              - name:    'Physiological aspects of music'
+                range:   ML3820
+                start:   ML3820
+                end:     ML3820
+              - name:    'Psychology'
+                range:   ML3830-3840
+                start:   ML3830
+                end:     ML3840
+              - name:    'Aesthetics'
+                range:   ML3845-3877
+                start:   ML3845
+                end:     ML3877
+              - name:    'Criticism'
+                range:   ML3880-3915
+                start:   ML3880
+                end:     ML3915
+              - name:    'Social and political aspects of music'
+                range:   ML3916-3918
+                start:   ML3916
+                end:     ML3918
+              - name:    'Moral influence of music.  Therapeutic use of music'
+                range:   ML3919-3920
+                start:   ML3919
+                end:     ML3920
+              - name:    'Religious aspects of music'
+                range:   ML3921-3921.8
+                start:   ML3921
+                end:     ML3921.8
+              - name:    'Music in the workplace'
+                range:   ML3922
+                start:   ML3922
+                end:     ML3922
+          - name:    'Literature for children'
+            range:   ML3928-3930
+            start:   ML3928
+            end:     ML3930
+  - subclass:  MT
+    name:     'Instruction and study'
+    sections:
+      - name:    'Instruction and study'
+        range:   MT1-960
+        start:   MT1
+        end:     MT960
+        sections:
+          - name:    'General works'
+            range:   MT1
+            start:   MT1
+            end:     MT1
+          - name:    'Music study abroad'
+            range:   MT2.5
+            start:   MT2.5
+            end:     MT2.5
+          - name:    'History'
+            range:   MT3-5
+            start:   MT3
+            end:     MT5
+          - name:    'Music theory'
+            range:   MT5.5-7
+            start:   MT5.5
+            end:     MT7
+          - name:    'Printed pedagogical aids'
+            range:   MT9-15
+            start:   MT9
+            end:     MT15
+            sections:
+              - name:    'Examinations, exercises, etc.'
+                range:   MT9
+                start:   MT9
+                end:     MT9
+              - name:    'Teachers'' and supervisors'' manuals, etc.'
+                range:   MT10
+                start:   MT10
+                end:     MT10
+              - name:    'Charts, diagrams, etc.'
+                range:   MT15
+                start:   MT15
+                end:     MT15
+          - name:    'Music in special education'
+            range:   MT17
+            start:   MT17
+            end:     MT17
+          - name:    'Music in colleges and universities'
+            range:   MT18
+            start:   MT18
+            end:     MT18
+          - name:    'Systems and methods'
+            range:   MT20-34
+            start:   MT20
+            end:     MT34
+          - name:    'Notation'
+            range:   MT35-39
+            start:   MT35
+            end:     MT39
+          - name:    'Composition. Elements and techniques of music'
+            range:   MT40-67
+            start:   MT40
+            end:     MT67
+          - name:    'Improvisation. Accompaniment. Transposition'
+            range:   MT68
+            start:   MT68
+            end:     MT68
+          - name:    'Instrumentation and orchestration'
+            range:   MT70-74
+            start:   MT70
+            end:     MT74
+          - name:    'Interpretation'
+            range:   MT75
+            start:   MT75
+            end:     MT75
+          - name:    'Embellishment'
+            range:   MT80
+            start:   MT80
+            end:     MT80
+          - name:    'Memorizing'
+            range:   MT82
+            start:   MT82
+            end:     MT82
+          - name:    'Conducting. Score reading and playing'
+            range:   MT85
+            start:   MT85
+            end:     MT85
+          - name:    'Community music'
+            range:   MT87
+            start:   MT87
+            end:     MT87
+          - name:    'Administration and instruction of vocal groups'
+            range:   MT88
+            start:   MT88
+            end:     MT88
+          - name:    'Analysis and appreciation of musical works'
+            range:   MT90-146
+            start:   MT90
+            end:     MT146
+          - name:    'Audio-visual aids'
+            range:   MT150
+            start:   MT150
+            end:     MT150
+          - name:    'Music theory for children'
+            range:   MT155
+            start:   MT155
+            end:     MT155
+          - name:    'Tuning'
+            range:   MT165
+            start:   MT165
+            end:     MT165
+          - name:    'Instrumental techniques'
+            range:   MT170-810
+            start:   MT170
+            end:     MT810
+            sections:
+              - name:    'Keyboard instruments'
+                range:   MT179-258
+                start:   MT179
+                end:     MT258
+              - name:    'Stringed instruments. Bowed stringed instruments'
+                range:   MT259-338
+                start:   MT259
+                end:     MT338
+              - name:    'Wind instruments'
+                range:   MT339-533
+                start:   MT339
+                end:     MT533
+              - name:    'Plucked instruments'
+                range:   MT539-654
+                start:   MT539
+                end:     MT654
+              - name:    'Percussion and other instruments'
+                range:   MT655-725
+                start:   MT655
+                end:     MT725
+              - name:    'Ensembles'
+                range:   MT728-735
+                start:   MT728
+                end:     MT735
+              - name:    'Motion picture accompanying'
+                range:   MT737
+                start:   MT737
+                end:     MT737
+              - name:    'Instrumental techniques for children'
+                range:   MT740-810
+                start:   MT740
+                end:     MT810
+          - name:    'Singing and vocal technique'
+            range:   MT820-915
+            start:   MT820
+            end:     MT915
+            sections:
+              - name:    'Vocal techniques for children'
+                range:   MT898-915
+                start:   MT898
+                end:     MT915
+          - name:    'School music'
+            range:   MT918-948
+            start:   MT918
+            end:     MT948
+            sections:
+              - name:    'Kindergarten'
+                range:   MT920-925
+                start:   MT920
+                end:     MT925
+              - name:    'Elementary schools. Junior high schools. High schools'
+                range:   MT930-948
+                start:   MT930
+                end:     MT948
+          - name:    'Whistling'
+            range:   MT949.5
+            start:   MT949.5
+            end:     MT949.5
+          - name:    'Music to accompany instruction in ballet, folk dancing, gymnastics, etc.'
+            range:   MT950
+            start:   MT950
+            end:     MT950
+          - name:    'Musical theater'
+            range:   MT955-956
+            start:   MT955
+            end:     MT956
+          - name:    'Music in the theater'
+            range:   MT960
+            start:   MT960
+            end:     MT960

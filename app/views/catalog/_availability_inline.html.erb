@@ -1,0 +1,89 @@
+<%# app/views/catalog/_availability_inline.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc
+
+  id ||= doc.doc_id
+  id = sanitize_to_id("availability_#{id}")
+
+  # Determine whether availability should be shown.
+  show_availability ||= !doc.online_only?
+  if show_availability
+    online_types      ||= [:article, :dl_video, :dl_wsls_video, :hathi, :kluge]
+    online_subtypes   ||= [:dl_book]
+    show_availability =
+      !online_types.include?(doc.doc_type) &&
+      !online_subtypes.include?(doc.doc_sub_type)
+  end
+
+  # Determine whether SuDoc numbers should be shown.
+  sudoc_numbers = doc.sudoc_numbers
+  shelf_numbers = doc.shelf_numbers
+
+  # Determine whether call number should be shown.
+  cn_links = nil
+  if shelf_numbers.blank? || (shelf_numbers != sudoc_numbers)
+    cn_link_opts = { sep: nil, sudoc: false, dev_note: [__FILE__] }
+    cn_link_opts[:video] = true if video_lens?
+    cn_links = call_number_display(doc, cn_link_opts).presence
+    unless cn_links || UVA::ShelfBrowse.feature_suppressed?
+      cn_link_opts[:dev_note] << '(no call number)'
+      cn_link_opts[:lc_only] = true
+      cn_link_opts[:button_only] = true if video_lens?
+      call_number = browse_call_number(doc, cn_link_opts)
+      cn_links = [call_number] if call_number.present?
+    end
+  end
+
+  template_opts = { document: doc }
+
+  view_debug(__FILE__)
+-%>
+
+<%- if video_lens? && !print_view? -%>
+
+  <%# === Availability === -%>
+  <div class="availability">
+    <%- if show_availability -%>
+      <span class="availability" id="<%= id -%>">
+        <%= render 'catalog/show/shared/availability_single', template_opts %>
+      </span>
+    <%- end -%>
+  </div>
+
+  <%# === Call number === -%>
+  <div class="call-number-field">
+    <%= cn_links.first if cn_links.present? %>
+  </div>
+
+<%- else -%>
+
+  <%# === Availability === -%>
+  <%- if show_availability -%>
+    <dt>Availability</dt>
+    <dd class="availability" id="<%= id -%>">
+      <%= render 'catalog/show/shared/availability_single', template_opts %>
+    </dd>
+  <%- end -%>
+
+  <%# === SuDoc number === -%>
+  <%- if sudoc_numbers.present? -%>
+    <dt><%= vocabulary_term('SuDoc') %> Call Number</dt>
+    <%- sudoc_numbers.each do |sudoc_number| -%>
+      <dd class="call-number-field">
+        <%= sudoc_number %>
+      </dd>
+    <%- end -%>
+  <%- end -%>
+
+  <%# === Call number === -%>
+  <%- if cn_links.present? -%>
+    <dt>Call Number</dt>
+    <%- cn_links.each do |call_number| -%>
+      <dd class="call-number-field">
+        <%= call_number %>
+      </dd>
+    <%- end -%>
+  <%- end -%>
+
+<%- end -%>

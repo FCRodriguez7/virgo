@@ -1,0 +1,101 @@
+<%# app/views/folder/index.html.erb -%>
+<%-
+  # Overrides Blacklight app/views/folder/index.html.erb
+
+  set_meta_tags(title: 'Starred Items')
+  set_cache_refresh
+
+  documents    ||= @documents || []
+  articles     ||= @articles  || []
+  folder_items ||= starred_item_ids
+  heading      ||= 'Starred Items Menu'
+
+  # Add to hidden "skip navigation" menu.
+  skip_nav << link_to(heading, '#account-menu')
+
+  no_items = folder_items.blank?
+
+  num  = sr_only('Number')
+  star = sr_only('Remove Star')
+  lib  = 'Library'
+  cn   = 'Call Number'
+
+  lib  = sr_only(lib) unless print_view?
+  cn   = sr_only(cn) unless print_view?
+
+  article_failure = false
+  if articles.present?
+    if @article_response && @article_response.ok?
+      documents += articles
+    else
+      article_failure = true
+    end
+  end
+
+  view_debug(__FILE__)
+-%>
+
+<%= render 'folder/sidebar' %>
+
+<div class="list-heading">
+  <h1 class="heading">Starred Items <%= star_counter %></h1>
+  <%= print_view_link(path: folders_path) unless print_view? || no_items %>
+</div>
+
+<div class="return-to-search">
+  <%= in_aside? ? close_side_window : link_back_to_search %>
+</div>
+
+<%= render '/flash_msg' %>
+
+<%- unless no_items -%>
+  <p class="starred-info">
+    Track and export up to
+    <strong><%= max_folder_items %></strong>
+    items by starring results.
+  </p>
+  <p class="starred-alert">
+    <strong>
+      Starred items are not permanent but they persist for your full Virgo
+      session until you log out.
+    </strong>
+  </p>
+<%- end -%>
+
+<div class="account-container results">
+  <%- if no_items -%>
+
+    <h2 class="sub-heading no-items">No Starred Items</h2>
+
+  <%- else -%>
+
+    <table class="item-list starred-items">
+      <thead>
+        <tr>
+          <th class="starred-number-heading hidden-heading"><%= num %></th>
+          <th class="starred-star-heading hidden-heading"><%= star %></th>
+          <th class="starred-title-heading">Title</th>
+          <th class="starred-author-heading">Creator</th>
+          <th class="starred-format-heading">Format</th>
+          <th class="starred-year-heading">Year</th>
+          <th class="starred-library-heading">Type</th>
+          <th class="starred-availability-heading">Availability</th>
+          <th class="starred-library-heading print-only"><%= lib %></th>
+          <th class="starred-call_number-heading print-only"><%= cn %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render 'folder/folder_rows', documents: documents %>
+      </tbody>
+    </table>
+    <%- if article_failure -%>
+      <div class="flash-message static" role="alert">
+        <div class="dialog ui-state-error error">
+          We were not able to retrieve information about articles.
+          Please try again.
+        </div>
+      </div>
+    <%- end -%>
+
+  <%- end -%>
+</div>

@@ -1,0 +1,59 @@
+<%# app/views/shelf_browse/shared/_item_tile.html.erb -%>
+<%-
+  # A single virtual shelf browse item tile.
+
+  # Values from :locals template parameter.
+  item        ||= :error
+  focus_id    ||= nil
+  focus       ||= nil
+  orientation ||= nil
+  tile_css    ||= nil
+
+  # Generate item element and set metadata template options.
+  item_html = item_element(item, focus: focus)
+  if item.is_a?(UVA::IndexDoc)
+    error      = nil
+    tile_id    = item.doc_id
+    aria_label = "Item #{focus_id + 1}:"
+  else
+    error =
+      if item == :empty
+        'fewer items than requested'
+      else
+        'an unexpected value in this position'
+      end
+    item       = nil
+    focus_id   = -1
+    tile_id    = "empty_#{rand(999)}"
+    aria_label = 'Empty item'
+  end
+
+  # Modify styling for the item tile.
+  tile_css = Array(tile_css)
+  tile_css.unshift('item-tile')
+  tile_css.push(orientation) if orientation
+  tile_css.push('focus')     if focus
+  tile_css = tile_css.reject(&:blank?).uniq.join(SPACE)
+
+  div_options = {
+    class:              tile_css,
+    :'data-tile'     => tile_id,
+    :'data-focus-id' => focus_id,
+    :'aria-label'    => aria_label
+  }.map { |k, v|
+    %Q(#{k}="#{h(v)}") if v.present?
+  }.compact.join(' ').html_safe
+
+  template_opts = {
+    item:    item,
+    tile_id: tile_id,
+    error:   error
+  }
+
+  view_debug(__FILE__)
+-%>
+
+<div <%= div_options -%>>
+  <%= item_html %>
+  <%= render 'shelf_browse/shared/item_metadata', template_opts %>
+</div>

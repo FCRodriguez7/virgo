@@ -1,0 +1,107 @@
+#
+# robots.txt
+#
+# This file is processed by web crawlers to create indexes for search sites
+# like Google, Bing, etc. The Disallow statements in this file prevent web
+# crawlers from going down into intermediate search pages while leaving open
+# /catalog/, /music/ and /video/ so that direct matches of items listed in
+# the sitemap file will be accessible directly.
+#
+# See http://www.robotstxt.org/wc/norobots.html for documentation on how to
+# use the robots.txt file.
+#
+# NOTE: Entries with non-standard robots.txt syntax ("Allow" entries and
+# "Disallow" entries with "*" in the path) only work with Googlebot.
+#
+# 2015/07/28 - Opened up assets because the Google algorithm now uses them.
+#
+User-Agent: *
+#
+# Skip pages from controllers that do not provide indexed data or site
+# information.
+#
+Disallow: /account
+Disallow: /account_requests
+Disallow: /articles
+Disallow: /call_number_ranges
+#Disallow: /catalog?
+#Disallow: /catalog/facet
+Disallow: /classic
+Disallow: /feedback
+#Disallow: /folder
+Disallow: /maps
+Disallow: /maps_users
+#Disallow: /music?
+#Disallow: /music/facet
+Disallow: /pda
+Disallow: /reserves
+Disallow: /shelf_browse
+Disallow: /special_collections_requests
+#Disallow: /video?
+#Disallow: /video/facet
+#
+# Skip advanced search form.
+#
+#Disallow: /advanced
+#Disallow: /catalog/advanced
+#Disallow: /music/advanced
+#Disallow: /video/advanced
+#
+# Skip account-related pages.
+#
+Disallow: /do_patron_login
+Disallow: /logged_out
+Disallow: /login
+Disallow: /logout
+Disallow: /patron_login
+#
+# Skip links into the page turner or other views on to an item;
+# only the item show page should be indexed.
+#
+#Disallow: /*/availability
+#Disallow: /*/brief_availability
+#Disallow: /*/firehose
+#Disallow: /*/image_load
+#Disallow: /fedora_metadata
+#
+# Skip links that create exports.
+#
+Disallow: /catalog/citation?
+Disallow: /catalog/email?
+Disallow: /catalog/endnote?
+Disallow: /catalog/refworks?
+Disallow: /catalog/ris?
+Disallow: /catalog/sms?
+Disallow: /music/citation?
+Disallow: /music/email?
+Disallow: /music/endnote?
+Disallow: /music/refworks?
+Disallow: /music/ris?
+Disallow: /music/sms?
+Disallow: /video/citation?
+Disallow: /video/email?
+Disallow: /video/endnote?
+Disallow: /video/refworks?
+Disallow: /video/ris?
+Disallow: /video/sms?
+#
+# Skip links that modify the page or display alternate views
+#
+#Disallow: /catalog/*.endnote
+#Disallow: /catalog/*.json
+#Disallow: /catalog/*.ris
+#Disallow: /catalog/*.rss
+#Disallow: /*/*.endnote
+#Disallow: /*/*.json
+#Disallow: /*/*.ris
+#Disallow: /*/*.rss
+#
+# Allow hierarchical data for Googlebot.
+#
+#Allow:    /catalog/*/children.json
+#Allow:    /catalog/*/manifest.json
+#
+# The Sitemap directive is used by some web crawlers to acquire information
+# about site content that should be indexed.
+#
+Sitemap: https://xxx.virginia.edu/xxx

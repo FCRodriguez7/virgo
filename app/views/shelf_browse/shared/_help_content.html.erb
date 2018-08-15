@@ -1,0 +1,19 @@
+<%# app/views/shelf_browse/shared/_help_content.html.erb -%>
+<%-
+  # Feature help panel contents (initially hidden).
+  #
+  # @see UVA::Helper::ShelfBrowse#help_templates
+  # @see UVA::Helper::ShelfBrowse#help_template_opts
+  # @see .help-content in app/assets/stylesheets/feature/shelf-browse
+  # @see showHelp()    in app/assets/javascripts/feature/shelf-browse
+
+  template_opts = help_template_opts
+
+  view_debug(__FILE__)
+-%>
+
+<div class="help-content">
+  <%- help_templates.each do |template| -%>
+    <%= render "shelf_browse/#{template}", template_opts %>
+  <%- end -%>
+</div>

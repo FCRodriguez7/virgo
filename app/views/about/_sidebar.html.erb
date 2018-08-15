@@ -1,0 +1,26 @@
+<%# app/views/about/_sidebar.html.erb -%>
+<%-
+  # If "position: sticky" is supported allow the sidebar to remain visible.
+  sidebar_items << :sticky_optional
+
+  items = {
+    'About Virgo'    => about_index_path,
+    'Library Codes'  => about_list_path(:library),
+    'Location Codes' => about_list_path(:location),
+  }
+
+  view_debug(__FILE__)
+-%>
+<%- sidebar_items << capture do -%>
+  <div class="sidebar-panel1 about-sidebar">
+    <div class="sidebar-inner">
+      <div class="account-menu tools menu" role="menu">
+        <ul>
+          <%- items.each_pair do |label, path| -%>
+            <li role="menuitem"><%= link_to(label, path) -%></li>
+          <%- end -%>
+        </ul>
+      </div>
+    </div>
+  </div>
+<%- end -%>

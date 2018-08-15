@@ -1,0 +1,835 @@
+# lib/config/lcco_j.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from the Word document of the same base name.
+
+class:    J
+name:     'POLITICAL SCIENCE'
+sections:
+  - subclass:  J
+    name:     'General legislative and executive papers'
+    sections:
+      - name:    'General legislative and executive papers'
+        range:   J(1)-981
+        start:   J1
+        end:     J981
+        sections:
+          - name:    'Gazettes'
+            note:    'The Library of Congress now classes this material in K'
+            range:   J(1)-(9)
+            start:   J1
+            end:     J9
+          - name:    'United States'
+            range:   J80-87
+            start:   J80
+            end:     J87
+            sections:
+              - name:    'Presidents'' messages and other executive papers'
+                range:   J80-82
+                start:   J80
+                end:     J82
+          - name:    'Other regions and countries'
+            range:   J100-981
+            start:   J100
+            end:     J981
+  - subclass:  JA
+    name:     'Political science (General)'
+    sections:
+      - name:    'Political science (General)'
+        range:   JA1-92
+        start:   JA1
+        end:     JA92
+        sections:
+          - name:    'Periodicals'
+            range:   JA1-26
+            start:   JA1
+            end:     JA26
+          - name:    'Societies'
+            range:   JA27-34
+            start:   JA27
+            end:     JA34
+          - name:    'Congresses'
+            range:   JA35.5
+            start:   JA35.5
+            end:     JA35.5
+          - name:    'Dictionaries and encyclopedias'
+            range:   JA60-64
+            start:   JA60
+            end:     JA64
+          - name:    'Theory.  Relations to other subjects'
+            range:   JA71-80
+            start:   JA71
+            end:     JA80
+          - name:    'History'
+            range:   JA81-84
+            start:   JA81
+            end:     JA84
+          - name:    'Study and teaching.  Research'
+            range:   JA86-88
+            start:   JA86
+            end:     JA88
+          - name:    'Collective biography of political scientists'
+            range:   JA92
+            start:   JA92
+            end:     JA92
+  - subclass:  JC
+    name:     'Political theory.  The state.  Theories of the state'
+    sections:
+      - name:    'Political theory.  The state.  Theories of the state'
+        range:   JC11-605
+        start:   JC11
+        end:     JC605
+        sections:
+          - name:    'Oriental state'
+            range:   JC47
+            start:   JC47
+            end:     JC47
+          - name:    'Islamic state'
+            range:   JC49
+            start:   JC49
+            end:     JC49
+          - name:    'Ancient state'
+            range:   JC51-93
+            start:   JC51
+            end:     JC93
+          - name:    'Medieval state'
+            range:   JC109-121
+            start:   JC109
+            end:     JC121
+          - name:    'Modern state'
+            range:   JC131-273
+            start:   JC131
+            end:     JC273
+            sections:
+              - name:    'Thomas Paine'
+                range:   JC177-178
+                start:   JC177
+                end:     JC178
+          - name:    'Nationalism.  Nation state'
+            range:   JC311-314
+            start:   JC311
+            end:     JC314
+          - name:    'Political geography'
+            range:   JC319-323
+            start:   JC319
+            end:     JC323
+          - name:    'Sovereignty'
+            range:   JC327
+            start:   JC327
+            end:     JC327
+          - name:    'Consensus.  Consent of the governed'
+            range:   JC328.2
+            start:   JC328.2
+            end:     JC328.2
+          - name:    'Violence.  Political violence'
+            range:   JC328.6-.65
+            start:   JC328.6
+            end:     JC328.65
+          - name:    'Patriotism'
+            range:   JC329
+            start:   JC329
+            end:     JC329
+          - name:    'Symbolism'
+            range:   JC345-347
+            start:   JC345
+            end:     JC347
+          - name:    'Forms of the state'
+            range:   JC348-497
+            start:   JC348
+            end:     JC497
+          - name:    'Purpose, functions, and relations of the state'
+            range:   JC571-605
+            start:   JC571
+            end:     JC605
+  - subclass:  JF
+    name:     'Political institutions and public administration'
+    sections:
+      - name:    'Political institutions and public administration'
+        range:   JF20-2112
+        start:   JF20
+        end:     JF2112
+        sections:
+          - name:    'General.  Comparative government'
+            range:   JF20-1177
+            start:   JF20
+            end:     JF1177
+            sections:
+              - name:    'General works.  History'
+                range:   JF51-56
+                start:   JF51
+                end:     JF56
+              - name:    'Organs and functions of government'
+                range:   JF225-619
+                start:   JF225
+                end:     JF619
+                sections:
+                  - name:    'Executive.  Heads of state'
+                    range:   JF251-289
+                    start:   JF251
+                    end:     JF289
+                  - name:    'Parliamentary government'
+                    range:   JF331-341
+                    start:   JF331
+                    end:     JF341
+                  - name:    'Legislation.  Legislative process.  Law-making'
+                    range:   JF491-619
+                    start:   JF491
+                    end:     JF619
+              - name:    'Political rights.  Political participation'
+                range:   JF799-1177
+                start:   JF799
+                end:     JF1177
+          - name:    'Public administration'
+            range:   JF1338-2112
+            start:   JF1338
+            end:     JF2112
+            sections:
+              - name:    'Civil service'
+                range:   JF1501-1521
+                start:   JF1501
+                end:     JF1521
+              - name:    'Political parties'
+                range:   JF2011-2112
+                start:   JF2011
+                end:     JF2112
+  - subclass:  JJ
+    name:     'Political institutions and public administration (North America)'
+    sections:
+      - name:    'Political institutions and public administration (North America)'
+        range:   JJ1000-1019
+        start:   JJ1000
+        end:     JJ1019
+  - subclass:  JK
+    name:     'Political institutions and public administration (United States)'
+    sections:
+      - name:    'Political institutions and public administration (United States)'
+        range:   JK1-9993
+        start:   JK1
+        end:     JK9993
+        sections:
+          - name:    'United States'
+            range:   JK1-9593
+            start:   JK1
+            end:     JK9593
+            sections:
+              - name:    'Government.  Public administration'
+                range:   JK404-1685
+                start:   JK404
+                end:     JK1685
+                sections:
+                  - name:    'Executive branch'
+                    range:   JK501-868
+                    start:   JK501
+                    end:     JK868
+                    sections:
+                      - name:    'Civil Service.  Departments and agencies'
+                        range:   JK631-868
+                        start:   JK631
+                        end:     JK868
+                  - name:    'Congress.  Legislative branch'
+                    range:   JK1012-1432
+                    start:   JK1012
+                    end:     JK1432
+                    sections:
+                      - name:    'Senate'
+                        range:   JK1154-1276
+                        start:   JK1154
+                        end:     JK1276
+                      - name:    'House of Representatives'
+                        range:   JK1308-1432
+                        start:   JK1308
+                        end:     JK1432
+                  - name:    'Capital.  Public buildings.  Government property.  Government purchasing'
+                    range:   JK1606-1683
+                    start:   JK1606
+                    end:     JK1683
+              - name:    'Political rights.  Practical politics'
+                range:   JK1717-2217
+                start:   JK1717
+                end:     JK2217
+                sections:
+                  - name:    'Citizenship'
+                    range:   JK1758-1761
+                    start:   JK1758
+                    end:     JK1761
+                  - name:    'Suffrage'
+                    range:   JK1846-1929
+                    start:   JK1846
+                    end:     JK1929
+                  - name:    'Electoral system'
+                    range:   JK1965-2217
+                    start:   JK1965
+                    end:     JK2217
+              - name:    'Political parties'
+                range:   JK2255-2391
+                start:   JK2255
+                end:     JK2391
+              - name:    'State government'
+                range:   JK2403-9593
+                start:   JK2403
+                end:     JK9593
+          - name:    'Confederate States of America'
+            range:   JK9663-9993
+            start:   JK9663
+            end:     JK9993
+  - subclass:  JL
+    name:     'Political institutions and public administration (Canada, Latin America, etc.)'
+    sections:
+      - name:    'Political institutions and public administration (Canada, Latin America, etc.)'
+        range:   JL1-3899
+        start:   JL1
+        end:     JL3899
+        sections:
+          - name:    'Canada'
+            range:   JL1-500
+            start:   JL1
+            end:     JL500
+          - name:    'West Indies.  Caribbean Area'
+            range:   JL599.5-839
+            start:   JL599.5
+            end:     JL839
+          - name:    'Mexico'
+            range:   JL1200-1299
+            start:   JL1200
+            end:     JL1299
+          - name:    'Central America'
+            range:   JL1400-1679
+            start:   JL1400
+            end:     JL1679
+          - name:    'South America'
+            range:   JL1850-3899
+            start:   JL1850
+            end:     JL3899
+  - subclass:  JN
+    name:     'Political institutions and public administration (Europe)'
+    sections:
+      - name:    'Political institutions and public administration (Europe)'
+        range:   JN1-9689
+        start:   JN1
+        end:     JN9689
+        sections:
+          - name:    'General'
+            range:   JN1-97
+            start:   JN1
+            end:     JN97
+          - name:    'Great Britain'
+            range:   JN101-1371
+            start:   JN101
+            end:     JN1371
+            sections:
+              - name:    'Scotland'
+                range:   JN1187-1371
+                start:   JN1187
+                end:     JN1371
+          - name:    'Ireland'
+            range:   JN1395-1571.5
+            start:   JN1395
+            end:     JN1571.5
+          - name:    'Austria-Hungary.  Austria.  Hungary'
+            range:   JN1601-2191
+            start:   JN1601
+            end:     JN2191
+          - name:    'Czech Republic.  Czechoslovakia'
+            range:   JN2210-2229
+            start:   JN2210
+            end:     JN2229
+          - name:    'Slovakia'
+            range:   JN2240
+            start:   JN2240
+            end:     JN2240
+          - name:    'France'
+            range:   JN2301-3007
+            start:   JN2301
+            end:     JN3007
+          - name:    'Germany'
+            range:   JN3201-4944
+            start:   JN3201
+            end:     JN4944
+          - name:    'Greece'
+            range:   JN5001-5191
+            start:   JN5001
+            end:     JN5191
+          - name:    'Italy'
+            range:   JN5201-5690
+            start:   JN5201
+            end:     JN5690
+          - name:    'Netherlands'
+            range:   JN5701-5999
+            start:   JN5701
+            end:     JN5999
+          - name:    'Belgium'
+            range:   JN6101-6371
+            start:   JN6101
+            end:     JN6371
+          - name:    'Soviet Union.  Russia.  Former Soviet Republics'
+            range:   JN6500-6598
+            start:   JN6500
+            end:     JN6598
+          - name:    'Estonia'
+            range:   JN6615
+            start:   JN6615
+            end:     JN6615
+          - name:    'Ukraine'
+            range:   JN6630-6639
+            start:   JN6630
+            end:     JN6639
+          - name:    'Belarus'
+            range:   JN6640-6649
+            start:   JN6640
+            end:     JN6649
+          - name:    'Moldova'
+            range:   JN6680-6689
+            start:   JN6680
+            end:     JN6689
+          - name:    'Russia (Federation)'
+            range:   JN6690-6699
+            start:   JN6690
+            end:     JN6699
+          - name:    'Latvia'
+            range:   JN6730-6739
+            start:   JN6730
+            end:     JN6739
+          - name:    'Lithuania'
+            range:   JN6745
+            start:   JN6745
+            end:     JN6745
+          - name:    'Poland'
+            range:   JN6750-6769
+            start:   JN6750
+            end:     JN6769
+          - name:    'Scandinavia.  Northern Europe'
+            range:   JN7011-7066
+            start:   JN7011
+            end:     JN7066
+          - name:    'Denmark'
+            range:   JN7101-7367
+            start:   JN7101
+            end:     JN7367
+          - name:    'Greenland'
+            range:   JN7370-7379
+            start:   JN7370
+            end:     JN7379
+          - name:    'Iceland'
+            range:   JN7380-7389
+            start:   JN7380
+            end:     JN7389
+          - name:    'Finland'
+            range:   JN7390-7399
+            start:   JN7390
+            end:     JN7399
+          - name:    'Norway'
+            range:   JN7401-7695
+            start:   JN7401
+            end:     JN7695
+          - name:    'Sweden'
+            range:   JN7721-7995
+            start:   JN7721
+            end:     JN7995
+          - name:    'Spain'
+            range:   JN8101-8399
+            start:   JN8101
+            end:     JN8399
+          - name:    'Portugal'
+            range:   JN8423-8661
+            start:   JN8423
+            end:     JN8661
+          - name:    'Switzerland'
+            range:   JN8701-9599
+            start:   JN8701
+            end:     JN9599
+          - name:    'Balkan States'
+            range:   JN9600-9689
+            start:   JN9600
+            end:     JN9689
+  - subclass:  JQ
+    name:     'Political institutions and public administration (Asia, Africa, Australia, Pacific Area, etc.)'
+    sections:
+      - name:    'Political institutions and public administration (Asia, Africa, Australia, Pacific Area, etc.)'
+        range:   JQ21-6651
+        start:   JQ21
+        end:     JQ6651
+        sections:
+          - name:    'Asia'
+            range:   JQ21-1852
+            start:   JQ21
+            end:     JQ1852
+            sections:
+              - name:    'India'
+                range:   JQ200-620
+                start:   JQ200
+                end:     JQ620
+              - name:    'Central Asia'
+                note:    'Including former republics of the Soviet Union'
+                range:   JQ1070-1199
+                start:   JQ1070
+                end:     JQ1199
+              - name:    'East Asia'
+                note:    'Including China, Japan, Korea'
+                range:   JQ1499-1749
+                start:   JQ1499
+                end:     JQ1749
+              - name:    'Middle East'
+                note:    'Including Turkey, Iran, Israel, Arabian Peninsula'
+                range:   JQ1758-1852
+                start:   JQ1758
+                end:     JQ1852
+                sections:
+                  - name:    'Arab countries'
+                    range:   JQ1850
+                    start:   JQ1850
+                    end:     JQ1850
+                  - name:    'Islamic countries'
+                    range:   JQ1852
+                    start:   JQ1852
+                    end:     JQ1852
+          - name:    'Africa'
+            range:   JQ1870-3981
+            start:   JQ1870
+            end:     JQ3981
+          - name:    'Atlantic Ocean islands'
+            range:   JQ3981.5-3986.7
+            start:   JQ3981.5
+            end:     JQ3986.7
+          - name:    'Australia.  New Zealand.  Pacific Ocean islands'
+            range:   JQ3995-6651
+            start:   JQ3995
+            end:     JQ6651
+  - subclass:  JS
+    name:     'Local government.  Municipal government'
+    sections:
+      - name:    'Local government.  Municipal government'
+        range:   JS39-8500
+        start:   JS39
+        end:     JS8500
+        sections:
+          - name:    'History'
+            range:   JS55-68
+            start:   JS55
+            end:     JS68
+          - name:    'Executive branch.  Mayor'
+            range:   JS141-163
+            start:   JS141
+            end:     JS163
+          - name:    'Legislative branch'
+            range:   JS171
+            start:   JS171
+            end:     JS171
+          - name:    'Elections.  Local elections.  Municipal elections'
+            range:   JS221-227
+            start:   JS221
+            end:     JS227
+          - name:    'Local government other than municipal'
+            range:   JS241-271
+            start:   JS241
+            end:     JS271
+          - name:    'United States'
+            range:   JS300-1583
+            start:   JS300
+            end:     JS1583
+          - name:    'Canada'
+            range:   JS1701-1800
+            start:   JS1701
+            end:     JS1800
+          - name:    'West Indies.  Caribbean Area'
+            range:   JS1840-2058.9
+            start:   JS1840
+            end:     JS2058.9
+          - name:    'Mexico'
+            range:   JS2101-2143
+            start:   JS2101
+            end:     JS2143
+          - name:    'Central America'
+            range:   JS2145-2219
+            start:   JS2145
+            end:     JS2219
+          - name:    'South America'
+            range:   JS2300-2778
+            start:   JS2300
+            end:     JS2778
+          - name:    'Europe'
+            range:   JS3000-6949.89
+            start:   JS3000
+            end:     JS6949.89
+          - name:    'Asia'
+            range:   JS6950-7520
+            start:   JS6950
+            end:     JS7520
+            sections:
+              - name:    'Arab countries'
+                range:   JS7510
+                start:   JS7510
+                end:     JS7510
+              - name:    'Islamic countries'
+                range:   JS7520
+                start:   JS7520
+                end:     JS7520
+          - name:    'Africa'
+            range:   JS7525-7819.9
+            start:   JS7525
+            end:     JS7819.9
+          - name:    'Atlantic Ocean islands'
+            range:   JS7820-7827.9
+            start:   JS7820
+            end:     JS7827.9
+          - name:    'Indian Ocean islands'
+            range:   JS7900-7906.9
+            start:   JS7900
+            end:     JS7906.9
+          - name:    'Australia.  New Zealand.  Pacific Ocean islands'
+            range:   JS8001-8490.9
+            start:   JS8001
+            end:     JS8490.9
+  - subclass:  JV
+    name:     'Colonies and colonization.  Emigration and immigration.  International migration'
+    sections:
+      - name:    'Colonies and colonization.  Emigration and immigration.  International migration'
+        range:   JV1-9480
+        start:   JV1
+        end:     JV9480
+        sections:
+          - name:    'Colonies and colonization'
+            range:   JV1-5397
+            start:   JV1
+            end:     JV5397
+            sections:
+              - name:    'Periodicals.  Serials'
+                range:   JV1-9
+                start:   JV1
+                end:     JV9
+              - name:    'Societies'
+                range:   JV10-19
+                start:   JV10
+                end:     JV19
+              - name:    'History'
+                range:   JV61-152
+                start:   JV61
+                end:     JV152
+              - name:    'Administration'
+                range:   JV412-461
+                start:   JV412
+                end:     JV461
+              - name:    'Colonizing nations'
+                range:   JV500-5397
+                start:   JV500
+                end:     JV5397
+          - name:    'Emigration and immigration.  International migration'
+            range:   JV6001-9480
+            start:   JV6001
+            end:     JV9480
+            sections:
+              - name:    'Periodicals.  Serials'
+                range:   JV6001-6006
+                start:   JV6001
+                end:     JV6006
+              - name:    'History'
+                range:   JV6021-6033
+                start:   JV6021
+                end:     JV6033
+              - name:    'Emigration'
+                range:   JV6091-6124
+                start:   JV6091
+                end:     JV6124
+              - name:    'Immigration'
+                range:   JV6201-6347
+                start:   JV6201
+                end:     JV6347
+              - name:    'United States'
+                range:   JV6403-7127
+                start:   JV6403
+                end:     JV7127
+              - name:    'Canada, Latin America, etc.'
+                range:   JV7200-7539
+                start:   JV7200
+                end:     JV7539
+              - name:    'Europe'
+                range:   JV7590-8339.7
+                start:   JV7590
+                end:     JV8339.7
+              - name:    'Asia'
+                range:   JV8490-8758
+                start:   JV8490
+                end:     JV8758
+              - name:    'Arab countries'
+                range:   JV8760
+                start:   JV8760
+                end:     JV8760
+              - name:    'Islamic countries'
+                range:   JV8762
+                start:   JV8762
+                end:     JV8762
+              - name:    'Africa'
+                range:   JV8790-9024.5
+                start:   JV8790
+                end:     JV9024.5
+              - name:    'Atlantic Ocean islands'
+                range:   JV9029-9036
+                start:   JV9029
+                end:     JV9036
+              - name:    'Indian Ocean islands'
+                range:   JV9040-9047
+                start:   JV9040
+                end:     JV9047
+              - name:    'Australia.  New Zealand'
+                range:   JV9100-9269
+                start:   JV9100
+                end:     JV9269
+              - name:    'Pacific Ocean islands'
+                range:   JV9290-9470
+                start:   JV9290
+                end:     JV9470
+  - subclass:  JX
+    name:     'International law, see JZ and KZ'
+    sections:
+      - name:    'International law, see JZ and KZ'
+        range:   JX(1)-(6650)
+        start:   JX1
+        end:     JX6650
+        sections:
+          - name:    'Collections.  Documents.  Cases'
+            range:   JX(63)-(191)
+            start:   JX63
+            end:     JX191
+          - name:    'Collections, cases, etc.  By country'
+            range:   JX(220)-(1195)
+            start:   JX220
+            end:     JX1195
+          - name:    'Codification of international law'
+            range:   JX(1261)-(1283)
+            start:   JX1261
+            end:     JX1283
+          - name:    'Foreign relations'
+            range:   JX(1305)-(1598)
+            start:   JX1305
+            end:     JX1598
+          - name:    'Diplomacy'
+            range:   JX(1621)-(1896)
+            start:   JX1621
+            end:     JX1896
+          - name:    'International arbitration, organization, etc.'
+            range:   JX(1901)-(1995)
+            start:   JX1901
+            end:     JX1995
+          - name:    'International law'
+            range:   JX(2001)-(6650)
+            start:   JX2001
+            end:     JX6650
+  - subclass:  JZ
+    name:     'International relations'
+    sections:
+      - name:    'International relations'
+        range:   JZ5-6530
+        start:   JZ5
+        end:     JZ6530
+        sections:
+          - name:    'Periodicals'
+            range:   JZ5.5-18
+            start:   JZ5.5
+            end:     JZ18
+          - name:    'Societies, associations, academies, institutes, etc., for the study of international relations'
+            range:   JZ24-38
+            start:   JZ24
+            end:     JZ38
+          - name:    'Sources'
+            range:   JZ63-1153
+            start:   JZ63
+            end:     JZ1153
+            sections:
+              - name:    'By region or country'
+                range:   JZ221-1153
+                start:   JZ221
+                end:     JZ1153
+          - name:    'Relation to other disciplines and topics'
+            range:   JZ1249-1254
+            start:   JZ1249
+            end:     JZ1254
+          - name:    'Scope of international relations. Political theory. Diplomacy'
+            range:   JZ1305-2060
+            start:   JZ1305
+            end:     JZ2060
+            sections:
+              - name:    'By period'
+                range:   JZ1329.5-1395
+                start:   JZ1329.5
+                end:     JZ1395
+              - name:    'Diplomatic and consular service'
+                range:   JZ1400-1454
+                start:   JZ1400
+                end:     JZ1454
+              - name:    'Scope of international relations with regard to countries, territories, regions, etc.'
+                range:   JZ1464-2060
+                start:   JZ1464
+                end:     JZ2060
+          - name:    'State territory and its parts'
+            range:   JZ3674-3875
+            start:   JZ3674
+            end:     JZ3875
+            sections:
+              - name:    'Boundaries'
+                range:   JZ3685
+                start:   JZ3685
+                end:     JZ3685
+              - name:    'International waters'
+                range:   JZ3686-3875
+                start:   JZ3686
+                end:     JZ3875
+          - name:    'International organizations and associations'
+            range:   JZ4835-5490
+            start:   JZ4835
+            end:     JZ5490
+            sections:
+              - name:    'Political non-governmental organizations. NGOs'
+                range:   JZ4841-4848
+                start:   JZ4841
+                end:     JZ4848
+              - name:    'Intergovernmental organizations.  IGOs'
+                range:   JZ4850-5490
+                start:   JZ4850
+                end:     JZ5490
+                sections:
+                  - name:    'League of Nations'
+                    range:   JZ4853-4934
+                    start:   JZ4853
+                    end:     JZ4934
+                  - name:    'United Nations'
+                    range:   JZ4935-5160
+                    start:   JZ4935
+                    end:     JZ5160
+          - name:    'Promotion of peace.  Peaceful change'
+            range:   JZ5511.2-6300
+            start:   JZ5511.2
+            end:     JZ6300
+            sections:
+              - name:    'Societies, associations, academies, institutes, etc., for peace promotion, research and education'
+                range:   JZ5514-5526
+                start:   JZ5514
+                end:     JZ5526
+              - name:    'Congresses and conferences'
+                range:   JZ5527-5532
+                start:   JZ5527
+                end:     JZ5532
+              - name:    'International security.  Disarmament.  Global survival'
+                range:   JZ5587-6009
+                start:   JZ5587
+                end:     JZ6009
+              - name:    'Pacific settlement of international disputes'
+                range:   JZ6010-6060
+                start:   JZ6010
+                end:     JZ6060
+          - name:    'Non-military coercion'
+            range:   JZ6360-6377
+            start:   JZ6360
+            end:     JZ6377
+          - name:    'The armed conflict.  War and order'
+            range:   JZ6385-6405
+            start:   JZ6385
+            end:     JZ6405
+          - name:    'Neutrality.  Non-participation in wars.  Norms of neutrality'
+            range:   JZ6422-6422.5
+            start:   JZ6422
+            end:     JZ6422.5
+          - name:    'Humanitarian aspects of war'
+            range:   JZ6530
+            start:   JZ6530
+            end:     JZ6530

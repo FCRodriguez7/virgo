@@ -1,0 +1,8 @@
+<%# app/views/account_requests/ill_leo.html.erb -%>
+<%-
+  set_meta_tags(title: 'Requests - ILLiad LEO Delivery')
+
+  view_debug(__FILE__)
+-%>
+
+<%= render 'ill_selection', referrer: ill_leo_path, item: params[:id] %>

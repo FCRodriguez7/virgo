@@ -1,0 +1,451 @@
+// app/assets/stylesheets/feature/advanced-search.css.scss
+
+// ============================================================================
+// Advanced search form.
+// ============================================================================
+
+.adv-search-form {
+
+    float:        left;
+    width:        400px;
+    margin-right: 15px;
+    margin-left:  10px;
+    line-height:  23px;
+    font-family:  "Helvetica Neue", Arial, sans-serif;
+    font-size:    13px;
+
+    // Select any/all fields.
+    .adv-search-logical-op {
+        margin-top: 4px;
+        font-size:  14px;
+        text-align: center;
+    }
+
+    $adv-field-gap: 22px;
+
+    // Search term input fields.
+    .adv-search-field {
+
+        margin-bottom: 10px;
+
+        label,
+        legend {
+            display:      block;
+            margin:       $adv-field-gap 0 0;
+            padding-left: 0.25em;
+            font-size:    14px;
+            font-weight:  bold;
+        }
+
+        label.tooltip {
+
+            display:      inline-block;
+            margin:       0.1em 1em 0 0;
+            padding:      0;
+            font-weight:  normal;
+
+            // Move the hidden location of the span out of the way so that it
+            // does not interfere with hover-out.
+            > span {
+                margin-top:    100%;
+                margin-left:   100%;
+                padding:       15px;
+                border-radius: 6px;
+                border-width:  3px;
+                box-shadow:    2px 2px 5px 3px #999999;
+                transition:    opacity 25ms linear 500ms;
+            }
+
+            &:hover > span {
+                margin-top:    1em;
+                margin-left:   1em;
+            }
+
+            // NOTE: The "fa-question-circle" icon *must* come after the span.
+            // Otherwise, the position calculations of the visible tooltip
+            // text are wildly different between Firefox and Chrome.
+        }
+
+        input {
+
+            font-size:     14px;
+            background:    white;
+
+            &[type="text"] {
+
+                height:        26px;
+                width:         380px;
+                padding:       3px 6px;
+                border-radius: 8px;
+                border:        1px solid #7b776f;
+                box-shadow:          0 1px 3px rgba(44, 44, 44, 0.2),
+                               inset 0 0   7px rgba(88, 88, 88, 0.2);
+
+                &:focus { outline-offset: 3px; }
+            }
+
+            &[type="checkbox"] {
+                height:         13px;
+                width:          13px;
+                padding:        3px;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    // Search term range input fields.
+    .adv-search-field.range {
+
+        // Firefox and Chrome don't agree on how to handle the margin above
+        // the legend without this arrangement
+        margin-top: $adv-field-gap;
+        legend { margin-top: 0; }
+
+        .start-end {
+
+            display: inline-flex;
+            margin:  0 0 0.5em;
+            padding: 0 0 0 0.25em;
+
+            label {
+                margin:      0.25em 0 0;
+                padding:     0;
+                font-weight: normal;
+            }
+
+            .gap {
+                flex-grow: 1;
+            }
+
+            input {
+                width:  33%;
+                margin: 0 0.5em;
+            }
+        }
+    }
+
+    // Container for other items (below)
+    .adv-search-field.special {
+        margin:        2em 0;
+        border-radius: 8px;
+        border:        2px solid lightgrey;
+    }
+
+    // - "Search within collections" checkbox
+    // - "Limit to peer reviewed articles" checkbox
+    // - "Sort results by" drop-down menu
+    .adv-search-collections,
+    .adv-search-peer-reviewed,
+    .adv-search-sort {
+
+        margin:     1.5em 1em;
+        font-size:  14px;
+
+        label,
+        input {
+            display: inline-block;
+            margin:  0 0.25em 0 0;
+            padding: 0;
+        }
+    }
+
+    // Search/Clear buttons.
+    .adv-search-buttons {
+
+        @include flex-box(row, center);
+
+        .adv-search-button {
+
+            display:        block;
+            padding:        0 10px;
+            line-height:    34px;
+            text-align:     center;
+            vertical-align: middle;
+            font-size:      16px;
+            font-weight:    bold;
+            color:          #332211;
+            border:         1px solid #79673f;
+            text-shadow:    0 1px 0 white;
+
+            &        { @extend %button-link; }
+            &:focus  { @extend %button-focus; }
+            &:hover  { @extend %button-hover; }
+            &:active { @extend %button-active; }
+        }
+
+        // "Search" button.
+        #advanced-search.adv-search-button {
+            height:       40px;
+            line-height:  34px;
+            margin-right: 20px;
+        }
+
+        // "Clear" button.
+        .reset.adv-search-button {
+            height:       38px;
+            line-height:  38px;
+        }
+    }
+}
+
+.catalog-adv-search .adv-search-form { padding-top: 2em; }
+.article-adv-search .adv-search-form { padding-top: 1em; }
+
+.adv-search-facets {
+
+    margin-top: 90px;
+
+    $adv-search-border-color: #c4b18d;
+    $adv-search-background:   #f7f3ea;
+
+    ul { // NOTE: .facet-category-list, .facet-choice-list
+        margin:          0 0 1em 0;
+        padding:         0;
+        list-style:      none inside none;
+        color:           #604927;
+        border-top:      1px solid $adv-search-border-color;
+        border-left:     1px solid $adv-search-border-color;
+        border-bottom:   1px solid $adv-search-border-color;
+        background:      $adv-search-background;
+        text-shadow:     0 1px 0 white;
+        border-radius:   8px 0 0 8px;
+        box-shadow:      0 2px 3px #cccccc;
+        background-clip: padding-box;
+    }
+
+    ul li { // NOTE: .facet-category-heading, .facet-category AND .facet-choice
+
+        border-top:      1px solid #ede7db;
+        border-bottom:   1px solid #e1d7c5;
+        transition:      background 200ms ease-in-out;
+        background-clip: padding-box;
+
+        // "Limit Results By:"
+        &.facet-category-heading { // NOTE: only for .facet-category-heading
+            text-transform: uppercase;
+            font-size:      12px;
+            background:     #fffefd;
+            cursor:         auto;
+        }
+
+        &.first { // NOTE: only for .facet-choice
+            border-top:    1px solid transparent;
+            border-radius: 8px 0 0 0;
+        }
+
+        &.last { // NOTE: only for .facet-choice
+            border-radius: 0 0 0 8px;
+        }
+
+        input:focus {
+            outline-offset: 1px;
+        }
+
+        input:hover {
+            border-top: 1px solid #dbd0ba;
+            background: #fcf8ef;
+            cursor:     pointer;
+        }
+    }
+
+    // Always-visible facet header.
+    .facet-category-label {
+
+        display:     block;
+        padding:     0.67em 0.75em;
+        font-size:   14px;
+        font-weight: bold;
+        cursor:      default;
+
+        &:focus { outline-offset: -4px; }
+        &:hover { outline: none; }
+
+        // Number of checked items in the facet category.
+        .counter {
+            @include min-width-fit-content(1.5em);
+            float:         right;
+            width:         1.5em;
+            padding:       2px 0;
+            margin-top:    -3px;
+            text-align:    center;
+            border:        1px solid gray;
+            border-radius: 50%;
+        }
+    }
+
+    // Accordion facet value checklist.
+    ul ul { // NOTE: .facet-choice-list
+
+        display:     none;
+        margin:      0;
+        color:       #222222;
+        background:  #fefdfa;
+        text-shadow: none;
+
+        // NOTE: jQuery slideDown() is very hesitant on Firefox for long lists.
+        // The problem seems to be with the ability to determine the final
+        // height of the list.  For some reason these make it work much better
+        // without negatively effecting operation on other browsers.
+        height:      100%;
+        position:    relative;
+    }
+
+    // Facet value checklist entry.
+    ul ul li { // NOTE: .facet-choice
+
+        @include flex-box(row, space-between);
+        padding:       0.5em 0.5em 0.65em;
+        border-top:    1px solid #efede9;
+        border-bottom: 1px solid #d5d2d0;
+
+        &:hover {
+            background: white;
+            border-top: 1px solid #ddeeff;
+            cursor:     auto;
+        }
+
+        // There are three parts to the entry:
+        // - input: Selection checkbox.
+        // - label: Item name.
+        // - div:   Item count.
+        input, label, div { display:      block; }
+        input, label      { margin-right: 0.5em; }
+
+        // On Chrome, the input boxes are varying sizes without setting a
+        // minimum width (Firefox doesn't mind the minimum width, but doesn't
+        // need it.)  The checkbox is too small in Chrome without scaling; it's
+        // fine in Firefox, but needs to be explicitly scaled to unity because
+        // Firefox honors -webkit-transform.
+        input {
+            min-width:          1em;
+            margin-bottom:      auto;
+            transform:          scale(1.4) translateY(1px);
+            -ms-transform:      scale(1)   translateY(0);
+            -moz-transform:     scale(1)   translateY(0);
+        }
+
+        label {
+            width:      100%;
+            margin-top: -1px;
+        }
+
+        div {
+            margin-top: -2px;
+        }
+    }
+
+    // A button for closing the list is very useful when the list is very long.
+    // Two options: (1) At the end of the open list and/or (2) floating beside
+    // the list.
+    .close-button {
+        width:          100%;
+        line-height:    135%;
+        text-align:     center;
+        text-transform: uppercase;
+        color:          #f7f3ea;
+        background:     #604927;
+        cursor:         pointer;
+    }
+
+    // (1) Close button appended to the final .facet-choice item.  This will
+    // not be displayed if the browser can handle the second approach.
+    .close-button-entry {
+        .close-button {
+            border-radius: 0 0 0 4px;
+        }
+    }
+
+    // (2) Floating close button anchored to the list.
+    .close-button-anchor {
+        display: none;
+    }
+
+    // Modify settings if the floating close button can be supported.
+    @supports (position: sticky) {
+
+        // (1) Don't use the in-list close button.
+        .close-button-entry {
+            display: none;
+        }
+
+        // (2) Set up the floating close button within a holder invisibly
+        // inserted before the initial .facet-choice item.
+        .close-button-anchor {
+
+            display:  block;
+            position: sticky;
+            top:      97vh;
+            height:   0;
+
+            .close-button {
+
+                @include width-fit-content;
+
+                position:      relative;
+                top:           -2em;
+                left:          110%;
+                padding:       2px 5%;
+                border-radius: 8px;
+
+                &:focus { outline-offset: 3px; }
+
+                // Set up an animation to highlight the floating button which
+                // will be turned on by JavaScript when the list is opened and
+                // turned off if the button is hovered over or if the list is
+                // closed.
+
+                &.animated {
+                    @include animate(kf-glow, 0s, 3s, none, infinite);
+                }
+
+                &:not(.animated) {
+                    -webkit-animation-name: none;
+                    animation-name:         none;
+                }
+            }
+        }
+    }
+}
+
+.adv-search-help {
+
+    float:         left;
+    width:         250px;
+    margin-top:    30px;
+    margin-bottom: 1em;
+    padding:       10px 0 0 0;
+    font-size:     13px;
+    border:        1px solid #e4dfa5;
+    background:    none repeat scroll 0 0 #faf7e3;
+
+    .heading {
+        margin-bottom: 0.5em;
+        padding:       0 10px;
+        font-size:     15px;
+        font-weight:   bold;
+    }
+
+    ul {
+        margin-bottom: 1em;
+        padding:       0 10px;
+    }
+
+    li {
+        margin-bottom: 5px;
+        margin-left:   15px;
+        padding:       0.25em;
+        line-height:   1.2em;
+        list-style:    disc outside none;
+    }
+
+    .advanced-help-topic {
+        margin-bottom: 0.5em;
+    }
+
+    .advanced-help-example {
+        margin-top:    0.25em;
+        margin-bottom: 0.5em;
+        line-height:   1.2em;
+        font-weight:   bold;
+    }
+}

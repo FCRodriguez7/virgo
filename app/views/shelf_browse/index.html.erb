@@ -1,0 +1,31 @@
+<%# app/views/shelf_browse/index.html.erb -%>
+<%-
+  # Virtual shelf browse main display.
+
+  def_focus = :first
+
+  items       ||= @document_list
+  title       ||= UVA::ShelfBrowse.default_title
+  focus       ||= params[:focus] || def_focus
+  orientation ||= UVA::Helper::ShelfBrowse::DEFAULT_ORIENTATION
+  css         ||= nil
+
+  template_opts = {
+    items:       items,
+    title:       title,
+    focus:       focus,
+    orientation: orientation,
+  }
+
+  css = ['shelf-browse', 'display', orientation, *css]
+  css.push('popup') if popup
+  css = css.reject(&:blank?).join(SPACE)
+
+  view_debug(__FILE__)
+-%>
+
+<%= render 'shelf_browse/shared/head', template_opts %>
+
+<div class="<%= css -%>">
+  <%= render "shelf_browse/#{orientation}/display", template_opts %>
+</div>

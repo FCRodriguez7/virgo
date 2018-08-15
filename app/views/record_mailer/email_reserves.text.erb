@@ -1,0 +1,54 @@
+<%# app/views/record_mailer/email_reserves.text.erb -%>
+<%-
+  req  ||= @reserve_request
+  host ||= @host
+
+  reserve_info = {
+    'Instructor Name'         => req.instructor_name,
+    'Instructor Computing ID' => req.instructor_cid,
+    'Requester Name'          => req.name,
+    'Requester Email'         => req.email,
+    'Course ID'               => req.course_id,
+    'Semester'                => req.semester,
+  }
+
+  reserve_items = req.reserve_items_by_coordinators[@coordinator_address]
+
+  holdings_count, holdings_message =
+    reserve_email_for_auto_parse(req, @coordinator_address)
+  holdings_header =
+    holdings_count.times.map { |i|
+      "Library#{i}|Location#{i}|Availability#{i}|Call Number#{i}|"
+    }.join
+
+  view_debug(__FILE__)
+-%>
+_______________________________________________________________________
+Course Reserve Information
+_______________________________________________________________________
+<%- reserve_info.each_pair do |label, value| -%>
+<%-   next if value.blank? -%>
+<%=   "#{label}: \t#{value}" %>
+<%- end -%>
+_______________________________________________________________________
+
+<%- reserve_items.each_with_index do |reserve_item, index| -%>
+<%-   next unless reserve_item && (doc = reserve_item.document) -%>
+<%=   index + 1 -%>.
+<%-   title  = doc.export_title -%>
+<%-   author = doc.show_heading_author -%>
+<%-   [title, author].reject(&:blank?).each do |field| -%>
+<%=     h(strip_html(field)) %>
+<%-   end -%>
+<%=   render 'catalog/email/shared/availability', document: doc -%>
+Reserve Library: <%= reserve_item.library.name.html_safe %>
+Loan Period:     <%= reserve_item.loan_period.name.html_safe %>
+Notes:           <%= reserve_item.notes.html_safe %>
+
+Virgo URL:       <%= canonical_url(doc, host) %>
+
+<%- end -%>
+_______________________________________________________________________
+
+|#|Title|Reserve Library|Loan Period|Notes|Virgo URL|<%= holdings_header %>
+<%= holdings_message %>

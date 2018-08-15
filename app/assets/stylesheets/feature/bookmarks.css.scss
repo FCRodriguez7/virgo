@@ -1,0 +1,24 @@
+// app/assets/stylesheets/feature/bookmarks.css.scss
+//
+// NOTE: Not currently used in Virgo.
+
+// ============================================================================
+// Favorites
+// ============================================================================
+
+.iconTrash {
+    padding:             0 0 0 12px;
+    background-image:    image-url('icons/mini_trash_can.gif');
+    background-position: center left;
+    background-repeat:   no-repeat;
+}
+
+.iconHeartSmall {
+    padding:    0 0 0 20px;
+    background: image-url('icons/fav_heart_16x16.gif') no-repeat left;
+}
+
+.iconFolderSmall {
+    padding:    0 0 0 20px;
+    background: image-url('icons/list.gif') no-repeat left;
+}

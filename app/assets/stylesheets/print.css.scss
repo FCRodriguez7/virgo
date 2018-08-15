@@ -1,0 +1,1640 @@
+// app/assets/stylesheets/print.css.scss
+//
+// Styles for the print layout.
+
+@import "shared/layout_initial";
+@import "shared/datatables";
+@import "feature/bookplate";
+
+// ============================================================================
+// Mixins
+// ============================================================================
+
+/// Definitions which include this mixin are only for the on-screen print view
+/// display but do not show in the actual print rendering.
+///
+@mixin on-screen-only {
+    @media print {
+        display: none;
+    }
+}
+
+/// Included on links where, for the sake of the print-out, the URL of the link
+/// is displayed afterwards.
+///
+@mixin show-url {
+    &:after {
+        margin-left: 1em;
+        background:  #f2f2f2;
+        border:      4px solid #f2f2f2;
+        content:     attr(href);
+    }
+}
+
+// ============================================================================
+// Hidden elements
+//
+// NOTE: Perhaps a better way would be to do "* { display: none; }" and then
+// selective turn on elements, but for now this is the approach that was taken.
+// ============================================================================
+
+#search,
+#tabs,
+.account-nav,
+.account-tasks,
+.action-list-container,
+.anchor-frame,
+.applied-params img,
+.browse-button,
+.cc-info-link,
+.cover-image,
+.dataTables_filter,
+.disbound-help-link,
+.download-button-panel,
+.ead-attribute,
+.ead-eadid,
+.facet-selections,
+.folder-page .access,
+.folder-page .availability,
+.folder-page .notice,
+.full-text-top,
+.google-preview,
+.hide,
+.item-availability h2,
+.item-heading,
+.map-it,
+.more-info > *,
+.more-info,
+.no-js-notice,
+.page-footer .links,
+.page-sidebar,
+.pagination,
+.player-gallery,
+.portal-button-container,
+.prev-next,
+.prev-next-collection,
+.prev-next-doc,
+.preview-thumbnail,
+.print-view-button,
+.refine-search-link,
+.related-names,
+.related-places,
+.related-subjects,
+.remove-filter,
+.remove-star,
+.renew-all-link,
+.request-buttons,
+.result-nav,
+.results dd.availability,
+.results-total a,
+.return-to-search,
+.rss-button,
+.search-elsewhere,
+.search-tools,
+.select-clear-all,
+.shelving-map,
+.show-details,
+.skip-nav,
+.split-footer a,
+.split-header-description,
+.starred-alert,
+.starred-availability-heading,
+.starred-info,
+.start-over-link,
+.streaming-thumbnail-container,
+.technical-details,
+.toggle-button,
+.tools,
+.ui-corner-all, // Flash messages
+.util-nav,
+.video-genres,
+.video-head-row,
+.video-header,
+.virgo-banner,
+h2.banner.full-page,
+hr {
+    display: none;
+}
+
+// ============================================================================
+// General: basic elements
+// ============================================================================
+
+$prn-space:             0.5em;
+$prn-horizontal-gap:    $prn-space;
+$prn-vertical-gap:      1.5 * $prn-space;
+$prn-indent:            2 * $prn-horizontal-gap;
+$prn-new-line:          2 * $prn-vertical-gap;
+$prn-horizontal-margin: 2 * $prn-indent;
+$prn-vertical-margin:   2 * $prn-new-line;
+
+* { margin: 0; padding: 0; }
+
+// In the actual print rendering, let the printer driver control the margins.
+html {
+    padding: $prn-horizontal-margin;
+}
+@media print {
+    html {
+        margin:  0;
+        padding: 0;
+    }
+}
+
+// Make Find@UVa logo and other images grayscale to better support non-color
+// printers.
+img {
+    display: block;
+    filter:  grayscale(100%);
+}
+
+// Links are clickable in the print preview.
+a {
+    color:           black;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: dashed underline;
+    }
+
+    &[href*="view=print"]:hover {
+        text-decoration-style: solid;
+    }
+
+    img {
+        display:        inline-block;
+        vertical-align: middle;
+        border:         none;
+    }
+}
+
+// Other
+b, strong { font-weight: bold; }
+
+// ============================================================================
+// General: fonts
+// ============================================================================
+
+$prn-title-font-family: Helvetica, Arial, Verdana, sans-serif;
+$prn-title-font-weight: bold;
+
+* {
+    font: normal normal normal 10pt/14pt Georgia,"Times New Roman",Times,serif;
+}
+
+h1,
+.heading,
+.title.see-more-info {
+
+    margin:         0 0 0.5em 0;
+    vertical-align: baseline;
+    font-size:      14pt;
+    font-family:    $prn-title-font-family;
+    font-weight:    $prn-title-font-weight;
+
+    &:last-of-type { margin-bottom: 1em; }
+}
+
+.medium,
+.documentPart {
+    font-size:   10pt;
+    font-family: $prn-title-font-family;
+}
+
+// ============================================================================
+// General: lists
+// ============================================================================
+
+ol, ul {
+
+    display:  block;
+    margin:   0;
+    padding:  0 0 0 $prn-indent;
+    overflow: hidden;
+
+    li { list-style-position: outside; }
+}
+
+ul li {
+    list-style-type: square;
+}
+
+// ============================================================================
+// General: definition lists
+// ============================================================================
+
+$prn-dt-width:     10em;
+$prn-dt-gap:       $prn-horizontal-gap;
+
+dl {
+    position: relative;
+}
+
+dt, dd {
+    margin:   0 0 $prn-vertical-gap 0;
+    overflow: hidden;
+}
+
+dt {
+    width:         $prn-dt-width;
+    padding-right: $prn-dt-gap;
+    font-style:    italic;
+}
+
+dd {
+    > * {
+        display:    block;
+        margin-top: ($prn-vertical-gap / 2);
+    }
+    > :first-child {
+        margin-top: 0;
+    }
+}
+
+dd + dd {
+    margin-top: -($prn-vertical-gap / 2);
+    margin-left: calc(#{$prn-dt-width} + #{$prn-dt-gap});
+}
+
+// ============================================================================
+// General: tables
+// ============================================================================
+
+$prn-cell-height:  2em;
+$prn-cell-padding: 0.5em;
+$prn-border-color: #333333;
+$prn-header-bg:    #eeeeee;
+
+// On Firefox, `border-collapse: collapse` makes the borders invisible on the
+// second and subsequent pages of the printout; `border-spacing: 0` has the
+// intended effect without triggered that problem.
+table, th, td {
+    color:           black;
+    border:          1px solid $prn-border-color;
+    border-collapse: separate;
+    border-spacing:  0;
+}
+
+th, td {
+    height:     $prn-cell-height;
+    padding:    $prn-cell-padding;
+    text-align: left;
+}
+
+th {
+    font-style:       italic;
+    font-weight:      bolder;
+    font-size:        smaller;
+    background-color: $prn-header-bg;
+}
+
+tr {
+    page-break-inside: avoid;
+}
+
+// ============================================================================
+// General: headings
+// ============================================================================
+
+$prn-filter-gap:  $prn-horizontal-gap;
+$prn-heading-gap: 20px;
+
+%heading-line {
+    @include flex-box(row);
+    margin-top:    $prn-heading-gap / 2;
+    margin-bottom: $prn-heading-gap;
+}
+
+// ============================================================================
+// Page footer
+// ============================================================================
+
+.page-footer {
+
+    @include user-select(none);
+
+    margin:     $prn-space 0;
+    padding:    $prn-space 0;
+    clear:      both;
+    border-top: 1px dashed black;
+
+    page-break-inside: avoid;
+
+    div, a, p {
+        line-height: 13pt;
+        font-size:   9pt;
+        font-family: $prn-title-font-family;
+        color:       #656565;
+    }
+
+    .footer-content {
+
+        @include flex-box(row);
+        flex-wrap: wrap;
+
+        .external-links,
+        .address {
+            width: 50%;
+        }
+        .external-links {
+            text-align: right;
+        }
+        .federal-lib-logo {
+            width: 4em;
+            img {
+                display:       block;
+                margin-bottom: 0;
+            }
+        }
+        .version-number {
+            display:     inline-block;
+            white-space: nowrap;
+        }
+    }
+}
+
+// ============================================================================
+// Metadata
+// ============================================================================
+
+.page-content,
+.item-availability,
+.related-subjects {
+    margin:  $prn-space 0;
+    padding: $prn-space 0;
+    border:  none;
+}
+
+dd.browse-entry,
+dd.title-field,
+dl.metadata.hd {
+    display:        block;
+    clear:          both;
+    width:          auto;
+    margin:         0 $prn-horizontal-margin $prn-vertical-gap 0 !important;
+    padding-bottom: 0;
+}
+
+.browse-entry  a,
+.browse-search a,
+dd.title-field  a,
+.title.see-more-info a {
+    display:     inline;
+    line-height: 16pt;
+    font-size:   12pt;
+    font-family: $prn-title-font-family;
+    font-weight: $prn-title-font-weight;
+}
+
+.resp-stmt-field div {
+
+    font-size:  11pt;
+    font-style: italic !important;
+
+    &:last-of-type { margin-bottom: $prn-new-line; }
+}
+
+.results {
+
+    .details {
+
+        position:          relative;
+        margin-bottom:     2em;
+        page-break-inside: avoid;
+
+        .metadata { clear: left; }
+    }
+
+    .metadata {
+        dt {
+
+            float: left;
+            clear: left;
+
+            &::after { content: ": "; }
+        }
+
+        dd {
+            display: block;
+            clear:   right;
+        }
+    }
+
+    .single-copy {
+
+        display:     inline-block;
+        line-height: 11px;
+        margin:      0;
+        padding:     0;
+
+        .loader {
+            display: inline-block;
+            height:  auto;
+            margin:  0;
+        }
+    }
+
+    img.photo {
+        position: absolute;
+        top:      0;
+        left:     -12em;
+        z-index:  2;
+    }
+
+}
+
+// ============================================================================
+// Item tables
+// ============================================================================
+
+.item-availability {
+
+    margin:   $prn-vertical-gap 0;
+    overflow: hidden;
+
+    h2,
+    > div {
+        margin: 1em 0;
+    }
+
+    .online-availability {
+
+        display:         inline-table;
+        width:           inherit;
+        border-collapse: separate;
+        border-spacing:  0;
+        border:          1px solid $prn-border-color;
+
+        > * {
+            display:        table-cell;
+            padding:        2 * $prn-cell-padding;
+            border:         inherit;
+            vertical-align: middle;
+        }
+
+        > h3 {
+            @include width-fit-content;
+            height:     $prn-cell-height;
+            background: $prn-header-bg;
+        }
+
+        img {
+            display: block;
+            margin:  auto;
+        }
+
+        // Online source entry.
+        .online-source {
+
+            display: inline-block;
+
+            > * {
+                display:        inline-block;
+                vertical-align: middle;
+            }
+
+            > .logo   {
+                width:        25px;
+                margin-right: 0.5em;
+            }
+
+            > .source {
+                text-decoration: dotted underline;
+                vertical-align:  middle;
+            }
+        }
+
+        .online-holding a {
+            display: block;
+        }
+    }
+
+    .physical-availability > .holding {
+
+        $indent: 12px;
+        $border: 2px solid $prn-border-color;
+
+        padding-bottom: $indent;
+        border-left:    $border;
+        border-right:   $border;
+        background:     #e0e0e0;
+
+        &:first-of-type {
+            padding-top: $indent;
+            border-top:  $border;
+        }
+
+        > * { margin-left: $indent; }
+
+        h3 {
+            font-size:   larger;
+            font-weight: bolder;
+        }
+
+        .holding-group {
+            > *                { margin-left: $indent; }
+            .home-location     { font-weight: bolder; }
+            .summary-group > * { margin-left: $indent; }
+        }
+    }
+
+    .policy-explanation {
+        margin-top: 1.5em;
+    }
+}
+
+.holdings,
+.item-list {
+    &.starred-items {
+        .starred-star-heading,
+        .star-container {
+            display: none;
+        }
+    }
+}
+
+.holdings {
+    width:        100%;
+    margin-right: $prn-horizontal-gap;
+
+    // Displayed in place of the holdings table when no data is available.
+    .no-info {
+        font-style: italic;
+        text-align: center;
+    }
+}
+
+.availability-indicator,
+.map-indicator {
+
+    display:        inline-block;
+    margin:         0 0.5em 0 0;
+    padding:        0 4px;
+    text-align:     center;
+    text-transform: uppercase;
+    white-space:    nowrap;
+    font-size:      10px;
+    font-weight:    bold;
+    color:          #626262;
+    background:     white;
+    border-radius:  4px;
+    border:         1px solid #626262;
+    cursor:         default;
+
+    &.unavailable { background: #e0e0e0; }
+}
+
+.holding-library-name,
+.location-text {
+    display: inline-block;
+}
+
+// ============================================================================
+// Print view controls.
+// ============================================================================
+
+.print-controls {
+
+    @include on-screen-only;
+    @include user-select(none);
+
+    margin:     -1em 0 2em;
+    padding:    0.75em;
+    background: #dedede;
+
+    a:hover {
+        text-decoration: none !important;
+    }
+
+    .item-toggle.btn,
+    .print-window-button,
+    .close-print-view-button {
+
+        display:       inline-block;
+        line-height:   normal;
+        margin:        0 1em 0 0.2em;
+        padding:       6px 8px;
+        font-size:     11px;
+        color:         $prn-border-color;
+        text-shadow:   0 1px 1px rgba(255, 255, 255, 0.75);
+        border:        1px outset #888888;
+        border-radius: 4px;
+        box-shadow:    inset 0 1px 0   rgba(255, 255, 255, 0.2),
+                             0 1px 2px rgba(0, 0, 0, 0.05);
+        background:    #e6e6e6 linear-gradient(white 25%, #e6e6e6) no-repeat;
+        cursor:        pointer;
+
+        &:focus { outline-offset: 4px; }
+    }
+
+    .tip {
+        display:     inline-block;
+        margin-top:  0.25em;
+        margin-left: 2.2em;
+        padding:     2px 0.5em;
+        font-size:   small;
+        font-style:  italic;
+        border:      1px solid gray;
+        background:  #dfdfdf;
+    }
+}
+
+// ============================================================================
+// PRINT VIEW: Bibliographic citations
+// ============================================================================
+
+.tool-heading .heading {
+    margin-bottom: 1em;
+    border-bottom: 1px dashed black;
+}
+
+.tool-content {
+    .citation-style {
+        margin-bottom: 0.25em;
+        &, * { font-weight: bold; }
+    }
+}
+
+// ============================================================================
+// PRINT VIEW: Starred items
+// ============================================================================
+
+.folder-page {
+    .heading {
+        margin-bottom: $prn-new-line;
+        font-size:     16px;
+    }
+    .star-counter {
+        font: inherit;
+    }
+}
+
+// ============================================================================
+// PRINT VIEW: Recently added items (Music/Video lens)
+// ============================================================================
+
+$prn-rai-margin:         25px;
+$prn-rai-vertical-gap:   10px;
+$prn-rai-horizontal-gap: 5px;
+$prn-rai-item-width:     120px;
+
+.video-index-page,
+.music-index-page {
+
+    .recently-added-header {
+
+        display:        inline-block;
+        margin:         0.25em 0 1.5em;
+        font-size:      16pt;
+        vertical-align: sub;
+
+        .divider { display: none; }
+    }
+
+    .recently-added-items {
+
+        display: block;
+
+        .recently-added-row {
+            @include flex-box(row);
+            max-width: 100%;
+            margin:    0 0 $prn-rai-vertical-gap 0;
+        }
+
+        .preview-thumbnail {
+            @include flex-box(column);
+            min-width: $prn-rai-item-width;
+            margin:    0 $prn-rai-horizontal-gap 0 $prn-rai-margin;
+        }
+
+        .cover-image {
+
+            display: block;
+
+            img {
+                display:    block;
+                float:      none;
+                max-height: $prn-rai-item-width;
+                max-width:  $prn-rai-item-width;
+                margin:     0;
+            }
+        }
+
+        .thumb-label {
+            display:   inline;
+            max-width: $prn-rai-item-width;
+            margin:    0 0 $prn-rai-vertical-gap;
+            overflow:  hidden;
+        }
+    }
+}
+
+// ============================================================================
+// PRINT VIEW: Search results
+// ============================================================================
+
+.applied-params {
+
+    @extend %heading-line;
+
+    .tagline {
+        display:     inline-block;
+        margin:      auto 0;
+        font-size:   14pt;
+        font-weight: bold;
+    }
+
+    .applied-query-set,
+    .applied-filter-set {
+        display:     inline-block;
+        margin-left: $prn-filter-gap;
+    }
+
+    .applied-query,
+    .applied-filter {
+
+        display:     inline-block;
+        margin-left: $prn-filter-gap;
+
+        &.inner { padding: 1px 0 3px 0; }
+
+        .name-and-value {
+
+            display: block;
+
+            .query-name,
+            .filter-name {
+
+                padding-left: $prn-filter-gap;
+                word-spacing: -25%;
+                font-variant: all-small-caps;
+
+                &::after { content: ":"; }
+            }
+
+            .query-value,
+            .filter-value {
+                display:       block;
+                padding:       2px;
+                text-align:    center;
+                word-spacing:  -25%;
+                border-radius: 4px;
+                border:        1px solid black;
+            }
+
+        }
+    }
+
+    .connector {
+        display:      inline-block;
+        margin-left:  $prn-filter-gap;
+        font-weight:  bold;
+        font-style:   italic;
+        font-size:    smaller;
+    }
+
+    // Result item count and pagination links.
+    .result-line {
+
+        margin: auto 0 auto 2 * $prn-filter-gap;
+
+        > *:not(.current-page) { display:     none; }
+        .current-page *        { font-weight: normal; }
+    }
+}
+
+.combined-results-header > .applied-params {
+    margin-bottom: $prn-heading-gap / 2;
+}
+
+.page-content > .result-nav.top {
+    display:    block;
+    visibility: hidden;
+}
+
+.metadata.hd,
+dl.metadata.hd {
+    @include flex-box(row);
+}
+
+.list-item-number {
+    margin-right: 0.75em;
+    font:         italic normal normal 10pt/16pt
+                  Georgia, "Times New Roman", Times, serif;
+}
+
+.browse-entry *,
+.title-field * {
+    font: inherit;
+}
+
+.shelf-browse.links {
+    display: inline-block;
+}
+
+.no-items-extended-message a {
+    display: inline;
+}
+
+// ============================================================================
+// PRINT VIEW: Combined search results
+// ============================================================================
+
+// Print view is subject to the same delays as the normal combined view so make
+// sure that the loader image appears until it is replaced asynchronously with
+// the article search results.
+.article-results-container {
+    min-height: 50px;
+    background: $ajax-loader no-repeat scroll 50% 30px white;
+}
+
+.split-title {
+    padding-top:   $prn-vertical-gap;
+    margin-bottom: $prn-vertical-gap / 2;
+    font-size:     large;
+    font-weight:   bold;
+    border-top:    1px dashed black;
+}
+
+.results-total {
+
+    margin-bottom: $prn-vertical-margin;
+    font-size:     larger;
+
+    b, strong {
+        font-style:  inherit;
+        font-weight: normal;
+    }
+}
+
+// ============================================================================
+// PRINT VIEW: Advanced search page
+//
+// There's no "print view" button but it's still good to provide something
+// useful if the user tries to print the contents of the screen.
+// ============================================================================
+
+.advanced-page .page-container {
+
+    padding-left:   1px;
+
+    // Filled-out search fields
+    .adv-search-form {
+
+        h1 {
+            margin-bottom: 0.5em;
+        }
+
+        .adv-search-logical-op {
+            margin-top: 0;
+        }
+
+        .adv-search-field,
+        .adv-search-collections,
+        .adv-search-peer-reviewed,
+        .adv-search-sort {
+            margin-top: 0.5em;
+        }
+
+        .adv-search-buttons {
+            display: none;
+        }
+
+        h4 {
+            margin:  0;
+            padding: 0;
+        }
+
+        input, label {
+            display:        inline-block;
+            vertical-align: middle;
+        }
+
+        input[type="checkbox"] {
+            margin-left: 0.5em;
+        }
+
+        .tooltip {
+
+            display:      inline-block;
+            margin-right: 0.5em;
+
+            span { display: none; }
+        }
+    }
+
+    // Search help
+    .adv-search-help {
+
+        margin-top:        1em;
+        page-break-inside: avoid;
+
+        .heading {
+            font-weight: bolder;
+        }
+
+        li {
+            margin-top: 0.5em;
+            > * {
+                margin:  0;
+                padding: 0;
+            }
+        }
+    }
+
+    // Facet values and counts - disabled for now.
+    @if false {
+        .page-sidebar {
+
+            display: block;
+            float:   right;
+
+            .advanced-elsewhere {
+                display: none;
+            }
+
+            .facet-category-label {
+
+                display:       block;
+                margin-top:    1em;
+                margin-bottom: 0.25em;
+                font-weight:   bolder;
+
+                &.first { visibility: hidden; }
+            }
+
+            li {
+                list-style: none;
+            }
+        }
+    }
+}
+
+// ============================================================================
+// PRINT VIEW: My Account
+// ============================================================================
+
+.account-container {
+
+    .sub-heading {
+        margin-top:    -0.5em;
+        margin-bottom: 0.5em;
+        font-size:     large;
+    }
+
+    // "My Account"
+    .list-heading .heading {
+        margin: 0;
+    }
+
+    // Starred items and holdings
+    .item-list {
+
+        a {
+            display: inline-block;
+        }
+
+        th {
+            background-color: $prn-header-bg;
+
+            &:focus {
+                outline-style:  dashed;
+                outline-offset: -4px;
+            }
+
+            &.sorting      { @include sorting-std-icon(100%,    0.5em); }
+            &.sorting_asc  { @include sorting-asc-icon(100.75%, 0.2em); }
+            &.sorting_desc { @include sorting-dsc-icon(100%,    0.7em); }
+
+            // Don't show the sorting arrows on the printed rendering.
+            @media print {
+                background-image: none;
+            }
+        }
+
+        td {
+            margin-bottom: $prn-cell-padding;
+            padding:       $prn-cell-padding;
+        }
+    }
+}
+
+// ============================================================================
+// PRINT VIEW: Item details show pages
+// ============================================================================
+
+.list-heading {
+    @extend %heading-line;
+}
+
+.item-fields {
+
+    display:    inline-block;
+    margin-top: $prn-new-line;
+
+    dl {
+        dt, dd {
+            display: block !important;
+        }
+        dt {
+            float: left;
+        }
+        .technical-details {
+            display: none !important;
+        }
+    }
+}
+
+.copyright-field {
+    font: inherit;
+}
+
+.copyright-popup {
+
+    display:     inline-block;
+    padding-top: 4px;
+
+    img { margin-right: 0.75em; }
+}
+
+// Show links in holdings, except for articles which are very long.
+body.show-page:not(.articles-page) {
+    .online-holding a {
+        @include show-url;
+    }
+}
+
+// ============================================================================
+// PRINT VIEW: "Virgo Classic" lens
+// ============================================================================
+
+// TODO: Should move inside .classic-page eventually...
+.item-toggle.btn {
+    display: none;
+}
+
+.classic-page {
+
+    .page-content {
+
+        dd.browse-entry,
+        dd.title-field,
+        dl.metadata.hd {
+            margin: 0 !important;
+        }
+
+        .classic-results {
+
+            .item-display {
+
+                margin:     0.5em 3em 2em;
+                color:      $prn-border-color;
+                background: none;
+                border:     2px solid $prn-border-color;
+                box-shadow: none;
+
+                .item-content {
+
+                    .title-area {
+
+                        padding-top:   8px;
+                        padding-right: 8px;
+
+                        h1.title-field {
+                            margin: 0 0 4px;
+                        }
+                    }
+
+                    .item-fields {
+
+                        // From components.css.scss with modifications
+                        dt {
+                            width:      124px;
+                            margin:     0 -100% 0 0;
+                            text-align: left;
+                            padding:    0;
+                            float:      left;
+                            clear:      both;
+                        }
+
+                        // From components.css.scss with modifications
+                        dd {
+                            border-top:  1px solid #eeeeee;
+                            margin-left: 0;
+                            padding:     0 0 0 139px;
+                            float:       left;
+                        }
+                    }
+
+                    .item-availability {
+                        margin-bottom: 0;
+                        overflow:      initial;
+                    }
+
+                    .item-toggle.btn {
+                        display: block;
+                        left:    94.5%;
+                        &.top    { top:    3px; }
+                        &.bottom { bottom: -3px; }
+                    }
+                }
+            }
+
+        }
+    }
+
+    &.show-page .page-content {
+        .item-toggle.btn {
+            display: none;
+        }
+    }
+}
+
+// ============================================================================
+// EAD item details show page print view.
+// ============================================================================
+
+$prn-ead-list-space:      0.5em;
+$prn-ead-paragraph-space: 2 * $prn-ead-list-space;
+$prn-ead-section-space:   3 * $prn-ead-list-space;
+$prn-ead-indent:          1em;
+
+%ead-heading {
+    margin-top:    $prn-ead-section-space;
+    margin-bottom: 0.5em;
+    font-weight:   bold;
+    font-size:     large;
+}
+
+.ead-ead,
+.ead-component,
+.ead-details {
+    p {
+        margin-bottom: $prn-ead-paragraph-space;
+        img { display: none; }
+    }
+    ul {
+        margin-bottom: $prn-ead-paragraph-space;
+        margin-left:   $prn-ead-indent;
+        li { list-style: inside; }
+    }
+    .ead-date,
+    .ead-unitdate,
+    .ead-language {
+        display: inline;
+        font:    inherit;
+    }
+}
+
+.ead-ead,
+.ead-component {
+    .ead-eadheader,
+    .ead-unitid,
+    .ead-controlaccess {
+        display: none;
+    }
+    .ead-head {
+        @extend %ead-heading;
+    }
+    .ead-did {
+
+        margin-top: $prn-ead-section-space;
+
+        > * {
+            margin-bottom: $prn-ead-list-space;
+            .ead-label {
+                display:     inline;
+                font-weight: bold;
+                &:after { content: ": "; }
+            }
+            .ead-label + * {
+                display: inline;
+            }
+        }
+        > .ead-origination {
+            margin-bottom: initial;
+            &:last-of-type { margin-bottom: $prn-ead-list-space; }
+        }
+        .ead-corpname {
+            margin-bottom: $prn-ead-list-space;
+        }
+        .ead-unittitle {
+            @extend %ead-heading;
+        }
+    }
+}
+
+.ead-details {
+
+    margin-top: $prn-ead-section-space;
+
+    h2, h2 > * {
+        @extend %ead-heading;
+        margin-top:      2.5em;
+        margin-bottom:   $prn-ead-section-space;
+        text-decoration: underline;
+    }
+    h3, h3 > * {
+        @extend %ead-heading;
+    }
+    .ead-materials-list {
+        margin-bottom: 0;
+    }
+    .ead-materials-item,
+    .ead-materials-more {
+        list-style: none;
+        > * { font-weight: bold; }
+    }
+}
+
+.ead-breadcrumbs {
+
+    @include width-fit-content;
+    margin-bottom: 2em;
+    padding:       3px;
+    border:        1px solid gray;
+
+    a {
+        margin-left:  0.5em;
+        margin-right: 0.5em;
+    }
+}
+
+// Not displayed but used as a bottom margin.
+.streaming-gallery-heading {
+    height:        0;
+    margin-bottom: 1.5em;
+    visibility:    hidden;
+}
+
+// ============================================================================
+// Articles full-text print view.
+// ============================================================================
+
+$prn-ft-space:          0.5em;
+$prn-ft-vertical-space: $prn-ft-space;
+$prn-ft-paragraph-gap:  2 * $prn-ft-vertical-space;
+
+$prn-ft-section-space:  0.75em;
+$prn-ft-section-top:    $prn-ft-section-space;
+$prn-ft-section-bottom: 2 * $prn-ft-section-space;
+
+.full_text-page .full-text-viewer .scroller {
+
+    margin-top: 2 * $prn-ft-section-space;
+
+    // General top-level element format.
+    > * {
+        display:       block;
+        clear:         both;
+        margin-bottom: $prn-ft-paragraph-gap;
+    }
+
+    // Article ID and other information (<anid> in the received data).
+    > anid {
+        color:        gray;
+        font-variant: all-small-caps;
+        word-break:   break-all;
+    }
+
+    // Journal section (<jsection> in the received data).
+    > jsection {
+        margin-top:   $prn-ft-section-top;
+        padding-left: 0.25em;
+        font-size:    larger;
+        font-weight:  bolder;
+        font-variant: all-small-caps;
+        border:       1px solid gray;
+    }
+
+    // Extended title? (<et> in the received data).
+    > et {
+        font-style: italic;
+    }
+
+    // Article title (<title> in the received data).
+    > atitle {
+        margin-top:  $prn-ft-section-top;
+        font-size:   large;
+        font-weight: bolder;
+    }
+
+    // Article subtitle or tagline (<sbt> in the received data).
+    > sbt {
+        margin-bottom: $prn-ft-section-bottom;
+        font-style:    italic;
+    }
+
+    // Author by-line (<aug> in the received data).
+    //
+    // One or more of these elements may been seen in the initial parts of
+    // articles like book reviews where the title and author of the subject
+    // book is shown as part of the lines that precede the text of the article.
+    //
+    aug {
+        margin-top:    $prn-ft-vertical-space;
+        margin-bottom: $prn-ft-paragraph-gap;
+        padding-left:  0.75em;
+        padding-right: 1em;
+        font-style:    italic;
+    }
+
+    // Author by-line and background (<aug> in the received data).
+    //
+    // For most received articles this is the final element, which serves as a
+    // "statement of responsibility" for the article itself -- usually one or
+    // more author names and affiliations/biographies.
+    //
+    aug:last-of-type {
+        margin-top:    2 * $prn-ft-section-space;
+        margin-bottom: 0;
+        padding-left:  0;
+        padding-right: 0;
+    }
+
+    // Paragraphs within responsibility section.
+    aug * {
+        margin-top: $prn-ft-vertical-space;
+        font-style: inherit;
+    }
+
+    // === Main content elements
+
+    // Top-level paragraphs and bibliographic entries are given a "reading"
+    // font. (Consequently, all other elements stand out as visual breaks in
+    // the natural  flow of the text since they appear in the default
+    // [sans-serif] font.)
+    > p,
+    bibtext {
+        font: medium "Times New Roman","Times",serif;
+    }
+
+    // Top-level paragraphs (<p> in the received data).
+    > p {
+        margin-bottom: $prn-ft-paragraph-gap;
+        //text-align: justify;
+        //@include hyphens(auto);
+    }
+
+    // Section heading (<hd> in the received data).
+    // Reference section title (<title> in the received data).
+    hd,
+    ref atitle {
+        margin-top:  2 * $prn-ft-section-space;
+        font-size:   larger;
+        font-weight: bolder;
+    }
+
+    // Sub-section heading (<hd1> in the received data).
+    hd1 {
+        margin-top:  1.25em;
+        font-weight: bolder;
+    }
+
+    // Image (<img> in the received data).
+    img {
+        display:   block;
+        max-width: 100%;
+        margin:    $prn-ft-vertical-space auto;
+        // Only for print view:
+        clear:        left;
+        margin-right: $prn-ft-space;
+    }
+
+    // Ordered list   (<olist> in the received data).
+    // Unordered list (<ulist> in the received data).
+    ol,
+    ul {
+        margin: $prn-ft-paragraph-gap 2em;
+    }
+
+    // Bibliography list (<blist> in the received data).
+    blist {
+        margin: $prn-ft-paragraph-gap 0;
+    }
+
+    // Ordered list item   (<item> in the received data).
+    // Unordered list item (<item> in the received data).
+    // Bibliography item   (<bibtext> in the received data).
+    %list-item {
+        margin-top:    0;
+        margin-bottom: $prn-ft-section-space;
+    }
+
+    // Ordered list item (<item> in the received data).
+    ol li {
+        @extend %list-item;
+        font-size:  110%;
+        list-style: decimal;
+    }
+
+    // Unordered list item (<item> in the received data).
+    ul li {
+        @extend %list-item;
+        font-size:  110%;
+        list-style: square;
+    }
+
+    // Bibliography list item (<bibtext> in the received data).
+    blist bibtext {
+        @extend %list-item;
+        display:    list-item;
+        list-style: none;
+    }
+
+    // Footnote reference (<reflink> in the received data).
+    // Footnote number    (<bibl> in the received data).
+    %footnote {
+        vertical-align: top;
+        font:           caption;
+        background:     whitesmoke;
+    }
+
+    // Footnote reference (<reflink> in the received data).
+    reflink {
+        @extend %footnote;
+        font-size: 75%;
+        opacity:   0.9;
+    }
+
+    // Footnote number (<bibl> in the received data).
+    bibl {
+        @extend %footnote;
+        display:   inline;
+        font-size: 100%;
+    }
+
+    // Bibliography item following an footnote number goes on the same line.
+    bibl + bibtext {
+        display: inline;
+        &:before { content: " "; }
+    }
+
+    // Erroneous footnote linkage (<nolink> in the received data).
+    nolink {
+        // TBD
+    }
+
+    // Character table? (<ct> in the received data).
+    ct {
+        display:     block;
+        @include width-fit-content;
+        margin:      2% 4%;
+        padding:     2%;
+        white-space: pre;
+        font-family: monospace;
+        background:  whitesmoke;
+    }
+
+    // ? (<rj> in the received data).
+    rj {
+        // TBD
+    }
+
+    // Table elements.
+    table {
+        max-width:       100%;
+        border:          1px solid transparent;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 0.5em;
+        border:  1px solid black;
+    }
+    th {
+        font-weight: bold;
+    }
+
+    // Links
+    a {
+        text-decoration: underline;
+    }
+    reflink a,
+    bibl    a {
+        text-decoration: none;
+    }
+
+    // Reference section (<ref> in the received data).
+    ref {
+
+        @include flex-box(column);
+
+        blist {
+            margin: $prn-ft-vertical-space 0;
+        }
+    }
+}
+
+// ============================================================================
+// Home page.
+//
+// This page isn't really intended to be printed, but a few adjustments makes
+// it at least somewhat useful.
+// ============================================================================
+
+.virgo-home-page .virgo-container {
+
+    .virgo-banner {
+
+        display: block;
+        width:   100%;
+
+        .virgo-logo-link {
+            font-size: xx-large;
+        }
+
+        img {
+            display: block;
+        }
+    }
+
+    .entry-header {
+        clear:  both;
+        margin: 0;
+    }
+
+    .entry-content {
+        margin: 0;
+    }
+}
+
+// ============================================================================
+// PRINT VIEW: Maps
+// ============================================================================
+
+.maps-page {
+
+    form,
+    .map-tools,
+    .range-remove,
+    .expand-contract,
+    .toggle-library-maps,
+    .maps-container:not(.map-listing) {
+        display: none;
+    }
+
+    .list-heading {
+        margin: 0;
+    }
+
+    .library-name {
+        font-size: large;
+    }
+
+    .map-name {
+        font-size:   larger;
+        font-weight: bold;
+    }
+
+    .map-url {
+        margin-left: 1em;
+    }
+
+    .map-guides {
+
+        margin-top: 0.5em;
+
+        h3 {
+            margin-bottom: 0.25em;
+            font-style:    italic;
+        }
+        h3:last-of-type {
+            visibility: hidden;
+        }
+    }
+}
+
+.maps_users-page {
+
+    form,
+    .maps-return,
+    .maps-container > h2 {
+        display: none;
+    }
+
+    .list-heading {
+        margin: 0;
+    }
+
+    .maps-container {
+        margin-bottom: 1em;
+    }
+}
+
+// ============================================================================
+// Debug panel - @see UVA::Util::Dev#debug_panel
+// ============================================================================
+
+.debug-panel {
+    @include on-screen-only;
+    @include width-fit-content;
+    margin-top: 2em;
+    padding:    6px;
+    border:     2px solid gray;
+}
+
+// ============================================================================
+// Definitions that must come last.
+// ============================================================================
+
+@import "shared/layout_final";

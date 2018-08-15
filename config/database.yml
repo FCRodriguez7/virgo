@@ -1,0 +1,88 @@
+# config/database.yml
+
+# NOTE: For SQLite version 3.x (not necessary on OS X Leopard):
+# gem install sqlite3-ruby
+
+# MySQL settings for current (Rails 3.x) implementation
+_mysql:                                                                  &MYSQL
+  adapter:    mysql
+  encoding:   utf8
+
+# MySQL settings for future (Rails 4.x+, MySQL 5.5+) implementation:
+_mysql_future:                                                    &MYSQL_FUTURE
+  adapter:    mysql
+  encoding:   utf8mb4
+  charset:    utf8mb4
+  collation:  utf8mb4_unicode_ci
+
+# MySQL settings for UVa Library configurations.
+_mysql_uva:                                                       &MYSQL_UVALIB
+  <<:         *MYSQL
+  host:       xxx
+
+_mysqldev_uva:                                                 &MYSQLDEV_UVALIB
+  <<:         *MYSQL
+  host:       xxx
+
+# MySQL settings for desktop development configurations.
+_mysql_local:                                                      &MYSQL_LOCAL
+  <<:         *MYSQL
+  socket:
+
+# =============================================================================
+# Desktop development configurations (UVa on-Grounds or via VPN)
+# =============================================================================
+
+# For the 'development' Rails environment (local).
+development:                                                         &DEV_LOCAL
+  <<:       *MYSQL_LOCAL
+  database: xxx
+  username: xxx
+  password: xxx
+
+# For the 'test' Rails environment (local).
+# NOTE: The test database will be wiped and regenerated when you run `rake`.
+# NOTE: Do *not* set this db to the same as development or production.
+test:                                                               &TEST_LOCAL
+  <<:       *MYSQL_LOCAL
+  database: xxx
+  username: xxx
+  password: xxx
+
+# For the 'production' Rails environment (local).
+production:                                                         &PROD_LOCAL
+  <<:       *MYSQL_LOCAL
+  database: xxx
+  username: xxx
+  password: xxx
+
+# For the 'cucumber' Rails environment (local).
+cucumber:
+  <<:       *TEST_LOCAL
+
+# =============================================================================
+# UVa Library configurations (UVa on-Grounds)
+# =============================================================================
+
+# For the 'search_development' Rails environment (opacdev.lib.virginia.edu).
+search_development:                                                 &DEV_UVALIB
+  <<:       *MYSQLDEV_UVALIB
+  database: xxx
+  username: xxx
+  password: xxx
+
+# For the 'search_test' Rails environment (hudson*.lib.virginia.edu).
+# NOTE: The test database will be wiped and regenerated when you run `rake`.
+# NOTE: Do *not* set this db to the same as development or production.
+search_test:                                                       &TEST_UVALIB
+  <<:       *MYSQLDEV_UVALIB
+  database: xxx
+  username: xxx
+  password: xxx
+
+# For the 'search_development' Rails environment (vbt*.lib.virginia.edu).
+search_production:                                                 &PROD_UVALIB
+  <<:       *MYSQL_UVALIB
+  database: xxx
+  username: xxx
+  password: xxx

@@ -1,0 +1,64 @@
+<%# app/views/catalog/show/_lib_coins.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  css_class ||= 'item-content document'
+  dev_note  ||= __FILE__
+
+  # === Item title/author
+  title ||= doc.show_full_title
+
+  resp_statement = ''
+  location ||= doc.values_for(:location_facet).first
+  if location.present?
+    label = 'The Fralin Museum of Art'
+    url   = 'http://xxx.virginia.edu'
+    resp_statement << external_link(label, url)
+  end
+  accession ||= doc.export_accession_number
+  if accession.present?
+    resp_statement << ', ' if resp_statement.present?
+    url = doc.get_url.first
+    accession = external_link(accession, url) if url
+    resp_statement << 'Accession # ' << accession
+  end
+
+  title_opts = { title: title, author: resp_statement, dev_note: dev_note }
+
+  # === Item metadata
+  denomination = doc.values_for(:denomination_display)
+  material     = doc.values_for(:material_display)
+
+  fields ||= UVA::View::FieldSet.new(
+    'Format'        => doc.export_format,
+    'Material'      => capitalize(material).join(ITEM_SEPARATOR),
+    'Denomination'  => capitalize(denomination).join(ITEM_SEPARATOR),
+    'Mint'          => :mint_display,
+    'Collection'    => facet_search_links(:collection_facet, doc, title: nil),
+    copyright_field => copyright_and_permissions(doc),
+    'Date Indexed'  => show_date_indexed(doc)
+  )
+  fields_opts = { document: doc, fields: fields }
+
+  template_opts = title_opts.merge(fields_opts)
+
+  view_debug(__FILE__)
+-%>
+
+<%= template_comment(doc, dev_note) %>
+<div class="<%= css_class -%>" id="doc-<%= doc.doc_id -%>">
+
+  <%# === Item title/author === -%>
+  <%= render 'catalog/show/shared/title', title_opts %>
+
+  <%# === Item metadata === -%>
+  <%= render 'catalog/show/shared/fields', fields_opts %>
+
+  <%# === Item access === -%>
+  <%= render 'catalog/show/shared/availability_box', template_opts %>
+  <%= render 'catalog/show/shared/iiif_viewer', template_opts %>
+
+</div>
+
+<%= render 'catalog/show/shared/sidebar', template_opts %>

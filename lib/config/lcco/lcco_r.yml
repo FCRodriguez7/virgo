@@ -1,0 +1,1021 @@
+# lib/config/lcco_r.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from the Word document of the same base name.
+
+class:    R
+name:     'MEDICINE'
+sections:
+  - subclass:  R
+    name:     'Medicine (General)'
+    sections:
+      - name:    'Medicine (General)'
+        range:   R5-920
+        start:   R5
+        end:     R920
+        sections:
+          - name:    'General works'
+            range:   R5-130.5
+            start:   R5
+            end:     R130.5
+          - name:    'History of medicine.  Medical expeditions'
+            range:   R131-687
+            start:   R131
+            end:     R687
+          - name:    'Medicine as a profession.  Physicians'
+            range:   R690-697
+            start:   R690
+            end:     R697
+          - name:    'Medicine and the humanities.  Medicine and disease in relation to history, literature, etc.'
+            range:   R702-703
+            start:   R702
+            end:     R703
+          - name:    'Directories'
+            range:   R711-713.97
+            start:   R711
+            end:     R713.97
+          - name:    'Missionary medicine.  Medical missionaries'
+            range:   R722-722.32
+            start:   R722
+            end:     R722.32
+          - name:    'Medical philosophy.  Medical ethics'
+            range:   R723-726
+            start:   R723
+            end:     R726
+          - name:    'Medicine and disease in relation to psychology.  Terminal care.  Dying'
+            range:   R726.5-726.8
+            start:   R726.5
+            end:     R726.8
+          - name:    'Medical personnel and the public.  Physician and the public'
+            range:   R727-727.5
+            start:   R727
+            end:     R727.5
+          - name:    'Practice of medicine.  Medical practice economics'
+            range:   R728-733
+            start:   R728
+            end:     R733
+          - name:    'Medical education.  Medical schools.  Research'
+            range:   R735-854
+            start:   R735
+            end:     R854
+          - name:    'Medical technology'
+            range:   R855-855.5
+            start:   R855
+            end:     R855.5
+          - name:    'Biomedical engineering.  Electronics.  Instrumentation'
+            range:   R856-857
+            start:   R856
+            end:     R857
+          - name:    'Computer applications to medicine.  Medical informatics'
+            range:   R858-859.7
+            start:   R858
+            end:     R859.7
+          - name:    'Medical records'
+            range:   R864
+            start:   R864
+            end:     R864
+          - name:    'Medical physics.  Medical radiology.  Nuclear medicine'
+            range:   R895-920
+            start:   R895
+            end:     R920
+  - subclass:  RA
+    name:     'Public aspects of medicine'
+    sections:
+      - name:    'Public aspects of medicine'
+        range:   RA1-1270
+        start:   RA1
+        end:     RA1270
+        sections:
+          - name:    'Medicine and the state'
+            range:   RA1-418.5
+            start:   RA1
+            end:     RA418.5
+            sections:
+              - name:    'Regulation of medical education.  Licensure'
+                range:   RA396
+                start:   RA396
+                end:     RA396
+              - name:    'Registration of physicians, pharmacists, etc.'
+                range:   RA398
+                start:   RA398
+                end:     RA398
+              - name:    'Regulation of medical practice.  Evaluation and quality control of medical care.  Medical audit'
+                range:   RA399
+                start:   RA399
+                end:     RA399
+              - name:    'Death certification'
+                range:   RA405
+                start:   RA405
+                end:     RA405
+              - name:    'Health status indicators.  Medical statistics and surveys'
+                range:   RA407-409.5
+                start:   RA407
+                end:     RA409.5
+              - name:    'Medical economics.  Economics of medical care.  Employment'
+                range:   RA410-410.9
+                start:   RA410
+                end:     RA410.9
+              - name:    'Provisions for personal medical care.  Medical care plans'
+                range:   RA411-415
+                start:   RA411
+                end:     RA415
+              - name:    'Medicine and society.  Social medicine.  Medical sociology'
+                range:   RA418-418.5
+                start:   RA418
+                end:     RA418.5
+          - name:    'Public health.  Hygiene.  Preventive medicine'
+            range:   RA421-790.95
+            start:   RA421
+            end:     RA790.95
+            sections:
+              - name:    'Public health laboratories, institutes, etc.'
+                range:   RA428-428.5
+                start:   RA428
+                end:     RA428.5
+              - name:    'Study and teaching.  Research'
+                range:   RA440-440.87
+                start:   RA440
+                end:     RA440.87
+              - name:    'Environmental health'
+                note:    'Including sewage disposal, air pollution, nuisances, water supply'
+                range:   RA565-600
+                start:   RA565
+                end:     RA600
+              - name:    'Food and food supply in relation to public health'
+                range:   RA601-602
+                start:   RA601
+                end:     RA602
+              - name:    'Parks, public baths, public carriers, buildings, etc.'
+                range:   RA604-618
+                start:   RA604
+                end:     RA618
+              - name:    'Disposal of the dead.  Undertaking.  Burial.  Cremation. Cemeteries'
+                range:   RA619-637
+                start:   RA619
+                end:     RA637
+              - name:    'Immunity and immunization in relation to public health'
+                range:   RA638
+                start:   RA638
+                end:     RA638
+              - name:    'Transmission of disease'
+                range:   RA639-642
+                start:   RA639
+                end:     RA642
+              - name:    'Disease (Communicable and noninfectious) and public health'
+                range:   RA643-645
+                start:   RA643
+                end:     RA645
+              - name:    'Home health care services'
+                range:   RA645.3-645.37
+                start:   RA645.3
+                end:     RA645.37
+              - name:    'Emergency medical services'
+                range:   RA645.5-645.9
+                start:   RA645.5
+                end:     RA645.9
+              - name:    'War and public health'
+                range:   RA646-648.3
+                start:   RA646
+                end:     RA648.3
+              - name:    'Epidemics.  Epidemiology.  Quarantine.  Disinfection'
+                range:   RA648.5-767
+                start:   RA648.5
+                end:     RA767
+              - name:    'Rural health and hygiene.  Rural health services'
+                range:   RA771-771.7
+                start:   RA771
+                end:     RA771.7
+              - name:    'Personal health and hygiene'
+                note:    'Including clothing, bathing, exercise, travel, nutrition, sleep, sex hygiene'
+                range:   RA773-788
+                start:   RA773
+                end:     RA788
+              - name:    'Mental health.  Mental illness prevention'
+                range:   RA790-790.95
+                start:   RA790
+                end:     RA790.95
+          - name:    'Medical geography.  Climatology.  Meteorology'
+            range:   RA791-954
+            start:   RA791
+            end:     RA954
+          - name:    'Medical centers.  Hospitals.  Dispensaries.  Clinics'
+            note:    'Including ambulance service, nursing homes, hospices'
+            range:   RA960-1000.5
+            start:   RA960
+            end:     RA1000.5
+          - name:    'Forensic medicine.  Medical jurisprudence.  Legal medicine'
+            range:   RA1001-1171
+            start:   RA1001
+            end:     RA1171
+          - name:    'Toxicology.  Poisons'
+            range:   RA1190-1270
+            start:   RA1190
+            end:     RA1270
+  - subclass:  RB
+    name:     'Pathology'
+    sections:
+      - name:    'Pathology'
+        range:   RB1-214
+        start:   RB1
+        end:     RB214
+        sections:
+          - name:    'General works'
+            range:   RB1-17
+            start:   RB1
+            end:     RB17
+          - name:    'Pathological anatomy and histology'
+            range:   RB24-33
+            start:   RB24
+            end:     RB33
+          - name:    'Clinical pathology.  Laboratory technique'
+            range:   RB37-56.5
+            start:   RB37
+            end:     RB56.5
+          - name:    'Post-mortem examination.  Autopsies'
+            range:   RB57
+            start:   RB57
+            end:     RB57
+          - name:    'Manifestations of disease'
+            range:   RB127-150
+            start:   RB127
+            end:     RB150
+          - name:    'Theories of disease.  Etiology.  Pathogenesis'
+            range:   RB151-214
+            start:   RB151
+            end:     RB214
+  - subclass:  RC
+    name:     'Internal medicine'
+    sections:
+      - name:    'Internal medicine'
+        range:   RC31-1245
+        start:   RC31
+        end:     RC1245
+        sections:
+          - name:    'Psychosomatic medicine'
+            range:   RC49-52
+            start:   RC49
+            end:     RC52
+          - name:    'Examination.  Diagnosis'
+            note:    'Including raiography'
+            range:   RC71-78.7
+            start:   RC71
+            end:     RC78.7
+          - name:    'Popular medicine'
+            range:   RC81-82
+            start:   RC81
+            end:     RC82
+          - name:    'Medical emergencies.  Critical care.  Intensive care.  First aid'
+            range:   RC86-88.9
+            start:   RC86
+            end:     RC88.9
+          - name:    'Disease due to physical and chemical agents'
+            range:   RC91-103
+            start:   RC91
+            end:     RC103
+          - name:    'Infectious and parasitic diseases'
+            range:   RC109-216
+            start:   RC109
+            end:     RC216
+          - name:    'Constitutional diseases (General)'
+            range:   RC251
+            start:   RC251
+            end:     RC251
+          - name:    'Neoplasms.  Tumors.  Oncology'
+            note:    'Including cancer and carcinogens'
+            range:   RC254-282
+            start:   RC254
+            end:     RC282
+          - name:    'Tuberculosis'
+            range:   RC306-320.5
+            start:   RC306
+            end:     RC320.5
+          - name:    'Neurosciences.  Biological psychiatry.  Neuropsychiatry'
+            range:   RC321-571
+            start:   RC321
+            end:     RC571
+            sections:
+              - name:    'Neurology.  Diseases of the nervous system'
+                note:    'Including speech disorders'
+                range:   RC346-429
+                start:   RC346
+                end:     RC429
+              - name:    'Psychiatry'
+                range:   RC435-571
+                start:   RC435
+                end:     RC571
+                sections:
+                  - name:    'Therapeutics.  Psychotherapy'
+                    range:   RC475-489
+                    start:   RC475
+                    end:     RC489
+                  - name:    'Hypnotism and hypnosis.  Suggestion therapy'
+                    range:   RC490-499
+                    start:   RC490
+                    end:     RC499
+                  - name:    'Psychoanalysis'
+                    range:   RC500-510
+                    start:   RC500
+                    end:     RC510
+                  - name:    'Psychopathology'
+                    range:   RC512-569.5
+                    start:   RC512
+                    end:     RC569.5
+                    sections:
+                      - name:    'Psychoses'
+                        range:   RC512-528
+                        start:   RC512
+                        end:     RC528
+                      - name:    'Neuroses'
+                        range:   RC530-552
+                        start:   RC530
+                        end:     RC552
+                      - name:    'Personality disorders.  Behavior problems'
+                        note:    'Including sexual problems, drug abuse, suicide, child abuse'
+                        range:   RC554-569.5
+                        start:   RC554
+                        end:     RC569.5
+                  - name:    'Mental retardation.  Developmental disabilities'
+                    range:   RC569.7-571
+                    start:   RC569.7
+                    end:     RC571
+          - name:    'Specialties of internal medicine'
+            range:   RC581-951
+            start:   RC581
+            end:     RC951
+            sections:
+              - name:    'Immunologic diseases.  Allergy'
+                range:   RC581-607
+                start:   RC581
+                end:     RC607
+              - name:    'Nutritional diseases.  Deficiency diseases'
+                range:   RC620-627
+                start:   RC620
+                end:     RC627
+              - name:    'Metabolic diseases'
+                range:   RC627.5-632
+                start:   RC627.5
+                end:     RC632
+              - name:    'Diseases of the blood and blood-forming organs'
+                range:   RC633-647.5
+                start:   RC633
+                end:     RC647.5
+              - name:    'Diseases of the endocrine glands.  Clinical endocrinology'
+                range:   RC648-665
+                start:   RC648
+                end:     RC665
+              - name:    'Diseases of the circulatory (Cardiovascular) system'
+                range:   RC666-701
+                start:   RC666
+                end:     RC701
+              - name:    'Diseases of the respiratory system'
+                range:   RC705-779
+                start:   RC705
+                end:     RC779
+              - name:    'Diseases of the digestive system.  Gastroenterology'
+                range:   RC799-869
+                start:   RC799
+                end:     RC869
+              - name:    'Diseases of the genitourinary system.  Urology'
+                range:   RC870-923
+                start:   RC870
+                end:     RC923
+              - name:    'Diseases of the connective tissues'
+                range:   RC924-924.5
+                start:   RC924
+                end:     RC924.5
+              - name:    'Diseases of the musculoskeletal system'
+                range:   RC925-935
+                start:   RC925
+                end:     RC935
+          - name:    'Special situations and conditions'
+            range:   RC952-1245
+            start:   RC952
+            end:     RC1245
+            sections:
+              - name:    'Geriatrics'
+                range:   RC952-954.6
+                start:   RC952
+                end:     RC954.6
+              - name:    'Arctic medicine.  Tropical medicine'
+                range:   RC955-962
+                start:   RC955
+                end:     RC962
+              - name:    'Industrial medicine.  Industrial hygiene'
+                range:   RC963-969
+                start:   RC963
+                end:     RC969
+              - name:    'Military medicine.  Naval medicine'
+                range:   RC970-986
+                start:   RC970
+                end:     RC986
+              - name:    'Submarine medicine'
+                range:   RC1000-1020
+                start:   RC1000
+                end:     RC1020
+              - name:    'Transportation medicine'
+                note:    'Including automotive, aviation, and space medicine'
+                range:   RC1030-1160
+                start:   RC1030
+                end:     RC1160
+              - name:    'Sports medicine'
+                range:   RC1200-1245
+                start:   RC1200
+                end:     RC1245
+  - subclass:  RD
+    name:     'Surgery'
+    sections:
+      - name:    'Surgery'
+        range:   RD1-811
+        start:   RD1
+        end:     RD811
+        sections:
+          - name:    'General works'
+            range:   RD1-31.7
+            start:   RD1
+            end:     RD31.7
+          - name:    'Operative surgery.  Technique of surgical operations'
+            range:   RD32-33.9
+            start:   RD32
+            end:     RD33.9
+          - name:    'Surgical therapeutics.  Preoperative and postoperative care'
+            range:   RD49-52
+            start:   RD49
+            end:     RD52
+          - name:    'Surgical pathology'
+            range:   RD57
+            start:   RD57
+            end:     RD57
+          - name:    'Reparative processes after operations (Physiological)'
+            range:   RD58
+            start:   RD58
+            end:     RD58
+          - name:    'Surgical shock.  Traumatic shock'
+            range:   RD59
+            start:   RD59
+            end:     RD59
+          - name:    'Operating rooms and theaters.  Instruments, apparatus, and appliances'
+            range:   RD63-76
+            start:   RD63
+            end:     RD76
+          - name:    'Anesthesiology'
+            range:   RD78.3-87.3
+            start:   RD78.3
+            end:     RD87.3
+          - name:    'Asepsis and antisepsis.  Sterilization (Operative)'
+            range:   RD91-91.5
+            start:   RD91
+            end:     RD91.5
+          - name:    'Emergency surgery.  Wounds and injuries'
+            range:   RD92-97.8
+            start:   RD92
+            end:     RD97.8
+          - name:    'Surgical complications'
+            range:   RD98-98.4
+            start:   RD98
+            end:     RD98.4
+          - name:    'Surgical nursing'
+            range:   RD99-99.35
+            start:   RD99
+            end:     RD99.35
+          - name:    'Fractures (General)'
+            range:   RD101-104
+            start:   RD101
+            end:     RD104
+          - name:    'Plastic surgery.  Reparative surgery'
+            range:   RD118-120.5
+            start:   RD118
+            end:     RD120.5
+          - name:    'Transplantation of organs, tissues, etc.'
+            range:   RD120.6-129.8
+            start:   RD120.6
+            end:     RD129.8
+          - name:    'Prosthesis.  Artificial organs'
+            range:   RD130
+            start:   RD130
+            end:     RD130
+          - name:    'Surgery in childhood, adolescence, pregnancy, old age'
+            range:   RD137-145
+            start:   RD137
+            end:     RD145
+          - name:    'Military and naval surgery'
+            range:   RD151-498
+            start:   RD151
+            end:     RD498
+          - name:    'Surgery by region, system, or organ'
+            range:   RD520-599.5
+            start:   RD520
+            end:     RD599.5
+          - name:    'Neoplasms.  Tumors.  Oncology'
+            range:   RD651-678
+            start:   RD651
+            end:     RD678
+          - name:    'Diseases of the locomotor system (Surgical treatment)'
+            range:   RD680-688
+            start:   RD680
+            end:     RD688
+          - name:    'Orthopedic surgery'
+            range:   RD701-811
+            start:   RD701
+            end:     RD811
+            sections:
+              - name:    'Physical rehabilitation'
+                range:   RD792-811
+                start:   RD792
+                end:     RD811
+  - subclass:  RE
+    name:     'Ophthalmology'
+    sections:
+      - name:    'Ophthalmology'
+        range:   RE1-994
+        start:   RE1
+        end:     RE994
+        sections:
+          - name:    'Examination.  Diagnosis'
+            range:   RE75-79
+            start:   RE75
+            end:     RE79
+          - name:    'Eye surgery'
+            range:   RE80-87
+            start:   RE80
+            end:     RE87
+          - name:    'Ophthalmic nursing'
+            range:   RE88
+            start:   RE88
+            end:     RE88
+          - name:    'Eye banks'
+            range:   RE89
+            start:   RE89
+            end:     RE89
+          - name:    'Particular diseases of the eye'
+            range:   RE91-912
+            start:   RE91
+            end:     RE912
+          - name:    'Color vision tests, charts, etc.'
+            range:   RE918-921
+            start:   RE918
+            end:     RE921
+          - name:    'Refraction and errors of refraction and accommodation'
+            range:   RE925-939
+            start:   RE925
+            end:     RE939
+          - name:    'Optometry.  Opticians.  Eyeglasses'
+            range:   RE939.2-981
+            start:   RE939.2
+            end:     RE981
+          - name:    'Artificial eyes and other prostheses'
+            range:   RE986-988
+            start:   RE986
+            end:     RE988
+          - name:    'Ocular therapeutics'
+            range:   RE991-992
+            start:   RE991
+            end:     RE992
+  - subclass:  RF
+    name:     'Otorhinolaryngology'
+    sections:
+      - name:    'Otorhinolaryngology'
+        range:   RF1-547
+        start:   RF1
+        end:     RF547
+        sections:
+          - name:    'Otology.  Diseases of the ear'
+            range:   RF110-320
+            start:   RF110
+            end:     RF320
+          - name:    'Rhinology.  Diseases of the nose, accessory sinuses, and nasopharynx'
+            range:   RF341-437
+            start:   RF341
+            end:     RF437
+          - name:    'Laryngology.  Diseases of the throat'
+            range:   RF460-547
+            start:   RF460
+            end:     RF547
+  - subclass:  RG
+    name:     'Gynecology and obstetrics'
+    sections:
+      - name:    'Gynecology and obstetrics'
+        range:   RG1-991
+        start:   RG1
+        end:     RG991
+        sections:
+          - name:    'Operative gynecology'
+            range:   RG104-104.7
+            start:   RG104
+            end:     RG104.7
+          - name:    'Conception.  Artificial insemination.  Contraception'
+            range:   RG133-137.6
+            start:   RG133
+            end:     RG137.6
+          - name:    'Sterilization of women'
+            range:   RG138
+            start:   RG138
+            end:     RG138
+          - name:    'Functional and systemic disorders.  Endocrine gynecology'
+            range:   RG159-208
+            start:   RG159
+            end:     RG208
+          - name:    'Abnormalities and diseases of the female genital organs'
+            range:   RG211-483
+            start:   RG211
+            end:     RG483
+          - name:    'Urogynecology and obstetric urology.  Urogynecologic surgery'
+            range:   RG484-485
+            start:   RG484
+            end:     RG485
+          - name:    'Diseases of the breast'
+            range:   RG491-499
+            start:   RG491
+            end:     RG499
+          - name:    'Obstetrics'
+            range:   RG500-991
+            start:   RG500
+            end:     RG991
+            sections:
+              - name:    'Pregnancy'
+                range:   RG551-591
+                start:   RG551
+                end:     RG591
+              - name:    'The embryo and fetus'
+                range:   RG600-650
+                start:   RG600
+                end:     RG650
+                sections:
+                  - name:    'Spontaneous abortion.  Miscarriage'
+                    range:   RG648
+                    start:   RG648
+                    end:     RG648
+              - name:    'Labor.  Parturition'
+                range:   RG651-721
+                start:   RG651
+                end:     RG721
+              - name:    'Obstetric operations.  Operative obstetrics'
+                range:   RG725-791
+                start:   RG725
+                end:     RG791
+              - name:    'Puerperal state'
+                range:   RG801-871
+                start:   RG801
+                end:     RG871
+              - name:    'Maternal care.  Prenatal care services'
+                range:   RG940-991
+                start:   RG940
+                end:     RG991
+  - subclass:  RJ
+    name:     'Pediatrics'
+    sections:
+      - name:    'Pediatrics'
+        range:   RJ1-570
+        start:   RJ1
+        end:     RJ570
+        sections:
+          - name:    'Genetic aspects'
+            range:   RJ47.3-47.4
+            start:   RJ47.3
+            end:     RJ47.4
+          - name:    'Examination.  Diagnosis'
+            range:   RJ50-51
+            start:   RJ50
+            end:     RJ51
+          - name:    'Therapeutics'
+            range:   RJ52-53
+            start:   RJ52
+            end:     RJ53
+          - name:    'Infant and neonatal morbidity and mortality'
+            range:   RJ59-60
+            start:   RJ59
+            end:     RJ60
+          - name:    'Supposed prenatal influence.  Prenatal culture.  Stirpiculture'
+            range:   RJ91
+            start:   RJ91
+            end:     RJ91
+          - name:    'Child health.  Child health services'
+            range:   RJ101-103
+            start:   RJ101
+            end:     RJ103
+          - name:    'Physiology of children and adolescents'
+            range:   RJ125-145
+            start:   RJ125
+            end:     RJ145
+          - name:    'Nutrition and feeding of children and adolescents'
+            range:   RJ206-235
+            start:   RJ206
+            end:     RJ235
+          - name:    'Immunization of children (General)'
+            range:   RJ240
+            start:   RJ240
+            end:     RJ240
+          - name:    'Hospital care'
+            range:   RJ242-243
+            start:   RJ242
+            end:     RJ243
+          - name:    'Nursing of children.  Pediatric nursing'
+            range:   RJ245-247
+            start:   RJ245
+            end:     RJ247
+          - name:    'Premature infants'
+            range:   RJ250-250.3
+            start:   RJ250
+            end:     RJ250.3
+          - name:    'Newborn infants'
+            note:    'Including physiology, care, treatment, diseases'
+            range:   RJ251-325
+            start:   RJ251
+            end:     RJ325
+          - name:    'Diseases of children and adolescents'
+            range:   RJ370-550
+            start:   RJ370
+            end:     RJ550
+            sections:
+              - name:    'Mental disorders.  Child psychiatry'
+                range:   RJ499-507
+                start:   RJ499
+                end:     RJ507
+  - subclass:  RK
+    name:     'Dentistry'
+    sections:
+      - name:    'Dentistry'
+        range:   RK1-715
+        start:   RK1
+        end:     RK715
+        sections:
+          - name:    'Practice of dentistry.  Dental economics'
+            range:   RK58-59.3
+            start:   RK58
+            end:     RK59.3
+          - name:    'Preventive dentistry'
+            range:   RK60.7-60.8
+            start:   RK60.7
+            end:     RK60.8
+          - name:    'Oral and dental anatomy and physiology'
+            range:   RK280
+            start:   RK280
+            end:     RK280
+          - name:    'Oral and dental medicine.  Pathology.  Diseases'
+            range:   RK301-493
+            start:   RK301
+            end:     RK493
+          - name:    'Operative dentistry.  Restorative dentistry'
+            range:   RK501-519
+            start:   RK501
+            end:     RK519
+          - name:    'Orthodontics'
+            range:   RK520-528
+            start:   RK520
+            end:     RK528
+          - name:    'Oral surgery'
+            range:   RK529-535
+            start:   RK529
+            end:     RK535
+          - name:    'Prosthetic dentistry.  Prosthodontics'
+            range:   RK641-667
+            start:   RK641
+            end:     RK667
+  - subclass:  RL
+    name:     'Dermatology'
+    sections:
+      - name:    'Dermatology'
+        range:   RL1-803
+        start:   RL1
+        end:     RL803
+        sections:
+          - name:    'Care and hygiene'
+            range:   RL87-94
+            start:   RL87
+            end:     RL94
+          - name:    'Pathological anatomy'
+            range:   RL95
+            start:   RL95
+            end:     RL95
+          - name:    'Therapeutics'
+            range:   RL110-120
+            start:   RL110
+            end:     RL120
+          - name:    'Diseases of the glands, hair, nails'
+            range:   RL130-169
+            start:   RL130
+            end:     RL169
+          - name:    'Hyperemias, inflammations, and infections of the skin'
+            range:   RL201-331
+            start:   RL201
+            end:     RL331
+          - name:    'Atrophies.  Hypertrophies'
+            range:   RL391-489
+            start:   RL391
+            end:     RL489
+          - name:    'Chronic ulcer of the skin.  Bedsores'
+            range:   RL675
+            start:   RL675
+            end:     RL675
+          - name:    'Diseases due to psychosomatic and nerve disorders. Dermatoneuroses'
+            range:   RL701-751
+            start:   RL701
+            end:     RL751
+          - name:    'Diseases due to parasites'
+            range:   RL760-785
+            start:   RL760
+            end:     RL785
+          - name:    'Pigmentations.  Albinism'
+            range:   RL790
+            start:   RL790
+            end:     RL790
+          - name:    'Congenital disorders of the skin.  Nevi.  Moles'
+            range:   RL793
+            start:   RL793
+            end:     RL793
+  - subclass:  RM
+    name:     'Therapeutics.  Pharmacology'
+    sections:
+      - name:    'Therapeutics.  Pharmacology'
+        range:   RM1-950
+        start:   RM1
+        end:     RM950
+        sections:
+          - name:    'Drug prescribing'
+            range:   RM138
+            start:   RM138
+            end:     RM138
+          - name:    'Prescription writing'
+            range:   RM139
+            start:   RM139
+            end:     RM139
+          - name:    'Misuse of therapeutic drugs.  Medication errors'
+            range:   RM146-146.7
+            start:   RM146
+            end:     RM146.7
+          - name:    'Administration of drugs and other therapeutic agents'
+            range:   RM147-180
+            start:   RM147
+            end:     RM180
+          - name:    'Other therapeutic procedures'
+            note:    'Including acupuncture, pneumatic aspiration, spinal puncture, pericardial puncture'
+            range:   RM182-190
+            start:   RM182
+            end:     RM190
+          - name:    'Diet therapy.  Dietary cookbooks'
+            range:   RM214-258
+            start:   RM214
+            end:     RM258
+          - name:    'Vitamin therapy'
+            range:   RM259
+            start:   RM259
+            end:     RM259
+          - name:    'Chemotherapy'
+            range:   RM260-263
+            start:   RM260
+            end:     RM263
+          - name:    'Antibiotic therapy.  Antibiotics'
+            range:   RM265-267
+            start:   RM265
+            end:     RM267
+          - name:    'Immunotherapy.  Serotherapy'
+            range:   RM270-282
+            start:   RM270
+            end:     RM282
+          - name:    'Endocrinotherapy.  Organotherapy'
+            range:   RM283-298
+            start:   RM283
+            end:     RM298
+          - name:    'Drugs and their actions'
+            range:   RM300-666
+            start:   RM300
+            end:     RM666
+          - name:    'Nonprescription drugs.  Patent medicines'
+            range:   RM671-671.5
+            start:   RM671
+            end:     RM671.5
+          - name:    'Physical medicine.  Physical therapy'
+            note:    'Including massage, exercise, occupational therapy, hydrotherapy, phototherapy, radiotherapy, thermotherapy, electrotherapy'
+            range:   RM695-893
+            start:   RM695
+            end:     RM893
+          - name:    'Rehabilitation therapy'
+            range:   RM930-931
+            start:   RM930
+            end:     RM931
+          - name:    'Rehabilitation technology'
+            range:   RM950
+            start:   RM950
+            end:     RM950
+  - subclass:  RS
+    name:     'Pharmacy and materia medica'
+    sections:
+      - name:    'Pharmacy and materia medica'
+        range:   RS1-441
+        start:   RS1
+        end:     RS441
+        sections:
+          - name:    'Formularies.  Collected prescriptions'
+            range:   RS125-131.9
+            start:   RS125
+            end:     RS131.9
+          - name:    'Pharmacopoeias'
+            range:   RS139-141.9
+            start:   RS139
+            end:     RS141.9
+          - name:    'Dispensatories'
+            range:   RS151.2-151.9
+            start:   RS151.2
+            end:     RS151.9
+          - name:    'Materia medica'
+            range:   RS153-441
+            start:   RS153
+            end:     RS441
+            sections:
+              - name:    'Pharmacognosy.  Pharmaceutical substances (Plant, animal, and inorganic)'
+                range:   RS160-167
+                start:   RS160
+                end:     RS167
+              - name:    'Assay methods.  Standardization.  Analysis'
+                range:   RS189-190
+                start:   RS189
+                end:     RS190
+              - name:    'Pharmaceutical technology'
+                range:   RS192-199
+                start:   RS192
+                end:     RS199
+              - name:    'Pharmaceutical dosage forms'
+                range:   RS200-201
+                start:   RS200
+                end:     RS201
+              - name:    'Commercial preparations.  Patent medicines'
+                range:   RS250-252
+                start:   RS250
+                end:     RS252
+              - name:    'Pharmaceutical supplies'
+                range:   RS355-356
+                start:   RS355
+                end:     RS356
+              - name:    'Pharmaceutical chemistry'
+                range:   RS400-431
+                start:   RS400
+                end:     RS431
+              - name:    'Microscopical examination of drugs'
+                range:   RS441
+                start:   RS441
+                end:     RS441
+  - subclass:  RT
+    name:     'Nursing'
+    sections:
+      - name:    'Nursing'
+        range:   RT1-120
+        start:   RT1
+        end:     RT120
+        sections:
+          - name:    'Specialties in nursing'
+            range:   RT89-120
+            start:   RT89
+            end:     RT120
+  - subclass:  RV
+    name:     'Botanic, Thomsonian, and eclectic medicine'
+    sections:
+      - name:    'Botanic, Thomsonian, and eclectic medicine'
+        range:   RV1-431
+        start:   RV1
+        end:     RV431
+  - subclass:  RX
+    name:     'Homeopathy'
+    sections:
+      - name:    'Homeopathy'
+        range:   RX1-681
+        start:   RX1
+        end:     RX681
+        sections:
+          - name:    'Diseases, treatment, etc.'
+            range:   RX211-581
+            start:   RX211
+            end:     RX581
+          - name:    'Materia medica and therapeutics'
+            range:   RX601-675
+            start:   RX601
+            end:     RX675
+  - subclass:  RZ
+    name:     'Other systems of medicine'
+    sections:
+      - name:    'Other systems of medicine'
+        range:   RZ201-999
+        start:   RZ201
+        end:     RZ999
+        sections:
+          - name:    'Chiropractic'
+            range:   RZ201-275
+            start:   RZ201
+            end:     RZ275
+          - name:    'Osteopathy'
+            range:   RZ301-397.5
+            start:   RZ301
+            end:     RZ397.5
+          - name:    'Osteo-magnetics, neuropathy, etc., A-Z'
+            range:   RZ399
+            start:   RZ399
+            end:     RZ399
+          - name:    'Mental healing'
+            range:   RZ400-408
+            start:   RZ400
+            end:     RZ408
+          - name:    'Miscellaneous systems and treatments'
+            note:    'Including magnetotherapy, mesmerism, naturopathy, organomic medicine, phrenology, radiesthesia'
+            range:   RZ409.7-999
+            start:   RZ409.7
+            end:     RZ999

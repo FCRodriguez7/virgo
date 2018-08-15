@@ -1,0 +1,130 @@
+// app/assets/stylesheets/shared/_dev.scss
+
+// ============================================================================
+// Footer page information (initially hidden)
+// ============================================================================
+
+.server-info {
+
+    display:       block;
+    margin-top:    -1em;
+    margin-bottom: 1em;
+    padding:       0.25em 0.5em;
+    visibility:    visible;
+    border:        2px solid hotpink;
+
+    &.hidden {
+        display:    none;
+        visibility: visible;
+    }
+}
+
+// ============================================================================
+// Styles for page debugging information displayed below the footer.
+// ============================================================================
+
+.dev-table {
+    width:           99%;
+    margin:          1em 2px;
+    table-layout:    fixed;
+    border-collapse: collapse;
+}
+
+.dev-table,
+.dev-th,
+.dev-td {
+    padding: 1px 2px;
+    border:  2px solid deeppink;
+}
+
+.dev-th,
+.dev-td {
+    vertical-align: top;
+    word-wrap:      break-word;
+}
+
+.dev-th {
+    font-weight:      bold;
+    font-size:        larger;
+    color:            lightyellow;
+    background-color: darkblue;
+}
+
+// Make hash keys stand out in debug table listings.
+.dev-hash-key {
+    font-weight: bold;
+}
+
+// For marking unusual or problem values in debug table listings.
+.dev-alert {
+    color: red;
+}
+
+// For marking special values in debug table listings.
+.dev-special {
+    color: mediumblue;
+}
+
+// ============================================================================
+// Currently used for information points (*) to get feedback about the
+// source of display elements.
+// ============================================================================
+
+.debug {
+    color: fuchsia;
+}
+
+.debug-highlight {
+    outline: 1px dashed fuchsia;
+}
+
+.debug-note {
+    float:  right;
+    color:  fuchsia;
+    cursor: help;
+}
+
+// ============================================================================
+// Debug panel - @see UVA::Util::Dev#debug_panel
+// ============================================================================
+
+.debug-panel {
+
+    display:       block;
+    width:         250px;
+    max-height:    80vh;
+    padding:       6px;
+    position:      absolute;
+    top:           100px;
+    left:          5px;
+    overflow:      scroll;
+    font-family:   Arial, sans-serif;
+    font-size:     11pt;
+    color:         black;
+    background:    #ffff80;
+    border:        3px solid deeppink;
+    border-radius: 5px;
+
+    .line {
+        display: inline-block;
+        @include width-max-content;
+    }
+
+    .var         { color: #dd0000; }
+    .key         { color: #0000dd; }
+    .punctuation { color: #008600; }
+
+    // Debug panel information displayed on the "about" page.
+    &.about {
+        width:          auto;
+        max-height:     none;
+        padding:        0.5em;
+        position:       relative;
+        top:            auto;
+        left:           auto;
+        overflow:       auto;
+        background:     ghostwhite;
+        border:         2px solid gray;
+        border-radius:  2px;
+    }
+}

@@ -1,0 +1,82 @@
+<%# app/views/record_mailer/email_record.text.erb -%>
+<%-
+  # Overrides Blacklight app/views/record_mailer/email_record.text.erb
+
+  # Hints for RubyMine (skipped during execution).
+  include UVA::BlacklightOverride unless ONLY_FOR_DOCUMENTATION
+
+  documents   ||= @documents || []
+  articles    ||= @articles  || []
+  message     ||= @message
+  full_record ||= @full_record
+  host        ||= @host
+
+  all_items = documents + articles
+
+  entries =
+    all_items.map { |doc|
+      next unless doc.is_a?(UVA::IndexDoc)
+      type = doc.doc_type
+      url  = (type == :article) ? short_url(doc, host) : full_url(doc, host)
+      url  = nil if url.blank?
+      show_availability = false
+      fields =
+        unless full_record
+          field_labels = [:title]
+          field_labels +=
+            case type
+              when :article       then ['Creator',    'Journal', :identifier]
+              when :dl_text       then ['Creator',    'Collection']
+              when :dl_book       then ['Creator',    'Series']
+              when :lib_coins     then ['Collection', 'Full View']
+              when :dl_wsls_video then []
+              else                     show_availability = true; [:author]
+            end
+          field_labels.map { |field_label|
+            field_value =
+              case field_label
+                when :title             then doc.export_title
+                when :author, 'Creator' then doc.show_heading_author
+                when :identifier        then doc.export_identifiers
+                when 'Journal'          then doc.export_journal
+                when 'Collection'       then doc.export_collection
+                when 'Series'           then doc.export_series
+                when 'Full View'        then doc.export_url
+              end
+            [field_label, strip_html(field_value)]
+          }.to_h
+        end
+      [doc, url, fields, show_availability]
+    }.compact
+
+  # Separate entries with a line of underscores.
+  entry_separator = ('_' * 72) + "\n"
+
+  # NOTE: Template lines all start in the first column because leading white
+  # space would be rendered to the text output.
+
+  view_debug(__FILE__)
+-%>
+<%# === Show the message if the user provided one === -%>
+<%- if message.present? -%>
+<%=   message %>
+<%- end -%>
+<%# === Show document entries === -%>
+<%- entries.each do |entry| -%>
+<%=   entry_separator %>
+<%-   doc, url, fields, show_availability = entry -%>
+<%-   if url -%>
+<%=     url %>
+<%-   end -%>
+<%-   if fields.present? -%>
+<%=     UVA::View::FieldSet.new(fields).render(:email, doc) %>
+<%-     if show_availability && doc.availability -%>
+<%=       render 'catalog/email/shared/availability', document: doc -%>
+<%-     else -%>
+<%#       newline (because this comment does not end with "-") %>
+<%-     end -%>
+<%-   else -%>
+<%=     render_document_partial(doc, :email) -%>
+<%-   end -%>
+<%- end -%>
+<%= entry_separator %>

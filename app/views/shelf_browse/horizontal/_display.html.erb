@@ -1,0 +1,59 @@
+<%# app/views/shelf_browse/horizontal/_display.html.erb -%>
+<%-
+  items ||= @document_list
+  title ||= nil
+  focus ||= nil
+
+  template_opts = { items: items, title: title, focus: focus }
+
+  view_debug(__FILE__)
+-%>
+
+<%# First row -%>
+<div class="header-area">
+  <%= help_button(class: 'main-help') %>
+  <%= lcc_browser_button %>
+  <%= title_text(label: title) %>
+  <%= origin_button %>
+  <%= feature_close_button %>
+</div>
+
+<%# Second row -%>
+<%= current_range_area(items) %>
+
+<%# The rest of the display -%>
+<div class="scroller-container">
+  <%= render 'shelf_browse/horizontal/page_scroller', template_opts %>
+  <div class="page-scroller-separator"></div>
+  <%= render 'shelf_browse/horizontal/item_info',     template_opts %>
+</div>
+
+<%# LCC browser (initially hidden) -%>
+<%# @see showLccTree() in feature/shelf-browse.js -%>
+<div class="lcc-tree-display" role="tree" aria-modal="true">
+  <div class="button-tray" role="navigation">
+    <%= help_button(class: 'lcc-help') %>
+    <%= dropdown_close_button %>
+  </div>
+  <div class="lcc-tree">
+    <%# makeLccTree() will insert <div id="lcc-tree"> here %>
+  </div>
+</div>
+
+<%# Help panel (initially hidden) -%>
+<div class="help-container" role="dialog" aria-modal="true">
+  <%= render 'shelf_browse/shared/help_content', template_opts %>
+  <div class="button-tray" role="navigation">
+    <%= dropdown_close_button %>
+  </div>
+</div>
+
+<%# Request dialog panel (initially hidden) -%>
+<div class="dialog-container" role="dialog" aria-modal="true">
+  <div class="button-tray" role="navigation">
+    <%= dropdown_close_button %>
+  </div>
+  <div class="dialog-contents">
+    <%# showRequestDialog() will insert contents here. %>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<%# app/views/kaminari/_last_page.html.erb -%>
+<%-
+  # Link to the "Last" page
+  # - available local variables
+  # url:           url to the last page
+  # current_page:  a page object for the currently displayed page
+  # num_pages:     total number of pages
+  # per_page:      number of items to fetch per page
+  # remote:        data-remote
+
+  label = t('views.pagination.last').html_safe
+  opt   = { remote: remote }
+  opt[ARIA_LABEL] = 'Go to the last page of results.'
+
+  view_debug(__FILE__)
+-%>
+<span class="last">
+  <%= link_to_unless current_page.last?, label, url, opt %>
+</span>

@@ -1,0 +1,44 @@
+// app/assets/stylesheets/tei.css.scss
+//
+// Styles for TEI content page layout.
+
+@import "shared/layout_initial";
+@import "shared/no_print_view";
+@import "shared/alerts";
+@import "feature/tei";
+
+// ============================================================================
+// Prevent clipboard copying outside of the content itself -- that way Ctrl-A
+// (select all) will highlight only the content and nothing else.
+// ============================================================================
+
+/*
+body.tei-page {
+    @include user-select(none);
+}
+
+.context-header {
+    display: none;
+}
+
+.transformed-tei {
+    @include user-select(text);
+    font-family: serif;
+    font-size:   medium;
+}
+*/
+
+.skip-nav {
+    display: none;
+}
+
+.close-button {
+    float:           right;
+    text-decoration: none;
+}
+
+// ============================================================================
+// Definitions that must come last.
+// ============================================================================
+
+@import "shared/layout_final";

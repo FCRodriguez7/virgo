@@ -1,0 +1,33 @@
+<%# app/views/catalog/email/_default_text.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  # === Item metadata
+  fields ||= UVA::View::FieldSet.new(
+    :title            => doc.full_title,
+    :author           => doc.export_authors,
+    'Title'           => doc.export_title,
+    'Alternate Title' => :alternate_title_display,
+    'Series'          => doc.export_series,
+    'Mint'            => :mint_display,
+    'Denomination'    => :denomination_display,
+    'Material'        => :material_display,
+    'Format'          => doc.export_format,
+    'Language'        => doc.export_language,
+    'Date'            => doc.export_pub_date,
+    'Composition Era' => :composition_era_facet,
+    'Retrieval ID'    => doc.export_media_retrieval_id,
+    'Accession'       => doc.export_accession_number,
+    'Region'          => doc.export_place_names,
+    'Collection'      => doc.export_collection,
+    'Genre'           => :subject_genre_facet,
+    'Library'         => :library_facet,
+    'Location'        => :location_facet,
+    'Call Number'     => doc.export_shelf_numbers,
+    copyright_label   => permission_uri(doc),
+  )
+
+  view_debug(__FILE__)
+-%>
+<%= fields.render(:email, doc) %>

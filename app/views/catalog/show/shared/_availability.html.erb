@@ -1,0 +1,43 @@
+<%# app/views/catalog/show/shared/_availability_box.html.erb -%>
+<%-
+  # If the document already has availability information include it directly.
+  # Otherwise show a placeholder and the JavaScript getAvailability() function
+  # will asynchronously replace the ".physical-availability" element with the
+  # returned contents of the "/catalog/#{doc.doc_id}/availability" page.
+
+  doc = document ||= @document
+  return unless doc
+
+  css_class     ||= 'physical-availability'
+  request_popup ||= true
+
+  suppressed    = doc.hidden? || !doc.discoverable?
+  direct_render = doc.has_availability_loaded?
+  template_opts = nil
+  loader_image  = nil
+
+  if suppressed
+    css_class += ' suppressed'
+  elsif direct_render
+    css_class += ' complete'
+    template_opts = { document: doc, request_popup: request_popup }
+  else
+    loader_image =
+      ajax_loader_image(
+        alt:   'Loading availability information...',
+        class: 'availability-loader'
+      )
+  end
+
+  view_debug(__FILE__)
+-%>
+
+<%= content_tag(:div, title: doc.doc_id, class: css_class) do %>
+  <%- if suppressed -%>
+    <em>Hidden/shadowed item.</em>
+  <%- elsif direct_render -%>
+    <%= render 'catalog/show/shared/availability_table', template_opts %>
+  <%- else -%>
+    <%= loader_image %>
+  <%- end -%>
+<%- end -%>

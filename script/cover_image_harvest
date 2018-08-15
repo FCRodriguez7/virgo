@@ -1,0 +1,255 @@
+#! /bin/sh
+#
+# Cover image harvest script
+# -----------------------------------------------------------------------------
+#
+# This script runs the Virgo rake command which attempts to locate cover images
+# for the items without cover images that have been discovered by user searches
+# since the last run.
+#
+# DEPLOYMENT
+#
+# This script should be in the script subdirectory of the Virgo sources.  When
+# the Virgo repo is pulled, this file should be executable by all and with the
+# set-group-id bit set, i.e:
+#
+#	-rwxrwsr-x 1 virgo lb-searchdev 3241 Oct 17 12:03 cover_image_harvest
+#
+# The commands
+#
+#	chown virgo:lb-searchdev cover_image_harvest
+#	chmod 2775 cover_image_harvest
+#
+# can be used to set these permissions manually if necessary.
+#
+# OPERATION
+#
+# This script is intended to be run periodically from cron in two modes, e.g.:
+#
+#	20 * * * * /usr/local/projects/search/script/cover_image_harvest
+#	15 6 * * * /usr/local/projects/search/script/cover_image_harvest true
+# 
+# Here the script will be run every hour in normal mode and once a day (at
+# 06:15) in summary mode.  The script can be run manaully; becase it redirects
+# all output to the log file it can run in the background.
+
+PATH="/usr/local/bin:$PATH"
+
+#==============================================================================
+# INITIALIZATIONS
+#==============================================================================
+
+#
+# Properties
+#
+MAIL_RECIPIENTS='xxx@virginia.edu'
+RAKE_TARGET='cover_images:harvest'
+#
+# Properties - application
+#
+APP_NAME='Virgo'
+ROOT_DIR='/usr/local/projects'
+APP_BASENAME='search'
+#
+# Properties - locations
+#
+HARVEST_DIR='/lib_content'
+LOCK_DIR="$HARVEST_DIR/Virgobeta"
+LOCK_FILE="$LOCK_DIR/cover_image_harvest.lock"
+LOG_DIR='/tmp'
+LOG_FILE="$LOG_DIR/cover_image_harvest-`date +'%Y%m%d'`"
+#
+# Constants
+#
+declare -r PID="$$"
+declare -r TRAP_SIGNALS='EXIT SIGHUP SIGINT SIGQUIT SIGABRT SIGKILL SIGSEGV'
+#
+# Variables
+#
+LOCKED=''
+
+#==============================================================================
+# FUNCTION DEFINITIONS
+#==============================================================================
+
+#------------------------------------------------------------------------------
+# Create a log entry.
+#
+# The implementation assumes that stdout and stderr have been redirected to the
+# log file (so no redirects are needed within the function).
+#
+LogEntry() # message
+{
+	echo ''
+	date
+	echo "$HOSTNAME"
+	echo "$1"
+	echo ''
+}
+
+#------------------------------------------------------------------------------
+# Send a mail message containing the log file.
+#
+SendMail() # partial_title message
+{
+	local TITLE="$APP_NAME cover harvest script $1"
+	local MESSAGE="$2"
+
+	LogEntry "$MESSAGE"
+	mail -s "$TITLE" $MAIL_RECIPIENTS < $LOG_FILE
+}
+
+#------------------------------------------------------------------------------
+# Send a mail message indicating successful completion.
+#
+SendSuccess() # [message]
+{
+	local TITLE='completed successfully'
+	local MESSAGE="$1"
+
+	[ -z "$MESSAGE" ] && MESSAGE='Success!'
+	SendMail "$TITLE" "$MESSAGE"
+}
+
+#------------------------------------------------------------------------------
+# Send a mail message indicating success with warnings.
+#
+SendWarning() # message
+{
+	local TITLE='completed successfully; minor errors detected'
+	local MESSAGE="$1"
+
+	SendMail "$TITLE" "$MESSAGE"
+}
+
+#------------------------------------------------------------------------------
+# Send a mail message indicating failure.
+#
+SendError() # message
+{
+	local TITLE='aborted; check message for details'
+	local MESSAGE="$1"
+
+	SendMail "$TITLE" "$MESSAGE"
+}
+
+#------------------------------------------------------------------------------
+# Send a failure message and terminate.
+#
+Abort() # message
+{
+	SendError "$1. Aborting script."
+	exit 1
+}
+
+#------------------------------------------------------------------------------
+# Get control of the harvest directory.
+#
+Lock() # (no parameters)
+{
+	local LOCK_VALUE="$HOSTNAME PID=$PID"
+
+	if [ -e "$LOCK_FILE" ] ; then
+		# If the lock file already exists and was not created by this
+		# process then abort with an indication of the lock holder.
+		LOCKED=`cat "$LOCK_FILE" 2>/dev/null`
+		if [ "$LOCKED" == "$LOCK_VALUE" ] ; then
+			return
+		elif [ -z "$LOCKED" ] ; then
+			LOCKED='unknown'
+		fi
+		Abort "Already locked by $LOCKED"
+	elif echo "$LOCK_VALUE" > "$LOCK_FILE" ; then
+		# Create the lock file with information about This process and
+		# set up error recovery.
+		LOCKED="$LOCK_VALUE"
+		trap Unlock $TRAP_SIGNALS
+	else
+		# If the creation of the lock file failed, then abort.  To
+		# cover the possibility the failure still left behind an empty
+		# lock file, attempt to remove it before exiting.
+		rm -f "$LOCK_FILE" > /dev/null 2>&1
+		Abort "Unable to create lock file '$LOCK_FILE'"
+	fi
+}
+
+#------------------------------------------------------------------------------
+# Give up control of the harvest directory.
+#
+Unlock() # (no parameters)
+{
+	# Reset error recovery.
+	trap - $TRAP_SIGNALS
+
+	# If not already unlocked, remove the lock file.
+	if [ "$LOCKED" ] ; then
+		rm -f "$LOCK_FILE"
+		LOCKED=''
+	fi
+}
+
+#------------------------------------------------------------------------------
+# Get the full path to a command or abort if not found.
+#
+Which() # command
+{
+	local CMD="$1"
+
+	which "$CMD" 2>/dev/null || Abort "Command '$CMD' not found in $PATH"
+}
+
+#==============================================================================
+# MAIN PROCESSING
+#
+# Redirect stdout and stderr to the log file, then emit a separator to make it
+# easier to locate the start of a run in the log file.
+#==============================================================================
+
+exec 1>>$LOG_FILE 2>&1
+echo '--------------------------------------------------------------------------------------------------------------'
+
+#==============================================================================
+# Process command line arguments.
+#==============================================================================
+
+while [ $# -gt 0 ]
+do
+	case "$1" in
+		true)	RAKE_TARGET+='[true]' ;;
+		'')	;; # Ignore blank arguments.
+		*)	Abort "Unexpected argument '$1'" ;;
+	esac
+	shift
+done
+
+#==============================================================================
+# Set definitions based on local environment.
+#==============================================================================
+
+APP_DIR="$ROOT_DIR/$APP_BASENAME"
+CMD_RAKE=`Which rake`
+export RAILS_ENV=`rails_env 2>/dev/null`
+[ "$RAILS_ENV" ] || RAILS_ENV="${APP_BASENAME}_development"
+
+#==============================================================================
+# Harvest covers.
+#==============================================================================
+
+# Attempt to lock the shared harvest directory if it is mounted.
+if mount -t nfs | awk '{ print $3 }' | grep -q "^$HARVEST_DIR\$" ; then
+	Lock
+else
+	Abort 'Harvest directory not NFS-mounted'
+fi
+
+# Run the rake target in the Virgo source directory.
+cd "$APP_DIR" || Abort "Unable to change to $APP_DIR"
+LogEntry 'Harvest script output:'
+$CMD_RAKE $RAKE_TARGET || Abort "Harvest script failed with exit status $?"
+
+# Release the harvest directory and send a message.
+if Unlock ; then
+	SendSuccess
+else
+	SendWarning "Script complete; unable to remove lock file '$LOCK_FILE'."
+fi

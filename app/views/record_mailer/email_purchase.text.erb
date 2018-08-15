@@ -1,0 +1,27 @@
+<%# app/views/record_mailer/email_purchase.text.erb -%>
+<%-
+  documents ||= @documents || []
+
+  view_debug(__FILE__)
+-%>
+Thank you for your recent request. The Library has placed an order for your
+item and you will be sent an email when it arrives. Items usually arrive in
+about 10 business days.
+_______________________________________________________________________
+<%- documents.each do |doc| -%>
+<%-   title  = doc.export_title -%>
+<%-   author = doc.show_heading_author -%>
+<%-   [title, author].reject(&:blank?).each do |field| -%>
+<%=     h(strip_html(field)) %>
+<%-   end -%>
+<%=   render 'catalog/email/shared/availability', document: doc -%>
+_______________________________________________________________________
+<%- end -%>
+
+If you have questions about your order, please
+Ask a Librarian (<%= URL::ASK_A_LIBRARIAN %>) or review our
+Available to Order (<%= URL::ABOUT_PDA %>) information page.
+
+Thank you!
+
+UVA Library Staff

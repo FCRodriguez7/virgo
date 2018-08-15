@@ -1,0 +1,113 @@
+// app/assets/stylesheets/feature/sc-requests.css.scss
+
+$sc-processed-color:     #dddddd;
+$sc-internal-color:      #ccffff;
+$sc-instructional-color: #ccffcc;
+$sc-unprocessed-color:   #ffffcc;
+
+// ============================================================================
+// Special Collections request queue
+// ============================================================================
+
+.special_collections_requests-index-page h3 {
+    margin:    1em 0;
+    font-size: 18px;
+}
+
+.sc-requests-legend {
+
+    margin:     2em 0;
+    text-align: center;
+
+    span {
+        margin-right: 20px;
+        padding:      0.5em 1em;
+        line-height:  1.5em;
+    }
+
+    .processed-label     { background: $sc-processed-color; }
+    .internal-label      { background: $sc-internal-color; }
+    .instructional-label { background: $sc-instructional-color; }
+    .unprocessed-label   { background: $sc-unprocessed-color; }
+}
+
+.sc-requests {
+
+    width:           100%;
+    border:          1px solid #bbbbbb;
+    border-collapse: collapse;
+
+    th, td { border: none; padding: 5px; border-bottom: 1px solid #bbbbbb; }
+    th     { font-weight: bold; }
+    tr     { border-bottom: 1px solid #aaaaaa; }
+    tr.processed     { background: $sc-processed-color; }
+    tr.internal      { background: $sc-internal-color; }
+    tr.instructional { background: $sc-instructional-color; }
+    tr.unprocessed   { background: $sc-unprocessed-color; }
+}
+
+.sc-search-form {
+
+    margin-left:    20%;
+    vertical-align: middle;
+    font-weight:    bold;
+
+    .field {
+        display: inline-block;
+        width:   40%;
+    }
+
+    input[type='submit'] {
+        padding: 10px;
+    }
+}
+
+.list-heading.special-collections {
+    width:  initial;
+    margin: 0 -7px 5px -1px;
+}
+
+.special_collections_requests-start-page .spec-coll {
+
+    margin:     2em 0;
+    text-align: center;
+
+    a {
+        padding:         0 1em;
+        text-align:      center;
+        text-decoration: underline;
+        font-size:       15px;
+        font-weight:     bold;
+    }
+}
+
+.spec-coll .sc-request-form,
+.sc-search-form {
+
+    label {
+        display: inline-block;
+    }
+
+    select,
+    input {
+        margin-bottom:  0.5em;
+        vertical-align: middle;
+    }
+
+    input.btn {
+        margin-top: -18px;
+    }
+}
+
+.spec-coll .pagination {
+
+    a {
+        padding:          5px;
+        background-color: $sc-processed-color;
+    }
+
+    .current {
+        padding: 5px;
+        border:  1px solid #358ede;
+    }
+}

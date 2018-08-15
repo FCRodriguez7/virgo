@@ -1,0 +1,19 @@
+<%# app/views/shelf_browse/help/_markers.html.erb -%>
+<%-
+  # Locals are defined in shelf_browse/shared/_help_content.html.erb where this
+  # file is included.
+
+  view_debug(__FILE__)
+-%>
+
+<div class="<%= help_topic_css(:help_markers) -%>">
+  <h2>Item Status Markers</h2>
+  <p>
+    One or more markers are placed below an item tile to indicate attributes
+    that might affect your access to the item.
+  </p>
+  <h4>Item attributes</h4>
+  <%= status_marker_list(mode: :dl, status_only: true) %>
+  <h4>Location attributes</h4>
+  <%= status_marker_list(mode: :dl, site_only: true) %>
+</div>

@@ -1,0 +1,34 @@
+<%# app/views/catalog/index/_lib_catalog.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  counter ||= -1
+  offset  ||= 0
+  partial_opts = { document: doc, counter: counter, offset: offset }
+
+  # === Item title
+  title_opts = partial_opts.merge(dev_note: __FILE__)
+
+  # === Item thumbnail
+  thumbnail_opts = partial_opts
+
+  # === Item metadata
+  date          = (doc.get_pub_date unless doc.journal?)
+  resource_link = link_to_online_access(doc, separator: ITEM_SEPARATOR)
+
+  fields ||= UVA::View::FieldSet.new(
+    'Author'             => [doc.get_authors,       AUTHOR_OPT],
+    'Format'             => doc.export_format,
+    'Publication Date'   => [date,                  DATE_OPT],
+    'Online Version'     => [resource_link,         ONLINE_OPT],
+    'Contents'           => [view_online_link(doc), ONLINE_OPT],
+    'Digital Collection' => doc.get_collection,
+  )
+  fields_opts = { document: doc, fields: fields, show_availability: true }
+
+  template_opts = title_opts.merge(thumbnail_opts).merge(fields_opts)
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/index/template/basic', template_opts %>

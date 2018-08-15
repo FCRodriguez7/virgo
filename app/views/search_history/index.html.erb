@@ -1,0 +1,60 @@
+<%# app/views/search_history/index.html.erb -%>
+<%-
+  # Overrides Blacklight app/views/search_history/index.html.erb
+
+  set_meta_tags(title: 'Search History')
+
+  view_debug(__FILE__)
+-%>
+
+<div class="tool-heading">
+  <h1 class="heading">Search History</h1>
+</div>
+
+<div class="tool-content">
+
+  <%- if @searches.blank? -%>
+
+    <h2>You have no search history</h2>
+
+  <%- else -%>
+
+    <p>
+      <%- confirmation = 'Clear your search history?' -%>
+      <%- link_path = clear_search_history_path -%>
+      <%- link_opts = { method: :delete, confirm: confirmation } -%>
+      <%= link_to 'Clear Search History', link_path, link_opts %>
+    </p>
+
+    <h2>Your recent searches</h2>
+    <table class="zebra search_history">
+      <%- @searches.each_with_index do |search, index| -%>
+        <%= content_tag(:tr, id: "document_#{index + 1}") do %>
+          <td class="query">
+            <%= link_to_previous_search(search.query_params) %>
+          </td>
+          <td class="actions">
+            <%- if current_user && search.saved? -%>
+              <%- link_label = '[saved]' -%>
+              <%- link_path  = saved_search_path(search.id) -%>
+              <%- link_opts  = { method: :delete } -%>
+            <%- else -%>
+              <%- link_label = 'save' -%>
+              <%- link_path  = save_saved_search_path(search.id) -%>
+              <%- link_opts  = { method: :put } -%>
+            <%- end -%>
+            <%= link_to link_label, link_path, link_opts %>
+          </td>
+          <td class="actions">
+            <%- confirmation = 'Delete item?' -%>
+            <%- link_path = search_history_path(search) -%>
+            <%- link_opts = { method: :delete, confirm: confirmation } -%>
+            <%= link_to 'delete', link_path, link_opts %>
+          </td>
+        <%- end -%>
+      <%- end -%>
+    </table>
+
+  <%- end -%>
+
+</div>

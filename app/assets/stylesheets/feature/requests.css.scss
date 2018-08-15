@@ -1,0 +1,37 @@
+// app/assets/stylesheets/feature/requests.css.scss
+
+// ============================================================================
+// Requests including
+// Patron-Driven Acquisitions (a.k.a. "Available to Order")
+// ============================================================================
+
+.sc-request-link,
+.pda-purchase,
+.pda-about {
+    padding-top:    10px;
+    padding-bottom: 10px;
+    font-weight:    bold;
+    font-size:      1.2em;
+    text-align:     center;
+}
+
+// ============================================================================
+// Patron-Driven Acquisitions (a.k.a. "Available to Order")
+// ============================================================================
+
+// Common PDA control styles.
+.pda-purchase,
+.pda-about {
+    background:     #f2f2f2;
+    border-left:    1px solid $holding-border-color;
+    border-right:   1px solid $holding-border-color;
+}
+
+.pda-purchase {
+    padding-top:    20px;
+}
+
+.pda-about {
+    padding-bottom: 15px;
+    font-size:      1.0em;
+}

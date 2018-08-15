@@ -1,0 +1,25 @@
+---
+# Subnets Associated with Special Collections
+#
+# Less Secure Network
+- 128.143.188.0/24
+- 172.16.188.0/24
+- 10.160.188.0/24
+# Cavalier ssid
+- 172.25.30.0/23
+- 10.163.30.0/24
+# Wahoo ssid
+- 172.27.30.0/23
+- 10.165.30.0/24
+# More Secure Network
+- 137.54.171.0/24
+- 10.161.171.0/24
+# Jefferson ssid
+- 172.23.30.0/23
+- 10.166.30.0/24
+# Academic Protected Network
+- 172.28.249.128/25
+- 172.29.249.128/25
+- 10.168.249.128/25
+# LEO
+- 137.54.155.0/24

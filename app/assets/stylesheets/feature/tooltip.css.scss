@@ -1,0 +1,92 @@
+// app/assets/stylesheets/feature/tooltip.css.scss
+
+// ============================================================================
+// Tooltips
+// ============================================================================
+
+// Tooltips for help text (Advanced Search)
+.tooltip {
+
+    display:         inline-block;
+    margin-left:     4px;
+    position:        relative;
+    outline:         none;
+    text-decoration: none;
+    color:           #604927;
+    border-bottom:   dotted 1px #604927;
+
+    b, strong {
+        font-size:   15px;
+        font-weight: 600;
+    }
+
+    > span {
+        width:         320px;
+        margin-top:    0;
+        margin-left:   -120px;
+        padding:       10px 20px;
+        position:      absolute;
+        z-index:       10;
+        font-family:   Arial, sans-serif;
+        font-size:     12px;
+        font-style:    normal;
+        color:         black;
+        background:    #faf7e3;
+        border-radius: 3px;
+        border:        1px solid #e4dfa5;
+        box-shadow:    2px 2px 2px #999999;
+        opacity:       0;
+        visibility:    hidden;
+    }
+
+    &:hover > span {
+        display:         inline;
+        margin-top:      50px;
+        margin-left:     -90px;
+        text-decoration: none;
+        overflow:        visible;
+        opacity:         1;
+        visibility:      visible;
+    }
+}
+
+// Tooltips for policy display.
+.policy-tooltip {
+
+    position:        relative;
+    outline:         none;
+    text-decoration: none;
+    color:           black;
+    border-bottom:   1px dotted black;
+
+    span {
+        position:    absolute;
+        margin-left: -999em;
+        color:       black;
+    }
+
+    &:hover span {
+        width:         250px;
+        margin-left:   0;
+        padding:       0.5em 1.5em 0.5em 1.5em;
+        position:      absolute;
+        top:           2em;
+        left:          1em;
+        z-index:       99;
+        border-radius: 5px 5px;
+        border:        1px solid #ffad33;
+        box-shadow:    5px 5px 5px rgba(0, 0, 0, 0.1);
+        background:    #ffffaa;
+    }
+}
+
+.policy-explanation {
+
+    padding:       0.5em 1.5em 0.5em 1.5em;
+    border-radius: 5px 5px;
+    border:        1px solid #ffad33;
+    box-shadow:    5px 5px 5px rgba(0, 0, 0, 0.1);
+    background:    #ffffaa;
+
+    a { text-decoration: underline !important; }
+}

@@ -1,0 +1,47 @@
+<%# app/views/catalog/facet.html.erb -%>
+<%-
+  # Overrides Blacklight app/views/catalog/facet.html.erb
+
+  # Hints for RubyMine (skipped during execution).
+  include UVA::Helper::Facets unless ONLY_FOR_DOCUMENTATION
+
+  facet_name  ||= params[:id]
+  facet_limit ||= params[:'facet.limit']
+
+  # Get the current facet sort and make a link for the opposite facet sort.
+  _current_sort, current_sort_label = current_facet_sort
+  inverse_sort,  inverse_sort_label = inverse_facet_sort
+  url_params = params_for_facet_values
+  url_params.merge!(id: facet_name, facet_sort: inverse_sort)
+  inverse_params = url_params.dup
+  inverse_params[:'facet.limit'] = facet_limit if facet_limit.present?
+  inverse_sort_link = portal_facet_path(inverse_params)
+
+  # Sort the items.
+  items    = facet_sort(@facet_list).compact
+  html_opt = { title: nil, target: '_top', params: url_params }
+
+  view_debug(__FILE__)
+-%>
+
+<div class="page-heading" id="page-heading">
+  Limit by <%= facet_field_labels[facet_name] %>
+</div>
+
+<div class="facet-sort">
+  Sort by: <span class="current-sort"><%= current_sort_label %></span>
+  &bullet;
+  <%= link_to(inverse_sort_label, inverse_sort_link, class: 'sort-change') %>
+</div>
+
+<div class="content-area" role="listbox" aria-labelledby="page-heading">
+  <div class="two-column">
+    <ul>
+      <%- items.each do |item| -%>
+        <li>
+          <%= add_facet_link(facet_name, item, html_opt) %>
+        </li>
+      <%- end -%>
+    </ul>
+  </div>
+</div>

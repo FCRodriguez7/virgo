@@ -1,0 +1,16 @@
+<%# app/views/account/barred.html.erb -%>
+<%-
+  set_meta_tags(title: 'My Account - Barred')
+
+  view_debug(__FILE__)
+-%>
+
+<div class="list-heading">
+  <h1 class="heading">Barred</h1>
+</div>
+
+<div class="account-container">
+  <div class="ui-state-highlight notice">
+    <%= render 'account/barred_status' %>
+  </div>
+</div>

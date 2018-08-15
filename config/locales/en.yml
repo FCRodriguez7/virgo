@@ -1,0 +1,16 @@
+# config/locales/en.yml
+#
+# I18N configuration
+
+en:
+
+  # ===========================================================================
+  # Kaminari
+  # ===========================================================================
+  views:
+    pagination:
+      first:      "&laquo; First"
+      last:       "Last &raquo;"
+      previous:   "&lsaquo; Prev"
+      next:       "Next &rsaquo;"
+      truncate:   ""                # Show nothing in the page gap.

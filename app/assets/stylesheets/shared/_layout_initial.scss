@@ -1,0 +1,13 @@
+// app/assets/stylesheets/shared/_layout_initial.scss
+//
+// Definitions which should come before all other @import statements in a
+// layout.
+
+@import "compass/css3/hyphenation";
+@import "shared/values";
+@import "shared/mixins";
+@import "shared/accessibility";
+
+// ============================================================================
+// Initial global settings (typically for test/development purposes).
+// ============================================================================

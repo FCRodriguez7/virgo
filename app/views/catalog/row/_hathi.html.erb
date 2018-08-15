@@ -1,0 +1,20 @@
+<%# app/views/catalog/row/_hathi.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  resource_link ||=
+    begin
+      access = online_access_label(doc)
+      link_to_online_access(doc, label: access, separator: ITEM_SEPARATOR)
+    end
+
+  fields_opts ||= {
+    document:    doc,
+    access_link: resource_link,
+    dev_note:    __FILE__,
+  }
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/row/shared/fields', fields_opts -%>

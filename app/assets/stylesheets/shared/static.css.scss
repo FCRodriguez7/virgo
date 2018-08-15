@@ -1,0 +1,62 @@
+// app/assets/stylesheets/static.css.scss
+//
+// Styles for static pages
+
+.static-page {
+
+    &.error-422 {
+
+        color:            #666666;
+        text-align:       center;
+        font-family:      Arial, sans-serif;
+        font-size:        12pt;
+        background-color: white;
+
+        h1 {
+            line-height: 1.5em;
+            font-size:   100%;
+            color:       #dd0000;
+        }
+    }
+
+    div.dialog {
+
+        @include width-fit-content;
+
+        margin:              4em auto 0 auto;
+        padding:             1em 25px;
+        text-align:          center;
+        border:              1px solid #cccccc;
+        border-right-color:  #999999;
+        border-bottom-color: #999999;
+
+        h1 {
+            margin-bottom: 0.5em;
+            font-weight:   bolder;
+            font-size:     large;
+        }
+    }
+
+    .info-content {
+
+        .entry-header {
+            margin-top: 0.5em;
+        }
+
+        .entry-content {
+
+            padding-left: 0;
+
+            p { margin-bottom: 1em; }
+        }
+    }
+
+    .btn.small {
+        margin:          1.5em 0 0;
+        text-decoration: none;
+    }
+
+    .no-shadow {
+        text-shadow: none;
+    }
+}

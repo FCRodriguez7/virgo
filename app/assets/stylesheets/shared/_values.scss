@@ -1,0 +1,71 @@
+// app/assets/stylesheets/shared/_values.scss
+
+// ============================================================================
+// General
+// ============================================================================
+
+$virgo-link-color:      #173585 !default;
+$virgo-link-hover:      #e8effc !default;
+
+$success-color:         #264409 !default;
+$success-bg-color:      #e6efc2 !default;
+$error-color:           #8a1f11 !default;
+$error-bg-color:        #fbe3e4 !default;
+
+$holding-border-color:  #dad0b5;
+$holding-header-color:  #ece5d2;
+$holding-hspace:        1em;
+$holding-hspace-edge:  ($holding-hspace / 2);
+$holding-vspace-th:     0.5em;
+$holding-vspace-td:     0.33em;
+
+$ajax-loader:           image-url('ajax-loader.gif')        !default;
+$cb-loader:             image-url('colorbox/loading.gif')   !default;
+$menu-down-icon:        image-url('action_arrow.gif')       !default;
+$menu-up-icon:          image-url('action_arrow_up.gif')    !default;
+$menu-up-down-icon:     image-url('action_arrow_both.gif')  !default;
+$notice-icon:           image-url('notice-alert.gif')       !default;
+$sprite-image:          image-url('icon-sprite.png')        !default;
+$square-bullet:         image-url('icons/bul_sq_gry.gif')   !default;
+$chat-icon:             image-url('contact_chat.png')       !default;
+$email-icon:            image-url('contact_email.png')      !default;
+$phone-icon:            image-url('contact_phone.png')      !default;
+
+// Room required on the left to show the sprite image as the background of the
+// document action menu.
+$sprite-padding-left:   25px;
+$sprite-padding-right:  2px;
+
+// ============================================================================
+// Starred items
+// ============================================================================
+
+$star-lit-image:        image-url('marked-list.gif')        !default;
+$star-unlit-image:      image-url('unmarked-list.gif')      !default;
+$star-change-image:     image-url('marked-list-saving.gif') !default;
+$star-add-all-image:    image-url('add-marked-list.gif')    !default;
+
+// ============================================================================
+// Availability
+// ============================================================================
+
+$avl-color:                     #62564f;
+$avl-bg-color:                  white;
+$avl-border-color:              $avl-color;
+$avl-hover-color:               #42362f;
+$avl-hover-bg-color:            whitesmoke;
+$avl-hover-border-color:        $avl-hover-color;
+
+$available-color:               #108a10;
+$available-bg-color:            $avl-bg-color;
+$available-border-color:        $available-color;
+$available-hover-color:         $available-color;
+$available-hover-bg-color:      $avl-hover-bg-color;
+$available-hover-border-color:  $available-hover-color;
+
+$non-circ-color:                $avl-color;
+$non-circ-bg-color:             $avl-bg-color;
+$non-circ-border-color:         $avl-border-color;
+$non-circ-hover-color:          $avl-hover-color;
+$non-circ-hover-bg-color:       $avl-hover-bg-color;
+$non-circ-hover-border-color:   $avl-hover-border-color;

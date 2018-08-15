@@ -1,0 +1,70 @@
+// app/assets/stylesheets/shared/_accessibility.scss
+//
+// Definitions to support use via assisted technologies.
+
+// ============================================================================
+// Screen reader support
+// ============================================================================
+
+// Including this prevents WAVE (http://wave.webaim.org) from complaining
+// (unreasonably) about color contrast on invisible content.
+@mixin wave-hacks() {
+    color:      black !important;
+    background: white !important;
+}
+
+// Hide content from display and from screen readers.
+.hidden {
+    display: none !important;
+    @include wave-hacks;
+}
+
+// Hide content from display but make it available for screen readers.
+//
+// This Bootstrap definition replaces previously-defined classes
+// '.screen-reader-text' and '.visuallyhidden'.
+//
+.sr-only {
+    position: absolute;
+    width:    1px;
+    height:   1px;
+    margin:   -1px;
+    padding:  0;
+    border:   none;
+    overflow: hidden;
+    clip:     rect(0,0,0,0);
+    @include wave-hacks;
+}
+
+// ============================================================================
+// Keyboard focus
+// ============================================================================
+
+// Some things are given the focus by JavaScript in order to reset the
+// "current" tab stop position (even if they are not normally elements that
+// should displayed as "focused").
+:focus {
+    outline: none;
+}
+
+// Focusable elements should display an outline when they receive focus.
+// To aid in following the focus when tabbing, the background of the focus
+// element is very subtly darkened.
+a, area, button, input, select, textarea,
+[controls], [data-path], [draggable], [href], [tabindex] {
+    &:focus {
+        outline:          thin dotted black;
+        outline-offset:   2px;
+        background-color: rgba(0,0,0,0.025);
+    }
+    &:hover {
+        outline: none;
+    }
+}
+
+// When rendering to actual print output, don't display focus.
+@media print {
+    :focus {
+        outline: none;
+    }
+}

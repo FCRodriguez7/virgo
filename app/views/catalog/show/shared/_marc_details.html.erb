@@ -1,0 +1,86 @@
+<%# app/views/catalog/show/shared/_marc_details.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless (marc = doc && doc.marc_display)
+
+  tech_details ||= true
+
+  # === Item metadata
+  format   = doc.export_format
+  is_video = format.to_s.downcase.include?('video')
+
+  # For items with a finding aid, ensure that it displays "above the fold".
+  finding_aid         = marc.finding_aid_note.presence
+  related_resources   = link_to_related_resources(doc)
+  related_resources ||= links_to(marc.electronic_related_resource)
+  if finding_aid || (related_resources.to_s =~ /GUIDE TO THE COLLECTION/)
+    finding_aid       = [finding_aid,       always_show]
+    related_resources = [related_resources, always_show]
+  end
+
+  # For virtual shelf browse, allow adjustment to facet search link parameters.
+  uniform_title = facet_search_links(:uniform_title_facet, doc, title: nil)
+  series_title  = facet_search_links(:series_title_facet,  doc, title: nil)
+
+  issn_label  = vocabulary_term('ISSN')
+  isbn_label  = vocabulary_term('ISBN')
+  sudoc_label = vocabulary_term('SuDoc') << ' Number'
+
+  fields = UVA::View::FieldSet.new(
+    'Format'                   => format,
+    'Published'                => doc.get_pub_statement,
+    'Edition'                  => doc.get_edition_statement,
+    'Language'                 => doc.get_language,
+    'Uniform Title'            => uniform_title,
+    'Variant Title'            => marc.variant_title,
+    'Abbreviated Title'        => marc.abbreviated_title,
+    'Related Title'            => marc.related_title,
+    'Title History Note'       => marc.title_history_note,
+    'Previous Title'           => marc.previous_title,
+    'Later Title'              => marc.later_title,
+    'Cartographic Info'        => marc.cartographic_math_data,
+    'Series'                   => series_title,
+    issn_label                 => doc.export_issn,
+    isbn_label                 => doc.export_isbn,
+    sudoc_label                => [doc.sudoc_numbers, CALL_NUMBER_OPT],
+    'Director'                 => [doc.export_directors, always_show],
+    'Release Date'             => :release_date_facet,
+    'Run Time'                 => video_run_time(doc),
+    'Finding Aid Note'         => finding_aid,
+    'Related Resources'        => related_resources,
+    'Access Restriction'       => marc.access_restriction,
+    'Rating'                   => (doc.get_target_audience if is_video),
+    'Target Audience'          => (doc.get_target_audience unless is_video),
+    'Abstract'                 => (abstract = doc.get_abstract),
+    'Summary'                  => (doc.get_plot_summary if abstract.blank?),
+    'Contents'                 => ul_list(doc.get_contents),
+    'Description'              => doc.get_description,
+    'Cite as'                  => doc.get_cite_as,
+    'Located in'               => marc.located_in,
+    'Arrangement'              => marc.organization_and_arrangement,
+    'Dissertation Note'        => doc.get_dissertation_note,
+    'Notes'                    => ul_list(doc.get_notes),
+    'Local Notes'              => marc.local_note,
+    'Reproduction Notes'       => marc.reproduction_note,
+    'Location of Original'     => marc.location_of_originals,
+    label_no_label(doc)        => ul_list(marc.label_no),
+    'Original Version'         => marc.original_version,
+    'Other Archival Materials' => marc.other_archival_materials,
+    'Journal Frequency'        => marc.journal_frequency,
+    'Publication History'      => marc.publication_history,
+    'Series Statement'         => doc.get_series_statement,
+    'Performers'               => [doc.get_performers, always_show],
+    'Recording Info'           => doc.get_recording_information,
+    'Credits'                  => doc.export_credits,
+    'Other Forms'              => marc.other_forms,
+    'Terms of Use'             => marc.terms_of_use,
+    'Biographical Note'        => marc.biographical_note,
+    'Cited in'                 => marc.cited_in,
+    copyright_field            => copyright_and_permissions(doc),
+    'Date Indexed'             => show_date_indexed(doc),
+  )
+  fields_opts = { document: doc, fields: fields, tech_details: tech_details }
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/show/shared/fields', fields_opts %>

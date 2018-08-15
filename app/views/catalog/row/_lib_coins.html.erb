@@ -1,0 +1,19 @@
+<%# app/views/catalog/row/_lib_coins.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  resource_url ||= doc.get_url.first
+  resource_url &&= external_link(online_access_label(doc), resource_url)
+
+  fields_opts ||= {
+    document:    doc,
+    authors:     '',
+    dates:       '',
+    access_link: resource_url,
+    dev_note:    __FILE__,
+  }
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/row/shared/fields', fields_opts -%>

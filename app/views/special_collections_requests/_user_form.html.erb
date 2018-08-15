@@ -1,0 +1,76 @@
+<%# app/views/special_collections_requests/_user_form.html.erb -%>
+<%-
+  req ||= @sc_request
+  doc ||= req && req.document
+  return unless doc
+
+  single_copy = one_copy?(doc.availability)
+
+  checklist =
+    doc.availability.special_collections_holdings.flat_map { |holding|
+      call_number = holding.call_number
+      holding.copies.map { |copy|
+        next unless copy.sc_requestable?
+        if copy.available?
+          checkbox = !single_copy
+          location = copy.current_location.code
+        else
+          checkbox = true
+          location = copy.home_location.code
+        end
+        barcode = copy.barcode
+        item    = "location_plus_call_number[#{location}][#{barcode}][]"
+        entry =
+          if checkbox
+            checked = item_included?(req, location, call_number, barcode)
+            check_box_tag(item, call_number, checked)
+          else
+            hidden_field_tag(item, call_number)
+          end
+        content_tag(:div) {
+          entry << " #{location}, #{call_number}"
+        }
+      }
+    }.compact.join("\n").html_safe
+  unless single_copy
+    checklist = content_tag(:div, checklist, class: 'holdings-checklist')
+  end
+
+  user_note_label =
+    'Indicate box number, folder, volume number, etc. (if applicable)'
+  inst_label =
+    'Add this request to the Instructional Queue?'
+
+  internal_user = sc_user?(req.user_id)
+
+  view_debug(__FILE__)
+-%>
+
+<div class='sc-request-form'>
+  <%- if single_copy -%>
+    Call number of requested item:
+  <%- else -%>
+    There are multiple copies of this item.
+    Please consult the item record for a description of differences (if any);
+    use the checkboxes to select the copy or copies you wish to receive.
+  <%- end -%>
+
+  <%= checklist %>
+
+  <p>
+  <%= label(:special_collections_request, :user_note, user_note_label) %>
+  <%= user_form.text_field :user_note, size: 70 %>
+  </p>
+
+  <%- if internal_user -%>
+    <%= user_form.hidden_field :internal, value: '1' %>
+    <label>Based on the user account, this is an internal request.</label>
+    <p>
+    <%= user_form.check_box :is_instructional %>
+    <%= label :special_collections_request, :is_instructional, inst_label %>
+    </p>
+  <%- end -%>
+
+  <%= user_form.hidden_field :document_id %>
+
+</div>

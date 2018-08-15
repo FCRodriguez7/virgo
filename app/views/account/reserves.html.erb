@@ -1,0 +1,80 @@
+<%# app/views/account/reserves.html.erb -%>
+<%-
+  set_meta_tags(title: 'My Account - Course Reserve')
+
+  user       ||= @user_reserves
+  courses    ||= user && user.sorted_courses
+  item_count ||= user && user.reserve_count
+
+  no_items = courses.blank?
+
+  num = sr_only('Number')
+
+  view_debug(__FILE__)
+-%>
+
+<div class="list-heading">
+  <h1 class="heading">My Account</h1>
+  <%= print_view_link unless print_view? || no_items %>
+</div>
+
+<div class="account-container">
+
+  <%- if no_items -%>
+
+    <h2 class="sub-heading no-items">No Items on Reserve</h2>
+
+  <%- else -%>
+
+    <h2 class="sub-heading">
+      Items on Reserve: <span class="account-total"><%= item_count -%></span>
+    </h2>
+
+    <table class="item-list reserves">
+      <thead>
+        <tr>
+          <th class="account-number-heading hidden-heading"><%= num %></th>
+          <th class="account-title-heading">Title</th>
+          <th class="account-author-heading">Creator</th>
+          <th class="account-course-name-heading">Course Name</th>
+          <th class="account-reserve-location-heading">Reserve Location</th>
+          <th class="account-call-heading">Call Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%- number = 1 -%>
+        <%- courses.each do |course| -%>
+          <%- course_name = course.code -%>
+          <%- course.sorted_reserves.each do |reserve| -%>
+            <%- item   = reserve.catalog_item -%>
+            <%- title  = item.title -%>
+            <%- author = item.authors -%>
+            <%- doc    = item.document -%>
+            <%- url    = doc && catalog_path(doc.doc_id) -%>
+            <%- title  = link_to(title, url) if url -%>
+            <%- item.holdings.each do |holding| -%>
+              <%- library     = holding.library.name -%>
+              <%- call_number = holding.call_number -%>
+              <%- holding.copies.each do |copy| -%>
+                <%- loc = h("#{library} #{copy.current_location.name}") -%>
+                <tr class="item <%= cycle('even', 'odd') -%>">
+                  <td class="item-number"><%= number -%>.</td>
+                  <td class="title"><%= title %></td>
+                  <td class="author"><%= author %></td>
+                  <td class="course-name"><%= course_name %></td>
+                  <td class="library"><%= loc %></td>
+                  <td class="call-number"><%= call_number %></td>
+                </tr>
+                <%- number += 1 -%>
+              <%- end -%>
+            <%- end -%>
+          <%- end -%>
+        <%- end -%>
+      </tbody>
+    </table>
+
+  <%- end -%>
+
+</div>
+
+<%= render 'account/sidebar', user: user %>

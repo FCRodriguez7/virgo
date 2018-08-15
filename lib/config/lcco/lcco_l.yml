@@ -1,0 +1,1237 @@
+# lib/config/lcco_l.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from the Word document of the same base name.
+
+class:    L
+name:     'EDUCATION'
+sections:
+  - subclass:  L
+    name:     'Education (General)'
+    sections:
+      - name:    'Education (General)'
+        range:   L7-991
+        start:   L7
+        end:     L991
+        sections:
+          - name:    'Periodicals.  Societies'
+            range:   L7-97
+            start:   L7
+            end:     L97
+          - name:    'Yearbooks'
+            range:   L101
+            start:   L101
+            end:     L101
+          - name:    'Congresses'
+            range:   L107
+            start:   L107
+            end:     L107
+          - name:    'Official documents, reports, etc.'
+            range:   L111-791
+            start:   L111
+            end:     L791
+          - name:    'Educational exhibitions and museums'
+            range:   L797-898
+            start:   L797
+            end:     L898
+          - name:    'School fairs'
+            range:   L899
+            start:   L899
+            end:     L899
+          - name:    'Directories of educational institutions'
+            range:   L900-991
+            start:   L900
+            end:     L991
+  - subclass:  LA
+    name:     'History of education'
+    sections:
+      - name:    'History of education'
+        range:   LA5-2396
+        start:   LA5
+        end:     LA2396
+        sections:
+          - name:    'General'
+            range:   LA5-25
+            start:   LA5
+            end:     LA25
+          - name:    'By period'
+            range:   LA31-135
+            start:   LA31
+            end:     LA135
+          - name:    'Higher education'
+            range:   LA173-186
+            start:   LA173
+            end:     LA186
+          - name:    'United States'
+            range:   LA201-398
+            start:   LA201
+            end:     LA398
+          - name:    'Other regions or countries'
+            range:   LA410-2284
+            start:   LA410
+            end:     LA2284
+          - name:    'Biography'
+            range:   LA2301-2396
+            start:   LA2301
+            end:     LA2396
+  - subclass:  LB
+    name:     'Theory and practice of education'
+    sections:
+      - name:    'Theory and practice of education'
+        range:   LB5-3640
+        start:   LB5
+        end:     LB3640
+        sections:
+          - name:    'General'
+            range:   LB5-45
+            start:   LB5
+            end:     LB45
+          - name:    'Systems of individual educators and writers'
+            range:   LB51-885
+            start:   LB51
+            end:     LB885
+          - name:    'Teaching (Principles and practice)'
+            range:   LB1025-1050.75
+            start:   LB1025
+            end:     LB1050.75
+            sections:
+              - name:    'Reading (General)'
+                range:   LB1049.9-1050.75
+                start:   LB1049.9
+                end:     LB1050.75
+          - name:    'Educational psychology'
+            range:   LB1050.9-1091
+            start:   LB1050.9
+            end:     LB1091
+          - name:    'Child study'
+            range:   LB1101-1139
+            start:   LB1101
+            end:     LB1139
+          - name:    'Early childhood education'
+            range:   LB1139.2-1139.5
+            start:   LB1139.2
+            end:     LB1139.5
+          - name:    'Preschool education.  Nursery schools'
+            range:   LB1140-1140.5
+            start:   LB1140
+            end:     LB1140.5
+          - name:    'Kindergarten'
+            range:   LB1141-1489
+            start:   LB1141
+            end:     LB1489
+          - name:    'Primary education'
+            range:   LB1501-1547
+            start:   LB1501
+            end:     LB1547
+          - name:    'Elementary or public school education'
+            range:   LB1555-1602
+            start:   LB1555
+            end:     LB1602
+          - name:    'Secondary education.  High schools'
+            range:   LB1603-1696.6
+            start:   LB1603
+            end:     LB1696.6
+          - name:    'Education and training of teachers and administrators'
+            range:   LB1705-2286
+            start:   LB1705
+            end:     LB2286
+            sections:
+              - name:    'Certification of teachers'
+                range:   LB1771-1773
+                start:   LB1771
+                end:     LB1773
+              - name:    'Professional aspects of teaching and school administrators. Vocational guidance'
+                range:   LB1775-1785
+                start:   LB1775
+                end:     LB1785
+              - name:    'State teachers colleges'
+                range:   LB1805-2151
+                start:   LB1805
+                end:     LB2151
+                sections:
+                  - name:    'United States'
+                    range:   LB1811-1987
+                    start:   LB1811
+                    end:     LB1987
+                  - name:    'Other regions or countries'
+                    range:   LB1991-2151
+                    start:   LB1991
+                    end:     LB2151
+              - name:    'Teacher training in universities and colleges'
+                range:   LB2165-2278
+                start:   LB2165
+                end:     LB2278
+          - name:    'Higher education'
+            range:   LB2300-2430
+            start:   LB2300
+            end:     LB2430
+            sections:
+              - name:    'Institutions of higher education'
+                range:   LB2326.4-2330
+                start:   LB2326.4
+                end:     LB2330
+              - name:    'Teaching personnel'
+                range:   LB2331.7-2335.8
+                start:   LB2331.7
+                end:     LB2335.8
+              - name:    'Trade unions'
+                range:   LB2335.86-2335.885
+                start:   LB2335.86
+                end:     LB2335.885
+              - name:    'Endowments, trusts, etc.'
+                range:   LB2335.95-2337
+                start:   LB2335.95
+                end:     LB2337
+              - name:    'Student financial aid'
+                range:   LB2337.2-2340.8
+                start:   LB2337.2
+                end:     LB2340.8
+              - name:    'Supervision and administration.  Business management'
+                range:   LB2341-2341.95
+                start:   LB2341
+                end:     LB2341.95
+              - name:    'Admissions and entrance requirements'
+                range:   LB2351-2359
+                start:   LB2351
+                end:     LB2359
+              - name:    'Curriculum'
+                range:   LB2361-2365
+                start:   LB2361
+                end:     LB2365
+              - name:    'College examinations'
+                range:   LB2366-2367.75
+                start:   LB2366
+                end:     LB2367.75
+              - name:    'Graduate education'
+                range:   LB2371-2372
+                start:   LB2371
+                end:     LB2372
+              - name:    'Academic degrees'
+                range:   LB2381-2391
+                start:   LB2381
+                end:     LB2391
+          - name:    'Educational consultants and consulting'
+            range:   LB2799-2799.3
+            start:   LB2799
+            end:     LB2799.3
+          - name:    'School administration and organization'
+            range:   LB2801-3095
+            start:   LB2801
+            end:     LB3095
+            sections:
+              - name:    'Administrative personnel'
+                range:   LB2831.6-2831.99
+                start:   LB2831.6
+                end:     LB2831.99
+              - name:    'Teaching personnel'
+                range:   LB2832-2844.1
+                start:   LB2832
+                end:     LB2844.1
+              - name:    'Trade unions'
+                range:   LB2844.52-2844.63
+                start:   LB2844.52
+                end:     LB2844.63
+              - name:    'School management and discipline'
+                range:   LB3011-3095
+                start:   LB3011
+                end:     LB3095
+                sections:
+                  - name:    'Textbooks'
+                    range:   LB3045-3048
+                    start:   LB3045
+                    end:     LB3048
+                  - name:    'Educational tests, measurements, evaluations and examinations'
+                    range:   LB3050-3060.87
+                    start:   LB3050
+                    end:     LB3060.87
+          - name:    'School architecture and equipment.  School physical facilities. Campus planning'
+            range:   LB3201-3325
+            start:   LB3201
+            end:     LB3325
+          - name:    'School hygiene.  School health services'
+            range:   LB3401-3495
+            start:   LB3401
+            end:     LB3495
+          - name:    'Hygiene in universities and colleges'
+            range:   LB3497-3499
+            start:   LB3497
+            end:     LB3499
+          - name:    'Special days'
+            range:   LB3525-3575
+            start:   LB3525
+            end:     LB3575
+          - name:    'School life.  Student manners and customs'
+            range:   LB3602-3640
+            start:   LB3602
+            end:     LB3640
+  - subclass:  LC
+    name:     'Special aspects of education'
+    sections:
+      - name:    'Special aspects of education'
+        range:   LC8-6691
+        start:   LC8
+        end:     LC6691
+        sections:
+          - name:    'Forms of education'
+            range:   LC8-59
+            start:   LC8
+            end:     LC59
+            sections:
+              - name:    'General works'
+                range:   LC8
+                start:   LC8
+                end:     LC8
+              - name:    'Conversation and culture'
+                range:   LC15
+                start:   LC15
+                end:     LC15
+              - name:    'Self-education.  Self-culture'
+                range:   LC25-33
+                start:   LC25
+                end:     LC33
+              - name:    'Home education'
+                range:   LC37-44.3
+                start:   LC37
+                end:     LC44.3
+              - name:    'Nonformal education'
+                range:   LC45-45.8
+                start:   LC45
+                end:     LC45.8
+              - name:    'Private school education'
+                range:   LC47-58.7
+                start:   LC47
+                end:     LC58.7
+                sections:
+                  - name:    'Preparatory schools.  Preparatory school education'
+                    range:   LC58-58.7
+                    start:   LC58
+                    end:     LC58.7
+              - name:    'Public school education'
+                range:   LC59
+                start:   LC59
+                end:     LC59
+          - name:    'Social aspects of education'
+            range:   LC65-245
+            start:   LC65
+            end:     LC245
+            sections:
+              - name:    'Economic aspects of education'
+                range:   LC65-67.68
+                start:   LC65
+                end:     LC67.68
+              - name:    'Demographic aspects of education'
+                range:   LC68-70
+                start:   LC68
+                end:     LC70
+              - name:    'Education and the state'
+                range:   LC71-120.4
+                start:   LC71
+                end:     LC120.4
+                sections:
+                  - name:    'Academic freedom'
+                    range:   LC72-72.5
+                    start:   LC72
+                    end:     LC72.5
+                  - name:    'Public school question.  Secularization.  Religious instruction in the public schools'
+                    range:   LC107-120.4
+                    start:   LC107
+                    end:     LC120.4
+              - name:    'Compulsory education'
+                range:   LC129-139
+                start:   LC129
+                end:     LC139
+              - name:    'Attendance.  Dropouts'
+                range:   LC142-148.5
+                start:   LC142
+                end:     LC148.5
+              - name:    'Literacy.  Illiteracy'
+                range:   LC149-161
+                start:   LC149
+                end:     LC161
+              - name:    'Higher education and the state'
+                range:   LC165-182
+                start:   LC165
+                end:     LC182
+              - name:    'Taxation of schools and colleges'
+                range:   LC184-188
+                start:   LC184
+                end:     LC188
+              - name:    'Educational sociology'
+                range:   LC189-214.53
+                start:   LC189
+                end:     LC214.53
+                sections:
+                  - name:    'Discrimination in education'
+                    range:   LC212-212.863
+                    start:   LC212
+                    end:     LC212.863
+                  - name:    'Sex differences in education'
+                    range:   LC212.9-212.93
+                    start:   LC212.9
+                    end:     LC212.93
+                  - name:    'Educational equalization.  Right to education'
+                    range:   LC213-214.53
+                    start:   LC213
+                    end:     LC214.53
+              - name:    'Community and the school'
+                range:   LC215-238.4
+                start:   LC215
+                end:     LC238.4
+                sections:
+                  - name:    'Schools as community centers'
+                    range:   LC223
+                    start:   LC223
+                    end:     LC223
+                  - name:    'Home and school'
+                    range:   LC225-226.7
+                    start:   LC225
+                    end:     LC226.7
+                  - name:    'Parent-teacher associations.  Home and school associations'
+                    range:   LC230-235
+                    start:   LC230
+                    end:     LC235
+                  - name:    'College-university and the community'
+                    range:   LC237-238.4
+                    start:   LC237
+                    end:     LC238.4
+              - name:    'Foundations, endowments, funds'
+                range:   LC241-245
+                start:   LC241
+                end:     LC245
+          - name:    'Moral and religious education'
+            range:   LC251-951
+            start:   LC251
+            end:     LC951
+            sections:
+              - name:    'Moral education.  Character building'
+                range:   LC251-318
+                start:   LC251
+                end:     LC318
+              - name:    'Religion and education.  Education under church control'
+                range:   LC321-951
+                start:   LC321
+                end:     LC951
+                sections:
+                  - name:    'Christian education.  Church education'
+                    range:   LC361-629
+                    start:   LC361
+                    end:     LC629
+                    sections:
+                      - name:    'Orthodox Eastern Church'
+                        range:   LC446-454
+                        start:   LC446
+                        end:     LC454
+                      - name:    'Roman Catholic'
+                        range:   LC461-510
+                        start:   LC461
+                        end:     LC510
+                      - name:    'Protestant'
+                        range:   LC531-629
+                        start:   LC531
+                        end:     LC629
+                  - name:    'Jewish education'
+                    range:   LC701-775
+                    start:   LC701
+                    end:     LC775
+                  - name:    'Islamic education'
+                    range:   LC901-915
+                    start:   LC901
+                    end:     LC915
+                  - name:    'Buddhist education'
+                    range:   LC921-929.7
+                    start:   LC921
+                    end:     LC929.7
+                  - name:    'Other'
+                    range:   LC951
+                    start:   LC951
+                    end:     LC951
+          - name:    'Types of education'
+            range:   LC980-1099.5
+            start:   LC980
+            end:     LC1099.5
+            sections:
+              - name:    'Humanistic education.  Liberal education'
+                range:   LC1001-1024
+                start:   LC1001
+                end:     LC1024
+                sections:
+                  - name:    'Computer-assisted education'
+                    range:   LC1022-1022.25
+                    start:   LC1022
+                    end:     LC1022.25
+              - name:    'Collective education'
+                range:   LC1025-1027
+                start:   LC1025
+                end:     LC1027
+              - name:    'Communist education'
+                range:   LC1030
+                start:   LC1030
+                end:     LC1030
+              - name:    'Competency based education'
+                range:   LC1031-1034.5
+                start:   LC1031
+                end:     LC1034.5
+              - name:    'Basic education.  Basic skills education'
+                range:   LC1035-1035.8
+                start:   LC1035
+                end:     LC1035.8
+              - name:    'Community education'
+                range:   LC1036-1036.8
+                start:   LC1036
+                end:     LC1036.8
+              - name:    'Career education'
+                range:   LC1037-1037.8
+                start:   LC1037
+                end:     LC1037.8
+              - name:    'Vocational education (General)'
+                range:   LC1041-1048
+                start:   LC1041
+                end:     LC1048
+              - name:    'Cooperative education'
+                range:   LC1049-1049.8
+                start:   LC1049
+                end:     LC1049.8
+              - name:    'Professional education'
+                range:   LC1051-1072
+                start:   LC1051
+                end:     LC1072
+              - name:    'Industrial education (General)'
+                range:   LC1081-1087.4
+                start:   LC1081
+                end:     LC1087.4
+              - name:    'Political education'
+                range:   LC1090-1091
+                start:   LC1090
+                end:     LC1091
+              - name:    'Multicultural education (General)'
+                range:   LC1099-1099.5
+                start:   LC1099
+                end:     LC1099.5
+          - name:    'Inclusive education'
+            range:   LC1200-1203
+            start:   LC1200
+            end:     LC1203
+          - name:    'Education of special classes of persons'
+            range:   LC1390-5160.3
+            start:   LC1390
+            end:     LC5160.3
+            sections:
+              - name:    'Men.  Boys'
+                range:   LC1390
+                start:   LC1390
+                end:     LC1390
+              - name:    'Women.  Girls'
+                range:   LC1401-2572
+                start:   LC1401
+                end:     LC2572
+              - name:    'Gays.  Lesbians.  Bisexuals'
+                range:   LC2574-2576
+                start:   LC2574
+                end:     LC2576
+              - name:    'Student-athletes'
+                range:   LC2580-2582
+                start:   LC2580
+                end:     LC2582
+              - name:    'Education in developing countries'
+                range:   LC2601-2611
+                start:   LC2601
+                end:     LC2611
+              - name:    'Asian Americans.  Asians in the United States'
+                range:   LC2630-2638
+                start:   LC2630
+                end:     LC2638
+              - name:    'Latin Americans.  Hispanic Americans'
+                range:   LC2667-2698
+                start:   LC2667
+                end:     LC2698
+                sections:
+                  - name:    'Mexican Americans.  Mexicans in the United States'
+                    range:   LC2680-2688
+                    start:   LC2680
+                    end:     LC2688
+                  - name:    'Puerto Ricans.  Puerto Ricans in the United States'
+                    range:   LC2690-2698
+                    start:   LC2690
+                    end:     LC2698
+              - name:    'Blacks.  African Americans'
+                range:   LC2699-2913
+                start:   LC2699
+                end:     LC2913
+              - name:    'Asians'
+                range:   LC3001-3501
+                start:   LC3001
+                end:     LC3501
+              - name:    'Romanies.  Gypsies'
+                range:   LC3503-3520
+                start:   LC3503
+                end:     LC3520
+              - name:    'Lapps'
+                range:   LC3530-3540
+                start:   LC3530
+                end:     LC3540
+              - name:    'Jews'
+                range:   LC3551-3593
+                start:   LC3551
+                end:     LC3593
+              - name:    'Immigrants or ethnic and linguistic minorities.  Bilingual schools and bilingual education'
+                range:   LC3701-3740
+                start:   LC3701
+                end:     LC3740
+              - name:    'Children of immigrants (First generation)'
+                range:   LC3745-3747
+                start:   LC3745
+                end:     LC3747
+              - name:    'Exceptional children and youth.  Special education'
+                range:   LC3950-4806.5
+                start:   LC3950
+                end:     LC4806.5
+                sections:
+                  - name:    'Gifted children and youth'
+                    range:   LC3991-4000
+                    start:   LC3991
+                    end:     LC4000
+                  - name:    'Children and youth with disabilities.  Learning disabled children and youth'
+                    range:   LC4001-4806.5
+                    start:   LC4001
+                    end:     LC4806.5
+              - name:    'Other special classes'
+                range:   LC4812-5160.3
+                start:   LC4812
+                end:     LC5160.3
+          - name:    'Fundamental education'
+            range:   LC5161-5163
+            start:   LC5161
+            end:     LC5163
+          - name:    'Education extension.  Adult education.  Continuing education'
+            range:   LC5201-6660.4
+            start:   LC5201
+            end:     LC6660.4
+            sections:
+              - name:    'Aged education'
+                range:   LC5451-5493
+                start:   LC5451
+                end:     LC5493
+              - name:    'Evening schools'
+                range:   LC5501-5560
+                start:   LC5501
+                end:     LC5560
+              - name:    'Vacation schools.  Summer schools'
+                range:   LC5701-5771
+                start:   LC5701
+                end:     LC5771
+              - name:    'Distance education'
+                range:   LC5800-5808
+                start:   LC5800
+                end:     LC5808
+              - name:    'Correspondence schools'
+                range:   LC5900-6101
+                start:   LC5900
+                end:     LC6101
+              - name:    'University extension'
+                range:   LC6201-6401
+                start:   LC6201
+                end:     LC6401
+              - name:    'Lyceums and lecture courses.  Forums'
+                range:   LC6501-6560.4
+                start:   LC6501
+                end:     LC6560.4
+              - name:    'Radio and television extension courses.  Instruction by radio and television'
+                range:   LC6571-6581
+                start:   LC6571
+                end:     LC6581
+              - name:    'Reading circles and correspondence clubs'
+                range:   LC6601-6660.4
+                start:   LC6601
+                end:     LC6660.4
+          - name:    'Education and travel'
+            range:   LC6681
+            start:   LC6681
+            end:     LC6681
+          - name:    'Traveling educational exhibits'
+            range:   LC6691
+            start:   LC6691
+            end:     LC6691
+  - subclass:  LD
+    name:     'Individual institutions -- United States'
+    sections:
+      - name:    'Individual institutions'
+        range:   LD13-7501
+        start:   LD13
+        end:     LD7501
+        sections:
+          - name:    'United States'
+            range:   LD13-7501
+            start:   LD13
+            end:     LD7501
+            sections:
+              - name:    'Universities.  Colleges'
+                range:   LD13-7251
+                start:   LD13
+                end:     LD7251
+                sections:
+                  - name:    'Community colleges.  Junior colleges'
+                    range:   LD6501
+                    start:   LD6501
+                    end:     LD6501
+                  - name:    'Women''s colleges'
+                    range:   LD7020-7251
+                    start:   LD7020
+                    end:     LD7251
+              - name:    'Secondary and elementary schools'
+                range:   LD7501
+                start:   LD7501
+                end:     LD7501
+  - subclass:  LE
+    name:     'Individual institutions -- America (except United States)'
+    sections:
+      - name:    'Individual institutions'
+        range:   LE3-78
+        start:   LE3
+        end:     LE78
+        sections:
+          - name:    'America (except United States)'
+            range:   LE3-78
+            start:   LE3
+            end:     LE78
+            sections:
+              - name:    'Canada'
+                range:   LE3-5
+                start:   LE3
+                end:     LE5
+              - name:    'Mexico'
+                range:   LE7-9
+                start:   LE7
+                end:     LE9
+              - name:    'Central America'
+                range:   LE11-13
+                start:   LE11
+                end:     LE13
+              - name:    'West Indies'
+                range:   LE15-17
+                start:   LE15
+                end:     LE17
+              - name:    'South America'
+                range:   LE21-78
+                start:   LE21
+                end:     LE78
+                sections:
+                  - name:    'Argentina'
+                    range:   LE21-23
+                    start:   LE21
+                    end:     LE23
+                  - name:    'Bolivia'
+                    range:   LE27-29
+                    start:   LE27
+                    end:     LE29
+                  - name:    'Brazil'
+                    range:   LE31-33
+                    start:   LE31
+                    end:     LE33
+                  - name:    'Chile'
+                    range:   LE36-38
+                    start:   LE36
+                    end:     LE38
+                  - name:    'Colombia'
+                    range:   LE41-43
+                    start:   LE41
+                    end:     LE43
+                  - name:    'Ecuador'
+                    range:   LE46-48
+                    start:   LE46
+                    end:     LE48
+                  - name:    'Guianas'
+                    range:   LE51-59
+                    start:   LE51
+                    end:     LE59
+                  - name:    'Paraguay'
+                    range:   LE61-63
+                    start:   LE61
+                    end:     LE63
+                  - name:    'Peru'
+                    range:   LE66-68
+                    start:   LE66
+                    end:     LE68
+                  - name:    'Uruguay'
+                    range:   LE71-73
+                    start:   LE71
+                    end:     LE73
+                  - name:    'Venezuela'
+                    range:   LE76-78
+                    start:   LE76
+                    end:     LE78
+  - subclass:  LF
+    name:     'Individual institutions -- Europe'
+    sections:
+      - name:    'Individual institutions'
+        range:   LF14-5627
+        start:   LF14
+        end:     LF5627
+        sections:
+          - name:    'Great Britain'
+            range:   LF14-1257
+            start:   LF14
+            end:     LF1257
+            sections:
+              - name:    'England'
+                range:   LF14-797
+                start:   LF14
+                end:     LF797
+              - name:    'Ireland'
+                range:   LF800-957
+                start:   LF800
+                end:     LF957
+              - name:    'Scotland'
+                range:   LF960-1137
+                start:   LF960
+                end:     LF1137
+              - name:    'Wales'
+                range:   LF1140-1257
+                start:   LF1140
+                end:     LF1257
+          - name:    'Austria'
+            range:   LF(1311)-1537
+            start:   LF1311
+            end:     LF1537
+          - name:    'Czech Republic'
+            range:   LF1541-1549
+            start:   LF1541
+            end:     LF1549
+          - name:    'Slovakia'
+            range:   LF1550-1550.8
+            start:   LF1550
+            end:     LF1550.8
+          - name:    'Hungary'
+            range:   LF1561-1697
+            start:   LF1561
+            end:     LF1697
+          - name:    'Finland'
+            range:   LF1705-1709
+            start:   LF1705
+            end:     LF1709
+          - name:    'France'
+            range:   LF1711-2397
+            start:   LF1711
+            end:     LF2397
+          - name:    'Germany'
+            range:   LF2402-3197
+            start:   LF2402
+            end:     LF3197
+          - name:    'Greece'
+            range:   LF3211-3247
+            start:   LF3211
+            end:     LF3247
+          - name:    'Italy'
+            range:   LF3248-3897
+            start:   LF3248
+            end:     LF3897
+          - name:    'Malta'
+            range:   LF3899
+            start:   LF3899
+            end:     LF3899
+          - name:    'Belgium'
+            range:   LF3911-4067
+            start:   LF3911
+            end:     LF4067
+          - name:    'Luxembourg'
+            range:   LF4069
+            start:   LF4069
+            end:     LF4069
+          - name:    'Netherlands'
+            range:   LF4071-4197
+            start:   LF4071
+            end:     LF4197
+          - name:    'Poland'
+            range:   LF4203-4209
+            start:   LF4203
+            end:     LF4209
+          - name:    'Russia (Federation)'
+            range:   LF(4211)-4437
+            start:   LF4211
+            end:     LF4437
+          - name:    'Estonia'
+            range:   LF4440-4441
+            start:   LF4440
+            end:     LF4441
+          - name:    'Latvia'
+            range:   LF4443-4444
+            start:   LF4443
+            end:     LF4444
+          - name:    'Lithuania'
+            range:   LF4445-4446
+            start:   LF4445
+            end:     LF4446
+          - name:    'Belarus'
+            range:   LF4447.2-4447.5
+            start:   LF4447.2
+            end:     LF4447.5
+          - name:    'Moldova'
+            range:   LF4448-4448.5
+            start:   LF4448
+            end:     LF4448.5
+          - name:    'Ukraine'
+            range:   LF4449.2-4449.5
+            start:   LF4449.2
+            end:     LF4449.5
+          - name:    'Denmark'
+            range:   LF4451-4487
+            start:   LF4451
+            end:     LF4487
+          - name:    'Faroe Islands'
+            range:   LF4488-4488.2
+            start:   LF4488
+            end:     LF4488.2
+          - name:    'Iceland'
+            range:   LF4489-4491
+            start:   LF4489
+            end:     LF4491
+          - name:    'Norway'
+            range:   LF4493-4537
+            start:   LF4493
+            end:     LF4537
+          - name:    'Sweden'
+            range:   LF4539-4607
+            start:   LF4539
+            end:     LF4607
+          - name:    'Spain'
+            range:   LF4610-4827
+            start:   LF4610
+            end:     LF4827
+          - name:    'Portugal'
+            range:   LF4831-4887
+            start:   LF4831
+            end:     LF4887
+          - name:    'Switzerland'
+            range:   LF4901-5047
+            start:   LF4901
+            end:     LF5047
+          - name:    'Turkey and the Baltic states'
+            range:   LF5051-5627
+            start:   LF5051
+            end:     LF5627
+  - subclass:  LG
+    name:     'Individual institutions -- Asia.  Africa.  Indian Ocean islands.  Australia.  New Zealand.  Pacific islands'
+    sections:
+      - name:    'Individual institutions'
+        range:   LG21-961
+        start:   LG21
+        end:     LG961
+        sections:
+          - name:    'Asia'
+            range:   LG21-395
+            start:   LG21
+            end:     LG395
+            sections:
+              - name:    'Afghanistan'
+                range:   LG21
+                start:   LG21
+                end:     LG21
+              - name:    'China'
+                range:   LG51-53
+                start:   LG51
+                end:     LG53
+              - name:    'Taiwan'
+                range:   LG55-57
+                start:   LG55
+                end:     LG57
+              - name:    'India.  Pakistan.  Bangladesh.  Burma.  Sri Lanka.  Nepal'
+                range:   LG60-170.2
+                start:   LG60
+                end:     LG170.2
+              - name:    'Indochina'
+                range:   LG171-172
+                start:   LG171
+                end:     LG172
+              - name:    'Malaysia'
+                range:   LG173
+                start:   LG173
+                end:     LG173
+              - name:    'Indonesia'
+                range:   LG181-184
+                start:   LG181
+                end:     LG184
+              - name:    'Papua-New Guinea (Ter.)'
+                range:   LG185-187
+                start:   LG185
+                end:     LG187
+              - name:    'Philippines'
+                range:   LG200-227
+                start:   LG200
+                end:     LG227
+              - name:    'Japan'
+                range:   LG240-277
+                start:   LG240
+                end:     LG277
+              - name:    'Korea'
+                range:   LG281-285
+                start:   LG281
+                end:     LG285
+              - name:    'Iran'
+                range:   LG291
+                start:   LG291
+                end:     LG291
+              - name:    'Former Soviet republics in Asia'
+                range:   LG302.2-320
+                start:   LG302.2
+                end:     LG320
+              - name:    'Asia Minor'
+                range:   LG321
+                start:   LG321
+                end:     LG321
+              - name:    'Armenia (Republic)'
+                range:   LG331-331.5
+                start:   LG331
+                end:     LG331.5
+              - name:    'Azerbaijan'
+                range:   LG332.2-332.5
+                start:   LG332.2
+                end:     LG332.5
+              - name:    'Georgia (Republic)'
+                range:   LG332.7-332.9
+                start:   LG332.7
+                end:     LG332.9
+              - name:    'Bahrain'
+                range:   LG333
+                start:   LG333
+                end:     LG333
+              - name:    'Iraq'
+                range:   LG338
+                start:   LG338
+                end:     LG338
+              - name:    'Israel.  Palestine'
+                range:   LG341-345
+                start:   LG341
+                end:     LG345
+              - name:    'Jordan'
+                range:   LG346
+                start:   LG346
+                end:     LG346
+              - name:    'Kuwait'
+                range:   LG347
+                start:   LG347
+                end:     LG347
+              - name:    'Lebanon'
+                range:   LG351-357
+                start:   LG351
+                end:     LG357
+              - name:    'Qatar'
+                range:   LG358
+                start:   LG358
+                end:     LG358
+              - name:    'Saudi Arabia'
+                range:   LG359
+                start:   LG359
+                end:     LG359
+              - name:    'Syria'
+                range:   LG361-367
+                start:   LG361
+                end:     LG367
+              - name:    'Yeman (Yemen Arab Republic)'
+                range:   LG370
+                start:   LG370
+                end:     LG370
+              - name:    'Other'
+                range:   LG395
+                start:   LG395
+                end:     LG395
+          - name:    'Africa'
+            range:   LG401-681
+            start:   LG401
+            end:     LG681
+            sections:
+              - name:    'Ethiopia'
+                range:   LG401
+                start:   LG401
+                end:     LG401
+              - name:    'South Africa'
+                range:   LG405-411
+                start:   LG405
+                end:     LG411
+              - name:    'Botswana'
+                range:   LG416
+                start:   LG416
+                end:     LG416
+              - name:    'Kenya'
+                range:   LG418
+                start:   LG418
+                end:     LG418
+              - name:    'Lesotho'
+                range:   LG419
+                start:   LG419
+                end:     LG419
+              - name:    'Uganda'
+                range:   LG421-423
+                start:   LG421
+                end:     LG423
+              - name:    'Natal'
+                range:   LG431-438
+                start:   LG431
+                end:     LG438
+              - name:    'Malawi'
+                range:   LG441-443
+                start:   LG441
+                end:     LG443
+              - name:    'Orange Free State'
+                range:   LG451
+                start:   LG451
+                end:     LG451
+              - name:    'Swaziland'
+                range:   LG454
+                start:   LG454
+                end:     LG454
+              - name:    'Transkei'
+                range:   LG457
+                start:   LG457
+                end:     LG457
+              - name:    'Venda'
+                range:   LG459
+                start:   LG459
+                end:     LG459
+              - name:    'Zimbabwe'
+                range:   LG461-462
+                start:   LG461
+                end:     LG462
+              - name:    'Tanzania'
+                range:   LG468
+                start:   LG468
+                end:     LG468
+              - name:    'Zambia'
+                range:   LG469
+                start:   LG469
+                end:     LG469
+              - name:    'Transvaal'
+                range:   LG471-475
+                start:   LG471
+                end:     LG475
+              - name:    'Zululand'
+                range:   LG478
+                start:   LG478
+                end:     LG478
+              - name:    'West Africa'
+                range:   LG481-505
+                start:   LG481
+                end:     LG505
+                sections:
+                  - name:    'Nigeria'
+                    range:   LG481-483
+                    start:   LG481
+                    end:     LG483
+                  - name:    'Ghana'
+                    range:   LG497-499
+                    start:   LG497
+                    end:     LG499
+              - name:    'Egypt'
+                range:   LG511
+                start:   LG511
+                end:     LG511
+              - name:    'Sudan'
+                range:   LG513-514
+                start:   LG513
+                end:     LG514
+              - name:    'Algeria and Tunisia'
+                range:   LG521
+                start:   LG521
+                end:     LG521
+              - name:    'Burundi'
+                range:   LG525
+                start:   LG525
+                end:     LG525
+              - name:    'French Equatorial Africa.  French Congo'
+                range:   LG531-536
+                start:   LG531
+                end:     LG536
+              - name:    'Madagascar'
+                range:   LG541-543
+                start:   LG541
+                end:     LG543
+              - name:    'Rwanda'
+                range:   LG545-547
+                start:   LG545
+                end:     LG547
+              - name:    'Senegal'
+                range:   LG551-552
+                start:   LG551
+                end:     LG552
+              - name:    'Benin'
+                range:   LG553-554
+                start:   LG553
+                end:     LG554
+              - name:    'Ivory Coast'
+                range:   LG559-560
+                start:   LG559
+                end:     LG560
+              - name:    'Mali'
+                range:   LG561
+                start:   LG561
+                end:     LG561
+              - name:    'German Africa (Former)'
+                range:   LG581-593
+                start:   LG581
+                end:     LG593
+              - name:    'Italian Africa (Former)'
+                range:   LG601-611
+                start:   LG601
+                end:     LG611
+              - name:    'Zaire'
+                range:   LG615
+                start:   LG615
+                end:     LG615
+              - name:    'Liberia'
+                range:   LG621
+                start:   LG621
+                end:     LG621
+              - name:    'Morocco'
+                range:   LG631-632
+                start:   LG631
+                end:     LG632
+              - name:    'Portuguese Africa (Former)'
+                range:   LG641-651
+                start:   LG641
+                end:     LG651
+              - name:    'Spanish Africa'
+                range:   LG671
+                start:   LG671
+                end:     LG671
+              - name:    'Libya'
+                range:   LG681
+                start:   LG681
+                end:     LG681
+          - name:    'Indian Ocean islands'
+            range:   LG690
+            start:   LG690
+            end:     LG690
+          - name:    'Australia'
+            range:   LG715-720
+            start:   LG715
+            end:     LG720
+          - name:    'New Zealand'
+            range:   LG741-745
+            start:   LG741
+            end:     LG745
+          - name:    'Pacific islands'
+            range:   LG961
+            start:   LG961
+            end:     LG961
+  - subclass:  LH
+    name:     'College and school magazines and papers'
+    sections:
+      - name:    'College and school magazines and papers'
+        range:   LH1-9
+        start:   LH1
+        end:     LH9
+  - subclass:  LJ
+    name:     'Student fraternities and societies, United States'
+    sections:
+      - name:    'Student fraternities and societies, United States'
+        range:   LJ3-165
+        start:   LJ3
+        end:     LJ165
+  - subclass:  LT
+    name:     'Textbooks'
+    sections:
+      - name:    'Textbooks'
+        note:    'Class here textbooks covering several subjects.  For textbooks on particular subjects, see the subject in B-Z'
+        range:   LT6-(1001)
+        start:   LT6
+        end:     LT1001

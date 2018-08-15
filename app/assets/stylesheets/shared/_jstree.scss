@@ -1,0 +1,58 @@
+// app/assets/stylesheets/shared/_jstree.scss
+//
+// Adjustments to Jstree styling.
+//
+// This can't really be done in a "blanket" way by declaring values for the
+// top-level selector .jstree { ... } because the JavaScript plugin appends
+// default styling for this top-level selector that will override any
+// definitions given within <head>.
+//
+// The only way to get have these definitions applied is to include them in
+// the specific CSS context where the more specific selector will override the
+// generic .jstree { ... } definitions injected by the plugin.
+
+// ============================================================================
+// Adjustments to Jstree styling.
+// ============================================================================
+
+/// This mixin should be invoked like:
+///
+/// .context-class {
+///     .jstree {
+///         @include jstree-adjustments;
+///     }
+/// }
+///
+@mixin jstree-adjustments() {
+
+    &.jstree-default.jstree-focused { background: none; }
+
+    // The default -90px is good for Chrome but displays artifacts in Firefox
+    // and MS Edge, whereas -91px is good for those two but not for Chrome.
+    // This "half-pixel" works in all three browsers.
+
+    li { background-position-x: -90.5px; }
+
+    .jstree-open   > ins { background-position-x: -72.5px; }
+    .jstree-closed > ins { background-position-x: -54.5px; }
+    .jstree-leaf   > ins { background-position-x: -36.5px; }
+
+    .jstree-hovered {
+        background: #bef9f4;
+        border:     none;
+    }
+
+    .jstree-clicked {
+        border:     none;
+    }
+
+    .jstree-focused {
+        background: #ffffee;
+    }
+
+    // Make keyboard focus visible for accessibility reasons.
+    a:focus {
+        outline:        thin dotted black;
+        outline-offset: 0;
+    }
+}

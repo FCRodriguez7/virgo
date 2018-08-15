@@ -1,0 +1,109 @@
+<%# app/views/catalog/show/shared/_hierarchy_descendants.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc
+
+  doc_type   ||= doc.doc_type
+  wsls_video ||= (doc_type == :dl_wsls_video)
+  return unless wsls_video || doc.has_feature?('has_hierarchy')
+
+  css_class ||= 'ead-details'
+  level_1   ||= doc.ead_component
+
+  level_1_components = (level_1 && level_1.components) || []
+
+  view_debug(__FILE__)
+-%>
+
+<div class="<%= css_class -%>">
+  <%- level_1_components.each do |level_2| -%>
+    <div class="ead-details-section">
+
+      <%- if doc.is_collection? -%>
+
+        <%- l2_id = "component_#{level_2.component_id}" -%>
+        <h3 class="ead-lv2 ead-details-heading" id="<%= l2_id -%>">
+          <%= ead_component_link(level_2) %>
+        </h3>
+        <div class="ead-details-description">
+          <%= ead_description(level_2, '<p>', '</p>') %>
+        </div>
+
+        <%- if level_2.components.present? -%>
+          <ul class="ead-materials-list">
+            <%- level_2.components.each do |level_3| -%>
+              <li class="ead-lv3 ead-materials-item">
+                <%= ead_component_link(level_3) %>
+                <ul class="ead-materials-list">
+                  <%- level_3.components.each do |level_4| -%>
+                    <li class="ead-lv4 ead-materials-item">
+                      <%= ead_component_link(level_4) %>
+                    </li>
+                  <%- end -%>
+                  <%- total_count = level_3.component_count -%>
+                  <%- if total_count > level_3.components.count -%>
+                    <%- l3_lbl = "See all #{total_count} items »" -%>
+                    <li class="ead-lv3 ead-materials-item ead-materials-more">
+                      <%= ead_component_link(level_3, l3_lbl) %>
+                    </li>
+                  <%- end -%>
+                </ul>
+              </li>
+            <%- end -%>
+            <%- total_count = level_2.component_count -%>
+            <%- if total_count > level_2.components.count -%>
+              <%- l2_lbl = "See entire #{level_2.types}..." -%>
+              <li class="ead-lv3 ead-materials-more">
+                (3 of <%= total_count %> shown)
+                <%= ead_component_link(level_2, l2_lbl) %>
+              </li>
+            <%- end -%>
+          </ul>
+        <%- end -%>
+
+      <%- else -%>
+
+        <%- if level_2.components.present? -%>
+          <%- l2_id = "component_#{level_2.component_id}" -%>
+          <h2 class="ead-lv2 ead-details-heading" id="<%= l2_id -%>">
+            <%= ead_component_link(level_2) %>
+          </h2>
+        <%- else -%>
+          <h3 class="ead-lv2 ead-details-heading">
+            <%= ead_component_link(level_2) %>
+          </h3>
+        <%- end -%>
+        <div class="ead-details-description">
+          <%= ead_description(level_2, '<p>', '</p>') %>
+          <%- if (level_2.p_count > 1) && params[:fulltext].blank? -%>
+            <%= ead_component_link(level_2, 'More »') %>
+          <%- end -%>
+        </div>
+
+        <div class="ead-materials-list">
+          <%- level_2.components.each do |level_3| -%>
+            <div class="ead-details-subsection">
+              <h3 class="ead-lv3 ead-details-heading">
+                <%= ead_component_link(level_3) %>
+              </h3>
+              <div class="ead-details-description">
+                <%= ead_description(level_3, '<p>', '</p>') %>
+              </div>
+            </div>
+          <%- end -%>
+          <%- total_count = level_2.component_count -%>
+          <%- if total_count > level_2.components.count -%>
+            <%- l2_lbl = "See all #{total_count} items »" -%>
+            <div class="ead-details-subsection">
+              <h3 class="ead-lv3 ead-details-heading">
+                <%= ead_component_link(level_2, l2_lbl) %>
+              </h3>
+            </div>
+          <%- end -%>
+        </div>
+
+      <%- end -%>
+
+    </div>
+  <%- end -%>
+</div>

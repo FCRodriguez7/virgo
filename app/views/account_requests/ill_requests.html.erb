@@ -1,0 +1,8 @@
+<%# app/views/account_requests/ill_requests.html.erb -%>
+<%-
+  set_meta_tags(title: 'Requests - ILLiad Pending Requests')
+
+  view_debug(__FILE__)
+-%>
+
+<%= render 'ill_selection', referrer: ill_requests_url, item: nil %>

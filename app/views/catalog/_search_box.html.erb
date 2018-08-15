@@ -1,0 +1,138 @@
+<%# app/views/catalog/_search_box.html.erb -%>
+<%-
+  css_class  ||= nil
+  url_params ||= params
+  query_term ||= current_query_term(url_params)
+  omit_keys  ||= query_param_keys + [:page, :qt]
+
+  # Add to hidden "skip navigation" menu.
+  skip_nav << link_to('New Search', '#SI')
+
+  form_opt = {
+    action: portal_index_path,
+    class:  css_class,
+    id:     'search',
+    role:   'search',
+  }.map { |attr, value|
+    %Q(#{attr}="#{value}") if value.present?
+  }.compact.join(' ').html_safe
+
+  # === Search terms input box and submit button
+  search_input_options = {
+    id:           'SI',
+    class:        'search-home',
+    placeholder:  portal_search_placeholder,
+    ARIA_LABEL => 'Enter search terms',
+  }
+  si_level = home_page? ? :h1 : :h2
+
+  # === Links to Catalog Advanced Search and Article Advanced Search
+
+  # The "Catalog" advanced search switches to "Video" advanced search in the
+  # Video lens and "Music" advanced search in the Music lens.
+  catalog_portal = current_portal_key
+  catalog_portal = :catalog if [:all, :articles].include?(catalog_portal)
+
+  catalog_advanced_search, article_advanced_search =
+    [catalog_portal, :articles].map { |type|
+      label = portal_search_label(type) + ' Advanced Search'
+      link_to(label, advanced_path(type), class: 'advanced-search-link')
+    }
+
+  # === Select search: "Catalog + Articles", "Catalog" or "Articles"
+  if home_page?
+    search_mode = {
+      all:      'Catalog + Articles',
+      catalog:  'Catalog only',
+      articles: 'Articles only'
+    }
+    default_search_mode = :all
+    which_search_toggle =
+      link_to('Which one?', '', class: 'which-search', ARIA_EXPANDED => false)
+  else
+    search_mode = default_search_mode = which_search_toggle = nil
+  end
+
+  if portal_home_page? || null_search? || combined_search_results?
+    omit_keys += [:sort, :sort_key]
+  end
+
+  query_field = advanced_search_results?(url_params) ? :keyword : :q
+
+  view_debug(__FILE__)
+-%>
+
+<form <%= form_opt -%>>
+
+  <%# === Search terms input box and submit button -%>
+  <div class="search-form-container grid_16 push_1 alpha">
+    <%= sr_only(si_level, "#{portal_search_title}: ") %>
+    <div class="search-form grid_13 alpha">
+      <%= text_field_tag(query_field, h(query_term), search_input_options) %>
+    </div>
+    <%= search_as_hidden_fields(params: url_params, omit_keys: omit_keys) %>
+    <button class="search-submit" type="submit">Search</button>
+  </div>
+
+  <%# === Links to Catalog Advanced Search and Article Advanced Search -%>
+  <div class="grid_4 push_1 omega advanced-search-container">
+    <%= catalog_advanced_search %>
+    <%= article_advanced_search %>
+  </div>
+
+  <%- if home_page? -%>
+
+    <%# === Select search: "Catalog + Articles", "Catalog" or "Articles" -%>
+    <div class="search-toggle grid_16 push_1">
+      <fieldset>
+        <%= sr_only(:legend, 'Search mode:') %>
+        <%- search_mode.each do |mode, label| -%>
+          <%- checked = (mode == default_search_mode) -%>
+          <%= radio_button_tag('catalog_select', mode.to_s, checked) %>
+          <%= label_tag("catalog_select_#{mode}", label) %>
+        <%- end -%>
+      </fieldset>
+      <%= which_search_toggle %>
+      <div class="which-search-help">
+        Selecting <strong>Catalog only</strong> searches the Library's
+        collection of books, videos, journals, and other materials, while
+        <strong>Articles only</strong> offers results from a selection of
+        online journals to which the Library subscribes.
+        <strong>Catalog + Articles</strong> searches both collections at once.
+      </div>
+    </div>
+
+    <%# === Select article search engine -%>
+    <%- if UVA::Article.switching_enabled? -%>
+      <div class="search-toggle grid_16 push_1">
+        <%= check_box_tag('AE_ON', 'false', id: :ae_on_check) %>
+        <%= label_tag(:ae_on_check, 'Select Article Provider?') %>
+        <div class="ae-selection hidden">
+          <fieldset>
+            <%= sr_only(:legend, 'Article provider:') %>
+            <%- UVA::Article::PROVIDER_LABELS.each do |ae, label| -%>
+              <%- checked = (ae == UVA::Article.selected_provider) -%>
+              <%= radio_button_tag('ae', ae.to_s, checked) %>
+              <%= label_tag("article_engine_#{ae}", label) %>
+            <%- end -%>
+          </fieldset>
+          <div style="display:inline; float:right;">
+            <strong>Ebsco and Summon are for evaluation only.</strong>
+          </div>
+        </div>
+      </div>
+    <%- end -%>
+
+  <%- else -%>
+
+    <%# === Present the appropriate links for changing search scope -%>
+    <div class="search-toggle search-switch grid_24 pull_1" role="navigation">
+      <%# === "Switch to" links === -%>
+      <div class="switch-view"><%= switch_search_scope_links %></div>
+      <%# === "Start over" button === -%>
+      <%= start_over_link %>
+    </div>
+
+  <%- end -%>
+
+</form>

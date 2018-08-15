@@ -1,0 +1,34 @@
+<%# app/views/catalog/index/_hsl_tutorial.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  counter ||= -1
+  offset  ||= 0
+  partial_opts = { document: doc, counter: counter, offset: offset }
+
+  # === Item title
+  title_opts = partial_opts.merge(dev_note: __FILE__)
+
+  # === Item thumbnail
+  thumbnail_opts = partial_opts
+
+  # === Item metadata
+  sep = ITEM_SEPARATOR
+  resource_link =
+    link_to_online_access(doc, label: 'View Tutorial Page', separator: sep)
+
+  fields ||= UVA::View::FieldSet.new(
+    'Creator'       => [doc.get_authors, AUTHOR_OPT],
+    'Type'          => 'Online Tutorial',
+    'Description'   => doc.get_plot_summary,
+    'Contents'      => doc.get_contents,
+    'Access Online' => [resource_link, ONLINE_OPT],
+  )
+  fields_opts = { document: doc, fields: fields }
+
+  template_opts = title_opts.merge(thumbnail_opts).merge(fields_opts)
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/index/template/basic', template_opts %>

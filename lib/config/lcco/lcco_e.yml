@@ -1,0 +1,694 @@
+# lib/config/lcco_e.yml
+#
+# Library of Congress Classification Outline
+# http://www.loc.gov/catdir/cpso/lcco
+#
+# This file is generated from first part of the Word document lcco_ef.doc.
+
+class:    E
+name:     'HISTORY OF THE AMERICAS -- America.  United States'
+sections:
+  - subclass:  E
+    lcco:      false
+    sections:
+      - name:    'America'
+        range:   E11-143
+        start:   E11
+        end:     E143
+        sections:
+          - name:    'General'
+            range:   E11-29
+            start:   E11
+            end:     E29
+            sections:
+              - name:    'Elements in the population'
+                range:   E29
+                start:   E29
+                end:     E29
+          - name:    'North America'
+            range:   E31-49.2
+            start:   E31
+            end:     E49.2
+          - name:    'Pre-Columbian America.  The Indians'
+            range:   E51-73
+            start:   E51
+            end:     E73
+          - name:    'Indians of North America'
+            range:   E75-99
+            start:   E75
+            end:     E99
+            sections:
+              - name:    'Indian wars'
+                range:   E81-83
+                start:   E81
+                end:     E83
+              - name:    'Indian tribes and cultures'
+                range:   E99
+                start:   E99
+                end:     E99
+          - name:    'Discovery of America and early explorations'
+            range:   E101-135
+            start:   E101
+            end:     E135
+            sections:
+              - name:    'Pre-Columbian period'
+                range:   E103-110
+                start:   E103
+                end:     E110
+              - name:    'Columbus'
+                range:   E111-120
+                start:   E111
+                end:     E120
+              - name:    'Post-Columbian period.  El Dorado'
+                range:   E121-135
+                start:   E121
+                end:     E135
+          - name:    'Descriptive accounts of America.  Earliest to 1810'
+            range:   E141-143
+            start:   E141
+            end:     E143
+      - name:    'United States'
+        range:   E151-(909)
+        start:   E151
+        end:     E909
+        sections:
+          - name:    'General'
+            range:   E151-169.12
+            start:   E151
+            end:     E169.12
+          - name:    'History'
+            range:   E171-183.9
+            start:   E171
+            end:     E183.9
+            sections:
+              - name:    'General'
+                range:   E171-180
+                start:   E171
+                end:     E180
+                sections:
+                  - name:    'Sources and documents'
+                    range:   E173
+                    start:   E173
+                    end:     E173
+                  - name:    'Historiography'
+                    range:   E175-175.7
+                    start:   E175
+                    end:     E175.7
+                  - name:    'Biography'
+                    range:   E176-176.8
+                    start:   E176
+                    end:     E176.8
+                  - name:    'Historical geography'
+                    range:   E179.5
+                    start:   E179.5
+                    end:     E179.5
+              - name:    'Military history'
+                range:   E181
+                start:   E181
+                end:     E181
+              - name:    'Naval history'
+                range:   E182
+                start:   E182
+                end:     E182
+              - name:    'Political history'
+                range:   E183-183.3
+                start:   E183
+                end:     E183.3
+              - name:    'Diplomatic history.  Foreign and general relations.'
+                range:   E183.7-183.9
+                start:   E183.7
+                end:     E183.9
+                sections:
+                  - name:    'Relations with individual countries'
+                    range:   E183.8
+                    start:   E183.8
+                    end:     E183.8
+          - name:    'Elements in the population'
+            range:   E184-185.98
+            start:   E184
+            end:     E185.98
+            sections:
+              - name:    'Afro-Americans'
+                range:   E184.5-185.98
+                start:   E184.5
+                end:     E185.98
+                sections:
+                  - name:    'Status and development since emancipation'
+                    range:   E185.2-185.89
+                    start:   E185.2
+                    end:     E185.89
+                  - name:    'Biography.  Genealogy'
+                    range:   E185.96-185.98
+                    start:   E185.96
+                    end:     E185.98
+          - name:    'Colonial history (1607-1775)'
+            range:   E186-199
+            start:   E186
+            end:     E199
+            sections:
+              - name:    'General'
+                range:   E186-189
+                start:   E186
+                end:     E189
+              - name:    'By period'
+                range:   E191-199
+                start:   E191
+                end:     E199
+                sections:
+                  - name:    '1607-1689'
+                    range:   E191
+                    start:   E191
+                    end:     E191
+                  - name:    '1689-1775'
+                    range:   E195-199
+                    start:   E195
+                    end:     E199
+                    sections:
+                      - name:    'King William''s War, 1689-1697'
+                        range:   E196
+                        start:   E196
+                        end:     E196
+                      - name:    'Queen Anne''s War, 1702-1713'
+                        range:   E197
+                        start:   E197
+                        end:     E197
+                      - name:    'King George''s War, 1744-1748'
+                        range:   E198
+                        start:   E198
+                        end:     E198
+                      - name:    'French and Indian War, 1755-1763'
+                        range:   E199
+                        start:   E199
+                        end:     E199
+          - name:    'The Revolution, 1775-1783'
+            range:   E201-298
+            start:   E201
+            end:     E298
+          - name:    'Revolution to the Civil War, 1775/1783-1861'
+            range:   E300-453
+            start:   E300
+            end:     E453
+            sections:
+              - name:    'General'
+                range:   E300-302.6
+                start:   E300
+                end:     E302.6
+                sections:
+                  - name:    'Collected works of American statemen'
+                    range:   E302
+                    start:   E302
+                    end:     E302
+                  - name:    'Political history'
+                    range:   E302.1
+                    start:   E302.1
+                    end:     E302.1
+                  - name:    'Biography (Late eighteenth century)'
+                    range:   E302.5-302.6
+                    start:   E302.5
+                    end:     E302.6
+              - name:    'By period'
+                range:   E303-440.5
+                start:   E303
+                end:     E440.5
+                sections:
+                  - name:    '1775-1789.  The Confederation, 1783-1789'
+                    range:   E303-309
+                    start:   E303
+                    end:     E309
+                  - name:    '1789-1809.  Constitutional period'
+                    range:   E310-337
+                    start:   E310
+                    end:     E337
+                    sections:
+                      - name:    'Diplomatic history.  Foreign and general relations'
+                        range:   E310.7
+                        start:   E310.7
+                        end:     E310.7
+                      - name:    'Washington''s administrations, 1789-1797'
+                        range:   E311-320
+                        start:   E311
+                        end:     E320
+                      - name:    'John Adams'' administration, 1797-1801'
+                        range:   E321-330
+                        start:   E321
+                        end:     E330
+                        sections:
+                          - name:    'Troubles with France, 1796-1800'
+                            range:   E323
+                            start:   E323
+                            end:     E323
+                      - name:    'Jefferson''s administrations, 1801-1809'
+                        range:   E331-337
+                        start:   E331
+                        end:     E337
+                        sections:
+                          - name:    'Purchase of Louisiana, 1803'
+                            range:   E333
+                            start:   E333
+                            end:     E333
+                          - name:    'War with Tripoli, 1801-1805'
+                            range:   E335
+                            start:   E335
+                            end:     E335
+                          - name:    'Neutral trade and its restrictions, 1800-1810'
+                            range:   E336-336.5
+                            start:   E336
+                            end:     E336.5
+                  - name:    'Nineteenth century (General)'
+                    range:   E337.5
+                    start:   E337.5
+                    end:     E337.5
+                  - name:    'Early nineteenth century, 1801/1809-1845'
+                    range:   E337.8-400
+                    start:   E337.8
+                    end:     E400
+                    sections:
+                      - name:    'General'
+                        range:   E337.8-340
+                        start:   E337.8
+                        end:     E340
+                        sections:
+                          - name:    'Collected works of American statesmen'
+                            range:   E337.8
+                            start:   E337.8
+                            end:     E337.8
+                          - name:    'Biography'
+                            range:   E339-340
+                            start:   E339
+                            end:     E340
+                      - name:    'Madison''s administrations, 1809-1817'
+                        range:   E341-370
+                        start:   E341
+                        end:     E370
+                        sections:
+                          - name:    'War of 1812'
+                            range:   E351.5-364.9
+                            start:   E351.5
+                            end:     E364.9
+                          - name:    'War with Algeria, 1815'
+                            range:   E365
+                            start:   E365
+                            end:     E365
+                      - name:    'Monroe''s administrations, 1817-1825'
+                        range:   E371-375
+                        start:   E371
+                        end:     E375
+                        sections:
+                          - name:    'Missouri Compromise, 1820'
+                            range:   E373
+                            start:   E373
+                            end:     E373
+                          - name:    'Diplomatic history.  Foreign relations'
+                            range:   E374
+                            start:   E374
+                            end:     E374
+                      - name:    'John Quincy Adams'' administration, 1825-1829'
+                        range:   E376-380
+                        start:   E376
+                        end:     E380
+                      - name:    'Jackson''s administrations, 1829-1837'
+                        range:   E381-385
+                        start:   E381
+                        end:     E385
+                        sections:
+                          - name:    'Nullification'
+                            range:   E384.3
+                            start:   E384.3
+                            end:     E384.3
+                      - name:    'Van Buren''s administration, 1837-1841'
+                        range:   E386-390
+                        start:   E386
+                        end:     E390
+                      - name:    'William H. Harrison''s administration, March 4-April 4, 1841'
+                        range:   E391-392
+                        start:   E391
+                        end:     E392
+                      - name:    'Tyler''s administration, April 4, 1841-1845'
+                        range:   E396-400
+                        start:   E396
+                        end:     E400
+                        sections:
+                          - name:    'Northeastern boundary disputes, 1783-1845'
+                            range:   E398
+                            start:   E398
+                            end:     E398
+                  - name:    'Mexican War, 1846-1848'
+                    range:   E401-415.2
+                    start:   E401
+                    end:     E415.2
+                    sections:
+                      - name:    'Mexican cessions of 1848'
+                        range:   E408
+                        start:   E408
+                        end:     E408
+                  - name:    'Middle nineteenth century, 1845/1848-1861'
+                    range:   E415.6-440.5
+                    start:   E415.6
+                    end:     E440.5
+                    sections:
+                      - name:    'General'
+                        range:   E415.6-415.9
+                        start:   E415.6
+                        end:     E415.9
+                        sections:
+                          - name:    'Collected works of American statesmen'
+                            range:   E415.6
+                            start:   E415.6
+                            end:     E415.6
+                          - name:    'Biography'
+                            range:   E415.8-415.9
+                            start:   E415.8
+                            end:     E415.9
+                      - name:    'Polk''s administration, 1845-1849'
+                        range:   E416-420
+                        start:   E416
+                        end:     E420
+                      - name:    'Taylor''s administiration, 1849-July 9, 1850'
+                        range:   E421-423
+                        start:   E421
+                        end:     E423
+                        sections:
+                          - name:    'Slavery question, 1849-1853'
+                            range:   E423
+                            start:   E423
+                            end:     E423
+                      - name:    'Fillmore''s administration, July 9, 1850-1853'
+                        range:   E426-430
+                        start:   E426
+                        end:     E430
+                      - name:    'Pierce''s administration, 1853-1857'
+                        range:   E431-435
+                        start:   E431
+                        end:     E435
+                        sections:
+                          - name:    'Slavery question, 1853-1857'
+                            range:   E433
+                            start:   E433
+                            end:     E433
+                      - name:    'Buchanan''s administration, 1857-1861'
+                        range:   E436-440.5
+                        start:   E436
+                        end:     E440.5
+                        sections:
+                          - name:    'Slavery question, 1857-1861'
+                            range:   E438
+                            start:   E438
+                            end:     E438
+                          - name:    'State of the country, November 1860-March 4, 1861'
+                            range:   E440.5
+                            start:   E440.5
+                            end:     E440.5
+              - name:    'Slavery in the United States.  Antislavery movements'
+                range:   E441-453
+                start:   E441
+                end:     E453
+          - name:    'Civil War period, 1861-1865'
+            range:   E456-655
+            start:   E456
+            end:     E655
+            sections:
+              - name:    'Lincoln''s administrations, 1861-April 15, 1865'
+                range:   E456-459
+                start:   E456
+                end:     E459
+              - name:    'The Civil War, 1861-1865'
+                range:   E461-655
+                start:   E461
+                end:     E655
+                sections:
+                  - name:    'Confederate States of America'
+                    range:   E482-489
+                    start:   E482
+                    end:     E489
+                  - name:    'Armies.  Troops'
+                    range:   E491-586
+                    start:   E491
+                    end:     E586
+                  - name:    'Naval history'
+                    range:   E591-600
+                    start:   E591
+                    end:     E600
+          - name:    'Late nineteenth century, 1865-1900'
+            range:   E660-738
+            start:   E660
+            end:     E738
+            sections:
+              - name:    'General'
+                range:   E660-664
+                start:   E660
+                end:     E664
+                sections:
+                  - name:    'Collected works of American statesmen'
+                    range:   E660
+                    start:   E660
+                    end:     E660
+                  - name:    'Diplomatic history.  Foreign and general relations'
+                    range:   E661.7
+                    start:   E661.7
+                    end:     E661.7
+                  - name:    'Biography'
+                    range:   E663-664
+                    start:   E663
+                    end:     E664
+              - name:    'Andrew Johnson''s administration, April 15, 1865-1869'
+                range:   E666-670
+                start:   E666
+                end:     E670
+                sections:
+                  - name:    'Reconstruction, 1865-1877'
+                    range:   E668
+                    start:   E668
+                    end:     E668
+                  - name:    'Purchase of Alaska, 1867'
+                    range:   E669
+                    start:   E669
+                    end:     E669
+              - name:    'Grant''s administrations, 1869-1877'
+                range:   E671-680
+                start:   E671
+                end:     E680
+              - name:    'Hayes'' administration, 1877-1881'
+                range:   E681-685
+                start:   E681
+                end:     E685
+              - name:    'Garfield''s administration, March 4-September 19, 1881'
+                range:   E686-687.9
+                start:   E686
+                end:     E687.9
+              - name:    'Arthur''s administration, September 19, 1881-1885'
+                range:   E691-695
+                start:   E691
+                end:     E695
+              - name:    'Cleveland''s first administration, 1885-1889'
+                range:   E696-700
+                start:   E696
+                end:     E700
+              - name:    'Benjamin Harrison''s administration, 1889-1893'
+                range:   E701-705
+                start:   E701
+                end:     E705
+              - name:    'Cleveland''s second administration, 1893-1897'
+                range:   E706-710
+                start:   E706
+                end:     E710
+              - name:    'McKinley''s first administration, 1897-1901'
+                range:   E711-738
+                start:   E711
+                end:     E738
+                sections:
+                  - name:    'Annexation in 1898 of Hawaii, the Philippines, and Puerto Rico'
+                    range:   E713
+                    start:   E713
+                    end:     E713
+                  - name:    'War of 1898 (Spanish-American War)'
+                    range:   E714-735
+                    start:   E714
+                    end:     E735
+          - name:    'Twentieth century'
+            range:   E740-837.7
+            start:   E740
+            end:     E837.7
+            sections:
+              - name:    'General'
+                range:   E740-749
+                start:   E740
+                end:     E749
+                sections:
+                  - name:    'Sources and documents'
+                    range:   E740.5
+                    start:   E740.5
+                    end:     E740.5
+                  - name:    'Collected works of American statesmen'
+                    range:   E742.5
+                    start:   E742.5
+                    end:     E742.5
+                  - name:    'Political history'
+                    range:   E743-743.5
+                    start:   E743
+                    end:     E743.5
+                    sections:
+                      - name:    'Un-American activities'
+                        range:   E743.5
+                        start:   E743.5
+                        end:     E743.5
+                  - name:    'Diplomatic history.  Foreign and general relations'
+                    range:   E744-744.5
+                    start:   E744
+                    end:     E744.5
+                  - name:    'Military history'
+                    range:   E745
+                    start:   E745
+                    end:     E745
+                  - name:    'Naval history'
+                    range:   E746
+                    start:   E746
+                    end:     E746
+                  - name:    'Biography'
+                    range:   E747-748
+                    start:   E747
+                    end:     E748
+              - name:    'McKinley''s second administration, March 4-September 14, 1901'
+                range:   E751
+                start:   E751
+                end:     E751
+              - name:    'Theodore Roosevelt''s administrations, September 14, 1901-1909'
+                range:   E756-760
+                start:   E756
+                end:     E760
+              - name:    'Taft''s administration, 1909-1913'
+                range:   E761-765
+                start:   E761
+                end:     E765
+              - name:    'Wilson''s administrations, 1913-1921'
+                range:   E766-783
+                start:   E766
+                end:     E783
+                sections:
+                  - name:    'Purchase of Danish West Indies (Virgin Islands), 1917'
+                    range:   E768
+                    start:   E768
+                    end:     E768
+                  - name:    'Internal history during World War I'
+                    range:   E780
+                    start:   E780
+                    end:     E780
+              - name:    '1919-1933.  Harding-Coolidge-Hoover era.  "The twenties"'
+                range:   E784-805
+                start:   E784
+                end:     E805
+                sections:
+                  - name:    'Harding''s administration, 1921-August 2, 1923'
+                    range:   E785-786
+                    start:   E785
+                    end:     E786
+                  - name:    'Coolidge''s administration, August 2, 1923-1929'
+                    range:   E791-796
+                    start:   E791
+                    end:     E796
+                  - name:    'Hoover''s administration, 1919-1933'
+                    range:   E801-805
+                    start:   E801
+                    end:     E805
+              - name:    'Franklin Delano Roosevelt''s administrations, 1933-April 12, 1945'
+                range:   E806-812
+                start:   E806
+                end:     E812
+              - name:    'Truman''s administrations, April 12, 1945-1953'
+                range:   E813-816
+                start:   E813
+                end:     E816
+              - name:    'Eisenhower''s administrations, 1953-1961'
+                range:   E835-837.7
+                start:   E835
+                end:     E837.7
+          - name:    'Later twentieth century, 1961-2000'
+            range:   E838-889
+            start:   E838
+            end:     E889
+            sections:
+              - name:    'General'
+                range:   E838-840.8
+                start:   E838
+                end:     E840.8
+                sections:
+                  - name:    'Sources and documents'
+                    range:   E838.3
+                    start:   E838.3
+                    end:     E838.3
+                  - name:    'Political history'
+                    range:   E839.5-839.8
+                    start:   E839.5
+                    end:     E839.8
+                    sections:
+                      - name:    'Un-American activities'
+                        range:   E839.8
+                        start:   E839.8
+                        end:     E839.8
+                  - name:    'Diplomatic history.  Foreign and general relations'
+                    range:   E840-840.2
+                    start:   E840
+                    end:     E840.2
+                  - name:    'Biography (General)'
+                    range:   E840.6-840.8
+                    start:   E840.6
+                    end:     E840.8
+              - name:    'Kennedy''s administration, 1961-November 22, 1963'
+                range:   E841-843
+                start:   E841
+                end:     E843
+                sections:
+                  - name:    'Assassination, funeral, memorial services, etc.'
+                    range:   E842.9
+                    start:   E842.9
+                    end:     E842.9
+              - name:    'Johnson''s administrations, November 22, 1963-1969'
+                range:   E846-851
+                start:   E846
+                end:     E851
+              - name:    'Nixon''s administrations, 1969-August 9, 1974'
+                range:   E855-861
+                start:   E855
+                end:     E861
+                sections:
+                  - name:    'Watergate Affair.  Resignation'
+                    range:   E860-861
+                    start:   E860
+                    end:     E861
+              - name:    'Ford''s administration, August 9, 1974-1977'
+                range:   E865-868
+                start:   E865
+                end:     E868
+              - name:    'Carter''s administration, 1977-1981'
+                range:   E872-875
+                start:   E872
+                end:     E875
+              - name:    'Reagan''s administrations, 1981-1989'
+                range:   E876-880
+                start:   E876
+                end:     E880
+                sections:
+                  - name:    'Assassination attempt'
+                    range:   E877.3
+                    start:   E877.3
+                    end:     E877.3
+              - name:    'George H. W. Bush''s administration, 1989-1993'
+                range:   E881-884
+                start:   E881
+                end:     E884
+              - name:    'Clinton''s administrations, 1993-2001'
+                range:   E885-889
+                start:   E885
+                end:     E889
+          - name:    'Twenty-first century'
+            range:   E895-(909)
+            start:   E895
+            end:     E909
+            sections:
+              - name:    'George W. Bush''s administrations, 2001-2009'
+                range:   E902-904
+                start:   E902
+                end:     E904
+              - name:    'Barack Obama''s administration, 2009-'
+                range:   E907-909
+                start:   E907
+                end:     E909

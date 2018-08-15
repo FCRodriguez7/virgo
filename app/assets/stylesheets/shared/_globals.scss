@@ -1,0 +1,41 @@
+// app/assets/stylesheets/shared/_globals.scss
+
+// GLOBALS
+// http://html5boilerplate.com/
+// -----------------------------------------------------------
+
+// Hide for both screenreaders and browsers.
+.hidden {
+    display:    none;
+    visibility: hidden;
+}
+
+// Hide only visually, but have it available for screenreaders.
+.visuallyhidden,
+.print-only {
+    height:   1px;
+    width:    1px;
+    margin:   -1px;
+    padding:  0;
+    position: absolute;
+    overflow: hidden;
+    border:   0;
+    clip:     rect(0 0 0 0);
+}
+
+// Extends the .visuallyhidden class to allow the element to be focusable when
+// navigated to via the keyboard.
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    height:   auto;
+    width:    auto;
+    margin:   0;
+    position: static;
+    overflow: visible;
+    clip:     auto;
+}
+
+// Hide visually and from screenreaders, but maintain layout.
+.invisible {
+    visibility: hidden;
+}

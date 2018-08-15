@@ -1,0 +1,26 @@
+<%# app/views/_flash_msg.html.erb -%>
+<%-
+  # Overrides Blacklight app/views/_flash_msg.html.erb
+  return if print_view?
+
+  css_class ||= 'flash-message'
+
+  # This template will display all flashes that are defined except for those
+  # explicitly listed here.
+  ignored_flashes = [
+    :recaptcha_error, # From Recaptcha::Verify#verify_recaptcha
+  ]
+
+  view_debug(__FILE__)
+-%>
+<div class="<%= css_class -%>" role="alert">
+  <%- flash.to_hash.each_pair do |type, message| -%>
+    <%- next if message.blank? || ignored_flashes.include?(type) -%>
+    <%- state = (type == :error) ? 'error' : 'highlight' -%>
+    <%- message = message.join('<br/>').html_safe if message.is_a?(Array) -%>
+    <div class="ui-state-<%= state -%> ui-corner-all <%= type -%>">
+      <%= message %>
+    </div>
+  <%- end -%>
+  <%- flash.clear -%>
+</div>

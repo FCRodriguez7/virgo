@@ -1,0 +1,40 @@
+<%# app/views/catalog/_folder_form.html.erb -%>
+<%-
+  doc = document ||= @document
+  return unless doc
+
+  id          ||= doc.doc_id
+  type        ||= doc.doc_type
+  star_is_lit ||= item_in_folder?(id)
+  show_label  ||= false
+
+  type_parameter = (type == :article) ? :article_id : :id
+
+  css = %w(submit-form)
+  if star_is_lit
+    css    << UVA::StarredItems::STAR_LIT_CLASS
+    label   = UVA::StarredItems::STAR_LIT_LABEL
+    tooltip = UVA::StarredItems::STAR_LIT_TOOLTIP
+  else
+    label   = UVA::StarredItems::STAR_UNLIT_LABEL
+    tooltip = UVA::StarredItems::STAR_UNLIT_TOOLTIP
+  end
+  css = css.compact.join(' ')
+
+  star_opts  = switch_opts(class: css, title: tooltip, on: star_is_lit)
+
+  id     = h(id.to_s)
+  submit = label
+  label  = sr_only(label) unless show_label
+  show_label = h(show_label.to_s)
+
+  view_debug(__FILE__)
+-%>
+<div class="star-container">
+  <%= form_tag('/folder', name: "folder#{id}", class: 'add-star-form') do -%>
+    <%= hidden_field_tag(type_parameter, id, id: "id#{id}") %>
+    <%= hidden_field_tag(:show_label, show_label, id: "show-label-#{id}") %>
+    <%= link_to(label, folders_path, star_opts) %>
+    <%= submit_tag(submit, id: "folder-submit-#{id}", class: 'hide') %>
+  <%- end -%>
+</div>

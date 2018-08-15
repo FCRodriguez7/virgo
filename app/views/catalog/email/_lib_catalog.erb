@@ -1,0 +1,58 @@
+<%# app/views/catalog/email/_lib_catalog.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+  return unless (marc = doc.marc_display)
+
+  # === Item metadata
+  loc_originals = marc.location_of_originals
+  label_nos     = marc.label_no
+  loc_orig = [*loc_originals, *label_nos].reject(&:blank?).uniq
+
+  fields ||= UVA::View::FieldSet.new(
+    :linked_title           => :linked_title_display,
+    :title                  => doc.show_full_title,
+    :linked_resp            => :linked_responsibility_statement_display,
+    :creator                => doc.show_heading_author,
+    'Format'                => doc.export_format,
+    :physical_desc          => doc.export_physical_description,
+    :tech_details           => doc.export_technical_details,
+    'Uniform Title'         => doc.export_uniform_title,
+    'Variant Title'         => marc.variant_title,
+    'Abbreviated Title'     => marc.abbreviated_title,
+    'Edition'               => doc.export_edition_statement,
+    'Series'                => doc.export_series,
+    'Series Statement'      => doc.export_series_statement,
+    'Language'              => doc.export_language,
+    'Cite as'               => doc.export_cite_as,
+    'Cartographic Info'     => marc.cartographic_math_data,
+    'Published'             => doc.export_pub_statement,
+    'Arrangement'           => marc.organization_and_arrangement,
+    'ISBN'                  => doc.export_isbn,
+    'Related Resources'     => link_to_related_resources(doc),
+    'Access Online'         => link_to_online_access(doc),
+    'Target Audience'       => doc.export_target_audience,
+    'Summary'               => doc.export_plot_summary,
+    'Contents'              => doc.export_contents,
+    'Location of Original'  => loc_orig,
+    'Original Version'      => marc.original_version,
+    'Related Title'         => marc.related_title,
+    'Journal Frequency'     => marc.journal_frequency,
+    'Recording Info'        => doc.export_recording_information,
+    'Credits'               => doc.export_credits,
+    'Other Forms'           => marc.other_forms,
+    'Terms of Use'          => marc.terms_of_use,
+    'Finding Aid Note'      => marc.finding_aid_note,
+    'Access Restriction'    => marc.access_restriction,
+    'Notes'                 => doc.export_notes,
+    'Local Notes'           => marc.local_note,
+    'Reproduction Notes'    => marc.reproduction_note,
+    'Biographical Note'     => marc.biographical_note,
+    'Cited in'              => marc.cited_in.join(PART_DIVIDER),
+    copyright_label         => permission_uri(doc),
+  )
+
+  view_debug(__FILE__)
+-%>
+<%= fields.render(:email, doc) %>
+<%= render 'catalog/email/shared/availability', document: doc -%>

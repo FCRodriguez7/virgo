@@ -1,0 +1,216 @@
+// app/assets/javascripts/shared/rails.js.erb
+
+/**
+ * Values "imported" from the Rails project via the asset pipeline.
+ *
+ * @type {object}
+ *
+ * @property {function} to_boolean
+ * @property {function} to_number
+ * @property {function} to_object
+ *
+ * @property {string}   RAILS_ENV
+ * @property {boolean}  DEPLOYED
+ * @property {boolean}  DEVELOPMENT
+ *
+ * @property {object}   Piwik
+ * @property {object}   Bookplate
+ * @property {object}   Classic
+ * @property {object}   CoverImage
+ * @property {object}   GooglePreview
+ * @property {object}   Iiif
+ * @property {object}   Portal
+ * @property {object}   SeeMore
+ * @property {object}   ShelfBrowse
+ * @property {object}   StarredItems
+ */
+var Rails = (function() {
+
+    // ========================================================================
+    // Function definitions - Type conversions
+    //
+    // These are primarily for *.js.erb files to allow values that will be
+    // inserted by ERB pre-processing to be expressed as a string, so that the
+    // Javascript has valid syntax even before pre-processing.
+    // ========================================================================
+
+    /**
+     * Interpret a string as a boolean value.
+     *
+     * @param {*} arg
+     *
+     * @return {boolean}
+     */
+    function b$(arg) {
+        switch (typeof arg) {
+            case 'boolean': return arg;
+            case 'string':  return arg.toLowerCase() === 'true';
+            default:        return isDefined(arg);
+        }
+    }
+
+    /**
+     * Interpret a string as a integer value.
+     *
+     * @param {*} arg
+     *
+     * @return {number}
+     */
+    function i$(arg) {
+        switch (typeof arg) {
+            case 'number': return arg;
+            case 'string': return Math.max(0, parseInt(arg));
+            default:       return 0;
+        }
+    }
+
+    /**
+     * Interpret a string as an Object definition.
+     *
+     * @param {*} arg
+     *
+     * @return {object}
+     */
+    function o$(arg) {
+        switch (typeof arg) {
+            case 'object': return arg;
+            case 'string': return JSON.parse(arg.replace('\n', '\\n'));
+            default:       return {};
+        }
+    }
+
+    // ========================================================================
+    // Exported values.
+    // ========================================================================
+
+    return {
+
+        // ====================================================================
+        // Conversion functions
+        // ====================================================================
+
+        to_boolean: b$,
+        to_number:  i$,
+        to_object:  o$,
+
+        // ====================================================================
+        // General settings
+        // ====================================================================
+
+        RAILS_ENV:   '<%= Rails.env.to_s %>',
+        DEPLOYED:    b$('<%= Virgo.deployed? %>'),
+        DEVELOPMENT: b$('<%= Virgo.desktop_development? %>'),
+
+        // ====================================================================
+        // Analytics
+        // ====================================================================
+
+        Piwik: {
+            ENABLED:     b$('<%= UVA::Piwik.enabled? %>'),
+            TRACKER_URL: '<%= UVA::Piwik.tracker_url %>',
+            SITE:        '<%= UVA::Piwik.site %>'
+        },
+
+        // ====================================================================
+        // Bookplate
+        // ====================================================================
+
+        Bookplate: {
+            ENABLED:   true,
+            BASE_PATH: 'https://xxx.virginia.edu/xxx'
+        },
+
+        // ====================================================================
+        // Classic
+        // ====================================================================
+
+        Classic: {
+            ENABLED:           b$('<%= !UVA::Classic.feature_suppressed? %>'),
+            SHOW_SEE_MORE:     b$('<%= UVA::Classic.show_see_more %>'),
+            SHOW_FIRST_FIELDS: i$('<%= UVA::Classic.show_first_fields %>')
+        },
+
+        // ====================================================================
+        // CoverImage
+        // ====================================================================
+
+        CoverImage: {
+            ENABLED:         true,
+            RETRY:           3 * SECONDS,
+            COVER_IMAGE_URL: "<%= ENV['COVER_IMAGE_URL'] %>"
+        },
+
+        // ====================================================================
+        // GooglePreview
+        // ====================================================================
+
+        GooglePreview: {
+            ENABLED:   true,
+            BASE_PATH: '<%= UVA::Helper::GooglePreview.base_path %>'
+        },
+
+        // ====================================================================
+        // Iiif
+        // ====================================================================
+
+        Iiif: {
+            ENABLED: true
+        },
+
+        // ====================================================================
+        // Portal
+        // ====================================================================
+
+        Portal: {
+            ALL_PLACEHOLDER:      '<%= UVA::Portal::ALL_PLACEHOLDER %>',
+            CATALOG_PLACEHOLDER:  '<%= UVA::Portal::CATALOG_PLACEHOLDER %>',
+            ARTICLES_PLACEHOLDER: '<%= UVA::Portal::ARTICLES_PLACEHOLDER %>'
+        },
+
+        // ====================================================================
+        // SeeMore
+        // ====================================================================
+
+        SeeMore: {
+            ENABLED:              true,
+            INITIAL_DETAILS:      i$('<%= CatalogHelper::INITIAL_DETAILS %>'),
+            CSS_SHOW_DETAILS:     '<%= CatalogHelper::CSS_SHOW_DETAILS %>',
+            CSS_ADD_TO_INITIAL:   '<%= CatalogHelper::CSS_ADD_TO_INITIAL %>',
+            CSS_SEE_MORE_CONTROL: '<%= CatalogHelper::CSS_SEE_MORE_CONTROL %>',
+            CSS_SEE_MORE:         '<%= CatalogHelper::CSS_SEE_MORE %>',
+            CSS_SEE_LESS:         '<%= CatalogHelper::CSS_SEE_LESS %>'
+        },
+
+        // ====================================================================
+        // ShelfBrowse
+        // ====================================================================
+
+        ShelfBrowse: {
+            ENABLED: b$('<%= !UVA::ShelfBrowse.feature_suppressed? %>'),
+            CONFIG:  o$('<%= UVA::Helper::ShelfBrowse::CONFIG.to_json %>'),
+            LABEL:   o$('<%= UVA::Helper::ShelfBrowse::LABEL.to_json %>'),
+            TOOLTIP: o$('<%= UVA::Helper::ShelfBrowse::TOOLTIP.to_json %>'),
+            MESSAGE: o$('<%= UVA::Helper::ShelfBrowse::MESSAGE.to_json %>')
+        },
+
+        // ====================================================================
+        // StarredItems
+        // ====================================================================
+
+        StarredItems: {
+            ENABLED:            true,
+            INDEX_PATH:         '/folder',
+            CLEAR_PATH:         '/folder/clear',
+            LIST_PATH:          '/folder/list',
+            STAR_LIT_LABEL:     '<%= UVA::StarredItems::STAR_LIT_LABEL %>',
+            STAR_LIT_TOOLTIP:   '<%= UVA::StarredItems::STAR_LIT_TOOLTIP %>',
+            STAR_LIT_CLASS:     '<%= UVA::StarredItems::STAR_LIT_CLASS %>',
+            STAR_UNLIT_LABEL:   '<%= UVA::StarredItems::STAR_UNLIT_LABEL %>',
+            STAR_UNLIT_TOOLTIP: '<%= UVA::StarredItems::STAR_UNLIT_TOOLTIP %>',
+            STAR_UNLIT_CLASS:   '<%= UVA::StarredItems::STAR_UNLIT_CLASS %>',
+            STAR_SAVING_CLASS:  '<%= UVA::StarredItems::STAR_SAVING_CLASS %>',
+            MAX_STARS:          i$('<%= UVA::StarredItems::MAX_STARS %>')
+        }
+    }
+
+})();

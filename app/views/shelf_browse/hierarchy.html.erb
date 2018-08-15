@@ -1,0 +1,46 @@
+<%# app/views/shelf_browse/hierarchy.html.erb -%>
+<%-
+  # Virtual shelf browse LCC hierarchy (experimental)
+  # (@see ShelfBrowseController#hierarchy)
+
+  html_head << 'shelf-browse.css' if popup
+
+  tree        ||= @tree
+  data        ||= to_jstree(tree, params).to_json
+  orientation ||= UVA::Helper::ShelfBrowse::DEFAULT_ORIENTATION
+
+  css ||= nil
+  css = ['shelf-browse', 'display', orientation, *css]
+  css.push('popup') if popup
+  css = css.reject(&:blank?).join(SPACE)
+
+  view_debug(__FILE__)
+-%>
+
+<%= render 'shelf_browse/shared/head' %>
+
+<div class="<%= css -%>">
+  <div class="header-area">
+    <div class="lcc-tree-browser">
+      <div class="lcc-tree-display" role="tree">
+        <div class="lcc-tree">
+          <div class="button-tray" role="navigation">
+            <%= help_button(class: 'lcc-help') %>
+          </div>
+          <div id="lcc-tree">
+            Loading...
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        setTreeData(<%= data %>);
+        ShelfBrowse.makeLccTree();
+        $('.header-area').css('height', '100vh');
+        $('.lcc-tree').css('display', 'block');
+    });
+</script>

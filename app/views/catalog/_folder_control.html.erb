@@ -1,0 +1,13 @@
+<%# app/views/catalog/_folder_control.html.erb -%>
+<%-
+  # Overrides Blacklight app/views/catalog/_folder_control.html.erb
+
+  doc = document ||= @document
+  return unless doc
+
+  # Indicate whether "Add Star"/"Remove Star" text should be displayed.
+  show_label ||= false
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/folder_form', document: doc, show_label: show_label %>

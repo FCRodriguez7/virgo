@@ -1,0 +1,15 @@
+<%# app/views/catalog/endnote.endnote.erb -%>
+<%-
+  # Overrides Blacklight app/views/catalog/endnote.endnote.erb
+
+  # Hints for RubyMine (skipped during execution).
+  include UVA::Helper::Export unless ONLY_FOR_DOCUMENTATION
+
+  documents ||= @documents || []
+  articles  ||= @articles  || []
+  all_items = documents + articles
+  set_output_filename(all_items, :endnote)
+
+  view_debug(__FILE__)
+-%>
+<%= render_endnote_texts(all_items).html_safe %>

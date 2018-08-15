@@ -1,0 +1,19 @@
+<%# app/views/catalog/email/_dl_book.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  # === Item metadata
+  fields ||= UVA::View::FieldSet.new(
+    :title          => doc.show_full_title,
+    'Series'        => doc.export_series,
+    'Author'        => doc.export_authors,
+    'Format'        => doc.export_format,
+    'Location'      => :location_facet,
+    'Call Number'   => doc.export_shelf_numbers,
+    copyright_label => permission_uri(doc),
+  )
+
+  view_debug(__FILE__)
+-%>
+<%= fields.render(:email, doc) %>

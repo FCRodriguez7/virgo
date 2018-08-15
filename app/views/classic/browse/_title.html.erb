@@ -1,0 +1,21 @@
+<%# app/views/classic/browse/_title.html.erb -%>
+<%-
+  # Hints for RubyMine (skipped during execution).
+  include UVA::BlacklightOverride unless ONLY_FOR_DOCUMENTATION
+
+  docs     ||= @document_list || []
+  response ||= @response
+  start    ||= (response && response.start).to_i
+
+  opt = { browse_mode: :title }
+
+  view_debug(__FILE__)
+-%>
+<%- if docs.present? && (!response || response.total.nonzero?) -%>
+  <%- docs.each_with_index do |doc, counter| -%>
+    <%- item_number = start + counter -%>
+    <%= render_document_partial doc, :index, opt.merge(counter: item_number) %>
+  <%- end -%>
+<%- else -%>
+  <%= render 'classic/browse/shared/alt_search', opt %>
+<%- end -%>

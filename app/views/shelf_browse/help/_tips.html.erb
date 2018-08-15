@@ -1,0 +1,35 @@
+<%# app/views/shelf_browse/help/_tips.html.erb -%>
+<%-
+  # Locals are defined in shelf_browse/shared/_help_content.html.erb where this
+  # file is included.
+
+  omission = UVA::Helper::ShelfBrowse::DEFAULT_OMISSION
+
+  view_debug(__FILE__)
+-%>
+
+<div class="<%= help_topic_css(:help_tips) -%>">
+  <h2>Tips</h2>
+  <ul>
+    <li>To see the full item without leaving the virtual shelf,
+      click on "See full record" in the item details panel.
+    </li>
+    <li>If you've found the item you want,
+      click on "Exit to full record" to leave the virtual shelf and continue on
+      to the item.
+    </li>
+    <li>
+      Because labels may be wrapped, hyphenated, or truncated to fit in the
+      space provided, hover over any label to see the compete text label in a
+      popup tooltip.
+      (On item tiles, truncated titles and call numbers will end with
+      "<%= omission -%>").
+    </li>
+    <li>Double-click on an item tile to toggle between the top and bottom of
+      the item details panel for that item.
+    </li>
+    <li>Use the "Browse by topic" button to discover call number ranges by
+      their category and topic descriptions.
+    </li>
+  </ul>
+</div>

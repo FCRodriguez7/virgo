@@ -1,0 +1,19 @@
+<%# app/views/catalog/row/_lib_album.html.erb -%>
+<%-
+  doc = document ||= @document
+  return log_debug("#{__FILE__}: no @document") unless doc
+
+  access = online_access_label(doc)
+  resource_link ||=
+    link_to_online_access(doc, label: access, separator: ITEM_SEPARATOR)
+
+  fields_opts = {
+    document:     doc,
+    access_link:  resource_link,
+    availability: !resource_link,
+    dev_note:    __FILE__,
+  }
+
+  view_debug(__FILE__)
+-%>
+<%= render 'catalog/row/shared/fields', fields_opts -%>
